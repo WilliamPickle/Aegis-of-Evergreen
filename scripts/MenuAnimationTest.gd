@@ -1,31 +1,32 @@
 extends Area2D
-var front_sprite_speed = 8
-var mid_sprite_speed = 10
-var back_sprite_speed = 14
 
+@onready var sprite_to_id = {
+	$tree_front : 1,
+	$tree_front2 : 1,
+	$tree_mid : 2,
+	$tree_mid2 : 2,
+	$tree_back : 3,
+	$tree_back2 : 3,
+}
 
-var front1_tween = create_tween().set_loops()
-var front2_tween = create_tween().set_loops()
-var mid1_tween = create_tween().set_loops()
-var mid2_tween = create_tween().set_loops()
-var back1_tween = create_tween().set_loops()
-var back2_tween = create_tween().set_loops()
+var sprite_speeds = {
+	1 : 40,
+	2 : 20,
+	3 : 10,
+}
 
-
-
-
+var start_positions = {
+	1 : Vector2(-150,0),
+	2 : Vector2(-156,0),
+	3 : Vector2(-157,0),
+}
 func _ready():
-	front1_tween.tween_property($tree_front,"position",Vector2(160,0),front_sprite_speed)
-	front1_tween.tween_property($tree_front,"position",Vector2(0,0),0)
-	front2_tween.tween_property($tree_front2,"position",Vector2(0,0),front_sprite_speed)
-	front2_tween.tween_property($tree_front2,"position",Vector2(-160,0),0)
+	print(sprite_to_id[$tree_front])
 	
-	mid1_tween.tween_property($tree_mid,"position",Vector2(160,0),mid_sprite_speed)
-	mid1_tween.tween_property($tree_mid,"position",Vector2(0,0),0)
-	mid2_tween.tween_property($tree_mid2,"position",Vector2(0,0),mid_sprite_speed)
-	mid2_tween.tween_property($tree_mid2,"position",Vector2(-160,0),0)
-	
-	back1_tween.tween_property($tree_back,"position",Vector2(160,0),back_sprite_speed)
-	back1_tween.tween_property($tree_back,"position",Vector2(0,0),0)
-	back2_tween.tween_property($tree_back2,"position",Vector2(0,0),back_sprite_speed)
-	back2_tween.tween_property($tree_back2,"position",Vector2(-160,0),0)
+func _process(delta) -> void:
+	for sprite : Sprite2D in sprite_to_id:
+		var id = sprite_to_id[sprite]
+		sprite.position.x += sprite_speeds[id]*delta
+		if sprite.position.x >= 160 :
+			sprite.position = start_positions[id]
+		
