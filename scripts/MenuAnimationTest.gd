@@ -10,9 +10,9 @@ extends Area2D
 }
 
 var sprite_speeds = {
-	1 : 40,
-	2 : 20,
-	3 : 10,
+	1 : 20,
+	2 : 10,
+	3 : 5,
 }
 
 var start_positions = {

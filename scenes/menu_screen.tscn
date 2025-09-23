@@ -1,47 +1,31 @@
 [gd_scene load_steps=6 format=3 uid="uid://d23apw67034ak"]
 
-[ext_resource type="Script" uid="uid://csji1yefxi7yq" path="res://scripts/MenuAnimationTest.gd" id="1_73fcp"]
+[ext_resource type="Script" uid="uid://cffsy285xn2pd" path="res://scripts/MenuAnimationTest2.gd" id="1_ar34o"]
 [ext_resource type="Texture2D" uid="uid://equ4umof8k08" path="res://assets/sprites/menu screen/sky_background.png" id="1_sm2ni"]
-[ext_resource type="Texture2D" uid="uid://fe4ut61qldj" path="res://assets/sprites/menu screen/tree_background_3.png" id="2_73fcp"]
-[ext_resource type="Texture2D" uid="uid://cr8bmkg6qs2lk" path="res://assets/sprites/menu screen/tree_background_2.png" id="3_ar34o"]
-[ext_resource type="Texture2D" uid="uid://dhrsitsufra1x" path="res://assets/sprites/menu screen/tree_background_1.png" id="4_amt2q"]
+[ext_resource type="Texture2D" uid="uid://dygksr6iog38r" path="res://assets/sprites/menu screen/tree_bg3_v4.png" id="3_73fcp"]
+[ext_resource type="Texture2D" uid="uid://dlecjhcmkg5x2" path="res://assets/sprites/menu screen/tree_bg2_v4.png" id="4_ar34o"]
+[ext_resource type="Texture2D" uid="uid://cvnnhb3q3ni3v" path="res://assets/sprites/menu screen/tree_bg1_v4.png" id="5_amt2q"]
 
 [node name="menu_screen" type="Node2D"]
 
 [node name="menu" type="Area2D" parent="."]
-script = ExtResource("1_73fcp")
+script = ExtResource("1_ar34o")
 
 [node name="sky" type="Sprite2D" parent="menu"]
 texture = ExtResource("1_sm2ni")
 
-[node name="tree_back" type="Sprite2D" parent="menu"]
-z_index = 1
-texture = ExtResource("2_73fcp")
-
-[node name="tree_mid" type="Sprite2D" parent="menu"]
-z_index = 2
-texture = ExtResource("3_ar34o")
-
-[node name="tree_front" type="Sprite2D" parent="menu"]
-z_index = 3
-texture = ExtResource("4_amt2q")
-
-[node name="tree_back2" type="Sprite2D" parent="menu"]
-z_index = 1
-position = Vector2(-157, 0)
-texture = ExtResource("2_73fcp")
-
-[node name="tree_mid2" type="Sprite2D" parent="menu"]
-z_index = 2
-position = Vector2(-156, 0)
-texture = ExtResource("3_ar34o")
-flip_h = true
-
-[node name="tree_front2" type="Sprite2D" parent="menu"]
-z_index = 3
-position = Vector2(-150, 0)
-texture = ExtResource("4_amt2q")
-
 [node name="Camera2D" type="Camera2D" parent="menu"]
 zoom = Vector2(7.2, 7.2)
 limit_smoothed = true
+
+[node name="tree3" type="Sprite2D" parent="menu"]
+position = Vector2(-80, 0)
+texture = ExtResource("3_73fcp")
+
+[node name="tree2" type="Sprite2D" parent="menu"]
+position = Vector2(-80, 0)
+texture = ExtResource("4_ar34o")
+
+[node name="tree1" type="Sprite2D" parent="menu"]
+position = Vector2(-80, 0)
+texture = ExtResource("5_amt2q")
