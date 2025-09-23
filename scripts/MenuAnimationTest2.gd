@@ -12,7 +12,7 @@ var layer_speed = {
 	3 : 4,
 }
 
-var start_pos_x = -80;
+var start_pos_x = -160;
 
 func _process(delta) -> void:
 	for layer in sprite_layers:

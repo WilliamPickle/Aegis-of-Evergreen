@@ -1,31 +1,87 @@
-[gd_scene load_steps=6 format=3 uid="uid://d23apw67034ak"]
+[gd_scene load_steps=7 format=3 uid="uid://d23apw67034ak"]
 
 [ext_resource type="Script" uid="uid://cffsy285xn2pd" path="res://scripts/MenuAnimationTest2.gd" id="1_ar34o"]
-[ext_resource type="Texture2D" uid="uid://equ4umof8k08" path="res://assets/sprites/menu screen/sky_background.png" id="1_sm2ni"]
-[ext_resource type="Texture2D" uid="uid://dygksr6iog38r" path="res://assets/sprites/menu screen/tree_bg3_v4.png" id="3_73fcp"]
-[ext_resource type="Texture2D" uid="uid://dlecjhcmkg5x2" path="res://assets/sprites/menu screen/tree_bg2_v4.png" id="4_ar34o"]
-[ext_resource type="Texture2D" uid="uid://cvnnhb3q3ni3v" path="res://assets/sprites/menu screen/tree_bg1_v4.png" id="5_amt2q"]
+[ext_resource type="Texture2D" uid="uid://jv4im4li5w3q" path="res://assets/sprites/menu screen/sky_background_v5.png" id="2_ar34o"]
+[ext_resource type="Texture2D" uid="uid://0bfp6n5i2pjv" path="res://assets/sprites/menu screen/tree_bg3_v5.png" id="3_amt2q"]
+[ext_resource type="Texture2D" uid="uid://cul0syws4f3e6" path="res://assets/sprites/menu screen/tree_bg2_v5.png" id="4_gld7y"]
+[ext_resource type="Texture2D" uid="uid://dr4ao8aiam1fi" path="res://assets/sprites/menu screen/tree_bg1_v5.png" id="5_g2cvw"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="6_ar34o"]
 
 [node name="menu_screen" type="Node2D"]
 
-[node name="menu" type="Area2D" parent="."]
+[node name="background" type="Area2D" parent="."]
 script = ExtResource("1_ar34o")
 
-[node name="sky" type="Sprite2D" parent="menu"]
-texture = ExtResource("1_sm2ni")
+[node name="sky" type="Sprite2D" parent="background"]
+texture = ExtResource("2_ar34o")
 
-[node name="Camera2D" type="Camera2D" parent="menu"]
-zoom = Vector2(7.2, 7.2)
+[node name="Camera2D" type="Camera2D" parent="background"]
+zoom = Vector2(3.6, 3.6)
 limit_smoothed = true
 
-[node name="tree3" type="Sprite2D" parent="menu"]
-position = Vector2(-80, 0)
-texture = ExtResource("3_73fcp")
+[node name="tree3" type="Sprite2D" parent="background"]
+z_index = 1
+position = Vector2(-160, 1)
+texture = ExtResource("3_amt2q")
 
-[node name="tree2" type="Sprite2D" parent="menu"]
-position = Vector2(-80, 0)
-texture = ExtResource("4_ar34o")
+[node name="tree2" type="Sprite2D" parent="background"]
+z_index = 3
+position = Vector2(-160, 1)
+texture = ExtResource("4_gld7y")
 
-[node name="tree1" type="Sprite2D" parent="menu"]
-position = Vector2(-80, 0)
-texture = ExtResource("5_amt2q")
+[node name="tree1" type="Sprite2D" parent="background"]
+z_index = 5
+position = Vector2(-160, 1)
+texture = ExtResource("5_g2cvw")
+
+[node name="menu_text" type="Node" parent="."]
+
+[node name="title" type="Label" parent="menu_text"]
+z_index = 2
+offset_left = -92.0
+offset_top = -79.0
+offset_right = 97.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0.507598, 0.276844, 0.190213, 1)
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 32
+text = "Aegis Of Evergreen"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="title" type="Label" parent="menu_text/title"]
+z_index = 3
+offset_left = -2.0
+offset_right = 187.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.797101, 0.8054, 0.725438, 1)
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 32
+text = "Aegis Of Evergreen"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="start title" type="Label" parent="menu_text"]
+z_index = 2
+offset_left = -95.0
+offset_top = -6.0
+offset_right = 94.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(0.507598, 0.276844, 0.190213, 1)
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 8
+text = "- Click Anywhere to Start -"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="start title" type="Label" parent="menu_text/start title"]
+z_index = 2
+offset_left = -1.0
+offset_right = 188.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.797101, 0.8054, 0.725438, 1)
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 8
+text = "- Click Anywhere to Start -"
+horizontal_alignment = 1
+autowrap_mode = 2
