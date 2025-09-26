@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkf0147r26htm"]
+[gd_scene load_steps=3 format=3 uid="uid://cyjbx7q0jdh5b"]
 
+[ext_resource type="Script" uid="uid://dk2mcxcmp3y28" path="res://scripts/scene_script.gd" id="1_1s7j6"]
 [ext_resource type="PackedScene" uid="uid://d23apw67034ak" path="res://scenes/menu_screen.tscn" id="1_htc0g"]
 
-[node name="Node2D" type="Node2D"]
+[node name="current_scene" type="Node2D"]
+script = ExtResource("1_1s7j6")
 
 [node name="menu_screen" parent="." instance=ExtResource("1_htc0g")]

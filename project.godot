@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="TSA Game"
-run/main_scene="uid://d23apw67034ak"
+run/main_scene="uid://cyjbx7q0jdh5b"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneLoader="*res://scripts/scene_loader.gd"
 
 [rendering]
 

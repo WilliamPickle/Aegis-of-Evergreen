@@ -20,3 +20,8 @@ func _process(delta) -> void:
 			sprite_layers[layer].position.x = start_pos_x;
 		else:
 			sprite_layers[layer].position.x += layer_speed[layer] * delta;
+
+# Temp code to be changed later
+func _on_button_button_down() -> void:
+	SceneLoader.quick_add_scene("res://scenes/test_scene.tscn","test","main_menu")
+	print("Clicked!!!!")

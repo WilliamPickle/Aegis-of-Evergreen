@@ -34,6 +34,13 @@ z_index = 5
 position = Vector2(-160, 1)
 texture = ExtResource("5_g2cvw")
 
+[node name="Button" type="Button" parent="background"]
+show_behind_parent = true
+offset_left = -165.0
+offset_top = -95.0
+offset_right = 164.0
+offset_bottom = 95.0
+
 [node name="menu_text" type="Node" parent="."]
 
 [node name="title" type="Label" parent="menu_text"]
@@ -88,7 +95,7 @@ text = "- Click Anywhere to Start -"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="start title2" type="Label" parent="menu_text"]
+[node name="splash text" type="Label" parent="menu_text"]
 z_index = 2
 offset_left = 26.0
 offset_top = 39.0
@@ -101,3 +108,5 @@ theme_override_font_sizes/font_size = 8
 text = "game good!"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[connection signal="button_down" from="background/Button" to="background" method="_on_button_button_down"]
