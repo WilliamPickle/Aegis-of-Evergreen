@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bxp58b47vym5o" path="res://scripts/settings_screen.gd" id="1_j8ivh"]
 
 [node name="SettingsScreen" type="Node2D"]
+z_index = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.6, 3.6)
