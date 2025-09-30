@@ -21,6 +21,7 @@ func delete_scene(key : String) -> void:
 func quick_add_scene(file_path : String, new_key : String, old_scene_key : String) -> void:
 	delete_scene(old_scene_key)
 	load_scene(file_path,new_key)
+	
 
 ## Change the visibily of a scene.
 ## Internally keeping the memory but removing the scene fucntionality.
@@ -30,3 +31,13 @@ func change_scene_visibility(key : String, scene_visible : bool) -> void:
 		root.add_child(_current_scenes[key])
 	else:
 		root.remove_child(_current_scenes[key])
+		
+#tint the sprites in a scene
+func tint_scene(key : String, r, g, b) -> void:
+	_current_scenes[key].modulate = Color(r, g, b);
+	
+func disable_scene(key : String, disable) -> void:
+	if disable:
+		_current_scenes[key].process_mode = ProcessMode.PROCESS_MODE_DISABLED;
+	if not disable:
+		_current_scenes[key].process_mode = ProcessMode.PROCESS_MODE_ALWAYS;
