@@ -81,6 +81,7 @@ anchors_preset = 0
 
 [node name="title_shadow" type="Label" parent="menu_text"]
 z_index = 2
+layout_mode = 0
 offset_left = -126.0
 offset_top = -84.0
 offset_right = 125.0
@@ -122,6 +123,7 @@ autowrap_mode = 2
 
 [node name="splash_text" type="Label" parent="menu_text"]
 z_index = 2
+layout_mode = 0
 offset_left = 13.0
 offset_top = -99.0
 offset_right = 202.0
@@ -136,6 +138,7 @@ autowrap_mode = 2
 
 [node name="start_title_shadow" type="Label" parent="menu_text"]
 z_index = 6
+layout_mode = 0
 offset_left = -95.0
 offset_top = 81.0
 offset_right = 94.0
