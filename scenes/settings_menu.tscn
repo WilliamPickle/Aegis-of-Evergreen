@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://rlm06c0lld5e"]
 
-[ext_resource type="Texture2D" uid="uid://c8sm4hs6h6lcs" path="res://assets/sprites/settings screen/settings_back_v1.png" id="1_g7g4h"]
-[ext_resource type="Script" uid="uid://bxp58b47vym5o" path="res://scripts/settings_screen.gd" id="1_j8ivh"]
+[ext_resource type="Script" uid="uid://bxp58b47vym5o" path="res://scripts/settings_screen.gd" id="1_cr101"]
+[ext_resource type="Texture2D" uid="uid://c8sm4hs6h6lcs" path="res://assets/sprites/settings screen/settings_back_v1.png" id="2_wswnh"]
 
 [node name="SettingsScreen" type="Node2D"]
+z_index = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.6, 3.6)
@@ -14,9 +15,9 @@ offset_left = -51.0
 offset_top = -30.0
 offset_right = 48.0
 offset_bottom = 25.0
-script = ExtResource("1_j8ivh")
+script = ExtResource("1_cr101")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_g7g4h")
+texture = ExtResource("2_wswnh")
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
