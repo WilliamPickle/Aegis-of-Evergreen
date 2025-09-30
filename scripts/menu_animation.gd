@@ -23,5 +23,7 @@ func _physics_process(delta) -> void:
 
 # Temp code to be changed later
 func _on_button_button_down() -> void:
-	SceneLoader.quick_add_scene("res://scenes/test_scene.tscn","test_scene","start_menu")
+	#SceneLoader.quick_add_scene("res://scenes/test_scene.tscn","test_scene","start_menu")
+	SceneLoader.load_scene("res://scenes/settings_menu.tscn", "settings_menu");
+	SceneLoader.disable_scene("start_menu", true);
 	print("Clicked!!!!")
