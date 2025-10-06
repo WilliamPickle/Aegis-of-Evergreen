@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://d23apw67034ak"]
+[gd_scene load_steps=14 format=3 uid="uid://d23apw67034ak"]
 
 [ext_resource type="Script" uid="uid://cffsy285xn2pd" path="res://scripts/menu_animation.gd" id="1_ar34o"]
 [ext_resource type="Texture2D" uid="uid://dhgk07bhybunk" path="res://assets/sprites/menu screen/sky_background_v6.png" id="2_fcv5n"]
 [ext_resource type="Texture2D" uid="uid://c5o5nb1dj1amv" path="res://assets/sprites/menu screen/tree_bg_2_v6.png" id="3_4v6gu"]
 [ext_resource type="Texture2D" uid="uid://4pt6lvai2e67" path="res://assets/sprites/menu screen/tree_bg_1_v6.png" id="4_nxjfj"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="6_ar34o"]
+[ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="7_5byqq"]
+[ext_resource type="Texture2D" uid="uid://ywnxvtgi724h" path="res://assets/sprites/icons and buttons/settings_button_cropped.png" id="9_e58y3"]
+[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/icon_script.gd" id="10_apowk"]
+[ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="11_apowk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e58y3"]
 
 [sub_resource type="Animation" id="Animation_u4qax"]
 length = 0.001
@@ -55,7 +61,7 @@ limit_smoothed = true
 
 [node name="sky" type="Sprite2D" parent="background"]
 z_index = 1
-position = Vector2(-160, 1)
+position = Vector2(-160, 0)
 texture = ExtResource("2_fcv5n")
 
 [node name="tree2" type="Sprite2D" parent="background"]
@@ -74,6 +80,130 @@ offset_left = -165.0
 offset_top = -95.0
 offset_right = 164.0
 offset_bottom = 95.0
+
+[node name="Icons" type="Node2D" parent="background"]
+position = Vector2(0, 96)
+
+[node name="Settings" type="Button" parent="background/Icons"]
+z_index = 10
+offset_left = -40.0
+offset_top = 1.0
+offset_right = -17.0
+offset_bottom = 24.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e58y3")
+icon = ExtResource("9_e58y3")
+icon_alignment = 1
+vertical_icon_alignment = 2
+script = ExtResource("10_apowk")
+file_path = "res://scenes/settings_menu.tscn"
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="background/Icons/Settings"]
+visible = false
+layout_mode = 0
+offset_left = -6.0
+offset_top = -8.0
+offset_right = 29.0
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 8
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Controls" type="Button" parent="background/Icons"]
+z_index = 10
+offset_left = 17.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 24.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e58y3")
+icon = ExtResource("11_apowk")
+icon_alignment = 1
+vertical_icon_alignment = 2
+script = ExtResource("10_apowk")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="background/Icons/Controls"]
+visible = false
+layout_mode = 0
+offset_left = -6.0
+offset_top = -8.0
+offset_right = 30.0
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 8
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="background/Icons"]
+z_index = 10
+offset_left = -12.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 24.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e58y3")
+icon = ExtResource("7_5byqq")
+icon_alignment = 1
+vertical_icon_alignment = 2
+script = ExtResource("10_apowk")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="background/Icons/Play"]
+visible = false
+layout_mode = 0
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 29.0
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 8
+text = "Play"
+horizontal_alignment = 1
 
 [node name="menu_text" type="Control" parent="."]
 layout_mode = 3

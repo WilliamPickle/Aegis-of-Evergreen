@@ -5,6 +5,9 @@ extends Node2D
 var root
 var _current_scenes = {}
 
+# Main scenes will only be main_menu, level_1, level_2, level_3.
+var current_main_scene = "nothing"
+
 ## Adds a scene given the file path and key for future refrence.
 func load_scene(file_path : String, new_key : String) -> void:
 	if _current_scenes.has(new_key):
@@ -37,8 +40,12 @@ func change_scene_visibility(key : String, scene_visible : bool) -> void:
 		root.remove_child(_current_scenes[key])
 		
 ## tint the sprites in a scene
-func tint_scene(key : String, r : float, g : float, b : float) -> void:
-	_current_scenes[key].modulate = Color(r, g, b);
+## by default it tints the main scene
+func tint_scene(key : String = current_main_scene, enable : bool = true) -> void:
+	if enable:
+		_current_scenes[key].modulate = Color(0.5, 0.5, 0.5)
+	else:
+		_current_scenes[key].modulate = Color(1, 1, 1)
 
 ## Makes given scene stop functioning while keeping it visible.
 func disable_scene(key : String, disable : bool) -> void:
