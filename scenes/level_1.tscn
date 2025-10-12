@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://drt6mbt63iff6" path="res://assets/sprites/test sprites/scuffed_test_1.png" id="1_014kd"]
-[ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="2_bswci"]
 [ext_resource type="Script" uid="uid://dynncta8kwk3u" path="res://scripts/TestPathScript.gd" id="2_rus8k"]
+[ext_resource type="Texture2D" uid="uid://c8d7p3u0aaymk" path="res://assets/sprites/enemies/bush_v1.png" id="3_rus8k"]
 
 [sub_resource type="Curve2D" id="Curve2D_014kd"]
 _data = {
@@ -27,4 +27,6 @@ rotation = 0.141897
 script = ExtResource("2_rus8k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
-texture = ExtResource("2_bswci")
+rotation = -0.138274
+texture = ExtResource("3_rus8k")
+flip_h = true
