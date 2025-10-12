@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8e64mi7p36ng"
-path="res://.godot/imported/control_button.png-ecafa20612711d7065333e28346c72db.ctex"
+uid="uid://bix6t2nm7oyo1"
+path="res://.godot/imported/Space Blur.png-201f84d1a5c19a0fc318de0d1d2cdbb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons and buttons/control_button.png"
-dest_files=["res://.godot/imported/control_button.png-ecafa20612711d7065333e28346c72db.ctex"]
+source_file="res://assets/sprites/cutscenes/level_1/Space Blur.png"
+dest_files=["res://.godot/imported/Space Blur.png-201f84d1a5c19a0fc318de0d1d2cdbb5.ctex"]
 
 [params]
 

@@ -6,7 +6,7 @@ var root
 var _current_scenes = {}
 
 # Main scenes will only be main_menu, level_1, level_2, level_3.
-var current_main_scene = "nothing"
+var current_main_scene
 
 ## Adds a scene given the file path and key for future refrence.
 func load_scene(file_path : String, new_key : String) -> void:

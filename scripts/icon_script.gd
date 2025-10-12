@@ -5,6 +5,7 @@ static var ui_open := false
 static var current_scene_key : String
 @export var file_path : String
 @export var has_text : bool
+@export var new_scene : bool
 
 func _ready() -> void:
 	if has_text:
@@ -25,10 +26,12 @@ func load_icon_scene():
 	if ui_open:
 		return
 	
-	SceneLoader.tint_scene()
-	var new_key = self.file_path.get_file().get_basename()
+	var new_key = file_path.get_file().get_basename()
 	current_scene_key = new_key
-	
-	SceneLoader.load_scene(file_path, new_key)
-	
-	ui_open = true
+	if new_scene:
+		SceneLoader.quick_add_scene(file_path, new_key,SceneLoader.current_main_scene)
+		SceneLoader.current_main_scene = new_key
+	else:
+		SceneLoader.tint_scene()
+		SceneLoader.load_scene(file_path, new_key)
+		ui_open = true

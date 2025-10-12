@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=3 uid="uid://j8cwmtn45ixk"]
+
+[ext_resource type="Texture2D" uid="uid://5df1ywuoeu2p" path="res://assets/sprites/cutscenes/level_1/Space.png" id="1_6ds4i"]
+[ext_resource type="Script" uid="uid://dvv5nga2g61av" path="res://scripts/cutscene_script.gd" id="1_wname"]
+[ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="2_2etud"]
+[ext_resource type="Texture2D" uid="uid://bix6t2nm7oyo1" path="res://assets/sprites/cutscenes/level_1/Space Blur.png" id="2_u7sor"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="3_kteqr"]
+[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/icon_script.gd" id="4_y258h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5jx5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_74lek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcd4p"]
+
+[node name="CutScene1" type="Node2D" node_paths=PackedStringArray("camera", "next_button", "skip_button")]
+script = ExtResource("1_wname")
+wait_time = 2.0
+max_slides = 2
+camera = NodePath("Camera2D")
+next_button = NodePath("Camera2D/Next")
+skip_button = NodePath("Camera2D/Skip")
+metadata/_custom_type_script = "uid://dvv5nga2g61av"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.6, 3.6)
+
+[node name="Next" type="Button" parent="Camera2D"]
+modulate = Color(0, 0, 0, 1)
+z_index = 10
+offset_left = 130.0
+offset_top = 62.0
+offset_right = 153.0
+offset_bottom = 85.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j5jx5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j5jx5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j5jx5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_j5jx5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_j5jx5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_j5jx5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_74lek")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_j5jx5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j5jx5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_j5jx5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j5jx5")
+disabled = true
+icon = ExtResource("2_2etud")
+
+[node name="Skip" type="Button" parent="Camera2D"]
+modulate = Color(0, 0, 0, 1)
+z_index = 10
+offset_left = 103.0
+offset_top = 62.0
+offset_right = 126.0
+offset_bottom = 85.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_kteqr")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jcd4p")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_jcd4p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jcd4p")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_jcd4p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_jcd4p")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jcd4p")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jcd4p")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jcd4p")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcd4p")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_jcd4p")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jcd4p")
+disabled = true
+icon = ExtResource("2_2etud")
+icon_alignment = 1
+vertical_icon_alignment = 2
+script = ExtResource("4_y258h")
+file_path = "res://scenes/level_1.tscn"
+has_text = true
+new_scene = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="Text" type="Label" parent="Camera2D/Skip"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.5
+offset_top = -8.0
+offset_right = 28.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_kteqr")
+theme_override_font_sizes/font_size = 8
+text = "Skip cutscene"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Space" type="Sprite2D" parent="."]
+texture = ExtResource("1_6ds4i")
+
+[node name="SpaceBlur" type="Sprite2D" parent="."]
+position = Vector2(320, 0)
+texture = ExtResource("2_u7sor")

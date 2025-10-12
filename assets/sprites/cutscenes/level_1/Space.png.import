@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv6wd7itlsdci"
-path="res://.godot/imported/play_button.png-e9ef20ffe80fab07ce48452cae85e093.ctex"
+uid="uid://5df1ywuoeu2p"
+path="res://.godot/imported/Space.png-41280c0fc683b0c79be288128ed7a87d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons and buttons/play_button.png"
-dest_files=["res://.godot/imported/play_button.png-e9ef20ffe80fab07ce48452cae85e093.ctex"]
+source_file="res://assets/sprites/cutscenes/level_1/Space.png"
+dest_files=["res://.godot/imported/Space.png-41280c0fc683b0c79be288128ed7a87d.ctex"]
 
 [params]
 

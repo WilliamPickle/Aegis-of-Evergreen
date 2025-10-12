@@ -190,7 +190,9 @@ icon = ExtResource("7_5byqq")
 icon_alignment = 1
 vertical_icon_alignment = 2
 script = ExtResource("10_apowk")
+file_path = "res://scenes/cutscene_1.tscn"
 has_text = true
+new_scene = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 metadata/_edit_use_anchors_ = true
 
