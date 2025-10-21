@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 [gd_scene load_steps=8 format=3 uid="uid://l3i6h5io4w4n"]
+=======
+[gd_scene load_steps=9 format=3 uid="uid://l3i6h5io4w4n"]
+>>>>>>> parent of 92a6341 (Merge branch 'main' of https://github.com/WilliamPickle/TSA-Game)
 
 [ext_resource type="Texture2D" uid="uid://7xh3gfv6eksr" path="res://assets/sprites/test sprites/lvl1_map_v1_scuffed.png" id="1_rus8k"]
 [ext_resource type="Script" uid="uid://dynncta8kwk3u" path="res://scripts/TestPathScript.gd" id="2_rus8k"]
 [ext_resource type="Texture2D" uid="uid://ggysblpwjifv" path="res://assets/sprites/enemies/bush_v1_walk.png" id="3_rus8k"]
+<<<<<<< HEAD
+=======
+[ext_resource type="Script" uid="uid://1g0ln2ifw00b" path="res://scripts/test_character_script.gd" id="4_4nkto"]
+>>>>>>> parent of 92a6341 (Merge branch 'main' of https://github.com/WilliamPickle/TSA-Game)
 
 [sub_resource type="Curve2D" id="Curve2D_014kd"]
 _data = {
