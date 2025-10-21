@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=18 format=3 uid="uid://l3i6h5io4w4n"]
 
-[ext_resource type="Texture2D" uid="uid://7xh3gfv6eksr" path="res://assets/sprites/test sprites/lvl1_map_v1_scuffed.png" id="1_rus8k"]
-[ext_resource type="Script" uid="uid://dynncta8kwk3u" path="res://scripts/TestPathScript.gd" id="2_rus8k"]
-[ext_resource type="Texture2D" uid="uid://duuhan0as20y6" path="res://assets/sprites/enemies/bush_v2_walk.png" id="3_rus8k"]
+[ext_resource type="Texture2D" uid="uid://bsp3ylagnsbpf" path="res://assets/sprites/maps/lvl1_map_v2.png" id="1_bswci"]
+[ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="3_5xbjy"]
+[ext_resource type="Script" uid="uid://bfrutl1ayg5wm" path="res://scripts/start_wave.gd" id="4_4nkto"]
+[ext_resource type="PackedScene" uid="uid://c47t02182m7x4" path="res://scenes/Enemies/blackberry_bush.tscn" id="4_5xbjy"]
+[ext_resource type="Script" uid="uid://fjhwx2cd8r7l" path="res://scenes/spawn_wave.gd" id="5_4nkto"]
 
 [sub_resource type="Curve2D" id="Curve2D_014kd"]
 _data = {
@@ -10,46 +12,32 @@ _data = {
 }
 point_count = 16
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5xbjy"]
-atlas = ExtResource("3_rus8k")
-region = Rect2(0, 0, 25, 25)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcfvj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4nkto"]
-atlas = ExtResource("3_rus8k")
-region = Rect2(25, 0, 25, 25)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pa8r4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fcfvj"]
-atlas = ExtResource("3_rus8k")
-region = Rect2(50, 0, 25, 25)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15mv3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pa8r4"]
-atlas = ExtResource("3_rus8k")
-region = Rect2(75, 0, 25, 25)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3sih"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fcfvj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5xbjy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4nkto")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fcfvj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pa8r4")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 7.5
-}]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2y5yt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2os1m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_go7sj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7gny6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2aecg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dial"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nomh"]
 
 [node name="Level1" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_rus8k")
+[node name="map" type="Sprite2D" parent="."]
+texture = ExtResource("1_bswci")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)
@@ -61,13 +49,34 @@ curve = SubResource("Curve2D_014kd")
 position = Vector2(-269, -92)
 rotation = 0.967566
 rotates = false
-script = ExtResource("2_rus8k")
 
-[node name="WalkingBush" type="AnimatedSprite2D" parent="Path2D/PathFollow2D"]
-position = Vector2(-0.565697, -3.9598)
-rotation = -0.973596
-sprite_frames = SubResource("SpriteFrames_fcfvj")
-animation = &"new_animation"
-autoplay = "new_animation"
-frame_progress = 0.622666
-flip_h = true
+[node name="BlackberryBush" parent="Path2D/PathFollow2D" instance=ExtResource("4_5xbjy")]
+position = Vector2(-20, -9)
+rotation = -0.947726
+
+[node name="StartWave" type="Button" parent="."]
+offset_left = 286.0
+offset_top = -171.0
+offset_right = 309.0
+offset_bottom = -148.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fcfvj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pa8r4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_15mv3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_e3sih")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2y5yt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_2os1m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_go7sj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_7gny6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2aecg")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6dial")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7nomh")
+icon = ExtResource("3_5xbjy")
+icon_alignment = 1
+script = ExtResource("4_4nkto")
+
+[node name="SpawnWave" type="Timer" parent="."]
+script = ExtResource("5_4nkto")
+
+[connection signal="button_down" from="StartWave" to="SpawnWave" method="_on_button_down"]
