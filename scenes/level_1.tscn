@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=9 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://7xh3gfv6eksr" path="res://assets/sprites/test sprites/lvl1_map_v1_scuffed.png" id="1_rus8k"]
 [ext_resource type="Script" uid="uid://dynncta8kwk3u" path="res://scripts/TestPathScript.gd" id="2_rus8k"]
 [ext_resource type="Texture2D" uid="uid://ggysblpwjifv" path="res://assets/sprites/enemies/bush_v1_walk.png" id="3_rus8k"]
+[ext_resource type="Script" uid="uid://1g0ln2ifw00b" path="res://scripts/test_character_script.gd" id="4_4nkto"]
 
 [sub_resource type="Curve2D" id="Curve2D_014kd"]
 _data = {
@@ -33,6 +34,7 @@ animations = [{
 }]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("4_4nkto")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rus8k")
@@ -50,6 +52,7 @@ rotates = false
 script = ExtResource("2_rus8k")
 
 [node name="WalkingBush" type="AnimatedSprite2D" parent="Path2D/PathFollow2D"]
+z_index = 10
 position = Vector2(-0.565697, -3.9598)
 rotation = -0.973596
 sprite_frames = SubResource("SpriteFrames_fcfvj")
@@ -57,3 +60,11 @@ animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.421357
 flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-295, -135, -314, -147, -295, -156, -290, -166, -274, -170, -258, -165, -256, -158, -238, -151, -259, -134, -256, -98, -245, -78, -216, -57, -183, -52, -125, -70, -100, -83, -53, -116, 36, -155, 113, -158, 150, -158, 190, -138, 208, -106, 210, -61, 192, -35, 148, -12, 77, -3, 44, 6, 29, 19, 27, 34, 42, 52, 51, 63, 105, 70, 183, 58, 271, 19, 318, 17, 319, 47, 285, 50, 263, 58, 184, 91, 142, 98, 61, 102, 27, 90, -4, 49, 15, -13, 54, -32, 155, -48, 174, -64, 172, -93, 154, -122, 97, -123, 9, -118, -62, -71, -126, -31, -165, -20, -232, -25, -286, -79)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-123, -178, -121, -130, -101, -87, -67, -63, 46, -33, 82, 6, 108, 71, 124, 126, 191, 125, 105, -54, 41, -91, -24, -103, -58, -120, -69, -178)
