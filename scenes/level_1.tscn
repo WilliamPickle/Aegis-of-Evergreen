@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=8 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://7xh3gfv6eksr" path="res://assets/sprites/test sprites/lvl1_map_v1_scuffed.png" id="1_rus8k"]
 [ext_resource type="Script" uid="uid://dynncta8kwk3u" path="res://scripts/TestPathScript.gd" id="2_rus8k"]
-[ext_resource type="Texture2D" uid="uid://duuhan0as20y6" path="res://assets/sprites/enemies/bush_v2_walk.png" id="3_rus8k"]
+[ext_resource type="Texture2D" uid="uid://ggysblpwjifv" path="res://assets/sprites/enemies/bush_v1_walk.png" id="3_rus8k"]
 
 [sub_resource type="Curve2D" id="Curve2D_014kd"]
 _data = {
@@ -18,14 +18,6 @@ region = Rect2(0, 0, 25, 25)
 atlas = ExtResource("3_rus8k")
 region = Rect2(25, 0, 25, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fcfvj"]
-atlas = ExtResource("3_rus8k")
-region = Rect2(50, 0, 25, 25)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pa8r4"]
-atlas = ExtResource("3_rus8k")
-region = Rect2(75, 0, 25, 25)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_fcfvj"]
 animations = [{
 "frames": [{
@@ -34,16 +26,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4nkto")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fcfvj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pa8r4")
 }],
 "loop": true,
 "name": &"new_animation",
-"speed": 7.5
+"speed": 5.0
 }]
 
 [node name="Level1" type="Node2D"]
@@ -71,7 +57,7 @@ rotation = -0.973596
 sprite_frames = SubResource("SpriteFrames_fcfvj")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.622666
+frame_progress = 0.421357
 flip_h = true
 
 [node name="Area2D" type="Area2D" parent="."]
