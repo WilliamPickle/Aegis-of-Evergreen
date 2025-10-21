@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c47t02182m7x4"]
 
 [ext_resource type="Script" uid="uid://b6mq466nsmiam" path="res://scripts/blackberry_bush.gd" id="1_eosuv"]
-[ext_resource type="Texture2D" uid="uid://duuhan0as20y6" path="res://assets/sprites/enemies/bush_v2_walk.png" id="1_vkedo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bush_v2_walk.png" id="1_vkedo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6mm1w"]
 atlas = ExtResource("1_vkedo")
