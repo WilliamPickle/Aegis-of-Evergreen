@@ -1,5 +1,5 @@
 class_name Enemy
-extends Node2D
+extends Area2D
 
 # Variables you need to assign
 var enemy_sprite : Node2D
