@@ -1,11 +1,11 @@
 [gd_scene load_steps=19 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://bsp3ylagnsbpf" path="res://assets/sprites/maps/lvl1_map_v2.png" id="1_bswci"]
-[ext_resource type="Script" uid="uid://1g0ln2ifw00b" path="res://scripts/test_character_script.gd" id="1_fcfvj"]
+[ext_resource type="Script" path="res://scripts/test_character_script.gd" id="1_fcfvj"]
 [ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="3_5xbjy"]
-[ext_resource type="Script" path="res://scripts/start_wave.gd" id="4_4nkto"]
+[ext_resource type="Script" uid="uid://bfrutl1ayg5wm" path="res://scripts/start_wave.gd" id="4_4nkto"]
 [ext_resource type="PackedScene" uid="uid://c47t02182m7x4" path="res://scenes/Enemies/blackberry_bush.tscn" id="4_5xbjy"]
-[ext_resource type="Script" path="res://scenes/spawn_wave.gd" id="5_4nkto"]
+[ext_resource type="Script" uid="uid://clq18rcf3qqqj" path="res://scripts/wave_spawner.gd" id="5_4nkto"]
 
 [sub_resource type="Curve2D" id="Curve2D_014kd"]
 _data = {
@@ -49,37 +49,10 @@ curve = SubResource("Curve2D_014kd")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(-269, -92)
-rotation = 0.967566
 rotates = false
+loop = false
 
 [node name="BlackberryBush" parent="Path2D/PathFollow2D" instance=ExtResource("4_5xbjy")]
-position = Vector2(-20, -9)
-rotation = -0.947726
-
-[node name="StartWave" type="Button" parent="."]
-offset_left = 286.0
-offset_top = -171.0
-offset_right = 309.0
-offset_bottom = -148.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/focus = SubResource("StyleBoxEmpty_fcfvj")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pa8r4")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_15mv3")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_e3sih")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2y5yt")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_2os1m")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_go7sj")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_7gny6")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_2aecg")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6dial")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_7nomh")
-icon = ExtResource("3_5xbjy")
-icon_alignment = 1
-script = ExtResource("4_4nkto")
-
-[node name="SpawnWave" type="Timer" parent="."]
-script = ExtResource("5_4nkto")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -98,4 +71,34 @@ polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
 
-[connection signal="button_down" from="StartWave" to="SpawnWave" method="_on_button_down"]
+[node name="WaveSpawner" type="Node2D" parent="."]
+script = ExtResource("5_4nkto")
+
+[node name="StartWave" type="Button" parent="WaveSpawner"]
+offset_left = 286.0
+offset_top = -171.0
+offset_right = 309.0
+offset_bottom = -148.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fcfvj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pa8r4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_15mv3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_e3sih")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2y5yt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_2os1m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_go7sj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_7gny6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2aecg")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6dial")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7nomh")
+action_mode = 0
+icon = ExtResource("3_5xbjy")
+icon_alignment = 1
+script = ExtResource("4_4nkto")
+
+[node name="EnemyDelay" type="Timer" parent="WaveSpawner"]
+wait_time = 5.0
+
+[connection signal="button_down" from="WaveSpawner/StartWave" to="WaveSpawner" method="_on_start_wave"]
+[connection signal="timeout" from="WaveSpawner/EnemyDelay" to="WaveSpawner" method="_on_enemy_delay_timeout"]

@@ -1,1 +1,37 @@
-extends Node
+extends Node2D
+
+@onready var timer: Timer = $"EnemyDelay"
+@onready var path_2d: Path2D = $"../Path2D"
+
+# later on this function can be changed to only send out level 1.
+# await makes it so you must wait for the previous enemies to send out first
+# without await, functions run simulatenously. 
+func _on_start_wave() -> void:
+	await send_enemy("res://scenes/Enemies/blackberry_bush.tscn", 3, 1)
+	await delay(1)
+	await send_enemy("res://scenes/Enemies/blackberry_bush.tscn", 150, 0.2)
+	
+	
+# sends an enemy a specified amount of times. 
+func send_enemy(enemy: String, quantity: int, delay: float) -> void:
+	timer.wait_time = delay
+	for i in range(quantity):
+		timer.start()
+		await timer.timeout
+		
+		var new_path := PathFollow2D.new()
+		path_2d.add_child(new_path)
+		new_path.rotates = false
+		new_path.rotation = 0
+		new_path.loop = false
+		new_path.position.x = -270
+		new_path.position.y = -100
+		
+		var new_enemy = load(enemy).instantiate()
+		new_path.add_child(new_enemy)
+
+# stops the given function for a certain amount of time
+func delay(delay) -> void:
+	timer.wait_time = delay
+	timer.start()
+	await timer.timeout

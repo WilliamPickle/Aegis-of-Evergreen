@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneLoader="*res://scripts/scene_loader.gd"
-WaveSpawner="*res://scripts/wave_spawner.gd"
 
 [display]
 

@@ -11,7 +11,13 @@ var path_position = null
 var cur_position = 0
 var prev_position = 0
 
+# progresses enemy along a path.
+# automatically deletes enemy and path when it reaches the end
 func move_on_path(delta) -> void:
+	if  path.progress_ratio >= 1:
+		path.queue_free()
+		enemy_sprite.queue_free()
+
 	path_position = path.get_global_position().x
 	prev_position = cur_position
 	path.progress_ratio += speed * delta

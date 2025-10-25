@@ -1,9 +1,10 @@
 extends Button
+signal start_wave
 
-func _physics_process(delta) -> void:
-	pass
-	
+@onready var button: Button = $"."
 
-
-func _on_button_down() -> void:
-	pass # Replace with function body.
+func _ready() -> void:
+	button.pressed.connect(_button_pressed)
+		
+func _button_pressed():
+	emit_signal("start_wave")
