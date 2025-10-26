@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drioqjvllq6lr"
+path="res://.godot/imported/TrapFunk&Alivio - o Biicho [Thematic].mp3-6cfc7af46dba1615481b0262a0355c8b.mp3str"
+
+[deps]
+
+source_file="res://assets/music/TrapFunk&Alivio - o Biicho [Thematic].mp3"
+dest_files=["res://.godot/imported/TrapFunk&Alivio - o Biicho [Thematic].mp3-6cfc7af46dba1615481b0262a0355c8b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

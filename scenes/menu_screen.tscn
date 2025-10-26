@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhk8e3c4u1mcj"]
+
+[ext_resource type="Script" path="res://scripts/MenuAnimationTest2.gd" id="1_ar34o"]
+[ext_resource type="Texture2D" uid="uid://jv4im4li5w3q" path="res://assets/sprites/menu screen/sky_background_v5.png" id="2_ar34o"]
+[ext_resource type="Texture2D" uid="uid://0bfp6n5i2pjv" path="res://assets/sprites/menu screen/tree_bg3_v5.png" id="3_amt2q"]
+[ext_resource type="Texture2D" uid="uid://cul0syws4f3e6" path="res://assets/sprites/menu screen/tree_bg2_v5.png" id="4_gld7y"]
+[ext_resource type="Texture2D" uid="uid://dr4ao8aiam1fi" path="res://assets/sprites/menu screen/tree_bg1_v5.png" id="5_g2cvw"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="6_ar34o"]
+
+[node name="menu_screen" type="Node2D"]
+
+[node name="background" type="Area2D" parent="."]
+script = ExtResource("1_ar34o")
+
+[node name="sky" type="Sprite2D" parent="background"]
+texture = ExtResource("2_ar34o")
+
+[node name="Camera2D" type="Camera2D" parent="background"]
+zoom = Vector2(3.6, 3.6)
+limit_smoothed = true
+
+[node name="tree3" type="Sprite2D" parent="background"]
+z_index = 1
+position = Vector2(-160, 1)
+texture = ExtResource("3_amt2q")
+
+[node name="tree2" type="Sprite2D" parent="background"]
+z_index = 3
+position = Vector2(-160, 1)
+texture = ExtResource("4_gld7y")
+
+[node name="tree1" type="Sprite2D" parent="background"]
+z_index = 5
+position = Vector2(-160, 1)
+texture = ExtResource("5_g2cvw")
+
+[node name="Button" type="Button" parent="background"]
+show_behind_parent = true
+offset_left = -165.0
+offset_top = -95.0
+offset_right = 164.0
+offset_bottom = 95.0
+
+[node name="menu_text" type="Node" parent="."]
+
+[node name="title" type="Label" parent="menu_text"]
+z_index = 2
+offset_left = -92.0
+offset_top = -79.0
+offset_right = 97.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0.507598, 0.276844, 0.190213, 1)
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 32
+text = "Aegis Of Evergreen"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="title" type="Label" parent="menu_text/title"]
+z_index = 3
+layout_mode = 0
+offset_left = -2.0
+offset_right = 187.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.797101, 0.8054, 0.725438, 1)
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 32
+text = "Aegis Of Evergreen"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="start title" type="Label" parent="menu_text"]
+z_index = 2
+offset_left = -95.0
+offset_top = -6.0
+offset_right = 94.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(0.507598, 0.276844, 0.190213, 1)
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 8
+text = "- Click Anywhere to Start -"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="start title" type="Label" parent="menu_text/start title"]
+z_index = 2
+layout_mode = 0
+offset_left = -1.0
+offset_right = 188.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.797101, 0.8054, 0.725438, 1)
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 8
+text = "- Click Anywhere to Start -"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="splash text" type="Label" parent="menu_text"]
+z_index = 2
+offset_left = 26.0
+offset_top = 39.0
+offset_right = 215.0
+offset_bottom = 49.0
+rotation = -0.733134
+theme_override_colors/font_color = Color(0.895615, 0.737374, 0.191488, 1)
+theme_override_fonts/font = ExtResource("6_ar34o")
+theme_override_font_sizes/font_size = 8
+text = "game good!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="button_down" from="background/Button" to="background" method="_on_button_button_down"]
