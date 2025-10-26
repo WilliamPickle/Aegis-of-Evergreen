@@ -14,7 +14,7 @@ func _ready() -> void:
 	music_volume.drag_ended.connect(_on_volume_change)
 
 
-func _on_volume_change(value_changed: bool, is_music_volume:= true) -> void:
+func _on_volume_change(_value_changed: bool, is_music_volume:= true) -> void:
 	if is_music_volume: 
 		if music_volume.value == 0.0:
 			AudioServer.set_bus_mute(MUSIC_IDX, true)

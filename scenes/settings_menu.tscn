@@ -206,7 +206,7 @@ theme_override_fonts/bold_italics_font = ExtResource("3_lwwgp")
 theme_override_fonts/bold_font = ExtResource("3_lwwgp")
 theme_override_font_sizes/normal_font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxEmpty_75x6d")
-text = "Master Volume"
+text = "Music Volume"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = -132.0
