@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dul6qla1ntynw"
+path="res://.godot/imported/Kabwasa - Soul Sing [Thematic].mp3-ebbb80c5635926e2e7de893c6ce1ff54.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Kabwasa - Soul Sing [Thematic].mp3"
+dest_files=["res://.godot/imported/Kabwasa - Soul Sing [Thematic].mp3-ebbb80c5635926e2e7de893c6ce1ff54.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
