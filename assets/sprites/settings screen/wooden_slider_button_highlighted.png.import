@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc8fqilaor0e8"
-path="res://.godot/imported/settings_button_v1.png-ce72ee272da8ff62b54c5c277ac17c26.ctex"
+uid="uid://bfnv5d5fmfpgg"
+path="res://.godot/imported/wooden_slider_button_highlighted.png-1a0ce547d68f1878016ceb1fc895078f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/settings screen/settings_button_v1.png"
-dest_files=["res://.godot/imported/settings_button_v1.png-ce72ee272da8ff62b54c5c277ac17c26.ctex"]
+source_file="res://assets/sprites/settings screen/wooden_slider_button_highlighted.png"
+dest_files=["res://.godot/imported/wooden_slider_button_highlighted.png-1a0ce547d68f1878016ceb1fc895078f.ctex"]
 
 [params]
 

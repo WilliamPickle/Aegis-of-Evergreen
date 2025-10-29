@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhk0atxo4h86s"
-path="res://.godot/imported/Settings menu Wooden Button.png-0bdbffe5cc807ea4d1f2aa2554ca8c75.ctex"
+uid="uid://cjkk5ket3fgtr"
+path="res://.godot/imported/Wooden Slider Button Cropped.png-7d76f634fd539765127faa35feb167ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/settings screen/Settings menu Wooden Button.png"
-dest_files=["res://.godot/imported/Settings menu Wooden Button.png-0bdbffe5cc807ea4d1f2aa2554ca8c75.ctex"]
+source_file="res://assets/sprites/settings screen/Wooden Slider Button Cropped.png"
+dest_files=["res://.godot/imported/Wooden Slider Button Cropped.png-7d76f634fd539765127faa35feb167ad.ctex"]
 
 [params]
 

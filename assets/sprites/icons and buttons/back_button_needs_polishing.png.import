@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccsrpx4k45371"
-path="res://.godot/imported/Settings Menu Stone.png-1f434b359bcbed9dd5a6d942a739a793.ctex"
+uid="uid://ckomfut5cmqyy"
+path="res://.godot/imported/back_button_needs_polishing.png-bd9120f97e78a973fa84c1999f8778ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/settings screen/Settings Menu Stone.png"
-dest_files=["res://.godot/imported/Settings Menu Stone.png-1f434b359bcbed9dd5a6d942a739a793.ctex"]
+source_file="res://assets/sprites/icons and buttons/back_button_needs_polishing.png"
+dest_files=["res://.godot/imported/back_button_needs_polishing.png-bd9120f97e78a973fa84c1999f8778ea.ctex"]
 
 [params]
 

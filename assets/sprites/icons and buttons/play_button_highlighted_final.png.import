@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0d0enofnmon7"
-path="res://.godot/imported/Wooden Slider Button Smaller Test.png-7ee12039193ef9c4347308802b5ff37d.ctex"
+uid="uid://fhs00mxuq76t"
+path="res://.godot/imported/play_button_highlighted_final.png-76c54c8a04efce0e1615fe516059c40a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/settings screen/Wooden Slider Button Smaller Test.png"
-dest_files=["res://.godot/imported/Wooden Slider Button Smaller Test.png-7ee12039193ef9c4347308802b5ff37d.ctex"]
+source_file="res://assets/sprites/icons and buttons/play_button_highlighted_final.png"
+dest_files=["res://.godot/imported/play_button_highlighted_final.png-76c54c8a04efce0e1615fe516059c40a.ctex"]
 
 [params]
 
