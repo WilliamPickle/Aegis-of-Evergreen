@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/River_v1.png" id="3_7gny6"]
 [ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/bridge_v1.png" id="4_2aecg"]
 [ext_resource type="PackedScene" uid="uid://c47t02182m7x4" path="res://scenes/Enemies/blackberry_bush.tscn" id="4_5xbjy"]
-[ext_resource type="Script" uid="uid://clq18rcf3qqqj" path="res://scripts/Enemies/wave_spawner.gd" id="5_4nkto"]
 [ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/trees_v1.png" id="5_6dial"]
 [ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/ufo_v1.png" id="6_7nomh"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="7_15mv3"]
+[ext_resource type="Script" path="res://scripts/Enemies/wave_spawner.gd" id="8_2os1m"]
 [ext_resource type="Script" uid="uid://c5v7i37jdw55h" path="res://scripts/Towers/tower_placement.gd" id="8_e3sih"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
@@ -255,7 +255,7 @@ polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130
 polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
 
 [node name="WaveSpawner" type="Node2D" parent="."]
-script = ExtResource("5_4nkto")
+script = ExtResource("8_2os1m")
 
 [node name="StartWave" type="Button" parent="WaveSpawner"]
 offset_left = 286.0

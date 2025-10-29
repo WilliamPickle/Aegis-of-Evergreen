@@ -1,13 +1,12 @@
-[gd_scene load_steps=31 format=3 uid="uid://rlm06c0lld5e"]
+[gd_scene load_steps=30 format=3 uid="uid://rlm06c0lld5e"]
 
 [ext_resource type="Script" uid="uid://dd56ng05gs51w" path="res://scripts/settings_script.gd" id="1_fb6cq"]
 [ext_resource type="Texture2D" uid="uid://c8sm4hs6h6lcs" path="res://assets/sprites/settings screen/settings_back_v1.png" id="2_wswnh"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="3_lwwgp"]
-[ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="4_bgjg7"]
+[ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="4_2ctot"]
 [ext_resource type="Texture2D" uid="uid://bg6t2oqf4ht45" path="res://assets/sprites/settings screen/Wooden Slider R2 fixed.png" id="5_bgjg7"]
 [ext_resource type="Script" uid="uid://h2jq8s83khk1" path="res://scripts/back_button_script.gd" id="5_lwwgp"]
 [ext_resource type="Texture2D" uid="uid://dwwcp2ou4srep" path="res://assets/sprites/settings screen/settings screen.png" id="6_48ojb"]
-[ext_resource type="Texture2D" uid="uid://0d0enofnmon7" path="res://assets/sprites/settings screen/Wooden Slider Button Smaller Test.png" id="6_n35ux"]
 [ext_resource type="Texture2D" uid="uid://4ve1wpx4pw5q" path="res://assets/sprites/settings screen/settings_textbox_v1.png" id="8_fb6cq"]
 [ext_resource type="AudioStream" uid="uid://drioqjvllq6lr" path="res://assets/music/TrapFunk&Alivio - o Biicho [Thematic].mp3" id="10_2ctot"]
 [ext_resource type="AudioStream" uid="uid://dul6qla1ntynw" path="res://assets/music/Kabwasa - Soul Sing [Thematic].mp3" id="11_jrqig"]
@@ -15,15 +14,12 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n35ux"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n35ux"]
-atlas = ExtResource("6_n35ux")
 region = Rect2(498, 141, 26, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fb6cq"]
-atlas = ExtResource("6_n35ux")
 region = Rect2(498, 141, 26, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_puhno"]
-atlas = ExtResource("6_n35ux")
 region = Rect2(498, 141, 26, 26)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fb6cq"]
@@ -37,15 +33,12 @@ atlas = ExtResource("5_bgjg7")
 region = Rect2(116, 166, 406, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ctot"]
-atlas = ExtResource("6_n35ux")
 region = Rect2(498, 141, 26, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75x6d"]
-atlas = ExtResource("6_n35ux")
 region = Rect2(498, 141, 26, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0dr5"]
-atlas = ExtResource("6_n35ux")
 region = Rect2(498, 141, 26, 26)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrqig"]
@@ -100,7 +93,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_n35ux")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_n35ux")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n35ux")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_n35ux")
-icon = ExtResource("4_bgjg7")
+icon = ExtResource("4_2ctot")
 icon_alignment = 1
 vertical_icon_alignment = 2
 script = ExtResource("5_lwwgp")

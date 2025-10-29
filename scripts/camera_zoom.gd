@@ -21,10 +21,10 @@ func _input(event: InputEvent) -> void:
 		#cur_mouse_pos = get_global_mouse_position().x
 		#camera.position.x = cur_mouse_pos - prev_mouse_pos
 		#prev_mouse_pos = cur_mouse_pos
-	if event.is_action()
-		camera.position = get_global_mouse_position()
-		
-	if Input
+	#if event.is_action()
+		#camera.position = get_global_mouse_position()
+		#
+	#if Input
 			
 
 #func _input(event: InputEvent) -> void:

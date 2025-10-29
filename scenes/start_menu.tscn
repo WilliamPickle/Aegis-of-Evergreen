@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://d23apw67034ak"]
+[gd_scene load_steps=28 format=3 uid="uid://d23apw67034ak"]
 
 [ext_resource type="Script" uid="uid://cffsy285xn2pd" path="res://scripts/menu_animation.gd" id="1_ar34o"]
 [ext_resource type="Texture2D" uid="uid://dhgk07bhybunk" path="res://assets/sprites/menu screen/sky_background_v6.png" id="2_fcv5n"]
@@ -13,13 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="11_apowk"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="11_b1kog"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e58y3"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ruo1u"]
 texture = ExtResource("6_vnuwp")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqu1h"]
-texture = ExtResource("6_vnuwp")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e58y3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s0oe1"]
 texture = ExtResource("6_vnuwp")
@@ -133,13 +130,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("6_ar34o")
 theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ruo1u")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e58y3")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_e58y3")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_e58y3")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ruo1u")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_e58y3")
-theme_override_styles/hover = SubResource("StyleBoxTexture_gqu1h")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_ruo1u")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_e58y3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_s0oe1")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_e58y3")
