@@ -12,7 +12,7 @@ can_sleep = false
 contact_monitor = true
 max_contacts_reported = 25
 script = ExtResource("1_7itwv")
-snapping = 4.0
+snapping = 2.0
 metadata/_custom_type_script = "uid://c3qt6ds7g0mc2"
 metadata/_edit_group_ = true
 
