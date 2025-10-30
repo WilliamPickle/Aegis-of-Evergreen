@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=46 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/trees_v1.png" id="5_6dial"]
 [ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/ufo_v1.png" id="6_7nomh"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="7_15mv3"]
-[ext_resource type="Script" path="res://scripts/Enemies/wave_spawner.gd" id="8_2os1m"]
+[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="7_go7sj"]
+[ext_resource type="Script" uid="uid://clq18rcf3qqqj" path="res://scripts/Enemies/wave_spawner.gd" id="8_2os1m"]
 [ext_resource type="Script" uid="uid://c5v7i37jdw55h" path="res://scripts/Towers/tower_placement.gd" id="8_e3sih"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
@@ -224,6 +225,7 @@ texture = ExtResource("6_7nomh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)
+script = ExtResource("7_go7sj")
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_014kd")
@@ -237,7 +239,6 @@ loop = false
 [node name="BlackberryBush" parent="Path2D/PathFollow2D" instance=ExtResource("4_5xbjy")]
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="Path" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-275, -170, -260, -165, -256, -161, -256, -156, -237, -151, -258, -133, -255, -107, -245, -80, -222, -60, -181, -54, -131, -69, -9, -139, 22, -149, 148, -156, 180, -143, 203, -114, 208, -82, 203, -47, 183, -27, 139, -15, 66, -3, 41, 6, 29, 17, 22, 31, 26, 42, 37, 56, 59, 70, 88, 72, 185, 59, 240, 36, 274, 23, 319, 21, 317, 46, 281, 48, 198, 83, 108, 96, 66, 96, 43, 94, 22, 80, 5, 55, -2, 36, 2, 16, 19, -12, 50, -25, 128, -40, 158, -45, 177, -57, 182, -76, 185, -93, 163, -118, 138, -129, 89, -128, 33, -123, 15, -114, -77, -66, -120, -40, -147, -30, -181, -24, -206, -26, -230, -32, -254, -49, -275, -72, -287, -102, -290, -121, -289, -134, -313, -150, -294, -156, -294, -161, -291, -165)

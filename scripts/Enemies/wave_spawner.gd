@@ -12,10 +12,6 @@ func _on_start_wave() -> void:
 	await delay(1)
 	await send_enemy(bush, 150, 0.2)
 	
-	await send_enemy(bush, 3, 1)
-	await delay(1)
-	await send_enemy(bush, 150, 0.2)
-	
 
 	
 
