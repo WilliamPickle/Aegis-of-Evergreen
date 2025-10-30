@@ -13,10 +13,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action("MouseWheelUp"):
 		if camera.zoom < Vector2(zoom_min, zoom_min):
 			camera.zoom += Vector2(zoom_rate, zoom_rate)
+			camera.global_position = get_global_mouse_position()
 
 	if event.is_action("MouseWheelDown"):
 		if camera.zoom > Vector2(zoom_max, zoom_max):
 			camera.zoom += Vector2(-zoom_rate, -zoom_rate)
+			camera.global_position = get_global_mouse_position()
 			
 	if Input.is_action_just_pressed("MouseMiddle"):
 		initial_mouse_pos = get_global_mouse_position()
