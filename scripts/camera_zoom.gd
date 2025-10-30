@@ -26,6 +26,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("MouseMiddle"):
 		cur_mouse_pos = get_global_mouse_position()
 		camera.position += (initial_mouse_pos - cur_mouse_pos) * panning_drag
+		print(camera.position)
 		
 		
 func _process(delta: float) -> void:
