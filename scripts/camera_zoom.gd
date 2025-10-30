@@ -13,12 +13,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action("MouseWheelUp"):
 		if camera.zoom < Vector2(zoom_min, zoom_min):
 			camera.zoom += Vector2(zoom_rate, zoom_rate)
-			camera.global_position = get_global_mouse_position()
 
 	if event.is_action("MouseWheelDown"):
 		if camera.zoom > Vector2(zoom_max, zoom_max):
 			camera.zoom += Vector2(-zoom_rate, -zoom_rate)
-			camera.global_position = get_global_mouse_position()
 			
 	if Input.is_action_just_pressed("MouseMiddle"):
 		initial_mouse_pos = get_global_mouse_position()
@@ -26,7 +24,6 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("MouseMiddle"):
 		cur_mouse_pos = get_global_mouse_position()
 		camera.position += (initial_mouse_pos - cur_mouse_pos) * panning_drag
-		print(camera.position)
 		
 		
 func _process(delta: float) -> void:
