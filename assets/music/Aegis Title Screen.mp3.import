@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bs44lh0fvxyuf"
+path="res://.godot/imported/Aegis Title Screen.mp3-d6ba940834b433fa99adb5d21a31e78d.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Aegis Title Screen.mp3"
+dest_files=["res://.godot/imported/Aegis Title Screen.mp3-d6ba940834b433fa99adb5d21a31e78d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
