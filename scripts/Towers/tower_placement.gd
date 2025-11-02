@@ -10,32 +10,33 @@ static var new_tower : Tower
 # Refrence the area to add to the tower once spawned
 @export var map_area : Area2D
 # The tower type, if its squirrel or goat tower
-@export var tower_type : String
+@export_enum("Tower") var tower_type : String
 
 func _ready() -> void:
-	button_down.connect(place_tower)
+	button_down.connect(add_tower)
 
 # When player clicks on the spawn tower function.
-func place_tower() -> void:
+func add_tower() -> void:
 	if is_placing:
 		return
 	is_placing = true
+	if Tower.current_tower != null:
+		Tower.current_tower.draw_hitboxes(true)
+	ControlHandler.current_states.append(ControlHandler.ControlState.PLACING_TOWER)
 	new_tower = towers[tower_type].instantiate()
 	new_tower.map_area = map_area
+	new_tower.global_position = get_global_mouse_position()
 	map_area.add_child(new_tower)
-	
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		# If player left clicks and if is possible to place
-		# tower, place the tower
-		if event.button_index == MOUSE_BUTTON_LEFT and is_placing:
-			var can_place : bool = new_tower.place_tower()
-			if not can_place: return
-			new_tower = null
-			is_placing = false
-		# If player right clicks cancel tower placement
-		# left click will always be registered before a right click.
-		elif event.button_index == MOUSE_BUTTON_RIGHT and is_placing:
-			new_tower.queue_free()
-			new_tower = null
-			is_placing = false	
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("place_tower") and is_placing:
+		var can_place : bool = new_tower.place_tower()
+		if not can_place: return
+		new_tower = null
+		is_placing = false
+	elif  event.is_action("cancel_placement") and is_placing:
+		new_tower.queue_free()
+		new_tower = null
+		is_placing = false
+		ControlHandler.current_states.erase(ControlHandler.ControlState.PLACING_TOWER)
+		
