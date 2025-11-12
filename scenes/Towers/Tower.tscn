@@ -11,16 +11,14 @@ radius = 11.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_hlosp"]
 radius = 64.1249
 
-[node name="Tower" type="RigidBody2D"]
+[node name="Tower" type="Area2D"]
 z_index = 10
 disable_mode = 1
-gravity_scale = 0.0
-can_sleep = false
-contact_monitor = true
-max_contacts_reported = 25
+input_pickable = false
+linear_damp = 0.0
+angular_damp = 0.0
 script = ExtResource("1_7itwv")
 snapping = 2.0
-image_radius = 12
 metadata/_custom_type_script = "uid://c3qt6ds7g0mc2"
 metadata/_edit_group_ = true
 
@@ -49,8 +47,15 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_hlosp")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hlosp")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hlosp")
 
+[node name="AttackCoolDOwn" type="Timer" parent="."]
+autostart = true
+
+[node name="DetectionCoolDown" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [node name="Range" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 4
 collision_mask = 2
 
 [node name="RangeCollision" type="CollisionShape2D" parent="Range"]

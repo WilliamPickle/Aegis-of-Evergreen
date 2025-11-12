@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d23apw67034ak"]
+[gd_scene load_steps=29 format=3 uid="uid://d23apw67034ak"]
 
 [ext_resource type="Script" uid="uid://cffsy285xn2pd" path="res://scripts/menu_animation.gd" id="1_ar34o"]
 [ext_resource type="Texture2D" uid="uid://dhgk07bhybunk" path="res://assets/sprites/menu screen/sky_background_v6.png" id="2_fcv5n"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/icon_script.gd" id="10_apowk"]
 [ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="11_apowk"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="11_b1kog"]
+[ext_resource type="AudioStream" uid="uid://bs44lh0fvxyuf" path="res://assets/music/Aegis Title Screen.mp3" id="13_egh8s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ruo1u"]
 texture = ExtResource("6_vnuwp")
@@ -336,5 +337,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_5byqq")
 }
 autoplay = "text_blink"
+
+[node name="AegisTitleScreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_egh8s")
+autoplay = true
+bus = &"music"
+parameters/looping = true
 
 [connection signal="button_down" from="background/Button" to="background" method="_on_button_button_down"]

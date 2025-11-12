@@ -297,7 +297,7 @@ theme_override_fonts/font = ExtResource("7_15mv3")
 text = "Place Tower"
 script = ExtResource("8_e3sih")
 map_area = NodePath("../Area2D")
-tower_type = "Tower"
+tower_type = "Squirel"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [connection signal="button_down" from="WaveSpawner/StartWave" to="WaveSpawner" method="_on_start_wave"]

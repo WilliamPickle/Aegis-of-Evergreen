@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv52bmj84m6kt"]
+
+[ext_resource type="Script" uid="uid://b1waqwshv5p58" path="res://scripts/Towers/basic_tower.gd" id="1_fdw71"]
+[ext_resource type="Texture2D" uid="uid://ucq83f5aaxwy" path="res://assets/sprites/towers/chipmunk_v1.png" id="2_fdw71"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rblst"]
+radius = 8.06226
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4ef5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3bpil"]
+radius = 64.1249
+
+[node name="Chipmunk" type="Area2D"]
+z_index = 10
+input_pickable = false
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource("1_fdw71")
+snapping = 2.0
+metadata/_custom_type_script = "uid://b1waqwshv5p58"
+metadata/_edit_group_ = true
+
+[node name="Image" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("2_fdw71")
+
+[node name="BodyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rblst")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n4ef5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_n4ef5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_n4ef5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_n4ef5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_n4ef5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_n4ef5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n4ef5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_n4ef5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n4ef5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n4ef5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n4ef5")
+
+[node name="AttackCoolDOwn" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="DetectionCoolDown" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Range" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="RangeCollision" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_3bpil")
+debug_color = Color(1, 1, 1, 0.42)

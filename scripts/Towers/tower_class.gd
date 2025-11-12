@@ -1,16 +1,27 @@
-extends RigidBody2D
+extends Area2D
 class_name Tower
 
+
+signal tower_placed
 # The min and max values the tower can be 
 # placed around the map.
 const MIN_MOUSE_POS := Vector2(-320,-180)
 const MAX_MOUSE_POS := Vector2(320,180)
 const CONTROLS_STATES = ControlHandler.ControlState
 
+# Used to draw the hitbox of the selected tower
 static var current_tower : Tower
-# This variable might be changed later
+
+# Turn to const once variable is finalized
 @export var snapping : float
-@export var image_radius : int
+
+# For testing might be changed later
+# but for now this is how we save
+# tower stat data
+@export_subgroup("Stats")
+@export var cost : Array[float] = [0.0, 0.0, 0.0]
+@export var range : Array[float] = [0.0, 0.0, 0.0]
+
 # the area of the current level
 # this is set once tower is intantiated
 var map_area : Area2D
@@ -19,84 +30,100 @@ var _total_collisions : int = 0
 var can_draw := true
 
 @onready var button : Button = $Button
+@onready var range_collider : CollisionShape2D = $Range/RangeCollision
+#@onready var range_area : Area2D = $Range
+#@onready var _attack_cooldown : Timer = $AttackCoolDOwn
+#func _init(area : Area2D) -> void:
+	#map_area = area
 
 func _ready() -> void:
 	# contact_monitor = true
 	# max_contacts_reported = 25
 	# Connecting all the body signals
-	map_area.body_exited.connect(on_collide.bind(false))
-	map_area.body_entered.connect(on_collide.bind(true))
-	body_entered.connect(on_collide.bind(true))
-	body_exited.connect(on_collide.bind(false))
+	map_area.area_exited.connect(on_tower_collision)
+	map_area.area_entered.connect(on_tower_collision)
+	area_entered.connect(on_tower_collision)
+	area_exited.connect(on_tower_collision)
+	
 	button.pressed.connect(draw_hitboxes)
 	current_tower = self
 
+
 func _draw() -> void:
 	if can_draw:
-		draw_circle(Vector2.ZERO, $Range/RangeCollision.shape.radius, Color(1, 1, 1, 0.25))
-		draw_arc(Vector2.ZERO, $Range/RangeCollision.shape.radius + 1,0, 360, 50,Color(1,1,1,0.4), 2)
-		draw_arc(Vector2.ZERO, $BodyCollision.shape.radius,0, 360, 50,Color(1,1,1,0.4), 1)
+		draw_circle(Vector2.ZERO, $Range/RangeCollision.shape.radius, Color(0.15, 0.15, 0.15, 0.25))
+		draw_arc(Vector2.ZERO, $Range/RangeCollision.shape.radius + 1,0, 360, 50,Color(0.15,0.15,0.15,0.4), 2)
+		draw_arc(Vector2.ZERO, $BodyCollision.shape.radius,0, 360, 50,Color(0.15,0.15,0.15,0.4), 1)
 
 func draw_hitboxes(deleting : bool = false) -> void:
+	# will delete the towers range
 	if deleting:
 		can_draw = false
 		queue_redraw()
 		return
 	
-	# Add our correct state
-	if not ControlHandler.current_states.has(CONTROLS_STATES.VIEWING_TOWER):
-		ControlHandler.current_states.append(CONTROLS_STATES.VIEWING_TOWER)
+	# Safely add our correct state
+	ControlHandler.add_state(CONTROLS_STATES.VIEWING_TOWER)
 	
-	if current_tower == null:
+	# If placing tower, dont let us view any other tower ranges
+	if ControlHandler.current_states.has(CONTROLS_STATES.PLACING_TOWER):
+		return
+	# If isnt viewing a range set to self.
+	elif current_tower == null:
 		current_tower = self
+	# if player selects a different tower, delete current range
 	elif current_tower != self:
 		current_tower.draw_hitboxes(true)
 		current_tower = self
-	elif can_draw == true: # We arent viewing range if can_draw
-	# is set to true, because on line 60 it changes to false
+	elif can_draw == true: # If we were already our own range
+	# delete the range and remove from states
 		ControlHandler.current_states.erase(CONTROLS_STATES.VIEWING_TOWER)
 	can_draw = not can_draw
 	queue_redraw()
 
-
-func on_collide(_body, is_inside : bool):
-	if is_inside: # If is inside a body add to total collisions
-		_total_collisions += 1
-	else: # If outside a body remove from total collisions
-		_total_collisions -= 1
-		
+## Visual function, turns tower red if unable to place or green if able to place.
+func on_tower_collision(_body):
 	# If no collision detected let tower be placed
-	if _total_collisions == 0:
-		modulate = Color(1,1,1,1)
-	else:
+	if get_overlapping_areas().size() > 0:
 		modulate = Color(1,0,0,0.5)
+	else:
+		modulate = Color(1,1,1,1)
 
+## Function that returns false if player cant palce down tower,
+## Or returns true if player can place tower, while simultaneously
+## placing it and disabling functions.
 func place_tower() -> bool:
-	if _total_collisions != 0:
+	if get_overlapping_areas().size() > 0:
 		return false
-	# A bunch of disabling rigidbody functions
-	# hopefuly they help with performance.
+
+	# Makes so _process can't run
+	set_process(false)
+	# Enabled the button functionality.
 	button.visible = true
-	sleeping = true
-	freeze = true
+	# Disable the visibility of tower hitbox
 	can_draw = false
+	# Draw the changes
 	queue_redraw()
 	
 	# Disable the placement collision checks
-	map_area.body_entered.disconnect(on_collide)
-	map_area.body_exited.disconnect(on_collide)
-	body_exited.disconnect(on_collide)
-	body_entered.disconnect(on_collide)
+	map_area.area_entered.disconnect(on_tower_collision)
+	map_area.area_exited.disconnect(on_tower_collision)
+	area_exited.disconnect(on_tower_collision)
+	area_entered.disconnect(on_tower_collision)
 	
+	# Tell corresponding sub class that the tower succesfully was placed
+	tower_placed.emit()
+	
+	# Update our current state.
 	ControlHandler.current_states.erase(CONTROLS_STATES.PLACING_TOWER)
 	
 	return true
 
-# This function is automatically disabled once
-# its sleeping is set to true.
-func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
-	# in the next frame draw a new object given the _draw func
+# When tower is first intantiated, the tower follows mouse position
+# and updates draw().
+func _process(_delta: float) -> void:
 	queue_redraw()
 	var mouse_pos := get_global_mouse_position()
+	# Help prevent the placement looking too smooth.
 	var new_tower_pos := Vector2i(mouse_pos / snapping) * snapping
-	state.transform.origin = new_tower_pos.clamp(MIN_MOUSE_POS, MAX_MOUSE_POS)
+	global_position = new_tower_pos.clamp(MIN_MOUSE_POS, MAX_MOUSE_POS)
