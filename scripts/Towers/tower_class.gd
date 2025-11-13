@@ -25,8 +25,6 @@ static var current_tower : Tower
 # the area of the current level
 # this is set once tower is intantiated
 var map_area : Area2D
-# how many objects our tower is colliding with
-var _total_collisions : int = 0
 var can_draw := true
 
 @onready var button : Button = $Button
