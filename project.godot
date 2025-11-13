@@ -22,6 +22,8 @@ ControlHandler="*res://scripts/control_handler.gd"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

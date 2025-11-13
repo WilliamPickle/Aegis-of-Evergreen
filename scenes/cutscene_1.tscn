@@ -17,7 +17,7 @@
 
 [node name="CutScene1" type="Node2D" node_paths=PackedStringArray("camera", "next_button", "skip_button")]
 script = ExtResource("1_wname")
-wait_time = 2.0
+wait_time = 1.0
 max_slides = 4
 camera = NodePath("Camera2D")
 next_button = NodePath("Camera2D/Next")
@@ -25,7 +25,7 @@ skip_button = NodePath("Camera2D/Skip")
 metadata/_custom_type_script = "uid://dvv5nga2g61av"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.6, 3.6)
+zoom = Vector2(4, 4)
 
 [node name="Next" type="Button" parent="Camera2D"]
 modulate = Color(0, 0, 0, 1)

@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var timer: Timer = $"EnemyDelay"
-@onready var path_2d: Path2D = $"../Path2D"
+@export var timer: Timer
+@export var path_2d: Path2D
 var bush := preload("res://scenes/Enemies/blackberry_bush.tscn")
 
 # later on this function can be changed to only send out level 1.
@@ -11,11 +11,7 @@ func _on_start_wave() -> void:
 	await send_enemy(bush, 3, 1)
 	await delay(1)
 	await send_enemy(bush, 150, 0.2)
-	
 
-	
-
-	
 # sends an enemy a specified amount of times. 
 func send_enemy(enemy, quantity: int, delay: float) -> void:
 	timer.wait_time = delay

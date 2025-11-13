@@ -1,7 +1,7 @@
 extends Camera2D
 @onready var camera: Camera2D = $"."
 
-const zoom_max = 1.8
+const zoom_max = 2
 const zoom_min = 4
 const zoom_rate = 0.1
 const panning_drag = 0.1
@@ -27,5 +27,5 @@ func _input(event: InputEvent) -> void:
 		
 		
 func _process(delta: float) -> void:
-	camera.position.x = clamp(camera.position.x, -320 + 576/camera.zoom.x, 320 - 576/camera.zoom.x)
-	camera.position.y = clamp(camera.position.y, -180 + 324/camera.zoom.y, 180 - 324/camera.zoom.y)
+	camera.position.x = clamp(camera.position.x, -320 + (320 * zoom_max)/camera.zoom.x, 320 - (320 * zoom_max)/camera.zoom.x)
+	camera.position.y = clamp(camera.position.y, -180 + (180 * zoom_max)/camera.zoom.y, 180 - (180 * zoom_max)/camera.zoom.y)

@@ -93,7 +93,7 @@ _data = {
 script = ExtResource("1_ar34o")
 
 [node name="Camera2D" type="Camera2D" parent="background"]
-zoom = Vector2(3.6, 3.6)
+zoom = Vector2(4, 4)
 limit_smoothed = true
 
 [node name="sky" type="Sprite2D" parent="background"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=39 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://clq18rcf3qqqj" path="res://scripts/Enemies/wave_spawner.gd" id="8_2os1m"]
 [ext_resource type="Script" uid="uid://c5v7i37jdw55h" path="res://scripts/Towers/tower_placement.gd" id="8_e3sih"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="10_7gny6"]
+[ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/pause_ui.tscn" id="14_2aecg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("1_2os1m")
@@ -177,6 +178,10 @@ texture = ExtResource("3_5xbjy")
 
 [node name="map1" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("7_go7sj")
+
 [node name="MapAssets" type="Node2D" parent="."]
 
 [node name="fish" type="AnimatedSprite2D" parent="MapAssets"]
@@ -208,20 +213,16 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D" type="Sprite2D" parent="MapAssets"]
 texture = ExtResource("6_7nomh")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.8, 1.8)
-script = ExtResource("7_go7sj")
-
-[node name="Path2D" type="Path2D" parent="."]
+[node name="EnemyPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_014kd")
 metadata/_edit_lock_ = true
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemyPath"]
 position = Vector2(-269, -92)
 rotates = false
 loop = false
 
-[node name="BlackberryBush" parent="Path2D/PathFollow2D" instance=ExtResource("4_5xbjy")]
+[node name="BlackberryBush" parent="EnemyPath/PathFollow2D" instance=ExtResource("4_5xbjy")]
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -245,8 +246,10 @@ polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130
 visible = false
 polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
 
-[node name="WaveSpawner" type="Node2D" parent="."]
+[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("timer", "path_2d")]
 script = ExtResource("8_2os1m")
+timer = NodePath("EnemyDelay")
+path_2d = NodePath("../EnemyPath")
 
 [node name="EnemyDelay" type="Timer" parent="WaveSpawner"]
 wait_time = 5.0
@@ -270,6 +273,7 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="Start Button/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Start Button/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -285,19 +289,21 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_6dial")
 action_mode = 0
 icon_alignment = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="TowerButtonTemp" type="CanvasLayer" parent="."]
 
-[node name="Tower_Placement" type="Button" parent="CanvasLayer" node_paths=PackedStringArray("map_area")]
-offset_left = 38.0
-offset_top = 578.0
-offset_right = 150.0
-offset_bottom = 609.0
+[node name="Tower_Placement" type="Button" parent="TowerButtonTemp" node_paths=PackedStringArray("map_area")]
+offset_left = 23.0
+offset_top = 673.0
+offset_right = 135.0
+offset_bottom = 704.0
 theme_override_fonts/font = ExtResource("7_15mv3")
 text = "Place Tower"
 script = ExtResource("8_e3sih")
 map_area = NodePath("../../Area2D")
 tower_type = "Squirel"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
+
+[node name="PauseUI" parent="." instance=ExtResource("14_2aecg")]
 
 [connection signal="timeout" from="WaveSpawner/EnemyDelay" to="WaveSpawner" method="_on_enemy_delay_timeout"]
 [connection signal="button_down" from="Start Button/MarginContainer/VBoxContainer/HBoxContainer/StartWave" to="WaveSpawner" method="_on_start_wave"]

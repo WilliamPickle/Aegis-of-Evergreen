@@ -1,110 +1,209 @@
-[gd_scene load_steps=13 format=3 uid="uid://ynetxm1wdkoc"]
+[gd_scene load_steps=32 format=3 uid="uid://ynetxm1wdkoc"]
 
+[ext_resource type="Script" uid="uid://bey1v7ikgg2mg" path="res://scenes/game_screen.gd" id="1_0rou8"]
 [ext_resource type="Texture2D" uid="uid://pfssqwf31dm7" path="res://assets/sprites/icons and buttons/settings_button_highlighted.png" id="2_vcehk"]
 [ext_resource type="Texture2D" uid="uid://ywnxvtgi724h" path="res://assets/sprites/icons and buttons/settings_button_cropped.png" id="2_ypbrs"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="3_0vm74"]
 [ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="4_utk7g"]
 [ext_resource type="Texture2D" uid="uid://vyejon8a8wc1" path="res://assets/sprites/icons and buttons/control_button_highlighted.png" id="5_ynu8c"]
 [ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="6_0rou8"]
+[ext_resource type="Texture2D" uid="uid://b7ry4sy340mhg" path="res://assets/sprites/icons and buttons/pause_button.png" id="7_ynu8c"]
+[ext_resource type="Texture2D" uid="uid://dd10wkyqcqln1" path="res://assets/sprites/icons and buttons/pause_button_highlight.png" id="8_0rou8"]
+[ext_resource type="Texture2D" uid="uid://crdpu06t0syay" path="res://assets/sprites/icons and buttons/ui_bar.png" id="10_blq6o"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="11_8476c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kgpbc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m5qd3"]
+texture = ExtResource("8_0rou8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxumj"]
+texture = ExtResource("8_0rou8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uah4b"]
+texture = ExtResource("8_0rou8")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4fck"]
+texture = ExtResource("7_ynu8c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0vm74"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynu8c"]
+texture = ExtResource("2_vcehk")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_blq6o"]
 texture = ExtResource("2_vcehk")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_utk7g"]
+texture = ExtResource("2_vcehk")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8476c"]
 texture = ExtResource("2_ypbrs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lykai"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rou8"]
+texture = ExtResource("3_0vm74")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7u2tl"]
 texture = ExtResource("3_0vm74")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_reg7a"]
+texture = ExtResource("3_0vm74")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tql76"]
 texture = ExtResource("4_utk7g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oanbh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d2bnl"]
+texture = ExtResource("5_ynu8c")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vcehk"]
 texture = ExtResource("5_ynu8c")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_od3q5"]
+texture = ExtResource("5_ynu8c")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3egln"]
 texture = ExtResource("6_0rou8")
 
-[node name="PauseUI" type="Control"]
-layout_mode = 3
+[node name="PauseUI" type="CanvasLayer"]
+
+[node name="GameScreen" type="MarginContainer" parent="."]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_0rou8")
 
-[node name="GameScreen" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.555556
-anchor_bottom = 0.555556
-offset_bottom = -3.05176e-05
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_lock_ = true
+[node name="PauseButtonBox" type="BoxContainer" parent="GameScreen"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameScreen"]
+[node name="PauseButtonMargin" type="MarginContainer" parent="GameScreen/PauseButtonBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PauseButton" type="Button" parent="GameScreen/PauseButtonBox/PauseButtonMargin"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxTexture_kgpbc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_m5qd3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dxumj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uah4b")
+theme_override_styles/normal = SubResource("StyleBoxTexture_j4fck")
+
+[node name="PauseMenuMargin" type="MarginContainer" parent="GameScreen"]
+visible = false
+custom_minimum_size = Vector2(700, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ButtonBarVBox" type="VBoxContainer" parent="GameScreen/PauseMenuMargin"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_constants/separation = 30
+theme_override_constants/separation = 0
 
-[node name="PauseMenu" type="MarginContainer" parent="GameScreen/VBoxContainer"]
+[node name="ButtonBarMargin" type="MarginContainer" parent="GameScreen/PauseMenuMargin/ButtonBarVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/margin_bottom = 40
 
-[node name="IconBar" type="NinePatchRect" parent="GameScreen/VBoxContainer/PauseMenu"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="GameScreen/VBoxContainer/PauseMenu/IconBar"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GameScreen/VBoxContainer/PauseMenu/IconBar/MarginContainer"]
+[node name="ButtonBarHBox" type="HBoxContainer" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 15
 
-[node name="SettingsButton" type="Button" parent="GameScreen/VBoxContainer/PauseMenu/IconBar/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(40, 40)
+[node name="SettingsButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxTexture_0vm74")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ynu8c")
 theme_override_styles/hover = SubResource("StyleBoxTexture_blq6o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_utk7g")
 theme_override_styles/normal = SubResource("StyleBoxTexture_8476c")
 
-[node name="ExtraButton2" type="Button" parent="GameScreen/VBoxContainer/PauseMenu/IconBar/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(40, 40)
+[node name="ExtraButton2" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxTexture_lykai")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_0rou8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7u2tl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_reg7a")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tql76")
 
-[node name="ControlButton" type="Button" parent="GameScreen/VBoxContainer/PauseMenu/IconBar/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(40, 40)
+[node name="ControlButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxTexture_oanbh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_d2bnl")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vcehk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_od3q5")
 theme_override_styles/normal = SubResource("StyleBoxTexture_3egln")
 
-[node name="Spacer" type="Control" parent="GameScreen/VBoxContainer"]
+[node name="TextPlateVBox" type="VBoxContainer" parent="GameScreen/PauseMenuMargin"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 30
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(320, 180)
-zoom = Vector2(1.8, 1.8)
+[node name="separator" type="Control" parent="GameScreen/PauseMenuMargin/TextPlateVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextPlate" type="NinePatchRect" parent="GameScreen/PauseMenuMargin/TextPlateVBox"]
+custom_minimum_size = Vector2(550, 125)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_blq6o")
+
+[node name="TextMargin" type="MarginContainer" parent="GameScreen/PauseMenuMargin/TextPlateVBox/TextPlate"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -32.0
+offset_right = 216.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+
+[node name="Text" type="Label" parent="GameScreen/PauseMenuMargin/TextPlateVBox/TextPlate/TextMargin"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_8476c")
+theme_override_font_sizes/font_size = 64
+text = "Game Paused"
+
+[connection signal="pressed" from="GameScreen/PauseButtonBox/PauseButtonMargin/PauseButton" to="GameScreen" method="_on_pause_button_pressed"]
