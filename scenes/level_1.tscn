@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=38 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="7_go7sj"]
 [ext_resource type="Script" uid="uid://clq18rcf3qqqj" path="res://scripts/Enemies/wave_spawner.gd" id="8_2os1m"]
 [ext_resource type="Script" uid="uid://c5v7i37jdw55h" path="res://scripts/Towers/tower_placement.gd" id="8_e3sih"]
+[ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="10_7gny6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("1_2os1m")
@@ -168,27 +169,11 @@ _data = {
 }
 point_count = 16
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcfvj"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2aecg"]
+texture = ExtResource("10_7gny6")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pa8r4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15mv3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3sih"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2y5yt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2os1m"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_go7sj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7gny6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2aecg"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dial"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nomh"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6dial"]
+texture = ExtResource("3_5xbjy")
 
 [node name="map1" type="Node2D"]
 
@@ -263,42 +248,56 @@ polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125
 [node name="WaveSpawner" type="Node2D" parent="."]
 script = ExtResource("8_2os1m")
 
-[node name="StartWave" type="Button" parent="WaveSpawner"]
-offset_left = 286.0
-offset_top = -171.0
-offset_right = 309.0
-offset_bottom = -148.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/focus = SubResource("StyleBoxEmpty_fcfvj")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pa8r4")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_15mv3")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_e3sih")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2y5yt")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_2os1m")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_go7sj")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_7gny6")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_2aecg")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6dial")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_7nomh")
-action_mode = 0
-icon = ExtResource("3_5xbjy")
-icon_alignment = 1
-
 [node name="EnemyDelay" type="Timer" parent="WaveSpawner"]
 wait_time = 5.0
 
-[node name="Tower_Placement" type="Button" parent="." node_paths=PackedStringArray("map_area")]
-offset_left = -308.0
-offset_top = 140.0
-offset_right = -207.0
-offset_bottom = 171.0
+[node name="Start Button" type="CanvasLayer" parent="."]
+follow_viewport_scale = 1.8
+
+[node name="MarginContainer" type="MarginContainer" parent="Start Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Start Button/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Start Button/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="StartWave" type="Button" parent="Start Button/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_2aecg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6dial")
+action_mode = 0
+icon_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Tower_Placement" type="Button" parent="CanvasLayer" node_paths=PackedStringArray("map_area")]
+offset_left = 38.0
+offset_top = 578.0
+offset_right = 150.0
+offset_bottom = 609.0
 theme_override_fonts/font = ExtResource("7_15mv3")
 text = "Place Tower"
 script = ExtResource("8_e3sih")
-map_area = NodePath("../Area2D")
+map_area = NodePath("../../Area2D")
 tower_type = "Squirel"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
-[connection signal="button_down" from="WaveSpawner/StartWave" to="WaveSpawner" method="_on_start_wave"]
 [connection signal="timeout" from="WaveSpawner/EnemyDelay" to="WaveSpawner" method="_on_enemy_delay_timeout"]
+[connection signal="button_down" from="Start Button/MarginContainer/VBoxContainer/HBoxContainer/StartWave" to="WaveSpawner" method="_on_start_wave"]

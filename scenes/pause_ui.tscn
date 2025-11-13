@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://ynetxm1wdkoc"]
+
+[ext_resource type="Texture2D" uid="uid://pfssqwf31dm7" path="res://assets/sprites/icons and buttons/settings_button_highlighted.png" id="2_vcehk"]
+[ext_resource type="Texture2D" uid="uid://ywnxvtgi724h" path="res://assets/sprites/icons and buttons/settings_button_cropped.png" id="2_ypbrs"]
+[ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="3_0vm74"]
+[ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="4_utk7g"]
+[ext_resource type="Texture2D" uid="uid://vyejon8a8wc1" path="res://assets/sprites/icons and buttons/control_button_highlighted.png" id="5_ynu8c"]
+[ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="6_0rou8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_blq6o"]
+texture = ExtResource("2_vcehk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8476c"]
+texture = ExtResource("2_ypbrs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7u2tl"]
+texture = ExtResource("3_0vm74")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tql76"]
+texture = ExtResource("4_utk7g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vcehk"]
+texture = ExtResource("5_ynu8c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3egln"]
+texture = ExtResource("6_0rou8")
+
+[node name="PauseUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameScreen" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.555556
+anchor_bottom = 0.555556
+offset_bottom = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameScreen"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 30
+
+[node name="PauseMenu" type="MarginContainer" parent="GameScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="IconBar" type="NinePatchRect" parent="GameScreen/VBoxContainer/PauseMenu"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="GameScreen/VBoxContainer/PauseMenu/IconBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameScreen/VBoxContainer/PauseMenu/IconBar/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="SettingsButton" type="Button" parent="GameScreen/VBoxContainer/PauseMenu/IconBar/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_blq6o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8476c")
+
+[node name="ExtraButton2" type="Button" parent="GameScreen/VBoxContainer/PauseMenu/IconBar/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_7u2tl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tql76")
+
+[node name="ControlButton" type="Button" parent="GameScreen/VBoxContainer/PauseMenu/IconBar/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_vcehk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3egln")
+
+[node name="Spacer" type="Control" parent="GameScreen/VBoxContainer"]
+layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+zoom = Vector2(1.8, 1.8)

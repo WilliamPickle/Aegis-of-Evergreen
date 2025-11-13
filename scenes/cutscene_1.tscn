@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://j8cwmtn45ixk"]
+[gd_scene load_steps=12 format=3 uid="uid://j8cwmtn45ixk"]
 
 [ext_resource type="Texture2D" uid="uid://5df1ywuoeu2p" path="res://assets/sprites/cutscenes/level_1/Space.png" id="1_6ds4i"]
 [ext_resource type="Script" uid="uid://dvv5nga2g61av" path="res://scripts/cutscene_script.gd" id="1_wname"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bix6t2nm7oyo1" path="res://assets/sprites/cutscenes/level_1/Space Blur.png" id="2_u7sor"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="3_kteqr"]
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/icon_script.gd" id="4_y258h"]
+[ext_resource type="Texture2D" uid="uid://musdhoph61ug" path="res://assets/sprites/cutscenes/level_1/Gojo Reference.png" id="7_kteqr"]
+[ext_resource type="Texture2D" uid="uid://sil00a081mv4" path="res://assets/sprites/cutscenes/level_1/Standoff.png" id="8_y258h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5jx5"]
 
@@ -16,7 +18,7 @@
 [node name="CutScene1" type="Node2D" node_paths=PackedStringArray("camera", "next_button", "skip_button")]
 script = ExtResource("1_wname")
 wait_time = 2.0
-max_slides = 2
+max_slides = 4
 camera = NodePath("Camera2D")
 next_button = NodePath("Camera2D/Next")
 skip_button = NodePath("Camera2D/Skip")
@@ -103,3 +105,11 @@ texture = ExtResource("1_6ds4i")
 [node name="SpaceBlur" type="Sprite2D" parent="."]
 position = Vector2(320, 0)
 texture = ExtResource("2_u7sor")
+
+[node name="GojoReference" type="Sprite2D" parent="."]
+position = Vector2(960, 0)
+texture = ExtResource("7_kteqr")
+
+[node name="Standoff" type="Sprite2D" parent="."]
+position = Vector2(640, 0)
+texture = ExtResource("8_y258h")
