@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 class_name Icon
 
 static var ui_open := false

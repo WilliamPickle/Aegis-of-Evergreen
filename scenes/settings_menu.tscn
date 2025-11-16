@@ -1,26 +1,19 @@
-[gd_scene load_steps=30 format=3 uid="uid://rlm06c0lld5e"]
+[gd_scene load_steps=23 format=3 uid="uid://rlm06c0lld5e"]
 
 [ext_resource type="Script" uid="uid://dd56ng05gs51w" path="res://scripts/UI/settings_script.gd" id="1_fb6cq"]
 [ext_resource type="Texture2D" uid="uid://c8sm4hs6h6lcs" path="res://assets/sprites/settings screen/settings_back_v1.png" id="2_wswnh"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="3_lwwgp"]
 [ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="4_2ctot"]
+[ext_resource type="Texture2D" uid="uid://coqpl0tt4bms5" path="res://assets/sprites/icons and buttons/back_button_highlighted.png" id="4_puhno"]
 [ext_resource type="Texture2D" uid="uid://bg6t2oqf4ht45" path="res://assets/sprites/settings screen/Wooden Slider R2 fixed.png" id="5_bgjg7"]
 [ext_resource type="Script" uid="uid://h2jq8s83khk1" path="res://scripts/UI/back_button_script.gd" id="5_lwwgp"]
 [ext_resource type="Texture2D" uid="uid://dwwcp2ou4srep" path="res://assets/sprites/settings screen/settings screen.png" id="6_48ojb"]
-[ext_resource type="Texture2D" uid="uid://4ve1wpx4pw5q" path="res://assets/sprites/settings screen/settings_textbox_v1.png" id="8_fb6cq"]
+[ext_resource type="Texture2D" uid="uid://cjkk5ket3fgtr" path="res://assets/sprites/settings screen/Wooden Slider Button Cropped.png" id="7_n0fy7"]
+[ext_resource type="Texture2D" uid="uid://bfnv5d5fmfpgg" path="res://assets/sprites/settings screen/wooden_slider_button_highlighted.png" id="8_jpbdv"]
 [ext_resource type="AudioStream" uid="uid://drioqjvllq6lr" path="res://assets/music/TrapFunk&Alivio - o Biicho [Thematic].mp3" id="10_2ctot"]
+[ext_resource type="Texture2D" uid="uid://d3fwy43ntjcre" path="res://assets/sprites/settings screen/bottom_button_settings.png" id="10_jpbdv"]
+[ext_resource type="Texture2D" uid="uid://ckwoxpfpals5n" path="res://assets/sprites/settings screen/bottom_button_settings_highlighted.png" id="11_jpbdv"]
 [ext_resource type="AudioStream" uid="uid://dul6qla1ntynw" path="res://assets/music/Kabwasa - Soul Sing [Thematic].mp3" id="11_jrqig"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n35ux"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n35ux"]
-region = Rect2(498, 141, 26, 26)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fb6cq"]
-region = Rect2(498, 141, 26, 26)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_puhno"]
-region = Rect2(498, 141, 26, 26)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fb6cq"]
 
@@ -32,32 +25,11 @@ region = Rect2(498, 141, 26, 26)
 atlas = ExtResource("5_bgjg7")
 region = Rect2(116, 166, 406, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ctot"]
-region = Rect2(498, 141, 26, 26)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_75x6d"]
-region = Rect2(498, 141, 26, 26)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x0dr5"]
-region = Rect2(498, 141, 26, 26)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrqig"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdgfw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vymnv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jpbdv"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0fy7"]
-atlas = ExtResource("8_fb6cq")
-region = Rect2(25, 136, 128, 24)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puhno"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jpbdv"]
-atlas = ExtResource("8_fb6cq")
-region = Rect2(25, 136, 128, 24)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75x6d"]
 
@@ -72,7 +44,7 @@ zoom = Vector2(3.6, 3.6)
 texture = ExtResource("2_wswnh")
 metadata/_edit_lock_ = true
 
-[node name="BackButton" type="Button" parent="Background"]
+[node name="BackButton" type="TextureButton" parent="Background"]
 z_index = 10
 offset_left = -160.0
 offset_top = -90.0
@@ -80,22 +52,10 @@ offset_right = -137.0
 offset_bottom = -67.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("3_lwwgp")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_n35ux")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_n35ux")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_n35ux")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_n35ux")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_n35ux")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_n35ux")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_n35ux")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_n35ux")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_n35ux")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n35ux")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_n35ux")
-icon = ExtResource("4_2ctot")
-icon_alignment = 1
-vertical_icon_alignment = 2
+texture_normal = ExtResource("4_2ctot")
+texture_pressed = ExtResource("4_2ctot")
+texture_hover = ExtResource("4_puhno")
+texture_disabled = ExtResource("4_2ctot")
 script = ExtResource("5_lwwgp")
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 metadata/_edit_use_anchors_ = true
@@ -110,9 +70,9 @@ offset_left = -57.0
 offset_top = -27.0
 offset_right = 140.0
 offset_bottom = -1.0
-theme_override_icons/grabber = SubResource("AtlasTexture_n35ux")
-theme_override_icons/grabber_highlight = SubResource("AtlasTexture_fb6cq")
-theme_override_icons/grabber_disabled = SubResource("AtlasTexture_puhno")
+theme_override_icons/grabber = ExtResource("7_n0fy7")
+theme_override_icons/grabber_highlight = ExtResource("8_jpbdv")
+theme_override_icons/grabber_disabled = ExtResource("7_n0fy7")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_fb6cq")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_2ctot")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_n0fy7")
@@ -133,9 +93,9 @@ offset_top = -59.0
 offset_right = 140.0
 offset_bottom = -33.0
 theme_override_constants/grabber_offset = 0
-theme_override_icons/grabber = SubResource("AtlasTexture_2ctot")
-theme_override_icons/grabber_highlight = SubResource("AtlasTexture_75x6d")
-theme_override_icons/grabber_disabled = SubResource("AtlasTexture_x0dr5")
+theme_override_icons/grabber = ExtResource("7_n0fy7")
+theme_override_icons/grabber_highlight = ExtResource("8_jpbdv")
+theme_override_icons/grabber_disabled = ExtResource("7_n0fy7")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_jrqig")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_gdgfw")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vymnv")
@@ -151,41 +111,25 @@ texture = ExtResource("5_bgjg7")
 region_enabled = true
 region_rect = Rect2(116, 166, 406, 28)
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 offset_left = -135.0
 offset_top = 46.0
 offset_right = -7.0
 offset_bottom = 70.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_jpbdv")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_jpbdv")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jpbdv")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_jpbdv")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_jpbdv")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jpbdv")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_jpbdv")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jpbdv")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_jpbdv")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_jpbdv")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jpbdv")
-icon = SubResource("AtlasTexture_n0fy7")
+texture_normal = ExtResource("10_jpbdv")
+texture_pressed = ExtResource("10_jpbdv")
+texture_hover = ExtResource("11_jpbdv")
+texture_disabled = ExtResource("10_jpbdv")
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button2" type="TextureButton" parent="."]
 offset_left = 4.0
 offset_top = 46.0
 offset_right = 132.0
 offset_bottom = 70.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_puhno")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_puhno")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_puhno")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_puhno")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_puhno")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_puhno")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_puhno")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_puhno")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_puhno")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_puhno")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_puhno")
-icon = SubResource("AtlasTexture_jpbdv")
+texture_normal = ExtResource("10_jpbdv")
+texture_pressed = ExtResource("10_jpbdv")
+texture_hover = ExtResource("11_jpbdv")
+texture_disabled = ExtResource("10_jpbdv")
 
 [node name="TextEdit" type="RichTextLabel" parent="."]
 offset_left = -134.0

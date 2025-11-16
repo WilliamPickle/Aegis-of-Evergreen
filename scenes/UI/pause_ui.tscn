@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ynetxm1wdkoc"]
+[gd_scene load_steps=23 format=3 uid="uid://ynetxm1wdkoc"]
 
 [ext_resource type="Script" uid="uid://bey1v7ikgg2mg" path="res://scripts/UI/pause_ui.gd" id="1_0rou8"]
 [ext_resource type="Texture2D" uid="uid://pfssqwf31dm7" path="res://assets/sprites/icons and buttons/settings_button_highlighted.png" id="2_vcehk"]
@@ -28,22 +28,6 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4fck"]
 texture = ExtResource("7_ynu8c")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0vm74"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynu8c"]
-texture = ExtResource("2_vcehk")
-modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_blq6o"]
-texture = ExtResource("2_vcehk")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_utk7g"]
-texture = ExtResource("2_vcehk")
-modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8476c"]
-texture = ExtResource("2_ypbrs")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lykai"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rou8"]
@@ -59,22 +43,6 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tql76"]
 texture = ExtResource("4_utk7g")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oanbh"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d2bnl"]
-texture = ExtResource("5_ynu8c")
-modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vcehk"]
-texture = ExtResource("5_ynu8c")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_od3q5"]
-texture = ExtResource("5_ynu8c")
-modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3egln"]
-texture = ExtResource("6_0rou8")
 
 [node name="PauseUI" type="CanvasLayer"]
 
@@ -136,16 +104,15 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 15
 
-[node name="SettingsButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
+[node name="SettingsButton" type="TextureButton" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/focus = SubResource("StyleBoxTexture_0vm74")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ynu8c")
-theme_override_styles/hover = SubResource("StyleBoxTexture_blq6o")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_utk7g")
-theme_override_styles/normal = SubResource("StyleBoxTexture_8476c")
+texture_normal = ExtResource("2_ypbrs")
+texture_pressed = ExtResource("2_ypbrs")
+texture_hover = ExtResource("2_vcehk")
+texture_disabled = ExtResource("2_ypbrs")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/settings_menu.tscn"
 scene_scale = 2
@@ -162,16 +129,15 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_7u2tl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_reg7a")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tql76")
 
-[node name="ControlButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
+[node name="ControlButton" type="TextureButton" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/focus = SubResource("StyleBoxTexture_oanbh")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_d2bnl")
-theme_override_styles/hover = SubResource("StyleBoxTexture_vcehk")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_od3q5")
-theme_override_styles/normal = SubResource("StyleBoxTexture_3egln")
+texture_normal = ExtResource("6_0rou8")
+texture_pressed = ExtResource("6_0rou8")
+texture_hover = ExtResource("5_ynu8c")
+texture_disabled = ExtResource("6_0rou8")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/test_menu.tscn"
 scene_scale = 2

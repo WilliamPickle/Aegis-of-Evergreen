@@ -4,7 +4,7 @@ class_name Cutscene
 @export var wait_time : float
 @export var max_slides : int
 @export var camera : Camera2D
-@export var next_button : Button
+@export var next_button : TextureButton
 @export var skip_button : Icon
 
 var default_color := Color(1,1,1)
