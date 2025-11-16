@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="7_5byqq"]
 [ext_resource type="Texture2D" uid="uid://ywnxvtgi724h" path="res://assets/sprites/icons and buttons/settings_button_cropped.png" id="9_e58y3"]
 [ext_resource type="Texture2D" uid="uid://vyejon8a8wc1" path="res://assets/sprites/icons and buttons/control_button_highlighted.png" id="9_egh8s"]
-[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/icon_script.gd" id="10_apowk"]
+[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="10_apowk"]
 [ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="11_apowk"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="11_b1kog"]
 [ext_resource type="AudioStream" uid="uid://bs44lh0fvxyuf" path="res://assets/music/Aegis Title Screen.mp3" id="13_egh8s"]
@@ -186,6 +186,7 @@ icon = ExtResource("11_apowk")
 icon_alignment = 1
 vertical_icon_alignment = 2
 script = ExtResource("10_apowk")
+file_path = "res://scenes/test_menu.tscn"
 has_text = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 metadata/_edit_use_anchors_ = true

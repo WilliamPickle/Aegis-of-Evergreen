@@ -1,12 +1,13 @@
-[gd_scene load_steps=32 format=3 uid="uid://ynetxm1wdkoc"]
+[gd_scene load_steps=33 format=3 uid="uid://ynetxm1wdkoc"]
 
-[ext_resource type="Script" uid="uid://bey1v7ikgg2mg" path="res://scenes/game_screen.gd" id="1_0rou8"]
+[ext_resource type="Script" uid="uid://bey1v7ikgg2mg" path="res://scripts/UI/pause_ui.gd" id="1_0rou8"]
 [ext_resource type="Texture2D" uid="uid://pfssqwf31dm7" path="res://assets/sprites/icons and buttons/settings_button_highlighted.png" id="2_vcehk"]
 [ext_resource type="Texture2D" uid="uid://ywnxvtgi724h" path="res://assets/sprites/icons and buttons/settings_button_cropped.png" id="2_ypbrs"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="3_0vm74"]
 [ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="4_utk7g"]
 [ext_resource type="Texture2D" uid="uid://vyejon8a8wc1" path="res://assets/sprites/icons and buttons/control_button_highlighted.png" id="5_ynu8c"]
 [ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="6_0rou8"]
+[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="6_5el4x"]
 [ext_resource type="Texture2D" uid="uid://b7ry4sy340mhg" path="res://assets/sprites/icons and buttons/pause_button.png" id="7_ynu8c"]
 [ext_resource type="Texture2D" uid="uid://dd10wkyqcqln1" path="res://assets/sprites/icons and buttons/pause_button_highlight.png" id="8_0rou8"]
 [ext_resource type="Texture2D" uid="uid://crdpu06t0syay" path="res://assets/sprites/icons and buttons/ui_bar.png" id="10_blq6o"]
@@ -145,6 +146,10 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ynu8c")
 theme_override_styles/hover = SubResource("StyleBoxTexture_blq6o")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_utk7g")
 theme_override_styles/normal = SubResource("StyleBoxTexture_8476c")
+script = ExtResource("6_5el4x")
+file_path = "res://scenes/settings_menu.tscn"
+scene_scale = 2
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
 [node name="ExtraButton2" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
 custom_minimum_size = Vector2(75, 75)
@@ -167,6 +172,10 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_d2bnl")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vcehk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_od3q5")
 theme_override_styles/normal = SubResource("StyleBoxTexture_3egln")
+script = ExtResource("6_5el4x")
+file_path = "res://scenes/test_menu.tscn"
+scene_scale = 2
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
 [node name="TextPlateVBox" type="VBoxContainer" parent="GameScreen/PauseMenuMargin"]
 layout_mode = 2

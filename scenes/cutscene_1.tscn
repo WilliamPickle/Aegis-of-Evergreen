@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="2_2etud"]
 [ext_resource type="Texture2D" uid="uid://bix6t2nm7oyo1" path="res://assets/sprites/cutscenes/level_1/Space Blur.png" id="2_u7sor"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="3_kteqr"]
-[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/icon_script.gd" id="4_y258h"]
+[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="4_y258h"]
 [ext_resource type="Texture2D" uid="uid://musdhoph61ug" path="res://assets/sprites/cutscenes/level_1/Gojo Reference.png" id="7_kteqr"]
 [ext_resource type="Texture2D" uid="uid://sil00a081mv4" path="res://assets/sprites/cutscenes/level_1/Standoff.png" id="8_y258h"]
 

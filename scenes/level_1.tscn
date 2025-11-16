@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://clq18rcf3qqqj" path="res://scripts/Enemies/wave_spawner.gd" id="8_2os1m"]
 [ext_resource type="Script" uid="uid://c5v7i37jdw55h" path="res://scripts/Towers/tower_placement.gd" id="8_e3sih"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="10_7gny6"]
-[ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/pause_ui.tscn" id="14_2aecg"]
+[ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_2aecg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("1_2os1m")

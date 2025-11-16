@@ -6,6 +6,7 @@ static var current_scene_key : String
 @export var file_path : String
 @export var has_text : bool
 @export var new_scene : bool
+@export var scene_scale : int = 1
 
 func _ready() -> void:
 	if has_text:
@@ -25,13 +26,14 @@ func load_icon_scene():
 		return
 	if ui_open:
 		return
-	
 	var new_key = file_path.get_file().get_basename()
 	current_scene_key = new_key
+	
 	if new_scene:
 		SceneLoader.quick_add_scene(file_path, new_key,SceneLoader.current_main_scene)
 		SceneLoader.current_main_scene = new_key
 	else:
 		SceneLoader.tint_scene()
 		SceneLoader.load_scene(file_path, new_key)
+		SceneLoader._current_scenes[new_key].scale = Vector2(scene_scale, scene_scale)
 		ui_open = true

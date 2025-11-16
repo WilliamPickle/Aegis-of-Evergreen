@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmw1rcaenfyvo"]
+
+[ext_resource type="Texture2D" uid="uid://crdpu06t0syay" path="res://assets/sprites/icons and buttons/ui_bar.png" id="1_h1y4h"]
+
+[sub_resource type="Theme" id="Theme_h1y4h"]
+
+[node name="ScrollbarUI" type="CanvasLayer"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 645.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_h1y4h")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="NinePatchRect" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_h1y4h")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10

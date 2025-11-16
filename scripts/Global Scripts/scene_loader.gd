@@ -8,6 +8,9 @@ var _current_scenes = {}
 # Main scenes will only be main_menu, level_1, level_2, level_3.
 var current_main_scene
 
+# For keeping track of whether or not tint_scene() is already in use by another scene
+var layered_menu_exists = false
+
 ## Adds a scene given the file path and key for future refrence.
 func load_scene(file_path : String, new_key : String) -> void:
 	if _current_scenes.has(new_key):
@@ -39,13 +42,22 @@ func change_scene_visibility(key : String, scene_visible : bool) -> void:
 	else:
 		root.remove_child(_current_scenes[key])
 		
-## tint the sprites in a scene
-## by default it tints the main scene
-func tint_scene(key : String = current_main_scene, enable : bool = true) -> void:
-	if enable:
-		_current_scenes[key].modulate = Color(0.5, 0.5, 0.5)
-	else:
-		_current_scenes[key].modulate = Color(1, 1, 1)
+## tint the sprites in a scene.
+## by default it tints the main scene.
+## layered_menu should be true if you're going to have another menu on that menu.
+func tint_scene(key : String = current_main_scene, enable : bool = true, layered_menu : bool = false) -> void:
+	# ex: pause menu should have layered_menu be true because it will have stuff like settings menu overlap. 
+	# Without this, settings menu would undo the tinted background while pause menu is still up
+	if layered_menu:
+		layered_menu_exists = true
+		
+	if layered_menu_exists and layered_menu or !layered_menu_exists:
+		if enable:
+			_current_scenes[key].modulate = Color(0.5, 0.5, 0.5)
+		else:
+			_current_scenes[key].modulate = Color(1, 1, 1)
+			layered_menu_exists = false
+
 
 ## Makes given scene stop functioning while keeping it visible.
 func disable_scene(key : String, disable : bool) -> void:

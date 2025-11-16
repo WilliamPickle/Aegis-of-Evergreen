@@ -1,0 +1,236 @@
+[gd_scene load_steps=30 format=3 uid="uid://bx47kx7p6j7gu"]
+
+[ext_resource type="Script" uid="uid://dd56ng05gs51w" path="res://scripts/UI/settings_script.gd" id="1_baxq8"]
+[ext_resource type="Texture2D" uid="uid://c8sm4hs6h6lcs" path="res://assets/sprites/settings screen/settings_back_v1.png" id="2_j4pr7"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="3_saitu"]
+[ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="4_nyvbg"]
+[ext_resource type="Script" uid="uid://h2jq8s83khk1" path="res://scripts/UI/back_button_script.gd" id="5_rmj77"]
+[ext_resource type="Texture2D" uid="uid://dwwcp2ou4srep" path="res://assets/sprites/settings screen/settings screen.png" id="6_222ck"]
+[ext_resource type="Texture2D" uid="uid://bg6t2oqf4ht45" path="res://assets/sprites/settings screen/Wooden Slider R2 fixed.png" id="7_8vtvt"]
+[ext_resource type="Texture2D" uid="uid://4ve1wpx4pw5q" path="res://assets/sprites/settings screen/settings_textbox_v1.png" id="8_7eqx4"]
+[ext_resource type="AudioStream" uid="uid://drioqjvllq6lr" path="res://assets/music/TrapFunk&Alivio - o Biicho [Thematic].mp3" id="9_f2680"]
+[ext_resource type="AudioStream" uid="uid://dul6qla1ntynw" path="res://assets/music/Kabwasa - Soul Sing [Thematic].mp3" id="10_tuqon"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n35ux"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrqig"]
+atlas = ExtResource("7_8vtvt")
+region = Rect2(116, 166, 406, 28)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75x6d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jpbdv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0fy7"]
+atlas = ExtResource("8_7eqx4")
+region = Rect2(25, 136, 128, 24)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puhno"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpbdv"]
+atlas = ExtResource("8_7eqx4")
+region = Rect2(25, 136, 128, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ctot"]
+region = Rect2(498, 141, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75x6d"]
+region = Rect2(498, 141, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0dr5"]
+region = Rect2(498, 141, 26, 26)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrqig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdgfw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vymnv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n35ux"]
+region = Rect2(498, 141, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb6cq"]
+region = Rect2(498, 141, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puhno"]
+region = Rect2(498, 141, 26, 26)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fb6cq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ctot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n0fy7"]
+
+[node name="test_menu" type="Node2D"]
+process_mode = 3
+modulate = Color(0.0768358, 0.0768358, 0.0768358, 1)
+z_index = 10
+script = ExtResource("1_baxq8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(160, 90)
+texture = ExtResource("2_j4pr7")
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Background"]
+z_index = 10
+offset_left = -160.0
+offset_top = -90.0
+offset_right = -137.0
+offset_bottom = -67.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_saitu")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n35ux")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_n35ux")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_n35ux")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_n35ux")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_n35ux")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_n35ux")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n35ux")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_n35ux")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n35ux")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n35ux")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n35ux")
+icon = ExtResource("4_nyvbg")
+icon_alignment = 1
+vertical_icon_alignment = 2
+script = ExtResource("5_rmj77")
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+texture = ExtResource("6_222ck")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
+z_index = 1
+position = Vector2(201, 76)
+scale = Vector2(0.514778, 0.464286)
+texture = SubResource("AtlasTexture_jrqig")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
+z_index = 1
+position = Vector2(201, 44)
+scale = Vector2(0.514778, 0.464286)
+texture = ExtResource("7_8vtvt")
+region_enabled = true
+region_rect = Rect2(116, 166, 406, 28)
+
+[node name="TextEdit" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 26.0
+offset_top = 40.0
+offset_right = 88.0
+offset_bottom = 48.0
+theme_override_fonts/normal_font = ExtResource("3_saitu")
+theme_override_fonts/mono_font = ExtResource("3_saitu")
+theme_override_fonts/italics_font = ExtResource("3_saitu")
+theme_override_fonts/bold_italics_font = ExtResource("3_saitu")
+theme_override_fonts/bold_font = ExtResource("3_saitu")
+theme_override_font_sizes/normal_font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_75x6d")
+text = "Music Volume"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 70.0
+offset_right = 91.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_saitu")
+theme_override_font_sizes/normal_font_size = 8
+text = "Sound Effects Volume"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 25.0
+offset_top = 136.0
+offset_right = 153.0
+offset_bottom = 160.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jpbdv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_jpbdv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jpbdv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_jpbdv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_jpbdv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jpbdv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jpbdv")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jpbdv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jpbdv")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_jpbdv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jpbdv")
+icon = SubResource("AtlasTexture_n0fy7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 164.0
+offset_top = 136.0
+offset_right = 292.0
+offset_bottom = 160.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_puhno")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_puhno")
+icon = SubResource("AtlasTexture_jpbdv")
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicVolume" type="HSlider" parent="."]
+z_index = 2
+offset_left = 421.0
+offset_top = 122.0
+offset_right = 618.0
+offset_bottom = 148.0
+scale = Vector2(4, 4)
+theme_override_constants/grabber_offset = 0
+theme_override_icons/grabber = SubResource("AtlasTexture_2ctot")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_75x6d")
+theme_override_icons/grabber_disabled = SubResource("AtlasTexture_x0dr5")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_jrqig")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_gdgfw")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vymnv")
+max_value = 1.0
+step = 0.05
+value = 0.5
+metadata/_edit_use_anchors_ = true
+
+[node name="SFXVolume" type="HSlider" parent="."]
+z_index = 2
+offset_left = 421.0
+offset_top = 254.0
+offset_right = 618.0
+offset_bottom = 280.0
+scale = Vector2(4, 4)
+theme_override_icons/grabber = SubResource("AtlasTexture_n35ux")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_fb6cq")
+theme_override_icons/grabber_disabled = SubResource("AtlasTexture_puhno")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_fb6cq")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_2ctot")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_n0fy7")
+max_value = 1.0
+step = 0.05
+value = 0.5
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.6, 3.6)
+
+[node name="TrapFunk&alivio-OBiicho[thematic]" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_f2680")
+autoplay = true
+bus = &"music"
+
+[node name="Kabwasa-SoulSing[thematic]" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_tuqon")
+autoplay = true
+bus = &"sfx"
