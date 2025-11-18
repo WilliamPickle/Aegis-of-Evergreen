@@ -1,10 +1,10 @@
-extends Node2D
+extends Control
 const MUSIC_IDX : int = 2
 const SFX_IDX : int = 1
 const MAX_DB : float = 0.0
 const MIN_DB : float = -40.0
-@onready var music_volume : HSlider = $MusicVolume
-@onready var SFX_volume : HSlider = $SFXVolume
+@export var music_volume : HSlider
+@export var SFX_volume : HSlider
 
 
 

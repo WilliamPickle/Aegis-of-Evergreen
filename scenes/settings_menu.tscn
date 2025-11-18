@@ -8,150 +8,209 @@
 [ext_resource type="Texture2D" uid="uid://bg6t2oqf4ht45" path="res://assets/sprites/settings screen/Wooden Slider R2 fixed.png" id="5_bgjg7"]
 [ext_resource type="Script" uid="uid://h2jq8s83khk1" path="res://scripts/UI/back_button_script.gd" id="5_lwwgp"]
 [ext_resource type="Texture2D" uid="uid://dwwcp2ou4srep" path="res://assets/sprites/settings screen/settings screen.png" id="6_48ojb"]
+[ext_resource type="Texture2D" uid="uid://c3a3dspe4vy07" path="res://assets/sprites/settings screen/slider_cropped.png" id="6_x0dr5"]
 [ext_resource type="Texture2D" uid="uid://cjkk5ket3fgtr" path="res://assets/sprites/settings screen/Wooden Slider Button Cropped.png" id="7_n0fy7"]
 [ext_resource type="Texture2D" uid="uid://bfnv5d5fmfpgg" path="res://assets/sprites/settings screen/wooden_slider_button_highlighted.png" id="8_jpbdv"]
 [ext_resource type="AudioStream" uid="uid://drioqjvllq6lr" path="res://assets/music/TrapFunk&Alivio - o Biicho [Thematic].mp3" id="10_2ctot"]
-[ext_resource type="Texture2D" uid="uid://d3fwy43ntjcre" path="res://assets/sprites/settings screen/bottom_button_settings.png" id="10_jpbdv"]
-[ext_resource type="Texture2D" uid="uid://ckwoxpfpals5n" path="res://assets/sprites/settings screen/bottom_button_settings_highlighted.png" id="11_jpbdv"]
 [ext_resource type="AudioStream" uid="uid://dul6qla1ntynw" path="res://assets/music/Kabwasa - Soul Sing [Thematic].mp3" id="11_jrqig"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fb6cq"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0dr5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ctot"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gdgfw"]
+texture = ExtResource("4_puhno")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n0fy7"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vymnv"]
+texture = ExtResource("4_puhno")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2tyyr"]
+texture = ExtResource("4_puhno")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wambi"]
+texture = ExtResource("4_2ctot")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x0dr5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_khnq6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51alr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrqig"]
 atlas = ExtResource("5_bgjg7")
 region = Rect2(116, 166, 406, 28)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrqig"]
+[node name="SettingsMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 2
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdgfw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vymnv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75x6d"]
-
-[node name="settings_menu" type="Node2D"]
-z_index = 10
+[node name="SettingsAssets2" type="MarginContainer" parent="." node_paths=PackedStringArray("music_volume", "SFX_volume")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 180.0
+offset_right = -320.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_fb6cq")
+music_volume = NodePath("Background/MusicTexture2/MusicVolume")
+SFX_volume = NodePath("Background/SFXTexture/SFXVolume")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.6, 3.6)
-
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="TextureRect" parent="SettingsAssets2"]
+layout_mode = 2
 texture = ExtResource("2_wswnh")
-metadata/_edit_lock_ = true
 
-[node name="BackButton" type="TextureButton" parent="Background"]
+[node name="BackButton" type="Button" parent="SettingsAssets2/Background"]
 z_index = 10
-offset_left = -160.0
-offset_top = -90.0
-offset_right = -137.0
-offset_bottom = -67.0
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+anchor_left = -0.464063
+anchor_top = -0.436111
+anchor_right = -0.464063
+anchor_bottom = -0.436111
+offset_left = 297.0
+offset_top = 157.0
+offset_right = 343.0
+offset_bottom = 203.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("4_2ctot")
-texture_pressed = ExtResource("4_2ctot")
-texture_hover = ExtResource("4_puhno")
-texture_disabled = ExtResource("4_2ctot")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x0dr5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_gdgfw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vymnv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2tyyr")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wambi")
 script = ExtResource("5_lwwgp")
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("6_48ojb")
+[node name="MusicTexture2" type="TextureRect" parent="SettingsAssets2/Background"]
+layout_mode = 2
+offset_left = 200.0
+offset_top = 55.0
+offset_right = 606.0
+offset_bottom = 83.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_x0dr5")
 
-[node name="SFXVolume" type="HSlider" parent="."]
+[node name="MusicVolume" type="HSlider" parent="SettingsAssets2/Background/MusicTexture2"]
 z_index = 2
-offset_left = -57.0
-offset_top = -27.0
-offset_right = 140.0
-offset_bottom = -1.0
+layout_mode = 2
+anchor_left = -0.450739
+anchor_right = -0.450739
+offset_left = 183.0
+offset_top = -6.0
+offset_right = 453.667
+offset_bottom = 20.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_icons/grabber = ExtResource("7_n0fy7")
 theme_override_icons/grabber_highlight = ExtResource("8_jpbdv")
 theme_override_icons/grabber_disabled = ExtResource("7_n0fy7")
-theme_override_styles/slider = SubResource("StyleBoxEmpty_fb6cq")
-theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_2ctot")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_n0fy7")
+theme_override_styles/slider = SubResource("StyleBoxTexture_x0dr5")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_khnq6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_51alr")
 max_value = 1.0
 step = 0.05
 value = 0.5
+metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="SFXTexture" type="TextureRect" parent="SettingsAssets2/Background"]
+layout_mode = 2
+offset_left = 200.0
+offset_top = 103.0
+offset_right = 606.0
+offset_bottom = 131.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_x0dr5")
+
+[node name="SFXVolume" type="HSlider" parent="SettingsAssets2/Background/SFXTexture"]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.450739
+anchor_right = -0.450739
+offset_left = 183.0
+offset_top = -6.0
+offset_right = 453.667
+offset_bottom = 20.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("7_n0fy7")
+theme_override_icons/grabber_highlight = ExtResource("8_jpbdv")
+theme_override_icons/grabber_disabled = ExtResource("7_n0fy7")
+theme_override_styles/slider = SubResource("StyleBoxTexture_x0dr5")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_khnq6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_51alr")
+max_value = 1.0
+step = 0.05
+value = 0.5
+metadata/_edit_use_anchors_ = true
+
+[node name="SFXText" type="RichTextLabel" parent="SettingsAssets2/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.110937
+anchor_top = 0.286111
+anchor_right = 0.320313
+anchor_bottom = 0.377778
+offset_right = 1.0
+theme_override_fonts/normal_font = ExtResource("3_lwwgp")
+theme_override_font_sizes/normal_font_size = 16
+text = "Sound Effects Volume"
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicText" type="RichTextLabel" parent="SettingsAssets2/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0908325
+anchor_top = 0.138773
+anchor_right = 0.300208
+anchor_bottom = 0.23044
+offset_left = 12.8672
+offset_top = 5.04167
+offset_right = 13.8672
+offset_bottom = 5.04167
+theme_override_fonts/normal_font = ExtResource("3_lwwgp")
+theme_override_font_sizes/normal_font_size = 16
+text = "Music
+Volume"
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(943, 519)
+texture = ExtResource("2_wswnh")
+
+[node name="TestBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(320, 180)
+texture = ExtResource("6_48ojb")
+
+[node name="SFXBar" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
-position = Vector2(41, -14)
+position = Vector2(984, 505)
 scale = Vector2(0.514778, 0.464286)
 texture = SubResource("AtlasTexture_jrqig")
 
-[node name="MusicVolume" type="HSlider" parent="."]
-z_index = 2
-offset_left = -57.0
-offset_top = -59.0
-offset_right = 140.0
-offset_bottom = -33.0
-theme_override_constants/grabber_offset = 0
-theme_override_icons/grabber = ExtResource("7_n0fy7")
-theme_override_icons/grabber_highlight = ExtResource("8_jpbdv")
-theme_override_icons/grabber_disabled = ExtResource("7_n0fy7")
-theme_override_styles/slider = SubResource("StyleBoxEmpty_jrqig")
-theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_gdgfw")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vymnv")
-max_value = 1.0
-step = 0.05
-value = 0.5
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="MusicBar" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
-position = Vector2(41, -46)
+position = Vector2(984, 473)
 scale = Vector2(0.514778, 0.464286)
 texture = ExtResource("5_bgjg7")
 region_enabled = true
 region_rect = Rect2(116, 166, 406, 28)
 
-[node name="Button" type="TextureButton" parent="."]
-offset_left = -135.0
-offset_top = 46.0
-offset_right = -7.0
-offset_bottom = 70.0
-texture_normal = ExtResource("10_jpbdv")
-texture_pressed = ExtResource("10_jpbdv")
-texture_hover = ExtResource("11_jpbdv")
-texture_disabled = ExtResource("10_jpbdv")
-
-[node name="Button2" type="TextureButton" parent="."]
-offset_left = 4.0
-offset_top = 46.0
-offset_right = 132.0
-offset_bottom = 70.0
-texture_normal = ExtResource("10_jpbdv")
-texture_pressed = ExtResource("10_jpbdv")
-texture_hover = ExtResource("11_jpbdv")
-texture_disabled = ExtResource("10_jpbdv")
-
-[node name="TextEdit" type="RichTextLabel" parent="."]
-offset_left = -134.0
-offset_top = -50.0
-offset_right = -72.0
-offset_bottom = -42.0
-theme_override_fonts/normal_font = ExtResource("3_lwwgp")
-theme_override_fonts/mono_font = ExtResource("3_lwwgp")
-theme_override_fonts/italics_font = ExtResource("3_lwwgp")
-theme_override_fonts/bold_italics_font = ExtResource("3_lwwgp")
-theme_override_fonts/bold_font = ExtResource("3_lwwgp")
-theme_override_font_sizes/normal_font_size = 8
-theme_override_styles/normal = SubResource("StyleBoxEmpty_75x6d")
-text = "Music Volume"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -132.0
-offset_top = -20.0
-offset_right = -69.0
-theme_override_fonts/normal_font = ExtResource("3_lwwgp")
-theme_override_font_sizes/normal_font_size = 8
-text = "Sound Effects Volume"
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+zoom = Vector2(3.6, 3.6)
 
 [node name="TrapFunk&alivio-OBiicho[thematic]" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_2ctot")
@@ -163,4 +222,37 @@ stream = ExtResource("11_jrqig")
 autoplay = true
 bus = &"sfx"
 
-[connection signal="drag_ended" from="MusicVolume" to="." method="_on_master_volume_drag_ended"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_wswnh")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://j8cwmtn45ixk"]
+[gd_scene load_steps=24 format=3 uid="uid://j8cwmtn45ixk"]
 
 [ext_resource type="Texture2D" uid="uid://5df1ywuoeu2p" path="res://assets/sprites/cutscenes/level_1/Space.png" id="1_6ds4i"]
 [ext_resource type="Script" uid="uid://dvv5nga2g61av" path="res://scripts/cutscene_script.gd" id="1_wname"]
@@ -12,6 +12,44 @@
 [ext_resource type="Texture2D" uid="uid://musdhoph61ug" path="res://assets/sprites/cutscenes/level_1/Gojo Reference.png" id="7_kteqr"]
 [ext_resource type="Texture2D" uid="uid://sil00a081mv4" path="res://assets/sprites/cutscenes/level_1/Standoff.png" id="8_y258h"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbnep"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfxas"]
+texture = ExtResource("2_2etud")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hd4lr"]
+texture = ExtResource("3_lbnep")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ubkd"]
+texture = ExtResource("3_lbnep")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud2vv"]
+texture = ExtResource("3_lbnep")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_simcy"]
+texture = ExtResource("2_2etud")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y258h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2gc3"]
+texture = ExtResource("3_8i0x7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8i0x7"]
+texture = ExtResource("4_lbnep")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbnep"]
+texture = ExtResource("4_lbnep")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1p1lm"]
+texture = ExtResource("4_lbnep")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a35cd"]
+texture = ExtResource("3_8i0x7")
+
 [node name="CutScene1" type="Node2D" node_paths=PackedStringArray("camera", "next_button", "skip_button")]
 script = ExtResource("1_wname")
 wait_time = 1.0
@@ -24,20 +62,22 @@ metadata/_custom_type_script = "uid://dvv5nga2g61av"
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="Next" type="TextureButton" parent="Camera2D"]
+[node name="Next" type="Button" parent="Camera2D"]
 modulate = Color(0, 0, 0, 1)
 z_index = 10
 offset_left = 130.0
 offset_top = 62.0
 offset_right = 153.0
 offset_bottom = 85.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lbnep")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_mfxas")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hd4lr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8ubkd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ud2vv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_simcy")
 disabled = true
-texture_normal = ExtResource("2_2etud")
-texture_pressed = ExtResource("2_2etud")
-texture_hover = ExtResource("3_lbnep")
-texture_disabled = ExtResource("2_2etud")
 
-[node name="Skip" type="TextureButton" parent="Camera2D"]
+[node name="Skip" type="Button" parent="Camera2D"]
 modulate = Color(0, 0, 0, 1)
 z_index = 10
 offset_left = 103.0
@@ -46,11 +86,13 @@ offset_right = 126.0
 offset_bottom = 85.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y258h")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_t2gc3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8i0x7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lbnep")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1p1lm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_a35cd")
 disabled = true
-texture_normal = ExtResource("3_8i0x7")
-texture_pressed = ExtResource("3_8i0x7")
-texture_hover = ExtResource("4_lbnep")
-texture_disabled = ExtResource("3_8i0x7")
 script = ExtResource("4_y258h")
 file_path = "res://scenes/level_1.tscn"
 has_text = true

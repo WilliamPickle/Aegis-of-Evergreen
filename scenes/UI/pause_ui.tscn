@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ynetxm1wdkoc"]
+[gd_scene load_steps=33 format=3 uid="uid://ynetxm1wdkoc"]
 
 [ext_resource type="Script" uid="uid://bey1v7ikgg2mg" path="res://scripts/UI/pause_ui.gd" id="1_0rou8"]
 [ext_resource type="Texture2D" uid="uid://pfssqwf31dm7" path="res://assets/sprites/icons and buttons/settings_button_highlighted.png" id="2_vcehk"]
@@ -28,6 +28,22 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4fck"]
 texture = ExtResource("7_ynu8c")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5el4x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rbm5a"]
+texture = ExtResource("2_vcehk")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1s3a"]
+texture = ExtResource("2_vcehk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6hyd5"]
+texture = ExtResource("2_vcehk")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3paxm"]
+texture = ExtResource("2_ypbrs")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lykai"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rou8"]
@@ -43,6 +59,22 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tql76"]
 texture = ExtResource("4_utk7g")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrevp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hsoxr"]
+texture = ExtResource("5_ynu8c")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_147f5"]
+texture = ExtResource("5_ynu8c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sv6pk"]
+texture = ExtResource("5_ynu8c")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ctmt"]
+texture = ExtResource("6_0rou8")
 
 [node name="PauseUI" type="CanvasLayer"]
 
@@ -104,18 +136,19 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 15
 
-[node name="SettingsButton" type="TextureButton" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
+[node name="SettingsButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("2_ypbrs")
-texture_pressed = ExtResource("2_ypbrs")
-texture_hover = ExtResource("2_vcehk")
-texture_disabled = ExtResource("2_ypbrs")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5el4x")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_rbm5a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c1s3a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6hyd5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3paxm")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/settings_menu.tscn"
-scene_scale = 2
+scene_scale = 2.0
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
 [node name="ExtraButton2" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
@@ -129,18 +162,19 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_7u2tl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_reg7a")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tql76")
 
-[node name="ControlButton" type="TextureButton" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
+[node name="ControlButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("6_0rou8")
-texture_pressed = ExtResource("6_0rou8")
-texture_hover = ExtResource("5_ynu8c")
-texture_disabled = ExtResource("6_0rou8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nrevp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hsoxr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_147f5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sv6pk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4ctmt")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/test_menu.tscn"
-scene_scale = 2
+scene_scale = 2.0
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
 [node name="TextPlateVBox" type="VBoxContainer" parent="GameScreen/PauseMenuMargin"]

@@ -1,18 +1,19 @@
-extends TextureButton
+extends Button
 class_name Icon
 
 static var ui_open := false
 static var current_scene_key : String
+var icon_scene
 @export var file_path : String
 @export var has_text : bool
 @export var new_scene : bool
-@export var scene_scale : int = 1
+@export var scene_scale : float = 1
 
 func _ready() -> void:
 	if has_text:
 		mouse_entered.connect(enable_text)
 		mouse_exited.connect(enable_text.bind(false))
-	button_down.connect(load_icon_scene)
+	button_up.connect(load_icon_scene)
 	
 # enabled the text's visibility
 func enable_text(enable : bool = true):
@@ -35,5 +36,7 @@ func load_icon_scene():
 	else:
 		SceneLoader.tint_scene()
 		SceneLoader.load_scene(file_path, new_key)
-		SceneLoader._current_scenes[new_key].scale = Vector2(scene_scale, scene_scale)
+		icon_scene = SceneLoader._current_scenes[new_key].get_child(0)
+		icon_scene.pivot_offset = Vector2(icon_scene.size / 2)
+		icon_scene.scale = Vector2(scene_scale, scene_scale)
 		ui_open = true
