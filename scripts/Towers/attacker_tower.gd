@@ -38,7 +38,7 @@ func _draw() -> void:
 		draw_line(Vector2.ZERO, (global_position - targeted_enemy.global_position)*-1, Color(0,0,0), 2)
 
 # Just for visual will be deleted later.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if targeted_enemy != null:
 		queue_redraw()
 
@@ -57,16 +57,19 @@ func update_enemy_list() -> void:
 		_attack_cooldown.stop()
 		range_area.area_entered.connect(first_enemy_entered)
 		targeted_enemy = null
+		queue_redraw()
 	# Set to the corresponding enemy
 	else:
 		#print("Constant enemy detection")
-		set_target()
+		await set_target()
+		attack()
 
 ## When tower checks for enemies in its range, and detects 0,
 ## the tower will use defualt area_entered signal.
 func first_enemy_entered(enemy : Area2D):
 	# Disable as now there is an enemy to detect
 	range_area.area_entered.disconnect(first_enemy_entered)
+	targeted_enemy = enemy
 	# Cool down already ran previously, so we are okay to
 	# perform an immidiate attack. 
 	attack()

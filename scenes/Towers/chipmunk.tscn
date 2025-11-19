@@ -12,7 +12,7 @@ radius = 8.06226
 radius = 64.1249
 
 [node name="Chipmunk" type="Area2D"]
-z_index = 10
+z_index = 7
 input_pickable = false
 linear_damp = 0.0
 angular_damp = 0.0
@@ -47,7 +47,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n4ef5")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_n4ef5")
 
 [node name="AttackCoolDOwn" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.5
 
 [node name="Range" type="Area2D" parent="."]
 collision_layer = 4
