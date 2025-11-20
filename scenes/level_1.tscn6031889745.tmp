@@ -305,7 +305,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_7nomh")
 text = "Place Tower"
 script = ExtResource("8_e3sih")
 map_area = NodePath("../../PlacementCollisions")
-tower_type = "Chipmunk"
+tower_type = "Squirel"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="PauseUI" parent="." instance=ExtResource("14_2aecg")]

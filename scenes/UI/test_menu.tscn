@@ -1,34 +1,34 @@
 [gd_scene load_steps=23 format=3 uid="uid://b2mj5pmq0ytgp"]
 
-[ext_resource type="Script" uid="uid://dd56ng05gs51w" path="res://scripts/UI/settings_script.gd" id="1_baxq8"]
-[ext_resource type="Texture2D" uid="uid://c8sm4hs6h6lcs" path="res://assets/sprites/settings screen/settings_back_v1.png" id="2_j4pr7"]
-[ext_resource type="Texture2D" uid="uid://coqpl0tt4bms5" path="res://assets/sprites/icons and buttons/back_button_highlighted.png" id="3_nyvbg"]
-[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="3_saitu"]
-[ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="4_nyvbg"]
-[ext_resource type="Script" uid="uid://h2jq8s83khk1" path="res://scripts/UI/back_button_script.gd" id="5_rmj77"]
-[ext_resource type="Texture2D" uid="uid://dwwcp2ou4srep" path="res://assets/sprites/settings screen/settings screen.png" id="6_222ck"]
-[ext_resource type="Texture2D" uid="uid://c3a3dspe4vy07" path="res://assets/sprites/settings screen/slider_cropped.png" id="6_rmj77"]
-[ext_resource type="Texture2D" uid="uid://bg6t2oqf4ht45" path="res://assets/sprites/settings screen/Wooden Slider R2 fixed.png" id="7_8vtvt"]
-[ext_resource type="Texture2D" uid="uid://cjkk5ket3fgtr" path="res://assets/sprites/settings screen/Wooden Slider Button Cropped.png" id="7_222ck"]
-[ext_resource type="Texture2D" uid="uid://bfnv5d5fmfpgg" path="res://assets/sprites/settings screen/wooden_slider_button_highlighted.png" id="8_8vtvt"]
-[ext_resource type="AudioStream" uid="uid://drioqjvllq6lr" path="res://assets/music/TrapFunk&Alivio - o Biicho [Thematic].mp3" id="9_f2680"]
-[ext_resource type="AudioStream" uid="uid://dul6qla1ntynw" path="res://assets/music/Kabwasa - Soul Sing [Thematic].mp3" id="10_tuqon"]
+[ext_resource type="Script" uid="uid://dd56ng05gs51w" path="res://scripts/UI/settings_script.gd" id="1_72lnf"]
+[ext_resource type="Texture2D" uid="uid://c8sm4hs6h6lcs" path="res://assets/sprites/settings screen/settings_back_v1.png" id="2_llsew"]
+[ext_resource type="Texture2D" uid="uid://coqpl0tt4bms5" path="res://assets/sprites/icons and buttons/back_button_highlighted.png" id="3_0gjax"]
+[ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="4_hi4sp"]
+[ext_resource type="Script" uid="uid://h2jq8s83khk1" path="res://scripts/UI/back_button_script.gd" id="5_vltnu"]
+[ext_resource type="Texture2D" uid="uid://c3a3dspe4vy07" path="res://assets/sprites/settings screen/slider_cropped.png" id="6_2jxoy"]
+[ext_resource type="Texture2D" uid="uid://cjkk5ket3fgtr" path="res://assets/sprites/settings screen/Wooden Slider Button Cropped.png" id="7_etagw"]
+[ext_resource type="Texture2D" uid="uid://bfnv5d5fmfpgg" path="res://assets/sprites/settings screen/wooden_slider_button_highlighted.png" id="8_hmlvv"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="9_5m20f"]
+[ext_resource type="Texture2D" uid="uid://dwwcp2ou4srep" path="res://assets/sprites/settings screen/settings screen.png" id="10_e2wug"]
+[ext_resource type="Texture2D" uid="uid://bg6t2oqf4ht45" path="res://assets/sprites/settings screen/Wooden Slider R2 fixed.png" id="11_qqp7j"]
+[ext_resource type="AudioStream" uid="uid://drioqjvllq6lr" path="res://assets/music/TrapFunk&Alivio - o Biicho [Thematic].mp3" id="12_6iuu2"]
+[ext_resource type="AudioStream" uid="uid://dul6qla1ntynw" path="res://assets/music/Kabwasa - Soul Sing [Thematic].mp3" id="13_2ug15"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0dr5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gdgfw"]
-texture = ExtResource("3_nyvbg")
+texture = ExtResource("3_0gjax")
 modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vymnv"]
-texture = ExtResource("3_nyvbg")
+texture = ExtResource("3_0gjax")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2tyyr"]
-texture = ExtResource("3_nyvbg")
+texture = ExtResource("3_0gjax")
 modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wambi"]
-texture = ExtResource("4_nyvbg")
+texture = ExtResource("4_hi4sp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x0dr5"]
 
@@ -37,7 +37,7 @@ texture = ExtResource("4_nyvbg")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51alr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrqig"]
-atlas = ExtResource("7_8vtvt")
+atlas = ExtResource("11_qqp7j")
 region = Rect2(116, 166, 406, 28)
 
 [node name="TestMenu" type="CanvasLayer"]
@@ -55,13 +55,13 @@ offset_right = -320.0
 offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_baxq8")
+script = ExtResource("1_72lnf")
 music_volume = NodePath("Background/MusicTexture2/MusicVolume")
 SFX_volume = NodePath("Background/SFXTexture/SFXVolume")
 
 [node name="Background" type="TextureRect" parent="SettingsAssets2"]
 layout_mode = 2
-texture = ExtResource("2_j4pr7")
+texture = ExtResource("2_llsew")
 
 [node name="BackButton" type="Button" parent="SettingsAssets2/Background"]
 z_index = 10
@@ -82,7 +82,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_gdgfw")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vymnv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2tyyr")
 theme_override_styles/normal = SubResource("StyleBoxTexture_wambi")
-script = ExtResource("5_rmj77")
+script = ExtResource("5_vltnu")
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 metadata/_edit_use_anchors_ = true
 
@@ -94,7 +94,7 @@ offset_right = 606.0
 offset_bottom = 83.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("6_rmj77")
+texture = ExtResource("6_2jxoy")
 
 [node name="MusicVolume" type="HSlider" parent="SettingsAssets2/Background/MusicTexture2"]
 z_index = 2
@@ -108,9 +108,9 @@ offset_bottom = 20.0
 scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_icons/grabber = ExtResource("7_222ck")
-theme_override_icons/grabber_highlight = ExtResource("8_8vtvt")
-theme_override_icons/grabber_disabled = ExtResource("7_222ck")
+theme_override_icons/grabber = ExtResource("7_etagw")
+theme_override_icons/grabber_highlight = ExtResource("8_hmlvv")
+theme_override_icons/grabber_disabled = ExtResource("7_etagw")
 theme_override_styles/slider = SubResource("StyleBoxTexture_x0dr5")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_khnq6")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_51alr")
@@ -127,7 +127,7 @@ offset_right = 606.0
 offset_bottom = 131.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("6_rmj77")
+texture = ExtResource("6_2jxoy")
 
 [node name="SFXVolume" type="HSlider" parent="SettingsAssets2/Background/SFXTexture"]
 z_index = 2
@@ -142,9 +142,9 @@ offset_bottom = 20.0
 scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_icons/grabber = ExtResource("7_222ck")
-theme_override_icons/grabber_highlight = ExtResource("8_8vtvt")
-theme_override_icons/grabber_disabled = ExtResource("7_222ck")
+theme_override_icons/grabber = ExtResource("7_etagw")
+theme_override_icons/grabber_highlight = ExtResource("8_hmlvv")
+theme_override_icons/grabber_disabled = ExtResource("7_etagw")
 theme_override_styles/slider = SubResource("StyleBoxTexture_x0dr5")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_khnq6")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_51alr")
@@ -161,7 +161,7 @@ anchor_top = 0.286111
 anchor_right = 0.320313
 anchor_bottom = 0.377778
 offset_right = 1.0
-theme_override_fonts/normal_font = ExtResource("3_saitu")
+theme_override_fonts/normal_font = ExtResource("9_5m20f")
 theme_override_font_sizes/normal_font_size = 16
 text = "Sound Effects Volume"
 metadata/_edit_use_anchors_ = true
@@ -177,7 +177,7 @@ offset_left = 12.8672
 offset_top = 5.04167
 offset_right = 13.8672
 offset_bottom = 5.04167
-theme_override_fonts/normal_font = ExtResource("3_saitu")
+theme_override_fonts/normal_font = ExtResource("9_5m20f")
 theme_override_font_sizes/normal_font_size = 16
 text = "Music
 Volume"
@@ -186,12 +186,12 @@ metadata/_edit_use_anchors_ = true
 [node name="Background" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(943, 519)
-texture = ExtResource("2_j4pr7")
+texture = ExtResource("2_llsew")
 
 [node name="TestBackground" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(320, 180)
-texture = ExtResource("6_222ck")
+texture = ExtResource("10_e2wug")
 
 [node name="SFXBar" type="Sprite2D" parent="."]
 visible = false
@@ -205,7 +205,7 @@ visible = false
 z_index = 1
 position = Vector2(984, 473)
 scale = Vector2(0.514778, 0.464286)
-texture = ExtResource("7_8vtvt")
+texture = ExtResource("11_qqp7j")
 region_enabled = true
 region_rect = Rect2(116, 166, 406, 28)
 
@@ -214,12 +214,12 @@ visible = false
 zoom = Vector2(3.6, 3.6)
 
 [node name="TrapFunk&alivio-OBiicho[thematic]" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_f2680")
+stream = ExtResource("12_6iuu2")
 autoplay = true
 bus = &"music"
 
 [node name="Kabwasa-SoulSing[thematic]" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_tuqon")
+stream = ExtResource("13_2ug15")
 autoplay = true
 bus = &"sfx"
 
@@ -256,4 +256,4 @@ custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_j4pr7")
+texture = ExtResource("2_llsew")
