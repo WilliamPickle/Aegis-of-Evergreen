@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends UserInterface
 
 @export var placement_mask : Area2D
 @export_enum("Tower", "Chipmunk") var card_type : Array[String] = []
@@ -6,17 +6,17 @@ extends CanvasLayer
 
 const cards : Dictionary = {
 	"Tower" = preload("res://assets/sprites/towers/base_tower_card.png"), 
-	"Chipmunk" = preload("res://assets/sprites/towers/base_tower_card.png"), 
+	"Chipmunk" = preload("res://assets/sprites/towers/chipmunk_card.png"), 
 }
 
 func _ready() -> void:
+	super._ready()
 	for tower in card_type:
 		var card_image = StyleBoxTexture.new()
 		card_image.texture = cards[tower]
 		var dark_card_image = StyleBoxTexture.new()
 		dark_card_image.texture = cards[tower]
 		dark_card_image.modulate_color = Color(0.5, 0.5, 0.5)
-		var empty_image = StyleBoxTexture
 		
 		var new_card = Tower_Placement.new()
 		scroll_container.add_child(new_card)

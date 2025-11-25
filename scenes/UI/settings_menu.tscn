@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://rlm06c0lld5e"]
+[gd_scene load_steps=21 format=3 uid="uid://rlm06c0lld5e"]
 
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_3i1ia"]
 [ext_resource type="Script" uid="uid://dd56ng05gs51w" path="res://scripts/UI/settings_script.gd" id="1_jl7gk"]
 [ext_resource type="Texture2D" uid="uid://c8sm4hs6h6lcs" path="res://assets/sprites/settings screen/settings_back_v1.png" id="2_ecjli"]
 [ext_resource type="Texture2D" uid="uid://coqpl0tt4bms5" path="res://assets/sprites/icons and buttons/back_button_highlighted.png" id="3_jfsmy"]
@@ -37,6 +38,8 @@ texture = ExtResource("4_bhifn")
 [node name="SettingsMenu" type="CanvasLayer"]
 process_mode = 3
 layer = 2
+script = ExtResource("1_3i1ia")
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 
 [node name="SettingsAssets2" type="MarginContainer" parent="." node_paths=PackedStringArray("music_volume", "SFX_volume")]
 anchors_preset = 15

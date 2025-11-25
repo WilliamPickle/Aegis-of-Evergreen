@@ -258,6 +258,7 @@ path_2d = NodePath("../EnemyPath")
 wait_time = 5.0
 
 [node name="Start Button" type="CanvasLayer" parent="."]
+layer = 2
 follow_viewport_scale = 1.8
 
 [node name="MarginContainer" type="MarginContainer" parent="Start Button"]
@@ -294,6 +295,7 @@ action_mode = 0
 icon_alignment = 1
 
 [node name="TowerButtonTemp" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Tower_Placement" type="Button" parent="TowerButtonTemp" node_paths=PackedStringArray("map_area")]
 offset_left = 18.0

@@ -2,15 +2,20 @@ class_name Enemy
 extends Area2D
 
 # Variables you need to assign
-var enemy_sprite : Node2D
-var path : PathFollow2D
+@export var enemy_sprite : Node2D
+@export var enemy_node : Node2D
+@export var speed = 0.02
 
 # values and attributes
+var path : PathFollow2D
 var path_position = null
-@export var speed = 0.02
 var cur_position = 0
 var prev_position = 0
 
+func _ready() -> void:
+	# Initialize path
+	path = enemy_node.get_parent()
+	
 # progresses enemy along a path.
 # automatically deletes enemy and path when it reaches the end
 func move_on_path(delta) -> void:
@@ -27,3 +32,6 @@ func move_on_path(delta) -> void:
 		enemy_sprite.flip_h = false
 	else:
 		enemy_sprite.flip_h = true
+
+func _process(delta: float) -> void:
+	move_on_path(delta)

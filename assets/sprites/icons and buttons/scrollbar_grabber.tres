@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dw6v27x6ri2ku"]
+
+[ext_resource type="Texture2D" uid="uid://cc7b3cghj4nnc" path="res://assets/sprites/icons and buttons/scroll_bar_grabber.png" id="1_05bwm"]
+
+[resource]
+content_margin_left = 25.0
+texture = ExtResource("1_05bwm")
+region_rect = Rect2(0, 13, 15, 2)

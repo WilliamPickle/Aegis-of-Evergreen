@@ -26,6 +26,6 @@ func _input(event: InputEvent) -> void:
 		camera.position += (initial_mouse_pos - cur_mouse_pos) * panning_drag
 		
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	camera.position.x = clamp(camera.position.x, -320 + (320 * zoom_max)/camera.zoom.x, 320 - (320 * zoom_max)/camera.zoom.x)
 	camera.position.y = clamp(camera.position.y, -180 + (180 * zoom_max)/camera.zoom.y, 180 - (180 * zoom_max)/camera.zoom.y)

@@ -13,8 +13,8 @@ func _on_start_wave() -> void:
 	await send_enemy(bush, 150, 0.2)
 
 # sends an enemy a specified amount of times. 
-func send_enemy(enemy, quantity: int, delay: float) -> void:
-	timer.wait_time = delay
+func send_enemy(enemy, quantity: int, delay_time: float) -> void:
+	timer.wait_time = delay_time
 	for i in range(quantity):
 		timer.start()
 		await timer.timeout
@@ -31,7 +31,7 @@ func send_enemy(enemy, quantity: int, delay: float) -> void:
 		new_path.add_child(new_enemy)
 
 # stops the given function for a certain amount of time
-func delay(delay) -> void:
-	timer.wait_time = delay
+func delay(delay_time) -> void:
+	timer.wait_time = delay_time
 	timer.start()
 	await timer.timeout

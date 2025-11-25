@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c47t02182m7x4"]
 
-[ext_resource type="Script" uid="uid://b6mq466nsmiam" path="res://scripts/Enemies/blackberry_bush.gd" id="1_eosuv"]
+[ext_resource type="Script" uid="uid://b8s182qi2sarb" path="res://scripts/Enemies/enemy_class.gd" id="1_eosuv"]
 [ext_resource type="Texture2D" uid="uid://duuhan0as20y6" path="res://assets/sprites/enemies/bush_v2_walk.png" id="1_vkedo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eosuv"]
@@ -42,7 +42,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BlackberryBush" type="Area2D"]
+[node name="BlackberryBush" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "enemy_node")]
 z_index = 4
 collision_layer = 2
 collision_mask = 2
@@ -50,6 +50,8 @@ input_pickable = false
 linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource("1_eosuv")
+enemy_sprite = NodePath("Bush")
+enemy_node = NodePath(".")
 metadata/_custom_type_script = "uid://b8s182qi2sarb"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
