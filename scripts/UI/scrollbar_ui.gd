@@ -1,9 +1,11 @@
 extends UserInterface
 
+# placement mask is the collision area where towers can't be placed on
 @export var placement_mask : Area2D
 @export_enum("Tower", "Chipmunk") var card_type : Array[String] = []
-@onready var scroll_container: HBoxContainer = $ScrollbarUIAssets/ScrollContainer/HBoxContainer
+@export var scroll_container: HBoxContainer
 
+# add any tower card here
 const cards : Dictionary = {
 	"Tower" = preload("res://assets/sprites/towers/base_tower_card.png"), 
 	"Chipmunk" = preload("res://assets/sprites/towers/chipmunk_card.png"), 
@@ -12,6 +14,8 @@ const cards : Dictionary = {
 func _ready() -> void:
 	super._ready()
 	for tower in card_type:
+		# this is just to style the card pretty much
+		# and to add it to the bar
 		var card_image = StyleBoxTexture.new()
 		card_image.texture = cards[tower]
 		var dark_card_image = StyleBoxTexture.new()

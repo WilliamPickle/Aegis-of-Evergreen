@@ -43,9 +43,8 @@ texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 
-[node name="ScrollbarUI" type="CanvasLayer" node_paths=PackedStringArray("scroll_container")]
+[node name="ScrollbarUI" type="CanvasLayer"]
 script = ExtResource("1_f0vdy")
-scroll_container = NodePath("ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer")
 pausable = true
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 
@@ -99,7 +98,7 @@ layout_mode = 2
 [node name="Spacer" type="Control" parent="ScrollbarUIAssets/TabVBox"]
 layout_mode = 2
 
-[node name="BarContainer" type="MarginContainer" parent="ScrollbarUIAssets"]
+[node name="ScrollBarContainer" type="MarginContainer" parent="ScrollbarUIAssets"]
 custom_minimum_size = Vector2(1240, 8)
 layout_direction = 2
 layout_mode = 2
@@ -108,7 +107,7 @@ size_flags_vertical = 8
 mouse_filter = 0
 theme = SubResource("Theme_qq670")
 
-[node name="HScrollBar" type="HScrollBar" parent="ScrollbarUIAssets/BarContainer"]
+[node name="HScrollBar" type="HScrollBar" parent="ScrollbarUIAssets/ScrollBarContainer"]
 process_priority = 1
 z_index = 4
 clip_contents = true
@@ -126,7 +125,6 @@ theme_override_styles/grabber_pressed = ExtResource("7_qq670")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="EndCap2" type="TextureRect" parent="ScrollbarUIAssets/CardHBox"]
@@ -135,7 +133,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 texture = ExtResource("6_0uhrl")
 
-[node name="CardContainer" type="ScrollContainer" parent="ScrollbarUIAssets/CardHBox" node_paths=PackedStringArray("h_scroll_bar")]
+[node name="CardContainer" type="ScrollContainer" parent="ScrollbarUIAssets/CardHBox"]
 custom_minimum_size = Vector2(900, 124)
 layout_direction = 2
 layout_mode = 2
@@ -146,17 +144,14 @@ theme = SubResource("Theme_flo0f")
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
 script = ExtResource("4_x5tgu")
-h_scroll_bar = NodePath("../../BarContainer/HScrollBar")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollbarUIAssets/CardHBox/CardContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-mouse_filter = 2
 theme_override_constants/separation = 5
 
 [node name="Button" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -168,7 +163,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button2" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -180,7 +174,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button3" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -192,7 +185,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button4" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -204,7 +196,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button5" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -216,7 +207,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button6" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -228,7 +218,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button7" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -240,7 +229,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button8" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -252,7 +240,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button9" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -264,7 +251,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button10" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -276,7 +262,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button11" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -288,7 +273,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button12" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -300,7 +284,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button13" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -312,7 +295,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button14" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -324,7 +306,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button15" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -336,7 +317,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button16" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -348,7 +328,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button17" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -360,7 +339,6 @@ tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="Button18" type="Button" parent="ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
-visible = false
 modulate = Color(0.144063, 0.144063, 0.144063, 1)
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
@@ -378,4 +356,4 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 texture = ExtResource("6_0uhrl")
 
-[connection signal="value_changed" from="ScrollbarUIAssets/BarContainer/HScrollBar" to="ScrollbarUIAssets/CardHBox/CardContainer" method="_on_h_scroll_bar_value_changed"]
+[connection signal="value_changed" from="ScrollbarUIAssets/ScrollBarContainer/HScrollBar" to="ScrollbarUIAssets/CardHBox/CardContainer" method="_on_h_scroll_bar_value_changed"]

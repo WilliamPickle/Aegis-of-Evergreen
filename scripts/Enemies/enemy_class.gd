@@ -1,7 +1,6 @@
 class_name Enemy
 extends Area2D
 
-# Variables you need to assign
 @export var enemy_sprite : Node2D
 @export var enemy_node : Node2D
 @export var speed = 0.02

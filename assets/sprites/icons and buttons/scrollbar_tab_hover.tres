@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://1sl8ht1sjn60"]
+
+[ext_resource type="Texture2D" uid="uid://daqiot5yb7qu0" path="res://assets/sprites/icons and buttons/scroll_bar_vine_tab.png" id="1_1l62l"]
+
+[resource]
+texture = ExtResource("1_1l62l")
+region_rect = Rect2(492, 20, 40, 7)
+modulate_color = Color(0.775063, 0.775063, 0.775063, 1)

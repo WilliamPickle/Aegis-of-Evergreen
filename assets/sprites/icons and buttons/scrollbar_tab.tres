@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bw72sh8wl3dk8"]
+
+[ext_resource type="Texture2D" uid="uid://daqiot5yb7qu0" path="res://assets/sprites/icons and buttons/scroll_bar_vine_tab.png" id="1_oaqo5"]
+
+[resource]
+texture = ExtResource("1_oaqo5")
+region_rect = Rect2(492, 20, 40, 7)

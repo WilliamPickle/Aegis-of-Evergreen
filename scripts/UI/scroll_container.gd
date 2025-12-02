@@ -1,6 +1,6 @@
 extends ScrollContainer
 @onready var container: ScrollContainer = $"."
-@onready var h_scroll_bar: HScrollBar = $"../ScrollBarContainer/HScrollBar"
+@export var h_scroll_bar: HScrollBar
 
 
 func _ready() -> void:

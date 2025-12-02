@@ -5,4 +5,4 @@
 [resource]
 content_margin_left = 25.0
 texture = ExtResource("1_05bwm")
-region_rect = Rect2(0, 13, 15, 2)
+region_rect = Rect2(0, 13, 1, 2)
