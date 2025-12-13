@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dv52bmj84m6kt"]
 
-[ext_resource type="Script" uid="uid://b1waqwshv5p58" path="res://scripts/Towers/basic_tower.gd" id="1_fdw71"]
+[ext_resource type="Script" uid="uid://bedplpbp1d213" path="res://scripts/Towers/attacker_tower.gd" id="1_fdw71"]
 [ext_resource type="Texture2D" uid="uid://ucq83f5aaxwy" path="res://assets/sprites/towers/chipmunk_v1.png" id="2_fdw71"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rblst"]
@@ -9,7 +9,7 @@ radius = 8.06226
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4ef5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3bpil"]
-radius = 64.1249
+radius = 64.0
 
 [node name="Chipmunk" type="Area2D"]
 z_index = 7
@@ -17,8 +17,9 @@ input_pickable = false
 linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource("1_fdw71")
+attack_fpath = "res://scenes/Towers/attacks/chipmunk_projectile_1.tscn"
 snapping = 2.0
-metadata/_custom_type_script = "uid://b1waqwshv5p58"
+metadata/_custom_type_script = "uid://bedplpbp1d213"
 metadata/_edit_group_ = true
 
 [node name="Image" type="Sprite2D" parent="."]

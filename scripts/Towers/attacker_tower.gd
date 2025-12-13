@@ -10,6 +10,7 @@ enum Target{
 @export_subgroup("Stats")
 @export var damage : Array[float] = [0.0, 0.0, 0.0]
 @export var piercing : Array[float] = [0.0, 0.0, 0.0]
+@export var attack_fpath : String
 
 @onready var range_area : Area2D = $Range
 @onready var _attack_cooldown : Timer = $AttackCoolDOwn
@@ -26,7 +27,6 @@ func _ready() -> void:
 	_attack_cooldown.timeout.connect(update_enemy_list)
 	# Once tower is placed we can start attacking
 	tower_placed.connect(func():
-		print("Signal Connected")
 		_attack_cooldown.autostart = true
 		_attack_cooldown.start()
 	)
@@ -44,7 +44,11 @@ func _physics_process(_delta: float) -> void:
 
 # This is to be defined by a sub class
 func attack():
-	pass
+	var tower_attack : Projectile = load(attack_fpath).instantiate()
+	tower_attack.tower_area = range_area
+	tower_attack.target_enemy = targeted_enemy
+	tower_attack.global_position = global_position
+	map_area.call_deferred("add_child", tower_attack)
 
 # Set the _enemies list to the overlapping areas
 # can be removed due to only using _enemies once.
