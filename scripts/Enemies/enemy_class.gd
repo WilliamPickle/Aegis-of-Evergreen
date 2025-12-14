@@ -5,15 +5,16 @@ extends Area2D
 @export var enemy_sprite : Node2D
 @export var enemy_node : Node2D
 @export var speed = 0.02
+@export var resistance : Projectile.Type = Projectile.Type.NONE
 
 # hp bar variables
+signal health_changed
 @export var health_bar : Sprite2D
 @export var max_health : float
 var cur_health : float
 var bar_length : float
 @onready var button: Button = $Button
 # used to redraw health bar with updated health
-signal health_changed
 
 # path based variables
 var path : PathFollow2D
@@ -30,19 +31,6 @@ func _ready() -> void:
 	cur_health = max_health
 	bar_length = health_bar.texture.get_width() * health_bar.scale.x
 	path = enemy_node.get_parent()
-	
-	# this is just to debug because projectiles don't change health yet
-	for i in range(4):
-		print(cur_health)
-		await delay(1)
-		cur_health -= 1
-		health_changed.emit()
-		
-	for i in range(4):
-		print(cur_health)
-		await delay(1)
-		cur_health += 1
-		health_changed.emit()
 	
 	
 	
@@ -62,8 +50,22 @@ func move_on_path(delta) -> void:
 		enemy_sprite.flip_h = false
 	else:
 		enemy_sprite.flip_h = true
-		
+
+func apply_damage(damage : float, damage_type : Projectile.Type):
+	var damage_percent = 1
+	if damage_type == resistance:
+		# ADD SOME CALCULATIONS HERE WITH damage_percent
+		pass
+	cur_health -= damage * damage_percent
+	if cur_health <= 0.0:
+		queue_free()
+		return
+	draw_health()
+
 func draw_health():
+	if cur_health <= 0.0:
+		queue_free()
+		return
 	health_bar.scale.x = cur_health / max_health
 	health_bar.position.x = -(bar_length - health_bar.texture.get_width() * health_bar.scale.x) / 2
 	

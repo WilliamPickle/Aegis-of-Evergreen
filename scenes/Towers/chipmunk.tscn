@@ -17,6 +17,7 @@ input_pickable = false
 linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource("1_fdw71")
+damage = Array[float]([0.5, 3.0, 6.0])
 attack_fpath = "res://scenes/Towers/attacks/chipmunk_projectile_1.tscn"
 snapping = 2.0
 metadata/_custom_type_script = "uid://bedplpbp1d213"

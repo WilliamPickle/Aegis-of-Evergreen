@@ -78,7 +78,6 @@ shape = SubResource("CircleShape2D_eosuv")
 [node name="Bush" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4hoh6")
 autoplay = "default"
-frame_progress = 0.196689
 
 [node name="Button" type="Button" parent="."]
 offset_left = -7.0

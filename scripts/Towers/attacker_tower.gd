@@ -15,6 +15,7 @@ enum Target{
 @onready var range_area : Area2D = $Range
 @onready var _attack_cooldown : Timer = $AttackCoolDOwn
 
+var cur_damage
 # Randomizing the target type for now.
 var target_type = Target.values()[randi_range(0, Target.size()-1)]
 # List of enemies in tower area
@@ -24,6 +25,7 @@ var targeted_enemy : Area2D
 
 func _ready() -> void:
 	super._ready()
+	cur_damage = damage[0]
 	_attack_cooldown.timeout.connect(update_enemy_list)
 	# Once tower is placed we can start attacking
 	tower_placed.connect(func():
@@ -45,7 +47,8 @@ func _physics_process(_delta: float) -> void:
 # This is to be defined by a sub class
 func attack():
 	var tower_attack : Projectile = load(attack_fpath).instantiate()
-	tower_attack.tower_area = range_area
+	tower_attack.tower = self
+	tower_attack.tower_range = range_area
 	tower_attack.target_enemy = targeted_enemy
 	tower_attack.global_position = global_position
 	map_area.call_deferred("add_child", tower_attack)
