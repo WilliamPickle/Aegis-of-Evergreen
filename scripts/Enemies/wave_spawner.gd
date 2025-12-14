@@ -2,6 +2,7 @@ extends Node2D
 
 @export var timer: Timer
 @export var path_2d: Path2D
+@export var path_spread: float
 var bush := preload("res://scenes/Enemies/blackberry_bush.tscn")
 
 # later on this function can be changed to only send out level 1.
@@ -28,6 +29,7 @@ func send_enemy(enemy, quantity: int, delay_time: float) -> void:
 		new_path.position.y = -100
 		
 		var new_enemy = enemy.instantiate()
+		new_enemy.position.y += randi_range(-path_spread, path_spread)
 		new_path.add_child(new_enemy)
 
 # stops the given function for a certain amount of time

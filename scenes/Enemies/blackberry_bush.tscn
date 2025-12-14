@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c47t02182m7x4"]
+[gd_scene load_steps=17 format=3 uid="uid://c47t02182m7x4"]
 
 [ext_resource type="Script" uid="uid://b8s182qi2sarb" path="res://scripts/Enemies/enemy_class.gd" id="1_eosuv"]
 [ext_resource type="Texture2D" uid="uid://duuhan0as20y6" path="res://assets/sprites/enemies/bush_v2_walk.png" id="1_vkedo"]
+[ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_erd5q"]
+[ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="4_nttgg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eosuv"]
 radius = 7.0
@@ -42,7 +44,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BlackberryBush" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "enemy_node")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_erd5q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nttgg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dybo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8kq0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y2071"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70pk3"]
+
+[node name="BlackberryBush" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "enemy_node", "health_bar")]
 z_index = 4
 collision_layer = 2
 collision_mask = 2
@@ -52,6 +66,8 @@ angular_damp = 0.0
 script = ExtResource("1_eosuv")
 enemy_sprite = NodePath("Bush")
 enemy_node = NodePath(".")
+health_bar = NodePath("HpContainer/HpBar")
+max_health = 4.0
 metadata/_custom_type_script = "uid://b8s182qi2sarb"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -63,3 +79,29 @@ shape = SubResource("CircleShape2D_eosuv")
 sprite_frames = SubResource("SpriteFrames_4hoh6")
 autoplay = "default"
 frame_progress = 0.196689
+
+[node name="Button" type="Button" parent="."]
+offset_left = -7.0
+offset_top = -6.0
+offset_right = 7.0
+offset_bottom = 8.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_erd5q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nttgg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0dybo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_q8kq0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y2071")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_70pk3")
+
+[node name="HpContainer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -11)
+texture = ExtResource("3_erd5q")
+
+[node name="HpBar" type="Sprite2D" parent="HpContainer"]
+texture = ExtResource("4_nttgg")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(8, 8)

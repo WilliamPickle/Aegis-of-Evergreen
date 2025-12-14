@@ -217,6 +217,7 @@ metadata/_edit_lock_ = true
 texture = ExtResource("6_7nomh")
 
 [node name="EnemyPath" type="Path2D" parent="."]
+y_sort_enabled = true
 curve = SubResource("Curve2D_014kd")
 metadata/_edit_lock_ = true
 
@@ -253,6 +254,7 @@ polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125
 script = ExtResource("8_2os1m")
 timer = NodePath("EnemyDelay")
 path_2d = NodePath("../EnemyPath")
+path_spread = 2.0
 
 [node name="EnemyDelay" type="Timer" parent="WaveSpawner"]
 wait_time = 5.0
