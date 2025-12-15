@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1yi6hn5o0vqu"]
+
+[ext_resource type="Script" uid="uid://cws5x3bctkj0m" path="res://scripts/Towers/attacks/projectile_class.gd" id="1_jeqf0"]
+[ext_resource type="Texture2D" uid="uid://civng6brv7yvo" path="res://assets/sprites/towers/attacks/Bee Lvl1 Projectile.png" id="1_wwb75"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeqf0"]
+atlas = ExtResource("1_wwb75")
+region = Rect2(0, 0, 30, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb4jt"]
+atlas = ExtResource("1_wwb75")
+region = Rect2(30, 0, 30, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csi78"]
+atlas = ExtResource("1_wwb75")
+region = Rect2(60, 0, 30, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34hr5"]
+atlas = ExtResource("1_wwb75")
+region = Rect2(90, 0, 30, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yrbjp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jeqf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb4jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csi78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34hr5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwb75"]
+size = Vector2(14, 7)
+
+[node name="BeeProjectile1" type="Area2D"]
+z_index = 11
+collision_mask = 2
+script = ExtResource("1_jeqf0")
+speed = 1.0
+max_hits = 3
+despawn_distance = 20.0
+metadata/_custom_type_script = "uid://cws5x3bctkj0m"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, -2)
+rotation = -1.5708
+sprite_frames = SubResource("SpriteFrames_yrbjp")
+frame_progress = 0.662139
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wwb75")

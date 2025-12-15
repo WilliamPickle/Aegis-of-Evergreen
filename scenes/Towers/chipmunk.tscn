@@ -1,7 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://dv52bmj84m6kt"]
+[gd_scene load_steps=10 format=3 uid="uid://dv52bmj84m6kt"]
 
 [ext_resource type="Script" uid="uid://bedplpbp1d213" path="res://scripts/Towers/attacker_tower.gd" id="1_fdw71"]
 [ext_resource type="Texture2D" uid="uid://ucq83f5aaxwy" path="res://assets/sprites/towers/chipmunk_v1.png" id="2_fdw71"]
+[ext_resource type="Texture2D" uid="uid://cnjqmix7tdcku" path="res://assets/sprites/towers/chipmunk_lvl1_atk.png" id="3_rblst"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4ef5"]
+atlas = ExtResource("3_rblst")
+region = Rect2(0, 0, 25, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bpil"]
+atlas = ExtResource("3_rblst")
+region = Rect2(25, 0, 25, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ccrqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4ef5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bpil")
+}],
+"loop": false,
+"name": &"attacking",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fdw71")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rblst"]
 radius = 8.06226
@@ -23,9 +54,11 @@ snapping = 2.0
 metadata/_custom_type_script = "uid://bedplpbp1d213"
 metadata/_edit_group_ = true
 
-[node name="Image" type="Sprite2D" parent="."]
-z_index = -1
-texture = ExtResource("2_fdw71")
+[node name="Image" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ccrqw")
+animation = &"attacking"
+frame = 1
+frame_progress = 1.0
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rblst")

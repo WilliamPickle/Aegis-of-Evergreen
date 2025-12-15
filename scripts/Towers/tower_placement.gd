@@ -4,7 +4,8 @@ class_name Tower_Placement
 # The dictionary of all towers
 const towers : Dictionary = {
 	"Tower" = preload("res://scenes/Towers/Tower.tscn"),
-	"Chipmunk" = preload("res://scenes/Towers/chipmunk.tscn")
+	"Chipmunk" = preload("res://scenes/Towers/chipmunk.tscn"),
+	"Honey_Comb" = preload("res://scenes/Towers/honey_comb.tscn"),
 }
 static var is_placing := false
 static var new_tower : Tower

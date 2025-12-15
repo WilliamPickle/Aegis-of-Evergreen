@@ -29,6 +29,7 @@ func _ready() -> void:
 	_attack_cooldown.timeout.connect(update_enemy_list)
 	# Once tower is placed we can start attacking
 	tower_placed.connect(func():
+		$Image.play("idle")
 		_attack_cooldown.autostart = true
 		_attack_cooldown.start()
 	)
@@ -46,6 +47,7 @@ func _physics_process(_delta: float) -> void:
 
 # This is to be defined by a sub class
 func attack():
+	$Image.play("attacking")
 	var tower_attack : Projectile = load(attack_fpath).instantiate()
 	tower_attack.tower = self
 	tower_attack.tower_range = range_area
@@ -61,14 +63,14 @@ func update_enemy_list() -> void:
 	# Stop the timer and use regular area_entered function
 	if _enemies.size() == 0:
 		print("No enmies detected when attacking")
+		$Image.play("idle")
 		_attack_cooldown.stop()
 		range_area.area_entered.connect(first_enemy_entered)
 		targeted_enemy = null
 		queue_redraw()
 	# Set to the corresponding enemy
 	else:
-		#print("Constant enemy detection")
-		await set_target()
+		set_target()
 		attack()
 
 ## When tower checks for enemies in its range, and detects 0,
