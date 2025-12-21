@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_rbm5a"]
 [ext_resource type="Texture2D" uid="uid://pfssqwf31dm7" path="res://assets/sprites/icons and buttons/settings_button_highlighted.png" id="2_vcehk"]
 [ext_resource type="Texture2D" uid="uid://ywnxvtgi724h" path="res://assets/sprites/icons and buttons/settings_button_cropped.png" id="2_ypbrs"]
-[ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="3_0vm74"]
-[ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="4_utk7g"]
 [ext_resource type="Texture2D" uid="uid://vyejon8a8wc1" path="res://assets/sprites/icons and buttons/control_button_highlighted.png" id="5_ynu8c"]
 [ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="6_0rou8"]
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="6_5el4x"]
 [ext_resource type="Texture2D" uid="uid://b7ry4sy340mhg" path="res://assets/sprites/icons and buttons/pause_button.png" id="7_ynu8c"]
 [ext_resource type="Texture2D" uid="uid://dd10wkyqcqln1" path="res://assets/sprites/icons and buttons/pause_button_highlight.png" id="8_0rou8"]
+[ext_resource type="Texture2D" uid="uid://cuoh3a2alg7g1" path="res://assets/sprites/icons and buttons/guidebook_button_highlight.png" id="8_rbm5a"]
+[ext_resource type="Texture2D" uid="uid://q067sl8ylw1e" path="res://assets/sprites/icons and buttons/guidebook_button.png" id="9_c1s3a"]
 [ext_resource type="Texture2D" uid="uid://crdpu06t0syay" path="res://assets/sprites/icons and buttons/ui_bar.png" id="10_blq6o"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="11_8476c"]
 
@@ -48,18 +48,18 @@ texture = ExtResource("2_ypbrs")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lykai"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rou8"]
-texture = ExtResource("3_0vm74")
+texture = ExtResource("8_rbm5a")
 modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7u2tl"]
-texture = ExtResource("3_0vm74")
+texture = ExtResource("8_rbm5a")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_reg7a"]
-texture = ExtResource("3_0vm74")
+texture = ExtResource("8_rbm5a")
 modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tql76"]
-texture = ExtResource("4_utk7g")
+texture = ExtResource("9_c1s3a")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrevp"]
 
@@ -155,7 +155,7 @@ scene_scale = 2.0
 hide_pause_menu = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
-[node name="ExtraButton2" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
+[node name="GuidebookButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4

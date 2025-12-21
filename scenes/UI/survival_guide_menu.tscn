@@ -215,6 +215,7 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 texture = ExtResource("17_t4k2q")
 
 [node name="survival_guide_menu" type="CanvasLayer"]
+process_mode = 3
 layer = 2
 script = ExtResource("1_g2sta")
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
@@ -263,6 +264,7 @@ Guide"
 horizontal_alignment = 1
 
 [node name="top" type="Label" parent="ScreenContainer/FrontCoverMargin/bottom"]
+layout_mode = 0
 offset_top = -4.0
 offset_right = 280.0
 offset_bottom = 194.0
@@ -295,6 +297,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_05qod")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7y2fs")
 
 [node name="text1" type="Label" parent="ScreenContainer/BackCoverMargin"]
+layout_mode = 0
 offset_left = 140.0
 offset_top = 64.0
 offset_right = 256.0
@@ -305,6 +308,7 @@ label_settings = SubResource("LabelSettings_jn14j")
 autowrap_mode = 2
 
 [node name="heading" type="Label" parent="ScreenContainer/BackCoverMargin"]
+layout_mode = 0
 offset_left = 88.0
 offset_top = 27.0
 offset_right = 178.0
@@ -313,6 +317,7 @@ text = "The End"
 label_settings = SubResource("LabelSettings_fwyu7")
 
 [node name="heading3" type="Label" parent="ScreenContainer/BackCoverMargin"]
+layout_mode = 0
 offset_left = 54.0
 offset_top = 142.0
 offset_right = 243.0
@@ -322,6 +327,7 @@ text = "- Thank You. -"
 label_settings = SubResource("LabelSettings_ewo21")
 
 [node name="text2" type="Label" parent="ScreenContainer/BackCoverMargin"]
+layout_mode = 0
 offset_left = 54.0
 offset_top = 162.0
 offset_right = 170.0
@@ -395,6 +401,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="text2" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 180.0
 offset_right = 198.0
@@ -406,6 +413,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="text3" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
 offset_left = 437.0
 offset_top = 86.0
 offset_right = 524.0
@@ -417,6 +425,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="text4" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
 offset_left = 338.0
 offset_top = 220.0
 offset_right = 494.0
@@ -428,6 +437,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="heading" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
 offset_left = 329.0
 offset_top = 27.0
 offset_right = 419.0
@@ -436,6 +446,7 @@ text = "Ranger"
 label_settings = ExtResource("11_exfpv")
 
 [node name="heading2" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
 offset_left = 450.0
 offset_top = 31.0
 offset_right = 540.0
@@ -445,6 +456,7 @@ text = "Heroes"
 label_settings = ExtResource("12_m5axs")
 
 [node name="heading3" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
 offset_left = 358.0
 offset_top = 202.0
 offset_right = 547.0
@@ -454,6 +466,7 @@ text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
 
 [node name="detail1" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 276.0
 offset_right = 214.0
@@ -462,6 +475,7 @@ text = "Intro"
 label_settings = SubResource("LabelSettings_epvr4")
 
 [node name="detail2" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
 offset_left = 85.0
 offset_top = 254.0
 offset_right = 274.0
@@ -470,6 +484,7 @@ text = "Allies"
 label_settings = SubResource("LabelSettings_epvr4")
 
 [node name="detail3" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
 offset_left = 147.0
 offset_top = 276.0
 offset_right = 336.0
@@ -478,6 +493,7 @@ text = "Foes"
 label_settings = SubResource("LabelSettings_epvr4")
 
 [node name="detail4" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
 offset_left = 213.0
 offset_top = 254.0
 offset_right = 402.0
@@ -496,6 +512,7 @@ size_flags_vertical = 4
 texture = ExtResource("6_u6nj5")
 
 [node name="text1" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 134.0
 offset_right = 206.0
@@ -507,6 +524,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="heading" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+layout_mode = 0
 offset_left = 37.0
 offset_top = 27.0
 offset_right = 148.0
@@ -515,6 +533,7 @@ text = "Chipmunk"
 label_settings = ExtResource("11_exfpv")
 
 [node name="heading2" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+layout_mode = 0
 offset_left = 187.0
 offset_top = 31.0
 offset_right = 277.0
@@ -524,6 +543,7 @@ text = "Ally"
 label_settings = ExtResource("12_m5axs")
 
 [node name="heading3" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+layout_mode = 0
 offset_left = 354.0
 offset_top = 202.0
 offset_right = 543.0
@@ -533,6 +553,7 @@ text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
 
 [node name="heading4" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+layout_mode = 0
 offset_left = 363.0
 offset_top = 27.0
 offset_right = 480.0
@@ -541,6 +562,7 @@ text = "Bee Army"
 label_settings = ExtResource("11_exfpv")
 
 [node name="heading5" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+layout_mode = 0
 offset_left = 63.0
 offset_top = 202.0
 offset_right = 252.0
@@ -550,6 +572,7 @@ text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
 
 [node name="text2" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+layout_mode = 0
 offset_left = 44.0
 offset_top = 220.0
 offset_right = 195.0
@@ -560,6 +583,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="text3" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+layout_mode = 0
 offset_left = 310.0
 offset_top = 132.0
 offset_right = 365.0
@@ -570,6 +594,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="text4" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+layout_mode = 0
 offset_left = 310.0
 offset_top = 156.0
 offset_right = 439.0
@@ -580,6 +605,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="text5" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+layout_mode = 0
 offset_left = 335.0
 offset_top = 220.0
 offset_right = 493.0
@@ -600,6 +626,7 @@ size_flags_vertical = 4
 texture = ExtResource("7_lidf8")
 
 [node name="text1" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 92.0
 offset_right = 144.0
@@ -610,6 +637,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="heading" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 37.0
 offset_top = 27.0
 offset_right = 148.0
@@ -618,6 +646,7 @@ text = "Invaders"
 label_settings = ExtResource("11_exfpv")
 
 [node name="heading2" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 187.0
 offset_top = 31.0
 offset_right = 277.0
@@ -627,6 +656,7 @@ text = "Foe"
 label_settings = ExtResource("12_m5axs")
 
 [node name="heading3" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 63.0
 offset_top = 202.0
 offset_right = 252.0
@@ -636,6 +666,7 @@ text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
 
 [node name="heading7" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 352.0
 offset_top = 190.0
 offset_right = 541.0
@@ -645,6 +676,7 @@ text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
 
 [node name="heading4" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 26.0
 offset_top = 76.0
 offset_right = 215.0
@@ -654,6 +686,7 @@ text = "Bush"
 label_settings = ExtResource("12_m5axs")
 
 [node name="heading5" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 26.0
 offset_top = 142.0
 offset_right = 215.0
@@ -663,6 +696,7 @@ text = "Squirrel"
 label_settings = ExtResource("12_m5axs")
 
 [node name="text2" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 93.0
 offset_top = 80.0
 offset_right = 153.0
@@ -673,6 +707,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="text3" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 158.0
 offset_right = 144.0
@@ -683,6 +718,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="text4" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 93.0
 offset_top = 146.0
 offset_right = 153.0
@@ -693,6 +729,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="text5" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 44.0
 offset_top = 220.0
 offset_right = 198.0
@@ -703,6 +740,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="heading6" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 321.0
 offset_top = 122.0
 offset_right = 510.0
@@ -712,6 +750,7 @@ text = "Cow"
 label_settings = ExtResource("12_m5axs")
 
 [node name="text6" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 318.0
 offset_top = 138.0
 offset_right = 493.0
@@ -722,6 +761,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="text7" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 390.0
 offset_top = 126.0
 offset_right = 505.0
@@ -732,6 +772,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="text8" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+layout_mode = 0
 offset_left = 335.0
 offset_top = 208.0
 offset_right = 488.0
@@ -752,6 +793,7 @@ size_flags_vertical = 4
 texture = ExtResource("8_7y2fs")
 
 [node name="text1" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 80.0
 offset_right = 119.0
@@ -762,6 +804,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="heading" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+layout_mode = 0
 offset_left = 49.0
 offset_top = 27.0
 offset_right = 205.0
@@ -770,6 +813,7 @@ text = "Environment"
 label_settings = ExtResource("11_exfpv")
 
 [node name="heading3" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+layout_mode = 0
 offset_left = 44.0
 offset_top = 185.0
 offset_right = 281.0
@@ -779,6 +823,7 @@ text = "- Urgent Warning -"
 label_settings = ExtResource("12_m5axs")
 
 [node name="text2" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+layout_mode = 0
 offset_left = 41.0
 offset_top = 206.0
 offset_right = 198.0
@@ -789,6 +834,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="heading4" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+layout_mode = 0
 offset_left = 338.0
 offset_top = 140.0
 offset_right = 575.0

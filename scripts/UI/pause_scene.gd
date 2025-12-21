@@ -9,7 +9,6 @@ func _on_pause_button_pressed() -> void:
 	PauseUi.toggle_pause(pause_menu)
 
 func _on_icon_pressed(hide_menu) -> void:
-	print("it's been accessed? hide_menu set to:", hide_menu)
 	if hide_menu:
 		pause_screen.visible = false
 	elif !hide_menu:

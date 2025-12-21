@@ -45,5 +45,4 @@ func load_icon_scene():
 		icon_scene.scale = Vector2(scene_scale, scene_scale)
 	
 	if hide_pause_menu:
-		print("load icon scene ran")
 		PauseUi.emit_signal("secondary_ui_open", true)
