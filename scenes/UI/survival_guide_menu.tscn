@@ -1,0 +1,1006 @@
+[gd_scene load_steps=72 format=3 uid="uid://csvtwwunpwrfh"]
+
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_g2sta"]
+[ext_resource type="Script" uid="uid://dy04of48wrsf7" path="res://scripts/UI/survival_guide_script.gd" id="2_1fxqp"]
+[ext_resource type="Texture2D" uid="uid://bvvoiky8il2r7" path="res://assets/sprites/survival guide menu/front cover.png" id="3_dq160"]
+[ext_resource type="Texture2D" uid="uid://ppr2wfc235gx" path="res://assets/sprites/survival guide menu/front cover highlight.png" id="3_t4k2q"]
+[ext_resource type="Texture2D" uid="uid://bur31phhhfk33" path="res://assets/sprites/survival guide menu/inside_cover.png" id="4_05qod"]
+[ext_resource type="Texture2D" uid="uid://ynqvo7hqy4tq" path="res://assets/sprites/survival guide menu/back cover highlight.png" id="5_3elub"]
+[ext_resource type="Texture2D" uid="uid://dp7vtpto45ier" path="res://assets/sprites/survival guide menu/Page 1 and 2.png" id="5_unlyx"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="6_dq160"]
+[ext_resource type="Texture2D" uid="uid://bvt74v8f45jgm" path="res://assets/sprites/survival guide menu/page 3 and 4.png" id="6_u6nj5"]
+[ext_resource type="Texture2D" uid="uid://y3cktdg1v4xi" path="res://assets/sprites/survival guide menu/page 5 and 6.png" id="7_lidf8"]
+[ext_resource type="Texture2D" uid="uid://b45lo4g027ap5" path="res://assets/sprites/survival guide menu/page 7 and 8.png" id="8_7y2fs"]
+[ext_resource type="Texture2D" uid="uid://5srumxf5l8sg" path="res://assets/sprites/survival guide menu/back cover.png" id="9_6vu8i"]
+[ext_resource type="Texture2D" uid="uid://cd0h7kkl7fewo" path="res://assets/sprites/survival guide menu/book_coil.png" id="10_05qod"]
+[ext_resource type="LabelSettings" uid="uid://d4i2galw8tjtc" path="res://assets/fonts/guidbook_basic.tres" id="10_nd06i"]
+[ext_resource type="Texture2D" uid="uid://c204vm7sfb3pi" path="res://assets/sprites/survival guide menu/tabs.png" id="10_t4k2q"]
+[ext_resource type="LabelSettings" uid="uid://dl72eg0w2sm0y" path="res://assets/fonts/guidebook_heading1.tres" id="11_exfpv"]
+[ext_resource type="LabelSettings" uid="uid://dnonjx6mllei5" path="res://assets/fonts/guidebook_heading2.tres" id="12_m5axs"]
+[ext_resource type="Texture2D" uid="uid://chf6w8x3cuijp" path="res://assets/sprites/icons and buttons/exit_button_highlight.png" id="13_lidf8"]
+[ext_resource type="Texture2D" uid="uid://1u75f14jex4" path="res://assets/sprites/icons and buttons/exit_button.png" id="14_7y2fs"]
+[ext_resource type="Script" uid="uid://h2jq8s83khk1" path="res://scripts/UI/back_button_script.gd" id="15_6vu8i"]
+[ext_resource type="Texture2D" uid="uid://coqpl0tt4bms5" path="res://assets/sprites/icons and buttons/back_button_highlighted.png" id="16_6vu8i"]
+[ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="17_t4k2q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05qod"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unlyx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_doegb"]
+texture = ExtResource("3_t4k2q")
+region_rect = Rect2(150, 1, 155, 174)
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lidf8"]
+texture = ExtResource("3_t4k2q")
+region_rect = Rect2(150, 1, 155, 174)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u6nj5"]
+texture = ExtResource("3_dq160")
+region_rect = Rect2(150, 1, 155, 174)
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dq160"]
+texture = ExtResource("3_dq160")
+region_rect = Rect2(150, 1, 155, 174)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3xbv"]
+texture = ExtResource("5_3elub")
+region_rect = Rect2(15, 1, 155, 174)
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_unlyx"]
+texture = ExtResource("5_3elub")
+region_rect = Rect2(15, 1, 155, 174)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_05qod"]
+texture = ExtResource("9_6vu8i")
+region_rect = Rect2(15, 1, 155, 174)
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7y2fs"]
+texture = ExtResource("9_6vu8i")
+region_rect = Rect2(15, 1, 155, 174)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jn14j"]
+line_spacing = 2.0
+font = ExtResource("6_dq160")
+font_size = 8
+font_color = Color(0.407843, 0.196078, 0.301961, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fwyu7"]
+font = ExtResource("6_dq160")
+font_size = 24
+font_color = Color(0.407843, 0.196078, 0.301961, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ewo21"]
+font = ExtResource("6_dq160")
+font_size = 24
+font_color = Color(0.407843, 0.196078, 0.301961, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dq160"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u6nj5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6vu8i"]
+texture = ExtResource("4_05qod")
+region_rect = Rect2(15, 5, 145, 170)
+modulate_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4k2q"]
+texture = ExtResource("4_05qod")
+region_rect = Rect2(15, 5, 145, 170)
+modulate_color = Color(0.775063, 0.775063, 0.775063, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3elub"]
+texture = ExtResource("4_05qod")
+region_rect = Rect2(15, 5, 145, 170)
+
+[sub_resource type="LabelSettings" id="LabelSettings_epvr4"]
+font = ExtResource("6_dq160")
+font_size = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3elub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_doegb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fs0v"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 16, 13, 6)
+modulate_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nd06i"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 16, 13, 6)
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exfpv"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 16, 13, 6)
+modulate_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m5axs"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 16, 13, 6)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jn14j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fwyu7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ewo21"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 24, 13, 6)
+modulate_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_epvr4"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 24, 13, 6)
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_283wx"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 24, 13, 6)
+modulate_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6d1xc"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 24, 13, 6)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dsopj"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 32, 13, 6)
+modulate_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_er026"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 32, 13, 6)
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvmcg"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 32, 13, 6)
+modulate_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2kb26"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 32, 13, 6)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3o43s"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 40, 13, 6)
+modulate_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ufea"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 40, 13, 6)
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2g57s"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 40, 13, 6)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t4k2q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8fs0v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jn14j"]
+texture = ExtResource("13_lidf8")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fwyu7"]
+texture = ExtResource("13_lidf8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bu0nq"]
+texture = ExtResource("13_lidf8")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pur8n"]
+texture = ExtResource("14_7y2fs")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nd06i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvcbx"]
+texture = ExtResource("16_6vu8i")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_psveo"]
+texture = ExtResource("16_6vu8i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8wy5"]
+texture = ExtResource("16_6vu8i")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_upix1"]
+texture = ExtResource("17_t4k2q")
+
+[node name="survival_guide_menu" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_g2sta")
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="ScreenContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_1fxqp")
+
+[node name="FrontCoverMargin" type="Control" parent="ScreenContainer"]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="FrontCoverButton" type="Button" parent="ScreenContainer/FrontCoverMargin"]
+layout_mode = 2
+offset_left = 300.0
+offset_top = 2.0
+offset_right = 610.0
+offset_bottom = 350.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_05qod")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_unlyx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_doegb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lidf8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u6nj5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dq160")
+
+[node name="bottom" type="Label" parent="ScreenContainer/FrontCoverMargin"]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 104.0
+offset_right = 605.0
+offset_bottom = 302.0
+theme_override_colors/font_color = Color(0.14902, 0.0705882, 0.109804, 1)
+theme_override_fonts/font = ExtResource("6_dq160")
+theme_override_font_sizes/font_size = 48
+text = "Aegis
+Survival
+Guide"
+horizontal_alignment = 1
+
+[node name="top" type="Label" parent="ScreenContainer/FrontCoverMargin/bottom"]
+offset_top = -4.0
+offset_right = 280.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(0.63493, 0.506542, 0.573102, 1)
+theme_override_fonts/font = ExtResource("6_dq160")
+theme_override_font_sizes/font_size = 48
+text = "Aegis
+Survival
+Guide"
+horizontal_alignment = 1
+
+[node name="BackCoverMargin" type="Control" parent="ScreenContainer"]
+visible = false
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BackCoverButton" type="Button" parent="ScreenContainer/BackCoverMargin"]
+layout_mode = 2
+offset_left = 30.0
+offset_top = 2.0
+offset_right = 340.0
+offset_bottom = 350.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_05qod")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_unlyx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_r3xbv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_unlyx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_05qod")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7y2fs")
+
+[node name="text1" type="Label" parent="ScreenContainer/BackCoverMargin"]
+offset_left = 140.0
+offset_top = 64.0
+offset_right = 256.0
+offset_bottom = 115.0
+scale = Vector2(1.2, 1.2)
+text = "Volunteer, this is the end of the survival guide. It was an honor to guide you through it. As for my final note to you:"
+label_settings = SubResource("LabelSettings_jn14j")
+autowrap_mode = 2
+
+[node name="heading" type="Label" parent="ScreenContainer/BackCoverMargin"]
+offset_left = 88.0
+offset_top = 27.0
+offset_right = 178.0
+offset_bottom = 51.0
+text = "The End"
+label_settings = SubResource("LabelSettings_fwyu7")
+
+[node name="heading3" type="Label" parent="ScreenContainer/BackCoverMargin"]
+offset_left = 54.0
+offset_top = 142.0
+offset_right = 243.0
+offset_bottom = 166.0
+scale = Vector2(0.75, 0.75)
+text = "- Thank You. -"
+label_settings = SubResource("LabelSettings_ewo21")
+
+[node name="text2" type="Label" parent="ScreenContainer/BackCoverMargin"]
+offset_left = 54.0
+offset_top = 162.0
+offset_right = 170.0
+offset_bottom = 213.0
+scale = Vector2(1.2, 1.2)
+text = "The forest lives because of volunteers like you. While dangers and foe continue to emerge, your efforts have the ability  to fend them off. "
+label_settings = SubResource("LabelSettings_jn14j")
+autowrap_mode = 2
+
+[node name="Contents" type="Control" parent="ScreenContainer"]
+visible = false
+layout_mode = 2
+
+[node name="LeftCover" type="Button" parent="ScreenContainer/Contents"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 190.0
+offset_right = 640.0
+offset_bottom = 530.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dq160")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u6nj5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6vu8i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t4k2q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6vu8i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3elub")
+
+[node name="RightCover" type="Button" parent="ScreenContainer/Contents"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 190.0
+offset_right = 930.0
+offset_bottom = 530.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dq160")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u6nj5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6vu8i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t4k2q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6vu8i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3elub")
+
+[node name="Page1and2" type="TextureRect" parent="ScreenContainer/Contents"]
+z_index = 1
+layout_mode = 2
+offset_left = 364.0
+offset_top = 204.0
+offset_right = 916.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_unlyx")
+
+[node name="Title" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 33.0
+offset_right = 241.0
+offset_bottom = 81.0
+scale = Vector2(0.9, 0.9)
+theme_override_fonts/font = ExtResource("6_dq160")
+theme_override_font_sizes/font_size = 48
+text = "Welcome"
+
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 110.0
+offset_right = 197.0
+offset_bottom = 161.0
+scale = Vector2(1.2, 1.2)
+text = "Greetings, new volunteer. I am the ranger of this forest, here to help you with this guide. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+offset_left = 28.0
+offset_top = 180.0
+offset_right = 198.0
+offset_bottom = 238.0
+scale = Vector2(1.2, 1.2)
+text = "It is your job to help kick out the unwanted visitors of the forest. Here, you will equip yourself with the knowledge required to effectively defend it. 
+"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+offset_left = 437.0
+offset_top = 86.0
+offset_right = 524.0
+offset_bottom = 194.0
+scale = Vector2(1.2, 1.2)
+text = "First, let me introduce myself. I am a \"hero\" type tower, meaning only one of me exists at a time. I encourage our allies and give them various buffs. 
+"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text4" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+offset_left = 338.0
+offset_top = 220.0
+offset_right = 494.0
+offset_bottom = 278.0
+scale = Vector2(1.2, 1.2)
+text = "On that fateful day, on the arrival of the UFO, it was the ranger who rallied the allies of the forest to fight. \"Would we fail to defend? Nah, we'd win.\"
+"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+offset_left = 329.0
+offset_top = 27.0
+offset_right = 419.0
+offset_bottom = 51.0
+text = "Ranger"
+label_settings = ExtResource("11_exfpv")
+
+[node name="heading2" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+offset_left = 450.0
+offset_top = 31.0
+offset_right = 540.0
+offset_bottom = 55.0
+scale = Vector2(0.75, 0.75)
+text = "Heroes"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading3" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+offset_left = 358.0
+offset_top = 202.0
+offset_right = 547.0
+offset_bottom = 226.0
+scale = Vector2(0.75, 0.75)
+text = "- Extra Facts -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="detail1" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+offset_left = 25.0
+offset_top = 276.0
+offset_right = 214.0
+offset_bottom = 300.0
+text = "Intro"
+label_settings = SubResource("LabelSettings_epvr4")
+
+[node name="detail2" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+offset_left = 85.0
+offset_top = 254.0
+offset_right = 274.0
+offset_bottom = 278.0
+text = "Allies"
+label_settings = SubResource("LabelSettings_epvr4")
+
+[node name="detail3" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+offset_left = 147.0
+offset_top = 276.0
+offset_right = 336.0
+offset_bottom = 300.0
+text = "Foes"
+label_settings = SubResource("LabelSettings_epvr4")
+
+[node name="detail4" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+offset_left = 213.0
+offset_top = 254.0
+offset_right = 402.0
+offset_bottom = 278.0
+text = "Forest"
+label_settings = SubResource("LabelSettings_epvr4")
+
+[node name="Page3and4" type="TextureRect" parent="ScreenContainer/Contents"]
+layout_mode = 2
+offset_left = 364.0
+offset_top = 204.0
+offset_right = 916.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_u6nj5")
+
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+offset_left = 25.0
+offset_top = 134.0
+offset_right = 206.0
+offset_bottom = 192.0
+scale = Vector2(1.2, 1.2)
+text = "This is your first ally, the reliable Chipmunk. He's cheap to place and will be great at picking off weaker foe. I've also heard he'd started a workout regimen of some sort too...
+"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+offset_left = 37.0
+offset_top = 27.0
+offset_right = 148.0
+offset_bottom = 51.0
+text = "Chipmunk"
+label_settings = ExtResource("11_exfpv")
+
+[node name="heading2" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+offset_left = 187.0
+offset_top = 31.0
+offset_right = 277.0
+offset_bottom = 55.0
+scale = Vector2(0.75, 0.75)
+text = "Ally"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading3" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+offset_left = 354.0
+offset_top = 202.0
+offset_right = 543.0
+offset_bottom = 226.0
+scale = Vector2(0.75, 0.75)
+text = "- Extra Facts -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading4" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+offset_left = 363.0
+offset_top = 27.0
+offset_right = 480.0
+offset_bottom = 51.0
+text = "Bee Army"
+label_settings = ExtResource("11_exfpv")
+
+[node name="heading5" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+offset_left = 63.0
+offset_top = 202.0
+offset_right = 252.0
+offset_bottom = 226.0
+scale = Vector2(0.75, 0.75)
+text = "- Extra Facts -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+offset_left = 44.0
+offset_top = 220.0
+offset_right = 195.0
+offset_bottom = 278.0
+scale = Vector2(1.2, 1.2)
+text = "During cold times, chipmunks will hibernate in their own dens. They also store the acorns they'd scavenged for here.  Most of their winters are spent sleeping."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+offset_left = 310.0
+offset_top = 132.0
+offset_right = 365.0
+offset_bottom = 149.0
+scale = Vector2(1.2, 1.2)
+text = "The bees are masters"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text4" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+offset_left = 310.0
+offset_top = 156.0
+offset_right = 439.0
+offset_bottom = 189.0
+scale = Vector2(1.2, 1.2)
+text = "of the air. They utilize advanced avionics to drop hives full of honey on foes."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text5" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+offset_left = 335.0
+offset_top = 220.0
+offset_right = 493.0
+offset_bottom = 278.0
+scale = Vector2(1.2, 1.2)
+text = "Bees are without a doubt the backbone of our ecosystems. One  reason for this is their  pollination abilities. Their overall populations, however, are on a decline. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="Page5and6" type="TextureRect" parent="ScreenContainer/Contents"]
+layout_mode = 2
+offset_left = 364.0
+offset_top = 204.0
+offset_right = 916.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_lidf8")
+
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 21.0
+offset_top = 92.0
+offset_right = 144.0
+offset_bottom = 122.0
+scale = Vector2(1.2, 1.2)
+text = "bushes often come in large numbers. Each bush on their own is rather weak though."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 37.0
+offset_top = 27.0
+offset_right = 148.0
+offset_bottom = 51.0
+text = "Invaders"
+label_settings = ExtResource("11_exfpv")
+
+[node name="heading2" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 187.0
+offset_top = 31.0
+offset_right = 277.0
+offset_bottom = 55.0
+scale = Vector2(0.75, 0.75)
+text = "Foe"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading3" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 63.0
+offset_top = 202.0
+offset_right = 252.0
+offset_bottom = 226.0
+scale = Vector2(0.75, 0.75)
+text = "- Extra Facts -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading7" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 352.0
+offset_top = 190.0
+offset_right = 541.0
+offset_bottom = 214.0
+scale = Vector2(0.75, 0.75)
+text = "- Extra Facts -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading4" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 26.0
+offset_top = 76.0
+offset_right = 215.0
+offset_bottom = 100.0
+scale = Vector2(0.5, 0.5)
+text = "Bush"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading5" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 26.0
+offset_top = 142.0
+offset_right = 215.0
+offset_bottom = 166.0
+scale = Vector2(0.5, 0.5)
+text = "Squirrel"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 93.0
+offset_top = 80.0
+offset_right = 153.0
+offset_bottom = 88.0
+scale = Vector2(1.2, 1.2)
+text = "Blackberry"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 21.0
+offset_top = 158.0
+offset_right = 144.0
+offset_bottom = 188.0
+scale = Vector2(1.2, 1.2)
+text = "gray squirrel move quite quickly. However, they are easier to wear down. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text4" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 93.0
+offset_top = 146.0
+offset_right = 153.0
+offset_bottom = 154.0
+scale = Vector2(1.2, 1.2)
+text = "The eastern"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text5" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 44.0
+offset_top = 220.0
+offset_right = 198.0
+offset_bottom = 270.0
+scale = Vector2(1.2, 1.2)
+text = "To some part of the world, these are invasive species. They disrupt ecosystems that they don't belong in by hoarding resources and harming the native species. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading6" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 321.0
+offset_top = 122.0
+offset_right = 510.0
+offset_bottom = 146.0
+scale = Vector2(0.5, 0.5)
+text = "Cow"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text6" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 318.0
+offset_top = 138.0
+offset_right = 493.0
+offset_bottom = 177.0
+scale = Vector2(1.2, 1.2)
+text = "not be the most intimidating foe, but beware of the chemicals it releases. Our allies might experience slowness after inhaling it. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text7" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 390.0
+offset_top = 126.0
+offset_right = 505.0
+offset_bottom = 134.0
+scale = Vector2(1.2, 1.2)
+text = "This is just a cow. It might"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text8" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+offset_left = 335.0
+offset_top = 208.0
+offset_right = 488.0
+offset_bottom = 268.0
+scale = Vector2(1.2, 1.2)
+text = "While not invasive like prior foe, many natural habitats have been removed to make room for them. Cows emite a lot of methane too, which is a more potent greenhouse gas than carbon dioxide."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="Page7and8" type="TextureRect" parent="ScreenContainer/Contents"]
+layout_mode = 2
+offset_left = 364.0
+offset_top = 204.0
+offset_right = 916.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_7y2fs")
+
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+offset_left = 21.0
+offset_top = 80.0
+offset_right = 119.0
+offset_bottom = 160.0
+scale = Vector2(1.2, 1.2)
+text = "This is the vessel of our invaders. Coming from an unknown world, it spews out countless foe. However, it appears that it is not the only harm to our forest. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+offset_left = 49.0
+offset_top = 27.0
+offset_right = 205.0
+offset_bottom = 51.0
+text = "Environment"
+label_settings = ExtResource("11_exfpv")
+
+[node name="heading3" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+offset_left = 44.0
+offset_top = 185.0
+offset_right = 281.0
+offset_bottom = 209.0
+scale = Vector2(0.75, 0.75)
+text = "- Urgent Warning -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+offset_left = 41.0
+offset_top = 206.0
+offset_right = 198.0
+offset_bottom = 266.0
+scale = Vector2(1.2, 1.2)
+text = "As time passes, the scent of smoke grows. The skies darken, the rivers lose color, and the trees are decaying . . . However, I fear that this isn't the result of an alien force. It resides in the forest. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading4" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+offset_left = 338.0
+offset_top = 140.0
+offset_right = 575.0
+offset_bottom = 164.0
+scale = Vector2(0.75, 0.75)
+text = "New foes emerge. "
+label_settings = ExtResource("12_m5axs")
+
+[node name="coil" type="TextureRect" parent="ScreenContainer/Contents"]
+z_index = 2
+layout_mode = 0
+offset_left = 320.0
+offset_top = 180.0
+offset_right = 960.0
+offset_bottom = 540.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("10_05qod")
+
+[node name="ButtonContainer" type="MarginContainer" parent="ScreenContainer"]
+visible = false
+custom_minimum_size = Vector2(592, 280)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="LeftTabs" type="Control" parent="ScreenContainer/ButtonContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ltab1and2" type="Button" parent="ScreenContainer/ButtonContainer/LeftTabs"]
+z_index = 1
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_right = 26.0
+offset_bottom = 13.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3elub")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_doegb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8fs0v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nd06i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_exfpv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m5axs")
+
+[node name="ltab3and4" type="Button" parent="ScreenContainer/ButtonContainer/LeftTabs"]
+visible = false
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_top = 17.0
+offset_right = 26.0
+offset_bottom = 30.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jn14j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fwyu7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ewo21")
+theme_override_styles/hover = SubResource("StyleBoxTexture_epvr4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_283wx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6d1xc")
+
+[node name="ltab5and6" type="Button" parent="ScreenContainer/ButtonContainer/LeftTabs"]
+visible = false
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_top = 34.0
+offset_right = 26.0
+offset_bottom = 47.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jn14j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fwyu7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_dsopj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_er026")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dvmcg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2kb26")
+
+[node name="ltab7and8" type="Button" parent="ScreenContainer/ButtonContainer/LeftTabs"]
+visible = false
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_top = 51.0
+offset_right = 26.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jn14j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fwyu7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_3o43s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8ufea")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3o43s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2g57s")
+
+[node name="RightTabs" type="Control" parent="ScreenContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="rtab1and2" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
+visible = false
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_left = -26.0
+offset_bottom = 13.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3elub")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_doegb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8fs0v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nd06i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_exfpv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m5axs")
+
+[node name="rtab3and4" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_left = -26.0
+offset_top = 17.0
+offset_bottom = 30.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jn14j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fwyu7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ewo21")
+theme_override_styles/hover = SubResource("StyleBoxTexture_epvr4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_283wx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6d1xc")
+
+[node name="rtab5and6" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_left = -26.0
+offset_top = 34.0
+offset_bottom = 47.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jn14j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fwyu7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_dsopj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_er026")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dvmcg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2kb26")
+
+[node name="rtab7and8" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_left = -26.0
+offset_top = 51.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jn14j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fwyu7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_3o43s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8ufea")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3o43s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2g57s")
+
+[node name="BackButtonContainer" type="Control" parent="ScreenContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BackButton" type="Button" parent="ScreenContainer/BackButtonContainer"]
+visible = false
+z_index = 10
+layout_mode = 2
+anchor_left = -0.114844
+anchor_top = 0.0361111
+anchor_right = -0.114844
+anchor_bottom = 0.0361111
+offset_left = 1198.0
+offset_top = 347.0
+offset_right = 1233.0
+offset_bottom = 382.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t4k2q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8fs0v")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jn14j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fwyu7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bu0nq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pur8n")
+script = ExtResource("15_6vu8i")
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+metadata/_edit_use_anchors_ = true
+
+[node name="BackButton2" type="Button" parent="ScreenContainer/BackButtonContainer"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.23653
+anchor_top = -0.451022
+anchor_right = -1.23653
+anchor_bottom = -0.451022
+offset_left = 2202.76
+offset_top = 829.736
+offset_right = 2232.76
+offset_bottom = 859.736
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nd06i")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xvcbx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_psveo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a8wy5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_upix1")
+script = ExtResource("15_6vu8i")
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+zoom = Vector2(2, 2)

@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d4i2galw8tjtc"]
+
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="1_k7tbr"]
+
+[resource]
+line_spacing = 2.0
+font = ExtResource("1_k7tbr")
+font_size = 8
+font_color = Color(0.811765, 0.65098, 0.364706, 1)

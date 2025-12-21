@@ -8,6 +8,7 @@ var icon_scene
 @export var has_text : bool
 @export var new_scene : bool
 @export var scene_scale : float = 1
+@export var hide_pause_menu : bool = false
 
 func _ready() -> void:
 	if has_text:
@@ -36,7 +37,13 @@ func load_icon_scene():
 	else:
 		SceneLoader.tint_scene()
 		SceneLoader.load_scene(file_path, new_key)
+		ui_open = true
+		
+	if SceneLoader._current_scenes[new_key].get_class() == "CanvasLayer":
 		icon_scene = SceneLoader._current_scenes[new_key].get_child(0)
 		icon_scene.pivot_offset = Vector2(icon_scene.size / 2)
 		icon_scene.scale = Vector2(scene_scale, scene_scale)
-		ui_open = true
+	
+	if hide_pause_menu:
+		print("load icon scene ran")
+		PauseUi.emit_signal("secondary_ui_open", true)

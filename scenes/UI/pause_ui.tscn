@@ -152,6 +152,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_3paxm")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/UI/settings_menu.tscn"
 scene_scale = 2.0
+hide_pause_menu = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
 [node name="ExtraButton2" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
@@ -164,6 +165,11 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_0rou8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7u2tl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_reg7a")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tql76")
+script = ExtResource("6_5el4x")
+file_path = "res://scenes/UI/survival_guide_menu.tscn"
+scene_scale = 2.0
+hide_pause_menu = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
 [node name="ControlButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
 custom_minimum_size = Vector2(75, 75)
@@ -178,6 +184,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_4ctmt")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/UI/test_menu.tscn"
 scene_scale = 2.0
+hide_pause_menu = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
 [node name="TextPlateVBox" type="VBoxContainer" parent="GameScreen/PauseMenuMargin"]

@@ -4,6 +4,7 @@ class_name UserInterface
 @export var pausable : bool = false
 
 func _ready() -> void:
+	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	if pausable:
 		PauseUi.pause_activated.connect(tint_ui)
 

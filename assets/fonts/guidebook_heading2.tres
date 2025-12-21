@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dnonjx6mllei5"]
+
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="1_4x0ru"]
+
+[resource]
+font = ExtResource("1_4x0ru")
+font_size = 24

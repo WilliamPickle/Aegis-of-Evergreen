@@ -7,3 +7,4 @@ func load_icon_scene():
 	SceneLoader.change_scene_visibility(Icon.current_scene_key,false)
 	SceneLoader.tint_scene(SceneLoader.current_main_scene,false)
 	Icon.ui_open = false
+	PauseUi.emit_signal("secondary_ui_open", false)
