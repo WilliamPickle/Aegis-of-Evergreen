@@ -1,10 +1,18 @@
 extends Node2D
 
+# variables for the actual wave spawning
 @export var timer: Timer
 @export var path_2d: Path2D
 @export var path_spread: float
 var bush := preload("res://scenes/Enemies/blackberry_bush.tscn")
 
+# variables to initialize waves after dialogue
+@onready var lvl1_dialogue: DialogueBox = $"../DialogueUI/DialogueBox"
+
+
+func _ready() -> void:
+	lvl1_dialogue.start_wave.connect(_on_start_wave)
+	
 # later on this function can be changed to only send out level 1.
 # await makes it so you must wait for the previous enemies to send out first
 # without await, functions run simulatenously. 

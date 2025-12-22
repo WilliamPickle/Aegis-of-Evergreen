@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=47 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -15,6 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="10_7gny6"]
 [ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_2aecg"]
 [ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="15_6dial"]
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
+[ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_1s4pk"]
+[ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
+[ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
+[ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_isj1j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("1_2os1m")
@@ -179,6 +184,8 @@ texture = ExtResource("3_5xbjy")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7nomh"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_so66j"]
+
 [node name="map1" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -317,6 +324,120 @@ metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 [node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("15_6dial")]
 placement_mask = NodePath("../PlacementCollisions")
 card_type = Array[String](["Tower", "Chipmunk", "Honey_Comb"])
+
+[node name="DialogueUI" type="CanvasLayer" parent="."]
+script = ExtResource("16_7nomh")
+pausable = true
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="DialogueBox" type="Control" parent="DialogueUI" node_paths=PackedStringArray("continue_button", "label_container", "timer", "node_to_hide")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_1s4pk")
+continue_button = NodePath("Button")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+text_speed = 0.01
+send_wave_signal = true
+hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="DialogueUI/DialogueBox"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_2cbcq")
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="DialogueUI/DialogueBox"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_so66j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_so66j")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_so66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_so66j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_so66j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_so66j")
+
+[node name="Timer" type="Timer" parent="DialogueUI/DialogueBox"]
+
+[node name="RangerIcon" type="TextureRect" parent="DialogueUI/DialogueBox"]
+layout_mode = 0
+offset_left = 921.0
+offset_top = 509.0
+offset_right = 1123.0
+offset_bottom = 702.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_isj1j")
+
+[node name="DialogueLabels" type="Control" parent="DialogueUI/DialogueBox"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "Welcome to the game this game is very cool and yeah I just need a buncha filler words."
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "Here's the second dialogue box before the wave starts probably. Maybe i should type out some more sample text though..."
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "Indeed here is another sample text."
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "This is the end."
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
 
 [connection signal="timeout" from="WaveSpawner/EnemyDelay" to="WaveSpawner" method="_on_enemy_delay_timeout"]
 [connection signal="button_down" from="Start Button/MarginContainer/VBoxContainer/HBoxContainer/StartWave" to="WaveSpawner" method="_on_start_wave"]
