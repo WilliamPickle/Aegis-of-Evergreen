@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj0dvvbcolto4"
-path="res://.godot/imported/honey_comb_lvl1.png-bfb35b1f9bdbe3f96d07998770fca7c8.ctex"
+uid="uid://x5k1u5wue0pd"
+path="res://.godot/imported/honey_comb_spritesheet.png-4694bfa6d631e205bd8faec4ed5b69e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/honey_comb_lvl1.png"
-dest_files=["res://.godot/imported/honey_comb_lvl1.png-bfb35b1f9bdbe3f96d07998770fca7c8.ctex"]
+source_file="res://assets/sprites/towers/honey_comb_spritesheet.png"
+dest_files=["res://.godot/imported/honey_comb_spritesheet.png-4694bfa6d631e205bd8faec4ed5b69e2.ctex"]
 
 [params]
 
