@@ -21,6 +21,7 @@ static var current_tower : Tower
 @export_subgroup("Stats")
 @export var cost : Array[float] = [0.0, 0.0, 0.0]
 @export var range : Array[float] = [0.0, 0.0, 0.0]
+@export var level : int = 0
 
 # the area of the current level
 # this is set once tower is intantiated

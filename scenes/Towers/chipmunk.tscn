@@ -22,7 +22,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3bpil")
 }],
 "loop": false,
-"name": &"attacking",
+"name": &"attacking_0",
 "speed": 10.0
 }, {
 "frames": [{
@@ -30,7 +30,7 @@ animations = [{
 "texture": ExtResource("2_fdw71")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_0",
 "speed": 5.0
 }]
 
@@ -56,9 +56,7 @@ metadata/_edit_group_ = true
 
 [node name="Image" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ccrqw")
-animation = &"attacking"
-frame = 1
-frame_progress = 1.0
+animation = &"idle_0"
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rblst")

@@ -29,7 +29,7 @@ func _ready() -> void:
 	_attack_cooldown.timeout.connect(update_enemy_list)
 	# Once tower is placed we can start attacking
 	tower_placed.connect(func():
-		$Image.play("idle")
+		$Image.play("idle_"+str(level))
 		_attack_cooldown.autostart = true
 		_attack_cooldown.start()
 	)
@@ -47,7 +47,7 @@ func _physics_process(_delta: float) -> void:
 
 # This is to be defined by a sub class
 func attack():
-	$Image.play("attacking")
+	$Image.play("attacking_"+str(level))
 	var tower_attack : Projectile = load(attack_fpath).instantiate()
 	tower_attack.tower = self
 	tower_attack.tower_range = range_area
@@ -63,7 +63,7 @@ func update_enemy_list() -> void:
 	# Stop the timer and use regular area_entered function
 	if _enemies.size() == 0:
 		print("No enmies detected when attacking")
-		$Image.play("idle")
+		$Image.play("idle_"+str(level))
 		_attack_cooldown.stop()
 		range_area.area_entered.connect(first_enemy_entered)
 		targeted_enemy = null
@@ -79,6 +79,8 @@ func first_enemy_entered(enemy : Area2D):
 	# Disable as now there is an enemy to detect
 	range_area.area_entered.disconnect(first_enemy_entered)
 	targeted_enemy = enemy
+	$Image.play("attacking_"+str(level))
+	await $Image.animation_finished
 	# Cool down already ran previously, so we are okay to
 	# perform an immidiate attack. 
 	attack()
