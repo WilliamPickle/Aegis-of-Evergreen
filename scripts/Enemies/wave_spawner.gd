@@ -4,22 +4,33 @@ extends Node2D
 @export var timer: Timer
 @export var path_2d: Path2D
 @export var path_spread: float
-var bush := preload("res://scenes/Enemies/blackberry_bush.tscn")
+const bush := preload("res://scenes/Enemies/blackberry_bush.tscn")
+const squirrel := preload("res://scenes/Enemies/squirrel.tscn")
+const cow := preload("res://scenes/Enemies/cow.tscn")
 
 # variables to initialize waves after dialogue
 @onready var lvl1_dialogue: DialogueBox = $"../DialogueUI/DialogueBox"
 
+# debug variables
+@onready var manual_wave_button: Button = $"../Start Button/MarginContainer/VBoxContainer/HBoxContainer/StartWave"
+
 
 func _ready() -> void:
-	lvl1_dialogue.start_wave.connect(_on_start_wave)
+	lvl1_dialogue.start_wave.connect(_on_start_lvl1)
+	manual_wave_button.button_down.connect(_on_start_lvl1)
 	
 # later on this function can be changed to only send out level 1.
 # await makes it so you must wait for the previous enemies to send out first
 # without await, functions run simulatenously. 
-func _on_start_wave() -> void:
-	await send_enemy(bush, 3, 1)
+func _on_start_lvl1() -> void:
+	await send_enemy(cow, 6, 1)
+	await delay(1)
+	await send_enemy(squirrel, 10, 0.5)
 	await delay(1)
 	await send_enemy(bush, 150, 0.2)
+
+
+
 
 # sends an enemy a specified amount of times. 
 func send_enemy(enemy, quantity: int, delay_time: float) -> void:

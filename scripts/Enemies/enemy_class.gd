@@ -3,17 +3,19 @@ extends Area2D
 
 # enemy based variables
 @export var enemy_sprite : Node2D
-@export var enemy_node : Node2D
-@export var speed = 0.02
+@export var speed = 0.015
 @export var resistance : Projectile.Type = Projectile.Type.NONE
+@onready var enemy_node = self
+var sprite_reversed = false
 
 # hp bar variables
-signal health_changed
+@export var hp_button: Button
+## health_bar should be the child of the hp container.
+## it's the green bar that contains the actual health.
 @export var health_bar : Sprite2D
-@export var max_health : float
+@export var max_health : float = 4
 var cur_health : float
 var bar_length : float
-@onready var button: Button = $Button
 # used to redraw health bar with updated health
 
 # path based variables
@@ -22,15 +24,16 @@ var path_position = null
 var cur_position = 0
 var prev_position = 0
 
-# for debugging
-@onready var timer: Timer = $Timer
-
 func _ready() -> void:
-	button.button_down.connect(toggle_health_bar)
-	health_changed.connect(draw_health)
+	hp_button.button_down.connect(toggle_health_bar)
 	cur_health = max_health
 	bar_length = health_bar.texture.get_width() * health_bar.scale.x
 	path = enemy_node.get_parent()
+	enemy_node.z_index = 4
+	enemy_node.collision_layer = 2
+	enemy_node.collision_mask = 2
+	if enemy_sprite.flip_h == true:
+		sprite_reversed = true
 	
 	
 	
@@ -47,9 +50,15 @@ func move_on_path(delta) -> void:
 	cur_position = path_position
 	
 	if (cur_position - prev_position < 0):
-		enemy_sprite.flip_h = false
+		if !sprite_reversed:
+			enemy_sprite.flip_h = false
+		else:
+			enemy_sprite.flip_h = true
 	else:
-		enemy_sprite.flip_h = true
+		if !sprite_reversed:
+			enemy_sprite.flip_h = true
+		else:
+			enemy_sprite.flip_h = false
 
 func apply_damage(damage : float, damage_type : Projectile.Type):
 	var damage_percent = 1
@@ -71,12 +80,6 @@ func draw_health():
 	
 func toggle_health_bar():
 	health_bar.get_parent().visible = !health_bar.get_parent().visible
-	
-# temporary debugging function for timer node
-func delay(delay_time) -> void:
-	timer.wait_time = delay_time
-	timer.start()
-	await timer.timeout
 
 func _process(delta: float) -> void:
 	move_on_path(delta)

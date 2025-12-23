@@ -5,9 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_erd5q"]
 [ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="4_nttgg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_eosuv"]
-radius = 7.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6mm1w"]
 atlas = ExtResource("1_vkedo")
 region = Rect2(0, 0, 25, 25)
@@ -44,6 +41,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_eosuv"]
+radius = 7.0
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_erd5q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nttgg"]
@@ -56,8 +56,7 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70pk3"]
 
-[node name="BlackberryBush" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "enemy_node", "health_bar")]
-z_index = 4
+[node name="BlackberryBush" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "hp_button", "health_bar")]
 collision_layer = 2
 collision_mask = 2
 input_pickable = false
@@ -65,19 +64,18 @@ linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource("1_eosuv")
 enemy_sprite = NodePath("Bush")
-enemy_node = NodePath(".")
+hp_button = NodePath("Button")
 health_bar = NodePath("HpContainer/HpBar")
-max_health = 4.0
 metadata/_custom_type_script = "uid://b8s182qi2sarb"
+
+[node name="Bush" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4hoh6")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_eosuv")
-
-[node name="Bush" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_4hoh6")
-autoplay = "default"
 
 [node name="Button" type="Button" parent="."]
 offset_left = -7.0
@@ -98,9 +96,3 @@ texture = ExtResource("3_erd5q")
 
 [node name="HpBar" type="Sprite2D" parent="HpContainer"]
 texture = ExtResource("4_nttgg")
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(8, 8)

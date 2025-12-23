@@ -1,0 +1,107 @@
+[gd_scene load_steps=17 format=3 uid="uid://blln37pvjxqvx"]
+
+[ext_resource type="Script" uid="uid://b8s182qi2sarb" path="res://scripts/Enemies/enemy_class.gd" id="1_n5jl8"]
+[ext_resource type="Texture2D" uid="uid://cwpnr0hox1wdt" path="res://assets/sprites/enemies/squirrel_v1.png" id="2_j4agr"]
+[ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_8qkv2"]
+[ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="4_grsxy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qkv2"]
+atlas = ExtResource("2_j4agr")
+region = Rect2(0, 0, 30, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grsxy"]
+atlas = ExtResource("2_j4agr")
+region = Rect2(30, 0, 30, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13h5c"]
+atlas = ExtResource("2_j4agr")
+region = Rect2(60, 0, 30, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl4xl"]
+atlas = ExtResource("2_j4agr")
+region = Rect2(90, 0, 30, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmj6i"]
+atlas = ExtResource("2_j4agr")
+region = Rect2(120, 0, 30, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssl2l"]
+atlas = ExtResource("2_j4agr")
+region = Rect2(150, 0, 30, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqgca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qkv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grsxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13h5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl4xl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmj6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssl2l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3uuiu"]
+radius = 2.0
+height = 18.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13h5c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dl4xl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmj6i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ssl2l"]
+
+[node name="Squirrel" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "hp_button", "health_bar")]
+script = ExtResource("1_n5jl8")
+enemy_sprite = NodePath("AnimatedSprite2D")
+speed = 0.04
+hp_button = NodePath("Button")
+health_bar = NodePath("HpContainer/HpBar")
+max_health = 2.0
+metadata/_custom_type_script = "uid://b8s182qi2sarb"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iqgca")
+autoplay = "default"
+frame_progress = 0.38196
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3uuiu")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 10.0
+offset_bottom = 4.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_13h5c")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dl4xl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_hmj6i")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ssl2l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hmj6i")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ssl2l")
+
+[node name="HpContainer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+texture = ExtResource("3_8qkv2")
+
+[node name="HpBar" type="Sprite2D" parent="HpContainer"]
+texture = ExtResource("4_grsxy")
