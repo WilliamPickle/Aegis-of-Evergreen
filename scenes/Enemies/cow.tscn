@@ -71,8 +71,8 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_s8eb0")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_7njlx")
 
 [node name="HpContainer" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(0, -8)
+position = Vector2(0, -24)
+scale = Vector2(1.44118, 1)
 texture = ExtResource("3_l5pgx")
 
 [node name="HpBar" type="Sprite2D" parent="HpContainer"]
