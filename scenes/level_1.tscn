@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=49 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
 [ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_isj1j"]
+[ext_resource type="Script" uid="uid://bl8h55txysn1a" path="res://scripts/Temp_upgrade_tower.gd" id="21_so66j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("1_2os1m")
@@ -341,7 +342,6 @@ card_type = Array[String](["Tower", "Chipmunk", "Honey_Comb"])
 [node name="DialogueUI" type="CanvasLayer" parent="."]
 script = ExtResource("16_7nomh")
 pausable = true
-metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 
 [node name="DialogueBox" type="Control" parent="DialogueUI" node_paths=PackedStringArray("continue_button", "label_container", "timer", "node_to_hide")]
 layout_mode = 3
@@ -356,7 +356,6 @@ text_speed = 0.01
 send_wave_signal = true
 hide_node = true
 node_to_hide = NodePath("../../ScrollbarUI")
-metadata/_custom_type_script = "uid://ie1q8lhylawu"
 
 [node name="BoxTexture" type="TextureRect" parent="DialogueUI/DialogueBox"]
 layout_mode = 0
@@ -451,5 +450,17 @@ offset_bottom = 76.0
 text = "This is the end."
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
+
+[node name="TempUpgradeButton" type="Button" parent="."]
+z_index = 100
+offset_left = -313.0
+offset_top = 9.0
+offset_right = -184.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("7_15mv3")
+text = "Upgrade
+selected
+tower"
+script = ExtResource("21_so66j")
 
 [connection signal="timeout" from="WaveSpawner/EnemyDelay" to="WaveSpawner" method="_on_enemy_delay_timeout"]
