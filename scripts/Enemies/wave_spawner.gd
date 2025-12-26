@@ -2,6 +2,7 @@ extends Node2D
 
 # variables for the actual wave spawning
 @export var timer: Timer
+@export var wave_timer : Timer
 @export var path_2d: Path2D
 @export var path_spread: float
 const bush := preload("res://scenes/Enemies/blackberry_bush.tscn")
@@ -10,8 +11,6 @@ const cow := preload("res://scenes/Enemies/cow.tscn")
 
 # variables to initialize waves after dialogue
 @onready var lvl1_dialogue: DialogueBox = $"../DialogueUI/DialogueBox"
-
-# debug variables
 @onready var manual_wave_button: Button = $"../Start Button/MarginContainer/VBoxContainer/HBoxContainer/StartWave"
 
 
@@ -23,11 +22,19 @@ func _ready() -> void:
 # await makes it so you must wait for the previous enemies to send out first
 # without await, functions run simulatenously. 
 func _on_start_lvl1() -> void:
-	await send_enemy(cow, 6, 1)
+	# wave 1
+	wave_timer.wait_time = 10
+	wave_timer.start()
+	await send_enemy(cow, 10, 0.2)
 	await delay(1)
-	await send_enemy(squirrel, 10, 0.5)
+	await send_enemy(bush, 10, 0.2)
+	
+	await wave_timer.timeout
+	# wave 2
+	print("wave 2 started")
+	await send_enemy(cow, 3, 1)
 	await delay(1)
-	await send_enemy(bush, 150, 0.2)
+	await send_enemy(squirrel, 60, 0.1)
 
 
 

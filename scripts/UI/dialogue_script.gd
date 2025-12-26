@@ -1,16 +1,16 @@
 extends Control
 class_name DialogueBox
 signal start_wave
-# This is to run the dialogue without user clicking
-signal start_dialogue
 
 # text handling variables
 @export var continue_button : Button
+@export var skip_button : Button
 @export var label_container : Control
 @export var timer : Timer
 @export var text_speed : float = 0.02
 var label_list := []
 var label_text : String
+var current_label : Label
 var cur_label_index : int = 0
 var prev_label_index : int = 0
 
@@ -33,16 +33,15 @@ func _ready() -> void:
 	# set up dialogue list to itterate through
 	for i in range(label_container.get_child_count()):
 		label_list.append(label_container.get_child(i))
+		
+	# connect signals
 	continue_button.button_down.connect(display_dialogue)
-	start_dialogue.connect(display_dialogue)
-	emit_signal("start_dialogue")
-
-
+	display_dialogue() # this is to autoplay on level start
 
 func display_dialogue():
+	#print("continue hit")
 	# stuff to do once dialogue is done
 	if cur_label_index == len(label_list):
-		print("ran")
 		if hide_node:
 			node_to_hide.visible = true
 		self.visible = false
@@ -51,12 +50,13 @@ func display_dialogue():
 		# not sure if dialogue will activate anything else
 		if send_wave_signal:
 			emit_signal("start_wave")
-		print("last dialogue just finished.") 
+		#print("last dialogue just finished.") 
 		return
 		
 	continue_button.visible = false
+	skip_button.visible = true
 	# update variables
-	var current_label = label_list[cur_label_index]
+	current_label = label_list[cur_label_index]
 	label_text = current_label.text
 	
 	# activate the text
@@ -66,13 +66,19 @@ func display_dialogue():
 	
 	# loop through each string and show them individually
 	timer.wait_time = text_speed
-	for letter in label_text:
+	for i in range(len(label_text)):
+		if skip_button.button_pressed:
+			#print("Skip hit")
+			timer.stop()
+			current_label.text = label_text
+			break
 		timer.start()
 		await timer.timeout
-		current_label.text += letter
+		current_label.text += label_text[i]
 	
 	# update index
 	prev_label_index = cur_label_index
 	cur_label_index += 1
 	
 	continue_button.visible = true
+	skip_button.visible = false

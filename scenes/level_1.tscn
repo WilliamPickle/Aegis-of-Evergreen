@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="10_7gny6"]
 [ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_2aecg"]
 [ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="15_6dial"]
-[ext_resource type="Script" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
-[ext_resource type="Script" path="res://scripts/UI/dialogue_script.gd" id="17_1s4pk"]
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
+[ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_1s4pk"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
 [ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_isj1j"]
@@ -270,14 +270,17 @@ polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130
 visible = false
 polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
 
-[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("timer", "path_2d")]
+[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("timer", "wave_timer", "path_2d")]
 script = ExtResource("8_2os1m")
 timer = NodePath("EnemyDelay")
+wave_timer = NodePath("WaveTimer")
 path_2d = NodePath("../EnemyPath2")
 path_spread = 2.0
 
 [node name="EnemyDelay" type="Timer" parent="WaveSpawner"]
 wait_time = 5.0
+
+[node name="WaveTimer" type="Timer" parent="WaveSpawner"]
 
 [node name="Start Button" type="CanvasLayer" parent="."]
 layer = 2
@@ -343,16 +346,17 @@ script = ExtResource("16_7nomh")
 pausable = true
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 
-[node name="DialogueBox" type="Control" parent="DialogueUI" node_paths=PackedStringArray("continue_button", "label_container", "timer", "node_to_hide")]
+[node name="DialogueBox" type="Control" parent="DialogueUI" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("17_1s4pk")
-continue_button = NodePath("Button")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
 label_container = NodePath("DialogueLabels")
 timer = NodePath("Timer")
-text_speed = 0.01
+text_speed = 0.1
 send_wave_signal = true
 hide_node = true
 node_to_hide = NodePath("../../ScrollbarUI")
@@ -376,7 +380,20 @@ text = "The Ranger"
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="DialogueUI/DialogueBox"]
+[node name="SkipButton" type="Button" parent="DialogueUI/DialogueBox"]
+visible = false
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_so66j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_so66j")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_so66j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_so66j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_so66j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_so66j")
+
+[node name="ContButton" type="Button" parent="DialogueUI/DialogueBox"]
 layout_mode = 0
 offset_left = 164.0
 offset_top = 578.0
@@ -408,42 +425,39 @@ offset_right = 940.0
 offset_bottom = 683.0
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
-visible = false
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 681.0
-offset_bottom = 76.0
-text = "Welcome to the game this game is very cool and yeah I just need a buncha filler words."
-label_settings = ExtResource("19_isj1j")
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
-visible = false
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 681.0
-offset_bottom = 76.0
-text = "Here's the second dialogue box before the wave starts probably. Maybe i should type out some more sample text though..."
-label_settings = ExtResource("19_isj1j")
-autowrap_mode = 2
-
-[node name="Label3" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
-visible = false
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 681.0
-offset_bottom = 76.0
-text = "Indeed here is another sample text."
-label_settings = ExtResource("19_isj1j")
-autowrap_mode = 2
-
 [node name="Label4" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
 layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "I'm never going to give the forest up. "
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "I'm never going to let the forest down. "
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "I'm never going to run around and desert it, I'm never going to make it cry, I'm never going to say goodbye, and I'm never going to tell a lie and hurt it. "
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
 offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
