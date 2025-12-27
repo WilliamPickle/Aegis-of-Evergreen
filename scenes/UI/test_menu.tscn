@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://b2mj5pmq0ytgp"]
+[gd_scene load_steps=19 format=3 uid="uid://b2mj5pmq0ytgp"]
 
 [ext_resource type="Script" uid="uid://dd56ng05gs51w" path="res://scripts/UI/settings_script.gd" id="1_72lnf"]
-[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_o2l3q"]
+[ext_resource type="Script" path="res://scripts/UI/ui_script.gd" id="1_o2l3q"]
 [ext_resource type="Texture2D" uid="uid://c8sm4hs6h6lcs" path="res://assets/sprites/settings screen/settings_back_v1.png" id="2_llsew"]
 [ext_resource type="Texture2D" uid="uid://coqpl0tt4bms5" path="res://assets/sprites/icons and buttons/back_button_highlighted.png" id="3_0gjax"]
 [ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="4_hi4sp"]
@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cjkk5ket3fgtr" path="res://assets/sprites/settings screen/Wooden Slider Button Cropped.png" id="7_etagw"]
 [ext_resource type="Texture2D" uid="uid://bfnv5d5fmfpgg" path="res://assets/sprites/settings screen/wooden_slider_button_highlighted.png" id="8_hmlvv"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="9_5m20f"]
-[ext_resource type="AudioStream" uid="uid://drioqjvllq6lr" path="res://assets/music/TrapFunk&Alivio - o Biicho [Thematic].mp3" id="12_6iuu2"]
-[ext_resource type="AudioStream" uid="uid://dul6qla1ntynw" path="res://assets/music/Kabwasa - Soul Sing [Thematic].mp3" id="13_2ug15"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0dr5"]
 
@@ -39,7 +37,6 @@ texture = ExtResource("4_hi4sp")
 process_mode = 3
 layer = 2
 script = ExtResource("1_o2l3q")
-metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 
 [node name="SettingsAssets2" type="MarginContainer" parent="." node_paths=PackedStringArray("music_volume", "SFX_volume")]
 modulate = Color(0.125911, 0.125911, 0.125911, 1)
@@ -179,13 +176,3 @@ theme_override_font_sizes/normal_font_size = 16
 text = "Music
 Volume"
 metadata/_edit_use_anchors_ = true
-
-[node name="TrapFunk&alivio-OBiicho[thematic]" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_6iuu2")
-autoplay = true
-bus = &"music"
-
-[node name="Kabwasa-SoulSing[thematic]" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_2ug15")
-autoplay = true
-bus = &"sfx"

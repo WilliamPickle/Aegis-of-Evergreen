@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://cws5x3bctkj0m"
 position = Vector2(-7, -2)
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_yrbjp")
-frame_progress = 0.662139
+frame_progress = 0.0210996
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wwb75")
