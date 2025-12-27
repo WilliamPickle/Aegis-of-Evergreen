@@ -356,7 +356,7 @@ continue_button = NodePath("ContButton")
 skip_button = NodePath("SkipButton")
 label_container = NodePath("DialogueLabels")
 timer = NodePath("Timer")
-text_speed = 0.1
+text_speed = 0.05
 send_wave_signal = true
 hide_node = true
 node_to_hide = NodePath("../../ScrollbarUI")
@@ -382,6 +382,7 @@ autowrap_mode = 2
 
 [node name="SkipButton" type="Button" parent="DialogueUI/DialogueBox"]
 visible = false
+layout_mode = 0
 offset_left = 164.0
 offset_top = 578.0
 offset_right = 1116.0
@@ -438,6 +439,7 @@ autowrap_mode = 2
 
 [node name="Label6" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
+layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
@@ -448,6 +450,7 @@ autowrap_mode = 2
 
 [node name="Label5" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
+layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
@@ -458,6 +461,7 @@ autowrap_mode = 2
 
 [node name="Label7" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
+layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
