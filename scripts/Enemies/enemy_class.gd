@@ -1,10 +1,14 @@
 class_name Enemy
 extends Area2D
+signal reached_end
 
 # enemy based variables
 @export var enemy_sprite : Node2D
 @export var speed = 0.015
 @export var resistance : Projectile.Type = Projectile.Type.NONE
+## Used to calculate damage it does against the base. 
+## Formula is cur_health * base_damage_ratio
+@export var base_damage_ratio : float = 0.5
 @onready var enemy_node = self
 var sprite_reversed = false
 
@@ -43,6 +47,8 @@ func move_on_path(delta) -> void:
 	if  path.progress_ratio >= 1:
 		path.queue_free()
 		enemy_sprite.queue_free()
+		if cur_health > 0:
+			emit_signal("reached_end")
 
 	path_position = path.get_global_position().x
 	prev_position = cur_position
