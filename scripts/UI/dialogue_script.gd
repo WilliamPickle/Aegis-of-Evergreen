@@ -36,6 +36,7 @@ func _ready() -> void:
 		
 	# connect signals
 	continue_button.button_down.connect(display_dialogue)
+	skip_button.button_down.connect(end_timer)
 	display_dialogue() # this is to autoplay on level start
 
 func display_dialogue():
@@ -69,7 +70,6 @@ func display_dialogue():
 	for i in range(len(label_text)):
 		if skip_button.button_pressed:
 			#print("Skip hit")
-			timer.stop()
 			current_label.text = label_text
 			break
 		timer.start()
@@ -82,3 +82,7 @@ func display_dialogue():
 	
 	continue_button.visible = true
 	skip_button.visible = false
+
+func end_timer():
+	timer.stop()
+	timer.emit_signal("timeout")

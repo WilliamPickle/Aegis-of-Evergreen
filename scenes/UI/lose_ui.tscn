@@ -1,0 +1,196 @@
+[gd_scene load_steps=29 format=3 uid="uid://cwv344qy2c4rj"]
+
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_sxpqe"]
+[ext_resource type="Script" uid="uid://bbtl2l7i6gmon" path="res://scripts/UI/lose_screen.gd" id="2_qkrtx"]
+[ext_resource type="Texture2D" uid="uid://crdpu06t0syay" path="res://assets/sprites/icons and buttons/ui_bar.png" id="3_d078y"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="4_p5pvh"]
+[ext_resource type="Texture2D" uid="uid://batxqb5ayudcw" path="res://assets/sprites/icons and buttons/lose_chain.png" id="5_3r5me"]
+[ext_resource type="Texture2D" uid="uid://pfssqwf31dm7" path="res://assets/sprites/icons and buttons/settings_button_highlighted.png" id="6_qb4k2"]
+[ext_resource type="Texture2D" uid="uid://ywnxvtgi724h" path="res://assets/sprites/icons and buttons/settings_button_cropped.png" id="7_fmbor"]
+[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="8_4tupf"]
+[ext_resource type="Texture2D" uid="uid://dx8gr1ru0ttps" path="res://assets/sprites/icons and buttons/retry_button_highlight.png" id="9_p4r8m"]
+[ext_resource type="Texture2D" uid="uid://5erbw1yep760" path="res://assets/sprites/icons and buttons/retry_button.png" id="10_q714h"]
+[ext_resource type="Script" uid="uid://c5fp3mmv1t01b" path="res://scenes/UI/retry_button.gd" id="11_fmbor"]
+[ext_resource type="Texture2D" uid="uid://vyejon8a8wc1" path="res://assets/sprites/icons and buttons/control_button_highlighted.png" id="11_x1mml"]
+[ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="12_56s0x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5cmc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ttenv"]
+texture = ExtResource("6_qb4k2")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fkfnr"]
+texture = ExtResource("6_qb4k2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8gk4"]
+texture = ExtResource("6_qb4k2")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5vw1p"]
+texture = ExtResource("7_fmbor")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e8qj8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwfde"]
+texture = ExtResource("9_p4r8m")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wpp0v"]
+texture = ExtResource("9_p4r8m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5ish"]
+texture = ExtResource("9_p4r8m")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tlmoh"]
+texture = ExtResource("10_q714h")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6hr8s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_235jf"]
+texture = ExtResource("11_x1mml")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gi8sk"]
+texture = ExtResource("11_x1mml")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekstf"]
+texture = ExtResource("11_x1mml")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mu17k"]
+texture = ExtResource("12_56s0x")
+
+[node name="LoseUI" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_sxpqe")
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="LoseScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -519.0
+offset_right = 1280.0
+offset_bottom = 201.0
+script = ExtResource("2_qkrtx")
+animation_duration = 1.5
+
+[node name="TextPlate" type="NinePatchRect" parent="LoseScreen"]
+custom_minimum_size = Vector2(550, 125)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -62.5
+offset_right = 275.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_d078y")
+
+[node name="TextMargin" type="MarginContainer" parent="LoseScreen/TextPlate"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -32.0
+offset_right = 216.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+
+[node name="Text" type="Label" parent="LoseScreen/TextPlate/TextMargin"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_p5pvh")
+theme_override_font_sizes/font_size = 64
+text = "You Lost . . ."
+
+[node name="TextureRect" type="TextureRect" parent="LoseScreen/TextPlate"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -478.0
+offset_right = 195.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3r5me")
+
+[node name="ButtonBarHBox" type="HBoxContainer" parent="LoseScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = 77.0
+offset_right = 127.5
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="SettingsButton" type="Button" parent="LoseScreen/ButtonBarHBox"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h5cmc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ttenv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fkfnr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g8gk4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5vw1p")
+script = ExtResource("8_4tupf")
+file_path = "res://scenes/UI/settings_menu.tscn"
+scene_scale = 2.0
+hide_pause_menu = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RetryButton" type="Button" parent="LoseScreen/ButtonBarHBox"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxTexture_e8qj8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_dwfde")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wpp0v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q5ish")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tlmoh")
+script = ExtResource("11_fmbor")
+file_path = "res://scenes/level_1.tscn"
+new_scene = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="ControlButton" type="Button" parent="LoseScreen/ButtonBarHBox"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6hr8s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_235jf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gi8sk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ekstf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_mu17k")
+script = ExtResource("8_4tupf")
+file_path = "res://scenes/UI/test_menu.tscn"
+scene_scale = 2.0
+hide_pause_menu = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
