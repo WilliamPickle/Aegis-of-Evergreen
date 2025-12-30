@@ -15,13 +15,21 @@ static var current_tower : Tower
 # Turn to const once variable is finalized
 @export var snapping : float
 
+# Class shared vars
+static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))
+@export var data_resource : DataResource = DataResource.new()
+@onready var object_data = Game_Data[data_resource.class_type][data_resource.object]
+	# Tower class stats
+@export var level : int = 0
+@onready var cost : float = object_data["cost"][level]
+@onready var range : float = object_data["range"][level]
+
 # For testing might be changed later
 # but for now this is how we save
 # tower stat data
 @export_subgroup("Stats")
-@export var cost : Array[float] = [0.0, 0.0, 0.0]
-@export var range : Array[float] = [0.0, 0.0, 0.0]
-@export var level : int = 0
+#@export var cost : Array[float] = [0.0, 0.0, 0.0]
+#@export var range : Array[float] = [0.0, 0.0, 0.0]
 
 # the area of the current level
 # this is set once tower is intantiated
@@ -101,6 +109,7 @@ func place_tower() -> bool:
 	button.visible = true
 	# Disable the visibility of tower hitbox
 	can_draw = false
+	current_tower = null
 	# Draw the changes
 	queue_redraw()
 	
@@ -117,6 +126,12 @@ func place_tower() -> bool:
 	ControlHandler.current_states.erase(CONTROLS_STATES.PLACING_TOWER)
 	
 	return true
+
+func upgrade_tower() -> void:
+	level += 1
+	cost = object_data["cost"][level]
+	range = object_data["range"][level]
+	range_collider.shape.radius = range
 
 # When tower is first intantiated, the tower follows mouse position
 # and updates draw().

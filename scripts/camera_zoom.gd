@@ -18,10 +18,10 @@ func _input(event: InputEvent) -> void:
 		if camera.zoom > Vector2(zoom_max, zoom_max):
 			camera.zoom += Vector2(-zoom_rate, -zoom_rate)
 			
-	if Input.is_action_just_pressed("MouseMiddle"):
+	if Input.is_action_just_pressed("MouseMiddle") or Input.is_action_just_pressed("move_camera"):
 		initial_mouse_pos = get_global_mouse_position()
 
-	if Input.is_action_pressed("MouseMiddle"):
+	if Input.is_action_pressed("MouseMiddle") or Input.is_action_pressed("move_camera"):
 		cur_mouse_pos = get_global_mouse_position()
 		camera.position += (initial_mouse_pos - cur_mouse_pos) * panning_drag
 		

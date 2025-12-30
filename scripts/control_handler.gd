@@ -20,6 +20,7 @@ func _input(event: InputEvent) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("remove_tower_hitboxes") and _only_has_state(ControlState.VIEWING_TOWER,[ControlState.PLAYING]):
 		Tower.current_tower.draw_hitboxes(true)
+		Tower.current_tower = null
 		current_states.erase(ControlState.VIEWING_TOWER)
 
 # checks if current_states only has the given state,

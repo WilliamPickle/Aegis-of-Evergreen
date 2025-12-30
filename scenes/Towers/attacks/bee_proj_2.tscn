@@ -1,0 +1,122 @@
+[gd_scene load_steps=18 format=3 uid="uid://cvk1isfkb0q7"]
+
+[ext_resource type="Script" uid="uid://coe2feohr64oy" path="res://scripts/Towers/attacks/splash_class.gd" id="1_ounrf"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_s52yd"]
+[ext_resource type="Texture2D" uid="uid://x5k1u5wue0pd" path="res://assets/sprites/towers/honey_comb_spritesheet.png" id="3_ks5pa"]
+
+[sub_resource type="Resource" id="Resource_ounrf"]
+script = ExtResource("2_s52yd")
+class_type = "splash"
+object = "bee_proj_2"
+update_data = false
+metadata/_custom_type_script = "uid://baqkdqf80xars"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv51j"]
+atlas = ExtResource("3_ks5pa")
+region = Rect2(0, 300, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmsl6"]
+atlas = ExtResource("3_ks5pa")
+region = Rect2(50, 300, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opruc"]
+atlas = ExtResource("3_ks5pa")
+region = Rect2(100, 300, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhqc7"]
+atlas = ExtResource("3_ks5pa")
+region = Rect2(150, 300, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvubc"]
+atlas = ExtResource("3_ks5pa")
+region = Rect2(200, 300, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osi1o"]
+atlas = ExtResource("3_ks5pa")
+region = Rect2(250, 300, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx1q5"]
+atlas = ExtResource("3_ks5pa")
+region = Rect2(300, 300, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw6l3"]
+atlas = ExtResource("3_ks5pa")
+region = Rect2(350, 300, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7l1l"]
+atlas = ExtResource("3_ks5pa")
+region = Rect2(400, 300, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jncld"]
+atlas = ExtResource("3_ks5pa")
+region = Rect2(450, 300, 50, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcy7b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv51j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmsl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opruc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhqc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvubc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osi1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx1q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw6l3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7l1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jncld")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edp4q"]
+size = Vector2(10, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aoe4v"]
+radius = 30.0
+
+[node name="BeeProj2" type="Area2D"]
+z_index = 11
+collision_mask = 2
+script = ExtResource("1_ounrf")
+face_enemy = false
+data_resource = SubResource("Resource_ounrf")
+metadata/_custom_type_script = "uid://coe2feohr64oy"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_dcy7b")
+autoplay = "default"
+frame_progress = 0.837146
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_edp4q")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="SplashArea" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="SplashShape" type="CollisionShape2D" parent="SplashArea"]
+shape = SubResource("CircleShape2D_aoe4v")

@@ -6,16 +6,15 @@ enum Target{
 	FIRST,
 	LAST,
 }
-
-@export_subgroup("Stats")
-@export var damage : Array[float] = [0.0, 0.0, 0.0]
-@export var piercing : Array[float] = [0.0, 0.0, 0.0]
-@export var attack_fpath : String
+# Attacker only stats
+@onready var damage : float = object_data["damage"][level]
+@onready var attack_fpath : String = object_data["attack_fpath"][level]
 
 @onready var range_area : Area2D = $Range
 @onready var _attack_cooldown : Timer = $AttackCoolDOwn
+@onready var _sprite = $Image
 
-var cur_damage
+var cur_damage : float
 # Randomizing the target type for now.
 var target_type = Target.values()[randi_range(0, Target.size()-1)]
 # List of enemies in tower area
@@ -25,11 +24,11 @@ var targeted_enemy : Area2D
 
 func _ready() -> void:
 	super._ready()
-	cur_damage = damage[0]
+	cur_damage = damage
 	_attack_cooldown.timeout.connect(update_enemy_list)
 	# Once tower is placed we can start attacking
 	tower_placed.connect(func():
-		$Image.play("idle_"+str(level))
+		_sprite.play("idle_"+str(level))
 		_attack_cooldown.autostart = true
 		_attack_cooldown.start()
 	)
@@ -47,7 +46,7 @@ func _physics_process(_delta: float) -> void:
 
 # This is to be defined by a sub class
 func attack():
-	$Image.play("attacking_"+str(level))
+	_sprite.play("attacking_"+str(level))
 	var tower_attack : Projectile = load(attack_fpath).instantiate()
 	tower_attack.tower = self
 	tower_attack.tower_range = range_area
@@ -63,7 +62,7 @@ func update_enemy_list() -> void:
 	# Stop the timer and use regular area_entered function
 	if _enemies.size() == 0:
 		print("No enmies detected when attacking")
-		$Image.play("idle_"+str(level))
+		_sprite.play("idle_"+str(level))
 		_attack_cooldown.stop()
 		range_area.area_entered.connect(first_enemy_entered)
 		targeted_enemy = null
@@ -73,18 +72,26 @@ func update_enemy_list() -> void:
 		set_target()
 		attack()
 
+func upgrade_tower() -> void:
+	super.upgrade_tower()
+	_sprite.play("idle_"+str(level))
+	damage = object_data["damage"][level]
+	attack_fpath = object_data["attack_fpath"][level]
+	_attack_cooldown.wait_time = object_data["attack_speed"][level]
+	_attack_cooldown.start()
+
 ## When tower checks for enemies in its range, and detects 0,
 ## the tower will use defualt area_entered signal.
 func first_enemy_entered(enemy : Area2D):
 	# Disable as now there is an enemy to detect
 	range_area.area_entered.disconnect(first_enemy_entered)
 	targeted_enemy = enemy
-	$Image.play("attacking_"+str(level))
-	await $Image.animation_finished
+	_sprite.play("attacking_"+str(level))
+	await _sprite.animation_finished
 	# Cool down already ran previously, so we are okay to
 	# perform an immidiate attack. 
 	attack()
-	# Star the timer again.
+	
 	_attack_cooldown.start()
 
 ## Finds and sets the correct enemy to target.

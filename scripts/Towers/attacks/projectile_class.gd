@@ -6,46 +6,60 @@ enum Type{
 	BLUNT,
 	EXPLOSIVE,
 }
-@export var type : Type = Type.BLUNT
-@export var speed : float
-@export var trans_type : Tween.TransitionType
-## The max amount of collisions the attack may have
-@export var max_hits : int
-@export var despawn_distance : float
-@export var debuff_type : Debuff.Type
+@export var face_enemy : bool = true
 
+# Class shared vars
+	# Data
+static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))
+@export var data_resource : DataResource = DataResource.new()
+@onready var object_data = Game_Data[data_resource.class_type][data_resource.object]
+	# Projectile class stats
+@onready var type : String = object_data["type"]
+@onready var travel_time : float = object_data["travel_time"]
+@onready var pierce_cap : int = object_data["pierce_cap"]
+@onready var debuff_tString : String = object_data["debuff_type"]
+	# Projectile refrences
 var tower : Attacker
 var tower_range : Area2D
 var target_enemy : Enemy
 
+# Projectile exclusive vars
+## After projectile leaves the tower's range, despawn after a set amount of pixels later.
+## _despawn_distance may be a float value or null.
+@onready var _despawn_distance = object_data.get("despawn_distance") #object_data["despawn_distance"]\
+#if "despawn_distance" in object_data else null
 
 func _ready() -> void:
-	#spawn at the tower
-	global_position = tower_range.global_position
 	# face the enemy
-	var newPos : Vector2 = target_enemy.global_position - global_position
-	rotation = atan2(newPos.y, newPos.x)
+	if face_enemy:
+		snap_to_enemy()
 	
 	# get the direction to where the attack is aimed at
 	var direction : Vector2 = ((global_position - target_enemy.global_position) * -1).normalized()
-	var attack_length = direction * (tower_range.get_child(0).shape.radius + despawn_distance)
-	var tween = create_tween().set_trans(trans_type)
-	tween.tween_property(self, "global_position", attack_length + tower_range.global_position, speed)
-	area_entered.connect(_on_hit)
+	
+	#var range_radius : float = tower.range
+	var attack_length : Vector2 = direction * (tower.range + _despawn_distance)
+		
+	var tween = create_tween()
+	tween.tween_property(self, "global_position", attack_length + tower_range.global_position, travel_time)
+	area_entered.connect(on_hit)
 	tween.play()
-	tween.finished.connect(func():
-			queue_free()
-	)
+	tween.finished.connect(on_met_target)
 
+func snap_to_enemy() -> void:
+	var newPos : Vector2 = target_enemy.global_position - global_position
+	rotation = atan2(newPos.y, newPos.x)
 
-# WILL BE CHANGED LATER ONCE HEALTH
-# AND OTHER STUFF IS ADDED
-func _on_hit(enemy : Enemy) -> void:
+func on_hit(enemy : Enemy) -> void:
 	#if enemy == null:
 		#return
 	#enemy.cur_health -= tower.cur_damage
 	#enemy.health_changed.emit()
-	enemy.apply_damage(tower.cur_damage, type)
-	max_hits -= 1
-	if max_hits <= 0:
+	enemy.apply_damage(tower.cur_damage, Type.BLUNT)
+	pierce_cap -= 1
+	if pierce_cap <= 0:
 		queue_free()
+## This functions holds the logic for when the projectile
+## has met its life span.
+func on_met_target() -> void:
+	queue_free()
