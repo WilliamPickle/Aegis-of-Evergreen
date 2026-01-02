@@ -16,6 +16,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ESCAPE and current_states.has(ControlState.PLAYING):
 			get_tree().paused = not get_tree().paused
+	#print("In controlHandler:",current_states)
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("remove_tower_hitboxes") and _only_has_state(ControlState.VIEWING_TOWER,[ControlState.PLAYING]):

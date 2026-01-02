@@ -8,7 +8,9 @@ class_name Melee_Tower
 
 func _physics_process(delta: float) -> void:
 	if targeted_enemy != null:
-		#attack_range.rotation = 
+		#attack_range.rotation = (targeted_enemy.global_position).angle_to(global_position)
+		attack_range.rotation = (targeted_enemy.global_position - global_position).angle()
+		attack_range.rotation += 1
 		queue_redraw()
 
 #func _draw() -> void:

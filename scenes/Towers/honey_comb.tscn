@@ -477,6 +477,8 @@ radius = 100.0
 
 [node name="HoneyComb" type="Area2D"]
 z_index = 7
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_co3uv")
 snapping = 2.0
 data_resource = SubResource("Resource_d10nx")
@@ -512,7 +514,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_7iblp")
 wait_time = 2.0
 
 [node name="Range" type="Area2D" parent="."]
-collision_layer = 4
+collision_layer = 8
 collision_mask = 2
 
 [node name="RangeCollision" type="CollisionShape2D" parent="Range"]
