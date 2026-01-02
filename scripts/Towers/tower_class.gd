@@ -58,7 +58,8 @@ func _ready() -> void:
 	
 	button.pressed.connect(draw_hitboxes)
 	current_tower = self
-	current_tower.set_collision_layer_value(3, true)
+	set_collision_layer_value(3, true)
+	set_collision_layer_value(1, false)
 
 
 func _draw() -> void:
