@@ -1,9 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7ncwanh4k1os"]
+[gd_scene load_steps=29 format=3 uid="uid://b7ncwanh4k1os"]
 
-[ext_resource type="Script" uid="uid://b8s182qi2sarb" path="res://scripts/Enemies/enemy_class.gd" id="1_6ah8t"]
+[ext_resource type="Script" uid="uid://csbsy1wd05fmo" path="res://scripts/Enemies/cow.gd" id="1_l5pgx"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_l5pgx"]
 [ext_resource type="Texture2D" uid="uid://dudedntbvbfnu" path="res://assets/sprites/enemies/cow_v2.png" id="2_oal1r"]
 [ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_l5pgx"]
 [ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="4_aqvb8"]
+[ext_resource type="Texture2D" uid="uid://66a7jimgul0n" path="res://assets/sprites/enemies/cow_fart.png" id="5_aqvb8"]
+[ext_resource type="Script" uid="uid://pmbess4iea10" path="res://scripts/stat_changer_class.gd" id="6_30p10"]
+
+[sub_resource type="Resource" id="Resource_aqvb8"]
+script = ExtResource("2_l5pgx")
+class_type = "enemy"
+object = "cow"
+update_data = false
+metadata/_custom_type_script = "uid://baqkdqf80xars"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_30p10"]
 atlas = ExtResource("2_oal1r")
@@ -39,12 +49,93 @@ height = 28.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7njlx"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_stu6m"]
+atlas = ExtResource("5_aqvb8")
+region = Rect2(0, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq3sy"]
+atlas = ExtResource("5_aqvb8")
+region = Rect2(75, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6ni6"]
+atlas = ExtResource("5_aqvb8")
+region = Rect2(150, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a6v0"]
+atlas = ExtResource("5_aqvb8")
+region = Rect2(225, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmioi"]
+atlas = ExtResource("5_aqvb8")
+region = Rect2(300, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jniss"]
+atlas = ExtResource("5_aqvb8")
+region = Rect2(375, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw0km"]
+atlas = ExtResource("5_aqvb8")
+region = Rect2(450, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi1cu"]
+atlas = ExtResource("5_aqvb8")
+region = Rect2(525, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7otgu"]
+atlas = ExtResource("5_aqvb8")
+region = Rect2(600, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii8sm"]
+atlas = ExtResource("5_aqvb8")
+region = Rect2(675, 0, 75, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8d6ci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stu6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq3sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6ni6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a6v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmioi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jniss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw0km")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi1cu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7otgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii8sm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bxvbq"]
+radius = 18.0
+
 [node name="cow" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "hp_button", "health_bar")]
-script = ExtResource("1_6ah8t")
+script = ExtResource("1_l5pgx")
+data_resource = SubResource("Resource_aqvb8")
 enemy_sprite = NodePath("AnimatedSprite2D")
 hp_button = NodePath("Button")
 health_bar = NodePath("HpContainer/HpBar")
-max_health = 10.0
 metadata/_custom_type_script = "uid://b8s182qi2sarb"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -78,3 +169,24 @@ texture = ExtResource("3_l5pgx")
 
 [node name="HpBar" type="Sprite2D" parent="HpContainer"]
 texture = ExtResource("4_aqvb8")
+
+[node name="FartTimer" type="Timer" parent="."]
+
+[node name="Fart" type="Node2D" parent="."]
+visible = false
+z_index = 10
+scale = Vector2(2, 2)
+
+[node name="FartAnimation" type="AnimatedSprite2D" parent="Fart"]
+sprite_frames = SubResource("SpriteFrames_8d6ci")
+
+[node name="FartArea" type="Area2D" parent="Fart"]
+
+[node name="FartCollider" type="CollisionShape2D" parent="Fart/FartArea"]
+position = Vector2(2, -7)
+shape = SubResource("CircleShape2D_bxvbq")
+disabled = true
+
+[node name="StatChanger" type="Timer" parent="."]
+script = ExtResource("6_30p10")
+metadata/_custom_type_script = "uid://pmbess4iea10"

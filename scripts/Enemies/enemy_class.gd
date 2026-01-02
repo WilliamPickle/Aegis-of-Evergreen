@@ -2,25 +2,32 @@ class_name Enemy
 extends Area2D
 signal reached_end
 
-# enemy based variables
-@export var enemy_sprite : Node2D
-@export var speed = 0.015
-@export var resistance : Projectile.Type = Projectile.Type.NONE
+# enemy stat variables
+static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))
+@export var data_resource : DataResource = DataResource.new()
+@onready var enemy_data = Game_Data[data_resource.class_type][data_resource.object]
+
+@onready var speed : float = enemy_data["speed"]
+@onready var max_health : float = enemy_data["max_health"]
 ## Used to calculate damage it does against the base. 
 ## Formula is cur_health * base_damage_ratio
-@export var base_damage_ratio : float = 0.5
+@onready var base_damage_ratio : float = enemy_data["base_damage_ratio"]
+
+# enemy based variables
+@export var enemy_sprite : Node2D
+@export var resistance : Projectile.Type = Projectile.Type.NONE
 @onready var enemy_node = self
 var sprite_reversed = false
+# whoever has inflicted a status effect on this enemy
+var status_applied_list = []
 
 # hp bar variables
 @export var hp_button: Button
 ## health_bar should be the child of the hp container.
 ## it's the green bar that contains the actual health.
 @export var health_bar : Sprite2D
-@export var max_health : float = 4
 var cur_health : float
 var bar_length : float
-# used to redraw health bar with updated health
 
 # path based variables
 var path : PathFollow2D

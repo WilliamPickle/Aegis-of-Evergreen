@@ -42,6 +42,10 @@ var can_draw := true
 #@onready var _attack_cooldown : Timer = $AttackCoolDOwn
 #func _init(area : Area2D) -> void:
 	#map_area = area
+	
+# This is to track who's applied a status effect
+# on the tower. Makes sure effects don't stack
+var status_applied_list = []
 
 func _ready() -> void:
 	# contact_monitor = true
@@ -54,6 +58,7 @@ func _ready() -> void:
 	
 	button.pressed.connect(draw_hitboxes)
 	current_tower = self
+	#current_tower.collision_layer = 3
 
 
 func _draw() -> void:

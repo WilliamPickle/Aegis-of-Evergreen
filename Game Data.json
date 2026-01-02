@@ -118,5 +118,22 @@
 	  "splash_cap": 6,
 	  "debuff_type": "slowness"
 	}
+  }, 
+  "enemy": {
+	"bush": {
+	  "speed" : 0.015,
+	  "max_health" : 4,
+	  "base_damage_ratio" : 0.5
+	}, 
+	"squirrel": {
+	  "speed" : 0.05, 
+	  "max_health" : 2, 
+	  "base_damage_ratio" : 0.5
+	},
+	"cow" : {
+	  "speed" : 0.015, 
+	  "max_health" : 10,
+	  "base_damage_ratio" : 0.5
+	}
   }
 }

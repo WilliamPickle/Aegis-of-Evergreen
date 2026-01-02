@@ -1,9 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://c47t02182m7x4"]
+[gd_scene load_steps=19 format=3 uid="uid://c47t02182m7x4"]
 
 [ext_resource type="Script" uid="uid://b8s182qi2sarb" path="res://scripts/Enemies/enemy_class.gd" id="1_eosuv"]
 [ext_resource type="Texture2D" uid="uid://duuhan0as20y6" path="res://assets/sprites/enemies/bush_v2_walk.png" id="1_vkedo"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_nttgg"]
 [ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_erd5q"]
 [ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="4_nttgg"]
+
+[sub_resource type="Resource" id="Resource_nttgg"]
+script = ExtResource("2_nttgg")
+class_type = "enemy"
+object = "bush"
+update_data = false
+metadata/_custom_type_script = "uid://baqkdqf80xars"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6mm1w"]
 atlas = ExtResource("1_vkedo")
@@ -63,6 +71,7 @@ input_pickable = false
 linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource("1_eosuv")
+data_resource = SubResource("Resource_nttgg")
 enemy_sprite = NodePath("Bush")
 hp_button = NodePath("Button")
 health_bar = NodePath("HpContainer/HpBar")
