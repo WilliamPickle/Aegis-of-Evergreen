@@ -337,7 +337,7 @@ metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("15_6dial")]
 placement_mask = NodePath("../PlacementCollisions")
-card_type = Array[String](["Tower", "Chipmunk", "Honey_Comb"])
+card_type = Array[String](["Tower", "Chipmunk", "Honey_Comb", "Venus_Flytrap"])
 
 [node name="DialogueUI" type="CanvasLayer" parent="."]
 script = ExtResource("16_7nomh")
