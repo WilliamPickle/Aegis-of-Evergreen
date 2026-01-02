@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://x5k1u5wue0pd" path="res://assets/sprites/towers/honey_comb_spritesheet.png" id="2_4vq56"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_d10nx"]
 
-[sub_resource type="Resource" id="Resource_1y6y6"]
+[sub_resource type="Resource" id="Resource_d10nx"]
 script = ExtResource("2_d10nx")
 class_type = "tower"
 object = "bee"
@@ -479,7 +479,7 @@ radius = 100.0
 z_index = 7
 script = ExtResource("1_co3uv")
 snapping = 2.0
-data_resource = SubResource("Resource_1y6y6")
+data_resource = SubResource("Resource_d10nx")
 metadata/_custom_type_script = "uid://bedplpbp1d213"
 
 [node name="Image" type="AnimatedSprite2D" parent="."]
@@ -512,7 +512,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_7iblp")
 wait_time = 2.0
 
 [node name="Range" type="Area2D" parent="."]
-visible = false
 collision_layer = 4
 collision_mask = 2
 

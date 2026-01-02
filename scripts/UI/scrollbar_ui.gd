@@ -2,14 +2,15 @@ extends UserInterface
 
 # placement mask is the collision area where towers can't be placed on
 @export var placement_mask : Area2D
-@export_enum("Tower", "Chipmunk","Honey_Comb") var card_type : Array[String] = []
+@export_enum("Tower", "Chipmunk","Honey_Comb","Venus_Flytrap") var card_type : Array[String] = []
 @export var scroll_container: HBoxContainer
 
 # add any tower card here
 const cards : Dictionary = {
 	"Tower" = preload("res://assets/sprites/towers/base_tower_card.png"), 
 	"Chipmunk" = preload("res://assets/sprites/towers/chipmunk_card.png"),
-	"Honey_Comb" = preload("res://assets/sprites/towers/base_tower_card.png")
+	"Honey_Comb" = preload("res://assets/sprites/towers/base_tower_card.png"),
+	"Venus_Flytrap" = preload("res://assets/sprites/towers/base_tower_card.png"),
 }
 
 func _ready() -> void:

@@ -9,7 +9,11 @@ var class_type : String = "tower":
 	set(val):
 		class_type = val
 		notify_property_list_changed()
-var object : String
+
+var object : String:
+	set(val):
+		object = val
+		notify_property_list_changed()
 
 var update_data : bool = false:
 	set(val):
@@ -19,6 +23,7 @@ var update_data : bool = false:
 		notify_property_list_changed()
 		update_data = false
 
+var stats : Dictionary
 
 func _get_property_list() -> Array:
 	var properties : Array = []
@@ -36,7 +41,14 @@ func _get_property_list() -> Array:
 		"hint" : PROPERTY_HINT_ENUM,
 		"hint_string" : ",".join(GAME_DATA[class_type].keys())
 	})
-		
+	if object != "":
+		stats = GAME_DATA[class_type][object]
+		properties.append({
+			"name" : "stats",
+			"type" : TYPE_DICTIONARY,
+			"usage" : PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_READ_ONLY
+		})
+
 	properties.append({
 		"name" : "update_data",
 		"type" : TYPE_BOOL,

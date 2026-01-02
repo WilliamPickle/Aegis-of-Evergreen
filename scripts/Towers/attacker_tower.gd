@@ -17,8 +17,6 @@ enum Target{
 var cur_damage : float
 # Randomizing the target type for now.
 var target_type = Target.values()[randi_range(0, Target.size()-1)]
-# List of enemies in tower area
-var _enemies : Array[Area2D] = []
 # Current enemy tower does damage to
 var targeted_enemy : Area2D
 
@@ -57,10 +55,10 @@ func attack():
 # Set the _enemies list to the overlapping areas
 # can be removed due to only using _enemies once.
 func update_enemy_list() -> void:
-	_enemies = range_area.get_overlapping_areas()
+	var enemies = range_area.get_overlapping_areas()
 	# If tower tried to attack and has no enemies to target
 	# Stop the timer and use regular area_entered function
-	if _enemies.size() == 0:
+	if enemies.size() == 0:
 		print("No enmies detected when attacking")
 		_sprite.play("idle_"+str(level))
 		_attack_cooldown.stop()
@@ -69,7 +67,7 @@ func update_enemy_list() -> void:
 		queue_redraw()
 	# Set to the corresponding enemy
 	else:
-		set_target()
+		set_target(enemies)
 		attack()
 
 func upgrade_tower() -> void:
@@ -95,22 +93,22 @@ func first_enemy_entered(enemy : Area2D):
 	_attack_cooldown.start()
 
 ## Finds and sets the correct enemy to target.
-func set_target() -> void:
+func set_target(enemies : Array[Area2D]) -> void:
 	# Place holder
-	var _chosen_enemy = _enemies[0]
+	var _chosen_enemy = enemies[0]
 	
-	# If/elif would work, but people seem to recommend math
+	# If/elif would work, but people seem to recommend match
 	# statements for these type of scenarios.
 	match target_type:
 		# For first and last we get the parent and find the
 		# lowest/highest progres ratio
 		Target.FIRST:
-			for enemy in _enemies:
+			for enemy in enemies:
 				var path_follow : PathFollow2D = enemy.get_parent()
 				if path_follow.progress_ratio > _chosen_enemy.get_parent().progress_ratio:
 					_chosen_enemy = enemy
 		Target.LAST:
-			for enemy in _enemies:
+			for enemy in enemies:
 				var path_follow : PathFollow2D = enemy.get_parent()
 				if path_follow.progress_ratio < _chosen_enemy.get_parent().progress_ratio:
 					_chosen_enemy = enemy
