@@ -59,7 +59,37 @@
 		2.5,
 		3.75
 	  ]
-	}
+	},
+	"venus_flytrap": {
+	  "type": "Attacker",
+	  "tower_fpath": "res://scenes/Towers/venus_flytrap.tscn",
+	  "card_fpath": "res://assets/sprites/towers/chipmunk_card.png",
+	  "attack_fpath": [
+		"res://scenes/Towers/attacks/chipmunk_proj.tscn",
+		"res://scenes/Towers/attacks/chipmunk_proj.tscn",
+		"res://scenes/Towers/attacks/chipmunk_proj.tscn"
+	  ],
+	  "cost": [
+		20,
+		24,
+		30
+	  ],
+	  "range": [
+		30,
+		50,
+		70
+	  ],
+	  "attack_speed": [
+		1,
+		1.5,
+		2
+	  ],
+	  "damage": [
+		2,
+		3,
+		4
+	  ]
+	},
   },
   "projectile": {
 	"chipmunk_proj": {

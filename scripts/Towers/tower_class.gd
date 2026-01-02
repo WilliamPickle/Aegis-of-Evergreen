@@ -107,14 +107,14 @@ func on_tower_collision(_body):
 func place_tower() -> bool:
 	if get_overlapping_areas().size() > 0:
 		return false
-
 	# Makes so _process can't run
 	set_process(false)
 	# Enabled the button functionality.
 	button.visible = true
 	# Disable the visibility of tower hitbox
 	can_draw = false
-	current_tower = null
+	# THIS MIGHT NEED CHANGING LATER
+	#current_tower = null
 	# Draw the changes
 	queue_redraw()
 	
