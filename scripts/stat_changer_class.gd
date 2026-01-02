@@ -1,14 +1,11 @@
 extends Timer
 class_name StatChanger
 
-enum TowerType{
+enum Type{
 	NONE,
 	ATK_COOLDOWN,
 	RANGE,
-	DAMAGE
-}
-enum EnemyType{
-	NONE, 
+	DAMAGE,
 	WALK_SPEED,
 	BLUNT_RES,
 	ENERGY_RES, 
@@ -32,18 +29,18 @@ func apply_stat_changes(target, stat, percent_change, duration):
 
 	# the actual stat changing part
 	match stat:
-		EnemyType.WALK_SPEED:
+		Type.WALK_SPEED:
 			target.speed = target.speed * percent_change
-		TowerType.ATK_COOLDOWN:
+		Type.ATK_COOLDOWN:
 			target._attack_cooldown.wait_time = target._attack_cooldown.wait_time * percent_change 
 			
 
 func disable_stat_changes(target, stat, status_timer):
 	match stat:
-		EnemyType.WALK_SPEED:
+		Type.WALK_SPEED:
 			target.speed = target.enemy_data["speed"]
-		TowerType.ATK_COOLDOWN:
-			target._attack_cooldown.wait_time = target.object_data["attack_speed"]
+		Type.ATK_COOLDOWN:
+			target._attack_cooldown.wait_time = target.object_data["attack_speed"][target.level]
 			
 	for i in range(len(target.status_applied_list)):
 		if target.status_applied_list[i] == target.name:

@@ -6,10 +6,10 @@ extends Enemy
 @onready var stat_changer: StatChanger = $StatChanger
 @onready var fart_timer: Timer = $FartTimer
 # none of these vars influence the timing of the other vars. 
-var fart_duration: float = 1
+var fart_duration: float = 1.5
 var fart_cooldown: float = 5
-var slowness_multiplier: float = 10
-var slowness_duration: float = 6
+var slowness_multiplier: float = 0.2
+var slowness_duration: float = 1
 
 func _ready() -> void:
 	super._ready()
@@ -20,6 +20,7 @@ func _ready() -> void:
 	fart_timer.timeout.connect(start_fart)
 	# initialize fart collision area
 	fart_area.set_collision_mask_value(3, true)
+	fart_area.set_collision_mask_value(1, false)
 	fart_area.area_entered.connect(apply_fart_effect)
 	# set animation
 	fart_animation.speed_scale = 1 / fart_duration
@@ -42,9 +43,9 @@ func start_fart() -> void:
 
 func apply_fart_effect(target):
 	#if target != self:
-	if target.collision_mask == 3:
+	if target is Tower:
 		print("fart mask: ", fart_area.collision_mask)
 		print("mask ", target.collision_mask)
 		print("layer ", target.collision_layer)
 		print(target.name)
-		stat_changer.apply_stat_changes(target, stat_changer.TowerType.ATK_COOLDOWN, slowness_multiplier, slowness_duration)
+		stat_changer.apply_stat_changes(target, stat_changer.Type.ATK_COOLDOWN, slowness_multiplier, slowness_duration)

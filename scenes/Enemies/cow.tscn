@@ -175,10 +175,14 @@ texture = ExtResource("4_aqvb8")
 [node name="Fart" type="Node2D" parent="."]
 visible = false
 z_index = 10
-scale = Vector2(2, 2)
+position = Vector2(-9, 21)
+scale = Vector2(4, 4)
 
 [node name="FartAnimation" type="AnimatedSprite2D" parent="Fart"]
+modulate = Color(1, 1, 1, 0.466667)
 sprite_frames = SubResource("SpriteFrames_8d6ci")
+frame = 5
+frame_progress = 0.750178
 
 [node name="FartArea" type="Area2D" parent="Fart"]
 
