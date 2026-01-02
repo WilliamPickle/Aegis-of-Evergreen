@@ -19,7 +19,7 @@ func _ready() -> void:
 	fart_timer.start()
 	fart_timer.timeout.connect(start_fart)
 	# initialize fart collision area
-	fart_area.collision_mask = 3
+	fart_area.set_collision_mask_value(3, true)
 	fart_area.area_entered.connect(apply_fart_effect)
 	# set animation
 	fart_animation.speed_scale = 1 / fart_duration
@@ -42,5 +42,9 @@ func start_fart() -> void:
 
 func apply_fart_effect(target):
 	#if target != self:
-	print(target.name)
-	stat_changer.apply_stat_changes(target, stat_changer.TowerType.ATK_COOLDOWN, slowness_multiplier, slowness_duration)
+	if target.collision_mask == 3:
+		print("fart mask: ", fart_area.collision_mask)
+		print("mask ", target.collision_mask)
+		print("layer ", target.collision_layer)
+		print(target.name)
+		stat_changer.apply_stat_changes(target, stat_changer.TowerType.ATK_COOLDOWN, slowness_multiplier, slowness_duration)
