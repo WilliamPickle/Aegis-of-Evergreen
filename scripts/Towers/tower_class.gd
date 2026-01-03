@@ -65,8 +65,8 @@ func _ready() -> void:
 func _draw() -> void:
 	if can_draw:
 		draw_circle(Vector2.ZERO, range_collider.shape.radius, Color(0.15, 0.15, 0.15, 0.25))
-		draw_arc(Vector2.ZERO, range_collider.shape.radius + 1,0, 360, 50, Color(0.15,0.15,0.15,0.4), 2)
-		draw_arc(Vector2.ZERO, $BodyCollision.shape.radius,0, 360, 50,Color(0.15,0.15,0.15,0.4), 1)
+		draw_circle(Vector2.ZERO, range_collider.shape.radius, Color(0.15, 0.15, 0.15, 0.25), false, 2)
+		draw_circle(Vector2.ZERO, $BodyCollision.shape.radius, Color(0.15, 0.15, 0.15, 0.25), false, 1.5)
 
 func draw_hitboxes(deleting : bool = false) -> void:
 	# will delete the towers range

@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://srw8hpelnu1a"]
+[gd_scene load_steps=34 format=3 uid="uid://srw8hpelnu1a"]
 
 [ext_resource type="Script" uid="uid://chcdgf8u4a4tn" path="res://scripts/Towers/melee_tower.gd" id="1_bh3r4"]
 [ext_resource type="Texture2D" uid="uid://3nd6cbpxhth0" path="res://assets/sprites/towers/venus_fly_trap_spritesheet.png" id="2_ecsjx"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_riyac"]
+[ext_resource type="Script" uid="uid://ba36ip0vc0aou" path="res://scenes/Towers/range_visual.gd" id="4_riyac"]
 
 [sub_resource type="Resource" id="Resource_f3wlu"]
 script = ExtResource("2_riyac")
@@ -222,6 +223,7 @@ radius = 100.0
 
 [node name="VenusFlytrap" type="Area2D"]
 z_index = 7
+scale = Vector2(0.76, 0.76)
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_bh3r4")
@@ -230,10 +232,9 @@ data_resource = SubResource("Resource_f3wlu")
 metadata/_custom_type_script = "uid://chcdgf8u4a4tn"
 
 [node name="Image" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -20)
+position = Vector2(0, -22.3684)
 sprite_frames = SubResource("SpriteFrames_pctlw")
-animation = &"idle_2"
-frame_progress = 0.576855
+animation = &"attacking_0"
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qe5lf")
@@ -270,6 +271,7 @@ debug_color = Color(1, 1, 1, 0.42)
 [node name="AttackRange" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 2
+script = ExtResource("4_riyac")
 
 [node name="AttackShape0" type="CollisionPolygon2D" parent="AttackRange"]
 polygon = PackedVector2Array(0, -100, 6, -99, 13, -97, 0, 0, -13, -97, -7, -99)

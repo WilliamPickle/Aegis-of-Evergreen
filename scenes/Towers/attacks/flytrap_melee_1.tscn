@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://h22lnm4se334"]
+
+[ext_resource type="Texture2D" uid="uid://3nd6cbpxhth0" path="res://assets/sprites/towers/venus_fly_trap_spritesheet.png" id="1_snimt"]
+[ext_resource type="Script" uid="uid://cfxjidu7c4ru8" path="res://scripts/Towers/attacks/melee_class.gd" id="2_4jcmf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qtoc"]
+atlas = ExtResource("1_snimt")
+region = Rect2(0, 225, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmqn7"]
+atlas = ExtResource("1_snimt")
+region = Rect2(75, 225, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfjn3"]
+atlas = ExtResource("1_snimt")
+region = Rect2(150, 225, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_381dd"]
+atlas = ExtResource("1_snimt")
+region = Rect2(225, 225, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hogdl"]
+atlas = ExtResource("1_snimt")
+region = Rect2(300, 225, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4skk"]
+atlas = ExtResource("1_snimt")
+region = Rect2(375, 225, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0he6"]
+atlas = ExtResource("1_snimt")
+region = Rect2(450, 225, 75, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_scgw1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qtoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmqn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfjn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_381dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hogdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4skk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0he6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="flytrap_melee_1" type="AnimatedSprite2D"]
+z_index = 1501
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_scgw1")
+autoplay = "default"
+offset = Vector2(24, 0)
+script = ExtResource("2_4jcmf")
+metadata/_custom_type_script = "uid://cfxjidu7c4ru8"

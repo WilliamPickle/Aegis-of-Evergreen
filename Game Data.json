@@ -65,7 +65,7 @@
 	  "tower_fpath": "res://scenes/Towers/venus_flytrap.tscn",
 	  "card_fpath": "res://assets/sprites/towers/chipmunk_card.png",
 	  "attack_fpath": [
-		"res://scenes/Towers/attacks/chipmunk_proj.tscn",
+		"res://scenes/Towers/attacks/flytrap_melee_1.tscn",
 		"res://scenes/Towers/attacks/chipmunk_proj.tscn",
 		"res://scenes/Towers/attacks/chipmunk_proj.tscn"
 	  ],
