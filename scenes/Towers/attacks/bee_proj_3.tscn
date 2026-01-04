@@ -141,6 +141,7 @@ radius = 40.0
 z_index = 11
 collision_mask = 2
 script = ExtResource("1_bfx67")
+offset = Vector2(-2, -16)
 data_resource = SubResource("Resource_5v0e2")
 metadata/_custom_type_script = "uid://coe2feohr64oy"
 

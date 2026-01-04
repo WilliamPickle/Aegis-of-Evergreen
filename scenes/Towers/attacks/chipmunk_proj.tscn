@@ -33,13 +33,13 @@ size = Vector2(2, 2)
 z_index = 11
 collision_mask = 2
 script = ExtResource("1_ewcrx")
+offset = Vector2(0, -1)
 data_resource = SubResource("Resource_wv84v")
 metadata/_custom_type_script = "uid://cws5x3bctkj0m"
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w4c3j")
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l4qmi")

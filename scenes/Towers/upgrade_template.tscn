@@ -1,0 +1,264 @@
+[gd_scene load_steps=20 format=3 uid="uid://d10o7y6xd75el"]
+
+[ext_resource type="Script" uid="uid://bite8683ykull" path="res://scripts/Towers/upgrade_class.gd" id="1_fneq2"]
+[ext_resource type="Texture2D" uid="uid://b5mdymdvkosdl" path="res://assets/sprites/towers/tower mugshots/chipmunk_3.png" id="2_4wftb"]
+[ext_resource type="Texture2D" uid="uid://ch4m2xbktl6ub" path="res://assets/sprites/icons and buttons/upgrade_ui.png" id="3_pg767"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="4_2mat1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4g0oj"]
+load_path = "res://.godot/imported/upgrade_ui.png-2b2a12b6b958b2b7c4f164048c2847ad.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clu7j"]
+atlas = SubResource("CompressedTexture2D_4g0oj")
+region = Rect2(0, 0, 350, 327)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fde0"]
+atlas = SubResource("CompressedTexture2D_4g0oj")
+region = Rect2(358, 29, 200, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jknih"]
+atlas = ExtResource("3_pg767")
+region = Rect2(566, 29, 74, 132)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0nf88"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5kse8"]
+texture = SubResource("CompressedTexture2D_4g0oj")
+region_rect = Rect2(358, 196, 117, 34)
+modulate_color = Color(0.509804, 0.509804, 0.509804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gshcf"]
+texture = ExtResource("3_pg767")
+region_rect = Rect2(357, 263, 119, 36)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_js7vr"]
+texture = SubResource("CompressedTexture2D_4g0oj")
+region_rect = Rect2(358, 196, 117, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wftb"]
+atlas = ExtResource("3_pg767")
+region = Rect2(364, 196, 105, 34)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_clu7j"]
+texture = ExtResource("3_pg767")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(504, 196, 16, 34)
+modulate_color = Color(0.509804, 0.509804, 0.509804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2mat1"]
+texture = ExtResource("3_pg767")
+region_rect = Rect2(502, 263, 18, 36)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4wftb"]
+texture = ExtResource("3_pg767")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(504, 196, 116, 34)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pg767"]
+texture = ExtResource("3_pg767")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(605, 196, 16, 34)
+modulate_color = Color(0.509804, 0.509804, 0.509804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fde0"]
+texture = ExtResource("3_pg767")
+region_rect = Rect2(603, 263, 18, 36)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jknih"]
+texture = ExtResource("3_pg767")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(605, 196, 16, 34)
+
+[node name="UpgradeTemplate" type="CanvasLayer"]
+script = ExtResource("1_fneq2")
+pausable = true
+metadata/_custom_type_script = "uid://bite8683ykull"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="Control"]
+position = Vector2(-10, 0)
+texture = SubResource("AtlasTexture_clu7j")
+offset = Vector2(-175, 0)
+metadata/_edit_lock_ = true
+
+[node name="TowerImageBackground" type="Sprite2D" parent="Control/Background"]
+position = Vector2(-216, -68)
+texture = SubResource("AtlasTexture_3fde0")
+metadata/_edit_lock_ = true
+
+[node name="TowerImage" type="TextureRect" parent="Control/Background/TowerImageBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -47.0
+offset_right = -128.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4wftb")
+stretch_mode = 5
+
+[node name="StatsDisplay" type="Sprite2D" parent="Control/Background"]
+position = Vector2(-71, -68)
+texture = SubResource("AtlasTexture_jknih")
+metadata/_edit_lock_ = true
+
+[node name="StatsText" type="Label" parent="Control/Background/StatsDisplay"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.068
+anchor_right = 0.5
+anchor_bottom = 0.068
+offset_left = -76.0
+offset_top = -74.976
+offset_right = 4.0
+offset_bottom = -58.976
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_2mat1")
+theme_override_font_sizes/font_size = 16
+text = "Statistics"
+
+[node name="Label" type="Label" parent="Control/Background/StatsDisplay"]
+anchors_preset = -1
+anchor_left = 0.081
+anchor_top = 0.129
+anchor_right = 0.919
+anchor_bottom = 1.0
+offset_left = -36.994
+offset_top = -66.028
+offset_right = -37.006
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_2mat1")
+theme_override_font_sizes/font_size = 16
+text = "Atk: 23
+pierce:"
+
+[node name="UpgradeButton" type="Button" parent="Control/Background"]
+offset_left = -316.0
+offset_top = 33.0
+offset_right = -199.0
+offset_bottom = 67.0
+theme_override_colors/font_hover_pressed_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_fonts/font = ExtResource("4_2mat1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0nf88")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_5kse8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gshcf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5kse8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_js7vr")
+text = "Upgrade"
+
+[node name="UpgradeCost" type="Label" parent="Control/Background"]
+offset_left = -275.0
+offset_top = 13.0
+offset_right = -241.0
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("4_2mat1")
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SellButton" type="Button" parent="Control/Background"]
+offset_left = -316.0
+offset_top = 101.0
+offset_right = -199.0
+offset_bottom = 135.0
+theme_override_colors/font_hover_pressed_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_fonts/font = ExtResource("4_2mat1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0nf88")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_5kse8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gshcf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5kse8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_js7vr")
+text = "Sell"
+
+[node name="SellCost" type="Label" parent="Control/Background"]
+offset_left = -275.0
+offset_top = 81.0
+offset_right = -241.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("4_2mat1")
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TypeDisplay" type="Sprite2D" parent="Control/Background"]
+position = Vector2(-99, 50)
+scale = Vector2(0.995238, 1)
+texture = SubResource("AtlasTexture_4wftb")
+metadata/_edit_group_ = true
+
+[node name="TypeText" type="Label" parent="Control/Background/TypeDisplay"]
+anchors_preset = -1
+anchor_right = 1.005
+anchor_bottom = 1.0
+offset_left = -52.2487
+offset_top = -16.0
+offset_right = -52.7737
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_2mat1")
+theme_override_font_sizes/font_size = 24
+text = "First"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left" type="Button" parent="Control/Background/TypeDisplay"]
+anchors_preset = -1
+anchor_left = 0.002
+anchor_top = 0.5
+anchor_right = 0.002
+anchor_bottom = 0.5
+offset_left = -68.5353
+offset_top = -34.0
+offset_right = -52.5353
+theme_override_colors/font_hover_pressed_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_fonts/font = ExtResource("4_2mat1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0nf88")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_clu7j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2mat1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_clu7j")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4wftb")
+
+[node name="Right" type="Button" parent="Control/Background/TypeDisplay"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -52.7512
+offset_top = -34.0
+offset_right = -36.7512
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_fonts/font = ExtResource("4_2mat1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0nf88")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_pg767")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3fde0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pg767")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jknih")

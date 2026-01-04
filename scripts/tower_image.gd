@@ -15,7 +15,7 @@ const folder_path : String = "res://assets/sprites/towers/tower mugshots/"
 
 
 func _ready() -> void:
-	update_data("bee_1", 0.33)
+	update_data("chipmunk_3", 0.33)
 	
 func update_data(img_file : String, cost : float):
 	var file = img_file+".png"

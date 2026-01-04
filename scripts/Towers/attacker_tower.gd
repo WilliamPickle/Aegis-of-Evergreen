@@ -5,6 +5,8 @@ class_name Attacker
 enum Target{
 	FIRST,
 	LAST,
+	STRONG,
+	WEAK,
 }
 # Attacker only stats
 @onready var damage : float = object_data["damage"][level]
@@ -44,6 +46,12 @@ func _physics_process(_delta: float) -> void:
 
 # This is to be defined by a sub class
 func attack():
+	if not is_instance_valid(targeted_enemy):
+		print("----------")
+		print("NOT VALID!!!!!!!!!")
+		update_enemy_list()
+		return
+
 	_sprite.play("attacking_"+str(level))
 	var tower_attack : Projectile = load(attack_fpath).instantiate()
 	tower_attack.tower = self
@@ -112,4 +120,21 @@ func set_target(enemies : Array[Area2D]) -> void:
 				var path_follow : PathFollow2D = enemy.get_parent()
 				if path_follow.progress_ratio < _chosen_enemy.get_parent().progress_ratio:
 					_chosen_enemy = enemy
+		Target.STRONG:
+			var highest_health : float = -1.0
+			for enemy : Enemy in enemies:
+				if enemy.cur_health > highest_health:
+					_chosen_enemy = enemy
+					highest_health = enemy.cur_health
+		Target.WEAK:
+			var lowest_health : float = enemies[0].cur_health
+			for enemy : Enemy in enemies:
+				if enemy.cur_health < lowest_health:
+					_chosen_enemy = enemy
+					lowest_health = enemy.cur_health
+	if _chosen_enemy.global_position.x < global_position.x:
+		_sprite.flip_h = true
+	else:
+		_sprite.flip_h = false
+		
 	targeted_enemy = _chosen_enemy

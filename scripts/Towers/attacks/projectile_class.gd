@@ -9,6 +9,8 @@ enum Type{
 @export var face_enemy : bool = true
 
 # Class shared vars
+@export var offset : Vector2 = Vector2.ZERO
+
 	# Data
 static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))
 @export var data_resource : DataResource = DataResource.new()
@@ -30,6 +32,7 @@ var target_enemy : Enemy
 #if "despawn_distance" in object_data else null
 
 func _ready() -> void:
+	global_position = tower.global_position + offset
 	# face the enemy
 	if face_enemy:
 		snap_to_enemy()

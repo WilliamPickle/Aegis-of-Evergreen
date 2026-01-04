@@ -100,6 +100,7 @@ z_index = 11
 collision_mask = 2
 script = ExtResource("1_ounrf")
 face_enemy = false
+offset = Vector2(0, -26)
 data_resource = SubResource("Resource_ounrf")
 metadata/_custom_type_script = "uid://coe2feohr64oy"
 

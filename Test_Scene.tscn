@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" path="res://scripts/UI/ui_script.gd" id="1_rh5xb"]
 [ext_resource type="Texture2D" uid="uid://ch4m2xbktl6ub" path="res://assets/sprites/icons and buttons/upgrade_ui.png" id="2_cwt80"]
-[ext_resource type="Texture2D" uid="uid://br6hmg6kt4jwu" path="res://assets/sprites/towers/tower mugshots/bee_3.png" id="2_e0b67"]
 [ext_resource type="Script" uid="uid://d2v44s4bi3lch" path="res://scripts/tower_image.gd" id="2_udkbk"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="3_4g0oj"]
+[ext_resource type="Texture2D" uid="uid://b5mdymdvkosdl" path="res://assets/sprites/towers/tower mugshots/chipmunk_3.png" id="3_e0b67"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4g0oj"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e0b67"]
 load_path = "res://.godot/imported/upgrade_ui.png-2b2a12b6b958b2b7c4f164048c2847ad.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4g0oj"]
-atlas = SubResource("CompressedTexture2D_4g0oj")
+atlas = SubResource("CompressedTexture2D_e0b67")
 region = Rect2(0, 0, 350, 327)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cwt80"]
-atlas = SubResource("CompressedTexture2D_4g0oj")
+atlas = SubResource("CompressedTexture2D_e0b67")
 region = Rect2(358, 29, 200, 132)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udkbk"]
@@ -24,7 +24,7 @@ region = Rect2(566, 29, 74, 132)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4g0oj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0b67"]
-texture = SubResource("CompressedTexture2D_4g0oj")
+texture = SubResource("CompressedTexture2D_e0b67")
 region_rect = Rect2(358, 196, 117, 34)
 modulate_color = Color(0.509804, 0.509804, 0.509804, 1)
 
@@ -33,13 +33,14 @@ texture = ExtResource("2_cwt80")
 region_rect = Rect2(357, 263, 119, 36)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4g0oj"]
-texture = SubResource("CompressedTexture2D_4g0oj")
+texture = SubResource("CompressedTexture2D_e0b67")
 region_rect = Rect2(358, 196, 117, 34)
 
 [node name="TestScene" type="Node2D"]
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 script = ExtResource("1_rh5xb")
+pausable = true
 
 [node name="Control" type="Control" parent="UserInterface"]
 layout_mode = 3
@@ -73,7 +74,7 @@ offset_right = -128.0
 offset_bottom = -85.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_e0b67")
+texture = ExtResource("3_e0b67")
 stretch_mode = 5
 
 [node name="Stats" type="Sprite2D" parent="UserInterface/Control/Background"]
