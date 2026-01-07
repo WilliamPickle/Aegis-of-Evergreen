@@ -131,7 +131,6 @@ animations = [{
 radius = 18.0
 
 [node name="cow" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "hp_button", "health_bar")]
-process_mode = 4
 script = ExtResource("1_l5pgx")
 data_resource = SubResource("Resource_aqvb8")
 enemy_sprite = NodePath("AnimatedSprite2D")

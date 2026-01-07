@@ -75,6 +75,7 @@ region_rect = Rect2(605, 196, 16, 34)
 
 [node name="UpgradeTemplate" type="CanvasLayer"]
 script = ExtResource("1_fneq2")
+tower_name = "chipmunk"
 pausable = true
 metadata/_custom_type_script = "uid://bite8683ykull"
 
@@ -166,9 +167,9 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_js7vr")
 text = "Upgrade"
 
 [node name="UpgradeCost" type="Label" parent="Control/Background"]
-offset_left = -275.0
+offset_left = -317.0
 offset_top = 13.0
-offset_right = -241.0
+offset_right = -199.0
 offset_bottom = 29.0
 theme_override_fonts/font = ExtResource("4_2mat1")
 text = "0.00"
@@ -192,9 +193,9 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_js7vr")
 text = "Sell"
 
 [node name="SellCost" type="Label" parent="Control/Background"]
-offset_left = -275.0
+offset_left = -317.0
 offset_top = 81.0
-offset_right = -241.0
+offset_right = -199.0
 offset_bottom = 97.0
 theme_override_fonts/font = ExtResource("4_2mat1")
 text = "0.00"
@@ -211,12 +212,13 @@ metadata/_edit_group_ = true
 anchors_preset = -1
 anchor_right = 1.005
 anchor_bottom = 1.0
-offset_left = -52.2487
-offset_top = -16.0
-offset_right = -52.7737
-offset_bottom = -16.0
+offset_left = -71.3397
+offset_top = -20.0
+offset_right = -71.8647
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.395, 1.395)
 theme_override_fonts/font = ExtResource("4_2mat1")
 theme_override_font_sizes/font_size = 24
 text = "First"

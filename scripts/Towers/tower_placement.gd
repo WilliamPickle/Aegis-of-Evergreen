@@ -3,10 +3,10 @@ class_name Tower_Placement
 
 # The dictionary of all towers
 const towers : Dictionary = {
-	"Tower" = preload("res://scenes/Towers/Tower.tscn"),
-	"Chipmunk" = preload("res://scenes/Towers/chipmunk.tscn"),
-	"Honey_Comb" = preload("res://scenes/Towers/honey_comb.tscn"),
-	"Venus_Flytrap" = preload("res://scenes/Towers/venus_flytrap.tscn"),
+	"tower" = preload("res://scenes/Towers/Tower.tscn"),
+	"chipmunk" = preload("res://scenes/Towers/chipmunk.tscn"),
+	"bee" = preload("res://scenes/Towers/bee.tscn"),
+	"flytrap" = preload("res://scenes/Towers/flytrap.tscn"),
 }
 const CONTROLS_STATES = ControlHandler.ControlState
 static var is_placing := false
@@ -14,7 +14,7 @@ static var new_tower : Tower
 # Refrence the area to add to the tower once spawned
 @export var map_area : Area2D
 # The tower type, if its squirrel or goat tower
-@export_enum("Tower", "Chipmunk") var tower_type : String
+@export_enum("tower", "chipmunk") var tower_type : String
 
 func _ready() -> void:
 	button_down.connect(add_tower)

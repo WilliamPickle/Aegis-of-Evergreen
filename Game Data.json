@@ -32,7 +32,7 @@
 	},
 	"bee": {
 	  "type": "Attacker",
-	  "tower_fpath": "res://scenes/Towers/honey_comb.tscn",
+	  "tower_fpath": "res://scenes/Towers/bee.tscn",
 	  "card_fpath": "res://assets/sprites/towers/base_tower_card.png",
 	  "attack_fpath": [
 		"res://scenes/Towers/attacks/bee_proj_1.tscn",
@@ -60,9 +60,9 @@
 		3.75
 	  ]
 	},
-	"venus_flytrap": {
+	"flytrap": {
 	  "type": "Attacker",
-	  "tower_fpath": "res://scenes/Towers/venus_flytrap.tscn",
+	  "tower_fpath": "res://scenes/Towers/flytrap.tscn",
 	  "card_fpath": "res://assets/sprites/towers/chipmunk_card.png",
 	  "attack_fpath": [
 		"res://scenes/Towers/attacks/flytrap_melee_1.tscn",
