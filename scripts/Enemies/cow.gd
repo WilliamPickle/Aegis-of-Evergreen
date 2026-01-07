@@ -3,10 +3,9 @@ extends Enemy
 @onready var fart: Node2D = $Fart
 @onready var fart_area: Area2D = $Fart/FartArea
 @onready var fart_animation: AnimatedSprite2D = $Fart/FartAnimation
-@onready var stat_changer: StatChanger = $StatChanger
 @onready var fart_timer: Timer = $FartTimer
 # none of these vars influence the timing of the other vars. 
-var fart_duration: float = 1.5
+var fart_duration: float = 2
 var fart_cooldown: float = 5
 var slowness_multiplier: float = 0.2
 var slowness_duration: float = 1
@@ -41,11 +40,9 @@ func start_fart() -> void:
 	fart.global_position = self.global_position
 	fart_animation.play()
 
+
 func apply_fart_effect(target):
-	#if target != self:
 	if target is Tower:
-		print("fart mask: ", fart_area.collision_mask)
-		print("mask ", target.collision_mask)
-		print("layer ", target.collision_layer)
-		print(target.name)
-		stat_changer.apply_stat_changes(target, stat_changer.Type.ATK_COOLDOWN, slowness_multiplier, slowness_duration)
+		var stat_changer = StatChanger.new()
+		stat_changer.initialize_variables(target, self.name, stat_changer.Type.ATK_COOLDOWN, slowness_multiplier, slowness_duration)
+		target.add_child(stat_changer)

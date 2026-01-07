@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b7ncwanh4k1os"]
+[gd_scene load_steps=28 format=3 uid="uid://b7ncwanh4k1os"]
 
 [ext_resource type="Script" uid="uid://csbsy1wd05fmo" path="res://scripts/Enemies/cow.gd" id="1_l5pgx"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_l5pgx"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_l5pgx"]
 [ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="4_aqvb8"]
 [ext_resource type="Texture2D" uid="uid://66a7jimgul0n" path="res://assets/sprites/enemies/cow_fart.png" id="5_aqvb8"]
-[ext_resource type="Script" uid="uid://pmbess4iea10" path="res://scripts/stat_changer_class.gd" id="6_30p10"]
 
 [sub_resource type="Resource" id="Resource_aqvb8"]
 script = ExtResource("2_l5pgx")
@@ -128,7 +127,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bxvbq"]
-radius = 18.0
+radius = 33.5037
 
 [node name="cow" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "hp_button", "health_bar")]
 script = ExtResource("1_l5pgx")
@@ -175,8 +174,8 @@ texture = ExtResource("4_aqvb8")
 [node name="Fart" type="Node2D" parent="."]
 visible = false
 z_index = 10
-position = Vector2(-9, 21)
-scale = Vector2(4, 4)
+position = Vector2(-5, 8)
+scale = Vector2(2, 2)
 
 [node name="FartAnimation" type="AnimatedSprite2D" parent="Fart"]
 modulate = Color(1, 1, 1, 0.466667)
@@ -190,7 +189,3 @@ frame_progress = 0.750178
 position = Vector2(2, -7)
 shape = SubResource("CircleShape2D_bxvbq")
 disabled = true
-
-[node name="StatChanger" type="Timer" parent="."]
-script = ExtResource("6_30p10")
-metadata/_custom_type_script = "uid://pmbess4iea10"

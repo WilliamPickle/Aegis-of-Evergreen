@@ -15,13 +15,13 @@
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="10_7gny6"]
 [ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_2aecg"]
 [ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="15_6dial"]
-[ext_resource type="Script" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
 [ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_1s4pk"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
 [ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_isj1j"]
 [ext_resource type="Script" uid="uid://bl8h55txysn1a" path="res://scripts/Temp_upgrade_tower.gd" id="21_so66j"]
-[ext_resource type="Script" path="res://scripts/base_class.gd" id="22_tr1x6"]
+[ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="22_tr1x6"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="23_d5akn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
@@ -407,9 +407,9 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_so66j")
 
 [node name="RangerIcon" type="TextureRect" parent="DialogueUI/DialogueBox"]
 layout_mode = 0
-offset_left = 921.0
+offset_left = 907.0
 offset_top = 509.0
-offset_right = 1123.0
+offset_right = 1109.0
 offset_bottom = 702.0
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("20_isj1j")
@@ -481,7 +481,7 @@ script = ExtResource("21_so66j")
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu")]
 script = ExtResource("22_tr1x6")
 health_label = NodePath("../Icons/LifeIndicator/LifeLabel")
-base_health = 1.0
+base_health = 1000.0
 pause_menu = NodePath("../PauseUI")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
