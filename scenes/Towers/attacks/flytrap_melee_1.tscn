@@ -3,57 +3,57 @@
 [ext_resource type="Texture2D" uid="uid://3nd6cbpxhth0" path="res://assets/sprites/towers/venus_fly_trap_spritesheet.png" id="1_snimt"]
 [ext_resource type="Script" uid="uid://cfxjidu7c4ru8" path="res://scripts/Towers/attacks/melee_class.gd" id="2_4jcmf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7qtoc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_snimt"]
 atlas = ExtResource("1_snimt")
 region = Rect2(0, 225, 75, 75)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fmqn7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jcmf"]
 atlas = ExtResource("1_snimt")
 region = Rect2(75, 225, 75, 75)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nfjn3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4tfu"]
 atlas = ExtResource("1_snimt")
 region = Rect2(150, 225, 75, 75)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_381dd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpcti"]
 atlas = ExtResource("1_snimt")
 region = Rect2(225, 225, 75, 75)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hogdl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m3p1"]
 atlas = ExtResource("1_snimt")
 region = Rect2(300, 225, 75, 75)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y4skk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_05tos"]
 atlas = ExtResource("1_snimt")
 region = Rect2(375, 225, 75, 75)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b0he6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o64vc"]
 atlas = ExtResource("1_snimt")
 region = Rect2(450, 225, 75, 75)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_scgw1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfgwp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7qtoc")
+"texture": SubResource("AtlasTexture_snimt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fmqn7")
+"texture": SubResource("AtlasTexture_4jcmf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nfjn3")
+"texture": SubResource("AtlasTexture_y4tfu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_381dd")
+"texture": SubResource("AtlasTexture_kpcti")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hogdl")
+"texture": SubResource("AtlasTexture_5m3p1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y4skk")
+"texture": SubResource("AtlasTexture_05tos")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b0he6")
+"texture": SubResource("AtlasTexture_o64vc")
 }],
 "loop": false,
 "name": &"default",
@@ -63,7 +63,7 @@ animations = [{
 [node name="flytrap_melee_1" type="AnimatedSprite2D"]
 z_index = 1501
 scale = Vector2(0.75, 0.75)
-sprite_frames = SubResource("SpriteFrames_scgw1")
+sprite_frames = SubResource("SpriteFrames_rfgwp")
 autoplay = "default"
 frame = 6
 frame_progress = 1.0

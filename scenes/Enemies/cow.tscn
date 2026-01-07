@@ -186,6 +186,7 @@ frame_progress = 0.750178
 [node name="FartArea" type="Area2D" parent="Fart"]
 
 [node name="FartCollider" type="CollisionShape2D" parent="Fart/FartArea"]
+visible = false
 position = Vector2(2, -7)
 shape = SubResource("CircleShape2D_bxvbq")
 disabled = true

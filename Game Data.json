@@ -149,6 +149,12 @@
 	  "debuff_type": "slowness"
 	}
   }, 
+  "melee": {
+	"flytrap_melee_1": {
+	  "type": "blunt",
+	  "splash_cap": 6,
+	}
+  },
   "enemy": {
 	"bush": {
 	  "speed" : 0.015,
@@ -165,5 +171,5 @@
 	  "max_health" : 10,
 	  "base_damage_ratio" : 0.5
 	}
-  }
+  },
 }
