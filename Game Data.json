@@ -159,17 +159,20 @@
 	"bush": {
 	  "speed" : 0.015,
 	  "max_health" : 4,
-	  "base_damage_ratio" : 0.5
+	  "base_damage_ratio" : 0.5,
+	  "xp" : 50
 	}, 
 	"squirrel": {
 	  "speed" : 0.05, 
 	  "max_health" : 2, 
-	  "base_damage_ratio" : 0.5
+	  "base_damage_ratio" : 0.5,
+	  "xp" : 50
 	},
 	"cow" : {
 	  "speed" : 0.015, 
 	  "max_health" : 10,
-	  "base_damage_ratio" : 0.5
+	  "base_damage_ratio" : 0.5,
+	  "xp" : 75
 	}
   },
 }

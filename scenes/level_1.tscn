@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=56 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -15,14 +15,18 @@
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="10_7gny6"]
 [ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_2aecg"]
 [ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="15_6dial"]
-[ext_resource type="Script" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
 [ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_1s4pk"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
 [ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_isj1j"]
 [ext_resource type="Script" uid="uid://bl8h55txysn1a" path="res://scripts/Temp_upgrade_tower.gd" id="21_so66j"]
-[ext_resource type="Script" path="res://scripts/base_class.gd" id="22_tr1x6"]
+[ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="22_tr1x6"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="23_d5akn"]
+[ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="24_s7g0b"]
+[ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="25_k8ld0"]
+[ext_resource type="Texture2D" uid="uid://cspxuiahyng26" path="res://assets/sprites/icons and buttons/player_level_bar.png" id="25_mmfjm"]
+[ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="26_k8ld0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("1_2os1m")
@@ -481,7 +485,7 @@ script = ExtResource("21_so66j")
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu")]
 script = ExtResource("22_tr1x6")
 health_label = NodePath("../Icons/LifeIndicator/LifeLabel")
-base_health = 1000.0
+base_health = 150.0
 pause_menu = NodePath("../PauseUI")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
@@ -494,18 +498,54 @@ pausable = true
 
 [node name="LifeIndicator" type="TextureRect" parent="Icons"]
 offset_left = 14.0
-offset_top = 13.0
+offset_top = 34.0
 offset_right = 41.0
-offset_bottom = 38.0
+offset_bottom = 59.0
 texture = ExtResource("23_d5akn")
 
 [node name="LifeLabel" type="Label" parent="Icons/LifeIndicator"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 3.0
-offset_right = 71.0
-offset_bottom = 27.0
+offset_left = 29.0
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 30.0
+scale = Vector2(0.72, 0.72)
 text = "150"
 label_settings = SubResource("LabelSettings_wbtxt")
+
+[node name="PlayerLvlIndicator" type="TextureRect" parent="Icons"]
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 150.0
+offset_bottom = 27.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("24_s7g0b")
+script = ExtResource("25_k8ld0")
+
+[node name="XpBar" type="TextureRect" parent="Icons/PlayerLvlIndicator"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.0
+offset_right = 131.0
+offset_bottom = 14.0
+texture = ExtResource("25_mmfjm")
+
+[node name="LvlPlate" type="TextureRect" parent="Icons/PlayerLvlIndicator"]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 20.0
+texture = ExtResource("26_k8ld0")
+
+[node name="LvlLabel" type="Label" parent="Icons/PlayerLvlIndicator"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 34.0
+offset_bottom = 29.0
+scale = Vector2(0.6, 0.6)
+text = "10"
+label_settings = SubResource("LabelSettings_wbtxt")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="WaveSpawner/EnemyDelay" to="WaveSpawner" method="_on_enemy_delay_timeout"]

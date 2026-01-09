@@ -12,6 +12,7 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 ## Used to calculate damage it does against the base. 
 ## Formula is cur_health * base_damage_ratio
 @onready var base_damage_ratio : float = enemy_data["base_damage_ratio"]
+@onready var xp : float = enemy_data["xp"]
 
 # enemy based variables
 @export var enemy_sprite : Node2D
@@ -82,12 +83,16 @@ func apply_damage(damage : float, damage_type : Projectile.Type):
 		pass
 	cur_health -= damage * damage_percent
 	if cur_health <= 0.0:
+		PlayerStats.PlayerXp += self.xp
+		PlayerStats.emit_signal("xp_changed")
 		queue_free()
 		return
 	draw_health()
 
 func draw_health():
 	if cur_health <= 0.0:
+		PlayerStats.PlayerXp += self.xp
+		PlayerStats.emit_signal("xp_changed")
 		queue_free()
 		return
 	health_bar.scale.x = cur_health / max_health
