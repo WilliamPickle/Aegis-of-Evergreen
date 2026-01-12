@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=55 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -15,13 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="10_7gny6"]
 [ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_2aecg"]
 [ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="15_6dial"]
-[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
+[ext_resource type="Script" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
 [ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_1s4pk"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
 [ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_isj1j"]
-[ext_resource type="Script" uid="uid://bl8h55txysn1a" path="res://scripts/Temp_upgrade_tower.gd" id="21_so66j"]
-[ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="22_tr1x6"]
+[ext_resource type="Script" path="res://scripts/base_class.gd" id="22_tr1x6"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="23_d5akn"]
 [ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="24_s7g0b"]
 [ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="25_k8ld0"]
@@ -469,18 +468,6 @@ offset_bottom = 76.0
 text = "This is the end."
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
-
-[node name="TempUpgradeButton" type="Button" parent="."]
-z_index = 100
-offset_left = -313.0
-offset_top = 9.0
-offset_right = -184.0
-offset_bottom = 86.0
-theme_override_fonts/font = ExtResource("7_15mv3")
-text = "Upgrade
-selected
-tower"
-script = ExtResource("21_so66j")
 
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu")]
 script = ExtResource("22_tr1x6")

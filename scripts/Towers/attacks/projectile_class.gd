@@ -58,6 +58,10 @@ func on_hit(enemy : Enemy) -> void:
 		#return
 	#enemy.cur_health -= tower.cur_damage
 	#enemy.health_changed.emit()
+	if !is_instance_valid(tower):
+		queue_free()
+		return
+	
 	enemy.apply_damage(tower.cur_damage, Type.BLUNT)
 	pierce_cap -= 1
 	if pierce_cap <= 0:

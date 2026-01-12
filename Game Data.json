@@ -1,6 +1,6 @@
 {
   "tower": {
-	"chimpmunk": {
+	"chipmunk": {
 	  "type": "Attacker",
 	  "tower_fpath": "res://scenes/Towers/chipmunk.tscn",
 	  "card_fpath": "res://assets/sprites/towers/chipmunk_card.png",

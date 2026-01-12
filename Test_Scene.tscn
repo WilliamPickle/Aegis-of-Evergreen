@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://v28pmfmiaugg"]
+[gd_scene load_steps=23 format=3 uid="uid://v28pmfmiaugg"]
 
 [ext_resource type="Script" path="res://scripts/UI/ui_script.gd" id="1_rh5xb"]
 [ext_resource type="Texture2D" uid="uid://ch4m2xbktl6ub" path="res://assets/sprites/icons and buttons/upgrade_ui.png" id="2_cwt80"]
-[ext_resource type="Script" uid="uid://d2v44s4bi3lch" path="res://scripts/tower_image.gd" id="2_udkbk"]
+[ext_resource type="Script" uid="uid://c0ofxfuvu8dbm" path="res://test_scene_script.gd" id="2_e0b67"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="3_4g0oj"]
 [ext_resource type="Texture2D" uid="uid://b5mdymdvkosdl" path="res://assets/sprites/towers/tower mugshots/chipmunk_3.png" id="3_e0b67"]
 
@@ -20,6 +20,32 @@ region = Rect2(358, 29, 200, 132)
 [sub_resource type="AtlasTexture" id="AtlasTexture_udkbk"]
 atlas = ExtResource("2_cwt80")
 region = Rect2(566, 29, 74, 132)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e0b67"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6eui"]
+atlas = ExtResource("2_cwt80")
+region = Rect2(632, 199, 13, 13)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cart1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le5gb"]
+atlas = ExtResource("2_cwt80")
+region = Rect2(632, 217, 13, 13)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m6eui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_le5gb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_os610"]
+atlas = ExtResource("2_cwt80")
+region = Rect2(632, 217, 13, 13)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cq2h6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4e0x"]
+atlas = ExtResource("2_cwt80")
+region = Rect2(632, 199, 13, 13)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4g0oj"]
 
@@ -51,12 +77,12 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("2_e0b67")
 
 [node name="Background" type="Sprite2D" parent="UserInterface/Control"]
 position = Vector2(-10, 0)
 texture = SubResource("AtlasTexture_4g0oj")
 offset = Vector2(-175, 0)
-script = ExtResource("2_udkbk")
 metadata/_edit_lock_ = true
 
 [node name="TowerImageBackground" type="Sprite2D" parent="UserInterface/Control/Background"]
@@ -88,14 +114,242 @@ anchor_left = 0.5
 anchor_top = 0.068
 anchor_right = 0.5
 anchor_bottom = 0.068
-offset_left = -76.0
-offset_top = -74.976
-offset_right = 4.0
-offset_bottom = -58.976
+offset_left = -67.0
+offset_top = -72.976
+offset_right = 13.0
+offset_bottom = -56.976
 grow_horizontal = 2
+scale = Vector2(0.75, 0.75)
 theme_override_fonts/font = ExtResource("3_4g0oj")
 theme_override_font_sizes/font_size = 16
 text = "Statistics"
+
+[node name="BoxContainer" type="BoxContainer" parent="UserInterface/Control/Background/Stats"]
+offset_left = -27.0
+offset_top = -44.0
+offset_right = 27.0
+offset_bottom = 66.0
+theme_override_constants/separation = 5
+vertical = true
+
+[node name="Damage" type="Button" parent="UserInterface/Control/Background/Stats/BoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e0b67")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e0b67")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e0b67")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_e0b67")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e0b67")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_e0b67")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e0b67")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_e0b67")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e0b67")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_e0b67")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e0b67")
+icon = SubResource("AtlasTexture_m6eui")
+
+[node name="Data" type="Label" parent="UserInterface/Control/Background/Stats/BoxContainer/Damage"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 10.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_4g0oj")
+theme_override_font_sizes/font_size = 8
+text = "999.00"
+vertical_alignment = 3
+
+[node name="Name" type="Label" parent="UserInterface/Control/Background/Stats/BoxContainer/Damage"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 9.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_4g0oj")
+theme_override_font_sizes/font_size = 8
+text = "Damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Range" type="Button" parent="UserInterface/Control/Background/Stats/BoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cart1")
+button_mask = 0
+icon = SubResource("AtlasTexture_le5gb")
+
+[node name="Data" type="Label" parent="UserInterface/Control/Background/Stats/BoxContainer/Range"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 10.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_4g0oj")
+theme_override_font_sizes/font_size = 8
+text = "999.00"
+vertical_alignment = 3
+
+[node name="Name" type="Label" parent="UserInterface/Control/Background/Stats/BoxContainer/Range"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 9.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_4g0oj")
+theme_override_font_sizes/font_size = 8
+text = "Damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Range2" type="Button" parent="UserInterface/Control/Background/Stats/BoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_cart1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cart1")
+button_mask = 0
+icon = SubResource("AtlasTexture_le5gb")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UserInterface/Control/Background/Stats/BoxContainer/Range2"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 10.0
+scale = Vector2(1.5, 1.5)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_m6eui")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m6eui")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/Control/Background/Stats/BoxContainer/Range2/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="UserInterface/Control/Background/Stats/BoxContainer/Range2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4g0oj")
+theme_override_font_sizes/font_size = 8
+text = "999.00"
+
+[node name="Range" type="Button" parent="UserInterface/Control/Background/Stats"]
+visible = false
+offset_left = -25.0
+offset_top = -26.0
+offset_right = -12.0
+offset_bottom = -13.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_le5gb")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_le5gb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_le5gb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_le5gb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_le5gb")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_le5gb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_le5gb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_le5gb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_le5gb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_le5gb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_le5gb")
+button_mask = 0
+icon = SubResource("AtlasTexture_os610")
+
+[node name="Data" type="Label" parent="UserInterface/Control/Background/Stats/Range"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 10.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_4g0oj")
+theme_override_font_sizes/font_size = 8
+text = "999.00"
+vertical_alignment = 3
+
+[node name="Name" type="Label" parent="UserInterface/Control/Background/Stats/Range"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 9.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_4g0oj")
+theme_override_font_sizes/font_size = 8
+text = "Damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Damage" type="Button" parent="UserInterface/Control/Background/Stats"]
+visible = false
+offset_left = -25.0
+offset_top = -44.0
+offset_right = -12.0
+offset_bottom = -31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cq2h6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_cq2h6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cq2h6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_cq2h6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cq2h6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_cq2h6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cq2h6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_cq2h6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cq2h6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_cq2h6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cq2h6")
+icon = SubResource("AtlasTexture_p4e0x")
+
+[node name="Data" type="Label" parent="UserInterface/Control/Background/Stats/Damage"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 10.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_4g0oj")
+theme_override_font_sizes/font_size = 8
+text = "999.00"
+vertical_alignment = 3
+
+[node name="Name" type="Label" parent="UserInterface/Control/Background/Stats/Damage"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 9.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_4g0oj")
+theme_override_font_sizes/font_size = 8
+text = "Damage"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="UpgradeButton" type="Button" parent="UserInterface/Control/Background"]
 offset_left = -316.0

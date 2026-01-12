@@ -1,9 +1,30 @@
 extends UserInterface
-class_name tower_upgrader
+class_name towerUpgrader
 
 const f_path : String = "res://assets/sprites/towers/tower mugshots/"
 @export var tower : Tower
-@export_enum("chipmunk","bee","flytrap") var tower_name : String 
+@export var tower_name : String
+@export_enum("attacker") var type : String
+
+static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))["tower"]
+@onready var tower_data = Game_Data[tower_name]
+const tower_stats : Dictionary = {
+	"attacker" = ["damage", "range", "attack_speed"],
+	#"melee" = ["damage", "range", "attack_speed"]
+}
+
+# stats
+@export var is_attacker : bool = false
+#@export var stats : Dictionary[String, bool]
+@onready var level = tower.level
+@onready var stats : Dictionary[String, Button] = {
+	"damage" : $Control/Background/StatsDisplay/StatsContainer/Damage,
+	"range" : $Control/Background/StatsDisplay/StatsContainer/Range,
+	"attack_speed" : $Control/Background/StatsDisplay/StatsContainer/AttackSpeed,
+	#"Damage" : $Control/Background/StatsDisplay/StatsContainer,
+	#"Damage" : $Control/Background/StatsDisplay/StatsContainer,
+}
+const text_path := "ScrollContainer/VBoxContainer/Label"
 
 # tower image vars
 @onready var tower_image : TextureRect = $Control/Background/TowerImageBackground/TowerImage
@@ -14,21 +35,42 @@ const f_path : String = "res://assets/sprites/towers/tower mugshots/"
 @onready var type_text : Label = $Control/Background/TypeDisplay/TypeText
 
 # cost vars
-var cost : float = 10.0
 @onready var costText : Label = $Control/Background/UpgradeCost
 @onready var sellText : Label = $Control/Background/SellCost
+
+# sell and upgrade bottons
+@onready var upgrade_button = $Control/Background/UpgradeButton
+@onready var sell_button = $Control/Background/SellButton
 
 var types = ["First", "Last", "Strong", "Weak"]
 var cur_type : int = 0
 
 func _ready() -> void:
-	print(tower_name)
+	for stat in tower_stats[type]:
+		var button : Button = stats[stat]
+		button.visible = true
+		button.get_node(text_path).text = str(tower_data[stat][0])
 	tower_image.texture = load(f_path + str(tower_name)+"_1.png")
-	#print(tower.data_resource.object)
+	
 	right_arrow.pressed.connect(_update_type.bind(1))
 	left_arrow.pressed.connect(_update_type.bind(-1))
-
+	
+	upgrade_button.button_down.connect(upgrade_tower)
+	sell_button.button_down.connect(_sell_tower)
 
 func _update_type(value : int):
 	cur_type = (cur_type + value) % 4
 	type_text.text = types[cur_type]
+
+func upgrade_tower():
+	if tower.level < 2:
+		tower_image.texture = load(f_path + tower_name + "_" +str(tower.level+2) + ".png")
+		tower.upgrade_tower()
+
+func _sell_tower():
+	ControlHandler.current_states.erase(ControlHandler.ControlState.VIEWING_TOWER)
+	tower.current_tower = null
+	tower.queue_free()
+	
+func _update_text():
+	pass
