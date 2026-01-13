@@ -18,12 +18,13 @@ enum Target{
 
 var cur_damage : float
 # Randomizing the target type for now.
-var target_type = Target.values()[randi_range(0, Target.size()-1)]
+var target_type = Target.FIRST
 # Current enemy tower does damage to
 var targeted_enemy : Area2D
 
 func _ready() -> void:
 	super._ready()
+	_attack_cooldown.wait_time = object_data["attack_speed"][level]
 	cur_damage = damage
 	_attack_cooldown.timeout.connect(update_enemy_list)
 	# Once tower is placed we can start attacking

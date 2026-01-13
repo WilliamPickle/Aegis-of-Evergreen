@@ -60,7 +60,11 @@ func _ready() -> void:
 
 func _update_type(value : int):
 	cur_type = (cur_type + value) % 4
+	if cur_type == -1:
+		cur_type = 3
 	type_text.text = types[cur_type]
+	
+	tower.target_type = cur_type
 
 func upgrade_tower():
 	if tower.level < 2:
