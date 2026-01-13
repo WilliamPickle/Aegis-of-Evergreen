@@ -22,11 +22,11 @@ region = Rect2(30, 50, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bpil"]
 atlas = ExtResource("2_fdw71")
-region = Rect2(0, 75, 30, 25)
+region = Rect2(0, 100, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ccrqw"]
 atlas = ExtResource("2_fdw71")
-region = Rect2(30, 75, 30, 25)
+region = Rect2(30, 100, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4eg5m"]
 atlas = ExtResource("2_fdw71")
@@ -46,11 +46,11 @@ region = Rect2(30, 25, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5th1o"]
 atlas = ExtResource("2_fdw71")
-region = Rect2(0, 100, 30, 25)
+region = Rect2(0, 75, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4m5xt"]
 atlas = ExtResource("2_fdw71")
-region = Rect2(30, 100, 30, 25)
+region = Rect2(30, 75, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4sek"]
 atlas = ExtResource("2_fdw71")
@@ -154,7 +154,6 @@ metadata/_edit_group_ = true
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_ccrqw")
 animation = &"idle_0"
-frame_progress = 0.920281
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rblst")

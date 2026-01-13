@@ -22,8 +22,11 @@ func _draw() -> void:
 		draw_polygon(attack_shapes[level].polygon,[COLOR])
 
 func attack() -> void:
-	print("GOT TO ATTACK METHOD!!!!!!!!")
-	print(attack_fpath)
+	if not is_instance_valid(targeted_enemy):
+		print("----------")
+		print("NOT VALID!!!!!!!!!")
+		update_enemy_list()
+		return
 	_sprite.play("attacking_"+str(level))
 	var tower_attack : Melee = load(attack_fpath).instantiate()
 	tower_attack.global_position = global_position
