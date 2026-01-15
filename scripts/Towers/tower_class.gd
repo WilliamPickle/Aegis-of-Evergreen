@@ -108,6 +108,13 @@ func on_tower_collision(_body):
 func place_tower() -> bool:
 	if get_overlapping_areas().size() > 0:
 		return false
+		
+	if !PlayerStats.purchase_item(cost):
+		queue_free()
+		Tower_Placement.new_tower = null
+		Tower_Placement.is_placing = false
+		ControlHandler.current_states.erase(CONTROLS_STATES.PLACING_TOWER)
+		return false
 	# Makes so _process can't run
 	set_process(false)
 	# Enabled the button functionality.
@@ -117,6 +124,9 @@ func place_tower() -> bool:
 	upgrade_ui.visible = false
 	# THIS MIGHT NEED CHANGING LATER
 	#current_tower = null
+	
+	cost = object_data["cost"][1]
+	
 	# Draw the changes
 	queue_redraw()
 	
@@ -135,10 +145,11 @@ func place_tower() -> bool:
 	return true
 
 func upgrade_tower() -> void:
-	level += 1
-	cost = object_data["cost"][level]
-	range = object_data["range"][level]
-	range_collider.shape.radius = range
+		level += 1
+		if level == 1:
+			cost = object_data["cost"][2]
+		range = object_data["range"][level]
+		range_collider.shape.radius = range
 
 # When tower is first intantiated, the tower follows mouse position
 # and updates draw().
