@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://csvtwwunpwrfh"]
+[gd_scene load_steps=82 format=3 uid="uid://csvtwwunpwrfh"]
 
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_g2sta"]
 [ext_resource type="Script" uid="uid://dy04of48wrsf7" path="res://scripts/UI/survival_guide_script.gd" id="2_1fxqp"]
@@ -19,8 +19,10 @@
 [ext_resource type="LabelSettings" uid="uid://dnonjx6mllei5" path="res://assets/fonts/guidebook_heading2.tres" id="12_m5axs"]
 [ext_resource type="Texture2D" uid="uid://chf6w8x3cuijp" path="res://assets/sprites/icons and buttons/exit_button_highlight.png" id="13_lidf8"]
 [ext_resource type="Texture2D" uid="uid://1u75f14jex4" path="res://assets/sprites/icons and buttons/exit_button.png" id="14_7y2fs"]
+[ext_resource type="Texture2D" uid="uid://bnlwqi43gq42q" path="res://assets/sprites/survival guide menu/page 5 and 6 new.png" id="14_m5axs"]
 [ext_resource type="Script" uid="uid://h2jq8s83khk1" path="res://scripts/UI/back_button_script.gd" id="15_6vu8i"]
 [ext_resource type="Texture2D" uid="uid://coqpl0tt4bms5" path="res://assets/sprites/icons and buttons/back_button_highlighted.png" id="16_6vu8i"]
+[ext_resource type="Texture2D" uid="uid://6b18sqntav8k" path="res://assets/sprites/survival guide menu/page 9 and 10.png" id="16_exfpv"]
 [ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="17_t4k2q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05qod"]
@@ -179,6 +181,38 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2g57s"]
 texture = ExtResource("10_t4k2q")
 region_rect = Rect2(295, 40, 13, 6)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exfpv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m5axs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e8n6g"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 48, 13, 6)
+modulate_color = Color(0.258824, 0.258824, 0.258824, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7sg28"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 48, 13, 6)
+modulate_color = Color(0.509804, 0.509804, 0.509804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avqcp"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 48, 13, 6)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wok70"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 56, 13, 6)
+modulate_color = Color(0.258824, 0.258824, 0.258824, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmx87"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 56, 13, 6)
+modulate_color = Color(0.509804, 0.509804, 0.509804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6di2m"]
+texture = ExtResource("10_t4k2q")
+region_rect = Rect2(295, 56, 13, 6)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t4k2q"]
 
@@ -367,7 +401,12 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_t4k2q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6vu8i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_3elub")
 
-[node name="Page1and2" type="TextureRect" parent="ScreenContainer/Contents"]
+[node name="Pages" type="Control" parent="ScreenContainer/Contents"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page1and2" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
 z_index = 1
 layout_mode = 2
 offset_left = 364.0
@@ -378,7 +417,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_unlyx")
 
-[node name="Title" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="Title" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 33.0
@@ -389,7 +428,7 @@ theme_override_fonts/font = ExtResource("6_dq160")
 theme_override_font_sizes/font_size = 48
 text = "Welcome"
 
-[node name="text1" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 103.0
 offset_top = 110.0
@@ -400,7 +439,7 @@ text = "Greetings, new volunteer. I am the ranger of this forest, here to help y
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="text2" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 180.0
@@ -412,7 +451,7 @@ text = "It is your job to help kick out the unwanted visitors of the forest. Her
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="text3" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 437.0
 offset_top = 86.0
@@ -424,7 +463,7 @@ text = "First, let me introduce myself. I am a \"hero\" type tower, meaning only
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="text4" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="text4" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 338.0
 offset_top = 220.0
@@ -436,7 +475,7 @@ text = "On that fateful day, on the arrival of the UFO, it was the ranger who ra
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="heading" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="heading" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 329.0
 offset_top = 27.0
@@ -445,7 +484,7 @@ offset_bottom = 51.0
 text = "Ranger"
 label_settings = ExtResource("11_exfpv")
 
-[node name="heading2" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="heading2" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 450.0
 offset_top = 31.0
@@ -455,7 +494,7 @@ scale = Vector2(0.75, 0.75)
 text = "Heroes"
 label_settings = ExtResource("12_m5axs")
 
-[node name="heading3" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="heading3" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 358.0
 offset_top = 202.0
@@ -465,7 +504,7 @@ scale = Vector2(0.75, 0.75)
 text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
 
-[node name="detail1" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="detail1" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 276.0
@@ -474,7 +513,7 @@ offset_bottom = 300.0
 text = "Intro"
 label_settings = SubResource("LabelSettings_epvr4")
 
-[node name="detail2" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="detail2" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 254.0
@@ -483,7 +522,7 @@ offset_bottom = 278.0
 text = "Allies"
 label_settings = SubResource("LabelSettings_epvr4")
 
-[node name="detail3" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="detail3" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 147.0
 offset_top = 276.0
@@ -492,7 +531,7 @@ offset_bottom = 300.0
 text = "Foes"
 label_settings = SubResource("LabelSettings_epvr4")
 
-[node name="detail4" type="Label" parent="ScreenContainer/Contents/Page1and2"]
+[node name="detail4" type="Label" parent="ScreenContainer/Contents/Pages/Page1and2"]
 layout_mode = 0
 offset_left = 213.0
 offset_top = 254.0
@@ -501,7 +540,7 @@ offset_bottom = 278.0
 text = "Forest"
 label_settings = SubResource("LabelSettings_epvr4")
 
-[node name="Page3and4" type="TextureRect" parent="ScreenContainer/Contents"]
+[node name="Page3and4" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
 layout_mode = 2
 offset_left = 364.0
 offset_top = 204.0
@@ -511,7 +550,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("6_u6nj5")
 
-[node name="text1" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Pages/Page3and4"]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 134.0
@@ -523,7 +562,7 @@ text = "This is your first ally, the reliable Chipmunk. He's cheap to place and 
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="heading" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+[node name="heading" type="Label" parent="ScreenContainer/Contents/Pages/Page3and4"]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 27.0
@@ -532,7 +571,7 @@ offset_bottom = 51.0
 text = "Chipmunk"
 label_settings = ExtResource("11_exfpv")
 
-[node name="heading2" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+[node name="heading2" type="Label" parent="ScreenContainer/Contents/Pages/Page3and4"]
 layout_mode = 0
 offset_left = 187.0
 offset_top = 31.0
@@ -542,7 +581,7 @@ scale = Vector2(0.75, 0.75)
 text = "Ally"
 label_settings = ExtResource("12_m5axs")
 
-[node name="heading3" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+[node name="heading3" type="Label" parent="ScreenContainer/Contents/Pages/Page3and4"]
 layout_mode = 0
 offset_left = 354.0
 offset_top = 202.0
@@ -552,7 +591,7 @@ scale = Vector2(0.75, 0.75)
 text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
 
-[node name="heading4" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+[node name="heading4" type="Label" parent="ScreenContainer/Contents/Pages/Page3and4"]
 layout_mode = 0
 offset_left = 363.0
 offset_top = 27.0
@@ -561,7 +600,7 @@ offset_bottom = 51.0
 text = "Bee Army"
 label_settings = ExtResource("11_exfpv")
 
-[node name="heading5" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+[node name="heading5" type="Label" parent="ScreenContainer/Contents/Pages/Page3and4"]
 layout_mode = 0
 offset_left = 63.0
 offset_top = 202.0
@@ -571,7 +610,7 @@ scale = Vector2(0.75, 0.75)
 text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
 
-[node name="text2" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Pages/Page3and4"]
 layout_mode = 0
 offset_left = 44.0
 offset_top = 220.0
@@ -582,7 +621,7 @@ text = "During cold times, chipmunks will hibernate in their own dens. They also
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="text3" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Pages/Page3and4"]
 layout_mode = 0
 offset_left = 310.0
 offset_top = 132.0
@@ -593,7 +632,7 @@ text = "The bees are masters"
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="text4" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+[node name="text4" type="Label" parent="ScreenContainer/Contents/Pages/Page3and4"]
 layout_mode = 0
 offset_left = 310.0
 offset_top = 156.0
@@ -604,7 +643,7 @@ text = "of the air. They utilize advanced avionics to drop hives full of honey o
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="text5" type="Label" parent="ScreenContainer/Contents/Page3and4"]
+[node name="text5" type="Label" parent="ScreenContainer/Contents/Pages/Page3and4"]
 layout_mode = 0
 offset_left = 335.0
 offset_top = 220.0
@@ -615,7 +654,101 @@ text = "Bees are without a doubt the backbone of our ecosystems. One  reason for
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="Page5and6" type="TextureRect" parent="ScreenContainer/Contents"]
+[node name="Page5and6" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 204.0
+offset_right = 916.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("14_m5axs")
+
+[node name="heading" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 27.0
+offset_right = 230.0
+offset_bottom = 51.0
+text = "The Flytrap"
+label_settings = ExtResource("11_exfpv")
+
+[node name="heading3" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 202.0
+offset_right = 252.0
+offset_bottom = 226.0
+scale = Vector2(0.75, 0.75)
+text = "- Extra Facts -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 74.0
+offset_right = 57.0
+offset_bottom = 122.0
+scale = Vector2(1.2, 1.2)
+text = "Venus Flytraps are excellent at close"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 134.0
+offset_right = 86.0
+offset_bottom = 152.0
+scale = Vector2(1.2, 1.2)
+text = "ranges. The acid they spit"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 158.0
+offset_right = 201.0
+offset_bottom = 188.0
+scale = Vector2(1.2, 1.2)
+text = "out also seem to induce special side-effects on most foes. Rumour has it that our flytraps have undergone mutations..."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text5" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 220.0
+offset_right = 201.0
+offset_bottom = 270.0
+scale = Vector2(1.2, 1.2)
+text = "In reality, Venus Flytraps attack bugs by trapping them in their \"mouths\" and digesting them. Our flytraps however have miraculously evolved to spit acid instead."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading4" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 150.0
+offset_right = 568.0
+offset_bottom = 174.0
+scale = Vector2(0.75, 0.75)
+text = "- Coming Soon -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text6" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 174.0
+offset_right = 483.0
+offset_bottom = 224.0
+scale = Vector2(1.2, 1.2)
+text = "As time passes, the forest requires more allies to fend off the growing threats. Rest assured, more allies are getting ready to join the fight. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="Page7and8" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
 layout_mode = 2
 offset_left = 364.0
 offset_top = 204.0
@@ -625,7 +758,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("7_lidf8")
 
-[node name="text1" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 92.0
@@ -636,7 +769,7 @@ text = "bushes often come in large numbers. Each bush on their own is rather wea
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="heading" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="heading" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 27.0
@@ -645,7 +778,7 @@ offset_bottom = 51.0
 text = "Invaders"
 label_settings = ExtResource("11_exfpv")
 
-[node name="heading2" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="heading2" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 187.0
 offset_top = 31.0
@@ -655,7 +788,7 @@ scale = Vector2(0.75, 0.75)
 text = "Foe"
 label_settings = ExtResource("12_m5axs")
 
-[node name="heading3" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="heading3" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 63.0
 offset_top = 202.0
@@ -665,7 +798,7 @@ scale = Vector2(0.75, 0.75)
 text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
 
-[node name="heading7" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="heading7" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 352.0
 offset_top = 190.0
@@ -675,7 +808,7 @@ scale = Vector2(0.75, 0.75)
 text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
 
-[node name="heading4" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="heading4" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 76.0
@@ -685,7 +818,7 @@ scale = Vector2(0.5, 0.5)
 text = "Bush"
 label_settings = ExtResource("12_m5axs")
 
-[node name="heading5" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="heading5" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 142.0
@@ -695,7 +828,7 @@ scale = Vector2(0.5, 0.5)
 text = "Squirrel"
 label_settings = ExtResource("12_m5axs")
 
-[node name="text2" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 93.0
 offset_top = 80.0
@@ -706,7 +839,7 @@ text = "Blackberry"
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="text3" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 158.0
@@ -717,7 +850,7 @@ text = "gray squirrel move quite quickly. However, they are easier to wear down.
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="text4" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="text4" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 93.0
 offset_top = 146.0
@@ -728,7 +861,7 @@ text = "The eastern"
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="text5" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="text5" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 44.0
 offset_top = 220.0
@@ -739,7 +872,7 @@ text = "To some part of the world, these are invasive species. They disrupt ecos
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="heading6" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="heading6" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 321.0
 offset_top = 122.0
@@ -749,7 +882,7 @@ scale = Vector2(0.5, 0.5)
 text = "Cow"
 label_settings = ExtResource("12_m5axs")
 
-[node name="text6" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="text6" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 318.0
 offset_top = 138.0
@@ -760,7 +893,7 @@ text = "not be the most intimidating foe, but beware of the chemicals it release
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="text7" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="text7" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 390.0
 offset_top = 126.0
@@ -771,7 +904,7 @@ text = "This is just a cow. It might"
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="text8" type="Label" parent="ScreenContainer/Contents/Page5and6"]
+[node name="text8" type="Label" parent="ScreenContainer/Contents/Pages/Page7and8"]
 layout_mode = 0
 offset_left = 335.0
 offset_top = 208.0
@@ -782,7 +915,175 @@ text = "While not invasive like prior foe, many natural habitats have been remov
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="Page7and8" type="TextureRect" parent="ScreenContainer/Contents"]
+[node name="Page9and10" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 204.0
+offset_right = 916.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("16_exfpv")
+
+[node name="heading" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 27.0
+offset_right = 453.0
+offset_bottom = 51.0
+text = "The Queen"
+label_settings = ExtResource("11_exfpv")
+
+[node name="heading2" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 31.0
+offset_right = 564.0
+offset_bottom = 55.0
+scale = Vector2(0.75, 0.75)
+text = "Boss"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading3" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 204.0
+offset_right = 541.0
+offset_bottom = 228.0
+scale = Vector2(0.75, 0.75)
+text = "- Extra Facts -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading4" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 19.0
+offset_right = 214.0
+offset_bottom = 43.0
+scale = Vector2(0.5, 0.5)
+text = "Beetle"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 24.0
+offset_right = 153.0
+offset_bottom = 32.0
+scale = Vector2(1.2, 1.2)
+text = "This is"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 36.0
+offset_right = 121.0
+offset_bottom = 87.0
+scale = Vector2(1.2, 1.2)
+text = "the japanese beetle. Be mindful of it's hard exoskeleton as it is resistant against blunt projectiles. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 114.0
+offset_right = 177.0
+offset_bottom = 122.0
+scale = Vector2(1.2, 1.2)
+text = "Vineyard"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text4" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 126.0
+offset_right = 217.0
+offset_bottom = 177.0
+scale = Vector2(1.2, 1.2)
+text = "snails are slow and tanky and secrete a trail of slime. Other foes seem to speed up after walking in it."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading5" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 110.0
+offset_right = 366.0
+offset_bottom = 134.0
+scale = Vector2(0.5, 0.5)
+text = "Snail"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading6" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 199.0
+offset_right = 214.0
+offset_bottom = 223.0
+scale = Vector2(0.5, 0.5)
+text = "Hornet"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text5" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 204.0
+offset_right = 153.0
+offset_bottom = 212.0
+scale = Vector2(1.2, 1.2)
+text = "Asian"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text6" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 216.0
+offset_right = 126.0
+offset_bottom = 267.0
+scale = Vector2(1.2, 1.2)
+text = "hornets are aggressive and agile. Upon defeat, their queen seems to restore some of her own health."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text7" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 156.0
+offset_right = 414.0
+offset_bottom = 164.0
+scale = Vector2(1.2, 1.2)
+text = "The monarch of the"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text8" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 168.0
+offset_right = 501.0
+offset_bottom = 196.0
+scale = Vector2(1.2, 1.2)
+text = "Asian Hornets is equally as aggressive as her kin. Furthermore, after wearing her down, she'll get even more aggressive."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text9" type="Label" parent="ScreenContainer/Contents/Pages/Page9and10"]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 220.0
+offset_right = 491.0
+offset_bottom = 278.0
+scale = Vector2(1.2, 1.2)
+text = "Though not typically aggressive towards us humans, Asian hornets are ruthless hunters of other bugs. As invaders, they can disrupt many kinds of native insects/spiders."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="Page11and12" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
 layout_mode = 2
 offset_left = 364.0
 offset_top = 204.0
@@ -792,7 +1093,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("8_7y2fs")
 
-[node name="text1" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Pages/Page11and12"]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 80.0
@@ -803,7 +1104,7 @@ text = "This is the vessel of our invaders. Coming from an unknown world, it spe
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="heading" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+[node name="heading" type="Label" parent="ScreenContainer/Contents/Pages/Page11and12"]
 layout_mode = 0
 offset_left = 49.0
 offset_top = 27.0
@@ -812,7 +1113,7 @@ offset_bottom = 51.0
 text = "Environment"
 label_settings = ExtResource("11_exfpv")
 
-[node name="heading3" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+[node name="heading3" type="Label" parent="ScreenContainer/Contents/Pages/Page11and12"]
 layout_mode = 0
 offset_left = 44.0
 offset_top = 185.0
@@ -822,7 +1123,7 @@ scale = Vector2(0.75, 0.75)
 text = "- Urgent Warning -"
 label_settings = ExtResource("12_m5axs")
 
-[node name="text2" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Pages/Page11and12"]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 206.0
@@ -833,7 +1134,7 @@ text = "As time passes, the scent of smoke grows. The skies darken, the rivers l
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
-[node name="heading4" type="Label" parent="ScreenContainer/Contents/Page7and8"]
+[node name="heading4" type="Label" parent="ScreenContainer/Contents/Pages/Page11and12"]
 layout_mode = 0
 offset_left = 338.0
 offset_top = 140.0
@@ -930,6 +1231,38 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_8ufea")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3o43s")
 theme_override_styles/normal = SubResource("StyleBoxTexture_2g57s")
 
+[node name="ltab9and10" type="Button" parent="ScreenContainer/ButtonContainer/LeftTabs"]
+visible = false
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_top = 68.0
+offset_right = 26.0
+offset_bottom = 81.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exfpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m5axs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7sg28")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_avqcp")
+
+[node name="ltab11and12" type="Button" parent="ScreenContainer/ButtonContainer/LeftTabs"]
+visible = false
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_top = 85.0
+offset_right = 26.0
+offset_bottom = 98.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exfpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m5axs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_wok70")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmx87")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wok70")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6di2m")
+
 [node name="RightTabs" type="Control" parent="ScreenContainer/ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -994,6 +1327,36 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_3o43s")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8ufea")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3o43s")
 theme_override_styles/normal = SubResource("StyleBoxTexture_2g57s")
+
+[node name="rtab9and10" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_left = -26.0
+offset_top = 68.0
+offset_bottom = 81.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exfpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m5axs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7sg28")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_avqcp")
+
+[node name="rtab11and12" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_left = -26.0
+offset_top = 85.0
+offset_bottom = 98.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exfpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m5axs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_wok70")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmx87")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wok70")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6di2m")
 
 [node name="BackButtonContainer" type="Control" parent="ScreenContainer"]
 layout_mode = 2

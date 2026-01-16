@@ -46,6 +46,7 @@ var types = ["First", "Last", "Strong", "Weak"]
 var cur_type : int = 0
 
 func _ready() -> void:
+	super._ready()
 	for stat in tower_stats[type]:
 		var button : Button = stats[stat]
 		button.visible = true

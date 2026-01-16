@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnl4pdo4fp6i7"]
+
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_a7vct"]
+[ext_resource type="Texture2D" uid="uid://cr58fh4ynwlpq" path="res://assets/sprites/icons and buttons/skip_button_highlighted.png" id="2_f3fvx"]
+[ext_resource type="Texture2D" uid="uid://mcpammp3xs2h" path="res://assets/sprites/icons and buttons/skip_button.png" id="3_75x68"]
+[ext_resource type="Script" uid="uid://dnnanjnxxmswo" path="res://scripts/UI/ff_button.gd" id="4_1so7y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1so7y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_veg23"]
+texture = ExtResource("2_f3fvx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2y27k"]
+texture = ExtResource("2_f3fvx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xgm4c"]
+texture = ExtResource("2_f3fvx")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hh6n2"]
+texture = ExtResource("3_75x68")
+
+[node name="fast_forward_ui" type="CanvasLayer"]
+script = ExtResource("1_a7vct")
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="FFMargin" type="MarginContainer" parent="."]
+offset_left = 1130.0
+offset_right = 1210.0
+offset_bottom = 80.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="FFButton" type="Button" parent="FFMargin"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxTexture_1so7y")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_veg23")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2y27k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xgm4c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hh6n2")
+script = ExtResource("4_1so7y")

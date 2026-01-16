@@ -27,7 +27,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4qmi"]
-size = Vector2(2, 2)
+size = Vector2(4, 4)
 
 [node name="ChipmunkProjectile1" type="Area2D"]
 z_index = 11

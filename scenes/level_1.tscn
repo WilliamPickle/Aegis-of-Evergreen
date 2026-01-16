@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=56 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -10,17 +10,17 @@
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="7_15mv3"]
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="7_go7sj"]
 [ext_resource type="Script" uid="uid://clq18rcf3qqqj" path="res://scripts/Enemies/wave_spawner.gd" id="8_2os1m"]
-[ext_resource type="PackedScene" uid="uid://b7ncwanh4k1os" path="res://scenes/Enemies/cow.tscn" id="8_d5akn"]
 [ext_resource type="Script" uid="uid://c5v7i37jdw55h" path="res://scripts/Towers/tower_placement.gd" id="8_e3sih"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="10_7gny6"]
 [ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_2aecg"]
 [ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="15_6dial"]
-[ext_resource type="Script" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
+[ext_resource type="PackedScene" uid="uid://cnl4pdo4fp6i7" path="res://scenes/UI/fast_forward_ui.tscn" id="15_s7g0b"]
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
 [ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_1s4pk"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
 [ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_isj1j"]
-[ext_resource type="Script" path="res://scripts/base_class.gd" id="22_tr1x6"]
+[ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="22_tr1x6"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="23_d5akn"]
 [ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="24_s7g0b"]
 [ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="25_k8ld0"]
@@ -182,6 +182,9 @@ _data = {
 }
 point_count = 29
 
+[sub_resource type="LabelSettings" id="LabelSettings_x2fux"]
+font = ExtResource("7_15mv3")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2aecg"]
 texture = ExtResource("10_7gny6")
 
@@ -242,13 +245,6 @@ y_sort_enabled = true
 curve = SubResource("Curve2D_isj1j")
 metadata/_edit_lock_ = true
 
-[node name="PathFollow2D" type="PathFollow2D" parent="EnemyPath2"]
-position = Vector2(-273, -109)
-rotates = false
-loop = false
-
-[node name="cow" parent="EnemyPath2/PathFollow2D" instance=ExtResource("8_d5akn")]
-
 [node name="PlacementCollisions" type="Area2D" parent="."]
 
 [node name="Path" type="CollisionPolygon2D" parent="PlacementCollisions"]
@@ -271,9 +267,11 @@ polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130
 visible = false
 polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
 
-[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("timer", "wave_timer", "path_2d")]
+[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "timer", "delay_timer", "wave_timer", "path_2d")]
 script = ExtResource("8_2os1m")
+pause_menu = NodePath("../PauseUI")
 timer = NodePath("EnemyDelay")
+delay_timer = NodePath("DelayFuncTimer")
 wave_timer = NodePath("WaveTimer")
 path_2d = NodePath("../EnemyPath2")
 path_spread = 2.0
@@ -281,7 +279,22 @@ path_spread = 2.0
 [node name="EnemyDelay" type="Timer" parent="WaveSpawner"]
 wait_time = 5.0
 
+[node name="DelayFuncTimer" type="Timer" parent="WaveSpawner"]
+
 [node name="WaveTimer" type="Timer" parent="WaveSpawner"]
+
+[node name="Wave Text" type="CanvasLayer" parent="WaveSpawner"]
+script = ExtResource("16_7nomh")
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="WaveLabel" type="Label" parent="WaveSpawner/Wave Text"]
+offset_left = 189.0
+offset_top = 13.0
+offset_right = 263.0
+offset_bottom = 36.0
+scale = Vector2(1.2, 1.2)
+text = "Wave 0/5"
+label_settings = SubResource("LabelSettings_x2fux")
 
 [node name="Start Button" type="CanvasLayer" parent="."]
 layer = 2
@@ -338,13 +351,17 @@ metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="PauseUI" parent="." instance=ExtResource("14_2aecg")]
 
+[node name="fast_forward_ui" parent="." instance=ExtResource("15_s7g0b")]
+hide_during_pause = true
+
 [node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("15_6dial")]
 placement_mask = NodePath("../PlacementCollisions")
 card_type = Array[String](["tower", "chipmunk", "bee", "flytrap"])
+hide_during_pause = true
 
 [node name="DialogueUI" type="CanvasLayer" parent="."]
 script = ExtResource("16_7nomh")
-pausable = true
+tint_during_pause = true
 
 [node name="DialogueBox" type="Control" parent="DialogueUI" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
 layout_mode = 3
@@ -356,7 +373,7 @@ continue_button = NodePath("ContButton")
 skip_button = NodePath("SkipButton")
 label_container = NodePath("DialogueLabels")
 timer = NodePath("Timer")
-text_speed = 0.05
+text_speed = 0.01
 send_wave_signal = true
 hide_node = true
 node_to_hide = NodePath("../../ScrollbarUI")
@@ -436,42 +453,9 @@ text = "I'm never going to give the forest up. "
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
 
-[node name="Label6" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
-visible = false
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 681.0
-offset_bottom = 76.0
-text = "I'm never going to let the forest down. "
-label_settings = ExtResource("19_isj1j")
-autowrap_mode = 2
-
-[node name="Label5" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
-visible = false
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 681.0
-offset_bottom = 76.0
-text = "I'm never going to run around and desert it, I'm never going to make it cry, I'm never going to say goodbye, and I'm never going to tell a lie and hurt it. "
-label_settings = ExtResource("19_isj1j")
-autowrap_mode = 2
-
-[node name="Label7" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
-visible = false
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 681.0
-offset_bottom = 76.0
-text = "This is the end."
-label_settings = ExtResource("19_isj1j")
-autowrap_mode = 2
-
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu")]
 script = ExtResource("22_tr1x6")
-health_label = NodePath("../Icons/LifeIndicator/LifeLabel")
+health_label = NodePath("../Icons/Control/LifeIndicator/LifeLabel")
 base_health = 150.0
 pause_menu = NodePath("../PauseUI")
 
@@ -481,16 +465,23 @@ shape = SubResource("RectangleShape2D_d5akn")
 
 [node name="Icons" type="CanvasLayer" parent="."]
 script = ExtResource("16_7nomh")
-pausable = true
+tint_during_pause = true
 
-[node name="LifeIndicator" type="TextureRect" parent="Icons"]
+[node name="Control" type="Control" parent="Icons"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LifeIndicator" type="TextureRect" parent="Icons/Control"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 34.0
 offset_right = 41.0
 offset_bottom = 59.0
 texture = ExtResource("23_d5akn")
 
-[node name="LifeLabel" type="Label" parent="Icons/LifeIndicator"]
+[node name="LifeLabel" type="Label" parent="Icons/Control/LifeIndicator"]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 6.0
@@ -500,7 +491,8 @@ scale = Vector2(0.72, 0.72)
 text = "150"
 label_settings = SubResource("LabelSettings_wbtxt")
 
-[node name="PlayerLvlIndicator" type="TextureRect" parent="Icons"]
+[node name="PlayerLvlIndicator" type="TextureRect" parent="Icons/Control"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 7.0
 offset_right = 150.0
@@ -509,7 +501,7 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("24_s7g0b")
 script = ExtResource("25_k8ld0")
 
-[node name="XpBar" type="TextureRect" parent="Icons/PlayerLvlIndicator"]
+[node name="XpBar" type="TextureRect" parent="Icons/Control/PlayerLvlIndicator"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 8.0
@@ -517,13 +509,13 @@ offset_right = 131.0
 offset_bottom = 14.0
 texture = ExtResource("25_mmfjm")
 
-[node name="LvlPlate" type="TextureRect" parent="Icons/PlayerLvlIndicator"]
+[node name="LvlPlate" type="TextureRect" parent="Icons/Control/PlayerLvlIndicator"]
 layout_mode = 0
 offset_right = 136.0
 offset_bottom = 20.0
 texture = ExtResource("26_k8ld0")
 
-[node name="LvlLabel" type="Label" parent="Icons/PlayerLvlIndicator"]
+[node name="LvlLabel" type="Label" parent="Icons/Control/PlayerLvlIndicator"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 5.0
@@ -534,5 +526,3 @@ text = "10"
 label_settings = SubResource("LabelSettings_wbtxt")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="timeout" from="WaveSpawner/EnemyDelay" to="WaveSpawner" method="_on_enemy_delay_timeout"]

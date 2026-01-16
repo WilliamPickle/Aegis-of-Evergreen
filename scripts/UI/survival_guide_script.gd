@@ -1,7 +1,14 @@
 extends MarginContainer
 
+# Book setup on start: 
+# Pages are shown based on layering. Make them all visible
+# Since front cover always shows page one, preset tabs accordingly.
+
 # book elements
 @onready var contents: Control = $Contents
+@onready var pages: Control = $Contents/Pages
+@onready var right_tabs: Control = $ButtonContainer/RightTabs
+@onready var left_tabs: Control = $ButtonContainer/LeftTabs
 @onready var front_cover: Control = $FrontCoverMargin
 @onready var back_cover: Control = $BackCoverMargin
 @onready var button_container: MarginContainer = $ButtonContainer
@@ -14,29 +21,24 @@ var back_button_pos = [Vector2(343.0, 505.0), Vector2(620.0, 505.0)]
 
 
 # the pages
-@onready var page_dict = {
-"p0" = $Contents/Page1and2,
-"p1" = $Contents/Page3and4,
-"p2" = $Contents/Page5and6,
-"p3" = $Contents/Page7and8,
-}
+var page_dict = {}
 
 # the tab buttons
-@onready var tabs_dict = {
-"r0" = $ButtonContainer/RightTabs/rtab1and2,
-"r1" = $ButtonContainer/RightTabs/rtab3and4,
-"r2" = $ButtonContainer/RightTabs/rtab5and6,
-"r3" = $ButtonContainer/RightTabs/rtab7and8,
-"l0" = $ButtonContainer/LeftTabs/ltab1and2,
-"l1" = $ButtonContainer/LeftTabs/ltab3and4,
-"l2" = $ButtonContainer/LeftTabs/ltab5and6,
-"l3" = $ButtonContainer/LeftTabs/ltab7and8,
-}
+var tabs_dict = {}
 
 # logic variables
 var prev_index = 0
 
 func _ready():
+	# get pages
+	for i in range(pages.get_child_count()):
+		page_dict["p" + str(i)] = pages.get_child(i)
+	# get tabs
+	for i in range(right_tabs.get_child_count()):
+		tabs_dict["r" + str(i)] = right_tabs.get_child(i)
+	for i in range(left_tabs.get_child_count()):
+		tabs_dict["l" + str(i)] = left_tabs.get_child(i)
+		
 	for i in range(floori(len(tabs_dict) / 2)):
 		tabs_dict["r" + str(i)].button_down.connect(_show_page.bind(i))
 		tabs_dict["l" + str(i)].button_down.connect(_show_page.bind(i))

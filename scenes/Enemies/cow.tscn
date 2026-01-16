@@ -127,7 +127,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bxvbq"]
-radius = 33.5037
+radius = 37.0034
 
 [node name="cow" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "hp_button", "health_bar")]
 script = ExtResource("1_l5pgx")
@@ -180,13 +180,11 @@ scale = Vector2(2, 2)
 [node name="FartAnimation" type="AnimatedSprite2D" parent="Fart"]
 modulate = Color(1, 1, 1, 0.466667)
 sprite_frames = SubResource("SpriteFrames_8d6ci")
-frame = 5
-frame_progress = 0.750178
 
 [node name="FartArea" type="Area2D" parent="Fart"]
 
 [node name="FartCollider" type="CollisionShape2D" parent="Fart/FartArea"]
 visible = false
-position = Vector2(2, -7)
+position = Vector2(2.5, -5.5)
 shape = SubResource("CircleShape2D_bxvbq")
 disabled = true

@@ -5,10 +5,10 @@ extends Enemy
 @onready var fart_animation: AnimatedSprite2D = $Fart/FartAnimation
 @onready var fart_timer: Timer = $FartTimer
 # none of these vars influence the timing of the other vars. 
-var fart_duration: float = 2
-var fart_cooldown: float = 5
-var slowness_multiplier: float = 0.2
-var slowness_duration: float = 1
+var fart_duration: float = 2 # of the animation
+var fart_cooldown: float = 6
+var slowness_multiplier: float = 3 # bigger num bigger slow
+var slowness_duration: float = 4
 
 func _ready() -> void:
 	super._ready()

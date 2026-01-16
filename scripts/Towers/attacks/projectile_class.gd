@@ -62,8 +62,9 @@ func on_hit(enemy : Enemy) -> void:
 		queue_free()
 		return
 	
-	enemy.apply_damage(tower.cur_damage, Type.BLUNT)
-	pierce_cap -= 1
+	if enemy.cur_health > 0:
+		enemy.apply_damage(tower.cur_damage, Type.BLUNT)
+		pierce_cap -= 1
 	if pierce_cap <= 0:
 		queue_free()
 ## This functions holds the logic for when the projectile

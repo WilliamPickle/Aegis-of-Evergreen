@@ -1,0 +1,161 @@
+[gd_scene load_steps=20 format=3 uid="uid://biry1qv8ilrtv"]
+
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_mvmst"]
+[ext_resource type="Script" uid="uid://cgfnwjwjgf2rr" path="res://scripts/UI/win_screen.gd" id="2_lno1o"]
+[ext_resource type="Texture2D" uid="uid://crdpu06t0syay" path="res://assets/sprites/icons and buttons/ui_bar.png" id="3_0jarb"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="4_ts2yy"]
+[ext_resource type="Texture2D" uid="uid://pfssqwf31dm7" path="res://assets/sprites/icons and buttons/settings_button_highlighted.png" id="5_pfmrs"]
+[ext_resource type="Texture2D" uid="uid://ywnxvtgi724h" path="res://assets/sprites/icons and buttons/settings_button_cropped.png" id="6_b35ao"]
+[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="7_urbym"]
+[ext_resource type="Texture2D" uid="uid://vyejon8a8wc1" path="res://assets/sprites/icons and buttons/control_button_highlighted.png" id="8_rdptf"]
+[ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="9_ss4cf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ilcey"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y0fi1"]
+texture = ExtResource("5_pfmrs")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qyuu2"]
+texture = ExtResource("5_pfmrs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o8heo"]
+texture = ExtResource("5_pfmrs")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6i4u3"]
+texture = ExtResource("6_b35ao")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qi7p7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpdfi"]
+texture = ExtResource("8_rdptf")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbask"]
+texture = ExtResource("8_rdptf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3kjl8"]
+texture = ExtResource("8_rdptf")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r04qt"]
+texture = ExtResource("9_ss4cf")
+
+[node name="win_ui" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_mvmst")
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="WinScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -519.0
+offset_right = 1280.0
+offset_bottom = 201.0
+script = ExtResource("2_lno1o")
+
+[node name="TextPlate" type="NinePatchRect" parent="WinScreen"]
+custom_minimum_size = Vector2(550, 125)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -62.5
+offset_right = 275.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_0jarb")
+
+[node name="TextMargin" type="MarginContainer" parent="WinScreen/TextPlate"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -32.0
+offset_right = 216.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+
+[node name="Text" type="Label" parent="WinScreen/TextPlate/TextMargin"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ts2yy")
+theme_override_font_sizes/font_size = 64
+text = "Complete!!!!!"
+
+[node name="ButtonBarHBox" type="HBoxContainer" parent="WinScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = 77.0
+offset_right = 127.5
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="SettingsButton" type="Button" parent="WinScreen/ButtonBarHBox"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ilcey")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_y0fi1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qyuu2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_o8heo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6i4u3")
+script = ExtResource("7_urbym")
+file_path = "res://scenes/UI/settings_menu.tscn"
+scene_scale = 2.0
+hide_pause_menu = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="SettingsButton2" type="Button" parent="WinScreen/ButtonBarHBox"]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ilcey")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_y0fi1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qyuu2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_o8heo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6i4u3")
+script = ExtResource("7_urbym")
+file_path = "res://scenes/UI/settings_menu.tscn"
+scene_scale = 2.0
+hide_pause_menu = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="ControlButton" type="Button" parent="WinScreen/ButtonBarHBox"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qi7p7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_dpdfi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tbask")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3kjl8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r04qt")
+script = ExtResource("7_urbym")
+file_path = "res://scenes/UI/test_menu.tscn"
+scene_scale = 2.0
+hide_pause_menu = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"

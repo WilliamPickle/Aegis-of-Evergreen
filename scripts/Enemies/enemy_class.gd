@@ -1,6 +1,7 @@
 class_name Enemy
 extends Area2D
 signal reached_end
+signal removed
 
 # enemy stat variables
 static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))
@@ -57,6 +58,7 @@ func move_on_path(delta) -> void:
 	if  path.progress_ratio >= 1:
 		path.queue_free()
 		enemy_sprite.queue_free()
+		emit_signal("removed")
 		if cur_health > 0:
 			emit_signal("reached_end")
 
@@ -85,6 +87,7 @@ func apply_damage(damage : float, damage_type : Projectile.Type):
 	if cur_health <= 0.0:
 		PlayerStats.PlayerXp += self.xp
 		PlayerStats.emit_signal("xp_changed")
+		emit_signal("removed")
 		queue_free()
 		return
 	draw_health()
@@ -93,6 +96,7 @@ func draw_health():
 	if cur_health <= 0.0:
 		PlayerStats.PlayerXp += self.xp
 		PlayerStats.emit_signal("xp_changed")
+		emit_signal("removed")
 		queue_free()
 		return
 	health_bar.scale.x = cur_health / max_health

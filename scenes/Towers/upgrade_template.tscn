@@ -84,7 +84,8 @@ region_rect = Rect2(605, 196, 16, 34)
 [node name="UpgradeTemplate" type="CanvasLayer"]
 script = ExtResource("1_fneq2")
 tower_name = "chipmunk"
-pausable = true
+tint_during_pause = true
+hide_during_pause = true
 metadata/_custom_type_script = "uid://bite8683ykull"
 
 [node name="Control" type="Control" parent="."]

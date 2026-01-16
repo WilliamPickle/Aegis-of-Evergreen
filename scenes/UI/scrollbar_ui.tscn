@@ -46,7 +46,7 @@ texture_margin_bottom = 10.0
 [node name="ScrollbarUI" type="CanvasLayer" node_paths=PackedStringArray("scroll_container")]
 script = ExtResource("1_f0vdy")
 scroll_container = NodePath("ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer")
-pausable = true
+tint_during_pause = true
 
 [node name="ScrollbarUIAssets" type="MarginContainer" parent="."]
 anchors_preset = 15
