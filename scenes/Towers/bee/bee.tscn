@@ -488,7 +488,7 @@ metadata/_custom_type_script = "uid://bedplpbp1d213"
 [node name="Image" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -26)
 sprite_frames = SubResource("SpriteFrames_gc4ra")
-animation = &"attacking_2"
+animation = &"idle_0"
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_snbpk")
