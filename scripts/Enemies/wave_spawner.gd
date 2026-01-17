@@ -60,7 +60,9 @@ func send_enemy(enemy, quantity: int, delay_time: float) -> void:
 func update_total_enemies(enemy):
 	enemy_count -= 1
 	#print("current enemy count: ", enemy_count)
-	if enemy_count <= 0 and !currently_sending and wave == enemy.wave_number:
+	# for some reason in the if statement, i had this conditional:  and wave == enemy.wave_number
+	# I don't know what bug it was trying to fix but i've removed it b/c it's causing another bug
+	if enemy_count <= 0 and !currently_sending:
 		print("wave ", wave, " meant to stop")
 		# logic to stop a wave
 		wave_timer.stop()
