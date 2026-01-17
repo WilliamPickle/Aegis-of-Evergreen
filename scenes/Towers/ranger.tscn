@@ -1,0 +1,170 @@
+[gd_scene load_steps=22 format=3 uid="uid://du0764agaf7lh"]
+
+[ext_resource type="Script" uid="uid://cx05wk30uqwee" path="res://scripts/Towers/ranger_tower.gd" id="1_fqrt3"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_3a5ny"]
+[ext_resource type="Texture2D" uid="uid://cwd6iyrpuvuew" path="res://assets/sprites/towers/ranger_spritesheet.png" id="2_skf20"]
+[ext_resource type="PackedScene" uid="uid://d10o7y6xd75el" path="res://scenes/Towers/upgrade_template.tscn" id="3_3a5ny"]
+
+[sub_resource type="Resource" id="Resource_y3v4d"]
+script = ExtResource("2_3a5ny")
+class_type = "hero"
+object = "ranger"
+update_data = false
+metadata/_custom_type_script = "uid://baqkdqf80xars"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3v4d"]
+atlas = ExtResource("2_skf20")
+region = Rect2(0, 45, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcbma"]
+atlas = ExtResource("2_skf20")
+region = Rect2(35, 45, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usabr"]
+atlas = ExtResource("2_skf20")
+region = Rect2(70, 45, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl2sn"]
+atlas = ExtResource("2_skf20")
+region = Rect2(105, 45, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se7e5"]
+atlas = ExtResource("2_skf20")
+region = Rect2(140, 45, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d406v"]
+atlas = ExtResource("2_skf20")
+region = Rect2(175, 45, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cj00"]
+atlas = ExtResource("2_skf20")
+region = Rect2(210, 45, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twi5o"]
+atlas = ExtResource("2_skf20")
+region = Rect2(245, 45, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03cfr"]
+atlas = ExtResource("2_skf20")
+region = Rect2(0, 90, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h12xy"]
+atlas = ExtResource("2_skf20")
+region = Rect2(35, 90, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0wys"]
+atlas = ExtResource("2_skf20")
+region = Rect2(70, 90, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl8v4"]
+atlas = ExtResource("2_skf20")
+region = Rect2(105, 90, 35, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kr6f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3v4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcbma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usabr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl2sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se7e5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d406v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cj00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twi5o")
+}],
+"loop": false,
+"name": &"attacking",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03cfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h12xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0wys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl8v4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_esu28"]
+radius = 9.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cm5l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eltc7"]
+radius = 100.0
+
+[node name="Ranger" type="Area2D"]
+z_index = 7
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_fqrt3")
+snapping = 2.0
+data_resource = SubResource("Resource_y3v4d")
+metadata/_custom_type_script = "uid://cx05wk30uqwee"
+
+[node name="Image" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -7)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_7kr6f")
+animation = &"idle"
+
+[node name="BodyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_esu28")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4cm5l")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_4cm5l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4cm5l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_4cm5l")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4cm5l")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4cm5l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4cm5l")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_4cm5l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4cm5l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_4cm5l")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4cm5l")
+
+[node name="DetectionSpeed" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Range" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="RangeCollision" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_eltc7")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="UpgradeUI" parent="." node_paths=PackedStringArray("tower") instance=ExtResource("3_3a5ny")]
+tower = NodePath("..")
+tower_name = "bee"
+type = "attacker"

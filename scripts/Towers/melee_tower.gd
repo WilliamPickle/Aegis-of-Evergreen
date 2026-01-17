@@ -12,8 +12,8 @@ const COLOR = Color(0.75,0,0,0.3)
 
 func _ready():
 	super._ready()
-	attack_range.attack_shape = attack_shapes[0]
-	attack_range.tower = self
+	#attack_range.attack_shape = attack_shapes[0]
+	#attack_range.tower = self
 
 func _draw() -> void:
 	super._draw()
@@ -27,7 +27,7 @@ func attack() -> void:
 		print("NOT VALID!!!!!!!!!")
 		update_enemy_list()
 		return
-	_sprite.play("attacking_"+str(level))
+	sprite.play("attacking_"+str(level))
 	var tower_attack : Melee = load(attack_fpath).instantiate()
 	tower_attack.global_position = global_position
 	#map_area.call_deferred("add_child", tower_attack)

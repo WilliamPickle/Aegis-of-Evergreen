@@ -1,63 +1,63 @@
 [gd_scene load_steps=22 format=3 uid="uid://dv52bmj84m6kt"]
 
-[ext_resource type="Script" uid="uid://bedplpbp1d213" path="res://scripts/Towers/attacker_tower.gd" id="1_fdw71"]
-[ext_resource type="Texture2D" uid="uid://drwhrfycb4hnc" path="res://assets/sprites/towers/chipmunk_spritesheet.png" id="2_fdw71"]
-[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_rblst"]
-[ext_resource type="PackedScene" uid="uid://d10o7y6xd75el" path="res://scenes/Towers/upgrade_template.tscn" id="4_n4ef5"]
+[ext_resource type="Script" uid="uid://bedplpbp1d213" path="res://scripts/Towers/attacker_tower.gd" id="1_gqb61"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_vafmc"]
+[ext_resource type="Texture2D" uid="uid://drwhrfycb4hnc" path="res://assets/sprites/towers/chipmunk_spritesheet.png" id="3_y0xku"]
+[ext_resource type="PackedScene" uid="uid://d10o7y6xd75el" path="res://scenes/Towers/upgrade_template.tscn" id="4_88opd"]
 
-[sub_resource type="Resource" id="Resource_n4ef5"]
-script = ExtResource("2_rblst")
+[sub_resource type="Resource" id="Resource_gqb61"]
+script = ExtResource("2_vafmc")
 class_type = "tower"
 object = "chipmunk"
 update_data = false
 metadata/_custom_type_script = "uid://baqkdqf80xars"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rblst"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(0, 50, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n4ef5"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(30, 50, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bpil"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(0, 100, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ccrqw"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(30, 100, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4eg5m"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(0, 150, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hutvg"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(30, 150, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_305uu"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(0, 25, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n74e0"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(30, 25, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5th1o"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(0, 75, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4m5xt"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(30, 75, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4sek"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(0, 125, 30, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qq05n"]
-atlas = ExtResource("2_fdw71")
+atlas = ExtResource("3_y0xku")
 region = Rect2(30, 125, 30, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ccrqw"]
@@ -144,9 +144,9 @@ collision_mask = 5
 input_pickable = false
 linear_damp = 0.0
 angular_damp = 0.0
-script = ExtResource("1_fdw71")
+script = ExtResource("1_gqb61")
 snapping = 2.0
-data_resource = SubResource("Resource_n4ef5")
+data_resource = SubResource("Resource_gqb61")
 metadata/_custom_type_script = "uid://bedplpbp1d213"
 metadata/_edit_group_ = true
 
@@ -187,6 +187,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_3bpil")
 debug_color = Color(1, 1, 1, 0.42)
 
-[node name="UpgradeUI" parent="." node_paths=PackedStringArray("tower") instance=ExtResource("4_n4ef5")]
+[node name="UpgradeUI" parent="." node_paths=PackedStringArray("tower") instance=ExtResource("4_88opd")]
+visible = false
 tower = NodePath("..")
 type = "attacker"

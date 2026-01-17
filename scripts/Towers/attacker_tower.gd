@@ -12,9 +12,7 @@ enum Target{
 @onready var damage : float = object_data["damage"][level]
 @onready var attack_fpath : String = object_data["attack_fpath"][level]
 
-@onready var range_area : Area2D = $Range
 @onready var _attack_cooldown : Timer = $AttackCoolDOwn
-@onready var _sprite = $Image
 
 var cur_damage : float
 # Randomizing the target type for now.
@@ -29,7 +27,7 @@ func _ready() -> void:
 	_attack_cooldown.timeout.connect(update_enemy_list)
 	# Once tower is placed we can start attacking
 	tower_placed.connect(func():
-		_sprite.play("idle_"+str(level))
+		sprite.play("idle_"+str(level))
 		_attack_cooldown.autostart = true
 		_attack_cooldown.start()
 	)
@@ -53,7 +51,7 @@ func attack():
 		update_enemy_list()
 		return
 
-	_sprite.play("attacking_"+str(level))
+	sprite.play("attacking_"+str(level))
 	var tower_attack : Projectile = load(attack_fpath).instantiate()
 	tower_attack.tower = self
 	tower_attack.tower_range = range_area
@@ -69,7 +67,7 @@ func update_enemy_list() -> void:
 	# Stop the timer and use regular area_entered function
 	if enemies.size() == 0:
 		print("No enmies detected when attacking")
-		_sprite.play("idle_"+str(level))
+		sprite.play("idle_"+str(level))
 		_attack_cooldown.stop()
 		range_area.area_entered.connect(first_enemy_entered)
 		targeted_enemy = null
@@ -81,7 +79,7 @@ func update_enemy_list() -> void:
 
 func upgrade_tower() -> void:
 	super.upgrade_tower()
-	_sprite.play("idle_"+str(level))
+	sprite.play("idle_"+str(level))
 	damage = object_data["damage"][level]
 	attack_fpath = object_data["attack_fpath"][level]
 	_attack_cooldown.wait_time = object_data["attack_speed"][level]
@@ -93,8 +91,8 @@ func first_enemy_entered(enemy : Area2D):
 	# Disable as now there is an enemy to detect
 	range_area.area_entered.disconnect(first_enemy_entered)
 	targeted_enemy = enemy
-	_sprite.play("attacking_"+str(level))
-	await _sprite.animation_finished
+	sprite.play("attacking_"+str(level))
+	await sprite.animation_finished
 	# Cool down already ran previously, so we are okay to
 	# perform an immidiate attack. 
 	attack()
@@ -134,8 +132,8 @@ func set_target(enemies : Array[Area2D]) -> void:
 					_chosen_enemy = enemy
 					lowest_health = enemy.cur_health
 	if _chosen_enemy.global_position.x < global_position.x:
-		_sprite.flip_h = true
+		sprite.flip_h = true
 	else:
-		_sprite.flip_h = false
+		sprite.flip_h = false
 		
 	targeted_enemy = _chosen_enemy

@@ -43,6 +43,8 @@ func apply_stat_changes():
 			target.speed = target.speed * percent_change
 		Type.ATK_COOLDOWN:
 			target._attack_cooldown.wait_time = target._attack_cooldown.wait_time * percent_change 
+		Type.RANGE:
+			target.range_collider.shape.radius = target.range_collider.shape.radius * percent_change
 			
 
 func disable_stat_changes(timer):
@@ -50,11 +52,16 @@ func disable_stat_changes(timer):
 		Type.WALK_SPEED:
 			target.speed = target.enemy_data["speed"]
 		Type.ATK_COOLDOWN:
+			# WILL CRASH LATER WITH MORE TOWER TYPES
 			target._attack_cooldown.wait_time = target.object_data["attack_speed"][target.level]
+		Type.RANGE:
+			target.range_collider.shape.radius = target.range
+	
+	
+	for _inflictor in target.status_applied_list:
+		if _inflictor == inflictor:
+			target.status_applied_list.erase(_inflictor)
 			
-	for i in range(len(target.status_applied_list)):
-		if target.status_applied_list[i] == inflictor:
-			target.status_applied_list.pop_at(i) 
 	print("timer ended")
 	timer.queue_free()
 	

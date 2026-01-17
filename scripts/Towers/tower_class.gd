@@ -29,9 +29,10 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 # this is set once tower is intantiated
 var map_area : Area2D
 var can_draw := true
-
+@onready var sprite : AnimatedSprite2D = $Image
 @onready var upgrade_ui : towerUpgrader = $UpgradeUI
 @onready var button : Button = $Button
+@onready var range_area : Area2D = $Range
 @onready var range_collider : CollisionShape2D = $Range/RangeCollision
 #@onready var range_area : Area2D = $Range
 #@onready var _attack_cooldown : Timer = $AttackCoolDOwn
@@ -145,11 +146,12 @@ func place_tower() -> bool:
 	return true
 
 func upgrade_tower() -> void:
-		level += 1
-		if level == 1:
-			cost = object_data["cost"][2]
-		range = object_data["range"][level]
-		range_collider.shape.radius = range
+	level += 1
+	if level == 1:
+		cost = object_data["cost"][2]
+	range = object_data["range"][level]
+	range_collider.shape.radius = range
+	queue_redraw()
 
 # When tower is first intantiated, the tower follows mouse position
 # and updates draw().
