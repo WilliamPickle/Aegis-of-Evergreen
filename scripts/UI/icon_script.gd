@@ -6,7 +6,9 @@ static var current_scene_key : String
 var icon_scene
 @export var file_path : String
 @export var has_text : bool
+## This makes the loaded scene the new main scene
 @export var new_scene : bool
+## This scales up the loaded scene
 @export var scene_scale : float = 1
 @export var hide_pause_menu : bool = false
 

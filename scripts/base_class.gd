@@ -9,8 +9,9 @@ class_name Base
 ## The minimal amount of damage any enemy will inflict
 @export var damage_floor : float = 1
 
-# needa turn off pause menu so here's the variable
+# needa turn off these menus upon losing so here's the variable
 @export var pause_menu : UserInterface
+@export var fast_forward_button : UserInterface
 
 func _ready() -> void:
 	health_label.text = str(snapped(base_health, 0.1))
@@ -35,5 +36,6 @@ func take_damage(enemy: Enemy):
 	
 	if base_health <= 0:
 		pause_menu.visible = false
+		fast_forward_button.visible = false
 		SceneLoader.load_scene("res://scenes/UI/lose_ui.tscn", "lose_ui")
 		PauseUi.toggle_pause(SceneLoader._current_scenes["lose_ui"])

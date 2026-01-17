@@ -8,6 +8,7 @@ var PlayerXp: int = 0
 var XpThreshold: int = 1000
 var PlayerLevel: int = 1
 var PrevLevel: int = 0
+var lvls_beaten = 0
 
 # Money Vars
 const DEFAULT_MONEY : Array = [
