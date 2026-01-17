@@ -1,0 +1,1159 @@
+[gd_scene load_steps=42 format=3 uid="uid://r7lht8xqpb3h"]
+
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_6st13"]
+[ext_resource type="Texture2D" uid="uid://eltsh1f38h5c" path="res://assets/sprites/tutorial assets/tutoria_sheetl_background.png" id="2_ashke"]
+[ext_resource type="Texture2D" uid="uid://cqowlf0ol5rd6" path="res://assets/sprites/tutorial assets/tutorial_panel_background.png" id="3_ca0nt"]
+[ext_resource type="Texture2D" uid="uid://dqj0cbl571gui" path="res://assets/sprites/tutorial assets/tutorial_panel.png" id="4_fmt5d"]
+[ext_resource type="LabelSettings" uid="uid://dvseaxqvix3pe" path="res://assets/sprites/tutorial assets/tutorial_panel_numbering.tres" id="5_2m4nm"]
+[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="6_0y8o3"]
+[ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/trees_v1.png" id="7_0oiak"]
+[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/ufo_v1.png" id="8_7ooau"]
+[ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="9_0yee7"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="10_0ucpk"]
+[ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="11_vkunw"]
+[ext_resource type="Texture2D" uid="uid://cspxuiahyng26" path="res://assets/sprites/icons and buttons/player_level_bar.png" id="12_g2haa"]
+[ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="13_ehijt"]
+[ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="14_orxft"]
+[ext_resource type="Texture2D" uid="uid://b8jbkkc6iry0h" path="res://assets/sprites/tutorial assets/tutorial_panel_inner.png" id="15_c5m28"]
+[ext_resource type="LabelSettings" uid="uid://crnutrn7yoa1q" path="res://assets/sprites/tutorial assets/tutorial_heading.tres" id="16_2u07q"]
+[ext_resource type="LabelSettings" uid="uid://cx8l2nfxsbrq3" path="res://assets/sprites/tutorial assets/tutorial_base_font.tres" id="17_llqua"]
+[ext_resource type="Texture2D" uid="uid://dstb2uxfc1hj7" path="res://assets/sprites/tutorial assets/tutorial_panel_outer.png" id="18_ehijt"]
+[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/bridge_v1.png" id="20_2u07q"]
+[ext_resource type="Texture2D" uid="uid://laipimstlyht" path="res://assets/sprites/icons and buttons/scroll_bar_vine_bg.png" id="21_llqua"]
+[ext_resource type="Texture2D" uid="uid://bm602q1hmdwh8" path="res://assets/sprites/icons and buttons/scroll_bar_vine_border.png" id="22_8bxcy"]
+[ext_resource type="StyleBox" uid="uid://c8eassgqrql2c" path="res://assets/sprites/icons and buttons/scrollbar_tab_darkened.tres" id="23_x4788"]
+[ext_resource type="StyleBox" uid="uid://1sl8ht1sjn60" path="res://assets/sprites/icons and buttons/scrollbar_tab_hover.tres" id="24_po4uk"]
+[ext_resource type="StyleBox" uid="uid://bw72sh8wl3dk8" path="res://assets/sprites/icons and buttons/scrollbar_tab.tres" id="25_25hgk"]
+[ext_resource type="Texture2D" uid="uid://cc7b3cghj4nnc" path="res://assets/sprites/icons and buttons/scroll_bar_grabber.png" id="26_00ma3"]
+[ext_resource type="StyleBox" uid="uid://dw6v27x6ri2ku" path="res://assets/sprites/icons and buttons/scrollbar_grabber.tres" id="27_1vybd"]
+[ext_resource type="Texture2D" uid="uid://l8ur5jyypk2t" path="res://assets/sprites/icons and buttons/scroll_bar_vine_ender.png" id="28_jutfw"]
+[ext_resource type="Texture2D" uid="uid://ycyc0j38rd0i" path="res://assets/sprites/towers/chipmunk_card.png" id="29_ggov0"]
+[ext_resource type="Script" uid="uid://c5v7i37jdw55h" path="res://scripts/Towers/tower_placement.gd" id="30_fnax7"]
+[ext_resource type="Texture2D" uid="uid://yp8o8f4yvt03" path="res://assets/sprites/tutorial assets/tower range.png" id="30_orxft"]
+[ext_resource type="Texture2D" uid="uid://ck2uum8wlfjo4" path="res://assets/sprites/tutorial assets/gameplay icons.png" id="31_2u07q"]
+[ext_resource type="Texture2D" uid="uid://dxeiwpqahk5s5" path="res://assets/sprites/tutorial assets/pause menu.png" id="32_llqua"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5sebw"]
+font = ExtResource("10_0ucpk")
+font_size = 24
+outline_color = Color(0.336608, 0.336608, 0.336608, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8bxcy"]
+font = ExtResource("10_0ucpk")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mclyq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5tgu"]
+texture = ExtResource("26_00ma3")
+region_rect = Rect2(0, 13, 10, 1)
+
+[sub_resource type="Theme" id="Theme_tv72q"]
+HScrollBar/styles/grabber = SubResource("StyleBoxTexture_x5tgu")
+HScrollBar/styles/grabber_highlight = null
+HScrollBar/styles/grabber_pressed = null
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bk0pq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yeulh"]
+
+[sub_resource type="Theme" id="Theme_pg0hq"]
+HScrollBar/styles/grabber = ExtResource("27_1vybd")
+HScrollBar/styles/grabber_highlight = ExtResource("27_1vybd")
+HScrollBar/styles/grabber_pressed = ExtResource("27_1vybd")
+HScrollBar/styles/scroll = ExtResource("27_1vybd")
+HScrollBar/styles/scroll_focus = ExtResource("27_1vybd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4b0g2"]
+texture = ExtResource("29_ggov0")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="TutorialMenu" type="CanvasLayer"]
+script = ExtResource("1_6st13")
+tint_during_pause = true
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Screen"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+texture = ExtResource("2_ashke")
+
+[node name="Page1" type="Control" parent="Screen"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel1" type="Control" parent="Screen/Page1"]
+anchors_preset = 0
+offset_left = 388.0
+offset_top = 27.0
+offset_right = 472.0
+offset_bottom = 87.0
+scale = Vector2(2, 2)
+
+[node name="PanelBackground" type="TextureRect" parent="Screen/Page1/Panel1"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 68.0
+offset_right = 404.0
+offset_bottom = 305.0
+texture = ExtResource("3_ca0nt")
+
+[node name="Panel" type="TextureRect" parent="Screen/Page1/Panel1"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 93.0
+offset_right = 385.0
+offset_bottom = 285.0
+texture = ExtResource("4_fmt5d")
+
+[node name="Numbering" type="Label" parent="Screen/Page1/Panel1"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 110.0
+offset_right = 152.0
+offset_bottom = 142.0
+text = "1."
+label_settings = ExtResource("5_2m4nm")
+
+[node name="MapAssets" type="Node2D" parent="Screen/Page1/Panel1"]
+position = Vector2(607, 317)
+
+[node name="map" type="Sprite2D" parent="Screen/Page1/Panel1/MapAssets"]
+position = Vector2(-368, -128)
+texture = ExtResource("6_0y8o3")
+region_enabled = true
+region_rect = Rect2(0, 0, 280, 180)
+
+[node name="tree" type="Sprite2D" parent="Screen/Page1/Panel1/MapAssets"]
+position = Vector2(-368, -128)
+texture = ExtResource("7_0oiak")
+region_enabled = true
+region_rect = Rect2(0, 0, 280, 180)
+
+[node name="ufo" type="Sprite2D" parent="Screen/Page1/Panel1/MapAssets"]
+position = Vector2(-368, -128)
+texture = ExtResource("8_7ooau")
+region_enabled = true
+region_rect = Rect2(0, 0, 280, 180)
+
+[node name="Icons" type="Control" parent="Screen/Page1/Panel1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 99.0
+offset_top = 99.0
+offset_right = 139.0
+offset_bottom = 139.0
+scale = Vector2(0.5, 0.5)
+
+[node name="LifeIndicator" type="TextureRect" parent="Screen/Page1/Panel1/Icons"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 34.0
+offset_right = 41.0
+offset_bottom = 59.0
+texture = ExtResource("9_0yee7")
+
+[node name="LifeLabel" type="Label" parent="Screen/Page1/Panel1/Icons/LifeIndicator"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 30.0
+scale = Vector2(0.72, 0.72)
+text = "150"
+label_settings = SubResource("LabelSettings_5sebw")
+
+[node name="PlayerLvlIndicator" type="TextureRect" parent="Screen/Page1/Panel1/Icons"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 150.0
+offset_bottom = 27.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("11_vkunw")
+
+[node name="XpBar" type="TextureRect" parent="Screen/Page1/Panel1/Icons/PlayerLvlIndicator"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.0
+offset_right = 131.0
+offset_bottom = 14.0
+texture = ExtResource("12_g2haa")
+
+[node name="LvlPlate" type="TextureRect" parent="Screen/Page1/Panel1/Icons/PlayerLvlIndicator"]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 20.0
+texture = ExtResource("13_ehijt")
+
+[node name="LvlLabel" type="Label" parent="Screen/Page1/Panel1/Icons/PlayerLvlIndicator"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 34.0
+offset_bottom = 29.0
+scale = Vector2(0.6, 0.6)
+text = "7"
+label_settings = SubResource("LabelSettings_5sebw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoneyIndicator" type="TextureRect" parent="Screen/Page1/Panel1/Icons"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 57.0
+offset_right = 41.0
+offset_bottom = 82.0
+texture = ExtResource("14_orxft")
+
+[node name="MoneyLabel" type="Label" parent="Screen/Page1/Panel1/Icons/MoneyIndicator"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 30.0
+scale = Vector2(0.72, 0.72)
+text = "$150.0"
+label_settings = SubResource("LabelSettings_5sebw")
+
+[node name="WaveLabel" type="Label" parent="Screen/Page1/Panel1/Icons"]
+offset_left = 186.0
+offset_top = 13.0
+offset_right = 260.0
+offset_bottom = 36.0
+scale = Vector2(1.2, 1.2)
+text = "Wave 0/5"
+label_settings = SubResource("LabelSettings_8bxcy")
+
+[node name="WaveExplanation" type="Control" parent="Screen/Page1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 445.0
+offset_right = 485.0
+offset_bottom = 40.0
+
+[node name="Highlight" type="TextureRect" parent="Screen/Page1/WaveExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 539.0
+offset_top = 90.0
+offset_right = 692.0
+offset_bottom = 106.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight2" type="TextureRect" parent="Screen/Page1/WaveExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 638.0
+offset_top = 109.0
+offset_right = 720.0
+offset_bottom = 127.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Heading" type="Label" parent="Screen/Page1/WaveExplanation"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 91.0
+offset_right = 360.0
+offset_bottom = 123.0
+text = "Wave Indicator:"
+label_settings = ExtResource("16_2u07q")
+
+[node name="Underline" type="TextureRect" parent="Screen/Page1/WaveExplanation"]
+modulate = Color(0.462745, 0.301961, 0.286275, 1)
+layout_mode = 0
+offset_left = 96.0
+offset_top = 118.0
+offset_right = 370.0
+offset_bottom = 123.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Wave box" type="TextureRect" parent="Screen/Page1/WaveExplanation"]
+modulate = Color(0.462745, 0.301961, 0.286275, 1)
+offset_left = 96.0
+offset_top = 131.0
+offset_right = 193.0
+offset_bottom = 153.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="WaveLabel" type="Label" parent="Screen/Page1/WaveExplanation"]
+offset_left = 100.0
+offset_top = 135.0
+offset_right = 174.0
+offset_bottom = 158.0
+scale = Vector2(1.2, 1.2)
+text = "Wave 0/5"
+label_settings = SubResource("LabelSettings_8bxcy")
+
+[node name="Description2" type="Label" parent="Screen/Page1/WaveExplanation"]
+offset_left = 381.0
+offset_top = 91.0
+offset_right = 751.0
+offset_bottom = 197.0
+text = ">> Enemies come in sets called waves
+>> This indicates what wave is currently being sent out. "
+label_settings = ExtResource("17_llqua")
+autowrap_mode = 3
+
+[node name="LevelExplanation" type="Control" parent="Screen/Page1"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Highlight" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 220.0
+offset_top = 161.0
+offset_right = 326.0
+offset_bottom = 180.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight2" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 116.0
+offset_top = 197.0
+offset_right = 246.0
+offset_bottom = 218.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight3" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 176.0
+offset_top = 218.0
+offset_right = 262.0
+offset_bottom = 235.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Heading" type="Label" parent="Screen/Page1/LevelExplanation"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 91.0
+offset_right = 360.0
+offset_bottom = 123.0
+text = "Level Indicator:"
+label_settings = ExtResource("16_2u07q")
+
+[node name="Underline" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
+modulate = Color(0.462745, 0.301961, 0.286275, 1)
+layout_mode = 0
+offset_left = 96.0
+offset_top = 118.0
+offset_right = 370.0
+offset_bottom = 123.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="PlayerLvlIndicator" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 128.0
+offset_right = 232.0
+offset_bottom = 148.0
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("11_vkunw")
+
+[node name="XpBar" type="TextureRect" parent="Screen/Page1/LevelExplanation/PlayerLvlIndicator"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.0
+offset_right = 115.0
+offset_bottom = 14.0
+texture = ExtResource("12_g2haa")
+expand_mode = 1
+
+[node name="LvlPlate" type="TextureRect" parent="Screen/Page1/LevelExplanation/PlayerLvlIndicator"]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 20.0
+texture = ExtResource("13_ehijt")
+
+[node name="LvlLabel" type="Label" parent="Screen/Page1/LevelExplanation/PlayerLvlIndicator"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 34.0
+offset_bottom = 29.0
+scale = Vector2(0.6, 0.6)
+text = "6
+"
+label_settings = SubResource("LabelSettings_5sebw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description2" type="Label" parent="Screen/Page1/LevelExplanation"]
+offset_left = 96.0
+offset_top = 163.0
+offset_right = 522.0
+offset_bottom = 312.0
+text = ">> Represents player level
+>> Level increases when green bar is full
+>> Defeat enemies to fill the bar
+>> Unlock new allies upon reaching certain levels"
+label_settings = ExtResource("17_llqua")
+autowrap_mode = 3
+
+[node name="LifeExplanation" type="Control" parent="Screen/Page1"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 12.0
+offset_right = 40.0
+offset_bottom = 52.0
+
+[node name="Highlight2" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 424.0
+offset_top = 324.0
+offset_right = 512.0
+offset_bottom = 345.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight3" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 290.0
+offset_top = 361.0
+offset_right = 365.0
+offset_bottom = 382.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight4" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 225.0
+offset_top = 382.0
+offset_right = 314.0
+offset_bottom = 397.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Heading2" type="Label" parent="Screen/Page1/LifeExplanation"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 247.0
+offset_right = 360.0
+offset_bottom = 279.0
+text = "Life Indicator:"
+label_settings = ExtResource("16_2u07q")
+
+[node name="Underline2" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
+modulate = Color(0.462745, 0.301961, 0.286275, 1)
+layout_mode = 0
+offset_left = 96.0
+offset_top = 276.0
+offset_right = 370.0
+offset_bottom = 281.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="LifeIndicator" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 291.0
+offset_right = 123.0
+offset_bottom = 316.0
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("9_0yee7")
+
+[node name="LifeLabel" type="Label" parent="Screen/Page1/LifeExplanation/LifeIndicator"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 30.0
+scale = Vector2(0.72, 0.72)
+text = "150"
+label_settings = SubResource("LabelSettings_5sebw")
+
+[node name="Description" type="Label" parent="Screen/Page1/LifeExplanation"]
+offset_left = 96.0
+offset_top = 326.0
+offset_right = 533.0
+offset_bottom = 437.0
+text = ">> Start each level with set amount of life points
+>> When enemy reaches end of path, life is lost
+>> When life falls to 0, you lose
+>> Level can be restarted upon losing"
+label_settings = ExtResource("17_llqua")
+autowrap_mode = 3
+
+[node name="MoneyExplanation" type="Control" parent="Screen/Page1"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 197.0
+offset_right = 40.0
+offset_bottom = 237.0
+
+[node name="Highlight4" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 200.0
+offset_top = 324.0
+offset_right = 345.0
+offset_bottom = 344.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight5" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 236.0
+offset_top = 344.0
+offset_right = 314.0
+offset_bottom = 362.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight6" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 385.0
+offset_top = 381.0
+offset_right = 473.0
+offset_bottom = 398.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight7" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 204.0
+offset_top = 400.0
+offset_right = 360.0
+offset_bottom = 420.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Heading2" type="Label" parent="Screen/Page1/MoneyExplanation"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 247.0
+offset_right = 360.0
+offset_bottom = 279.0
+text = "Currency Indicator:"
+label_settings = ExtResource("16_2u07q")
+
+[node name="Underline2" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+modulate = Color(0.462745, 0.301961, 0.286275, 1)
+layout_mode = 0
+offset_left = 96.0
+offset_top = 276.0
+offset_right = 370.0
+offset_bottom = 281.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="MoneyIndicator" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+offset_left = 96.0
+offset_top = 289.0
+offset_right = 123.0
+offset_bottom = 314.0
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("14_orxft")
+
+[node name="MoneyLabel" type="Label" parent="Screen/Page1/MoneyExplanation/MoneyIndicator"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 30.0
+scale = Vector2(0.72, 0.72)
+text = "$150.0"
+label_settings = SubResource("LabelSettings_5sebw")
+
+[node name="Description" type="Label" parent="Screen/Page1/MoneyExplanation"]
+offset_left = 96.0
+offset_top = 326.0
+offset_right = 512.0
+offset_bottom = 399.0
+text = ">> Indicates how much energy you have
+>> Energy is the currency used to purchase towers and upgrades
+>> Energy is earned at the end of each wave and when an enemy is defeated"
+label_settings = ExtResource("17_llqua")
+autowrap_mode = 3
+
+[node name="Page2" type="Control" parent="Screen"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel1" type="Control" parent="Screen/Page2"]
+anchors_preset = 0
+offset_left = 333.0
+offset_top = -310.0
+offset_right = 417.0
+offset_bottom = -250.0
+scale = Vector2(2, 2)
+
+[node name="Numbering" type="Label" parent="Screen/Page2/Panel1"]
+z_index = 1
+layout_mode = 0
+offset_left = 85.5
+offset_top = 220.5
+offset_right = 125.5
+offset_bottom = 252.5
+text = "1."
+label_settings = ExtResource("5_2m4nm")
+
+[node name="PanelBackground" type="TextureRect" parent="Screen/Page2/Panel1"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 203.0
+offset_right = 422.0
+offset_bottom = 293.0
+texture = ExtResource("3_ca0nt")
+
+[node name="Panel" type="TextureRect" parent="Screen/Page2/Panel1"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 214.0
+offset_right = 406.0
+offset_bottom = 282.0
+texture = ExtResource("18_ehijt")
+
+[node name="MapAssets" type="Node2D" parent="Screen/Page2/Panel1"]
+position = Vector2(242, 188)
+scale = Vector2(0.5, 0.5)
+
+[node name="map" type="Sprite2D" parent="Screen/Page2/Panel1/MapAssets"]
+position = Vector2(0, 120)
+texture = ExtResource("6_0y8o3")
+region_enabled = true
+region_rect = Rect2(0, 240, 640, 120)
+
+[node name="bridge" type="Sprite2D" parent="Screen/Page2/Panel1/MapAssets"]
+z_index = 2
+position = Vector2(0, 120)
+texture = ExtResource("20_2u07q")
+region_enabled = true
+region_rect = Rect2(0, 240, 640, 120)
+
+[node name="tree" type="Sprite2D" parent="Screen/Page2/Panel1/MapAssets"]
+position = Vector2(0, 120)
+texture = ExtResource("7_0oiak")
+region_enabled = true
+region_rect = Rect2(0, 240, 640, 120)
+
+[node name="ScrollbarUIAssets" type="Control" parent="Screen/Page2/Panel1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = 233.5
+offset_right = 1226.0
+offset_bottom = 350.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="ScrollBackground" type="TextureRect" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+layout_mode = 2
+offset_left = 96.0
+offset_right = 1144.0
+offset_bottom = 177.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("21_llqua")
+
+[node name="ScrollOutline" type="TextureRect" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+z_index = 3
+layout_mode = 2
+offset_left = 96.0
+offset_right = 1144.0
+offset_bottom = 177.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("22_8bxcy")
+
+[node name="TabVBox" type="VBoxContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+layout_mode = 2
+offset_top = 21.0
+offset_right = 1240.0
+offset_bottom = 177.0
+size_flags_vertical = 8
+theme_override_constants/separation = 149
+
+[node name="TabHBox" type="HBoxContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets/TabVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="TabButton" type="Button" parent="Screen/Page2/Panel1/ScrollbarUIAssets/TabVBox/TabHBox"]
+z_index = 4
+custom_minimum_size = Vector2(45, 7)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mclyq")
+theme_override_styles/hover_pressed = ExtResource("23_x4788")
+theme_override_styles/hover = ExtResource("24_po4uk")
+theme_override_styles/pressed = ExtResource("23_x4788")
+theme_override_styles/normal = ExtResource("25_25hgk")
+
+[node name="Spacer" type="Control" parent="Screen/Page2/Panel1/ScrollbarUIAssets/TabVBox/TabHBox"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Screen/Page2/Panel1/ScrollbarUIAssets/TabVBox"]
+layout_mode = 2
+
+[node name="Card" type="TextureRect" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+layout_mode = 2
+offset_left = 176.0
+offset_top = 65.0
+offset_right = 251.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("29_ggov0")
+
+[node name="BarContainer" type="MarginContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+custom_minimum_size = Vector2(1240, 8)
+layout_direction = 2
+layout_mode = 2
+offset_top = 169.0
+offset_right = 1240.0
+offset_bottom = 177.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 0
+theme = SubResource("Theme_tv72q")
+
+[node name="HScrollBar" type="HScrollBar" parent="Screen/Page2/Panel1/ScrollbarUIAssets/BarContainer"]
+process_priority = 1
+z_index = 4
+clip_contents = true
+custom_minimum_size = Vector2(983, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/scroll = SubResource("StyleBoxEmpty_bk0pq")
+theme_override_styles/scroll_focus = SubResource("StyleBoxEmpty_yeulh")
+theme_override_styles/grabber = ExtResource("27_1vybd")
+theme_override_styles/grabber_highlight = ExtResource("27_1vybd")
+theme_override_styles/grabber_pressed = ExtResource("27_1vybd")
+
+[node name="CardHBox" type="HBoxContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+layout_mode = 2
+offset_left = 156.0
+offset_top = 53.0
+offset_right = 1084.0
+offset_bottom = 177.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="EndCap2" type="TextureRect" parent="Screen/Page2/Panel1/ScrollbarUIAssets/CardHBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("28_jutfw")
+
+[node name="CardContainer" type="ScrollContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets/CardHBox"]
+custom_minimum_size = Vector2(900, 124)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+theme = SubResource("Theme_pg0hq")
+horizontal_scroll_mode = 2
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets/CardHBox/CardContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 5
+
+[node name="Button" type="Button" parent="Screen/Page2/Panel1/ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(75, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_4b0g2")
+script = ExtResource("30_fnax7")
+tower_type = "Chipmunk"
+metadata/_custom_type_script = "uid://c5v7i37jdw55h"
+
+[node name="EndCap" type="TextureRect" parent="Screen/Page2/Panel1/ScrollbarUIAssets/CardHBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("28_jutfw")
+
+[node name="Panel2" type="Control" parent="Screen/Page2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 365.0
+offset_top = -74.0
+offset_right = 449.0
+offset_bottom = -14.0
+scale = Vector2(2, 2)
+
+[node name="PanelBackground" type="TextureRect" parent="Screen/Page2/Panel2"]
+layout_mode = 0
+offset_left = 58.5
+offset_top = 197.5
+offset_right = 207.5
+offset_bottom = 336.5
+texture = ExtResource("3_ca0nt")
+
+[node name="Panel" type="TextureRect" parent="Screen/Page2/Panel2"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 210.0
+offset_right = 194.0
+offset_bottom = 324.0
+texture = ExtResource("18_ehijt")
+
+[node name="Tower Range" type="TextureRect" parent="Screen/Page2/Panel2"]
+offset_left = 78.0
+offset_top = 214.0
+offset_right = 528.0
+offset_bottom = 640.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("30_orxft")
+
+[node name="Numbering" type="Label" parent="Screen/Page2/Panel2"]
+z_index = 1
+offset_left = 80.5714
+offset_top = 217.143
+offset_right = 120.571
+offset_bottom = 249.143
+text = "2."
+label_settings = ExtResource("5_2m4nm")
+
+[node name="Buy Explanation" type="Control" parent="Screen/Page2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -11.0
+offset_top = -138.0
+offset_right = 29.0
+offset_bottom = -98.0
+
+[node name="Heading2" type="Label" parent="Screen/Page2/Buy Explanation"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 247.0
+offset_right = 448.0
+offset_bottom = 279.0
+text = "Buying/placing Allies:"
+label_settings = ExtResource("16_2u07q")
+
+[node name="Underline2" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
+modulate = Color(0.462745, 0.301961, 0.286275, 1)
+layout_mode = 0
+offset_left = 96.0
+offset_top = 276.0
+offset_right = 435.0
+offset_bottom = 281.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight4" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 199.0
+offset_top = 288.0
+offset_right = 259.0
+offset_bottom = 304.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight5" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 300.0
+offset_top = 288.0
+offset_right = 338.0
+offset_bottom = 304.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight6" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 94.0
+offset_top = 308.0
+offset_right = 134.0
+offset_bottom = 323.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight7" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 116.0
+offset_top = 327.0
+offset_right = 268.0
+offset_bottom = 345.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight8" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 202.0
+offset_top = 345.0
+offset_right = 290.0
+offset_bottom = 364.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Description" type="Label" parent="Screen/Page2/Buy Explanation"]
+offset_left = 96.0
+offset_top = 290.0
+offset_right = 473.0
+offset_bottom = 401.0
+text = ">> Go to the hotbar and click on an ally's card
+>> Drag your cursor onto a valid part of the map and click again to place the ally
+>> While dragging the cursor, ally's sight range will be visible
+>> If currency is insufficient, ally will not be placed
+"
+label_settings = ExtResource("17_llqua")
+autowrap_mode = 3
+
+[node name="Ally Explanation" type="Control" parent="Screen/Page2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -11.0
+offset_top = 106.0
+offset_right = 29.0
+offset_bottom = 146.0
+
+[node name="Heading2" type="Label" parent="Screen/Page2/Ally Explanation"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 247.0
+offset_right = 448.0
+offset_bottom = 279.0
+text = "Using Allies:"
+label_settings = ExtResource("16_2u07q")
+
+[node name="Underline2" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+modulate = Color(0.462745, 0.301961, 0.286275, 1)
+layout_mode = 0
+offset_left = 96.0
+offset_top = 276.0
+offset_right = 300.0
+offset_bottom = 281.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight5" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 301.0
+offset_top = 288.0
+offset_right = 384.0
+offset_bottom = 304.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight7" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 116.0
+offset_top = 345.0
+offset_right = 172.0
+offset_bottom = 364.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight8" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 116.0
+offset_top = 383.0
+offset_right = 240.0
+offset_bottom = 403.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Description" type="Label" parent="Screen/Page2/Ally Explanation"]
+offset_left = 96.0
+offset_top = 290.0
+offset_right = 473.0
+offset_bottom = 401.0
+text = ">> After placing an ally, click on it to view it's range (panel 2) and upgrade menu (panel 3)
+>> Range: When an enemy enters this zone, an ally may engage with it
+>> Upgrade Menu: Allows you to upgrade and sell your ally, lets you view it's stats, and change it's targetting"
+label_settings = ExtResource("17_llqua")
+autowrap_mode = 3
+
+[node name="Page3" type="Control" parent="Screen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel1" type="Control" parent="Screen/Page3"]
+anchors_preset = 0
+offset_left = 229.0
+offset_top = -325.0
+offset_right = 313.0
+offset_bottom = -265.0
+scale = Vector2(2.1, 2.1)
+
+[node name="Numbering" type="Label" parent="Screen/Page3/Panel1"]
+z_index = 1
+layout_mode = 0
+offset_left = 70.5
+offset_top = 218.5
+offset_right = 110.5
+offset_bottom = 250.5
+text = "1."
+label_settings = ExtResource("5_2m4nm")
+
+[node name="PanelBackground" type="TextureRect" parent="Screen/Page3/Panel1"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 194.5
+offset_right = 245.0
+offset_bottom = 316.5
+texture = ExtResource("3_ca0nt")
+
+[node name="Panel" type="TextureRect" parent="Screen/Page3/Panel1"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 209.5
+offset_right = 234.0
+offset_bottom = 304.5
+texture = ExtResource("18_ehijt")
+
+[node name="Icon Panel" type="TextureRect" parent="Screen/Page3/Panel1"]
+offset_left = 64.5
+offset_top = 213.5
+offset_right = 395.5
+offset_bottom = 386.5
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("31_2u07q")
+
+[node name="Panel2" type="Control" parent="Screen/Page3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 638.0
+offset_top = -310.0
+offset_right = 722.0
+offset_bottom = -250.0
+scale = Vector2(2, 2)
+
+[node name="PanelBackground" type="TextureRect" parent="Screen/Page3/Panel2"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 198.0
+offset_right = 280.0
+offset_bottom = 323.0
+texture = ExtResource("3_ca0nt")
+
+[node name="Panel" type="TextureRect" parent="Screen/Page3/Panel2"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 214.0
+offset_right = 267.0
+offset_bottom = 310.0
+texture = ExtResource("18_ehijt")
+
+[node name="Pause panel" type="TextureRect" parent="Screen/Page3/Panel2"]
+offset_left = 75.0
+offset_top = 217.0
+offset_right = 700.0
+offset_bottom = 514.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("32_llqua")
+
+[node name="Numbering" type="Label" parent="Screen/Page3/Panel2"]
+z_index = 1
+offset_left = 80.5
+offset_top = 220.5
+offset_right = 120.5
+offset_bottom = 252.5
+text = "2."
+label_settings = ExtResource("5_2m4nm")
+
+[node name="Tool Explanation" type="Control" parent="Screen/Page3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -11.0
+offset_top = -138.0
+offset_right = 29.0
+offset_bottom = -98.0
+
+[node name="Heading2" type="Label" parent="Screen/Page3/Tool Explanation"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 247.0
+offset_right = 448.0
+offset_bottom = 279.0
+text = "In-Game Tools:"
+label_settings = ExtResource("16_2u07q")
+
+[node name="Underline2" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
+modulate = Color(0.462745, 0.301961, 0.286275, 1)
+layout_mode = 0
+offset_left = 96.0
+offset_top = 276.0
+offset_right = 349.0
+offset_bottom = 281.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight5" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 183.0
+offset_top = 288.0
+offset_right = 293.0
+offset_bottom = 308.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight6" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 191.0
+offset_top = 308.0
+offset_right = 310.0
+offset_bottom = 327.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight7" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 250.0
+offset_top = 327.0
+offset_right = 303.0
+offset_bottom = 346.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight8" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+offset_left = 94.0
+offset_top = 346.0
+offset_right = 138.0
+offset_bottom = 361.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Description" type="Label" parent="Screen/Page3/Tool Explanation"]
+offset_left = 96.0
+offset_top = 290.0
+offset_right = 349.0
+offset_bottom = 515.0
+text = ">> Panel 1: Fastforward button and pause button.
+>> Panel 2: Access pause menu to access other helpful menus"
+label_settings = ExtResource("17_llqua")
+autowrap_mode = 3

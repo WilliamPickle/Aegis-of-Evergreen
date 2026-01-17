@@ -16,12 +16,12 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75yl4"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5tgu"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e72ca"]
 texture = ExtResource("3_jvhi7")
 region_rect = Rect2(0, 13, 10, 1)
 
 [sub_resource type="Theme" id="Theme_qq670"]
-HScrollBar/styles/grabber = SubResource("StyleBoxTexture_x5tgu")
+HScrollBar/styles/grabber = SubResource("StyleBoxTexture_e72ca")
 HScrollBar/styles/grabber_highlight = null
 HScrollBar/styles/grabber_pressed = null
 

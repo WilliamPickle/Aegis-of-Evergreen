@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ynetxm1wdkoc"]
+[gd_scene load_steps=40 format=3 uid="uid://ynetxm1wdkoc"]
 
 [ext_resource type="Script" uid="uid://cl0q72sg1e0ue" path="res://scripts/UI/pause_scene.gd" id="1_5el4x"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_rbm5a"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://q067sl8ylw1e" path="res://assets/sprites/icons and buttons/guidebook_button.png" id="9_c1s3a"]
 [ext_resource type="Texture2D" uid="uid://crdpu06t0syay" path="res://assets/sprites/icons and buttons/ui_bar.png" id="10_blq6o"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="11_8476c"]
+[ext_resource type="Texture2D" uid="uid://biiipxfxb4wgm" path="res://assets/sprites/icons and buttons/tutorial_button_highlight.png" id="12_6hyd5"]
+[ext_resource type="Texture2D" uid="uid://crilbiymnx24g" path="res://assets/sprites/icons and buttons/tutorial_button.png" id="13_3paxm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kgpbc"]
 
@@ -76,6 +78,20 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ctmt"]
 texture = ExtResource("6_0rou8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrevp"]
+texture = ExtResource("12_6hyd5")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nyv1p"]
+texture = ExtResource("12_6hyd5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_17fb8"]
+texture = ExtResource("12_6hyd5")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a46nx"]
+texture = ExtResource("13_3paxm")
 
 [node name="PauseUI" type="CanvasLayer"]
 script = ExtResource("1_rbm5a")
@@ -183,6 +199,22 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_sv6pk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_4ctmt")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/UI/test_menu.tscn"
+scene_scale = 2.0
+hide_pause_menu = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="TutorialButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nrevp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_nrevp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nyv1p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_17fb8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_a46nx")
+script = ExtResource("6_5el4x")
+file_path = "res://scenes/UI/tutorial_menu.tscn"
 scene_scale = 2.0
 hide_pause_menu = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"

@@ -42,7 +42,7 @@ func start_fart() -> void:
 
 
 func apply_fart_effect(target):
-	if target is Tower:
+	if target is Attacker:
 		var stat_changer = StatChanger.new()
 		stat_changer.initialize_variables(target, self.name, stat_changer.Type.ATK_COOLDOWN, slowness_multiplier, slowness_duration)
 		target.add_child(stat_changer)

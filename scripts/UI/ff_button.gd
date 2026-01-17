@@ -1,7 +1,7 @@
 extends Button
 
+@export var speed_multiplier: float = 2
 var fast_forward_on: bool = false
-var speed_multiplier: float = 4
 
 func _ready() -> void:
 	button_down.connect(toggle_fast_forward)

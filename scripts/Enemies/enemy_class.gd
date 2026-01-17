@@ -14,6 +14,7 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 ## Formula is cur_health * base_damage_ratio
 @onready var base_damage_ratio : float = enemy_data["base_damage_ratio"]
 @onready var xp : float = enemy_data["xp"]
+@onready var money_drop : float = enemy_data["money_drop"]
 
 # enemy based variables
 @export var enemy_sprite : Node2D
@@ -22,6 +23,8 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 var sprite_reversed = false
 # whoever has inflicted a status effect on this enemy
 var status_applied_list = []
+# keeps track what wave enemy was sent out on
+var wave_number : int
 
 # hp bar variables
 @export var hp_button: Button
@@ -56,11 +59,12 @@ func _ready() -> void:
 # automatically deletes enemy and path when it reaches the end
 func move_on_path(delta) -> void:
 	if  path.progress_ratio >= 1:
-		path.queue_free()
-		enemy_sprite.queue_free()
 		emit_signal("removed")
+		print("reached end")
 		if cur_health > 0:
 			emit_signal("reached_end")
+		path.queue_free()
+		queue_free()
 
 	path_position = path.get_global_position().x
 	prev_position = cur_position
@@ -85,18 +89,24 @@ func apply_damage(damage : float, damage_type : Projectile.Type):
 		pass
 	cur_health -= damage * damage_percent
 	if cur_health <= 0.0:
-		PlayerStats.PlayerXp += self.xp
+		PlayerStats.PlayerXp += xp
+		PlayerStats.cur_money += money_drop
 		PlayerStats.emit_signal("xp_changed")
+		PlayerStats.emit_signal("money_changed")
 		emit_signal("removed")
+		path.queue_free()
 		queue_free()
 		return
 	draw_health()
 
 func draw_health():
 	if cur_health <= 0.0:
-		PlayerStats.PlayerXp += self.xp
+		PlayerStats.PlayerXp += xp
+		PlayerStats.cur_money += money_drop
 		PlayerStats.emit_signal("xp_changed")
+		PlayerStats.emit_signal("money_changed")
 		emit_signal("removed")
+		path.queue_free()
 		queue_free()
 		return
 	health_bar.scale.x = cur_health / max_health

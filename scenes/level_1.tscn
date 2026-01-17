@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=58 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -20,12 +20,14 @@
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
 [ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_isj1j"]
-[ext_resource type="Script" path="res://scripts/base_class.gd" id="22_tr1x6"]
+[ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="22_tr1x6"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="23_d5akn"]
 [ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="24_s7g0b"]
 [ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="25_k8ld0"]
 [ext_resource type="Texture2D" uid="uid://cspxuiahyng26" path="res://assets/sprites/icons and buttons/player_level_bar.png" id="25_mmfjm"]
 [ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="26_k8ld0"]
+[ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="27_k8ld0"]
+[ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="27_mmfjm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("1_2os1m")
@@ -526,3 +528,22 @@ text = "10"
 label_settings = SubResource("LabelSettings_wbtxt")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MoneyIndicator" type="TextureRect" parent="Icons/Control"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 57.0
+offset_right = 41.0
+offset_bottom = 82.0
+texture = ExtResource("27_k8ld0")
+script = ExtResource("27_mmfjm")
+
+[node name="MoneyLabel" type="Label" parent="Icons/Control/MoneyIndicator"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 30.0
+scale = Vector2(0.72, 0.72)
+text = "150"
+label_settings = SubResource("LabelSettings_wbtxt")

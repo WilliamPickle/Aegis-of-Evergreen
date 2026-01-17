@@ -1,5 +1,6 @@
 extends Node
 signal xp_changed
+signal money_changed
 signal player_level_changed
 
 # Player Vars
@@ -10,7 +11,7 @@ var PrevLevel: int = 0
 
 # Money Vars
 const DEFAULT_MONEY : Array = [
-	[200.0, 300.0, 400.0],
+	[50.0, 100.0, 200.0],
 	[500.0, 600.0, 700.0],
 	[800.0, 900.0, 1000.0],
 ]
@@ -29,6 +30,7 @@ func purchase_item(item_amount : float) -> bool:
 	print("This function was called!!!!")
 	if cur_money >= item_amount:
 		cur_money -= item_amount
+		emit_signal("money_changed")
 		return true
 
 	return false
