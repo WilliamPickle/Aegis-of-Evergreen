@@ -14,7 +14,7 @@ func _ready() -> void:
 func _on_start_lvl1() -> void:
 	# wave 1 - 30 cash gain
 	start_wave_timer(45)
-	await send_enemy(bush, 6, 2)
+	await send_enemy(bush, 5, 3)
 	
 	currently_sending = false
 	await wave_timer.timeout

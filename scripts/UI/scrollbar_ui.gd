@@ -9,8 +9,8 @@ extends UserInterface
 const cards : Dictionary = { 
 	"ranger" = preload("res://assets/sprites/towers/tower cards/ranger_card.png"),
 	"chipmunk" = preload("res://assets/sprites/towers/tower cards/chipmunk_card.png"),
-	"bee" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
-	"flytrap" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
+	"bee" = preload("res://assets/sprites/towers/tower cards/bee_card.png"),
+	"flytrap" = preload("res://assets/sprites/towers/tower cards/fly_trap_card.png"),
 }
 func _ready() -> void:
 	super._ready()
