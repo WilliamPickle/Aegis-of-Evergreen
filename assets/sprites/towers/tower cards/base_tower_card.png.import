@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buyowrfgkkisk"
-path="res://.godot/imported/base_tower_card_highlight.png-a8ea61183310aef02db320a1f9411c27.ctex"
+uid="uid://cmyyldr1xxx8u"
+path="res://.godot/imported/base_tower_card.png-dc7634f06f762f43c3fad6bd692b0a55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/base_tower_card_highlight.png"
-dest_files=["res://.godot/imported/base_tower_card_highlight.png-a8ea61183310aef02db320a1f9411c27.ctex"]
+source_file="res://assets/sprites/towers/tower cards/base_tower_card.png"
+dest_files=["res://.godot/imported/base_tower_card.png-dc7634f06f762f43c3fad6bd692b0a55.ctex"]
 
 [params]
 

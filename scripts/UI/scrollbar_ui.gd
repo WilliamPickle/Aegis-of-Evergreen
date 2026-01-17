@@ -7,12 +7,11 @@ extends UserInterface
 
 # add any tower card here
 const cards : Dictionary = { 
-	"ranger" = preload("res://assets/sprites/towers/base_tower_card.png"),
-	"chipmunk" = preload("res://assets/sprites/towers/chipmunk_card.png"),
-	"bee" = preload("res://assets/sprites/towers/base_tower_card.png"),
-	"flytrap" = preload("res://assets/sprites/towers/base_tower_card.png"),
+	"ranger" = preload("res://assets/sprites/towers/tower cards/ranger_card.png"),
+	"chipmunk" = preload("res://assets/sprites/towers/tower cards/chipmunk_card.png"),
+	"bee" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
+	"flytrap" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
 }
-
 func _ready() -> void:
 	super._ready()
 	for tower in card_type:

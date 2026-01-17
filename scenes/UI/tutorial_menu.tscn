@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cc7b3cghj4nnc" path="res://assets/sprites/icons and buttons/scroll_bar_grabber.png" id="26_00ma3"]
 [ext_resource type="StyleBox" uid="uid://dw6v27x6ri2ku" path="res://assets/sprites/icons and buttons/scrollbar_grabber.tres" id="27_1vybd"]
 [ext_resource type="Texture2D" uid="uid://l8ur5jyypk2t" path="res://assets/sprites/icons and buttons/scroll_bar_vine_ender.png" id="28_jutfw"]
-[ext_resource type="Texture2D" uid="uid://ycyc0j38rd0i" path="res://assets/sprites/towers/chipmunk_card.png" id="29_ggov0"]
+[ext_resource type="Texture2D" uid="uid://ycyc0j38rd0i" path="res://assets/sprites/towers/tower cards/chipmunk_card.png" id="29_ggov0"]
 [ext_resource type="Script" uid="uid://c5v7i37jdw55h" path="res://scripts/Towers/tower_placement.gd" id="30_fnax7"]
 [ext_resource type="Texture2D" uid="uid://yp8o8f4yvt03" path="res://assets/sprites/tutorial assets/tower range.png" id="30_orxft"]
 [ext_resource type="Texture2D" uid="uid://ck2uum8wlfjo4" path="res://assets/sprites/tutorial assets/gameplay icons.png" id="31_2u07q"]
@@ -231,6 +231,7 @@ text = "$150.0"
 label_settings = SubResource("LabelSettings_5sebw")
 
 [node name="WaveLabel" type="Label" parent="Screen/Page1/Panel1/Icons"]
+layout_mode = 0
 offset_left = 186.0
 offset_top = 13.0
 offset_right = 260.0
@@ -248,6 +249,7 @@ offset_bottom = 40.0
 
 [node name="Highlight" type="TextureRect" parent="Screen/Page1/WaveExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 539.0
 offset_top = 90.0
 offset_right = 692.0
@@ -257,6 +259,7 @@ expand_mode = 1
 
 [node name="Highlight2" type="TextureRect" parent="Screen/Page1/WaveExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 638.0
 offset_top = 109.0
 offset_right = 720.0
@@ -285,6 +288,7 @@ expand_mode = 1
 
 [node name="Wave box" type="TextureRect" parent="Screen/Page1/WaveExplanation"]
 modulate = Color(0.462745, 0.301961, 0.286275, 1)
+layout_mode = 0
 offset_left = 96.0
 offset_top = 131.0
 offset_right = 193.0
@@ -293,6 +297,7 @@ texture = ExtResource("15_c5m28")
 expand_mode = 1
 
 [node name="WaveLabel" type="Label" parent="Screen/Page1/WaveExplanation"]
+layout_mode = 0
 offset_left = 100.0
 offset_top = 135.0
 offset_right = 174.0
@@ -302,6 +307,7 @@ text = "Wave 0/5"
 label_settings = SubResource("LabelSettings_8bxcy")
 
 [node name="Description2" type="Label" parent="Screen/Page1/WaveExplanation"]
+layout_mode = 0
 offset_left = 381.0
 offset_top = 91.0
 offset_right = 751.0
@@ -318,6 +324,7 @@ offset_bottom = 40.0
 
 [node name="Highlight" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 220.0
 offset_top = 161.0
 offset_right = 326.0
@@ -327,6 +334,7 @@ expand_mode = 1
 
 [node name="Highlight2" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 116.0
 offset_top = 197.0
 offset_right = 246.0
@@ -336,6 +344,7 @@ expand_mode = 1
 
 [node name="Highlight3" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 176.0
 offset_top = 218.0
 offset_right = 262.0
@@ -400,6 +409,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Description2" type="Label" parent="Screen/Page1/LevelExplanation"]
+layout_mode = 0
 offset_left = 96.0
 offset_top = 163.0
 offset_right = 522.0
@@ -420,6 +430,7 @@ offset_bottom = 52.0
 
 [node name="Highlight2" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 424.0
 offset_top = 324.0
 offset_right = 512.0
@@ -429,6 +440,7 @@ expand_mode = 1
 
 [node name="Highlight3" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 290.0
 offset_top = 361.0
 offset_right = 365.0
@@ -438,6 +450,7 @@ expand_mode = 1
 
 [node name="Highlight4" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 225.0
 offset_top = 382.0
 offset_right = 314.0
@@ -484,6 +497,7 @@ text = "150"
 label_settings = SubResource("LabelSettings_5sebw")
 
 [node name="Description" type="Label" parent="Screen/Page1/LifeExplanation"]
+layout_mode = 0
 offset_left = 96.0
 offset_top = 326.0
 offset_right = 533.0
@@ -504,6 +518,7 @@ offset_bottom = 237.0
 
 [node name="Highlight4" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 200.0
 offset_top = 324.0
 offset_right = 345.0
@@ -513,6 +528,7 @@ expand_mode = 1
 
 [node name="Highlight5" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 236.0
 offset_top = 344.0
 offset_right = 314.0
@@ -522,6 +538,7 @@ expand_mode = 1
 
 [node name="Highlight6" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 385.0
 offset_top = 381.0
 offset_right = 473.0
@@ -531,6 +548,7 @@ expand_mode = 1
 
 [node name="Highlight7" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 204.0
 offset_top = 400.0
 offset_right = 360.0
@@ -558,6 +576,7 @@ texture = ExtResource("15_c5m28")
 expand_mode = 1
 
 [node name="MoneyIndicator" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+layout_mode = 0
 offset_left = 96.0
 offset_top = 289.0
 offset_right = 123.0
@@ -576,6 +595,7 @@ text = "$150.0"
 label_settings = SubResource("LabelSettings_5sebw")
 
 [node name="Description" type="Label" parent="Screen/Page1/MoneyExplanation"]
+layout_mode = 0
 offset_left = 96.0
 offset_top = 326.0
 offset_right = 512.0
@@ -829,6 +849,7 @@ offset_bottom = 324.0
 texture = ExtResource("18_ehijt")
 
 [node name="Tower Range" type="TextureRect" parent="Screen/Page2/Panel2"]
+layout_mode = 0
 offset_left = 78.0
 offset_top = 214.0
 offset_right = 528.0
@@ -838,6 +859,7 @@ texture = ExtResource("30_orxft")
 
 [node name="Numbering" type="Label" parent="Screen/Page2/Panel2"]
 z_index = 1
+layout_mode = 0
 offset_left = 80.5714
 offset_top = 217.143
 offset_right = 120.571
@@ -874,6 +896,7 @@ expand_mode = 1
 
 [node name="Highlight4" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 199.0
 offset_top = 288.0
 offset_right = 259.0
@@ -883,6 +906,7 @@ expand_mode = 1
 
 [node name="Highlight5" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 300.0
 offset_top = 288.0
 offset_right = 338.0
@@ -892,6 +916,7 @@ expand_mode = 1
 
 [node name="Highlight6" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 94.0
 offset_top = 308.0
 offset_right = 134.0
@@ -901,6 +926,7 @@ expand_mode = 1
 
 [node name="Highlight7" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 116.0
 offset_top = 327.0
 offset_right = 268.0
@@ -910,6 +936,7 @@ expand_mode = 1
 
 [node name="Highlight8" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 202.0
 offset_top = 345.0
 offset_right = 290.0
@@ -918,6 +945,7 @@ texture = ExtResource("15_c5m28")
 expand_mode = 1
 
 [node name="Description" type="Label" parent="Screen/Page2/Buy Explanation"]
+layout_mode = 0
 offset_left = 96.0
 offset_top = 290.0
 offset_right = 473.0
@@ -959,6 +987,7 @@ expand_mode = 1
 
 [node name="Highlight5" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 301.0
 offset_top = 288.0
 offset_right = 384.0
@@ -968,6 +997,7 @@ expand_mode = 1
 
 [node name="Highlight7" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 116.0
 offset_top = 345.0
 offset_right = 172.0
@@ -977,6 +1007,7 @@ expand_mode = 1
 
 [node name="Highlight8" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 116.0
 offset_top = 383.0
 offset_right = 240.0
@@ -985,6 +1016,7 @@ texture = ExtResource("15_c5m28")
 expand_mode = 1
 
 [node name="Description" type="Label" parent="Screen/Page2/Ally Explanation"]
+layout_mode = 0
 offset_left = 96.0
 offset_top = 290.0
 offset_right = 473.0
@@ -1036,6 +1068,7 @@ offset_bottom = 304.5
 texture = ExtResource("18_ehijt")
 
 [node name="Icon Panel" type="TextureRect" parent="Screen/Page3/Panel1"]
+layout_mode = 0
 offset_left = 64.5
 offset_top = 213.5
 offset_right = 395.5
@@ -1069,6 +1102,7 @@ offset_bottom = 310.0
 texture = ExtResource("18_ehijt")
 
 [node name="Pause panel" type="TextureRect" parent="Screen/Page3/Panel2"]
+layout_mode = 0
 offset_left = 75.0
 offset_top = 217.0
 offset_right = 700.0
@@ -1078,6 +1112,7 @@ texture = ExtResource("32_llqua")
 
 [node name="Numbering" type="Label" parent="Screen/Page3/Panel2"]
 z_index = 1
+layout_mode = 0
 offset_left = 80.5
 offset_top = 220.5
 offset_right = 120.5
@@ -1114,6 +1149,7 @@ expand_mode = 1
 
 [node name="Highlight5" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 183.0
 offset_top = 288.0
 offset_right = 293.0
@@ -1123,6 +1159,7 @@ expand_mode = 1
 
 [node name="Highlight6" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 191.0
 offset_top = 308.0
 offset_right = 310.0
@@ -1132,6 +1169,7 @@ expand_mode = 1
 
 [node name="Highlight7" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 250.0
 offset_top = 327.0
 offset_right = 303.0
@@ -1141,6 +1179,7 @@ expand_mode = 1
 
 [node name="Highlight8" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 94.0
 offset_top = 346.0
 offset_right = 138.0
@@ -1149,6 +1188,7 @@ texture = ExtResource("15_c5m28")
 expand_mode = 1
 
 [node name="Description" type="Label" parent="Screen/Page3/Tool Explanation"]
+layout_mode = 0
 offset_left = 96.0
 offset_top = 290.0
 offset_right = 349.0

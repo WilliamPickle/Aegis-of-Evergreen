@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://laipimstlyht" path="res://assets/sprites/icons and buttons/scroll_bar_vine_bg.png" id="2_fbx6j"]
 [ext_resource type="Texture2D" uid="uid://bm602q1hmdwh8" path="res://assets/sprites/icons and buttons/scroll_bar_vine_border.png" id="3_0uhrl"]
 [ext_resource type="Texture2D" uid="uid://cc7b3cghj4nnc" path="res://assets/sprites/icons and buttons/scroll_bar_grabber.png" id="3_jvhi7"]
-[ext_resource type="Texture2D" uid="uid://ycyc0j38rd0i" path="res://assets/sprites/towers/chipmunk_card.png" id="3_onfjo"]
+[ext_resource type="Texture2D" uid="uid://ycyc0j38rd0i" path="res://assets/sprites/towers/tower cards/chipmunk_card.png" id="3_onfjo"]
 [ext_resource type="StyleBox" uid="uid://c8eassgqrql2c" path="res://assets/sprites/icons and buttons/scrollbar_tab_darkened.tres" id="4_j5qwt"]
 [ext_resource type="Script" uid="uid://c5v7i37jdw55h" path="res://scripts/Towers/tower_placement.gd" id="4_onfjo"]
 [ext_resource type="Script" uid="uid://cp4bysclrk1kw" path="res://scripts/UI/scroll_container.gd" id="4_x5tgu"]

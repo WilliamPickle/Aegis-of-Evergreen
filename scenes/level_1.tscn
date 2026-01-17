@@ -458,7 +458,7 @@ autowrap_mode = 2
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu")]
 script = ExtResource("22_tr1x6")
 health_label = NodePath("../Icons/Control/LifeIndicator/LifeLabel")
-base_health = 150.0
+base_health = 10.0
 pause_menu = NodePath("../PauseUI")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
