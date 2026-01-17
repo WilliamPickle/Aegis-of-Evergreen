@@ -4,7 +4,11 @@ class_name towerUpgrader
 const f_path : String = "res://assets/sprites/towers/tower mugshots/"
 @export var tower : Tower
 @export var tower_name : String
+## Put all description labels under this node
 @export_enum("attacker") var type : String
+@export var level_descriptions : Control
+@export var tower_max_level : int = 3
+@onready var cur_description : Label = level_descriptions.get_child(tower.level)
 
 static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))["tower"]
 @onready var tower_data = Game_Data[tower_name]
@@ -47,6 +51,7 @@ var cur_type : int = 0
 
 func _ready() -> void:
 	super._ready()
+	await tower.tower_placed
 	for stat in tower_stats[type]:
 		var button : Button = stats[stat]
 		button.visible = true
@@ -58,6 +63,8 @@ func _ready() -> void:
 	print("--------")
 	print("Cost:",tower.cost)
 	costText.text = str(tower.cost)
+	sellText.text = str(tower.sell_value)
+	cur_description.visible = true
 	upgrade_button.button_down.connect(upgrade_tower)
 	sell_button.button_down.connect(_sell_tower)
 
@@ -74,10 +81,19 @@ func upgrade_tower():
 	if tower.level < 2 and PlayerStats.purchase_item(tower.cost):
 		tower_image.texture = load(f_path + tower_name + "_" +str(tower.level+2) + ".png")
 		tower.upgrade_tower()
-	costText.text = str(tower.cost)
+		sellText.text = str(tower.sell_value)
+		cur_description.visible = false
+		cur_description = level_descriptions.get_child(tower.level)
+		cur_description.visible = true
+	if tower.level == tower_max_level - 1:
+		costText.text = "Maxed Out"
+	else:
+		costText.text = str(tower.cost)
 
 func _sell_tower():
 	ControlHandler.current_states.erase(ControlHandler.ControlState.VIEWING_TOWER)
+	PlayerStats.cur_money += tower.sell_value
+	PlayerStats.emit_signal("money_changed")
 	tower.current_tower = null
 	tower.queue_free()
 	

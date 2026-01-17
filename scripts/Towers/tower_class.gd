@@ -23,6 +23,9 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 @export var level : int = 0
 @onready var cost : float = object_data["cost"][level]
 @onready var range : float = object_data["range"][level]
+@onready var sell_back_ratio = 0.5
+@onready var sell_value : float = floori(object_data["cost"][level] * sell_back_ratio / 1)
+var total_spent = 0
 
 
 # the area of the current level
@@ -59,6 +62,7 @@ func _ready() -> void:
 	current_tower = self
 	set_collision_layer_value(3, true)
 	set_collision_layer_value(1, false)
+	print("from tower: ", object_data)
 
 
 func _draw() -> void:
@@ -146,6 +150,8 @@ func place_tower() -> bool:
 	return true
 
 func upgrade_tower() -> void:
+	total_spent += cost
+	sell_value = floori(total_spent * sell_back_ratio / 1)
 	level += 1
 	if level == 1:
 		cost = object_data["cost"][2]

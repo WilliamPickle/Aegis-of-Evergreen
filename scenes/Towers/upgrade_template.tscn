@@ -1,9 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://d10o7y6xd75el"]
+[gd_scene load_steps=30 format=3 uid="uid://d10o7y6xd75el"]
 
 [ext_resource type="Script" uid="uid://bite8683ykull" path="res://scripts/Towers/upgrade_class.gd" id="1_fneq2"]
 [ext_resource type="Texture2D" uid="uid://b5mdymdvkosdl" path="res://assets/sprites/towers/tower mugshots/chipmunk_3.png" id="2_4wftb"]
 [ext_resource type="Texture2D" uid="uid://ch4m2xbktl6ub" path="res://assets/sprites/icons and buttons/upgrade_ui.png" id="3_pg767"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="4_2mat1"]
+[ext_resource type="Texture2D" uid="uid://drmdhbm754j0q" path="res://assets/sprites/icons and buttons/stat icons/stat_icon_atk.png" id="5_jknih"]
+[ext_resource type="Texture2D" uid="uid://bus3u4q8x2qhn" path="res://assets/sprites/icons and buttons/stat icons/stat_icon_range.png" id="6_0nf88"]
+[ext_resource type="Texture2D" uid="uid://dhq24wdn7jgoe" path="res://assets/sprites/icons and buttons/stat icons/stat_icon_atk_speed.png" id="7_5kse8"]
+[ext_resource type="Texture2D" uid="uid://v2p03fh1cci7" path="res://assets/sprites/icons and buttons/stat icons/stat_icon_pierce.png" id="8_gshcf"]
+[ext_resource type="Texture2D" uid="uid://dpdhfrhvnwxnt" path="res://assets/sprites/icons and buttons/stat icons/stat_icon_splash_cap.png" id="9_js7vr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4g0oj"]
 load_path = "res://.godot/imported/upgrade_ui.png-2b2a12b6b958b2b7c4f164048c2847ad.ctex"
@@ -22,11 +27,11 @@ region = Rect2(545, 29, 95, 132)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2mat1"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5kse8"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0nf88"]
 atlas = ExtResource("3_pg767")
 region = Rect2(632, 217, 13, 13)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5kse8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0nf88"]
 
@@ -80,6 +85,12 @@ texture = ExtResource("3_pg767")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(605, 196, 16, 34)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jknih"]
+font = ExtResource("4_2mat1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0nf88"]
+font = ExtResource("4_2mat1")
 
 [node name="UpgradeTemplate" type="CanvasLayer"]
 script = ExtResource("1_fneq2")
@@ -164,7 +175,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_2mat1")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2mat1")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2mat1")
 button_mask = 0
-icon = SubResource("AtlasTexture_0nf88")
+icon = ExtResource("5_jknih")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Background/StatsDisplay/StatsContainer/Damage"]
 layout_mode = 0
@@ -204,7 +215,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_2mat1")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2mat1")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2mat1")
 button_mask = 0
-icon = SubResource("AtlasTexture_0nf88")
+icon = ExtResource("6_0nf88")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Background/StatsDisplay/StatsContainer/Range"]
 layout_mode = 0
@@ -244,7 +255,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_2mat1")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2mat1")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2mat1")
 button_mask = 0
-icon = SubResource("AtlasTexture_0nf88")
+icon = ExtResource("7_5kse8")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Background/StatsDisplay/StatsContainer/AttackSpeed"]
 layout_mode = 0
@@ -284,7 +295,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_2mat1")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2mat1")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2mat1")
 button_mask = 0
-icon = SubResource("AtlasTexture_0nf88")
+icon = ExtResource("8_gshcf")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Background/StatsDisplay/StatsContainer/Pierce"]
 layout_mode = 0
@@ -324,7 +335,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_2mat1")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2mat1")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2mat1")
 button_mask = 0
-icon = SubResource("AtlasTexture_0nf88")
+icon = ExtResource("9_js7vr")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Background/StatsDisplay/StatsContainer/SplashCap"]
 layout_mode = 0
@@ -442,7 +453,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TypeDisplay" type="Sprite2D" parent="Control/Background"]
-position = Vector2(-99, 50)
+position = Vector2(-110, 118)
 scale = Vector2(0.995238, 1)
 texture = SubResource("AtlasTexture_4wftb")
 metadata/_edit_group_ = true
@@ -503,3 +514,18 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_pg767")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3fde0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_pg767")
 theme_override_styles/normal = SubResource("StyleBoxTexture_jknih")
+
+[node name="DescriptionHeading" type="Label" parent="Control/Background"]
+offset_left = -178.0
+offset_top = 6.0
+offset_right = -44.0
+offset_bottom = 29.0
+text = "Upgrade Details"
+label_settings = SubResource("LabelSettings_jknih")
+
+[node name="Underline" type="Label" parent="Control/Background/DescriptionHeading"]
+offset_top = 12.0
+offset_right = 136.0
+offset_bottom = 35.0
+text = "-----------------"
+label_settings = SubResource("LabelSettings_0nf88")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://du0764agaf7lh"]
+[gd_scene load_steps=23 format=3 uid="uid://du0764agaf7lh"]
 
 [ext_resource type="Script" path="res://scripts/Towers/ranger_tower.gd" id="1_fqrt3"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_3a5ny"]
 [ext_resource type="Texture2D" uid="uid://cwd6iyrpuvuew" path="res://assets/sprites/towers/ranger_spritesheet.png" id="2_skf20"]
 [ext_resource type="PackedScene" uid="uid://d10o7y6xd75el" path="res://scenes/Towers/upgrade_template.tscn" id="3_3a5ny"]
+[ext_resource type="LabelSettings" uid="uid://bmwrds5dodev4" path="res://assets/fonts/upgrade_description.tres" id="5_y3v4d"]
 
 [sub_resource type="Resource" id="Resource_y3v4d"]
 script = ExtResource("2_3a5ny")
@@ -163,7 +164,50 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_eltc7")
 debug_color = Color(1, 1, 1, 0.42)
 
-[node name="UpgradeUI" parent="." node_paths=PackedStringArray("tower") instance=ExtResource("3_3a5ny")]
+[node name="UpgradeUI" parent="." node_paths=PackedStringArray("tower", "level_descriptions") instance=ExtResource("3_3a5ny")]
+visible = false
 tower = NodePath("..")
 tower_name = "bee"
 type = "attacker"
+level_descriptions = NodePath("UpgradeDescription")
+
+[node name="UpgradeDescription" type="Control" parent="UpgradeUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="lvl2" type="Label" parent="UpgradeUI/UpgradeDescription"]
+visible = false
+layout_mode = 0
+offset_left = 1092.0
+offset_top = 393.0
+offset_right = 1284.0
+offset_bottom = 416.0
+scale = Vector2(0.8, 0.8)
+text = ">> Gain range buff"
+label_settings = ExtResource("5_y3v4d")
+
+[node name="lvl3" type="Label" parent="UpgradeUI/UpgradeDescription"]
+visible = false
+layout_mode = 0
+offset_left = 1092.0
+offset_top = 393.0
+offset_right = 1285.0
+offset_bottom = 428.0
+scale = Vector2(0.8, 0.8)
+text = ">> Improved buff effects"
+label_settings = ExtResource("5_y3v4d")
+autowrap_mode = 3
+
+[node name="max" type="Label" parent="UpgradeUI/UpgradeDescription"]
+visible = false
+layout_mode = 0
+offset_left = 1092.0
+offset_top = 393.0
+offset_right = 1283.0
+offset_bottom = 447.0
+scale = Vector2(0.8, 0.8)
+text = ">> MAX LEVEL REACHED"
+label_settings = ExtResource("5_y3v4d")
+autowrap_mode = 3

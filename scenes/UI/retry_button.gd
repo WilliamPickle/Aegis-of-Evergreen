@@ -12,3 +12,4 @@ func remove_lose_screen():
 	PauseUi.toggle_pause(lose_ui)
 	SceneLoader.change_scene_visibility("lose_ui", false)
 	SceneLoader.tint_scene(SceneLoader.current_main_scene, false)
+	PlayerStats.cur_money = PlayerStats.DEFAULT_MONEY[floori(PlayerStats.lvls_beaten / 3)][PlayerStats.lvls_beaten % 3]

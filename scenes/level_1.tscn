@@ -304,6 +304,7 @@ label_settings = SubResource("LabelSettings_x2fux")
 
 [node name="Start Button" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 follow_viewport_scale = 1.8
 
 [node name="MarginContainer" type="MarginContainer" parent="Start Button"]
