@@ -1,0 +1,105 @@
+[gd_scene load_steps=17 format=3 uid="uid://cbrbwvlulwieh"]
+
+[ext_resource type="Script" uid="uid://cyhmx8w7ktw2s" path="res://scripts/Enemies/snail.gd" id="1_og626"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_0kavf"]
+[ext_resource type="Texture2D" uid="uid://dnnex0h6yg80" path="res://assets/sprites/enemies/snail_v1.png" id="2_s64jl"]
+[ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_0kavf"]
+[ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="4_sjviw"]
+
+[sub_resource type="Resource" id="Resource_s64jl"]
+script = ExtResource("2_0kavf")
+class_type = "enemy"
+object = "snail"
+update_data = false
+metadata/_custom_type_script = "uid://baqkdqf80xars"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns4fq"]
+atlas = ExtResource("2_s64jl")
+region = Rect2(0, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll6l4"]
+atlas = ExtResource("2_s64jl")
+region = Rect2(75, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wifn4"]
+atlas = ExtResource("2_s64jl")
+region = Rect2(150, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_camff"]
+atlas = ExtResource("2_s64jl")
+region = Rect2(225, 0, 75, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewms7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns4fq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll6l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wifn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_camff")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56j0d"]
+radius = 6.0
+height = 28.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6l6qr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5dho"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xt6j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8v6r2"]
+
+[node name="snail" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "hp_button", "health_bar")]
+script = ExtResource("1_og626")
+data_resource = SubResource("Resource_s64jl")
+enemy_sprite = NodePath("AnimatedSprite2D")
+resistance = 1
+hp_button = NodePath("Button")
+health_bar = NodePath("HpContainer/HpBar")
+metadata/_custom_type_script = "uid://b8s182qi2sarb"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.875, -8.125)
+sprite_frames = SubResource("SpriteFrames_ewms7")
+autoplay = "default"
+frame = 2
+frame_progress = 0.228245
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.125, -3.125)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_56j0d")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -14.125
+offset_top = -9.125
+offset_right = 11.875
+offset_bottom = 2.875
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6l6qr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_h5dho")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6xt6j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8v6r2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6xt6j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8v6r2")
+
+[node name="HpContainer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1.125, -17.125)
+scale = Vector2(1.25, 1)
+texture = ExtResource("3_0kavf")
+
+[node name="HpBar" type="Sprite2D" parent="HpContainer"]
+texture = ExtResource("4_sjviw")

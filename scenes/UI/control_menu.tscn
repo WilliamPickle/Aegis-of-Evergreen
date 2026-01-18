@@ -1,0 +1,239 @@
+[gd_scene load_steps=16 format=3 uid="uid://dtlhtmg156rmk"]
+
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_hbut0"]
+[ext_resource type="Texture2D" uid="uid://cha2ssntfo8u0" path="res://assets/sprites/control menu/Control_Screen_Background.png" id="2_4fdhh"]
+[ext_resource type="Texture2D" uid="uid://coqpl0tt4bms5" path="res://assets/sprites/icons and buttons/back_button_highlighted.png" id="2_nj4u5"]
+[ext_resource type="Texture2D" uid="uid://cr8uq41chy32r" path="res://assets/sprites/control menu/Control_Screen_Icons.png" id="3_guqdo"]
+[ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="3_l5a8g"]
+[ext_resource type="Script" uid="uid://h2jq8s83khk1" path="res://scripts/UI/back_button_script.gd" id="4_byqbw"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="4_nj4u5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1b0yo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iko8m"]
+texture = ExtResource("2_nj4u5")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjkwi"]
+texture = ExtResource("2_nj4u5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ccm6v"]
+texture = ExtResource("2_nj4u5")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhbma"]
+texture = ExtResource("3_l5a8g")
+
+[sub_resource type="LabelSettings" id="LabelSettings_l3exy"]
+font = ExtResource("4_nj4u5")
+
+[sub_resource type="LabelSettings" id="LabelSettings_w22v2"]
+font = ExtResource("4_nj4u5")
+
+[sub_resource type="LabelSettings" id="LabelSettings_l5a8g"]
+font = ExtResource("4_nj4u5")
+font_size = 32
+
+[node name="ControlMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_hbut0")
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="ControlMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 180.0
+offset_right = -320.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Background" type="TextureRect" parent="ControlMenu"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_4fdhh")
+
+[node name="BackButton" type="Button" parent="ControlMenu/Background"]
+z_index = 10
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.464063
+anchor_top = -0.436111
+anchor_right = -0.464063
+anchor_bottom = -0.436111
+offset_left = 297.0
+offset_top = 157.0
+offset_right = 343.0
+offset_bottom = 203.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1b0yo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_iko8m")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bjkwi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ccm6v")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hhbma")
+script = ExtResource("4_byqbw")
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="ShiftPlusMiddle" type="Sprite2D" parent="ControlMenu"]
+position = Vector2(74, 285)
+scale = Vector2(2, 2)
+texture = ExtResource("3_guqdo")
+region_enabled = true
+region_rect = Rect2(76, 25, 15, 21)
+
+[node name="Label" type="Label" parent="ControlMenu/ShiftPlusMiddle"]
+offset_left = 15.5
+offset_top = -6.0
+offset_right = 317.5
+offset_bottom = 10.0
+scale = Vector2(0.8, 0.8)
+text = "Middle Click -"
+label_settings = SubResource("LabelSettings_l3exy")
+
+[node name="Label2" type="Label" parent="ControlMenu/ShiftPlusMiddle"]
+offset_left = 107.0
+offset_top = -5.0
+offset_right = 287.0
+offset_bottom = 11.0
+scale = Vector2(0.8, 0.8)
+text = "Panning "
+label_settings = SubResource("LabelSettings_l3exy")
+autowrap_mode = 2
+
+[node name="CtrlPlus" type="Sprite2D" parent="ControlMenu"]
+visible = false
+position = Vector2(402, 265)
+scale = Vector2(2, 2)
+texture = ExtResource("3_guqdo")
+region_enabled = true
+region_rect = Rect2(25, 47, 49, 21)
+
+[node name="RightClick" type="Sprite2D" parent="ControlMenu/CtrlPlus"]
+position = Vector2(37, 0)
+texture = ExtResource("3_guqdo")
+region_enabled = true
+region_rect = Rect2(23, 97, 15, 21)
+
+[node name="LeftClick" type="Sprite2D" parent="ControlMenu"]
+position = Vector2(74, 181)
+scale = Vector2(2, 2)
+texture = ExtResource("3_guqdo")
+region_enabled = true
+region_rect = Rect2(23, 73, 15, 21)
+
+[node name="Label" type="Label" parent="ControlMenu/LeftClick"]
+offset_left = 15.0
+offset_top = -5.5
+offset_right = 317.0
+offset_bottom = 10.5
+scale = Vector2(0.8, 0.8)
+text = "Left Click -"
+label_settings = SubResource("LabelSettings_l3exy")
+
+[node name="Shadow" type="Label" parent="ControlMenu/LeftClick/Label"]
+visible = false
+layout_mode = 0
+offset_left = 1.5
+offset_top = -3.0
+offset_right = 281.5
+offset_bottom = 29.0
+text = "Right Click"
+label_settings = SubResource("LabelSettings_w22v2")
+
+[node name="Label2" type="Label" parent="ControlMenu/LeftClick"]
+offset_left = 97.5
+offset_top = -5.5
+offset_right = 221.5
+offset_bottom = 29.5
+scale = Vector2(0.8, 0.8)
+text = "Action"
+label_settings = SubResource("LabelSettings_l3exy")
+autowrap_mode = 2
+
+[node name="RightClick" type="Sprite2D" parent="ControlMenu"]
+position = Vector2(74, 122)
+scale = Vector2(2, 2)
+texture = ExtResource("3_guqdo")
+region_enabled = true
+region_rect = Rect2(23, 97, 15, 21)
+
+[node name="Label" type="Label" parent="ControlMenu/RightClick"]
+offset_left = 15.0
+offset_top = -5.5
+offset_right = 317.0
+offset_bottom = 10.5
+scale = Vector2(0.8, 0.8)
+text = "Right Click -"
+label_settings = SubResource("LabelSettings_l3exy")
+
+[node name="Shadow" type="Label" parent="ControlMenu/RightClick/Label"]
+visible = false
+layout_mode = 0
+offset_left = 1.5
+offset_top = -3.0
+offset_right = 281.5
+offset_bottom = 29.0
+text = "Right Click"
+label_settings = SubResource("LabelSettings_w22v2")
+
+[node name="Label2" type="Label" parent="ControlMenu/RightClick"]
+offset_left = 98.0
+offset_top = -5.0
+offset_right = 317.0
+offset_bottom = 30.0
+scale = Vector2(0.8, 0.8)
+text = "Cancel Tower Placement"
+label_settings = SubResource("LabelSettings_l3exy")
+autowrap_mode = 2
+
+[node name="Scroll" type="Sprite2D" parent="ControlMenu"]
+position = Vector2(74, 234)
+scale = Vector2(2, 2)
+texture = ExtResource("3_guqdo")
+region_enabled = true
+region_rect = Rect2(23, 120, 15, 21)
+
+[node name="Label" type="Label" parent="ControlMenu/Scroll"]
+offset_left = 15.0
+offset_top = -5.5
+offset_right = 317.0
+offset_bottom = 10.5
+scale = Vector2(0.8, 0.8)
+text = "Scroll -"
+label_settings = SubResource("LabelSettings_l3exy")
+
+[node name="Label2" type="Label" parent="ControlMenu/Scroll"]
+offset_left = 71.0
+offset_top = -5.0
+offset_right = 136.0
+offset_bottom = 11.0
+scale = Vector2(0.8, 0.8)
+text = "Zoom"
+label_settings = SubResource("LabelSettings_l3exy")
+autowrap_mode = 2
+
+[node name="Heading" type="Label" parent="ControlMenu"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 50.0
+offset_right = 371.0
+offset_bottom = 82.0
+text = "Gameplay Controls"
+label_settings = SubResource("LabelSettings_l5a8g")
+
+[node name="Underline" type="Label" parent="ControlMenu/Heading"]
+layout_mode = 0
+offset_left = -0.000305176
+offset_top = 12.0
+offset_right = 280.0
+offset_bottom = 44.0
+text = "____________"
+label_settings = SubResource("LabelSettings_l5a8g")

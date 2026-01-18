@@ -971,6 +971,7 @@ expand_mode = 1
 
 [node name="Highlight9" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
 offset_left = 234.0
 offset_top = 384.0
 offset_right = 336.0
@@ -1062,6 +1063,7 @@ expand_mode = 1
 
 [node name="Highlight10" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
 modulate = Color(0.6002, 0.921928, 0.978353, 0.635294)
+layout_mode = 0
 offset_left = 364.0
 offset_top = 421.0
 offset_right = 436.0
@@ -1071,6 +1073,7 @@ expand_mode = 1
 
 [node name="Highlight11" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
 modulate = Color(0.6002, 0.921928, 0.978353, 0.635294)
+layout_mode = 0
 offset_left = 129.0
 offset_top = 441.0
 offset_right = 165.0
@@ -1080,6 +1083,7 @@ expand_mode = 1
 
 [node name="Highlight12" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
 modulate = Color(0.6002, 0.921928, 0.978353, 0.635294)
+layout_mode = 0
 offset_left = 95.0
 offset_top = 456.0
 offset_right = 176.0
@@ -1089,6 +1093,7 @@ expand_mode = 1
 
 [node name="Highlight13" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
 modulate = Color(0.6002, 0.921928, 0.978353, 0.635294)
+layout_mode = 0
 offset_left = 378.0
 offset_top = 458.0
 offset_right = 469.0

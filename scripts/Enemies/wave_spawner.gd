@@ -15,6 +15,8 @@ class_name WaveSpawner
 const bush := preload("res://scenes/Enemies/blackberry_bush.tscn")
 const squirrel := preload("res://scenes/Enemies/squirrel.tscn")
 const cow := preload("res://scenes/Enemies/cow.tscn")
+const snail := preload("res://scenes/Enemies/snail.tscn")
+const beetle := preload("res://scenes/Enemies/beetle.tscn")
 
 # variables to initialize waves after dialogue
 @export var wave_label: Label

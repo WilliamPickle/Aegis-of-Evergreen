@@ -1,0 +1,101 @@
+[gd_scene load_steps=17 format=3 uid="uid://bpf8tkmkvxhxm"]
+
+[ext_resource type="Script" uid="uid://b8s182qi2sarb" path="res://scripts/Enemies/enemy_class.gd" id="1_2pug0"]
+[ext_resource type="Texture2D" uid="uid://dpv351dxnl81e" path="res://assets/sprites/enemies/j_beetle_v1.png" id="2_6ulu7"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_jfmog"]
+[ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_jfmog"]
+[ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="4_oq24a"]
+
+[sub_resource type="Resource" id="Resource_oq24a"]
+script = ExtResource("2_jfmog")
+class_type = "enemy"
+object = "beetle"
+update_data = false
+metadata/_custom_type_script = "uid://baqkdqf80xars"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubgbl"]
+atlas = ExtResource("2_6ulu7")
+region = Rect2(0, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cygr8"]
+atlas = ExtResource("2_6ulu7")
+region = Rect2(75, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc4vi"]
+atlas = ExtResource("2_6ulu7")
+region = Rect2(150, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic6jq"]
+atlas = ExtResource("2_6ulu7")
+region = Rect2(225, 0, 75, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmfvh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubgbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cygr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uc4vi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic6jq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_amhgo"]
+radius = 5.0
+height = 28.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1efip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtov3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cglw1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rkwff"]
+
+[node name="beetle" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "hp_button", "health_bar")]
+script = ExtResource("1_2pug0")
+data_resource = SubResource("Resource_oq24a")
+enemy_sprite = NodePath("AnimatedSprite2D")
+hp_button = NodePath("Button")
+health_bar = NodePath("HpContainer/HpBar")
+metadata/_custom_type_script = "uid://b8s182qi2sarb"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -7)
+sprite_frames = SubResource("SpriteFrames_qmfvh")
+autoplay = "default"
+frame_progress = 0.958499
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_amhgo")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -13.0
+offset_top = -12.0
+offset_right = 13.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1efip")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vtov3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cglw1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rkwff")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cglw1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rkwff")
+
+[node name="HpContainer" type="Sprite2D" parent="."]
+position = Vector2(0, -19)
+scale = Vector2(1.44118, 1)
+texture = ExtResource("3_jfmog")
+
+[node name="HpBar" type="Sprite2D" parent="HpContainer"]
+texture = ExtResource("4_oq24a")

@@ -40,24 +40,24 @@
 		"res://scenes/Towers/bee/bee_proj_3.tscn"
 	  ],
 	  "cost": [
-		30,
-		35,
-		45
+		60,
+		80,
+		150
 	  ],
 	  "range": [
-		90,
-		65,
-		85
+		80,
+		100,
+		120
 	  ],
 	  "attack_speed": [
-		2,
-		1,
-		1.25
+		3.5,
+		5,
+		4
 	  ],
 	  "damage": [
 		2,
-		2.5,
-		3.75
+		2,
+		3
 	  ]
 	},
 	"flytrap": {
@@ -137,8 +137,8 @@
   },
   "splash": {
 	"bee_proj_2": {
-	  "type": "blunt",
-	  "splash_radius": 30,
+	  "type": "energy",
+	  "splash_radius": 25,
 	  "zone_sizes": [
 		0.25,
 		0.5,
@@ -151,14 +151,14 @@
 	  ],
 	  "travel_time": 1,
 	  "despawn_distance" : 20,
-	  "pierce_cap": 5,
+	  "pierce_cap": 2,
 	  "pierce_damage": 0.2,
-	  "splash_cap": 3,
+	  "splash_cap": 5,
 	  "debuff_type": "slowness"
 	},
 	"bee_proj_3": {
-	  "type": "blunt",
-	  "splash_radius": 40,
+	  "type": "energy",
+	  "splash_radius": 35,
 	  "zone_sizes": [
 		0.3,
 		0.5,
@@ -166,14 +166,14 @@
 	  ],
 	  "zone_damages": [
 		1,
-		0.9,
+		0.8,
 		0.6
 	  ],
 	  "travel_time": 0.9,
 	  "despawn_distance" : 30,
-	  "pierce_cap": 10,
-	  "pierce_damage": 0.12,
-	  "splash_cap": 6,
+	  "pierce_cap": 3,
+	  "pierce_damage": 0.3,
+	  "splash_cap": 8,
 	  "debuff_type": "slowness"
 	}
   }, 
@@ -188,22 +188,42 @@
 	  "speed" : 0.015,
 	  "max_health" : 4,
 	  "base_damage_ratio" : 0.5,
-	  "xp" : 10,
-	  "money_drop" : 4
+	  "xp" : 6,
+	  "money_drop" : 4,
+	  "resistance" : "none"
 	}, 
 	"squirrel": {
 	  "speed" : 0.06, 
 	  "max_health" : 2, 
 	  "base_damage_ratio" : 0.5,
-	  "xp" : 10,
-	  "money_drop" : 2
+	  "xp" : 6,
+	  "money_drop" : 2,
+	  "resistance" : "none"
 	},
 	"cow" : {
 	  "speed" : 0.015, 
 	  "max_health" : 40,
 	  "base_damage_ratio" : 0.5,
+	  "xp" : 50,
+	  "money_drop" : 20,
+	  "resistance" : "none"
+	},
+	"snail" : {
+	  "speed" : 0.007, 
+	  "max_health" : 20,
+	  "base_damage_ratio" : 0.5,
 	  "xp" : 25,
-	  "money_drop" : 10
-	}
-  },
+	  "money_drop" : 15,
+	  "resistance" : "none"
+	},
+	"beetle" : {
+	  "speed" : 0.025, 
+	  "max_health" : 40,
+	  "base_damage_ratio" : 0.5,
+	  "xp" : 75,
+	  "money_drop" : 30,
+	  "resistance" : "blunt",
+	  "resistance_percent" : 0.5
+	},
+  }
 }

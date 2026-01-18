@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=57 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bvxmxb1e80sfy" path="res://assets/sprites/maps/trees_v1_overlayer.png" id="6_mbb35"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="7_15mv3"]
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="7_go7sj"]
-[ext_resource type="Script" uid="uid://c5v7i37jdw55h" path="res://scripts/Towers/tower_placement.gd" id="8_e3sih"]
 [ext_resource type="Script" uid="uid://bbkeiwswqvn45" path="res://scripts/Enemies/map1_lvl1_wave_spawner.gd" id="9_mbb35"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="10_7gny6"]
 [ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_2aecg"]
@@ -194,8 +193,6 @@ texture = ExtResource("10_7gny6")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6dial"]
 texture = ExtResource("3_5xbjy")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7nomh"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_so66j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5akn"]
@@ -339,22 +336,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_2aecg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_6dial")
 action_mode = 0
 icon_alignment = 1
-
-[node name="TowerButtonTemp" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Tower_Placement" type="Button" parent="TowerButtonTemp" node_paths=PackedStringArray("map_area")]
-offset_left = 18.0
-offset_top = 554.0
-offset_right = 130.0
-offset_bottom = 585.0
-theme_override_fonts/font = ExtResource("7_15mv3")
-theme_override_styles/normal = SubResource("StyleBoxTexture_7nomh")
-text = "Place Tower"
-script = ExtResource("8_e3sih")
-map_area = NodePath("../../PlacementCollisions")
-tower_type = "Chipmunk"
-metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
 [node name="PauseUI" parent="." instance=ExtResource("14_2aecg")]
 

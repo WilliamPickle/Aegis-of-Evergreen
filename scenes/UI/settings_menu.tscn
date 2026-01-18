@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://rlm06c0lld5e"]
+[gd_scene load_steps=20 format=3 uid="uid://rlm06c0lld5e"]
 
-[ext_resource type="Script" path="res://scripts/UI/ui_script.gd" id="1_3i1ia"]
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_3i1ia"]
 [ext_resource type="Script" uid="uid://dd56ng05gs51w" path="res://scripts/UI/settings_script.gd" id="1_jl7gk"]
 [ext_resource type="Texture2D" uid="uid://c8sm4hs6h6lcs" path="res://assets/sprites/settings screen/settings_back_v1.png" id="2_ecjli"]
 [ext_resource type="Texture2D" uid="uid://coqpl0tt4bms5" path="res://assets/sprites/icons and buttons/back_button_highlighted.png" id="3_jfsmy"]
@@ -33,12 +33,17 @@ texture = ExtResource("4_bhifn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51alr"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_6jt7n"]
+font = ExtResource("9_ec265")
+font_size = 32
+
 [node name="SettingsMenu" type="CanvasLayer"]
 process_mode = 3
 layer = 2
 script = ExtResource("1_3i1ia")
 
-[node name="SettingsAssets2" type="MarginContainer" parent="." node_paths=PackedStringArray("music_volume", "SFX_volume")]
+[node name="SettingsAssets2" type="Control" parent="." node_paths=PackedStringArray("music_volume", "SFX_volume")]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -54,6 +59,8 @@ SFX_volume = NodePath("Background/SFXTexture/SFXVolume")
 
 [node name="Background" type="TextureRect" parent="SettingsAssets2"]
 layout_mode = 2
+offset_right = 640.0
+offset_bottom = 360.0
 texture = ExtResource("2_ecjli")
 
 [node name="BackButton" type="Button" parent="SettingsAssets2/Background"]
@@ -77,14 +84,13 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_2tyyr")
 theme_override_styles/normal = SubResource("StyleBoxTexture_wambi")
 script = ExtResource("5_1pcq1")
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
-metadata/_edit_use_anchors_ = true
 
 [node name="MusicTexture2" type="TextureRect" parent="SettingsAssets2/Background"]
 layout_mode = 2
-offset_left = 200.0
-offset_top = 55.0
-offset_right = 606.0
-offset_bottom = 83.0
+offset_left = 188.0
+offset_top = 112.0
+offset_right = 594.0
+offset_bottom = 140.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("6_kbx1j")
@@ -115,10 +121,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SFXTexture" type="TextureRect" parent="SettingsAssets2/Background"]
 layout_mode = 2
-offset_left = 200.0
-offset_top = 103.0
-offset_right = 606.0
-offset_bottom = 131.0
+offset_left = 188.0
+offset_top = 160.0
+offset_right = 594.0
+offset_bottom = 188.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("6_kbx1j")
@@ -155,11 +161,13 @@ anchor_left = 0.110937
 anchor_top = 0.286111
 anchor_right = 0.320313
 anchor_bottom = 0.377778
-offset_right = 1.0
+offset_left = -11.9997
+offset_top = 57.0001
+offset_right = -10.9997
+offset_bottom = 57.0001
 theme_override_fonts/normal_font = ExtResource("9_ec265")
 theme_override_font_sizes/normal_font_size = 16
 text = "Sound Effects Volume"
-metadata/_edit_use_anchors_ = true
 
 [node name="MusicText" type="RichTextLabel" parent="SettingsAssets2/Background"]
 layout_mode = 1
@@ -168,12 +176,29 @@ anchor_left = 0.0908325
 anchor_top = 0.138773
 anchor_right = 0.300208
 anchor_bottom = 0.23044
-offset_left = 12.8672
-offset_top = 5.04167
-offset_right = 13.8672
-offset_bottom = 5.04167
+offset_left = 0.867504
+offset_top = 62.0417
+offset_right = 1.86751
+offset_bottom = 62.0417
 theme_override_fonts/normal_font = ExtResource("9_ec265")
 theme_override_font_sizes/normal_font_size = 16
 text = "Music
 Volume"
-metadata/_edit_use_anchors_ = true
+
+[node name="Heading" type="Label" parent="SettingsAssets2/Background"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 288.0
+offset_bottom = 78.0
+text = "Settings Menu"
+label_settings = SubResource("LabelSettings_6jt7n")
+
+[node name="Underline" type="Label" parent="SettingsAssets2/Background/Heading"]
+layout_mode = 0
+offset_left = -0.000305176
+offset_top = 12.0
+offset_right = 280.0
+offset_bottom = 44.0
+text = "_________"
+label_settings = SubResource("LabelSettings_6jt7n")

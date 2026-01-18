@@ -15,10 +15,10 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 @onready var base_damage_ratio : float = enemy_data["base_damage_ratio"]
 @onready var xp : float = enemy_data["xp"]
 @onready var money_drop : float = enemy_data["money_drop"]
+@onready var resistance : String = enemy_data["resistance"]
 
 # enemy based variables
 @export var enemy_sprite : Node2D
-@export var resistance : Projectile.Type = Projectile.Type.NONE
 @onready var enemy_node = self
 var sprite_reversed = false
 # whoever has inflicted a status effect on this enemy
@@ -82,11 +82,12 @@ func move_on_path(delta) -> void:
 		else:
 			enemy_sprite.flip_h = false
 
-func apply_damage(damage : float, damage_type : Projectile.Type):
+func apply_damage(damage : float, damage_type):
 	var damage_percent = 1
-	if damage_type == resistance:
+	# replace 1000 with resistance
+	if damage_type == 1000:
 		# ADD SOME CALCULATIONS HERE WITH damage_percent
-		pass
+		damage_percent = enemy_data["resistance_percent"]
 	cur_health -= damage * damage_percent
 	if cur_health <= 0.0:
 		PlayerStats.PlayerXp += xp
