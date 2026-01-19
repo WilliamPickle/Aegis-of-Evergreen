@@ -44,7 +44,7 @@ func _ready() -> void:
 	var attack_length : Vector2 = direction * (tower.range + _despawn_distance)
 		
 	var tween = create_tween()
-	tween.tween_property(self, "global_position", attack_length + tower_range.global_position, travel_time)
+	tween.tween_property(self, "global_position", attack_length + global_position, travel_time)
 	area_entered.connect(on_hit)
 	tween.play()
 	tween.finished.connect(on_met_target)

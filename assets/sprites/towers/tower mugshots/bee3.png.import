@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc2qxc38v1kqd"
-path="res://.godot/imported/bee_2.png-d903744338f251154bede26902bbef9c.ctex"
+uid="uid://br6hmg6kt4jwu"
+path="res://.godot/imported/bee3.png-e5720a0e91413d7c2648860849b4346e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/tower mugshots/bee_2.png"
-dest_files=["res://.godot/imported/bee_2.png-d903744338f251154bede26902bbef9c.ctex"]
+source_file="res://assets/sprites/towers/tower mugshots/bee3.png"
+dest_files=["res://.godot/imported/bee3.png-e5720a0e91413d7c2648860849b4346e.ctex"]
 
 [params]
 

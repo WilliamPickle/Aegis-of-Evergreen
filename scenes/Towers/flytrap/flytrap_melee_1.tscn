@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://h22lnm4se334"]
+[gd_scene load_steps=13 format=3 uid="uid://h22lnm4se334"]
 
 [ext_resource type="Texture2D" uid="uid://3nd6cbpxhth0" path="res://assets/sprites/towers/venus_fly_trap_spritesheet.png" id="1_a5hyp"]
 [ext_resource type="Script" uid="uid://cfxjidu7c4ru8" path="res://scripts/Towers/attacks/melee_class.gd" id="2_c0nh8"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="3_c0nh8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_snimt"]
 atlas = ExtResource("1_a5hyp")
@@ -60,6 +61,13 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Resource" id="Resource_ndte7"]
+script = ExtResource("3_c0nh8")
+class_type = "melee"
+object = "flytrap_melee_1"
+update_data = false
+metadata/_custom_type_script = "uid://baqkdqf80xars"
+
 [node name="flytrap_melee_1" type="AnimatedSprite2D"]
 z_index = 1501
 scale = Vector2(0.75, 0.75)
@@ -69,4 +77,5 @@ frame = 6
 frame_progress = 1.0
 offset = Vector2(24, 0)
 script = ExtResource("2_c0nh8")
+data_resource = SubResource("Resource_ndte7")
 metadata/_custom_type_script = "uid://cfxjidu7c4ru8"

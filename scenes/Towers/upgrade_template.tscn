@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://d10o7y6xd75el"]
 
 [ext_resource type="Script" uid="uid://bite8683ykull" path="res://scripts/Towers/upgrade_class.gd" id="1_fneq2"]
-[ext_resource type="Texture2D" uid="uid://b5mdymdvkosdl" path="res://assets/sprites/towers/tower mugshots/chipmunk_3.png" id="2_4wftb"]
+[ext_resource type="Texture2D" uid="uid://b5mdymdvkosdl" path="res://assets/sprites/towers/tower mugshots/chipmunk3.png" id="2_4wftb"]
 [ext_resource type="Texture2D" uid="uid://ch4m2xbktl6ub" path="res://assets/sprites/icons and buttons/upgrade_ui.png" id="3_pg767"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="4_2mat1"]
 [ext_resource type="Texture2D" uid="uid://drmdhbm754j0q" path="res://assets/sprites/icons and buttons/stat icons/stat_icon_atk.png" id="5_jknih"]

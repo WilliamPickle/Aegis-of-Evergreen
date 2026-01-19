@@ -7,7 +7,10 @@ const COLOR = Color(0.75,0,0,0.3)
 @onready var attack_range : Area2D = $AttackRange
 @onready var attack_shapes : Array[CollisionPolygon2D] = [
 	$AttackRange/AttackShape0,
+	$AttackRange/AttackShape1,
+	$AttackRange/AttackShape2,
 	]
+@onready var shape_polygon = attack_shapes[0].polygon
 
 
 func _ready():
@@ -19,12 +22,10 @@ func _draw() -> void:
 	super._draw()
 	if can_draw:
 		draw_set_transform_matrix(attack_range.transform)
-		draw_polygon(attack_shapes[level].polygon,[COLOR])
+		draw_polygon(shape_polygon,[COLOR])
 
 func attack() -> void:
 	if not is_instance_valid(targeted_enemy):
-		print("----------")
-		print("NOT VALID!!!!!!!!!")
 		update_enemy_list()
 		return
 	sprite.play("attacking_"+str(level))
@@ -32,7 +33,15 @@ func attack() -> void:
 	tower_attack.global_position = global_position
 	#map_area.call_deferred("add_child", tower_attack)
 	map_area.add_child(tower_attack)
+	print("-------------------------------")
+	print("overlapping areas", attack_range.get_overlapping_areas())
 	tower_attack.start(attack_range.global_rotation, targeted_enemy, attack_range.get_overlapping_areas())
+
+func upgrade_tower() -> void:
+	super.upgrade_tower()
+	attack_shapes[level-1].disabled = true
+	attack_shapes[level].disabled = false
+	shape_polygon = attack_shapes[level].polygon
 
 func _physics_process(delta: float) -> void:
 	if targeted_enemy != null:

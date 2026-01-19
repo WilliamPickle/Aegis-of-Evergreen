@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da8g11uv2hr6c"
-path="res://.godot/imported/chipmunk_2.png-ffceb4f991ec5807f2196011ee4466be.ctex"
+uid="uid://dc2qxc38v1kqd"
+path="res://.godot/imported/bee2.png-b00b0d86cf1402b444a6fe4d87475af4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/tower mugshots/chipmunk_2.png"
-dest_files=["res://.godot/imported/chipmunk_2.png-ffceb4f991ec5807f2196011ee4466be.ctex"]
+source_file="res://assets/sprites/towers/tower mugshots/bee2.png"
+dest_files=["res://.godot/imported/bee2.png-b00b0d86cf1402b444a6fe4d87475af4.ctex"]
 
 [params]
 

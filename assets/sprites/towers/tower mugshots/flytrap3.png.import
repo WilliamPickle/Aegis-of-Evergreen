@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5mdymdvkosdl"
-path="res://.godot/imported/chipmunk_3.png-7c6bd181ccdd860efa209e4b18d5266a.ctex"
+uid="uid://lpdg8od5re4l"
+path="res://.godot/imported/flytrap3.png-dc77510b761c8c28d8ec7693a4d61cf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/tower mugshots/chipmunk_3.png"
-dest_files=["res://.godot/imported/chipmunk_3.png-7c6bd181ccdd860efa209e4b18d5266a.ctex"]
+source_file="res://assets/sprites/towers/tower mugshots/flytrap3.png"
+dest_files=["res://.godot/imported/flytrap3.png-dc77510b761c8c28d8ec7693a4d61cf1.ctex"]
 
 [params]
 

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://brtfoxm0gr3yv"]
+
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="1_ia1lp"]
+[ext_resource type="Texture2D" uid="uid://bukuipih0v8s1" path="res://assets/sprites/towers/tower cards/bee_card.png" id="2_sasra"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia1lp"]
+texture = ExtResource("2_sasra")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_coq8p"]
+texture = ExtResource("2_sasra")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = -38.0
+offset_top = -53.0
+offset_right = 37.0
+offset_bottom = 47.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxTexture_ia1lp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_coq8p")
+text = "$451"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

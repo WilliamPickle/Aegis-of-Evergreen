@@ -2,8 +2,13 @@ extends UserInterface
 
 # placement mask is the collision area where towers can't be placed on
 @export var placement_mask : Area2D
-@export_enum("ranger","chipmunk","bee","flytrap") var card_type : Array[String] = []
+@export var card_type : Array[String] = []
 @export var scroll_container: HBoxContainer
+
+# Text vars
+@onready var game_data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))
+const normal_color = Color(0,0,0,0)
+const hover_color = Color(1,1,1,1)
 
 # add any tower card here
 const cards : Dictionary = { 
@@ -14,9 +19,18 @@ const cards : Dictionary = {
 }
 func _ready() -> void:
 	super._ready()
+	var class_type = "tower"
+	var font = "res://assets/fonts/quaver.ttf"
+	var defualt_color = Color(1,1,1,0)
+	#new_card.text = 
+	
 	for tower in card_type:
 		# this is just to style the card pretty much
 		# and to add it to the bar
+		if tower == "ranger":
+			class_type = "hero"
+		else:
+			class_type = "tower"
 		var card_image = StyleBoxTexture.new()
 		card_image.texture = cards[tower]
 		var dark_card_image = StyleBoxTexture.new()
@@ -33,6 +47,14 @@ func _ready() -> void:
 		
 		new_card.focus_mode = Control.FOCUS_NONE
 		new_card.add_theme_stylebox_override("normal", card_image)
-		new_card.add_theme_stylebox_override("hover", card_image)
+		new_card.add_theme_stylebox_override("hover", dark_card_image)
 		new_card.add_theme_stylebox_override("pressed", dark_card_image)
 		new_card.add_theme_stylebox_override("hover_pressed", dark_card_image)
+		
+		
+		new_card.text = "$"+str(int(game_data[class_type][tower]["cost"][0]))
+		new_card.add_theme_font_override("Font", load(font))
+		new_card.add_theme_font_size_override("font_size", 24)
+		new_card.add_theme_color_override("font_color", normal_color)
+		new_card.add_theme_color_override("font_hover_color", hover_color)
+		new_card.add_theme_color_override("font_hover_pressed_color", hover_color)

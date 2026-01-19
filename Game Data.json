@@ -66,8 +66,8 @@
 	  "card_fpath": "res://assets/sprites/towers/chipmunk_card.png",
 	  "attack_fpath": [
 		"res://scenes/Towers/flytrap/flytrap_melee_1.tscn",
-		"res://scenes/Towers/flytrap/flytrap_melee_2.tscn",
-		"res://scenes/Towers/flytrap/flytrap_melee_3.tscn"
+		"res://scenes/Towers/flytrap/flytrap_melee_1.tscn",
+		"res://scenes/Towers/flytrap/flytrap_melee_1.tscn"
 	  ],
 	  "cost": [
 		1,
@@ -76,8 +76,8 @@
 	  ],
 	  "range": [
 		100,
-		120,
-		160
+		150,
+		200
 	  ],
 	  "attack_speed": [
 		1,
@@ -180,7 +180,15 @@
   "melee": {
 	"flytrap_melee_1": {
 	  "type": "blunt",
-	  "splash_cap": 6,
+	  "splash_cap": 8,
+	},
+	"flytrap_melee_2": {
+	  "type": "blunt",
+	  "splash_cap": 10,
+	},
+	"flytrap_melee_3": {
+	  "type": "blunt",
+	  "splash_cap": 16,
 	}
   },
   "enemy": {

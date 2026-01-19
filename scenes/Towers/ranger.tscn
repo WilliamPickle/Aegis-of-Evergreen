@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://du0764agaf7lh"]
 
-[ext_resource type="Script" path="res://scripts/Towers/ranger_tower.gd" id="1_fqrt3"]
+[ext_resource type="Script" uid="uid://cx05wk30uqwee" path="res://scripts/Towers/ranger_tower.gd" id="1_fqrt3"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_3a5ny"]
 [ext_resource type="Texture2D" uid="uid://cwd6iyrpuvuew" path="res://assets/sprites/towers/ranger_spritesheet.png" id="2_skf20"]
 [ext_resource type="PackedScene" uid="uid://d10o7y6xd75el" path="res://scenes/Towers/upgrade_template.tscn" id="3_3a5ny"]

@@ -56,12 +56,11 @@ func _ready() -> void:
 		var button : Button = stats[stat]
 		button.visible = true
 		button.get_node(text_path).text = str(tower_data[stat][0])
-	tower_image.texture = load(f_path + str(tower_name)+"_1.png")
+	tower_image.texture = load(f_path + str(tower_name)+"1.png")
 	
 	right_arrow.pressed.connect(_update_type.bind(1))
 	left_arrow.pressed.connect(_update_type.bind(-1))
-	print("--------")
-	print("Cost:",tower.cost)
+
 	costText.text = str(tower.cost)
 	sellText.text = str(tower.sell_value)
 	cur_description.visible = true
@@ -77,9 +76,8 @@ func _update_type(value : int):
 	tower.target_type = cur_type
 
 func upgrade_tower():
-	print("Cost at upgrade:",tower.cost)
 	if tower.level < 2 and PlayerStats.purchase_item(tower.cost):
-		tower_image.texture = load(f_path + tower_name + "_" +str(tower.level+2) + ".png")
+		tower_image.texture = load(f_path + tower_name + str(tower.level+2) + ".png")
 		tower.upgrade_tower()
 		sellText.text = str(tower.sell_value)
 		cur_description.visible = false
