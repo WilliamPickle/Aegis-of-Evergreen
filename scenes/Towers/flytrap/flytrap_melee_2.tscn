@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=3 uid="uid://bowrv5psv74qh"]
+
+[ext_resource type="Texture2D" uid="uid://3nd6cbpxhth0" path="res://assets/sprites/towers/venus_fly_trap_spritesheet.png" id="1_2s73v"]
+[ext_resource type="Script" uid="uid://cfxjidu7c4ru8" path="res://scripts/Towers/attacks/melee_class.gd" id="1_x853i"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="3_d5b3r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vewor"]
+atlas = ExtResource("1_2s73v")
+region = Rect2(0, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsemt"]
+atlas = ExtResource("1_2s73v")
+region = Rect2(75, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch32i"]
+atlas = ExtResource("1_2s73v")
+region = Rect2(150, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agwov"]
+atlas = ExtResource("1_2s73v")
+region = Rect2(225, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b768"]
+atlas = ExtResource("1_2s73v")
+region = Rect2(300, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuufc"]
+atlas = ExtResource("1_2s73v")
+region = Rect2(375, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r5d1"]
+atlas = ExtResource("1_2s73v")
+region = Rect2(450, 450, 75, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2ima"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vewor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsemt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ch32i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agwov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b768")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuufc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r5d1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Resource" id="Resource_h7ahr"]
+script = ExtResource("3_d5b3r")
+class_type = "melee"
+object = "flytrap_melee_2"
+update_data = false
+metadata/_custom_type_script = "uid://baqkdqf80xars"
+
+[node name="FlytrapMelee2" type="AnimatedSprite2D"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_j2ima")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+offset = Vector2(14, -1)
+script = ExtResource("1_x853i")
+data_resource = SubResource("Resource_h7ahr")
+metadata/_custom_type_script = "uid://cfxjidu7c4ru8"
