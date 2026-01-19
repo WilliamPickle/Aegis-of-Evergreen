@@ -32,7 +32,7 @@ func _draw() -> void:
 	draw_circle(Vector2.ZERO, splash_radius, Color.from_rgba8(93, 70, 194, 100))
 
 func on_hit(enemy : Enemy) -> void:
-	enemy.apply_damage(tower.cur_damage * pierce_damage, Type.BLUNT)
+	enemy.apply_damage(tower.cur_damage * pierce_damage, type)
 	
 	pierce_cap -= 1
 	if pierce_cap <= 0:
@@ -64,5 +64,5 @@ func on_met_target() -> void:
 		else:
 			cur_zone = 2
 		print("targeted:",distance,", Zone:", cur_zone, ", DMG:",tower.cur_damage * zone_damages[cur_zone])
-		cur_enemy.apply_damage(tower.cur_damage * zone_damages[cur_zone], Type.BLUNT)
+		cur_enemy.apply_damage(tower.cur_damage * zone_damages[cur_zone], type)
 	queue_free()

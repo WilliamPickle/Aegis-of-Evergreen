@@ -215,7 +215,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_17fb8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_a46nx")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/UI/tutorial_menu.tscn"
-scene_scale = 2.0
 hide_pause_menu = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 

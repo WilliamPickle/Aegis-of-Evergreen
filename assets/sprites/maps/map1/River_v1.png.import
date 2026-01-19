@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyiv0l4joo038"
-path="res://.godot/imported/Fish_v1.png-8b479109330c3248eb9189b393bd21ce.ctex"
+uid="uid://c6ocod0j3bqd1"
+path="res://.godot/imported/River_v1.png-11a034402b1e2279b1038eace699ef71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/maps/Fish_v1.png"
-dest_files=["res://.godot/imported/Fish_v1.png-8b479109330c3248eb9189b393bd21ce.ctex"]
+source_file="res://assets/sprites/maps/map1/River_v1.png"
+dest_files=["res://.godot/imported/River_v1.png-11a034402b1e2279b1038eace699ef71.ctex"]
 
 [params]
 

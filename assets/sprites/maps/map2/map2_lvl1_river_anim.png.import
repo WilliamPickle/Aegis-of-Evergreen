@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkykbhe073mk7"
-path="res://.godot/imported/lvl1_map_background_v3.png-19540964947d70bf0a0d0db07f6f4426.ctex"
+uid="uid://d1ypiscjypjgt"
+path="res://.godot/imported/map2_lvl1_river_anim.png-2bbb7f1acbb14663a82e8067c02a0ed9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/maps/lvl1_map_background_v3.png"
-dest_files=["res://.godot/imported/lvl1_map_background_v3.png-19540964947d70bf0a0d0db07f6f4426.ctex"]
+source_file="res://assets/sprites/maps/map2/map2_lvl1_river_anim.png"
+dest_files=["res://.godot/imported/map2_lvl1_river_anim.png-2bbb7f1acbb14663a82e8067c02a0ed9.ctex"]
 
 [params]
 

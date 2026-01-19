@@ -1,13 +1,13 @@
 [gd_scene load_steps=57 format=3 uid="uid://l3i6h5io4w4n"]
 
-[ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/Fish_v1.png" id="1_2os1m"]
-[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="2_go7sj"]
+[ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="1_2os1m"]
+[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="2_go7sj"]
 [ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="3_5xbjy"]
-[ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/River_v1.png" id="3_7gny6"]
-[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/bridge_v1.png" id="4_2aecg"]
-[ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/trees_v1.png" id="5_6dial"]
-[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/ufo_v1.png" id="6_7nomh"]
-[ext_resource type="Texture2D" uid="uid://bvxmxb1e80sfy" path="res://assets/sprites/maps/trees_v1_overlayer.png" id="6_mbb35"]
+[ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="3_7gny6"]
+[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="4_2aecg"]
+[ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="5_6dial"]
+[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="6_7nomh"]
+[ext_resource type="Texture2D" uid="uid://bvxmxb1e80sfy" path="res://assets/sprites/maps/map1/trees_v1_overlayer.png" id="6_mbb35"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="7_15mv3"]
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="7_go7sj"]
 [ext_resource type="Script" uid="uid://bbkeiwswqvn45" path="res://scripts/Enemies/map1_lvl1_wave_spawner.gd" id="9_mbb35"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="15_6dial"]
 [ext_resource type="PackedScene" uid="uid://cnl4pdo4fp6i7" path="res://scenes/UI/fast_forward_ui.tscn" id="15_s7g0b"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
-[ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_1s4pk"]
+[ext_resource type="Script" uid="uid://b1db11ngtg7n0" path="res://scripts/UI/lvl1_dialogue.gd" id="17_mbb35"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
 [ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_isj1j"]
@@ -356,7 +356,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("17_1s4pk")
+script = ExtResource("17_mbb35")
 continue_button = NodePath("ContButton")
 skip_button = NodePath("SkipButton")
 label_container = NodePath("DialogueLabels")
@@ -420,6 +420,7 @@ offset_top = 509.0
 offset_right = 1109.0
 offset_bottom = 702.0
 scale = Vector2(0.9, 0.9)
+mouse_filter = 2
 texture = ExtResource("20_isj1j")
 
 [node name="DialogueLabels" type="Control" parent="DialogueUI/DialogueBox"]
@@ -430,14 +431,59 @@ offset_right = 940.0
 offset_bottom = 683.0
 mouse_filter = 2
 
+[node name="Label1" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Welcome, volunteer! The forest is currently in need of your assistance.
+<< Click on the dialogue box to continue >>"
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Invaders have landed in the forest and threaten to disrupt the balance of the ecosystem. We're counting on you to defend the forest and send these invaders back to their planet."
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "To start, I'll give you the run-down on the rules of the forest and how to lead our allies."
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
+
 [node name="Label4" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
 layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
-offset_right = 681.0
+offset_right = 678.0
 offset_bottom = 76.0
-text = "I'm never going to give the forest up. "
+text = "If you want to see the explanation again, refer to the question mark button in the pause menu. "
+label_settings = ExtResource("19_isj1j")
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "With that, I wish you good luck on defending the forest. May our allies not let you down. "
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
 

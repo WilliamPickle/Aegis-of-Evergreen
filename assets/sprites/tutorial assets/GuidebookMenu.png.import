@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beftjsu4wnyuq"
-path="res://.godot/imported/Map 1 Level 2.png-d746d7bf7ca5708ed3ca2d9ce8bb23d8.ctex"
+uid="uid://bequv6qcmlnf7"
+path="res://.godot/imported/GuidebookMenu.png-068e557f6e0bd7b8fd6b24a2c203ec6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/maps/Map 1 Level 2.png"
-dest_files=["res://.godot/imported/Map 1 Level 2.png-d746d7bf7ca5708ed3ca2d9ce8bb23d8.ctex"]
+source_file="res://assets/sprites/tutorial assets/GuidebookMenu.png"
+dest_files=["res://.godot/imported/GuidebookMenu.png-068e557f6e0bd7b8fd6b24a2c203ec6c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvxmxb1e80sfy"
-path="res://.godot/imported/trees_v1_overlayer.png-a756e5f85519e61b21fe646f3cfa85ab.ctex"
+uid="uid://beftjsu4wnyuq"
+path="res://.godot/imported/Map 1 Level 2.png-4e92c5bd22ae24e6d579a9d1ab745398.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/maps/trees_v1_overlayer.png"
-dest_files=["res://.godot/imported/trees_v1_overlayer.png-a756e5f85519e61b21fe646f3cfa85ab.ctex"]
+source_file="res://assets/sprites/maps/map1/Map 1 Level 2.png"
+dest_files=["res://.godot/imported/Map 1 Level 2.png-4e92c5bd22ae24e6d579a9d1ab745398.ctex"]
 
 [params]
 

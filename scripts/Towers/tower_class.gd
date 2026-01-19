@@ -62,7 +62,6 @@ func _ready() -> void:
 	current_tower = self
 	set_collision_layer_value(3, true)
 	set_collision_layer_value(1, false)
-	print("from tower: ", object_data)
 
 
 func _draw() -> void:

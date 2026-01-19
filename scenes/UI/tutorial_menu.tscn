@@ -1,14 +1,22 @@
-[gd_scene load_steps=43 format=3 uid="uid://r7lht8xqpb3h"]
+[gd_scene load_steps=71 format=3 uid="uid://r7lht8xqpb3h"]
 
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_6st13"]
 [ext_resource type="Texture2D" uid="uid://eltsh1f38h5c" path="res://assets/sprites/tutorial assets/tutoria_sheetl_background.png" id="2_ashke"]
+[ext_resource type="Script" uid="uid://d0x8n041hvndf" path="res://scripts/UI/tutorial.gd" id="2_bk0pq"]
+[ext_resource type="Texture2D" uid="uid://chf6w8x3cuijp" path="res://assets/sprites/icons and buttons/exit_button_highlight.png" id="2_fnax7"]
+[ext_resource type="Texture2D" uid="uid://1u75f14jex4" path="res://assets/sprites/icons and buttons/exit_button.png" id="3_6fu5d"]
 [ext_resource type="Texture2D" uid="uid://cqowlf0ol5rd6" path="res://assets/sprites/tutorial assets/tutorial_panel_background.png" id="3_ca0nt"]
 [ext_resource type="Texture2D" uid="uid://dqj0cbl571gui" path="res://assets/sprites/tutorial assets/tutorial_panel.png" id="4_fmt5d"]
 [ext_resource type="LabelSettings" uid="uid://dvseaxqvix3pe" path="res://assets/sprites/tutorial assets/tutorial_panel_numbering.tres" id="5_2m4nm"]
-[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/lvl1_map_background_v3.png" id="6_0y8o3"]
-[ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/trees_v1.png" id="7_0oiak"]
-[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/ufo_v1.png" id="8_7ooau"]
+[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="6_0y8o3"]
+[ext_resource type="Script" uid="uid://dy1q6ghg23d6h" path="res://scripts/UI/tutorial_back_button.gd" id="6_bk0pq"]
+[ext_resource type="Texture2D" uid="uid://ch4ekqwlp4ldb" path="res://assets/sprites/tutorial assets/tutorial_arrow_button_highlight.png" id="6_tv72q"]
+[ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="7_0oiak"]
+[ext_resource type="Texture2D" uid="uid://dhyhh65akno7n" path="res://assets/sprites/tutorial assets/tutorial_arrow_button.png" id="7_bk0pq"]
+[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="8_7ooau"]
+[ext_resource type="Texture2D" uid="uid://dah26fppqi1to" path="res://assets/sprites/tutorial assets/mirrored_tutorial_arrow_button_highlight.png" id="8_yeulh"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="9_0yee7"]
+[ext_resource type="Texture2D" uid="uid://5q8o6q6gud73" path="res://assets/sprites/tutorial assets/mirrored_tutorial_arrow_button.png" id="9_pg0hq"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="10_0ucpk"]
 [ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="11_vkunw"]
 [ext_resource type="Texture2D" uid="uid://cspxuiahyng26" path="res://assets/sprites/icons and buttons/player_level_bar.png" id="12_g2haa"]
@@ -18,7 +26,7 @@
 [ext_resource type="LabelSettings" uid="uid://crnutrn7yoa1q" path="res://assets/sprites/tutorial assets/tutorial_heading.tres" id="16_2u07q"]
 [ext_resource type="LabelSettings" uid="uid://cx8l2nfxsbrq3" path="res://assets/sprites/tutorial assets/tutorial_base_font.tres" id="17_llqua"]
 [ext_resource type="Texture2D" uid="uid://dstb2uxfc1hj7" path="res://assets/sprites/tutorial assets/tutorial_panel_outer.png" id="18_ehijt"]
-[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/bridge_v1.png" id="20_2u07q"]
+[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="20_2u07q"]
 [ext_resource type="Texture2D" uid="uid://laipimstlyht" path="res://assets/sprites/icons and buttons/scroll_bar_vine_bg.png" id="21_llqua"]
 [ext_resource type="Texture2D" uid="uid://bm602q1hmdwh8" path="res://assets/sprites/icons and buttons/scroll_bar_vine_border.png" id="22_8bxcy"]
 [ext_resource type="StyleBox" uid="uid://c8eassgqrql2c" path="res://assets/sprites/icons and buttons/scrollbar_tab_darkened.tres" id="23_x4788"]
@@ -33,6 +41,56 @@
 [ext_resource type="Texture2D" uid="uid://ck2uum8wlfjo4" path="res://assets/sprites/tutorial assets/gameplay icons.png" id="31_2u07q"]
 [ext_resource type="Texture2D" uid="uid://k2qd0tbm5jxk" path="res://assets/sprites/tutorial assets/upgrade menu.png" id="31_llqua"]
 [ext_resource type="Texture2D" uid="uid://dxeiwpqahk5s5" path="res://assets/sprites/tutorial assets/pause menu.png" id="32_llqua"]
+[ext_resource type="Texture2D" uid="uid://bih1pd3ot1fbx" path="res://assets/sprites/tutorial assets/ControlsMenu.png" id="34_1vybd"]
+[ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="35_jutfw"]
+[ext_resource type="Texture2D" uid="uid://btrxaof45derr" path="res://assets/sprites/tutorial assets/almanac viewing.png" id="36_ggov0"]
+[ext_resource type="Texture2D" uid="uid://q067sl8ylw1e" path="res://assets/sprites/icons and buttons/guidebook_button.png" id="37_fnax7"]
+[ext_resource type="Texture2D" uid="uid://0nrd1ts5srsd" path="res://assets/sprites/tutorial assets/SettingsMenu.png" id="38_6fu5d"]
+[ext_resource type="Texture2D" uid="uid://ywnxvtgi724h" path="res://assets/sprites/icons and buttons/settings_button_cropped.png" id="39_r7jt0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tv72q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bk0pq"]
+texture = ExtResource("2_fnax7")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yeulh"]
+texture = ExtResource("2_fnax7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pg0hq"]
+texture = ExtResource("2_fnax7")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y3xy0"]
+texture = ExtResource("3_6fu5d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gb3ew"]
+texture = ExtResource("6_tv72q")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lh24a"]
+texture = ExtResource("6_tv72q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lxqpm"]
+texture = ExtResource("6_tv72q")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ep6te"]
+texture = ExtResource("7_bk0pq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3yhgm"]
+texture = ExtResource("8_yeulh")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6bjpy"]
+texture = ExtResource("8_yeulh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_it83f"]
+texture = ExtResource("8_yeulh")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d1cnp"]
+texture = ExtResource("9_pg0hq")
 
 [sub_resource type="LabelSettings" id="LabelSettings_5sebw"]
 font = ExtResource("10_0ucpk")
@@ -71,9 +129,15 @@ texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_mclyq"]
+font = ExtResource("10_0ucpk")
+font_size = 32
+font_color = Color(0.890196, 0.901961, 1, 1)
+
 [node name="TutorialMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 2
 script = ExtResource("1_6st13")
-tint_during_pause = true
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 
 [node name="Screen" type="Control" parent="."]
@@ -83,6 +147,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_bk0pq")
 
 [node name="Background" type="TextureRect" parent="Screen"]
 layout_mode = 0
@@ -91,13 +156,86 @@ offset_bottom = 40.0
 scale = Vector2(4, 4)
 texture = ExtResource("2_ashke")
 
-[node name="Page1" type="Control" parent="Screen"]
+[node name="BackButton" type="Button" parent="Screen/Background"]
+z_index = 10
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.464063
+anchor_top = -0.436111
+anchor_right = -0.464063
+anchor_bottom = -0.436111
+offset_left = 445.0
+offset_top = 79.5
+offset_right = 537.0
+offset_bottom = 171.5
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tv72q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_bk0pq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yeulh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pg0hq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_y3xy0")
+script = ExtResource("6_bk0pq")
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RArrowButton" type="Button" parent="Screen/Background"]
+z_index = 10
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.464063
+anchor_top = -0.436111
+anchor_right = -0.464063
+anchor_bottom = -0.436111
+offset_left = 445.0
+offset_top = 234.25
+offset_right = 537.0
+offset_bottom = 326.25
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tv72q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_gb3ew")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lh24a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lxqpm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ep6te")
+
+[node name="LArrowButton" type="Button" parent="Screen/Background"]
 visible = false
+z_index = 10
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.464063
+anchor_top = -0.436111
+anchor_right = -0.464063
+anchor_bottom = -0.436111
+offset_left = 148.5
+offset_top = 234.25
+offset_right = 240.5
+offset_bottom = 326.25
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tv72q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_3yhgm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6bjpy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_it83f")
+theme_override_styles/normal = SubResource("StyleBoxTexture_d1cnp")
+
+[node name="Pages" type="Control" parent="Screen"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel1" type="Control" parent="Screen/Page1"]
+[node name="Page1" type="Control" parent="Screen/Pages"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel1" type="Control" parent="Screen/Pages/Page1"]
 anchors_preset = 0
 offset_left = 388.0
 offset_top = 27.0
@@ -105,7 +243,7 @@ offset_right = 472.0
 offset_bottom = 87.0
 scale = Vector2(2, 2)
 
-[node name="PanelBackground" type="TextureRect" parent="Screen/Page1/Panel1"]
+[node name="PanelBackground" type="TextureRect" parent="Screen/Pages/Page1/Panel1"]
 layout_mode = 0
 offset_left = 71.0
 offset_top = 68.0
@@ -113,7 +251,7 @@ offset_right = 404.0
 offset_bottom = 305.0
 texture = ExtResource("3_ca0nt")
 
-[node name="Panel" type="TextureRect" parent="Screen/Page1/Panel1"]
+[node name="Panel" type="TextureRect" parent="Screen/Pages/Page1/Panel1"]
 layout_mode = 0
 offset_left = 93.0
 offset_top = 93.0
@@ -121,7 +259,7 @@ offset_right = 385.0
 offset_bottom = 285.0
 texture = ExtResource("4_fmt5d")
 
-[node name="Numbering" type="Label" parent="Screen/Page1/Panel1"]
+[node name="Numbering" type="Label" parent="Screen/Pages/Page1/Panel1"]
 layout_mode = 0
 offset_left = 112.0
 offset_top = 110.0
@@ -130,28 +268,35 @@ offset_bottom = 142.0
 text = "1."
 label_settings = ExtResource("5_2m4nm")
 
-[node name="MapAssets" type="Node2D" parent="Screen/Page1/Panel1"]
+[node name="MapAssets" type="Node2D" parent="Screen/Pages/Page1/Panel1"]
 position = Vector2(607, 317)
 
-[node name="map" type="Sprite2D" parent="Screen/Page1/Panel1/MapAssets"]
+[node name="map" type="Sprite2D" parent="Screen/Pages/Page1/Panel1/MapAssets"]
 position = Vector2(-368, -128)
 texture = ExtResource("6_0y8o3")
 region_enabled = true
 region_rect = Rect2(0, 0, 280, 180)
 
-[node name="tree" type="Sprite2D" parent="Screen/Page1/Panel1/MapAssets"]
+[node name="tree" type="Sprite2D" parent="Screen/Pages/Page1/Panel1/MapAssets"]
 position = Vector2(-368, -128)
 texture = ExtResource("7_0oiak")
 region_enabled = true
 region_rect = Rect2(0, 0, 280, 180)
 
-[node name="ufo" type="Sprite2D" parent="Screen/Page1/Panel1/MapAssets"]
+[node name="ufo" type="Sprite2D" parent="Screen/Pages/Page1/Panel1/MapAssets"]
 position = Vector2(-368, -128)
 texture = ExtResource("8_7ooau")
 region_enabled = true
 region_rect = Rect2(0, 0, 280, 180)
 
-[node name="Icons" type="Control" parent="Screen/Page1/Panel1"]
+[node name="bridge" type="Sprite2D" parent="Screen/Pages/Page1/Panel1/MapAssets"]
+z_index = 2
+position = Vector2(-368, -128)
+texture = ExtResource("20_2u07q")
+region_enabled = true
+region_rect = Rect2(0, 0, 280, 180)
+
+[node name="Icons" type="Control" parent="Screen/Pages/Page1/Panel1"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 99.0
@@ -160,7 +305,7 @@ offset_right = 139.0
 offset_bottom = 139.0
 scale = Vector2(0.5, 0.5)
 
-[node name="LifeIndicator" type="TextureRect" parent="Screen/Page1/Panel1/Icons"]
+[node name="LifeIndicator" type="TextureRect" parent="Screen/Pages/Page1/Panel1/Icons"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 34.0
@@ -168,7 +313,7 @@ offset_right = 41.0
 offset_bottom = 59.0
 texture = ExtResource("9_0yee7")
 
-[node name="LifeLabel" type="Label" parent="Screen/Page1/Panel1/Icons/LifeIndicator"]
+[node name="LifeLabel" type="Label" parent="Screen/Pages/Page1/Panel1/Icons/LifeIndicator"]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 6.0
@@ -178,7 +323,7 @@ scale = Vector2(0.72, 0.72)
 text = "150"
 label_settings = SubResource("LabelSettings_5sebw")
 
-[node name="PlayerLvlIndicator" type="TextureRect" parent="Screen/Page1/Panel1/Icons"]
+[node name="PlayerLvlIndicator" type="TextureRect" parent="Screen/Pages/Page1/Panel1/Icons"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 7.0
@@ -187,7 +332,7 @@ offset_bottom = 27.0
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("11_vkunw")
 
-[node name="XpBar" type="TextureRect" parent="Screen/Page1/Panel1/Icons/PlayerLvlIndicator"]
+[node name="XpBar" type="TextureRect" parent="Screen/Pages/Page1/Panel1/Icons/PlayerLvlIndicator"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 8.0
@@ -195,13 +340,13 @@ offset_right = 131.0
 offset_bottom = 14.0
 texture = ExtResource("12_g2haa")
 
-[node name="LvlPlate" type="TextureRect" parent="Screen/Page1/Panel1/Icons/PlayerLvlIndicator"]
+[node name="LvlPlate" type="TextureRect" parent="Screen/Pages/Page1/Panel1/Icons/PlayerLvlIndicator"]
 layout_mode = 0
 offset_right = 136.0
 offset_bottom = 20.0
 texture = ExtResource("13_ehijt")
 
-[node name="LvlLabel" type="Label" parent="Screen/Page1/Panel1/Icons/PlayerLvlIndicator"]
+[node name="LvlLabel" type="Label" parent="Screen/Pages/Page1/Panel1/Icons/PlayerLvlIndicator"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 5.0
@@ -213,7 +358,7 @@ label_settings = SubResource("LabelSettings_5sebw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MoneyIndicator" type="TextureRect" parent="Screen/Page1/Panel1/Icons"]
+[node name="MoneyIndicator" type="TextureRect" parent="Screen/Pages/Page1/Panel1/Icons"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 57.0
@@ -221,7 +366,7 @@ offset_right = 41.0
 offset_bottom = 82.0
 texture = ExtResource("14_orxft")
 
-[node name="MoneyLabel" type="Label" parent="Screen/Page1/Panel1/Icons/MoneyIndicator"]
+[node name="MoneyLabel" type="Label" parent="Screen/Pages/Page1/Panel1/Icons/MoneyIndicator"]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 6.0
@@ -231,7 +376,7 @@ scale = Vector2(0.72, 0.72)
 text = "$150.0"
 label_settings = SubResource("LabelSettings_5sebw")
 
-[node name="WaveLabel" type="Label" parent="Screen/Page1/Panel1/Icons"]
+[node name="WaveLabel" type="Label" parent="Screen/Pages/Page1/Panel1/Icons"]
 layout_mode = 0
 offset_left = 186.0
 offset_top = 13.0
@@ -241,14 +386,14 @@ scale = Vector2(1.2, 1.2)
 text = "Wave 0/5"
 label_settings = SubResource("LabelSettings_8bxcy")
 
-[node name="WaveExplanation" type="Control" parent="Screen/Page1"]
+[node name="WaveExplanation" type="Control" parent="Screen/Pages/Page1"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 445.0
 offset_right = 485.0
 offset_bottom = 40.0
 
-[node name="Highlight" type="TextureRect" parent="Screen/Page1/WaveExplanation"]
+[node name="Highlight" type="TextureRect" parent="Screen/Pages/Page1/WaveExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 539.0
@@ -258,7 +403,7 @@ offset_bottom = 106.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight2" type="TextureRect" parent="Screen/Page1/WaveExplanation"]
+[node name="Highlight2" type="TextureRect" parent="Screen/Pages/Page1/WaveExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 638.0
@@ -268,7 +413,7 @@ offset_bottom = 127.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Heading" type="Label" parent="Screen/Page1/WaveExplanation"]
+[node name="Heading" type="Label" parent="Screen/Pages/Page1/WaveExplanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 91.0
@@ -277,7 +422,7 @@ offset_bottom = 123.0
 text = "Wave Indicator:"
 label_settings = ExtResource("16_2u07q")
 
-[node name="Underline" type="TextureRect" parent="Screen/Page1/WaveExplanation"]
+[node name="Underline" type="TextureRect" parent="Screen/Pages/Page1/WaveExplanation"]
 modulate = Color(0.462745, 0.301961, 0.286275, 1)
 layout_mode = 0
 offset_left = 96.0
@@ -287,7 +432,7 @@ offset_bottom = 123.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Wave box" type="TextureRect" parent="Screen/Page1/WaveExplanation"]
+[node name="Wave box" type="TextureRect" parent="Screen/Pages/Page1/WaveExplanation"]
 modulate = Color(0.462745, 0.301961, 0.286275, 1)
 layout_mode = 0
 offset_left = 96.0
@@ -297,7 +442,7 @@ offset_bottom = 153.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="WaveLabel" type="Label" parent="Screen/Page1/WaveExplanation"]
+[node name="WaveLabel" type="Label" parent="Screen/Pages/Page1/WaveExplanation"]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 135.0
@@ -307,7 +452,7 @@ scale = Vector2(1.2, 1.2)
 text = "Wave 0/5"
 label_settings = SubResource("LabelSettings_8bxcy")
 
-[node name="Description2" type="Label" parent="Screen/Page1/WaveExplanation"]
+[node name="Description2" type="Label" parent="Screen/Pages/Page1/WaveExplanation"]
 layout_mode = 0
 offset_left = 381.0
 offset_top = 91.0
@@ -318,12 +463,12 @@ text = ">> Enemies come in sets called waves
 label_settings = ExtResource("17_llqua")
 autowrap_mode = 3
 
-[node name="LevelExplanation" type="Control" parent="Screen/Page1"]
+[node name="LevelExplanation" type="Control" parent="Screen/Pages/Page1"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Highlight" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
+[node name="Highlight" type="TextureRect" parent="Screen/Pages/Page1/LevelExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 220.0
@@ -333,7 +478,7 @@ offset_bottom = 180.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight2" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
+[node name="Highlight2" type="TextureRect" parent="Screen/Pages/Page1/LevelExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 116.0
@@ -343,7 +488,7 @@ offset_bottom = 218.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight3" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
+[node name="Highlight3" type="TextureRect" parent="Screen/Pages/Page1/LevelExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 176.0
@@ -353,7 +498,7 @@ offset_bottom = 235.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Heading" type="Label" parent="Screen/Page1/LevelExplanation"]
+[node name="Heading" type="Label" parent="Screen/Pages/Page1/LevelExplanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 91.0
@@ -362,7 +507,7 @@ offset_bottom = 123.0
 text = "Level Indicator:"
 label_settings = ExtResource("16_2u07q")
 
-[node name="Underline" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
+[node name="Underline" type="TextureRect" parent="Screen/Pages/Page1/LevelExplanation"]
 modulate = Color(0.462745, 0.301961, 0.286275, 1)
 layout_mode = 0
 offset_left = 96.0
@@ -372,7 +517,7 @@ offset_bottom = 123.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="PlayerLvlIndicator" type="TextureRect" parent="Screen/Page1/LevelExplanation"]
+[node name="PlayerLvlIndicator" type="TextureRect" parent="Screen/Pages/Page1/LevelExplanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 128.0
@@ -381,7 +526,7 @@ offset_bottom = 148.0
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("11_vkunw")
 
-[node name="XpBar" type="TextureRect" parent="Screen/Page1/LevelExplanation/PlayerLvlIndicator"]
+[node name="XpBar" type="TextureRect" parent="Screen/Pages/Page1/LevelExplanation/PlayerLvlIndicator"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 8.0
@@ -390,13 +535,13 @@ offset_bottom = 14.0
 texture = ExtResource("12_g2haa")
 expand_mode = 1
 
-[node name="LvlPlate" type="TextureRect" parent="Screen/Page1/LevelExplanation/PlayerLvlIndicator"]
+[node name="LvlPlate" type="TextureRect" parent="Screen/Pages/Page1/LevelExplanation/PlayerLvlIndicator"]
 layout_mode = 0
 offset_right = 136.0
 offset_bottom = 20.0
 texture = ExtResource("13_ehijt")
 
-[node name="LvlLabel" type="Label" parent="Screen/Page1/LevelExplanation/PlayerLvlIndicator"]
+[node name="LvlLabel" type="Label" parent="Screen/Pages/Page1/LevelExplanation/PlayerLvlIndicator"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 5.0
@@ -409,7 +554,7 @@ label_settings = SubResource("LabelSettings_5sebw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Description2" type="Label" parent="Screen/Page1/LevelExplanation"]
+[node name="Description2" type="Label" parent="Screen/Pages/Page1/LevelExplanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 163.0
@@ -422,14 +567,14 @@ text = ">> Represents player level
 label_settings = ExtResource("17_llqua")
 autowrap_mode = 3
 
-[node name="LifeExplanation" type="Control" parent="Screen/Page1"]
+[node name="LifeExplanation" type="Control" parent="Screen/Pages/Page1"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 12.0
 offset_right = 40.0
 offset_bottom = 52.0
 
-[node name="Highlight2" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
+[node name="Highlight2" type="TextureRect" parent="Screen/Pages/Page1/LifeExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 424.0
@@ -439,7 +584,7 @@ offset_bottom = 345.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight3" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
+[node name="Highlight3" type="TextureRect" parent="Screen/Pages/Page1/LifeExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 290.0
@@ -449,7 +594,7 @@ offset_bottom = 382.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight4" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
+[node name="Highlight4" type="TextureRect" parent="Screen/Pages/Page1/LifeExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 225.0
@@ -459,7 +604,7 @@ offset_bottom = 397.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Heading2" type="Label" parent="Screen/Page1/LifeExplanation"]
+[node name="Heading2" type="Label" parent="Screen/Pages/Page1/LifeExplanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 247.0
@@ -468,7 +613,7 @@ offset_bottom = 279.0
 text = "Life Indicator:"
 label_settings = ExtResource("16_2u07q")
 
-[node name="Underline2" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
+[node name="Underline2" type="TextureRect" parent="Screen/Pages/Page1/LifeExplanation"]
 modulate = Color(0.462745, 0.301961, 0.286275, 1)
 layout_mode = 0
 offset_left = 96.0
@@ -478,7 +623,7 @@ offset_bottom = 281.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="LifeIndicator" type="TextureRect" parent="Screen/Page1/LifeExplanation"]
+[node name="LifeIndicator" type="TextureRect" parent="Screen/Pages/Page1/LifeExplanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 291.0
@@ -487,7 +632,7 @@ offset_bottom = 316.0
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("9_0yee7")
 
-[node name="LifeLabel" type="Label" parent="Screen/Page1/LifeExplanation/LifeIndicator"]
+[node name="LifeLabel" type="Label" parent="Screen/Pages/Page1/LifeExplanation/LifeIndicator"]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 6.0
@@ -497,7 +642,7 @@ scale = Vector2(0.72, 0.72)
 text = "150"
 label_settings = SubResource("LabelSettings_5sebw")
 
-[node name="Description" type="Label" parent="Screen/Page1/LifeExplanation"]
+[node name="Description" type="Label" parent="Screen/Pages/Page1/LifeExplanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 326.0
@@ -510,14 +655,14 @@ text = ">> Start each level with set amount of life points
 label_settings = ExtResource("17_llqua")
 autowrap_mode = 3
 
-[node name="MoneyExplanation" type="Control" parent="Screen/Page1"]
+[node name="MoneyExplanation" type="Control" parent="Screen/Pages/Page1"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 197.0
 offset_right = 40.0
 offset_bottom = 237.0
 
-[node name="Highlight4" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+[node name="Highlight4" type="TextureRect" parent="Screen/Pages/Page1/MoneyExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 200.0
@@ -527,7 +672,7 @@ offset_bottom = 344.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight5" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+[node name="Highlight5" type="TextureRect" parent="Screen/Pages/Page1/MoneyExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 236.0
@@ -537,7 +682,7 @@ offset_bottom = 362.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight6" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+[node name="Highlight6" type="TextureRect" parent="Screen/Pages/Page1/MoneyExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 385.0
@@ -547,7 +692,7 @@ offset_bottom = 398.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight7" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+[node name="Highlight7" type="TextureRect" parent="Screen/Pages/Page1/MoneyExplanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 204.0
@@ -557,7 +702,7 @@ offset_bottom = 420.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Heading2" type="Label" parent="Screen/Page1/MoneyExplanation"]
+[node name="Heading2" type="Label" parent="Screen/Pages/Page1/MoneyExplanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 247.0
@@ -566,7 +711,7 @@ offset_bottom = 279.0
 text = "Currency Indicator:"
 label_settings = ExtResource("16_2u07q")
 
-[node name="Underline2" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+[node name="Underline2" type="TextureRect" parent="Screen/Pages/Page1/MoneyExplanation"]
 modulate = Color(0.462745, 0.301961, 0.286275, 1)
 layout_mode = 0
 offset_left = 96.0
@@ -576,7 +721,7 @@ offset_bottom = 281.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="MoneyIndicator" type="TextureRect" parent="Screen/Page1/MoneyExplanation"]
+[node name="MoneyIndicator" type="TextureRect" parent="Screen/Pages/Page1/MoneyExplanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 289.0
@@ -585,7 +730,7 @@ offset_bottom = 314.0
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("14_orxft")
 
-[node name="MoneyLabel" type="Label" parent="Screen/Page1/MoneyExplanation/MoneyIndicator"]
+[node name="MoneyLabel" type="Label" parent="Screen/Pages/Page1/MoneyExplanation/MoneyIndicator"]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 6.0
@@ -595,7 +740,7 @@ scale = Vector2(0.72, 0.72)
 text = "$150.0"
 label_settings = SubResource("LabelSettings_5sebw")
 
-[node name="Description" type="Label" parent="Screen/Page1/MoneyExplanation"]
+[node name="Description" type="Label" parent="Screen/Pages/Page1/MoneyExplanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 326.0
@@ -607,14 +752,14 @@ text = ">> Indicates how much energy you have
 label_settings = ExtResource("17_llqua")
 autowrap_mode = 3
 
-[node name="Page2" type="Control" parent="Screen"]
+[node name="Page2" type="Control" parent="Screen/Pages"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel1" type="Control" parent="Screen/Page2"]
+[node name="Panel1" type="Control" parent="Screen/Pages/Page2"]
 anchors_preset = 0
 offset_left = 333.0
 offset_top = -310.0
@@ -622,7 +767,7 @@ offset_right = 417.0
 offset_bottom = -250.0
 scale = Vector2(2, 2)
 
-[node name="Numbering" type="Label" parent="Screen/Page2/Panel1"]
+[node name="Numbering" type="Label" parent="Screen/Pages/Page2/Panel1"]
 z_index = 1
 layout_mode = 0
 offset_left = 85.5
@@ -632,7 +777,7 @@ offset_bottom = 252.5
 text = "1."
 label_settings = ExtResource("5_2m4nm")
 
-[node name="PanelBackground" type="TextureRect" parent="Screen/Page2/Panel1"]
+[node name="PanelBackground" type="TextureRect" parent="Screen/Pages/Page2/Panel1"]
 layout_mode = 0
 offset_left = 61.0
 offset_top = 203.0
@@ -640,7 +785,7 @@ offset_right = 422.0
 offset_bottom = 293.0
 texture = ExtResource("3_ca0nt")
 
-[node name="Panel" type="TextureRect" parent="Screen/Page2/Panel1"]
+[node name="Panel" type="TextureRect" parent="Screen/Pages/Page2/Panel1"]
 layout_mode = 0
 offset_left = 78.0
 offset_top = 214.0
@@ -648,30 +793,30 @@ offset_right = 406.0
 offset_bottom = 282.0
 texture = ExtResource("18_ehijt")
 
-[node name="MapAssets" type="Node2D" parent="Screen/Page2/Panel1"]
+[node name="MapAssets" type="Node2D" parent="Screen/Pages/Page2/Panel1"]
 position = Vector2(242, 188)
 scale = Vector2(0.5, 0.5)
 
-[node name="map" type="Sprite2D" parent="Screen/Page2/Panel1/MapAssets"]
+[node name="map" type="Sprite2D" parent="Screen/Pages/Page2/Panel1/MapAssets"]
 position = Vector2(0, 120)
 texture = ExtResource("6_0y8o3")
 region_enabled = true
 region_rect = Rect2(0, 240, 640, 120)
 
-[node name="bridge" type="Sprite2D" parent="Screen/Page2/Panel1/MapAssets"]
+[node name="bridge" type="Sprite2D" parent="Screen/Pages/Page2/Panel1/MapAssets"]
 z_index = 2
 position = Vector2(0, 120)
 texture = ExtResource("20_2u07q")
 region_enabled = true
 region_rect = Rect2(0, 240, 640, 120)
 
-[node name="tree" type="Sprite2D" parent="Screen/Page2/Panel1/MapAssets"]
+[node name="tree" type="Sprite2D" parent="Screen/Pages/Page2/Panel1/MapAssets"]
 position = Vector2(0, 120)
 texture = ExtResource("7_0oiak")
 region_enabled = true
 region_rect = Rect2(0, 240, 640, 120)
 
-[node name="ScrollbarUIAssets" type="Control" parent="Screen/Page2/Panel1"]
+[node name="ScrollbarUIAssets" type="Control" parent="Screen/Pages/Page2/Panel1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -687,7 +832,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 mouse_filter = 2
 
-[node name="ScrollBackground" type="TextureRect" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+[node name="ScrollBackground" type="TextureRect" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets"]
 layout_mode = 2
 offset_left = 96.0
 offset_right = 1144.0
@@ -696,7 +841,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 texture = ExtResource("21_llqua")
 
-[node name="ScrollOutline" type="TextureRect" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+[node name="ScrollOutline" type="TextureRect" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets"]
 z_index = 3
 layout_mode = 2
 offset_left = 96.0
@@ -706,7 +851,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 texture = ExtResource("22_8bxcy")
 
-[node name="TabVBox" type="VBoxContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+[node name="TabVBox" type="VBoxContainer" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets"]
 layout_mode = 2
 offset_top = 21.0
 offset_right = 1240.0
@@ -714,12 +859,12 @@ offset_bottom = 177.0
 size_flags_vertical = 8
 theme_override_constants/separation = 149
 
-[node name="TabHBox" type="HBoxContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets/TabVBox"]
+[node name="TabHBox" type="HBoxContainer" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets/TabVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
-[node name="TabButton" type="Button" parent="Screen/Page2/Panel1/ScrollbarUIAssets/TabVBox/TabHBox"]
+[node name="TabButton" type="Button" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets/TabVBox/TabHBox"]
 z_index = 4
 custom_minimum_size = Vector2(45, 7)
 layout_mode = 2
@@ -729,13 +874,13 @@ theme_override_styles/hover = ExtResource("24_po4uk")
 theme_override_styles/pressed = ExtResource("23_x4788")
 theme_override_styles/normal = ExtResource("25_25hgk")
 
-[node name="Spacer" type="Control" parent="Screen/Page2/Panel1/ScrollbarUIAssets/TabVBox/TabHBox"]
+[node name="Spacer" type="Control" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets/TabVBox/TabHBox"]
 layout_mode = 2
 
-[node name="Spacer" type="Control" parent="Screen/Page2/Panel1/ScrollbarUIAssets/TabVBox"]
+[node name="Spacer" type="Control" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets/TabVBox"]
 layout_mode = 2
 
-[node name="Card" type="TextureRect" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+[node name="Card" type="TextureRect" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets"]
 layout_mode = 2
 offset_left = 176.0
 offset_top = 65.0
@@ -745,7 +890,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 texture = ExtResource("29_ggov0")
 
-[node name="BarContainer" type="MarginContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+[node name="BarContainer" type="MarginContainer" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets"]
 custom_minimum_size = Vector2(1240, 8)
 layout_direction = 2
 layout_mode = 2
@@ -757,7 +902,7 @@ size_flags_vertical = 8
 mouse_filter = 0
 theme = SubResource("Theme_tv72q")
 
-[node name="HScrollBar" type="HScrollBar" parent="Screen/Page2/Panel1/ScrollbarUIAssets/BarContainer"]
+[node name="HScrollBar" type="HScrollBar" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets/BarContainer"]
 process_priority = 1
 z_index = 4
 clip_contents = true
@@ -771,7 +916,7 @@ theme_override_styles/grabber = ExtResource("27_1vybd")
 theme_override_styles/grabber_highlight = ExtResource("27_1vybd")
 theme_override_styles/grabber_pressed = ExtResource("27_1vybd")
 
-[node name="CardHBox" type="HBoxContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets"]
+[node name="CardHBox" type="HBoxContainer" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets"]
 layout_mode = 2
 offset_left = 156.0
 offset_top = 53.0
@@ -782,13 +927,13 @@ size_flags_vertical = 8
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="EndCap2" type="TextureRect" parent="Screen/Page2/Panel1/ScrollbarUIAssets/CardHBox"]
+[node name="EndCap2" type="TextureRect" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets/CardHBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 texture = ExtResource("28_jutfw")
 
-[node name="CardContainer" type="ScrollContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets/CardHBox"]
+[node name="CardContainer" type="ScrollContainer" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets/CardHBox"]
 custom_minimum_size = Vector2(900, 124)
 layout_direction = 2
 layout_mode = 2
@@ -799,14 +944,14 @@ theme = SubResource("Theme_pg0hq")
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Screen/Page2/Panel1/ScrollbarUIAssets/CardHBox/CardContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets/CardHBox/CardContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_constants/separation = 5
 
-[node name="Button" type="Button" parent="Screen/Page2/Panel1/ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
@@ -818,13 +963,13 @@ script = ExtResource("30_fnax7")
 tower_type = "Chipmunk"
 metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 
-[node name="EndCap" type="TextureRect" parent="Screen/Page2/Panel1/ScrollbarUIAssets/CardHBox"]
+[node name="EndCap" type="TextureRect" parent="Screen/Pages/Page2/Panel1/ScrollbarUIAssets/CardHBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 texture = ExtResource("28_jutfw")
 
-[node name="Panel2" type="Control" parent="Screen/Page2"]
+[node name="Panel2" type="Control" parent="Screen/Pages/Page2"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -45.0
@@ -833,7 +978,7 @@ offset_right = 39.0
 offset_bottom = -14.0
 scale = Vector2(2, 2)
 
-[node name="PanelBackground" type="TextureRect" parent="Screen/Page2/Panel2"]
+[node name="PanelBackground" type="TextureRect" parent="Screen/Pages/Page2/Panel2"]
 layout_mode = 0
 offset_left = 59.0
 offset_top = 198.0
@@ -841,7 +986,7 @@ offset_right = 236.0
 offset_bottom = 352.0
 texture = ExtResource("3_ca0nt")
 
-[node name="Panel" type="TextureRect" parent="Screen/Page2/Panel2"]
+[node name="Panel" type="TextureRect" parent="Screen/Pages/Page2/Panel2"]
 layout_mode = 0
 offset_left = 74.0
 offset_top = 210.0
@@ -849,7 +994,7 @@ offset_right = 223.0
 offset_bottom = 340.0
 texture = ExtResource("18_ehijt")
 
-[node name="Tower Range" type="TextureRect" parent="Screen/Page2/Panel2"]
+[node name="Tower Range" type="TextureRect" parent="Screen/Pages/Page2/Panel2"]
 layout_mode = 0
 offset_left = 78.0
 offset_top = 214.0
@@ -858,7 +1003,7 @@ offset_bottom = 703.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("30_2u07q")
 
-[node name="Numbering" type="Label" parent="Screen/Page2/Panel2"]
+[node name="Numbering" type="Label" parent="Screen/Pages/Page2/Panel2"]
 z_index = 1
 layout_mode = 0
 offset_left = 80.5714
@@ -868,7 +1013,7 @@ offset_bottom = 249.143
 text = "2."
 label_settings = ExtResource("5_2m4nm")
 
-[node name="Panel3" type="Control" parent="Screen/Page2"]
+[node name="Panel3" type="Control" parent="Screen/Pages/Page2"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 720.0
@@ -877,7 +1022,7 @@ offset_right = 804.0
 offset_bottom = -14.0
 scale = Vector2(2, 2)
 
-[node name="PanelBackground" type="TextureRect" parent="Screen/Page2/Panel3"]
+[node name="PanelBackground" type="TextureRect" parent="Screen/Pages/Page2/Panel3"]
 layout_mode = 0
 offset_left = 59.0
 offset_top = 198.0
@@ -885,7 +1030,7 @@ offset_right = 236.0
 offset_bottom = 352.0
 texture = ExtResource("3_ca0nt")
 
-[node name="Panel" type="TextureRect" parent="Screen/Page2/Panel3"]
+[node name="Panel" type="TextureRect" parent="Screen/Pages/Page2/Panel3"]
 layout_mode = 0
 offset_left = 74.0
 offset_top = 210.0
@@ -893,7 +1038,7 @@ offset_right = 223.0
 offset_bottom = 340.0
 texture = ExtResource("18_ehijt")
 
-[node name="PanelImg" type="TextureRect" parent="Screen/Page2/Panel3"]
+[node name="PanelImg" type="TextureRect" parent="Screen/Pages/Page2/Panel3"]
 layout_mode = 0
 offset_left = 78.0
 offset_top = 214.0
@@ -902,7 +1047,7 @@ offset_bottom = 703.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("31_llqua")
 
-[node name="Numbering" type="Label" parent="Screen/Page2/Panel3"]
+[node name="Numbering" type="Label" parent="Screen/Pages/Page2/Panel3"]
 z_index = 1
 layout_mode = 0
 offset_left = 80.5714
@@ -912,7 +1057,7 @@ offset_bottom = 249.143
 text = "3."
 label_settings = ExtResource("5_2m4nm")
 
-[node name="Buy Explanation" type="Control" parent="Screen/Page2"]
+[node name="Buy Explanation" type="Control" parent="Screen/Pages/Page2"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -11.0
@@ -920,7 +1065,7 @@ offset_top = -138.0
 offset_right = 29.0
 offset_bottom = -98.0
 
-[node name="Heading2" type="Label" parent="Screen/Page2/Buy Explanation"]
+[node name="Heading2" type="Label" parent="Screen/Pages/Page2/Buy Explanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 247.0
@@ -929,7 +1074,7 @@ offset_bottom = 279.0
 text = "Buying/placing Allies:"
 label_settings = ExtResource("16_2u07q")
 
-[node name="Underline2" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
+[node name="Underline2" type="TextureRect" parent="Screen/Pages/Page2/Buy Explanation"]
 modulate = Color(0.462745, 0.301961, 0.286275, 1)
 layout_mode = 0
 offset_left = 96.0
@@ -939,7 +1084,7 @@ offset_bottom = 281.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight5" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
+[node name="Highlight5" type="TextureRect" parent="Screen/Pages/Page2/Buy Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 116.0
@@ -949,7 +1094,7 @@ offset_bottom = 308.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight7" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
+[node name="Highlight7" type="TextureRect" parent="Screen/Pages/Page2/Buy Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 94.0
@@ -959,7 +1104,7 @@ offset_bottom = 345.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight8" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
+[node name="Highlight8" type="TextureRect" parent="Screen/Pages/Page2/Buy Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 247.0
@@ -969,7 +1114,7 @@ offset_bottom = 384.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight9" type="TextureRect" parent="Screen/Page2/Buy Explanation"]
+[node name="Highlight9" type="TextureRect" parent="Screen/Pages/Page2/Buy Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 234.0
@@ -979,7 +1124,7 @@ offset_bottom = 403.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Description" type="Label" parent="Screen/Page2/Buy Explanation"]
+[node name="Description" type="Label" parent="Screen/Pages/Page2/Buy Explanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 290.0
@@ -994,7 +1139,7 @@ text = ">> Left click on an ally's card
 label_settings = ExtResource("17_llqua")
 autowrap_mode = 3
 
-[node name="Ally Explanation" type="Control" parent="Screen/Page2"]
+[node name="Ally Explanation" type="Control" parent="Screen/Pages/Page2"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 360.0
@@ -1002,7 +1147,7 @@ offset_top = 86.0
 offset_right = 400.0
 offset_bottom = 126.0
 
-[node name="Heading2" type="Label" parent="Screen/Page2/Ally Explanation"]
+[node name="Heading2" type="Label" parent="Screen/Pages/Page2/Ally Explanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 247.0
@@ -1011,7 +1156,7 @@ offset_bottom = 279.0
 text = "Using Allies:"
 label_settings = ExtResource("16_2u07q")
 
-[node name="Underline2" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+[node name="Underline2" type="TextureRect" parent="Screen/Pages/Page2/Ally Explanation"]
 modulate = Color(0.462745, 0.301961, 0.286275, 1)
 layout_mode = 0
 offset_left = 96.0
@@ -1021,7 +1166,7 @@ offset_bottom = 281.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight5" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+[node name="Highlight5" type="TextureRect" parent="Screen/Pages/Page2/Ally Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 301.0
@@ -1031,7 +1176,7 @@ offset_bottom = 304.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight7" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+[node name="Highlight7" type="TextureRect" parent="Screen/Pages/Page2/Ally Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 116.0
@@ -1041,7 +1186,7 @@ offset_bottom = 382.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight8" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+[node name="Highlight8" type="TextureRect" parent="Screen/Pages/Page2/Ally Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 116.0
@@ -1051,7 +1196,7 @@ offset_bottom = 441.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight9" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+[node name="Highlight9" type="TextureRect" parent="Screen/Pages/Page2/Ally Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 116.0
@@ -1061,7 +1206,7 @@ offset_bottom = 515.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight10" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+[node name="Highlight10" type="TextureRect" parent="Screen/Pages/Page2/Ally Explanation"]
 modulate = Color(0.6002, 0.921928, 0.978353, 0.635294)
 layout_mode = 0
 offset_left = 364.0
@@ -1071,7 +1216,7 @@ offset_bottom = 441.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight11" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+[node name="Highlight11" type="TextureRect" parent="Screen/Pages/Page2/Ally Explanation"]
 modulate = Color(0.6002, 0.921928, 0.978353, 0.635294)
 layout_mode = 0
 offset_left = 129.0
@@ -1081,7 +1226,7 @@ offset_bottom = 456.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight12" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+[node name="Highlight12" type="TextureRect" parent="Screen/Pages/Page2/Ally Explanation"]
 modulate = Color(0.6002, 0.921928, 0.978353, 0.635294)
 layout_mode = 0
 offset_left = 95.0
@@ -1091,7 +1236,7 @@ offset_bottom = 476.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight13" type="TextureRect" parent="Screen/Page2/Ally Explanation"]
+[node name="Highlight13" type="TextureRect" parent="Screen/Pages/Page2/Ally Explanation"]
 modulate = Color(0.6002, 0.921928, 0.978353, 0.635294)
 layout_mode = 0
 offset_left = 378.0
@@ -1101,7 +1246,7 @@ offset_bottom = 478.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Description" type="Label" parent="Screen/Page2/Ally Explanation"]
+[node name="Description" type="Label" parent="Screen/Pages/Page2/Ally Explanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 290.0
@@ -1117,13 +1262,14 @@ text = ">> After placing an ally, click on it to view it's range (panel 2) and u
 label_settings = ExtResource("17_llqua")
 autowrap_mode = 3
 
-[node name="Page3" type="Control" parent="Screen"]
+[node name="Page3" type="Control" parent="Screen/Pages"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel1" type="Control" parent="Screen/Page3"]
+[node name="Panel1" type="Control" parent="Screen/Pages/Page3"]
 anchors_preset = 0
 offset_left = 229.0
 offset_top = -325.0
@@ -1131,7 +1277,7 @@ offset_right = 313.0
 offset_bottom = -265.0
 scale = Vector2(2.1, 2.1)
 
-[node name="Numbering" type="Label" parent="Screen/Page3/Panel1"]
+[node name="Numbering" type="Label" parent="Screen/Pages/Page3/Panel1"]
 z_index = 1
 layout_mode = 0
 offset_left = 70.5
@@ -1141,7 +1287,7 @@ offset_bottom = 250.5
 text = "1."
 label_settings = ExtResource("5_2m4nm")
 
-[node name="PanelBackground" type="TextureRect" parent="Screen/Page3/Panel1"]
+[node name="PanelBackground" type="TextureRect" parent="Screen/Pages/Page3/Panel1"]
 layout_mode = 0
 offset_left = 52.0
 offset_top = 194.5
@@ -1149,7 +1295,7 @@ offset_right = 245.0
 offset_bottom = 316.5
 texture = ExtResource("3_ca0nt")
 
-[node name="Panel" type="TextureRect" parent="Screen/Page3/Panel1"]
+[node name="Panel" type="TextureRect" parent="Screen/Pages/Page3/Panel1"]
 layout_mode = 0
 offset_left = 61.0
 offset_top = 209.5
@@ -1157,7 +1303,7 @@ offset_right = 234.0
 offset_bottom = 304.5
 texture = ExtResource("18_ehijt")
 
-[node name="Icon Panel" type="TextureRect" parent="Screen/Page3/Panel1"]
+[node name="Icon Panel" type="TextureRect" parent="Screen/Pages/Page3/Panel1"]
 layout_mode = 0
 offset_left = 64.5
 offset_top = 213.5
@@ -1166,7 +1312,7 @@ offset_bottom = 386.5
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("31_2u07q")
 
-[node name="Panel2" type="Control" parent="Screen/Page3"]
+[node name="Panel2" type="Control" parent="Screen/Pages/Page3"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 638.0
@@ -1175,7 +1321,7 @@ offset_right = 722.0
 offset_bottom = -250.0
 scale = Vector2(2, 2)
 
-[node name="PanelBackground" type="TextureRect" parent="Screen/Page3/Panel2"]
+[node name="PanelBackground" type="TextureRect" parent="Screen/Pages/Page3/Panel2"]
 layout_mode = 0
 offset_left = 59.0
 offset_top = 198.0
@@ -1183,7 +1329,7 @@ offset_right = 280.0
 offset_bottom = 323.0
 texture = ExtResource("3_ca0nt")
 
-[node name="Panel" type="TextureRect" parent="Screen/Page3/Panel2"]
+[node name="Panel" type="TextureRect" parent="Screen/Pages/Page3/Panel2"]
 layout_mode = 0
 offset_left = 71.0
 offset_top = 214.0
@@ -1191,7 +1337,7 @@ offset_right = 267.0
 offset_bottom = 310.0
 texture = ExtResource("18_ehijt")
 
-[node name="Pause panel" type="TextureRect" parent="Screen/Page3/Panel2"]
+[node name="Pause panel" type="TextureRect" parent="Screen/Pages/Page3/Panel2"]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 217.0
@@ -1200,7 +1346,7 @@ offset_bottom = 514.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("32_llqua")
 
-[node name="Numbering" type="Label" parent="Screen/Page3/Panel2"]
+[node name="Numbering" type="Label" parent="Screen/Pages/Page3/Panel2"]
 z_index = 1
 layout_mode = 0
 offset_left = 80.5
@@ -1210,7 +1356,154 @@ offset_bottom = 252.5
 text = "2."
 label_settings = ExtResource("5_2m4nm")
 
-[node name="Tool Explanation" type="Control" parent="Screen/Page3"]
+[node name="Panel3" type="Control" parent="Screen/Pages/Page3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 740.0
+offset_top = 52.0
+offset_right = 824.0
+offset_bottom = 112.0
+scale = Vector2(1.65, 1.65)
+
+[node name="PanelBackground" type="TextureRect" parent="Screen/Pages/Page3/Panel3"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 198.0
+offset_right = 284.0
+offset_bottom = 341.0
+texture = ExtResource("3_ca0nt")
+
+[node name="Panel" type="TextureRect" parent="Screen/Pages/Page3/Panel3"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 213.0
+offset_right = 270.0
+offset_bottom = 328.0
+texture = ExtResource("18_ehijt")
+
+[node name="PanelImg" type="TextureRect" parent="Screen/Pages/Page3/Panel3"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 217.0
+offset_right = 700.0
+offset_bottom = 514.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("34_1vybd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Screen/Pages/Page3/Panel3"]
+position = Vector2(169.697, 195.152)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("35_jutfw")
+
+[node name="Numbering" type="Label" parent="Screen/Pages/Page3/Panel3"]
+z_index = 1
+layout_mode = 0
+offset_left = 126.061
+offset_top = 183.03
+offset_right = 166.061
+offset_bottom = 215.03
+text = "3."
+label_settings = SubResource("LabelSettings_mclyq")
+
+[node name="Panel4" type="Control" parent="Screen/Pages/Page3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 362.0
+offset_top = 52.0
+offset_right = 446.0
+offset_bottom = 112.0
+scale = Vector2(1.65, 1.65)
+
+[node name="PanelBackground" type="TextureRect" parent="Screen/Pages/Page3/Panel4"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 198.0
+offset_right = 284.0
+offset_bottom = 341.0
+texture = ExtResource("3_ca0nt")
+
+[node name="Panel" type="TextureRect" parent="Screen/Pages/Page3/Panel4"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 213.0
+offset_right = 270.0
+offset_bottom = 328.0
+texture = ExtResource("18_ehijt")
+
+[node name="PanelImg" type="TextureRect" parent="Screen/Pages/Page3/Panel4"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 217.0
+offset_right = 700.0
+offset_bottom = 514.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("36_ggov0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Screen/Pages/Page3/Panel4"]
+position = Vector2(169.697, 195.152)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("37_fnax7")
+
+[node name="Numbering" type="Label" parent="Screen/Pages/Page3/Panel4"]
+z_index = 1
+layout_mode = 0
+offset_left = 128.485
+offset_top = 183.03
+offset_right = 168.485
+offset_bottom = 215.03
+text = "2."
+label_settings = SubResource("LabelSettings_mclyq")
+
+[node name="Panel5" type="Control" parent="Screen/Pages/Page3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -22.0
+offset_top = 52.0
+offset_right = 62.0
+offset_bottom = 112.0
+scale = Vector2(1.65, 1.65)
+
+[node name="PanelBackground" type="TextureRect" parent="Screen/Pages/Page3/Panel5"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 198.0
+offset_right = 284.0
+offset_bottom = 341.0
+texture = ExtResource("3_ca0nt")
+
+[node name="Panel" type="TextureRect" parent="Screen/Pages/Page3/Panel5"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 213.0
+offset_right = 270.0
+offset_bottom = 328.0
+texture = ExtResource("18_ehijt")
+
+[node name="PanelImg" type="TextureRect" parent="Screen/Pages/Page3/Panel5"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 217.0
+offset_right = 700.0
+offset_bottom = 514.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("38_6fu5d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Screen/Pages/Page3/Panel5"]
+position = Vector2(169.697, 195.152)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("39_r7jt0")
+
+[node name="Numbering" type="Label" parent="Screen/Pages/Page3/Panel5"]
+z_index = 1
+layout_mode = 0
+offset_left = 132.121
+offset_top = 183.03
+offset_right = 172.121
+offset_bottom = 215.03
+text = "1."
+label_settings = SubResource("LabelSettings_mclyq")
+
+[node name="Tool Explanation" type="Control" parent="Screen/Pages/Page3"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -11.0
@@ -1218,7 +1511,7 @@ offset_top = -138.0
 offset_right = 29.0
 offset_bottom = -98.0
 
-[node name="Heading2" type="Label" parent="Screen/Page3/Tool Explanation"]
+[node name="Heading2" type="Label" parent="Screen/Pages/Page3/Tool Explanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 247.0
@@ -1227,7 +1520,7 @@ offset_bottom = 279.0
 text = "In-Game Tools:"
 label_settings = ExtResource("16_2u07q")
 
-[node name="Underline2" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
+[node name="Underline2" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
 modulate = Color(0.462745, 0.301961, 0.286275, 1)
 layout_mode = 0
 offset_left = 96.0
@@ -1237,7 +1530,7 @@ offset_bottom = 281.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight5" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
+[node name="Highlight5" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 183.0
@@ -1247,7 +1540,7 @@ offset_bottom = 308.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight6" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
+[node name="Highlight6" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 191.0
@@ -1257,7 +1550,7 @@ offset_bottom = 327.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight7" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
+[node name="Highlight7" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 250.0
@@ -1267,7 +1560,7 @@ offset_bottom = 346.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Highlight8" type="TextureRect" parent="Screen/Page3/Tool Explanation"]
+[node name="Highlight8" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
 modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
 layout_mode = 0
 offset_left = 94.0
@@ -1277,7 +1570,77 @@ offset_bottom = 361.0
 texture = ExtResource("15_c5m28")
 expand_mode = 1
 
-[node name="Description" type="Label" parent="Screen/Page3/Tool Explanation"]
+[node name="Highlight9" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
+offset_left = 116.0
+offset_top = 384.0
+offset_right = 174.0
+offset_bottom = 400.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight10" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
+offset_left = 116.0
+offset_top = 404.0
+offset_right = 178.0
+offset_bottom = 420.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight11" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
+offset_left = 116.0
+offset_top = 442.0
+offset_right = 180.0
+offset_bottom = 458.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight12" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
+modulate = Color(0.6, 0.921569, 0.976471, 0.635294)
+layout_mode = 0
+offset_left = 244.0
+offset_top = 384.0
+offset_right = 314.0
+offset_bottom = 404.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight13" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
+modulate = Color(0.6, 0.921569, 0.976471, 0.635294)
+layout_mode = 0
+offset_left = 266.0
+offset_top = 422.0
+offset_right = 302.0
+offset_bottom = 442.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight14" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
+modulate = Color(0.6, 0.921569, 0.976471, 0.635294)
+layout_mode = 0
+offset_left = 184.0
+offset_top = 442.0
+offset_right = 246.0
+offset_bottom = 458.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Highlight15" type="TextureRect" parent="Screen/Pages/Page3/Tool Explanation"]
+modulate = Color(0.679168, 0.931426, 0.758882, 0.635294)
+layout_mode = 0
+offset_left = 115.0
+offset_top = 460.0
+offset_right = 179.0
+offset_bottom = 476.0
+texture = ExtResource("15_c5m28")
+expand_mode = 1
+
+[node name="Description" type="Label" parent="Screen/Pages/Page3/Tool Explanation"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 290.0
@@ -1286,5 +1649,18 @@ offset_bottom = 401.0
 text = ">> Panel 1: Fastforward button and pause button.
 >> Panel 2: Access pause menu to access other helpful menus
 "
+label_settings = ExtResource("17_llqua")
+autowrap_mode = 3
+
+[node name="Description2" type="Label" parent="Screen/Pages/Page3/Tool Explanation"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 386.0
+offset_right = 348.0
+offset_bottom = 497.0
+text = ">> Menu 1: VOlume Settings
+>> Menu 2: Guidebook, displays ally/enemy info
+>> Menu 3: Control Menus
+>> Menu 4: This tutorial"
 label_settings = ExtResource("17_llqua")
 autowrap_mode = 3

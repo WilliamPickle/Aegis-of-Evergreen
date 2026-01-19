@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw5ybk543y23b"
-path="res://.godot/imported/bridge_v1.png-ff8d8d5bad9b5a68aed979ea71f5640e.ctex"
+uid="uid://bl81in2g30tef"
+path="res://.godot/imported/ufo_v1.png-fcc77f0dc94fb1058f27c965c7d22d2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/maps/bridge_v1.png"
-dest_files=["res://.godot/imported/bridge_v1.png-ff8d8d5bad9b5a68aed979ea71f5640e.ctex"]
+source_file="res://assets/sprites/maps/map1/ufo_v1.png"
+dest_files=["res://.godot/imported/ufo_v1.png-fcc77f0dc94fb1058f27c965c7d22d2c.ctex"]
 
 [params]
 

@@ -1,79 +1,78 @@
-[gd_scene load_steps=57 format=3 uid="uid://b5ogoerans70n"]
+[gd_scene load_steps=56 format=3 uid="uid://ca37b3exk8ick"]
 
-[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_bgibu"]
-[ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_73m23"]
-[ext_resource type="Texture2D" uid="uid://beftjsu4wnyuq" path="res://assets/sprites/maps/map1/Map 1 Level 2.png" id="3_45kkt"]
-[ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="4_taw0e"]
-[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="5_7egwj"]
-[ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="6_nquw4"]
-[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="7_3buw8"]
-[ext_resource type="Texture2D" uid="uid://cogocbr540tui" path="res://assets/sprites/maps/map1/map 1 Level 2 Trees Overlayer.png" id="7_73m23"]
-[ext_resource type="Script" uid="uid://dcwhmibs07e8l" path="res://scripts/Enemies/map1_lvl2_wave_spawner.gd" id="9_bgibu"]
-[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="9_rur20"]
-[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="10_srjk8"]
-[ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="11_0na3t"]
-[ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="12_gxp3h"]
-[ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_xc1pa"]
-[ext_resource type="PackedScene" uid="uid://cnl4pdo4fp6i7" path="res://scenes/UI/fast_forward_ui.tscn" id="15_j2jmx"]
-[ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="16_bbkd8"]
-[ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_kqn1b"]
-[ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_y6uxt"]
-[ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_r72fi"]
-[ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_00rct"]
-[ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="21_tv75f"]
-[ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="22_0qg6v"]
-[ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="23_osflp"]
-[ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="24_ngxfi"]
-[ext_resource type="Texture2D" uid="uid://cspxuiahyng26" path="res://assets/sprites/icons and buttons/player_level_bar.png" id="25_kq2c3"]
-[ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="26_v8uj3"]
-[ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="27_ujbrj"]
-[ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="28_m6wqs"]
+[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_dri55"]
+[ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_ektfg"]
+[ext_resource type="Texture2D" uid="uid://b73ytkoo8r6bc" path="res://assets/sprites/maps/map2/map2_lvl1_background.png" id="3_dfome"]
+[ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="4_20xqq"]
+[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="5_xe5dx"]
+[ext_resource type="Texture2D" uid="uid://c32hbgxmjl2qy" path="res://assets/sprites/maps/map2/map2_lvl1_trees.png" id="6_qc32i"]
+[ext_resource type="Texture2D" uid="uid://3gwoxt07k4t2" path="res://assets/sprites/maps/map2/map2_lvl1_trees_overlayer.png" id="7_6mfql"]
+[ext_resource type="Script" uid="uid://clq18rcf3qqqj" path="res://scripts/Enemies/wave_spawner.gd" id="8_eo2j5"]
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="9_b2yv6"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="10_174b3"]
+[ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="11_vcyub"]
+[ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="12_ixs3b"]
+[ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="13_c71nj"]
+[ext_resource type="PackedScene" uid="uid://cnl4pdo4fp6i7" path="res://scenes/UI/fast_forward_ui.tscn" id="14_qiip3"]
+[ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="15_gsh1p"]
+[ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="16_vtn5q"]
+[ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="17_52m6q"]
+[ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="18_yf7ay"]
+[ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="19_mxgh2"]
+[ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="20_o4hnu"]
+[ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="21_vkg6y"]
+[ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="22_3xxa7"]
+[ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="23_224rf"]
+[ext_resource type="Texture2D" uid="uid://cspxuiahyng26" path="res://assets/sprites/icons and buttons/player_level_bar.png" id="24_xeh0u"]
+[ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="25_guc7n"]
+[ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="26_x43ut"]
+[ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="27_y2h2n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_ektfg")
 region = Rect2(0, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2xxo"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_ektfg")
 region = Rect2(100, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cbcq"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_ektfg")
 region = Rect2(200, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isj1j"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_ektfg")
 region = Rect2(300, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_so66j"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_ektfg")
 region = Rect2(400, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tr1x6"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_ektfg")
 region = Rect2(500, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5akn"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_ektfg")
 region = Rect2(600, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbtxt"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_ektfg")
 region = Rect2(700, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2fux"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_ektfg")
 region = Rect2(800, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7g0b"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_ektfg")
 region = Rect2(900, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmfjm"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_ektfg")
 region = Rect2(1000, 0, 100, 50)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vfjea"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4h1pv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -115,38 +114,38 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbb35"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_20xqq")
 region = Rect2(0, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iw4em"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_20xqq")
 region = Rect2(640, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnsmf"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_20xqq")
 region = Rect2(1280, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nossa"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_20xqq")
 region = Rect2(1920, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hjqri"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_20xqq")
 region = Rect2(2560, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hg84p"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_20xqq")
 region = Rect2(3200, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1aans"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_20xqq")
 region = Rect2(3840, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0ron"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_20xqq")
 region = Rect2(4480, 0, 640, 360)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mx6g7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xewxc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -178,68 +177,68 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="Curve2D" id="Curve2D_8ky4j"]
+[sub_resource type="Curve2D" id="Curve2D_ibk0x"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -273, -109, 0, 0, 0, 0, -265, -80, 0, 0, 0, 0, -248, -56, 0, 0, 0, 0, -216, -39, 0, 0, 0, 0, -183, -37, 0, 0, 0, 0, -156, -39, 0, 0, 0, 0, -123, -54, 0, 0, 0, 0, 0, -124, 0, 0, 0, 0, 41, -137, 0, 0, 0, 0, 87, -141, 0, 0, 0, 0, 133, -140, 0, 0, 0, 0, 161, -135, 0, 0, 0, 0, 179, -122, 0, 0, 0, 0, 194, -99, 0, 0, 0, 0, 197, -80, 0, 0, 0, 0, 186, -55, 0, 0, 0, 0, 170, -37, 0, 0, 0, 0, 46, -11, 0, 0, 0, 0, 21, 5, 0, 0, 0, 0, 11, 19, 0, 0, 0, 0, 9, 38, 0, 0, 0, 0, 17, 54, 0, 0, 0, 0, 32, 71, 0, 0, 0, 0, 47, 80, 0, 0, 0, 0, 68, 86, 0, 0, 0, 0, 190, 72, 0, 0, 0, 0, 246, 46, 0, 0, 0, 0, 280, 37, 0, 0, 0, 0, 342, 37)
 }
 point_count = 29
 
-[sub_resource type="LabelSettings" id="LabelSettings_6jdxa"]
-font = ExtResource("10_srjk8")
+[sub_resource type="LabelSettings" id="LabelSettings_gwwq5"]
+font = ExtResource("10_174b3")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gnx6a"]
-texture = ExtResource("11_0na3t")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vudgx"]
+texture = ExtResource("11_vcyub")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_32olf"]
-texture = ExtResource("12_gxp3h")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ljow1"]
+texture = ExtResource("12_ixs3b")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmoov"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_srl6e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtala"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pnhf"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_fw1tk"]
-font = ExtResource("10_srjk8")
+[sub_resource type="LabelSettings" id="LabelSettings_0egsi"]
+font = ExtResource("10_174b3")
 font_size = 24
 outline_color = Color(0.336608, 0.336608, 0.336608, 1)
 
-[node name="level_2" type="Node2D"]
+[node name="map2_level_1" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-script = ExtResource("1_bgibu")
+script = ExtResource("1_dri55")
 
 [node name="MapAssets" type="Node2D" parent="."]
 
 [node name="fish" type="AnimatedSprite2D" parent="MapAssets"]
 z_index = 1
 position = Vector2(39, -81)
-sprite_frames = SubResource("SpriteFrames_vfjea")
+sprite_frames = SubResource("SpriteFrames_4h1pv")
 autoplay = "default"
 
 [node name="map" type="Sprite2D" parent="MapAssets"]
-texture = ExtResource("3_45kkt")
+position = Vector2(0, -50)
+texture = ExtResource("3_dfome")
 
 [node name="river" type="AnimatedSprite2D" parent="MapAssets"]
-sprite_frames = SubResource("SpriteFrames_mx6g7")
+sprite_frames = SubResource("SpriteFrames_xewxc")
 autoplay = "default"
 
 [node name="bridge" type="Sprite2D" parent="MapAssets"]
 z_index = 2
-texture = ExtResource("5_7egwj")
+texture = ExtResource("5_xe5dx")
 
 [node name="tree" type="Sprite2D" parent="MapAssets"]
-texture = ExtResource("6_nquw4")
+position = Vector2(0, -50)
+texture = ExtResource("6_qc32i")
 
 [node name="tree overlayer" type="Sprite2D" parent="MapAssets"]
 z_index = 10
-texture = ExtResource("7_73m23")
+position = Vector2(0, -50)
+texture = ExtResource("7_6mfql")
 
-[node name="ufo" type="Sprite2D" parent="MapAssets"]
-texture = ExtResource("7_3buw8")
-
-[node name="EnemyPath2" type="Path2D" parent="."]
+[node name="EnemyPath1" type="Path2D" parent="."]
 y_sort_enabled = true
-curve = SubResource("Curve2D_8ky4j")
+curve = SubResource("Curve2D_ibk0x")
 metadata/_edit_lock_ = true
 
 [node name="PlacementCollisions" type="Area2D" parent="."]
@@ -264,14 +263,8 @@ polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130
 visible = false
 polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
 
-[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label")]
-script = ExtResource("9_bgibu")
-pause_menu = NodePath("../PauseUI")
-fast_forward_button = NodePath("../fast_forward_ui")
-delay_timer = NodePath("DelayFuncTimer")
-wave_timer = NodePath("WaveTimer")
-path_2d = NodePath("../EnemyPath2")
-wave_label = NodePath("Wave Text/WaveLabel")
+[node name="WaveSpawner" type="Node2D" parent="."]
+script = ExtResource("8_eo2j5")
 metadata/_custom_type_script = "uid://clq18rcf3qqqj"
 
 [node name="DelayFuncTimer" type="Timer" parent="WaveSpawner"]
@@ -279,7 +272,7 @@ metadata/_custom_type_script = "uid://clq18rcf3qqqj"
 [node name="WaveTimer" type="Timer" parent="WaveSpawner"]
 
 [node name="Wave Text" type="CanvasLayer" parent="WaveSpawner"]
-script = ExtResource("9_rur20")
+script = ExtResource("9_b2yv6")
 tint_during_pause = true
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 
@@ -290,7 +283,7 @@ offset_right = 263.0
 offset_bottom = 36.0
 scale = Vector2(1.2, 1.2)
 text = "Wave 0/5"
-label_settings = SubResource("LabelSettings_6jdxa")
+label_settings = SubResource("LabelSettings_gwwq5")
 
 [node name="Start Button" type="CanvasLayer" parent="."]
 layer = 2
@@ -325,23 +318,22 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/hover = SubResource("StyleBoxTexture_gnx6a")
-theme_override_styles/normal = SubResource("StyleBoxTexture_32olf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vudgx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ljow1")
 action_mode = 0
 icon_alignment = 1
 
-[node name="PauseUI" parent="." instance=ExtResource("14_xc1pa")]
+[node name="PauseUI" parent="." instance=ExtResource("13_c71nj")]
 
-[node name="fast_forward_ui" parent="." instance=ExtResource("15_j2jmx")]
+[node name="fast_forward_ui" parent="." instance=ExtResource("14_qiip3")]
 hide_during_pause = true
 
-[node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("16_bbkd8")]
-placement_mask = NodePath("../PlacementCollisions")
+[node name="ScrollbarUI" parent="." instance=ExtResource("15_gsh1p")]
 card_type = Array[String](["ranger", "chipmunk", "bee", "flytrap"])
 hide_during_pause = true
 
 [node name="DialogueUI" type="CanvasLayer" parent="."]
-script = ExtResource("9_rur20")
+script = ExtResource("9_b2yv6")
 tint_during_pause = true
 
 [node name="DialogueBox" type="Control" parent="DialogueUI" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
@@ -349,7 +341,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("17_kqn1b")
+script = ExtResource("16_vtn5q")
 continue_button = NodePath("ContButton")
 skip_button = NodePath("SkipButton")
 label_container = NodePath("DialogueLabels")
@@ -357,14 +349,14 @@ timer = NodePath("Timer")
 text_speed = 0.01
 send_wave_signal = true
 hide_node = true
-node_to_hide = NodePath("../../ScrollbarUI")
+node_to_hide = NodePath("")
 
 [node name="BoxTexture" type="TextureRect" parent="DialogueUI/DialogueBox"]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
-texture = ExtResource("18_y6uxt")
+texture = ExtResource("17_52m6q")
 
 [node name="Speaker" type="Label" parent="DialogueUI/DialogueBox"]
 layout_mode = 0
@@ -374,7 +366,7 @@ offset_right = 282.0
 offset_bottom = 570.0
 scale = Vector2(0.8, 0.8)
 text = "The Ranger"
-label_settings = ExtResource("19_r72fi")
+label_settings = ExtResource("18_yf7ay")
 autowrap_mode = 2
 
 [node name="SkipButton" type="Button" parent="DialogueUI/DialogueBox"]
@@ -384,12 +376,12 @@ offset_left = 164.0
 offset_top = 578.0
 offset_right = 1116.0
 offset_bottom = 699.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qmoov")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_srl6e")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_srl6e")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_srl6e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_srl6e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_srl6e")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_srl6e")
 
 [node name="ContButton" type="Button" parent="DialogueUI/DialogueBox"]
 layout_mode = 0
@@ -397,12 +389,12 @@ offset_left = 164.0
 offset_top = 578.0
 offset_right = 1116.0
 offset_bottom = 699.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qmoov")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_srl6e")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_srl6e")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_srl6e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_srl6e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_srl6e")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_srl6e")
 
 [node name="Timer" type="Timer" parent="DialogueUI/DialogueBox"]
 
@@ -414,7 +406,7 @@ offset_right = 1109.0
 offset_bottom = 702.0
 scale = Vector2(0.9, 0.9)
 mouse_filter = 2
-texture = ExtResource("20_00rct")
+texture = ExtResource("19_mxgh2")
 
 [node name="DialogueLabels" type="Control" parent="DialogueUI/DialogueBox"]
 anchors_preset = 0
@@ -432,7 +424,7 @@ offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
 text = "Good job on making it through the first round of enemies. "
-label_settings = ExtResource("19_r72fi")
+label_settings = ExtResource("18_yf7ay")
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
@@ -443,7 +435,7 @@ offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
 text = "It seems, however, that more are on their way. "
-label_settings = ExtResource("19_r72fi")
+label_settings = ExtResource("18_yf7ay")
 autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
@@ -454,7 +446,7 @@ offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
 text = "I'd also like to note that I'm beginning to smell something strange coming out of the mushroom forest..."
-label_settings = ExtResource("19_r72fi")
+label_settings = ExtResource("18_yf7ay")
 autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
@@ -465,23 +457,23 @@ offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
 text = "In any case, keep protecting our environment and make sure it doesn't get overran. "
-label_settings = ExtResource("19_r72fi")
+label_settings = ExtResource("18_yf7ay")
 autowrap_mode = 2
 
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu", "fast_forward_button")]
 position = Vector2(0, 1)
-script = ExtResource("21_tv75f")
-health_label = NodePath("../Icons/Control/PlayerLvlIndicator/LvlLabel")
+script = ExtResource("20_o4hnu")
+health_label = NodePath("")
 base_health = 15.0
-pause_menu = NodePath("../PauseUI")
-fast_forward_button = NodePath("../fast_forward_ui")
+pause_menu = NodePath("")
+fast_forward_button = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
 position = Vector2(320, 37)
-shape = SubResource("RectangleShape2D_dtala")
+shape = SubResource("RectangleShape2D_5pnhf")
 
 [node name="Icons" type="CanvasLayer" parent="."]
-script = ExtResource("9_rur20")
+script = ExtResource("9_b2yv6")
 tint_during_pause = true
 
 [node name="Control" type="Control" parent="Icons"]
@@ -496,7 +488,7 @@ offset_left = 14.0
 offset_top = 34.0
 offset_right = 41.0
 offset_bottom = 59.0
-texture = ExtResource("22_0qg6v")
+texture = ExtResource("21_vkg6y")
 
 [node name="LifeLabel" type="Label" parent="Icons/Control/LifeIndicator"]
 layout_mode = 0
@@ -506,7 +498,7 @@ offset_right = 69.0
 offset_bottom = 30.0
 scale = Vector2(0.72, 0.72)
 text = "150"
-label_settings = SubResource("LabelSettings_fw1tk")
+label_settings = SubResource("LabelSettings_0egsi")
 
 [node name="PlayerLvlIndicator" type="TextureRect" parent="Icons/Control"]
 layout_mode = 0
@@ -515,8 +507,8 @@ offset_top = 7.0
 offset_right = 150.0
 offset_bottom = 27.0
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("23_osflp")
-script = ExtResource("24_ngxfi")
+texture = ExtResource("22_3xxa7")
+script = ExtResource("23_224rf")
 
 [node name="XpBar" type="TextureRect" parent="Icons/Control/PlayerLvlIndicator"]
 layout_mode = 0
@@ -524,13 +516,13 @@ offset_left = 28.0
 offset_top = 8.0
 offset_right = 131.0
 offset_bottom = 14.0
-texture = ExtResource("25_kq2c3")
+texture = ExtResource("24_xeh0u")
 
 [node name="LvlPlate" type="TextureRect" parent="Icons/Control/PlayerLvlIndicator"]
 layout_mode = 0
 offset_right = 136.0
 offset_bottom = 20.0
-texture = ExtResource("26_v8uj3")
+texture = ExtResource("25_guc7n")
 
 [node name="LvlLabel" type="Label" parent="Icons/Control/PlayerLvlIndicator"]
 layout_mode = 0
@@ -540,7 +532,7 @@ offset_right = 34.0
 offset_bottom = 29.0
 scale = Vector2(0.6, 0.6)
 text = "10"
-label_settings = SubResource("LabelSettings_fw1tk")
+label_settings = SubResource("LabelSettings_0egsi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -550,8 +542,8 @@ offset_left = 14.0
 offset_top = 57.0
 offset_right = 41.0
 offset_bottom = 82.0
-texture = ExtResource("27_ujbrj")
-script = ExtResource("28_m6wqs")
+texture = ExtResource("26_x43ut")
+script = ExtResource("27_y2h2n")
 
 [node name="MoneyLabel" type="Label" parent="Icons/Control/MoneyIndicator"]
 layout_mode = 0
@@ -561,4 +553,4 @@ offset_right = 69.0
 offset_bottom = 30.0
 scale = Vector2(0.72, 0.72)
 text = "150"
-label_settings = SubResource("LabelSettings_fw1tk")
+label_settings = SubResource("LabelSettings_0egsi")

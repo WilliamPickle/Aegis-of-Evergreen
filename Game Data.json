@@ -179,15 +179,15 @@
   }, 
   "melee": {
 	"flytrap_melee_1": {
-	  "type": "blunt",
+	  "type": "energy",
 	  "splash_cap": 8,
 	},
 	"flytrap_melee_2": {
-	  "type": "blunt",
+	  "type": "energy",
 	  "splash_cap": 10,
 	},
 	"flytrap_melee_3": {
-	  "type": "blunt",
+	  "type": "energy",
 	  "splash_cap": 16,
 	}
   },

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4euvam5tunsa"
-path="res://.godot/imported/trees_v1.png-5777a2542771688e65992f24e5aec764.ctex"
+uid="uid://ch4ekqwlp4ldb"
+path="res://.godot/imported/tutorial_arrow_button_highlight.png-d4fee1905d71f8d57f0862f491653df2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/maps/trees_v1.png"
-dest_files=["res://.godot/imported/trees_v1.png-5777a2542771688e65992f24e5aec764.ctex"]
+source_file="res://assets/sprites/tutorial assets/tutorial_arrow_button_highlight.png"
+dest_files=["res://.godot/imported/tutorial_arrow_button_highlight.png-d4fee1905d71f8d57f0862f491653df2.ctex"]
 
 [params]
 

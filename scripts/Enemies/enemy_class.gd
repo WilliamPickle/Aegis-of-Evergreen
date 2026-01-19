@@ -84,8 +84,10 @@ func move_on_path(delta) -> void:
 
 func apply_damage(damage : float, damage_type):
 	var damage_percent = 1
+	print("damage_type (projectile): ", damage_type)
+	print("resistance type: ", resistance)
 	# replace 1000 with resistance
-	if damage_type == 1000:
+	if damage_type == resistance:
 		# ADD SOME CALCULATIONS HERE WITH damage_percent
 		damage_percent = enemy_data["resistance_percent"]
 	cur_health -= damage * damage_percent

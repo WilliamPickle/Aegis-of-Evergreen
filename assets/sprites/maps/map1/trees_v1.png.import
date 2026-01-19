@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl81in2g30tef"
-path="res://.godot/imported/ufo_v1.png-5944ed109b70a0691d27e062f3ff7e4a.ctex"
+uid="uid://b4euvam5tunsa"
+path="res://.godot/imported/trees_v1.png-0ce0ed7ba7522c133a83933f9b4bb0ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/maps/ufo_v1.png"
-dest_files=["res://.godot/imported/ufo_v1.png-5944ed109b70a0691d27e062f3ff7e4a.ctex"]
+source_file="res://assets/sprites/maps/map1/trees_v1.png"
+dest_files=["res://.godot/imported/trees_v1.png-0ce0ed7ba7522c133a83933f9b4bb0ba.ctex"]
 
 [params]
 

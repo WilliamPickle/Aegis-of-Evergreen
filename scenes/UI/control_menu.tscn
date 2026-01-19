@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dtlhtmg156rmk"]
+[gd_scene load_steps=17 format=3 uid="uid://dtlhtmg156rmk"]
 
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_hbut0"]
 [ext_resource type="Texture2D" uid="uid://cha2ssntfo8u0" path="res://assets/sprites/control menu/Control_Screen_Background.png" id="2_4fdhh"]
@@ -24,15 +24,17 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhbma"]
 texture = ExtResource("3_l5a8g")
 
+[sub_resource type="LabelSettings" id="LabelSettings_l5a8g"]
+font = ExtResource("4_nj4u5")
+font_size = 32
+
+[sub_resource type="Theme" id="Theme_nj4u5"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_l3exy"]
 font = ExtResource("4_nj4u5")
 
 [sub_resource type="LabelSettings" id="LabelSettings_w22v2"]
 font = ExtResource("4_nj4u5")
-
-[sub_resource type="LabelSettings" id="LabelSettings_l5a8g"]
-font = ExtResource("4_nj4u5")
-font_size = 32
 
 [node name="ControlMenu" type="CanvasLayer"]
 process_mode = 3
@@ -82,14 +84,41 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_hhbma")
 script = ExtResource("4_byqbw")
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
-[node name="ShiftPlusMiddle" type="Sprite2D" parent="ControlMenu"]
-position = Vector2(74, 285)
+[node name="Heading" type="Label" parent="ControlMenu/Background"]
+layout_mode = 2
+offset_left = 46.0
+offset_top = 37.0
+offset_right = 358.0
+offset_bottom = 69.0
+text = "Gameplay Controls"
+label_settings = SubResource("LabelSettings_l5a8g")
+
+[node name="Underline" type="Label" parent="ControlMenu/Background/Heading"]
+layout_mode = 0
+offset_left = -0.000305176
+offset_top = 12.0
+offset_right = 280.0
+offset_bottom = 44.0
+text = "____________"
+label_settings = SubResource("LabelSettings_l5a8g")
+
+[node name="ScrollContainer" type="Control" parent="ControlMenu"]
+anchors_preset = 0
+offset_left = 46.0
+offset_top = 81.0
+offset_right = 600.0
+offset_bottom = 334.0
+scale = Vector2(0.8, 0.8)
+theme = SubResource("Theme_nj4u5")
+
+[node name="ShiftPlusMiddle" type="Sprite2D" parent="ControlMenu/ScrollContainer"]
+position = Vector2(24, 200)
 scale = Vector2(2, 2)
 texture = ExtResource("3_guqdo")
 region_enabled = true
 region_rect = Rect2(76, 25, 15, 21)
 
-[node name="Label" type="Label" parent="ControlMenu/ShiftPlusMiddle"]
+[node name="Label" type="Label" parent="ControlMenu/ScrollContainer/ShiftPlusMiddle"]
 offset_left = 15.5
 offset_top = -6.0
 offset_right = 317.5
@@ -98,17 +127,17 @@ scale = Vector2(0.8, 0.8)
 text = "Middle Click -"
 label_settings = SubResource("LabelSettings_l3exy")
 
-[node name="Label2" type="Label" parent="ControlMenu/ShiftPlusMiddle"]
+[node name="Label2" type="Label" parent="ControlMenu/ScrollContainer/ShiftPlusMiddle"]
 offset_left = 107.0
 offset_top = -5.0
 offset_right = 287.0
 offset_bottom = 11.0
 scale = Vector2(0.8, 0.8)
-text = "Panning "
+text = "Panning (mouse)"
 label_settings = SubResource("LabelSettings_l3exy")
 autowrap_mode = 2
 
-[node name="CtrlPlus" type="Sprite2D" parent="ControlMenu"]
+[node name="CtrlPlus" type="Sprite2D" parent="ControlMenu/ScrollContainer"]
 visible = false
 position = Vector2(402, 265)
 scale = Vector2(2, 2)
@@ -116,20 +145,20 @@ texture = ExtResource("3_guqdo")
 region_enabled = true
 region_rect = Rect2(25, 47, 49, 21)
 
-[node name="RightClick" type="Sprite2D" parent="ControlMenu/CtrlPlus"]
+[node name="RightClick" type="Sprite2D" parent="ControlMenu/ScrollContainer/CtrlPlus"]
 position = Vector2(37, 0)
 texture = ExtResource("3_guqdo")
 region_enabled = true
 region_rect = Rect2(23, 97, 15, 21)
 
-[node name="LeftClick" type="Sprite2D" parent="ControlMenu"]
-position = Vector2(74, 181)
+[node name="LeftClick" type="Sprite2D" parent="ControlMenu/ScrollContainer"]
+position = Vector2(24, 96)
 scale = Vector2(2, 2)
 texture = ExtResource("3_guqdo")
 region_enabled = true
 region_rect = Rect2(23, 73, 15, 21)
 
-[node name="Label" type="Label" parent="ControlMenu/LeftClick"]
+[node name="Label" type="Label" parent="ControlMenu/ScrollContainer/LeftClick"]
 offset_left = 15.0
 offset_top = -5.5
 offset_right = 317.0
@@ -138,7 +167,7 @@ scale = Vector2(0.8, 0.8)
 text = "Left Click -"
 label_settings = SubResource("LabelSettings_l3exy")
 
-[node name="Shadow" type="Label" parent="ControlMenu/LeftClick/Label"]
+[node name="Shadow" type="Label" parent="ControlMenu/ScrollContainer/LeftClick/Label"]
 visible = false
 layout_mode = 0
 offset_left = 1.5
@@ -148,7 +177,7 @@ offset_bottom = 29.0
 text = "Right Click"
 label_settings = SubResource("LabelSettings_w22v2")
 
-[node name="Label2" type="Label" parent="ControlMenu/LeftClick"]
+[node name="Label2" type="Label" parent="ControlMenu/ScrollContainer/LeftClick"]
 offset_left = 97.5
 offset_top = -5.5
 offset_right = 221.5
@@ -158,14 +187,14 @@ text = "Action"
 label_settings = SubResource("LabelSettings_l3exy")
 autowrap_mode = 2
 
-[node name="RightClick" type="Sprite2D" parent="ControlMenu"]
-position = Vector2(74, 122)
+[node name="RightClick" type="Sprite2D" parent="ControlMenu/ScrollContainer"]
+position = Vector2(24, 37)
 scale = Vector2(2, 2)
 texture = ExtResource("3_guqdo")
 region_enabled = true
 region_rect = Rect2(23, 97, 15, 21)
 
-[node name="Label" type="Label" parent="ControlMenu/RightClick"]
+[node name="Label" type="Label" parent="ControlMenu/ScrollContainer/RightClick"]
 offset_left = 15.0
 offset_top = -5.5
 offset_right = 317.0
@@ -174,7 +203,7 @@ scale = Vector2(0.8, 0.8)
 text = "Right Click -"
 label_settings = SubResource("LabelSettings_l3exy")
 
-[node name="Shadow" type="Label" parent="ControlMenu/RightClick/Label"]
+[node name="Shadow" type="Label" parent="ControlMenu/ScrollContainer/RightClick/Label"]
 visible = false
 layout_mode = 0
 offset_left = 1.5
@@ -184,7 +213,7 @@ offset_bottom = 29.0
 text = "Right Click"
 label_settings = SubResource("LabelSettings_w22v2")
 
-[node name="Label2" type="Label" parent="ControlMenu/RightClick"]
+[node name="Label2" type="Label" parent="ControlMenu/ScrollContainer/RightClick"]
 offset_left = 98.0
 offset_top = -5.0
 offset_right = 317.0
@@ -194,14 +223,14 @@ text = "Cancel Tower Placement"
 label_settings = SubResource("LabelSettings_l3exy")
 autowrap_mode = 2
 
-[node name="Scroll" type="Sprite2D" parent="ControlMenu"]
-position = Vector2(74, 234)
+[node name="Scroll" type="Sprite2D" parent="ControlMenu/ScrollContainer"]
+position = Vector2(24, 149)
 scale = Vector2(2, 2)
 texture = ExtResource("3_guqdo")
 region_enabled = true
 region_rect = Rect2(23, 120, 15, 21)
 
-[node name="Label" type="Label" parent="ControlMenu/Scroll"]
+[node name="Label" type="Label" parent="ControlMenu/ScrollContainer/Scroll"]
 offset_left = 15.0
 offset_top = -5.5
 offset_right = 317.0
@@ -210,7 +239,7 @@ scale = Vector2(0.8, 0.8)
 text = "Scroll -"
 label_settings = SubResource("LabelSettings_l3exy")
 
-[node name="Label2" type="Label" parent="ControlMenu/Scroll"]
+[node name="Label2" type="Label" parent="ControlMenu/ScrollContainer/Scroll"]
 offset_left = 71.0
 offset_top = -5.0
 offset_right = 136.0
@@ -220,20 +249,28 @@ text = "Zoom"
 label_settings = SubResource("LabelSettings_l3exy")
 autowrap_mode = 2
 
-[node name="Heading" type="Label" parent="ControlMenu"]
-layout_mode = 0
-offset_left = 59.0
-offset_top = 50.0
-offset_right = 371.0
-offset_bottom = 82.0
-text = "Gameplay Controls"
-label_settings = SubResource("LabelSettings_l5a8g")
+[node name="ShiftRightClick" type="Sprite2D" parent="ControlMenu/ScrollContainer"]
+position = Vector2(66, 254)
+scale = Vector2(2, 2)
+texture = ExtResource("3_guqdo")
+region_enabled = true
+region_rect = Rect2(21, 26, 53, 18)
 
-[node name="Underline" type="Label" parent="ControlMenu/Heading"]
-layout_mode = 0
-offset_left = -0.000305176
-offset_top = 12.0
-offset_right = 280.0
-offset_bottom = 44.0
-text = "____________"
-label_settings = SubResource("LabelSettings_l5a8g")
+[node name="Label" type="Label" parent="ControlMenu/ScrollContainer/ShiftRightClick"]
+offset_left = 32.5
+offset_top = -7.5
+offset_right = 334.5
+offset_bottom = 8.5
+scale = Vector2(0.8, 0.8)
+text = "Shift Right -"
+label_settings = SubResource("LabelSettings_l3exy")
+
+[node name="Label2" type="Label" parent="ControlMenu/ScrollContainer/ShiftRightClick"]
+offset_left = 124.0
+offset_top = -6.0
+offset_right = 298.0
+offset_bottom = 10.0
+scale = Vector2(0.8, 0.8)
+text = "Panning (trackpad)"
+label_settings = SubResource("LabelSettings_l3exy")
+autowrap_mode = 2
