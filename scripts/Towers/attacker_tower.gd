@@ -32,17 +32,6 @@ func _ready() -> void:
 		_attack_cooldown.start()
 	)
 
-# Only for debugging
-func _draw() -> void:
-	super._draw()
-	if targeted_enemy != null:
-		draw_line(Vector2.ZERO, (global_position - targeted_enemy.global_position)*-1, Color(0,0,0), 2)
-
-# Just for visual will be deleted later.
-func _physics_process(_delta: float) -> void:
-	if targeted_enemy != null:
-		queue_redraw()
-
 # This is to be defined by a sub class
 func attack():
 	if not is_instance_valid(targeted_enemy):

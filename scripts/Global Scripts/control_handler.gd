@@ -9,8 +9,8 @@ enum ControlState {
 
 var current_states : Array[ControlState] = [ControlState.PLAYING]
 
-func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
+#func _ready() -> void:
+	#process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:

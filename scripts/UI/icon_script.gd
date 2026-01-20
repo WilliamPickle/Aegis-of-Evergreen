@@ -36,6 +36,8 @@ func load_icon_scene():
 	if new_scene:
 		SceneLoader.quick_add_scene(file_path, new_key,SceneLoader.current_main_scene)
 		SceneLoader.current_main_scene = new_key
+		Tower.current_tower = null
+		ControlHandler.current_states.erase(ControlHandler.ControlState.VIEWING_TOWER)
 	else:
 		SceneLoader.tint_scene()
 		SceneLoader.load_scene(file_path, new_key)

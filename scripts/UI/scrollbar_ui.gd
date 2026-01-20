@@ -53,7 +53,7 @@ func _ready() -> void:
 		
 		
 		new_card.text = "$"+str(int(game_data[class_type][tower]["cost"][0]))
-		new_card.add_theme_font_override("Font", load(font))
+		new_card.add_theme_font_override("font", load(font))
 		new_card.add_theme_font_size_override("font_size", 24)
 		new_card.add_theme_color_override("font_color", normal_color)
 		new_card.add_theme_color_override("font_hover_color", hover_color)

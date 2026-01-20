@@ -19,8 +19,11 @@ func _ready():
 	#attack_range.tower = self
 
 func _draw() -> void:
-	super._draw()
 	if can_draw:
+		draw_circle(Vector2.ZERO, range_collider.shape.radius, Color(0.15, 0.15, 0.15, 0.25))
+		draw_circle(Vector2.ZERO, range_collider.shape.radius, Color(0.15, 0.15, 0.15, 0.25), false, 2)
+		draw_circle(Vector2.ZERO, $BodyCollision.shape.radius, Color(0.15, 0.15, 0.15, 0.25), false, 1.5)
+		
 		draw_set_transform_matrix(attack_range.transform)
 		draw_polygon(shape_polygon,[COLOR])
 
@@ -32,9 +35,8 @@ func attack() -> void:
 	var tower_attack : Melee = load(attack_fpath).instantiate()
 	tower_attack.global_position = global_position
 	#map_area.call_deferred("add_child", tower_attack)
+	
 	map_area.add_child(tower_attack)
-	print("-------------------------------")
-	print("overlapping areas", attack_range.get_overlapping_areas())
 	tower_attack.start(attack_range.global_rotation, targeted_enemy, attack_range.get_overlapping_areas())
 
 func upgrade_tower() -> void:
