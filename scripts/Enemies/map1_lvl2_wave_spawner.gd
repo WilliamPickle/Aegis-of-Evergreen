@@ -5,7 +5,7 @@ extends WaveSpawner
 
 func _ready() -> void:
 	super._ready()
-	wave_bonus_money = [50, 50, 75, 100, 125]
+	wave_bonus_money = [0, 50, 75, 100, 125]
 	lvl2_dialogue.start_wave.connect(_on_start_lvl2)
 	manual_wave_button.button_down.connect(_on_start_lvl2)
 
