@@ -37,6 +37,10 @@ func add_tower() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if !is_instance_valid(new_tower):
+		new_tower = null
+		is_placing = false
+		ControlHandler.current_states.erase(CONTROLS_STATES.PLACING_TOWER)
 	if event.is_action_pressed("place_tower") and is_placing:
 		var can_place : bool = new_tower.place_tower()
 		if can_place:

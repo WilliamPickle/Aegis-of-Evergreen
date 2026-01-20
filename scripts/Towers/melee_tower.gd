@@ -37,7 +37,7 @@ func attack() -> void:
 	#map_area.call_deferred("add_child", tower_attack)
 	
 	map_area.add_child(tower_attack)
-	tower_attack.start(attack_range.global_rotation, targeted_enemy, attack_range.get_overlapping_areas())
+	tower_attack.start(self, attack_range.global_rotation, targeted_enemy, attack_range.get_overlapping_areas())
 
 func upgrade_tower() -> void:
 	super.upgrade_tower()
