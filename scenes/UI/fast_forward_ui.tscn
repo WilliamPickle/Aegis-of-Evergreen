@@ -44,4 +44,3 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_2y27k")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_xgm4c")
 theme_override_styles/normal = SubResource("StyleBoxTexture_hh6n2")
 script = ExtResource("4_1so7y")
-speed_multiplier = 4.0

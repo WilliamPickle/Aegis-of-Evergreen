@@ -60,16 +60,16 @@ func send_enemy(enemy, quantity: int, delay_time: float) -> void:
 		new_enemy.removed.connect(update_total_enemies.bind(new_enemy))
 		new_path.add_child(new_enemy)
 	new_timer.queue_free()
-	print(wave)
+	#print(wave)
 		
 func update_total_enemies(enemy):
 	enemy_count -= 1
 	#print("current enemy count: ", enemy_count)
 	# for some reason in the if statement, i had this conditional:  and wave == enemy.wave_number
 	# I don't know what bug it was trying to fix but i've removed it b/c it's causing another bug
-	print("enemy_count: ", enemy_count)
+	#print("enemy_count: ", enemy_count)
 	if enemy_count <= 0 and !currently_sending:
-		print("wave ", wave, " meant to stop")
+		#print("wave ", wave, " meant to stop")
 		# logic to stop a wave
 		wave_timer.stop()
 		wave_timer.emit_signal("timeout")
@@ -78,8 +78,8 @@ func update_total_enemies(enemy):
 			enemy.disconnect("removed", update_total_enemies)
 			
 func update_wave():
-	print("wave ", wave, " ended")
-	print("The finale has started: ", final_wave_started)
+	#print("wave ", wave, " ended")
+	#print("The finale has started: ", final_wave_started)
 	# win logic
 	if final_wave_started and enemy_count <= 0:
 		if won_level:
@@ -91,18 +91,18 @@ func update_wave():
 		wave_timer.wait_time = 1
 		wave_timer.start()
 		await wave_timer.timeout
-		print("About to load win screen")
-		print("Enemies left: ", enemy_count)
+		#print("About to load win screen")
+		#print("Enemies left: ", enemy_count)
 		SceneLoader.load_scene("res://scenes/UI/win_ui.tscn", "win_ui")
 		PauseUi.toggle_pause(SceneLoader._current_scenes["win_ui"])
-		print("prev levels won:", PlayerStats.lvls_beaten)
+		#print("prev levels won:", PlayerStats.lvls_beaten)
 		PlayerStats.lvls_beaten += 1
 		PlayerStats.cur_money = PlayerStats.DEFAULT_MONEY[floori(PlayerStats.lvls_beaten / 3)][PlayerStats.lvls_beaten % 3]
-		print("levels won:", PlayerStats.lvls_beaten)
-		print("wave variable: ", wave)
+		#print("levels won:", PlayerStats.lvls_beaten)
+		#print("wave variable: ", wave)
 		wave_timer.disconnect("timeout", update_wave)
 	
-	print("Final wave? ", final_wave_started)
+	#print("Final wave? ", final_wave_started)
 		
 # stops the given function for a certain amount of time
 func delay(delay_time) -> void:

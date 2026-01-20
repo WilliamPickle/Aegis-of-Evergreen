@@ -26,7 +26,7 @@ func enable_text(enable : bool = true):
 func load_icon_scene():
 	## Temp if statement
 	if file_path == "":
-		print("Still waiting on a scene!!!!!")
+		#print("Still waiting on a scene!!!!!")
 		return
 	if ui_open:
 		return

@@ -4,7 +4,7 @@ const levels_list = ["res://scenes/level_1.tscn", "res://scenes/level_2.tscn", "
 
 func _ready() -> void:
 	file_path = levels_list[PlayerStats.lvls_beaten]
-	print("current retry level: ", file_path)
+	#print("current retry level: ", file_path)
 	if has_text:
 		mouse_entered.connect(enable_text)
 		mouse_exited.connect(enable_text.bind(false))

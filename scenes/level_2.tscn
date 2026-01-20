@@ -491,7 +491,7 @@ region_rect = Rect2(0, 0, 320, 240)
 position = Vector2(0, 1)
 script = ExtResource("21_tv75f")
 health_label = NodePath("../Icons/Control/LifeIndicator/LifeLabel")
-base_health = 1.0
+base_health = 15.0
 pause_menu = NodePath("../PauseUI")
 fast_forward_button = NodePath("../fast_forward_ui")
 

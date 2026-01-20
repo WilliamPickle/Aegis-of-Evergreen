@@ -12,10 +12,10 @@ enum Target{
 }
 
 func _init(type : Type, target : Target, duration : float) -> void:
-	if target == Target.ENEMY:
-		print("Targetting Enemy")
-	else:
-		print("Targetting Tower")
+	#if target == Target.ENEMY:
+		#print("Targetting Enemy")
+	#else:
+		#print("Targetting Tower")
 	wait_time = duration
 	
 

@@ -10,14 +10,14 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 func start(start_rotation : float, target_enemy : Enemy, enemies : Array[Area2D]) -> void:
 	global_rotation = start_rotation - PI/2
 	play("default")
-	target_enemy.apply_damage(2, type)
+	target_enemy.apply_damage(20, type)
 	enemies.erase(target_enemy)
 
 	for i in range(splash_cap):
 		if len(enemies) > 0:
 			var ran_index : int = randi() % enemies.size()
 			var chosen_enemy : Enemy = enemies.pop_at(ran_index)
-			chosen_enemy.apply_damage(2, type)
+			chosen_enemy.apply_damage(20, type)
 			print("----------------------")
 			print(chosen_enemy)
 		else:
