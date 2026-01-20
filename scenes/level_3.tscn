@@ -1,80 +1,79 @@
-[gd_scene load_steps=58 format=3 uid="uid://b5ogoerans70n"]
+[gd_scene load_steps=57 format=3 uid="uid://bly8owxtaisdq"]
 
-[ext_resource type="Script" uid="uid://sxewgkmuogm4" path="res://scenes/level_2.gd" id="1_73m23"]
-[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_bgibu"]
-[ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_73m23"]
-[ext_resource type="Texture2D" uid="uid://beftjsu4wnyuq" path="res://assets/sprites/maps/map1/Map 1 Level 2.png" id="3_45kkt"]
-[ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="4_taw0e"]
-[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="5_7egwj"]
-[ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="6_nquw4"]
-[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="7_3buw8"]
-[ext_resource type="Texture2D" uid="uid://cogocbr540tui" path="res://assets/sprites/maps/map1/map 1 Level 2 Trees Overlayer.png" id="7_73m23"]
-[ext_resource type="Script" uid="uid://dcwhmibs07e8l" path="res://scripts/Enemies/map1_lvl2_wave_spawner.gd" id="9_bgibu"]
-[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="9_rur20"]
-[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="10_srjk8"]
-[ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="11_0na3t"]
-[ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="12_gxp3h"]
-[ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_xc1pa"]
-[ext_resource type="PackedScene" uid="uid://cnl4pdo4fp6i7" path="res://scenes/UI/fast_forward_ui.tscn" id="15_j2jmx"]
-[ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="16_bbkd8"]
-[ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_kqn1b"]
-[ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_y6uxt"]
-[ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_r72fi"]
-[ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="20_bgibu"]
-[ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="21_tv75f"]
-[ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="22_0qg6v"]
-[ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="23_osflp"]
-[ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="24_ngxfi"]
-[ext_resource type="Texture2D" uid="uid://cspxuiahyng26" path="res://assets/sprites/icons and buttons/player_level_bar.png" id="25_kq2c3"]
-[ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="26_v8uj3"]
-[ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="27_ujbrj"]
-[ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="28_m6wqs"]
+[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_bjw4u"]
+[ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_1rxxv"]
+[ext_resource type="Texture2D" uid="uid://qe8ek44em105" path="res://assets/sprites/maps/map1/Map 1 Level 3.png" id="3_ld1e4"]
+[ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="4_detxl"]
+[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="5_58p72"]
+[ext_resource type="Texture2D" uid="uid://cdhvkpy6ejlkl" path="res://assets/sprites/maps/map1/Map 1 Level 3 trees.png" id="6_365g5"]
+[ext_resource type="Texture2D" uid="uid://dv0g30wev1oj3" path="res://assets/sprites/maps/map1/Map 1 Level 3 trees overlayer.png" id="7_50287"]
+[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="8_os8re"]
+[ext_resource type="Script" uid="uid://bm6287ovbjpnm" path="res://scenes/lvl_3_wave_spawner.gd" id="9_bjw4u"]
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="10_jnlnj"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="11_nhai6"]
+[ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="12_0vrl8"]
+[ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="13_1ke33"]
+[ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_mnu1b"]
+[ext_resource type="PackedScene" uid="uid://cnl4pdo4fp6i7" path="res://scenes/UI/fast_forward_ui.tscn" id="15_be7ao"]
+[ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="16_1x8o1"]
+[ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_nvr1i"]
+[ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_hs0n0"]
+[ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_c4rup"]
+[ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="20_ncksi"]
+[ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="21_7mmqb"]
+[ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="22_sf7oq"]
+[ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="23_kmaj6"]
+[ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="24_12f7l"]
+[ext_resource type="Texture2D" uid="uid://cspxuiahyng26" path="res://assets/sprites/icons and buttons/player_level_bar.png" id="25_76odh"]
+[ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="26_xgc1e"]
+[ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="27_04pdi"]
+[ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="28_ddneo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_1rxxv")
 region = Rect2(0, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2xxo"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_1rxxv")
 region = Rect2(100, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cbcq"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_1rxxv")
 region = Rect2(200, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isj1j"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_1rxxv")
 region = Rect2(300, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_so66j"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_1rxxv")
 region = Rect2(400, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tr1x6"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_1rxxv")
 region = Rect2(500, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5akn"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_1rxxv")
 region = Rect2(600, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbtxt"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_1rxxv")
 region = Rect2(700, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2fux"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_1rxxv")
 region = Rect2(800, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7g0b"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_1rxxv")
 region = Rect2(900, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmfjm"]
-atlas = ExtResource("2_73m23")
+atlas = ExtResource("2_1rxxv")
 region = Rect2(1000, 0, 100, 50)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vfjea"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdrep"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -116,38 +115,38 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbb35"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_detxl")
 region = Rect2(0, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iw4em"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_detxl")
 region = Rect2(640, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnsmf"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_detxl")
 region = Rect2(1280, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nossa"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_detxl")
 region = Rect2(1920, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hjqri"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_detxl")
 region = Rect2(2560, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hg84p"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_detxl")
 region = Rect2(3200, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1aans"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_detxl")
 region = Rect2(3840, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0ron"]
-atlas = ExtResource("4_taw0e")
+atlas = ExtResource("4_detxl")
 region = Rect2(4480, 0, 640, 360)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mx6g7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hkya4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -179,69 +178,68 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="Curve2D" id="Curve2D_8ky4j"]
+[sub_resource type="Curve2D" id="Curve2D_e8wht"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -273, -109, 0, 0, 0, 0, -265, -80, 0, 0, 0, 0, -248, -56, 0, 0, 0, 0, -216, -39, 0, 0, 0, 0, -183, -37, 0, 0, 0, 0, -156, -39, 0, 0, 0, 0, -123, -54, 0, 0, 0, 0, 0, -124, 0, 0, 0, 0, 41, -137, 0, 0, 0, 0, 87, -141, 0, 0, 0, 0, 133, -140, 0, 0, 0, 0, 161, -135, 0, 0, 0, 0, 179, -122, 0, 0, 0, 0, 194, -99, 0, 0, 0, 0, 197, -80, 0, 0, 0, 0, 186, -55, 0, 0, 0, 0, 170, -37, 0, 0, 0, 0, 46, -11, 0, 0, 0, 0, 21, 5, 0, 0, 0, 0, 11, 19, 0, 0, 0, 0, 9, 38, 0, 0, 0, 0, 17, 54, 0, 0, 0, 0, 32, 71, 0, 0, 0, 0, 47, 80, 0, 0, 0, 0, 68, 86, 0, 0, 0, 0, 190, 72, 0, 0, 0, 0, 246, 46, 0, 0, 0, 0, 280, 37, 0, 0, 0, 0, 342, 37)
 }
 point_count = 29
 
-[sub_resource type="LabelSettings" id="LabelSettings_6jdxa"]
-font = ExtResource("10_srjk8")
+[sub_resource type="LabelSettings" id="LabelSettings_22ac7"]
+font = ExtResource("11_nhai6")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gnx6a"]
-texture = ExtResource("11_0na3t")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fvsjb"]
+texture = ExtResource("12_0vrl8")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_32olf"]
-texture = ExtResource("12_gxp3h")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4i7c"]
+texture = ExtResource("13_1ke33")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmoov"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80lu4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtala"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5ksm"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_fw1tk"]
-font = ExtResource("10_srjk8")
+[sub_resource type="LabelSettings" id="LabelSettings_n7fpp"]
+font = ExtResource("11_nhai6")
 font_size = 24
 outline_color = Color(0.336608, 0.336608, 0.336608, 1)
 
-[node name="level_2" type="Node2D"]
-script = ExtResource("1_73m23")
+[node name="level_3" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-script = ExtResource("1_bgibu")
+script = ExtResource("1_bjw4u")
 
 [node name="MapAssets" type="Node2D" parent="."]
 
 [node name="fish" type="AnimatedSprite2D" parent="MapAssets"]
 z_index = 1
 position = Vector2(39, -81)
-sprite_frames = SubResource("SpriteFrames_vfjea")
+sprite_frames = SubResource("SpriteFrames_jdrep")
 autoplay = "default"
 
 [node name="map" type="Sprite2D" parent="MapAssets"]
-texture = ExtResource("3_45kkt")
+texture = ExtResource("3_ld1e4")
 
 [node name="river" type="AnimatedSprite2D" parent="MapAssets"]
-sprite_frames = SubResource("SpriteFrames_mx6g7")
+sprite_frames = SubResource("SpriteFrames_hkya4")
 autoplay = "default"
 
 [node name="bridge" type="Sprite2D" parent="MapAssets"]
 z_index = 2
-texture = ExtResource("5_7egwj")
+texture = ExtResource("5_58p72")
 
 [node name="tree" type="Sprite2D" parent="MapAssets"]
-texture = ExtResource("6_nquw4")
+texture = ExtResource("6_365g5")
 
 [node name="tree overlayer" type="Sprite2D" parent="MapAssets"]
 z_index = 10
-texture = ExtResource("7_73m23")
+texture = ExtResource("7_50287")
 
 [node name="ufo" type="Sprite2D" parent="MapAssets"]
-texture = ExtResource("7_3buw8")
+texture = ExtResource("8_os8re")
 
 [node name="EnemyPath2" type="Path2D" parent="."]
 y_sort_enabled = true
-curve = SubResource("Curve2D_8ky4j")
+curve = SubResource("Curve2D_e8wht")
 metadata/_edit_lock_ = true
 
 [node name="PlacementCollisions" type="Area2D" parent="."]
@@ -266,14 +264,8 @@ polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130
 visible = false
 polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
 
-[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label")]
-script = ExtResource("9_bgibu")
-pause_menu = NodePath("../PauseUI")
-fast_forward_button = NodePath("../fast_forward_ui")
-delay_timer = NodePath("DelayFuncTimer")
-wave_timer = NodePath("WaveTimer")
-path_2d = NodePath("../EnemyPath2")
-wave_label = NodePath("Wave Text/WaveLabel")
+[node name="WaveSpawner" type="Node2D" parent="."]
+script = ExtResource("9_bjw4u")
 metadata/_custom_type_script = "uid://clq18rcf3qqqj"
 
 [node name="DelayFuncTimer" type="Timer" parent="WaveSpawner"]
@@ -281,7 +273,7 @@ metadata/_custom_type_script = "uid://clq18rcf3qqqj"
 [node name="WaveTimer" type="Timer" parent="WaveSpawner"]
 
 [node name="Wave Text" type="CanvasLayer" parent="WaveSpawner"]
-script = ExtResource("9_rur20")
+script = ExtResource("10_jnlnj")
 tint_during_pause = true
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 
@@ -292,7 +284,7 @@ offset_right = 263.0
 offset_bottom = 36.0
 scale = Vector2(1.2, 1.2)
 text = "Wave 0/5"
-label_settings = SubResource("LabelSettings_6jdxa")
+label_settings = SubResource("LabelSettings_22ac7")
 
 [node name="Start Button" type="CanvasLayer" parent="."]
 layer = 2
@@ -327,23 +319,23 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/hover = SubResource("StyleBoxTexture_gnx6a")
-theme_override_styles/normal = SubResource("StyleBoxTexture_32olf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fvsjb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_n4i7c")
 action_mode = 0
 icon_alignment = 1
 
-[node name="PauseUI" parent="." instance=ExtResource("14_xc1pa")]
+[node name="PauseUI" parent="." instance=ExtResource("14_mnu1b")]
 
-[node name="fast_forward_ui" parent="." instance=ExtResource("15_j2jmx")]
+[node name="fast_forward_ui" parent="." instance=ExtResource("15_be7ao")]
 hide_during_pause = true
 
-[node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("16_bbkd8")]
+[node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("16_1x8o1")]
 placement_mask = NodePath("../PlacementCollisions")
 card_type = Array[String](["ranger", "chipmunk", "bee", "flytrap"])
 hide_during_pause = true
 
 [node name="DialogueUI" type="CanvasLayer" parent="."]
-script = ExtResource("9_rur20")
+script = ExtResource("10_jnlnj")
 tint_during_pause = true
 
 [node name="DialogueBox" type="Control" parent="DialogueUI" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
@@ -351,7 +343,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("17_kqn1b")
+script = ExtResource("17_nvr1i")
 continue_button = NodePath("ContButton")
 skip_button = NodePath("SkipButton")
 label_container = NodePath("DialogueLabels")
@@ -367,7 +359,7 @@ layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
-texture = ExtResource("18_y6uxt")
+texture = ExtResource("18_hs0n0")
 
 [node name="Speaker" type="Label" parent="DialogueUI/DialogueBox"]
 layout_mode = 0
@@ -377,7 +369,7 @@ offset_right = 282.0
 offset_bottom = 570.0
 scale = Vector2(0.8, 0.8)
 text = "The Ranger"
-label_settings = ExtResource("19_r72fi")
+label_settings = ExtResource("19_c4rup")
 autowrap_mode = 2
 
 [node name="SkipButton" type="Button" parent="DialogueUI/DialogueBox"]
@@ -387,12 +379,12 @@ offset_left = 164.0
 offset_top = 578.0
 offset_right = 1116.0
 offset_bottom = 699.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qmoov")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80lu4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_80lu4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_80lu4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_80lu4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_80lu4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_80lu4")
 
 [node name="ContButton" type="Button" parent="DialogueUI/DialogueBox"]
 layout_mode = 0
@@ -400,12 +392,12 @@ offset_left = 164.0
 offset_top = 578.0
 offset_right = 1116.0
 offset_bottom = 699.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_qmoov")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qmoov")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80lu4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_80lu4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_80lu4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_80lu4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_80lu4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_80lu4")
 
 [node name="Timer" type="Timer" parent="DialogueUI/DialogueBox"]
 
@@ -424,16 +416,16 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
-text = "Good job on making it through the first round of enemies. "
-label_settings = ExtResource("19_r72fi")
+text = "Good work on fending off the invaders yet again. "
+label_settings = ExtResource("19_c4rup")
 autowrap_mode = 2
 
 [node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label1"]
 position = Vector2(776, -32)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("20_bgibu")
+texture = ExtResource("20_ncksi")
 region_enabled = true
-region_rect = Rect2(1600, 0, 320, 240)
+region_rect = Rect2(320, 0, 320, 240)
 
 [node name="Label2" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
@@ -442,14 +434,14 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
-text = "It seems, however, that more are on their way. "
-label_settings = ExtResource("19_r72fi")
+text = "However, don't get comfortable just yet."
+label_settings = ExtResource("19_c4rup")
 autowrap_mode = 2
 
 [node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label2"]
 position = Vector2(776, -32)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("20_bgibu")
+texture = ExtResource("20_ncksi")
 region_enabled = true
 region_rect = Rect2(640, 0, 320, 240)
 
@@ -460,14 +452,14 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
-text = "I'd also like to note that I'm beginning to smell something strange coming out of the mushroom forest..."
-label_settings = ExtResource("19_r72fi")
+text = "I have a hunch that greater dangers are on the horizon. Perhaps it may be time for the leader of the fleet to show itself."
+label_settings = ExtResource("19_c4rup")
 autowrap_mode = 2
 
 [node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label3"]
 position = Vector2(776, -32)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("20_bgibu")
+texture = ExtResource("20_ncksi")
 region_enabled = true
 region_rect = Rect2(960, 0, 320, 240)
 
@@ -478,31 +470,49 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
-text = "In any case, keep protecting our environment and make sure it doesn't get overran. "
-label_settings = ExtResource("19_r72fi")
+text = "On top of all this, that stench from the forest only seems to be getting stronger as the invasion drags on..."
+label_settings = ExtResource("19_c4rup")
 autowrap_mode = 2
 
 [node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label4"]
 position = Vector2(776, -32)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("20_bgibu")
+texture = ExtResource("20_ncksi")
 region_enabled = true
-region_rect = Rect2(0, 0, 320, 240)
+region_rect = Rect2(960, 0, 320, 240)
+
+[node name="Label5" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "Brace yourself, volunteer, and show our allies that you have what it takes to defend our forest. "
+label_settings = ExtResource("19_c4rup")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label5"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_ncksi")
+region_enabled = true
+region_rect = Rect2(1280, 0, 320, 240)
 
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu", "fast_forward_button")]
 position = Vector2(0, 1)
-script = ExtResource("21_tv75f")
+script = ExtResource("21_7mmqb")
 health_label = NodePath("../Icons/Control/LifeIndicator/LifeLabel")
-base_health = 15.0
+base_health = 20.0
 pause_menu = NodePath("../PauseUI")
 fast_forward_button = NodePath("../fast_forward_ui")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
 position = Vector2(320, 37)
-shape = SubResource("RectangleShape2D_dtala")
+shape = SubResource("RectangleShape2D_q5ksm")
 
 [node name="Icons" type="CanvasLayer" parent="."]
-script = ExtResource("9_rur20")
+script = ExtResource("10_jnlnj")
 tint_during_pause = true
 
 [node name="Control" type="Control" parent="Icons"]
@@ -517,7 +527,7 @@ offset_left = 14.0
 offset_top = 34.0
 offset_right = 41.0
 offset_bottom = 59.0
-texture = ExtResource("22_0qg6v")
+texture = ExtResource("22_sf7oq")
 
 [node name="LifeLabel" type="Label" parent="Icons/Control/LifeIndicator"]
 layout_mode = 0
@@ -527,7 +537,7 @@ offset_right = 69.0
 offset_bottom = 30.0
 scale = Vector2(0.72, 0.72)
 text = "150"
-label_settings = SubResource("LabelSettings_fw1tk")
+label_settings = SubResource("LabelSettings_n7fpp")
 
 [node name="PlayerLvlIndicator" type="TextureRect" parent="Icons/Control"]
 layout_mode = 0
@@ -536,8 +546,8 @@ offset_top = 7.0
 offset_right = 150.0
 offset_bottom = 27.0
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("23_osflp")
-script = ExtResource("24_ngxfi")
+texture = ExtResource("23_kmaj6")
+script = ExtResource("24_12f7l")
 
 [node name="XpBar" type="TextureRect" parent="Icons/Control/PlayerLvlIndicator"]
 layout_mode = 0
@@ -545,13 +555,13 @@ offset_left = 28.0
 offset_top = 8.0
 offset_right = 131.0
 offset_bottom = 14.0
-texture = ExtResource("25_kq2c3")
+texture = ExtResource("25_76odh")
 
 [node name="LvlPlate" type="TextureRect" parent="Icons/Control/PlayerLvlIndicator"]
 layout_mode = 0
 offset_right = 136.0
 offset_bottom = 20.0
-texture = ExtResource("26_v8uj3")
+texture = ExtResource("26_xgc1e")
 
 [node name="LvlLabel" type="Label" parent="Icons/Control/PlayerLvlIndicator"]
 layout_mode = 0
@@ -561,7 +571,7 @@ offset_right = 34.0
 offset_bottom = 29.0
 scale = Vector2(0.6, 0.6)
 text = "10"
-label_settings = SubResource("LabelSettings_fw1tk")
+label_settings = SubResource("LabelSettings_n7fpp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -571,8 +581,8 @@ offset_left = 14.0
 offset_top = 57.0
 offset_right = 41.0
 offset_bottom = 82.0
-texture = ExtResource("27_ujbrj")
-script = ExtResource("28_m6wqs")
+texture = ExtResource("27_04pdi")
+script = ExtResource("28_ddneo")
 
 [node name="MoneyLabel" type="Label" parent="Icons/Control/MoneyIndicator"]
 layout_mode = 0
@@ -582,4 +592,4 @@ offset_right = 69.0
 offset_bottom = 30.0
 scale = Vector2(0.72, 0.72)
 text = "150"
-label_settings = SubResource("LabelSettings_fw1tk")
+label_settings = SubResource("LabelSettings_n7fpp")

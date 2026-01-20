@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://j8cwmtn45ixk"]
+[gd_scene load_steps=33 format=3 uid="uid://j8cwmtn45ixk"]
 
 [ext_resource type="Texture2D" uid="uid://5df1ywuoeu2p" path="res://assets/sprites/cutscenes/level_1/Space.png" id="1_6ds4i"]
 [ext_resource type="Script" uid="uid://dvv5nga2g61av" path="res://scripts/cutscene_script.gd" id="1_wname"]
@@ -56,6 +56,17 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a35cd"]
 texture = ExtResource("3_8i0x7")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ud2vv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_simcy"]
+
+[sub_resource type="Theme" id="Theme_t2gc3"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_ud2vv")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_simcy")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_simcy")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_simcy")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_simcy")
+
 [node name="CutScene1" type="Node2D" node_paths=PackedStringArray("camera", "next_button", "skip_button")]
 script = ExtResource("1_wname")
 wait_time = 1.0
@@ -66,7 +77,6 @@ skip_button = NodePath("Camera2D/Skip")
 metadata/_custom_type_script = "uid://dvv5nga2g61av"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 zoom = Vector2(4, 4)
 
 [node name="Next" type="Button" parent="Camera2D"]
@@ -126,19 +136,24 @@ wait_time = 2.0
 one_shot = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(320, 180)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -322.0
-offset_top = -90.0
-offset_right = 323.0
-offset_bottom = 90.0
+offset_left = -164.0
+offset_right = 164.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_t2gc3")
 horizontal_scroll_mode = 0
 
 [node name="VScrollBar" type="VBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
 [node name="Space_cutscene" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
@@ -165,12 +180,13 @@ layout_mode = 0
 texture = ExtResource("15_74sw1")
 
 [node name="UFO_landed" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 texture = ExtResource("16_gr8l6")
+expand_mode = 1
 
 [node name="ComicEdge4" type="TextureRect" parent="ScrollContainer/VScrollBar/UFO_landed"]
 layout_mode = 0
-scale = Vector2(2, 2)
 texture = ExtResource("13_simcy")
 
 [node name="Stand_off" type="TextureRect" parent="ScrollContainer/VScrollBar"]
