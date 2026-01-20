@@ -98,6 +98,7 @@ _data = {
 
 [node name="win_ui" type="CanvasLayer"]
 process_mode = 3
+visible = false
 script = ExtResource("1_mvmst")
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 

@@ -16,7 +16,7 @@ const DEFAULT_MONEY : Array = [
 	[500.0, 600.0, 700.0],
 	[800.0, 900.0, 1000.0],
 ]
-@onready var cur_money = DEFAULT_MONEY[0][2]
+@onready var cur_money = DEFAULT_MONEY[0][0]
 
 func _ready() -> void:
 	xp_changed.connect(calculate_player_lvl)

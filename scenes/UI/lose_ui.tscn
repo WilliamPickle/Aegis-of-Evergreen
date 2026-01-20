@@ -175,7 +175,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_wpp0v")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5ish")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tlmoh")
 script = ExtResource("11_fmbor")
-file_path = "res://scenes/level_1.tscn"
 new_scene = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 

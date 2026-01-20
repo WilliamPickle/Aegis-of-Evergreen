@@ -25,6 +25,7 @@ var sprite_reversed = false
 var status_applied_list = []
 # keeps track what wave enemy was sent out on
 var wave_number : int
+var has_been_removed : bool = false
 
 # hp bar variables
 @export var hp_button: Button
@@ -59,6 +60,9 @@ func _ready() -> void:
 # automatically deletes enemy and path when it reaches the end
 func move_on_path(delta) -> void:
 	if  path.progress_ratio >= 1:
+		if has_been_removed:
+			return
+		has_been_removed = true
 		emit_signal("removed")
 		print("reached end")
 		if cur_health > 0:
@@ -89,19 +93,13 @@ func apply_damage(damage : float, damage_type):
 		# ADD SOME CALCULATIONS HERE WITH damage_percent
 		damage_percent = enemy_data["resistance_percent"]
 	cur_health -= damage * damage_percent
-	if cur_health <= 0.0:
-		PlayerStats.PlayerXp += xp
-		PlayerStats.cur_money += money_drop
-		PlayerStats.emit_signal("xp_changed")
-		PlayerStats.emit_signal("money_changed")
-		emit_signal("removed")
-		path.queue_free()
-		queue_free()
-		return
 	draw_health()
 
 func draw_health():
 	if cur_health <= 0.0:
+		if has_been_removed:
+			return
+		has_been_removed = true
 		PlayerStats.PlayerXp += xp
 		PlayerStats.cur_money += money_drop
 		PlayerStats.emit_signal("xp_changed")

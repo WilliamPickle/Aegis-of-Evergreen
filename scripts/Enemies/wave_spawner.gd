@@ -25,9 +25,12 @@ const beetle := preload("res://scenes/Enemies/beetle.tscn")
 var enemy_count: int = 0
 var currently_sending: bool = false
 var final_wave_started: bool = false
+const max_waves = 5
 var wave_bonus_money: Array[float] = [0, 50, 60, 60, 70]
 var wave := 0
-const max_waves = 5
+
+# to prevent win condition being called from multiple enemy deaths
+var won_level: bool = false
 
 func _ready() -> void:
 	wave_timer.timeout.connect(update_wave)
@@ -79,6 +82,9 @@ func update_wave():
 	print("The finale has started: ", final_wave_started)
 	# win logic
 	if final_wave_started and enemy_count <= 0:
+		if won_level:
+			return
+		won_level = true
 		Engine.time_scale = 1
 		pause_menu.visible = false
 		fast_forward_button.visible = false
@@ -89,8 +95,12 @@ func update_wave():
 		print("Enemies left: ", enemy_count)
 		SceneLoader.load_scene("res://scenes/UI/win_ui.tscn", "win_ui")
 		PauseUi.toggle_pause(SceneLoader._current_scenes["win_ui"])
+		print("prev levels won:", PlayerStats.lvls_beaten)
 		PlayerStats.lvls_beaten += 1
 		PlayerStats.cur_money = PlayerStats.DEFAULT_MONEY[floori(PlayerStats.lvls_beaten / 3)][PlayerStats.lvls_beaten % 3]
+		print("levels won:", PlayerStats.lvls_beaten)
+		print("wave variable: ", wave)
+		wave_timer.disconnect("timeout", update_wave)
 	
 	print("Final wave? ", final_wave_started)
 		

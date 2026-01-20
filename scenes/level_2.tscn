@@ -1,6 +1,5 @@
-[gd_scene load_steps=58 format=3 uid="uid://b5ogoerans70n"]
+[gd_scene load_steps=57 format=3 uid="uid://b5ogoerans70n"]
 
-[ext_resource type="Script" uid="uid://sxewgkmuogm4" path="res://scenes/level_2.gd" id="1_73m23"]
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_bgibu"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_73m23"]
 [ext_resource type="Texture2D" uid="uid://beftjsu4wnyuq" path="res://assets/sprites/maps/map1/Map 1 Level 2.png" id="3_45kkt"]
@@ -204,7 +203,6 @@ font_size = 24
 outline_color = Color(0.336608, 0.336608, 0.336608, 1)
 
 [node name="level_2" type="Node2D"]
-script = ExtResource("1_73m23")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -493,7 +491,7 @@ region_rect = Rect2(0, 0, 320, 240)
 position = Vector2(0, 1)
 script = ExtResource("21_tv75f")
 health_label = NodePath("../Icons/Control/LifeIndicator/LifeLabel")
-base_health = 15.0
+base_health = 1.0
 pause_menu = NodePath("../PauseUI")
 fast_forward_button = NodePath("../fast_forward_ui")
 

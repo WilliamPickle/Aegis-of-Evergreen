@@ -515,7 +515,7 @@ region_rect = Rect2(0, 0, 320, 240)
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu", "fast_forward_button")]
 script = ExtResource("22_tr1x6")
 health_label = NodePath("../Icons/Control/LifeIndicator/LifeLabel")
-base_health = 10.0
+base_health = 1.0
 pause_menu = NodePath("../PauseUI")
 fast_forward_button = NodePath("../fast_forward_ui")
 

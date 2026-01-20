@@ -18,6 +18,17 @@
 [ext_resource type="Texture2D" uid="uid://brkbf43mjhvvm" path="res://assets/sprites/cutscenes/level_1/UFO_landed.png" id="16_gr8l6"]
 [ext_resource type="Texture2D" uid="uid://di4h0ariyobm7" path="res://assets/sprites/cutscenes/level_1/Face_Off_Scene (1).png" id="17_eswro"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ud2vv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_simcy"]
+
+[sub_resource type="Theme" id="Theme_t2gc3"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_ud2vv")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_simcy")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_simcy")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_simcy")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_simcy")
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbnep"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfxas"]
@@ -56,80 +67,17 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a35cd"]
 texture = ExtResource("3_8i0x7")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ud2vv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_simcy"]
-
-[sub_resource type="Theme" id="Theme_t2gc3"]
-VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_ud2vv")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_simcy")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_simcy")
-VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_simcy")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_simcy")
-
 [node name="CutScene1" type="Node2D" node_paths=PackedStringArray("camera", "next_button", "skip_button")]
 script = ExtResource("1_wname")
 wait_time = 1.0
 max_slides = 4
 camera = NodePath("Camera2D")
-next_button = NodePath("Camera2D/Next")
-skip_button = NodePath("Camera2D/Skip")
+next_button = NodePath("Next")
+skip_button = NodePath("Skip")
 metadata/_custom_type_script = "uid://dvv5nga2g61av"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
-
-[node name="Next" type="Button" parent="Camera2D"]
-modulate = Color(0, 0, 0, 1)
-z_index = 10
-offset_left = 130.0
-offset_top = 62.0
-offset_right = 153.0
-offset_bottom = 85.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lbnep")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_mfxas")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hd4lr")
-theme_override_styles/hover = SubResource("StyleBoxTexture_8ubkd")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_ud2vv")
-theme_override_styles/normal = SubResource("StyleBoxTexture_simcy")
-disabled = true
-
-[node name="Skip" type="Button" parent="Camera2D"]
-modulate = Color(0, 0, 0, 1)
-z_index = 10
-offset_left = 103.0
-offset_top = 62.0
-offset_right = 126.0
-offset_bottom = 85.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/focus = SubResource("StyleBoxEmpty_y258h")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_t2gc3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8i0x7")
-theme_override_styles/hover = SubResource("StyleBoxTexture_lbnep")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1p1lm")
-theme_override_styles/normal = SubResource("StyleBoxTexture_a35cd")
-disabled = true
-script = ExtResource("4_y258h")
-file_path = "res://scenes/level_1.tscn"
-has_text = true
-new_scene = true
-metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
-
-[node name="Text" type="Label" parent="Camera2D/Skip"]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -28.5
-offset_top = -8.0
-offset_right = 28.5
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_kteqr")
-theme_override_font_sizes/font_size = 8
-text = "Skip cutscene"
-horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
@@ -154,43 +102,53 @@ custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+mouse_filter = 2
 
 [node name="Space_cutscene" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_6ds4i")
 
 [node name="ComicEdge" type="TextureRect" parent="ScrollContainer/VScrollBar/Space_cutscene"]
 layout_mode = 0
+mouse_filter = 2
 texture = ExtResource("12_ud2vv")
 
 [node name="Space_further_cutscene" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_u7sor")
 
 [node name="ComicEdge2" type="TextureRect" parent="ScrollContainer/VScrollBar/Space_further_cutscene"]
 layout_mode = 0
+mouse_filter = 2
 texture = ExtResource("13_simcy")
 
 [node name="Empty_Space" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("14_t2gc3")
 
 [node name="ComicEdge3" type="TextureRect" parent="ScrollContainer/VScrollBar/Empty_Space"]
 layout_mode = 0
+mouse_filter = 2
 texture = ExtResource("15_74sw1")
 
 [node name="UFO_landed" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("16_gr8l6")
 expand_mode = 1
 
 [node name="ComicEdge4" type="TextureRect" parent="ScrollContainer/VScrollBar/UFO_landed"]
 layout_mode = 0
+mouse_filter = 2
 texture = ExtResource("13_simcy")
 
 [node name="Stand_off" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("8_y258h")
 
 [node name="ComicEdge5" type="TextureRect" parent="ScrollContainer/VScrollBar/Stand_off"]
@@ -198,10 +156,12 @@ layout_mode = 0
 offset_left = -1.52588e-05
 offset_right = -1.52588e-05
 scale = Vector2(1.03896, 1.08434)
+mouse_filter = 2
 texture = ExtResource("12_ud2vv")
 
 [node name="GojoRef" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("7_kteqr")
 
 [node name="ComicEdge6" type="TextureRect" parent="ScrollContainer/VScrollBar/GojoRef"]
@@ -211,10 +171,12 @@ offset_top = -0.53894
 offset_right = -1.52588e-05
 offset_bottom = -0.53894
 scale = Vector2(1.03896, 1.07784)
+mouse_filter = 2
 texture = ExtResource("13_simcy")
 
 [node name="FaceOff" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("17_eswro")
 
 [node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar/FaceOff"]
@@ -223,3 +185,55 @@ offset_left = -1.52588e-05
 offset_right = -1.52588e-05
 scale = Vector2(1.03896, 1.07143)
 texture = ExtResource("12_ud2vv")
+
+[node name="Next" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 10
+offset_left = 130.0
+offset_top = 62.0
+offset_right = 153.0
+offset_bottom = 85.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lbnep")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_mfxas")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hd4lr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8ubkd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ud2vv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_simcy")
+disabled = true
+
+[node name="Skip" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 10
+offset_left = 103.0
+offset_top = 62.0
+offset_right = 126.0
+offset_bottom = 85.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y258h")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_t2gc3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8i0x7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lbnep")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1p1lm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_a35cd")
+disabled = true
+script = ExtResource("4_y258h")
+file_path = "res://scenes/level_1.tscn"
+has_text = true
+new_scene = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="Text" type="Label" parent="Skip"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.5
+offset_top = -8.0
+offset_right = 28.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_kteqr")
+theme_override_font_sizes/font_size = 8
+text = "Skip cutscene"
+horizontal_alignment = 1
