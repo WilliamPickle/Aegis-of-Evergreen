@@ -10,7 +10,7 @@ func _ready():
 	area_entered.connect(apply_status_effects)
 	
 func apply_status_effects(target):
-	print("area entered: ", target)
+	#print("area entered: ", target)
 	if target != self:
 		var stat_changer = StatChanger.new()
 		stat_changer.initialize_variables(target, self.name, stat_changer.Type.WALK_SPEED, buff_multiplier, buff_duration)

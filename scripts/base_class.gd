@@ -30,9 +30,9 @@ func take_damage(enemy: Enemy):
 	else:
 		base_health -= enemy_damage
 	health_label.text = str(snapped(base_health, 0.1))
-	print("Base hp: ", base_health)
-	print("Enemy hp: ", enemy.cur_health)
-	print("*******************")
+	#print("Base hp: ", base_health)
+	#print("Enemy hp: ", enemy.cur_health)
+	#print("*******************")
 	
 	if base_health <= 0:
 		pause_menu.visible = false

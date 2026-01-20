@@ -26,7 +26,7 @@ func apply_stat_changes():
 	# make sure same debuffs/buffs from same enemy type aren't repeated
 	for status in target.status_applied_list:
 		if status == inflictor:
-			print("tried to apply and failed bozo")
+			#print("tried to apply and failed bozo")
 			timer.queue_free()
 			return
 			
@@ -62,7 +62,7 @@ func disable_stat_changes(timer):
 		if _inflictor == inflictor:
 			target.status_applied_list.erase(_inflictor)
 			
-	print("timer ended")
+	#print("timer ended")
 	timer.queue_free()
 	
 

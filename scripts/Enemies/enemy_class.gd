@@ -64,7 +64,7 @@ func move_on_path(delta) -> void:
 			return
 		has_been_removed = true
 		emit_signal("removed")
-		print("reached end")
+		#print("reached end")
 		if cur_health > 0:
 			emit_signal("reached_end")
 		path.queue_free()

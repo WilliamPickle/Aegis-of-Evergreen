@@ -15,4 +15,4 @@ func _on_button_down():
 	else:
 		tween.tween_property(scrollbar, "position", Vector2(0, 0), collapse_speed)
 		collapsed = false
-	print("pressed")
+	#print("pressed")

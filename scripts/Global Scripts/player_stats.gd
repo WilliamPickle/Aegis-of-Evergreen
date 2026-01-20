@@ -28,7 +28,7 @@ func calculate_player_lvl():
 	PrevLevel = PlayerLevel
 
 func purchase_item(item_amount : float) -> bool:
-	print("This function was called!!!!")
+	#print("This function was called!!!!")
 	if cur_money >= item_amount:
 		cur_money -= item_amount
 		emit_signal("money_changed")
