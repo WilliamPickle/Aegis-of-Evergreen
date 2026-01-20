@@ -71,6 +71,7 @@ mouse_filter = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_filter = 2
 texture = ExtResource("2_fbx6j")
 
 [node name="ScrollOutline" type="TextureRect" parent="ScrollbarUIAssets"]
@@ -78,16 +79,19 @@ z_index = 3
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_filter = 2
 texture = ExtResource("3_0uhrl")
 
 [node name="TabVBox" type="VBoxContainer" parent="ScrollbarUIAssets"]
 layout_mode = 2
 size_flags_vertical = 8
+mouse_filter = 2
 theme_override_constants/separation = 149
 
 [node name="TabHBox" type="HBoxContainer" parent="ScrollbarUIAssets/TabVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_filter = 2
 theme_override_constants/separation = 20
 
 [node name="TabButton" type="Button" parent="ScrollbarUIAssets/TabVBox/TabHBox"]
@@ -103,9 +107,11 @@ script = ExtResource("7_e72ca")
 
 [node name="Spacer" type="Control" parent="ScrollbarUIAssets/TabVBox/TabHBox"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Spacer" type="Control" parent="ScrollbarUIAssets/TabVBox"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="BarContainer" type="MarginContainer" parent="ScrollbarUIAssets"]
 custom_minimum_size = Vector2(1240, 8)
@@ -113,7 +119,7 @@ layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-mouse_filter = 0
+mouse_filter = 2
 theme = SubResource("Theme_qq670")
 
 [node name="HScrollBar" type="HScrollBar" parent="ScrollbarUIAssets/BarContainer"]
@@ -141,6 +147,7 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_filter = 2
 texture = ExtResource("6_0uhrl")
 
 [node name="CardContainer" type="ScrollContainer" parent="ScrollbarUIAssets/CardHBox" node_paths=PackedStringArray("h_scroll_bar")]
@@ -392,6 +399,7 @@ metadata/_custom_type_script = "uid://c5v7i37jdw55h"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_filter = 2
 texture = ExtResource("6_0uhrl")
 
 [connection signal="value_changed" from="ScrollbarUIAssets/BarContainer/HScrollBar" to="ScrollbarUIAssets/CardHBox/CardContainer" method="_on_h_scroll_bar_value_changed"]
