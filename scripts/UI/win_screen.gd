@@ -11,6 +11,7 @@ var center_position = Vector2(0, 0)
 func _ready() -> void:
 	continue_button.button_down.connect(func(): 
 		PauseUi.toggle_pause(SceneLoader._current_scenes["win_ui"])
+		SceneLoader.delete_scene("win_ui")
 		get_parent().queue_free()
 		)
 	Engine.time_scale = 1
