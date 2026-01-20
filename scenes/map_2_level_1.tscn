@@ -336,7 +336,7 @@ hide_during_pause = true
 script = ExtResource("9_b2yv6")
 tint_during_pause = true
 
-[node name="DialogueBox" type="Control" parent="DialogueUI" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+[node name="DialogueBox" type="Control" parent="DialogueUI" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -349,7 +349,6 @@ timer = NodePath("Timer")
 text_speed = 0.01
 send_wave_signal = true
 hide_node = true
-node_to_hide = NodePath("")
 
 [node name="BoxTexture" type="TextureRect" parent="DialogueUI/DialogueBox"]
 layout_mode = 0
@@ -460,13 +459,10 @@ text = "In any case, keep protecting our environment and make sure it doesn't ge
 label_settings = ExtResource("18_yf7ay")
 autowrap_mode = 2
 
-[node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu", "fast_forward_button")]
+[node name="Base" type="Area2D" parent="."]
 position = Vector2(0, 1)
 script = ExtResource("20_o4hnu")
-health_label = NodePath("")
 base_health = 15.0
-pause_menu = NodePath("")
-fast_forward_button = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
 position = Vector2(320, 37)

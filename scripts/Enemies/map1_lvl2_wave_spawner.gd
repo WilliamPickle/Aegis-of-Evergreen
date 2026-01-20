@@ -5,16 +5,11 @@ extends WaveSpawner
 
 func _ready() -> void:
 	super._ready()
-	wave_bonus_money = [550, 50, 75, 100, 80]
+	wave_bonus_money = [50, 50, 75, 100, 125]
 	lvl2_dialogue.start_wave.connect(_on_start_lvl2)
 	manual_wave_button.button_down.connect(_on_start_lvl2)
 
 func _on_start_lvl2() -> void:
-	start_wave_timer(300)
-	await send_enemy(beetle, 1, 1)
-	
-	currently_sending = false
-	await wave_timer.timeout
 	# wave 1
 	start_wave_timer(45)
 	await send_enemy(bush, 6, 0.5)
@@ -49,6 +44,16 @@ func _on_start_lvl2() -> void:
 	await send_enemy(cow, 2, 1)
 	await delay(7)
 	await send_enemy(squirrel, 10, 0.3)
+	
+	currently_sending = false
+	await wave_timer.timeout
+	
+	# wave 5 - 80 cash gain
+	start_wave_timer(3600)
+	await send_enemy(cow, 3, 1)
+	await send_enemy(bush, 20, 0.5)
+	await send_enemy(beetle, 1, 2)
+	await send_enemy(squirrel, 10, 1)
 	
 	currently_sending = false
 	await wave_timer.timeout

@@ -83,6 +83,10 @@ func upgrade_tower():
 		cur_description.visible = false
 		cur_description = level_descriptions.get_child(tower.level)
 		cur_description.visible = true
+		for stat in tower_stats[type]:
+			var button : Button = stats[stat]
+			button.visible = true
+			button.get_node(text_path).text = str(tower_data[stat][tower.level])
 	if tower.level == tower_max_level - 1:
 		costText.text = "Maxed Out"
 	else:

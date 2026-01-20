@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_kqn1b"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_y6uxt"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_r72fi"]
-[ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_00rct"]
+[ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="20_bgibu"]
 [ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="21_tv75f"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="22_0qg6v"]
 [ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="23_osflp"]
@@ -406,16 +406,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_qmoov")
 
 [node name="Timer" type="Timer" parent="DialogueUI/DialogueBox"]
 
-[node name="RangerIcon" type="TextureRect" parent="DialogueUI/DialogueBox"]
-layout_mode = 0
-offset_left = 907.0
-offset_top = 509.0
-offset_right = 1109.0
-offset_bottom = 702.0
-scale = Vector2(0.9, 0.9)
-mouse_filter = 2
-texture = ExtResource("20_00rct")
-
 [node name="DialogueLabels" type="Control" parent="DialogueUI/DialogueBox"]
 anchors_preset = 0
 offset_left = 189.0
@@ -435,6 +425,13 @@ text = "Good job on making it through the first round of enemies. "
 label_settings = ExtResource("19_r72fi")
 autowrap_mode = 2
 
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_bgibu")
+region_enabled = true
+region_rect = Rect2(1600, 0, 320, 240)
+
 [node name="Label2" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
 layout_mode = 0
@@ -445,6 +442,13 @@ offset_bottom = 76.0
 text = "It seems, however, that more are on their way. "
 label_settings = ExtResource("19_r72fi")
 autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_bgibu")
+region_enabled = true
+region_rect = Rect2(640, 0, 320, 240)
 
 [node name="Label3" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
@@ -457,6 +461,13 @@ text = "I'd also like to note that I'm beginning to smell something strange comi
 label_settings = ExtResource("19_r72fi")
 autowrap_mode = 2
 
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label3"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_bgibu")
+region_enabled = true
+region_rect = Rect2(960, 0, 320, 240)
+
 [node name="Label4" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
 layout_mode = 0
@@ -468,10 +479,17 @@ text = "In any case, keep protecting our environment and make sure it doesn't ge
 label_settings = ExtResource("19_r72fi")
 autowrap_mode = 2
 
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label4"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_bgibu")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu", "fast_forward_button")]
 position = Vector2(0, 1)
 script = ExtResource("21_tv75f")
-health_label = NodePath("../Icons/Control/PlayerLvlIndicator/LvlLabel")
+health_label = NodePath("../Icons/Control/LifeIndicator/LifeLabel")
 base_health = 15.0
 pause_menu = NodePath("../PauseUI")
 fast_forward_button = NodePath("../fast_forward_ui")

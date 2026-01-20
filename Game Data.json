@@ -56,8 +56,8 @@
 	  ],
 	  "damage": [
 		2,
-		2,
-		3
+		3,
+		4
 	  ]
 	},
 	"flytrap": {
@@ -225,7 +225,7 @@
 	  "resistance" : "none"
 	},
 	"beetle" : {
-	  "speed" : 0.025, 
+	  "speed" : 0.02, 
 	  "max_health" : 40,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 75,

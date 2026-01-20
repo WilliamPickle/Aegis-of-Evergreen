@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://b1db11ngtg7n0" path="res://scripts/UI/lvl1_dialogue.gd" id="17_mbb35"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
-[ext_resource type="Texture2D" uid="uid://dacpk0o2pbt6e" path="res://assets/sprites/test sprites/ranger_smile.png" id="20_isj1j"]
+[ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="20_k8ld0"]
 [ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="22_tr1x6"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="23_d5akn"]
 [ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="24_s7g0b"]
@@ -413,16 +413,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_so66j")
 
 [node name="Timer" type="Timer" parent="DialogueUI/DialogueBox"]
 
-[node name="RangerIcon" type="TextureRect" parent="DialogueUI/DialogueBox"]
-layout_mode = 0
-offset_left = 907.0
-offset_top = 509.0
-offset_right = 1109.0
-offset_bottom = 702.0
-scale = Vector2(0.9, 0.9)
-mouse_filter = 2
-texture = ExtResource("20_isj1j")
-
 [node name="DialogueLabels" type="Control" parent="DialogueUI/DialogueBox"]
 anchors_preset = 0
 offset_left = 189.0
@@ -443,6 +433,13 @@ text = "Welcome, volunteer! The forest is currently in need of your assistance.
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
 
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_k8ld0")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
 [node name="Label2" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
 layout_mode = 0
@@ -453,6 +450,13 @@ offset_bottom = 76.0
 text = "Invaders have landed in the forest and threaten to disrupt the balance of the ecosystem. We're counting on you to defend the forest and send these invaders back to their planet."
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_k8ld0")
+region_enabled = true
+region_rect = Rect2(640, 0, 320, 240)
 
 [node name="Label3" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
@@ -465,6 +469,13 @@ text = "To start, I'll give you the run-down on the rules of the forest and how 
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
 
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label3"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_k8ld0")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
 [node name="Label4" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
 layout_mode = 0
@@ -476,6 +487,13 @@ text = "If you want to see the explanation again, refer to the question mark but
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
 
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label4"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_k8ld0")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
 [node name="Label5" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
 layout_mode = 0
@@ -486,6 +504,13 @@ offset_bottom = 76.0
 text = "With that, I wish you good luck on defending the forest. May our allies not let you down. "
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label5"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_k8ld0")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
 
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu", "fast_forward_button")]
 script = ExtResource("22_tr1x6")
