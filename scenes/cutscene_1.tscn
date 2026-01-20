@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://j8cwmtn45ixk"]
+[gd_scene load_steps=30 format=3 uid="uid://j8cwmtn45ixk"]
 
 [ext_resource type="Texture2D" uid="uid://5df1ywuoeu2p" path="res://assets/sprites/cutscenes/level_1/Space.png" id="1_6ds4i"]
 [ext_resource type="Script" uid="uid://dvv5nga2g61av" path="res://scripts/cutscene_script.gd" id="1_wname"]
@@ -11,6 +11,12 @@
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="4_y258h"]
 [ext_resource type="Texture2D" uid="uid://musdhoph61ug" path="res://assets/sprites/cutscenes/level_1/Gojo Reference.png" id="7_kteqr"]
 [ext_resource type="Texture2D" uid="uid://sil00a081mv4" path="res://assets/sprites/cutscenes/level_1/Standoff.png" id="8_y258h"]
+[ext_resource type="Texture2D" uid="uid://evnqvl0impje" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style1.png" id="12_ud2vv"]
+[ext_resource type="Texture2D" uid="uid://bmrs6gq10shxq" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style2.png" id="13_simcy"]
+[ext_resource type="Texture2D" uid="uid://hingnetis418" path="res://assets/sprites/cutscenes/level_1/Space_empty.png" id="14_t2gc3"]
+[ext_resource type="Texture2D" uid="uid://iqed4sflbaid" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style3.png" id="15_74sw1"]
+[ext_resource type="Texture2D" uid="uid://brkbf43mjhvvm" path="res://assets/sprites/cutscenes/level_1/UFO_landed.png" id="16_gr8l6"]
+[ext_resource type="Texture2D" uid="uid://di4h0ariyobm7" path="res://assets/sprites/cutscenes/level_1/Face_Off_Scene (1).png" id="17_eswro"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbnep"]
 
@@ -60,6 +66,7 @@ skip_button = NodePath("Camera2D/Skip")
 metadata/_custom_type_script = "uid://dvv5nga2g61av"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 zoom = Vector2(4, 4)
 
 [node name="Next" type="Button" parent="Camera2D"]
@@ -118,17 +125,85 @@ horizontal_alignment = 1
 wait_time = 2.0
 one_shot = true
 
-[node name="Space" type="Sprite2D" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -322.0
+offset_top = -90.0
+offset_right = 323.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VScrollBar" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Space_cutscene" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+layout_mode = 2
 texture = ExtResource("1_6ds4i")
 
-[node name="SpaceBlur" type="Sprite2D" parent="."]
-position = Vector2(320, 0)
+[node name="ComicEdge" type="TextureRect" parent="ScrollContainer/VScrollBar/Space_cutscene"]
+layout_mode = 0
+texture = ExtResource("12_ud2vv")
+
+[node name="Space_further_cutscene" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+layout_mode = 2
 texture = ExtResource("2_u7sor")
 
-[node name="GojoReference" type="Sprite2D" parent="."]
-position = Vector2(960, 0)
+[node name="ComicEdge2" type="TextureRect" parent="ScrollContainer/VScrollBar/Space_further_cutscene"]
+layout_mode = 0
+texture = ExtResource("13_simcy")
+
+[node name="Empty_Space" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+layout_mode = 2
+texture = ExtResource("14_t2gc3")
+
+[node name="ComicEdge3" type="TextureRect" parent="ScrollContainer/VScrollBar/Empty_Space"]
+layout_mode = 0
+texture = ExtResource("15_74sw1")
+
+[node name="UFO_landed" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+layout_mode = 2
+texture = ExtResource("16_gr8l6")
+
+[node name="ComicEdge4" type="TextureRect" parent="ScrollContainer/VScrollBar/UFO_landed"]
+layout_mode = 0
+scale = Vector2(2, 2)
+texture = ExtResource("13_simcy")
+
+[node name="Stand_off" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+layout_mode = 2
+texture = ExtResource("8_y258h")
+
+[node name="ComicEdge5" type="TextureRect" parent="ScrollContainer/VScrollBar/Stand_off"]
+layout_mode = 0
+offset_left = -1.52588e-05
+offset_right = -1.52588e-05
+scale = Vector2(1.03896, 1.08434)
+texture = ExtResource("12_ud2vv")
+
+[node name="GojoRef" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+layout_mode = 2
 texture = ExtResource("7_kteqr")
 
-[node name="Standoff" type="Sprite2D" parent="."]
-position = Vector2(640, 0)
-texture = ExtResource("8_y258h")
+[node name="ComicEdge6" type="TextureRect" parent="ScrollContainer/VScrollBar/GojoRef"]
+layout_mode = 0
+offset_left = -1.52588e-05
+offset_top = -0.53894
+offset_right = -1.52588e-05
+offset_bottom = -0.53894
+scale = Vector2(1.03896, 1.07784)
+texture = ExtResource("13_simcy")
+
+[node name="FaceOff" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+layout_mode = 2
+texture = ExtResource("17_eswro")
+
+[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar/FaceOff"]
+layout_mode = 0
+offset_left = -1.52588e-05
+offset_right = -1.52588e-05
+scale = Vector2(1.03896, 1.07143)
+texture = ExtResource("12_ud2vv")
