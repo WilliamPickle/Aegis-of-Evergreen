@@ -227,6 +227,7 @@ texture = ExtResource("17_eswro")
 [node name="Skip" type="Button" parent="ScrollContainer/VScrollBar/ComicEdge7/FaceOff"]
 modulate = Color(0, 0, 0, 1)
 z_index = 10
+layout_mode = 0
 offset_left = 295.0
 offset_top = 155.0
 offset_right = 318.0
@@ -262,6 +263,8 @@ text = "Skip cutscene"
 horizontal_alignment = 1
 
 [node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar/ComicEdge7/FaceOff"]
+layout_mode = 0
+mouse_filter = 2
 texture = ExtResource("12_ud2vv")
 
 [node name="TextureRect" type="Sprite2D" parent="ScrollContainer/VScrollBar"]
