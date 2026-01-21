@@ -12,8 +12,8 @@ func _ready() -> void:
 func _on_start_lvl3() -> void:
 	# wave 1
 	start_wave_timer(45)
-	await send_enemy(cow, 1, 1)
 	await send_enemy(bush, 15, 1)
+	await send_enemy(cow, 1, 1)
 	
 	currently_sending = false
 	await wave_timer.timeout
