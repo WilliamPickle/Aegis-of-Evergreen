@@ -4,7 +4,7 @@ class_name Cutscene
 @export var wait_time : float
 @export var max_slides : int
 @export var camera : Camera2D
-@export var next_button : Button
+#@export var next_button : Button
 @export var skip_button : Icon
 
 var default_color := Color(1,1,1)
@@ -17,15 +17,15 @@ var current_slide : int = 1
 
 
 func _ready() -> void:
-	tween.tween_property(next_button, "modulate", default_color, wait_time)
+	#tween.tween_property(next_button, "modulate", default_color, wait_time)
 	tween.tween_property(skip_button, "modulate", default_color, wait_time)
 	tween.finished.connect(disable_buttons.bind(false))
-	next_button.pressed.connect(next_scene)
+	#next_button.pressed.connect(next_scene)
 
 # Makes it so the button is clickable or not
 func disable_buttons(disabled : bool = true):
 	tween.stop()
-	next_button.disabled = disabled
+	#next_button.disabled = disabled
 	skip_button.disabled = disabled
 	
 
@@ -40,7 +40,7 @@ func next_scene() -> void:
 		SceneLoader.current_main_scene = file_path.get_file().get_basename()
 		return
 	disable_buttons()
-	next_button.modulate = Color(0,0,0)
+	#next_button.modulate = Color(0,0,0)
 	skip_button.modulate = Color(0,0,0)
 	camera.global_position += Vector2(320, 0)
 	current_slide += 1

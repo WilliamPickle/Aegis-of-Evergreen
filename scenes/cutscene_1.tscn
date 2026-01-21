@@ -1,12 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://j8cwmtn45ixk"]
+[gd_scene load_steps=30 format=3 uid="uid://j8cwmtn45ixk"]
 
 [ext_resource type="Texture2D" uid="uid://5df1ywuoeu2p" path="res://assets/sprites/cutscenes/level_1/Space.png" id="1_6ds4i"]
 [ext_resource type="Script" uid="uid://dvv5nga2g61av" path="res://scripts/cutscene_script.gd" id="1_wname"]
-[ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="2_2etud"]
 [ext_resource type="Texture2D" uid="uid://bix6t2nm7oyo1" path="res://assets/sprites/cutscenes/level_1/Space Blur.png" id="2_u7sor"]
 [ext_resource type="Texture2D" uid="uid://mcpammp3xs2h" path="res://assets/sprites/icons and buttons/skip_button.png" id="3_8i0x7"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="3_kteqr"]
-[ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="3_lbnep"]
 [ext_resource type="Texture2D" uid="uid://cr58fh4ynwlpq" path="res://assets/sprites/icons and buttons/skip_button_highlighted.png" id="4_lbnep"]
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="4_y258h"]
 [ext_resource type="Texture2D" uid="uid://musdhoph61ug" path="res://assets/sprites/cutscenes/level_1/Gojo Reference.png" id="7_kteqr"]
@@ -15,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bmrs6gq10shxq" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style2.png" id="13_simcy"]
 [ext_resource type="Texture2D" uid="uid://hingnetis418" path="res://assets/sprites/cutscenes/level_1/Space_empty.png" id="14_t2gc3"]
 [ext_resource type="Texture2D" uid="uid://iqed4sflbaid" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style3.png" id="15_74sw1"]
+[ext_resource type="Texture2D" uid="uid://dnlnhtjtgm37a" path="res://assets/sprites/cutscenes/level_1/White_background.png" id="16_8ubkd"]
 [ext_resource type="Texture2D" uid="uid://brkbf43mjhvvm" path="res://assets/sprites/cutscenes/level_1/UFO_landed.png" id="16_gr8l6"]
 [ext_resource type="Texture2D" uid="uid://di4h0ariyobm7" path="res://assets/sprites/cutscenes/level_1/Face_Off_Scene (1).png" id="17_eswro"]
 
@@ -29,24 +28,47 @@ VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_simcy")
 VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_simcy")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_simcy")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbnep"]
+[sub_resource type="LabelSettings" id="LabelSettings_8ubkd"]
+font = ExtResource("3_kteqr")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfxas"]
-texture = ExtResource("2_2etud")
+[sub_resource type="Animation" id="Animation_8ubkd"]
+resource_name = "Blinking_Text"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hd4lr"]
-texture = ExtResource("3_lbnep")
-modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+[sub_resource type="Animation" id="Animation_ud2vv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ubkd"]
-texture = ExtResource("3_lbnep")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud2vv"]
-texture = ExtResource("3_lbnep")
-modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_simcy"]
-texture = ExtResource("2_2etud")
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_simcy"]
+_data = {
+&"Blinking_Text": SubResource("Animation_8ubkd"),
+&"RESET": SubResource("Animation_ud2vv")
+}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y258h"]
 
@@ -67,13 +89,12 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a35cd"]
 texture = ExtResource("3_8i0x7")
 
-[node name="CutScene1" type="Node2D" node_paths=PackedStringArray("camera", "next_button", "skip_button")]
+[node name="CutScene1" type="Node2D" node_paths=PackedStringArray("camera", "skip_button")]
 script = ExtResource("1_wname")
 wait_time = 1.0
 max_slides = 4
 camera = NodePath("Camera2D")
-next_button = NodePath("Next")
-skip_button = NodePath("Skip")
+skip_button = NodePath("ScrollContainer/VScrollBar/ComicEdge7/FaceOff/Skip")
 metadata/_custom_type_script = "uid://dvv5nga2g61av"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -89,7 +110,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -164.0
+offset_top = -90.0
 offset_right = 164.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -113,6 +136,21 @@ texture = ExtResource("1_6ds4i")
 layout_mode = 0
 mouse_filter = 2
 texture = ExtResource("12_ud2vv")
+
+[node name="Label" type="Label" parent="ScrollContainer/VScrollBar/Space_cutscene"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 104.0
+offset_bottom = 30.0
+text = "<< Scroll Down >>"
+label_settings = SubResource("LabelSettings_8ubkd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/VScrollBar/Space_cutscene/Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_simcy")
+}
+autoplay = "Blinking_Text"
 
 [node name="Space_further_cutscene" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
@@ -155,7 +193,7 @@ texture = ExtResource("8_y258h")
 layout_mode = 0
 offset_left = -1.52588e-05
 offset_right = -1.52588e-05
-scale = Vector2(1.03896, 1.08434)
+scale = Vector2(1, 1.043)
 mouse_filter = 2
 texture = ExtResource("12_ud2vv")
 
@@ -170,44 +208,29 @@ offset_left = -1.52588e-05
 offset_top = -0.53894
 offset_right = -1.52588e-05
 offset_bottom = -0.53894
-scale = Vector2(1.03896, 1.07784)
+scale = Vector2(1, 1.038)
 mouse_filter = 2
 texture = ExtResource("13_simcy")
 
-[node name="FaceOff" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
+texture = ExtResource("12_ud2vv")
+
+[node name="FaceOff" type="TextureRect" parent="ScrollContainer/VScrollBar/ComicEdge7"]
+layout_mode = 2
+offset_top = -1.0
+offset_right = 320.0
+offset_bottom = 179.0
 mouse_filter = 2
 texture = ExtResource("17_eswro")
 
-[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar/FaceOff"]
-layout_mode = 0
-offset_left = -1.52588e-05
-offset_right = -1.52588e-05
-scale = Vector2(1.03896, 1.07143)
-texture = ExtResource("12_ud2vv")
-
-[node name="Next" type="Button" parent="."]
+[node name="Skip" type="Button" parent="ScrollContainer/VScrollBar/ComicEdge7/FaceOff"]
 modulate = Color(0, 0, 0, 1)
 z_index = 10
-offset_left = 130.0
-offset_top = 62.0
-offset_right = 153.0
-offset_bottom = 85.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lbnep")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_mfxas")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hd4lr")
-theme_override_styles/hover = SubResource("StyleBoxTexture_8ubkd")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_ud2vv")
-theme_override_styles/normal = SubResource("StyleBoxTexture_simcy")
-disabled = true
-
-[node name="Skip" type="Button" parent="."]
-modulate = Color(0, 0, 0, 1)
-z_index = 10
-offset_left = 103.0
-offset_top = 62.0
-offset_right = 126.0
-offset_bottom = 85.0
+offset_left = 295.0
+offset_top = 155.0
+offset_right = 318.0
+offset_bottom = 178.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/focus = SubResource("StyleBoxEmpty_y258h")
@@ -223,7 +246,7 @@ has_text = true
 new_scene = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
-[node name="Text" type="Label" parent="Skip"]
+[node name="Text" type="Label" parent="ScrollContainer/VScrollBar/ComicEdge7/FaceOff/Skip"]
 visible = false
 layout_mode = 1
 anchors_preset = 5
@@ -237,3 +260,12 @@ theme_override_fonts/font = ExtResource("3_kteqr")
 theme_override_font_sizes/font_size = 8
 text = "Skip cutscene"
 horizontal_alignment = 1
+
+[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar/ComicEdge7/FaceOff"]
+texture = ExtResource("12_ud2vv")
+
+[node name="TextureRect" type="Sprite2D" parent="ScrollContainer/VScrollBar"]
+z_index = -1
+position = Vector2(160, 630)
+scale = Vector2(1, 7)
+texture = ExtResource("16_8ubkd")
