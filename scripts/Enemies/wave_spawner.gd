@@ -26,7 +26,7 @@ var enemy_count: int = 0
 var currently_sending: bool = false
 var final_wave_started: bool = false
 const max_waves = 5
-var wave_bonus_money: Array[float] = [0, 50, 60, 60, 70]
+var wave_bonus_money: Array[float] = [0, 50, 60, 60, 80]
 var wave := 0
 
 # to prevent win condition being called from multiple enemy deaths

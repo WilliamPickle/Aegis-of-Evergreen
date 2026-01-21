@@ -52,11 +52,11 @@ func _on_start_lvl1() -> void:
 	
 	# wave 5 - 300 cash gain
 	start_wave_timer(3600)
-	send_enemy(cow, 3, 5)
-	await delay(12)
+	send_enemy(cow, 3, 7)
+	await delay(6)
 	send_enemy(bush, 30, 0.2)
 	await delay(1)
-	await send_enemy(squirrel, 28, 1)
+	await send_enemy(squirrel, 25, 1)
 	
 	currently_sending = false
 	await wave_timer.timeout
