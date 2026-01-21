@@ -93,13 +93,13 @@ func update_wave():
 		await wave_timer.timeout
 		#print("About to load win screen")
 		#print("Enemies left: ", enemy_count)
-		SceneLoader.load_scene("res://scenes/UI/win_ui.tscn", "win_ui")
-		PauseUi.toggle_pause(SceneLoader._current_scenes["win_ui"])
 		#print("prev levels won:", PlayerStats.lvls_beaten)
 		PlayerStats.lvls_beaten += 1
 		PlayerStats.cur_money = PlayerStats.DEFAULT_MONEY[floori(PlayerStats.lvls_beaten / 3)][PlayerStats.lvls_beaten % 3]
 		#print("levels won:", PlayerStats.lvls_beaten)
 		#print("wave variable: ", wave)
+		SceneLoader.load_scene("res://scenes/UI/win_ui.tscn", "win_ui")
+		PauseUi.toggle_pause(SceneLoader._current_scenes["win_ui"])
 		wave_timer.disconnect("timeout", update_wave)
 	
 	#print("Final wave? ", final_wave_started)

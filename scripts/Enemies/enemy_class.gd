@@ -93,6 +93,7 @@ func apply_damage(damage : float, damage_type):
 		# ADD SOME CALCULATIONS HERE WITH damage_percent
 		damage_percent = enemy_data["resistance_percent"]
 	cur_health -= damage * damage_percent
+	print("damage taken: ", damage * damage_percent)
 	draw_health()
 
 func draw_health():

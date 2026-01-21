@@ -21,13 +21,13 @@
 	  ],
 	  "attack_speed": [
 		1,
-		0.5,
-		0.2
+		0.6,
+		0.25
 	  ],
 	  "damage": [
 		1,
 		1,
-		1
+		0.75
 	  ]
 	},
 	"bee": {
@@ -71,8 +71,8 @@
 	  ],
 	  "cost": [
 		1,
-		1,
-		1
+		120,
+		150
 	  ],
 	  "range": [
 		100,
@@ -197,15 +197,15 @@
 	  "max_health" : 4,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 6,
-	  "money_drop" : 4,
+	  "money_drop" : 5,
 	  "resistance" : "none"
 	}, 
 	"squirrel": {
-	  "speed" : 0.06, 
+	  "speed" : 0.05, 
 	  "max_health" : 2, 
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 6,
-	  "money_drop" : 2,
+	  "money_drop" : 3,
 	  "resistance" : "none"
 	},
 	"cow" : {
@@ -222,7 +222,8 @@
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 30,
 	  "money_drop" : 15,
-	  "resistance" : "none"
+	  "resistance" : "blunt",
+	  "resistance_percent" : 0.75
 	},
 	"beetle" : {
 	  "speed" : 0.02, 

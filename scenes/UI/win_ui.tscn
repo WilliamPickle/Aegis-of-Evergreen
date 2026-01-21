@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://biry1qv8ilrtv"]
+[gd_scene load_steps=29 format=3 uid="uid://biry1qv8ilrtv"]
 
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_mvmst"]
 [ext_resource type="Script" uid="uid://cgfnwjwjgf2rr" path="res://scripts/UI/win_screen.gd" id="2_lno1o"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="7_urbym"]
 [ext_resource type="Texture2D" uid="uid://vyejon8a8wc1" path="res://assets/sprites/icons and buttons/control_button_highlighted.png" id="8_rdptf"]
 [ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="9_ss4cf"]
+[ext_resource type="Script" uid="uid://dlpg61gkpl3dw" path="res://scripts/UI/continue_button.gd" id="10_lno1o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ilcey"]
 
@@ -262,7 +263,6 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mvmst")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_mvmst")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_mvmst")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mvmst")
-script = ExtResource("7_urbym")
-file_path = "res://scenes/level_2.tscn"
+script = ExtResource("10_lno1o")
 new_scene = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
