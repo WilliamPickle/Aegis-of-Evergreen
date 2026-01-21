@@ -62,6 +62,7 @@ func on_hit(enemy : Enemy) -> void:
 		queue_free()
 		return
 	
+	#print("damage: ", tower.cur_damage, ", range: ", tower.range, ", atk speed: ", tower._attack_cooldown)
 	if enemy.cur_health > 0:
 		enemy.apply_damage(tower.cur_damage, type)
 		pierce_cap -= 1

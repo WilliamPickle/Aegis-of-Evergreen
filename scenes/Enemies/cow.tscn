@@ -182,6 +182,7 @@ modulate = Color(1, 1, 1, 0.466667)
 sprite_frames = SubResource("SpriteFrames_8d6ci")
 
 [node name="FartArea" type="Area2D" parent="Fart"]
+collision_layer = 8
 
 [node name="FartCollider" type="CollisionShape2D" parent="Fart/FartArea"]
 visible = false

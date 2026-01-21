@@ -2,12 +2,14 @@ extends Node
 signal xp_changed
 signal money_changed
 signal player_level_changed
+signal upgraded_tower
 
 # Player Vars
+const StartingPlayerLevel: int = 2
+const XpThreshold: int = 1000
 var PlayerXp: int = 0
-var XpThreshold: int = 1000
-var PlayerLevel: int = 1
-var PrevLevel: int = 0
+var PlayerLevel: int = StartingPlayerLevel
+var PrevLevel: int = StartingPlayerLevel
 var lvls_beaten = 0
 
 # Money Vars
@@ -16,13 +18,13 @@ const DEFAULT_MONEY : Array = [
 	[500.0, 600.0, 700.0],
 	[800.0, 900.0, 1000.0],
 ]
-@onready var cur_money = DEFAULT_MONEY[0][0]
+@onready var cur_money = DEFAULT_MONEY[0][1]
 
 func _ready() -> void:
 	xp_changed.connect(calculate_player_lvl)
 	
 func calculate_player_lvl():
-	PlayerLevel = floori(PlayerXp / XpThreshold) + 1
+	PlayerLevel = floori(PlayerXp / XpThreshold) + StartingPlayerLevel
 	if PlayerLevel != PrevLevel:
 		emit_signal("player_level_changed")
 	PrevLevel = PlayerLevel

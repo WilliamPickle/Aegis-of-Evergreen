@@ -27,7 +27,7 @@
 	  "damage": [
 		1,
 		1,
-		0.5
+		1
 	  ]
 	},
 	"bee": {
@@ -50,14 +50,14 @@
 		120
 	  ],
 	  "attack_speed": [
-		3.5,
-		5,
+		3,
+		4,
 		4
 	  ],
 	  "damage": [
 		2,
-		3,
-		4
+		4,
+		6
 	  ]
 	},
 	"flytrap": {
@@ -171,7 +171,7 @@
 	  ],
 	  "travel_time": 0.9,
 	  "despawn_distance" : 30,
-	  "pierce_cap": 3,
+	  "pierce_cap": 1,
 	  "pierce_damage": 0.3,
 	  "splash_cap": 8,
 	  "debuff_type": "slowness"
@@ -220,7 +220,7 @@
 	  "speed" : 0.007, 
 	  "max_health" : 20,
 	  "base_damage_ratio" : 0.5,
-	  "xp" : 25,
+	  "xp" : 30,
 	  "money_drop" : 15,
 	  "resistance" : "none"
 	},
@@ -228,7 +228,7 @@
 	  "speed" : 0.02, 
 	  "max_health" : 40,
 	  "base_damage_ratio" : 0.5,
-	  "xp" : 75,
+	  "xp" : 80,
 	  "money_drop" : 30,
 	  "resistance" : "blunt",
 	  "resistance_percent" : 0.5

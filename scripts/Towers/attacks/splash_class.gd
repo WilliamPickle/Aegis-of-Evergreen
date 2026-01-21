@@ -63,6 +63,6 @@ func on_met_target() -> void:
 			cur_zone = 1
 		else:
 			cur_zone = 2
-		print("targeted:",distance,", Zone:", cur_zone, ", DMG:",tower.cur_damage * zone_damages[cur_zone])
+		print("targeted:",distance,", Zone:", cur_zone, ", DMG:",tower.cur_damage * zone_damages[cur_zone], ", Raw Damage: ", tower.cur_damage)
 		cur_enemy.apply_damage(tower.cur_damage * zone_damages[cur_zone], type)
 	queue_free()

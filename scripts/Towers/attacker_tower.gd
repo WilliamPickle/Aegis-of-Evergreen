@@ -70,6 +70,7 @@ func upgrade_tower() -> void:
 	super.upgrade_tower()
 	sprite.play("idle_"+str(level))
 	damage = object_data["damage"][level]
+	cur_damage = damage
 	attack_fpath = object_data["attack_fpath"][level]
 	_attack_cooldown.wait_time = object_data["attack_speed"][level]
 	_attack_cooldown.start()

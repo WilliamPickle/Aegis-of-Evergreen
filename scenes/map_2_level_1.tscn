@@ -329,7 +329,6 @@ icon_alignment = 1
 hide_during_pause = true
 
 [node name="ScrollbarUI" parent="." instance=ExtResource("15_gsh1p")]
-card_type = Array[String](["ranger", "chipmunk", "bee", "flytrap"])
 hide_during_pause = true
 
 [node name="DialogueUI" type="CanvasLayer" parent="."]

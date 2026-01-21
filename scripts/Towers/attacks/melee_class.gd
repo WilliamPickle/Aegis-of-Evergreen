@@ -17,8 +17,6 @@ func start(tower : Attacker, start_rotation : float, target_enemy : Enemy, enemi
 		if len(enemies) > 0:
 			var ran_index : int = randi() % enemies.size()
 			var chosen_enemy : Enemy = enemies.pop_at(ran_index)
-			print("-------------------------")
-			print("Damage:", tower.cur_damage)
 			chosen_enemy.apply_damage(tower.cur_damage, type)
 		else:
 			break
