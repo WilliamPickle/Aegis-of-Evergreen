@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvk1isfkb0q7"]
+[gd_scene load_steps=27 format=3 uid="uid://cvk1isfkb0q7"]
 
 [ext_resource type="Script" uid="uid://coe2feohr64oy" path="res://scripts/Towers/attacks/splash_class.gd" id="1_ounrf"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_s52yd"]
@@ -95,6 +95,70 @@ size = Vector2(10, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_aoe4v"]
 radius = 30.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4bo6"]
+atlas = ExtResource("3_h4bo6")
+region = Rect2(0, 600, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7fl4"]
+atlas = ExtResource("3_h4bo6")
+region = Rect2(50, 600, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvtgt"]
+atlas = ExtResource("3_h4bo6")
+region = Rect2(100, 600, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohkre"]
+atlas = ExtResource("3_h4bo6")
+region = Rect2(150, 600, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln7f1"]
+atlas = ExtResource("3_h4bo6")
+region = Rect2(200, 600, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owsxu"]
+atlas = ExtResource("3_h4bo6")
+region = Rect2(250, 600, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjw73"]
+atlas = ExtResource("3_h4bo6")
+region = Rect2(300, 600, 50, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebji3"]
+atlas = ExtResource("3_h4bo6")
+region = Rect2(350, 600, 50, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vd6rc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4bo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7fl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvtgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohkre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln7f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owsxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjw73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebji3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
 [node name="BeeProj2" type="Area2D"]
 z_index = 11
 collision_mask = 2
@@ -121,3 +185,9 @@ collision_mask = 2
 
 [node name="SplashShape" type="CollisionShape2D" parent="SplashArea"]
 shape = SubResource("CircleShape2D_aoe4v")
+
+[node name="explosionVFX" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_vd6rc")
+frame = 3
+offset = Vector2(0, -5)
