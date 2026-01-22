@@ -223,12 +223,14 @@ radius = 10.0499
 radius = 100.0
 
 [node name="God" type="Area2D"]
+z_index = 7
 script = ExtResource("1_ejxf7")
 data_resource = SubResource("Resource_kkdrb")
 metadata/_custom_type_script = "uid://chcdgf8u4a4tn"
 
 [node name="Image" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -22.3684)
+position = Vector2(0, -6)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_sghyo")
 animation = &"idle_0"
 frame_progress = 0.131491

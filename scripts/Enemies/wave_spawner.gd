@@ -93,6 +93,7 @@ func update_wave():
 		wave_timer.wait_time = 1
 		wave_timer.start()
 		await wave_timer.timeout
+		Ranger.does_exist = false
 		#print("About to load win screen")
 		#print("Enemies left: ", enemy_count)
 		#print("prev levels won:", PlayerStats.lvls_beaten)

@@ -69,7 +69,7 @@ update_data = false
 metadata/_custom_type_script = "uid://baqkdqf80xars"
 
 [node name="flytrap_melee_1" type="AnimatedSprite2D"]
-z_index = 1501
+z_index = 11
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_rfgwp")
 autoplay = "default"

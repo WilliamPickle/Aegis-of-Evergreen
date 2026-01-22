@@ -37,5 +37,6 @@ func take_damage(enemy: Enemy):
 	if base_health <= 0:
 		pause_menu.visible = false
 		fast_forward_button.visible = false
+		Ranger.does_exist = false
 		SceneLoader.load_scene("res://scenes/UI/lose_ui.tscn", "lose_ui")
 		PauseUi.toggle_pause(SceneLoader._current_scenes["lose_ui"])

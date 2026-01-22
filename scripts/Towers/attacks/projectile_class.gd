@@ -41,7 +41,7 @@ func _ready() -> void:
 	var direction : Vector2 = ((global_position - target_enemy.global_position) * -1).normalized()
 	
 	#var range_radius : float = tower.range
-	var attack_length : Vector2 = direction * (tower.range + _despawn_distance)
+	var attack_length : Vector2 = direction * (tower.range_collider.shape.radius + _despawn_distance)
 		
 	var tween = create_tween()
 	tween.tween_property(self, "global_position", attack_length + global_position, travel_time)
