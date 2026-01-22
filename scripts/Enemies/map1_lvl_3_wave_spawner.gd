@@ -42,7 +42,7 @@ func _on_start_lvl3() -> void:
 	start_wave_timer(45)
 	await send_enemy(hornet, 8, 0.3)
 	await delay(4)
-	await send_enemy(squirrel, 24, 0.1)
+	await send_enemy(squirrel, 16, 0.15)
 	
 	currently_sending = false
 	await wave_timer.timeout
