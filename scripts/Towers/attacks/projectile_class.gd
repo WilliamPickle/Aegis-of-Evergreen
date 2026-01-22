@@ -20,6 +20,7 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 @onready var travel_time : float = object_data["travel_time"]
 @onready var pierce_cap : int = object_data["pierce_cap"]
 @onready var debuff_tString : String = object_data["debuff_type"]
+@onready var tween = create_tween()
 	# Projectile refrences
 var tower : Attacker
 var tower_range : Area2D
@@ -43,7 +44,7 @@ func _ready() -> void:
 	#var range_radius : float = tower.range
 	var attack_length : Vector2 = direction * (tower.range_collider.shape.radius + _despawn_distance)
 		
-	var tween = create_tween()
+	#var tween = create_tween()
 	tween.tween_property(self, "global_position", attack_length + global_position, travel_time)
 	area_entered.connect(on_hit)
 	tween.play()

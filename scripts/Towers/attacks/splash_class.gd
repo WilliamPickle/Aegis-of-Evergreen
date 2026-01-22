@@ -12,6 +12,8 @@ class_name Splash
 @onready var zone_1 = splash_radius * zone_sizes[0]
 @onready var zone_2 = splash_radius * (zone_sizes[1] + zone_sizes[0])
 
+@onready var explosionVFX : AnimatedSprite2D = $explosionVFX
+
 #func _ready() -> void:
 	#if face_enemy:
 		#snap_to_enemy()
@@ -21,6 +23,7 @@ class_name Splash
 	#area_entered.connect(on_hit)
 	#tween.play()
 	#tween.finished.connect(on_met_target)
+	
 func _ready():
 	$SplashArea/SplashShape.shape.radius = splash_radius
 	super._ready()
@@ -30,10 +33,11 @@ func on_hit(enemy : Enemy) -> void:
 	
 	pierce_cap -= 1
 	if pierce_cap <= 0:
-		on_met_target()
 		area_entered.disconnect(on_hit)
+		on_met_target()
 
 func on_met_target() -> void:
+	tween.stop()
 	var enemies = splash_area.get_overlapping_areas()
 	var sorted_enemies : Dictionary[float,Enemy]
 	for enemy in enemies:
@@ -59,4 +63,10 @@ func on_met_target() -> void:
 			cur_zone = 2
 		print("targeted:",distance,", Zone:", cur_zone, ", DMG:",tower.cur_damage * zone_damages[cur_zone], ", Raw Damage: ", tower.cur_damage)
 		cur_enemy.apply_damage(tower.cur_damage * zone_damages[cur_zone], type)
+		
+	$AnimatedSprite2D.visible = false
+	explosionVFX.global_rotation = 0
+	explosionVFX.visible = true
+	explosionVFX.play("default")
+	await explosionVFX.animation_finished
 	queue_free()
