@@ -17,6 +17,8 @@ const squirrel := preload("res://scenes/Enemies/squirrel.tscn")
 const cow := preload("res://scenes/Enemies/cow.tscn")
 const snail := preload("res://scenes/Enemies/snail.tscn")
 const beetle := preload("res://scenes/Enemies/beetle.tscn")
+const hornet := preload("res://scenes/Enemies/hornet.tscn")
+const queen_hornet := preload("res://scenes/Enemies/queen_hornet.tscn")
 
 # variables to initialize waves after dialogue
 @export var wave_label: Label

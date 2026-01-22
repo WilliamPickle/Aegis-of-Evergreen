@@ -8,7 +8,8 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 @export var data_resource : DataResource = DataResource.new()
 @onready var enemy_data = Game_Data[data_resource.class_type][data_resource.object]
 
-@onready var speed : float = enemy_data["speed"]
+@onready var original_speed : float = enemy_data["speed"]
+@onready var speed : float = original_speed
 @onready var max_health : float = enemy_data["max_health"]
 ## Used to calculate damage it does against the base. 
 ## Formula is cur_health * base_damage_ratio
@@ -59,7 +60,7 @@ func _ready() -> void:
 # progresses enemy along a path.
 # automatically deletes enemy and path when it reaches the end
 func move_on_path(delta) -> void:
-	if  path.progress_ratio >= 1:
+	if path.progress_ratio >= 1:
 		if has_been_removed:
 			return
 		has_been_removed = true
@@ -93,7 +94,7 @@ func apply_damage(damage : float, damage_type):
 		# ADD SOME CALCULATIONS HERE WITH damage_percent
 		damage_percent = enemy_data["resistance_percent"]
 	cur_health -= damage * damage_percent
-	print("damage taken: ", damage * damage_percent)
+	#print("damage taken: ", damage * damage_percent)
 	draw_health()
 
 func draw_health():

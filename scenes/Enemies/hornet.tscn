@@ -1,0 +1,131 @@
+[gd_scene load_steps=21 format=3 uid="uid://cwlgag67qxui1"]
+
+[ext_resource type="Script" uid="uid://dferq65sa00f2" path="res://scenes/Enemies/hornet.gd" id="1_wjqj1"]
+[ext_resource type="Texture2D" uid="uid://dxmkcltuqnk26" path="res://assets/sprites/enemies/wasp_worker_v1.png" id="2_2lebu"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_vqqaj"]
+[ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_vqqaj"]
+[ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="4_rc02x"]
+
+[sub_resource type="Resource" id="Resource_2lebu"]
+script = ExtResource("2_vqqaj")
+class_type = "enemy"
+object = "hornet"
+update_data = false
+metadata/_custom_type_script = "uid://baqkdqf80xars"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_autjr"]
+atlas = ExtResource("2_2lebu")
+region = Rect2(0, 0, 30, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6246i"]
+atlas = ExtResource("2_2lebu")
+region = Rect2(30, 0, 30, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su3sc"]
+atlas = ExtResource("2_2lebu")
+region = Rect2(60, 0, 30, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iomkn"]
+atlas = ExtResource("2_2lebu")
+region = Rect2(90, 0, 30, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cjth"]
+atlas = ExtResource("2_2lebu")
+region = Rect2(120, 0, 30, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd04o"]
+atlas = ExtResource("2_2lebu")
+region = Rect2(150, 0, 30, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8sel"]
+atlas = ExtResource("2_2lebu")
+region = Rect2(180, 0, 30, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vefs3"]
+atlas = ExtResource("2_2lebu")
+region = Rect2(210, 0, 30, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ac584"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_autjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6246i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su3sc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iomkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cjth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd04o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8sel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vefs3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hmd63"]
+radius = 6.0
+height = 28.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sau5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wpvpm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cdlyu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ved5"]
+
+[node name="hornet" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "hp_button", "health_bar")]
+script = ExtResource("1_wjqj1")
+data_resource = SubResource("Resource_2lebu")
+enemy_sprite = NodePath("AnimatedSprite2D")
+hp_button = NodePath("Button")
+health_bar = NodePath("HpContainer/HpBar")
+metadata/_custom_type_script = "uid://b8s182qi2sarb"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.875, -8.125)
+sprite_frames = SubResource("SpriteFrames_ac584")
+autoplay = "default"
+frame_progress = 0.603354
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.125, -3.125)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_hmd63")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -14.125
+offset_top = -9.125
+offset_right = 11.875
+offset_bottom = 2.875
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sau5s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wpvpm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cdlyu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7ved5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cdlyu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7ved5")
+
+[node name="HpContainer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, -21)
+scale = Vector2(1.03676, 1)
+texture = ExtResource("3_vqqaj")
+
+[node name="HpBar" type="Sprite2D" parent="HpContainer"]
+texture = ExtResource("4_rc02x")

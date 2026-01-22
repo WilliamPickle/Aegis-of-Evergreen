@@ -65,7 +65,6 @@ height = 28.0
 script = ExtResource("1_og626")
 data_resource = SubResource("Resource_s64jl")
 enemy_sprite = NodePath("AnimatedSprite2D")
-resistance = 1
 hp_button = NodePath("Button")
 health_bar = NodePath("HpContainer/HpBar")
 metadata/_custom_type_script = "uid://b8s182qi2sarb"

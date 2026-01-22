@@ -50,7 +50,7 @@ func apply_stat_changes():
 func disable_stat_changes(timer):
 	match stat:
 		Type.WALK_SPEED:
-			target.speed = target.enemy_data["speed"]
+			target.speed = target.original_speed
 		Type.ATK_COOLDOWN:
 			# WILL CRASH LATER WITH MORE TOWER TYPES
 			target._attack_cooldown.wait_time = target.object_data["attack_speed"][target.level]

@@ -34,6 +34,7 @@ func add_tower() -> void:
 	new_tower.map_area = map_area
 	new_tower.global_position = get_global_mouse_position()
 	map_area.add_child(new_tower)
+	new_tower.total_spent += new_tower.object_data["cost"][0]
 
 
 func _unhandled_input(event: InputEvent) -> void:
