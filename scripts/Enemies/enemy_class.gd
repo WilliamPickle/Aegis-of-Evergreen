@@ -108,6 +108,8 @@ func draw_health():
 		PlayerStats.emit_signal("xp_changed")
 		PlayerStats.emit_signal("money_changed")
 		emit_signal("removed")
+		send_away()
+		await defeat_animation.animation_finished
 		path.queue_free()
 		queue_free()
 		return
@@ -116,6 +118,13 @@ func draw_health():
 	
 func toggle_health_bar():
 	health_bar.get_parent().visible = !health_bar.get_parent().visible
+	
+func send_away() -> void:
+	original_speed = 0
+	speed = 0
+	enemy_sprite.visible = false
+	defeat_animation.visible = true
+	defeat_animation.play()
 
 func _process(delta: float) -> void:
 	move_on_path(delta)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://b7ncwanh4k1os"]
+[gd_scene load_steps=42 format=3 uid="uid://b7ncwanh4k1os"]
 
 [ext_resource type="Script" uid="uid://csbsy1wd05fmo" path="res://scripts/Enemies/cow.gd" id="1_l5pgx"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_l5pgx"]
 [ext_resource type="Texture2D" uid="uid://dudedntbvbfnu" path="res://assets/sprites/enemies/cow_v2.png" id="2_oal1r"]
+[ext_resource type="Texture2D" uid="uid://bgrhb83jre0xx" path="res://assets/sprites/enemies/Zap Away.png" id="3_aqvb8"]
 [ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_l5pgx"]
 [ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="4_aqvb8"]
 [ext_resource type="Texture2D" uid="uid://66a7jimgul0n" path="res://assets/sprites/enemies/cow_fart.png" id="5_aqvb8"]
@@ -13,6 +14,98 @@ class_type = "enemy"
 object = "cow"
 update_data = false
 metadata/_custom_type_script = "uid://baqkdqf80xars"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8kq0"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2071"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70pk3"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7xg2"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chs0e"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6h4c"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prcla"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pdxq"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wahku"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiyt6"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(900, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m15ll"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(1000, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6t3f"]
+atlas = ExtResource("3_aqvb8")
+region = Rect2(1100, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_30p10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8kq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2071")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70pk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7xg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chs0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6h4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prcla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pdxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wahku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiyt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m15ll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6t3f")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_30p10"]
 atlas = ExtResource("2_oal1r")
@@ -129,13 +222,20 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_bxvbq"]
 radius = 32.0039
 
-[node name="cow" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "hp_button", "health_bar")]
+[node name="cow" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "defeat_animation", "hp_button", "health_bar")]
 script = ExtResource("1_l5pgx")
 data_resource = SubResource("Resource_aqvb8")
 enemy_sprite = NodePath("AnimatedSprite2D")
+defeat_animation = NodePath("ZapAway")
 hp_button = NodePath("Button")
 health_bar = NodePath("HpContainer/HpBar")
 metadata/_custom_type_script = "uid://b8s182qi2sarb"
+
+[node name="ZapAway" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, 1)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_30p10")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4, -7)
