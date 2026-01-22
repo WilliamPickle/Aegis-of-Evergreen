@@ -17,7 +17,7 @@ func load_scene(file_path : String, new_key : String) -> void:
 		change_scene_visibility(new_key,true)
 	else:
 		var new_scene = load(file_path).instantiate()
-		print("root: ", root.name)
+		#print("root: ", root.name)
 		#print("new_scene: ", new_scene)
 		root.add_child(new_scene)
 		_current_scenes[new_key] = new_scene

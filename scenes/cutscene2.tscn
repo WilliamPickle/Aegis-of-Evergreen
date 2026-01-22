@@ -87,7 +87,6 @@ texture = ExtResource("13_bojwh")
 
 [node name="Cutscene" type="Node2D" node_paths=PackedStringArray("skip_button")]
 script = ExtResource("1_akybv")
-wait_time = 1.0
 skip_button = NodePath("ScrollContainer/VScrollBar/ComicEdge7/GojoRef/Skip")
 metadata/_custom_type_script = "uid://dvv5nga2g61av"
 
@@ -189,6 +188,7 @@ texture = ExtResource("8_k3mwq")
 [node name="Skip" type="Button" parent="ScrollContainer/VScrollBar/ComicEdge7/GojoRef"]
 modulate = Color(0, 0, 0, 1)
 z_index = 10
+layout_mode = 0
 offset_left = 295.0
 offset_top = 155.0
 offset_right = 318.0
@@ -209,19 +209,20 @@ new_scene = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
 [node name="Text" type="Label" parent="ScrollContainer/VScrollBar/ComicEdge7/GojoRef/Skip"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -28.5
-offset_top = -8.0
-offset_right = 28.5
+offset_left = -32.5
+offset_top = -20.0
+offset_right = 18.5
+offset_bottom = -1.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("4_qqpph")
 theme_override_font_sizes/font_size = 8
 text = "Skip cutscene"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar/ComicEdge7/GojoRef"]
 layout_mode = 0

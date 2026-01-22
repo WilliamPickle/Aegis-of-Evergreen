@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d34mdmhms1j1j"
+path="res://.godot/imported/Tower Heavy.mp3-ab1e7657474345c9325ea9bc04431682.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Tower Heavy.mp3"
+dest_files=["res://.godot/imported/Tower Heavy.mp3-ab1e7657474345c9325ea9bc04431682.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

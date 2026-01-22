@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdspv6mthtcdt"]
+
+[ext_resource type="AudioStream" uid="uid://btbml8jxp2skv" path="res://assets/music/Confirm.mp3" id="1_5p1ft"]
+[ext_resource type="Script" uid="uid://xa7su267l84j" path="res://scripts/UI/button_audio_player.gd" id="2_g6bs0"]
+
+[node name="ButtonAudioPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_5p1ft")
+bus = &"sfx"
+script = ExtResource("2_g6bs0")

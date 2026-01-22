@@ -188,6 +188,7 @@ shape = SubResource("CircleShape2D_3bpil")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="UpgradeUI" parent="." node_paths=PackedStringArray("tower", "level_descriptions") instance=ExtResource("4_88opd")]
+visible = false
 tower = NodePath("..")
 type = "attacker"
 level_descriptions = NodePath("UpgradeDescriptions")

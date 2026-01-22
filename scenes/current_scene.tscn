@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyjbx7q0jdh5b"]
+[gd_scene load_steps=4 format=3 uid="uid://cyjbx7q0jdh5b"]
 
 [ext_resource type="Script" uid="uid://dk2mcxcmp3y28" path="res://scripts/Global Scripts/scene_script.gd" id="1_dkv15"]
 [ext_resource type="PackedScene" uid="uid://d23apw67034ak" path="res://scenes/start_menu.tscn" id="2_f3ia2"]
+[ext_resource type="AudioStream" uid="uid://bs44lh0fvxyuf" path="res://assets/music/Aegis Title Screen.mp3" id="3_f3ia2"]
 
 [node name="current_scene" type="Node2D"]
 script = ExtResource("1_dkv15")
 
 [node name="menu_screen" parent="." instance=ExtResource("2_f3ia2")]
+
+[node name="AegisTracks" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_f3ia2")
+autoplay = true
+bus = &"music"
+parameters/looping = true

@@ -2,9 +2,13 @@ extends WaveSpawner
 
 @onready var lvl1_dialogue: DialogueBox = $"../DialogueUI/DialogueBox"
 @onready var manual_wave_button: Button = $"../Start Button/MarginContainer/VBoxContainer/HBoxContainer/StartWave"
+static var music_started = false
 
 func _ready() -> void:
 	super._ready()
+	if !music_started:
+		music_started = true
+		SceneLoader.root.emit_signal("gameplay_started")
 	lvl1_dialogue.start_wave.connect(_on_start_lvl1)
 	manual_wave_button.button_down.connect(_on_start_lvl1)
 
