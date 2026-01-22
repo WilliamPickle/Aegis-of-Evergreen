@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ycyc0j38rd0i" path="res://assets/sprites/towers/tower cards/chipmunk_card.png" id="3_onfjo"]
 [ext_resource type="StyleBox" uid="uid://c8eassgqrql2c" path="res://assets/sprites/icons and buttons/scrollbar_tab_darkened.tres" id="4_j5qwt"]
 [ext_resource type="Script" uid="uid://c5v7i37jdw55h" path="res://scripts/Towers/tower_placement.gd" id="4_onfjo"]
-[ext_resource type="Script" uid="uid://cp4bysclrk1kw" path="res://scripts/UI/scroll_container.gd" id="4_x5tgu"]
+[ext_resource type="Script" path="res://scripts/UI/scroll_container.gd" id="4_x5tgu"]
 [ext_resource type="StyleBox" uid="uid://1sl8ht1sjn60" path="res://assets/sprites/icons and buttons/scrollbar_tab_hover.tres" id="5_e72ca"]
 [ext_resource type="Texture2D" uid="uid://l8ur5jyypk2t" path="res://assets/sprites/icons and buttons/scroll_bar_vine_ender.png" id="6_0uhrl"]
 [ext_resource type="StyleBox" uid="uid://bw72sh8wl3dk8" path="res://assets/sprites/icons and buttons/scrollbar_tab.tres" id="6_flo0f"]
@@ -54,6 +54,7 @@ texture_margin_bottom = 10.0
 
 [node name="ScrollbarUI" type="CanvasLayer" node_paths=PackedStringArray("scroll_container")]
 script = ExtResource("1_f0vdy")
+card_type = Array[String](["god"])
 scroll_container = NodePath("ScrollbarUIAssets/CardHBox/CardContainer/HBoxContainer")
 tint_during_pause = true
 

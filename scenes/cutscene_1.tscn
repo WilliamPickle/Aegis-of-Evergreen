@@ -72,8 +72,9 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y258h"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2gc3"]
-texture = ExtResource("3_8i0x7")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1p1lm"]
+texture = ExtResource("4_lbnep")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8i0x7"]
 texture = ExtResource("4_lbnep")
@@ -82,12 +83,13 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbnep"]
 texture = ExtResource("4_lbnep")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1p1lm"]
-texture = ExtResource("4_lbnep")
-modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a35cd"]
 texture = ExtResource("3_8i0x7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ud2vv"]
+font_size = 8
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="CutScene1" type="Node2D" node_paths=PackedStringArray("camera", "skip_button")]
 script = ExtResource("1_wname")
@@ -235,7 +237,7 @@ offset_bottom = 178.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/focus = SubResource("StyleBoxEmpty_y258h")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_t2gc3")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_1p1lm")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8i0x7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_lbnep")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_1p1lm")
@@ -254,12 +256,15 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -28.5
-offset_top = -8.0
+offset_top = -20.0
 offset_right = 28.5
+offset_bottom = -1.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_kteqr")
 theme_override_font_sizes/font_size = 8
-text = "Skip cutscene"
+text = "Start
+Game"
+label_settings = SubResource("LabelSettings_ud2vv")
 horizontal_alignment = 1
 
 [node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar/ComicEdge7/GojoRef"]

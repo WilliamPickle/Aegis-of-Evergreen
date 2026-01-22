@@ -19,6 +19,7 @@ const cards : Dictionary = {
 	"chipmunk" = preload("res://assets/sprites/towers/tower cards/chipmunk_card.png"),
 	"bee" = preload("res://assets/sprites/towers/tower cards/bee_card.png"),
 	"flytrap" = preload("res://assets/sprites/towers/tower cards/fly_trap_card.png"),
+	"god" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png")
 }
 
 # card unlocks based on level
@@ -47,8 +48,6 @@ func _ready() -> void:
 		
 	# adding in the unlocked cards
 	for i in range(PlayerStats.PlayerLevel + 1):
-		if str(i) not in unlockable_allies:
-			continue
 		add_card(unlockable_allies[str(i)])
 		
 		

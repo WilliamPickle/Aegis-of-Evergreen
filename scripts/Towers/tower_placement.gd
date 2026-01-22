@@ -7,6 +7,7 @@ const towers : Dictionary = {
 	"chipmunk" = preload("res://scenes/Towers/chipmunk/chipmunk.tscn"),
 	"bee" = preload("res://scenes/Towers/bee/bee.tscn"),
 	"flytrap" = preload("res://scenes/Towers/flytrap/flytrap.tscn"),
+	"god" = preload("res://scenes/Towers/god/god.tscn"),
 }
 const CONTROLS_STATES = ControlHandler.ControlState
 static var is_placing := false

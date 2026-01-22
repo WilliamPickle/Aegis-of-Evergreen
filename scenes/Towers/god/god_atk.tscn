@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://cqp6t6jeuu27k"]
+
+[ext_resource type="Script" uid="uid://cfxjidu7c4ru8" path="res://scripts/Towers/attacks/melee_class.gd" id="1_gmonv"]
+[ext_resource type="Texture2D" uid="uid://3nd6cbpxhth0" path="res://assets/sprites/towers/venus_fly_trap_spritesheet.png" id="1_lg3pv"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="3_2nkrh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nkrh"]
+atlas = ExtResource("1_lg3pv")
+region = Rect2(0, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diha6"]
+atlas = ExtResource("1_lg3pv")
+region = Rect2(75, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkxc6"]
+atlas = ExtResource("1_lg3pv")
+region = Rect2(150, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwv4v"]
+atlas = ExtResource("1_lg3pv")
+region = Rect2(225, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n5k4"]
+atlas = ExtResource("1_lg3pv")
+region = Rect2(300, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m27fj"]
+atlas = ExtResource("1_lg3pv")
+region = Rect2(375, 450, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dac4n"]
+atlas = ExtResource("1_lg3pv")
+region = Rect2(450, 450, 75, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvxem"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nkrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diha6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkxc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwv4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n5k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m27fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dac4n")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Resource" id="Resource_diha6"]
+script = ExtResource("3_2nkrh")
+class_type = "melee"
+object = "god_atk"
+update_data = false
+metadata/_custom_type_script = "uid://baqkdqf80xars"
+
+[node name="GodAtk" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_rvxem")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+offset = Vector2(14, -2)
+script = ExtResource("1_gmonv")
+data_resource = SubResource("Resource_diha6")
+metadata/_custom_type_script = "uid://cfxjidu7c4ru8"

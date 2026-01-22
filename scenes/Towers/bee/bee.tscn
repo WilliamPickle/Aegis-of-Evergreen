@@ -479,7 +479,6 @@ z_index = 7
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_d2kkl")
-snapping = 2.0
 data_resource = SubResource("Resource_d10nx")
 metadata/_custom_type_script = "uid://bedplpbp1d213"
 

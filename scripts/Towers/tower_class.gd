@@ -13,7 +13,7 @@ const CONTROLS_STATES = ControlHandler.ControlState
 static var current_tower : Tower
 
 # Turn to const once variable is finalized
-@export var snapping : float
+const snapping : float = 2.0
 
 # Class shared vars
 static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))

@@ -90,6 +90,36 @@
 		4
 	  ]
 	},
+	"god": {
+	  "type": "Attacker",
+	  "tower_fpath": "res://scenes/Towers/flytrap/flytrap.tscn",
+	  "card_fpath": "res://assets/sprites/towers/chipmunk_card.png",
+	  "attack_fpath": [
+		"res://scenes/Towers/god/god_atk.tscn",
+		"res://scenes/Towers/god/god_atk.tscn",
+		"res://scenes/Towers/god/god_atk.tscn"
+	  ],
+	  "cost": [
+		0,
+		0,
+		0
+	  ],
+	  "range": [
+		100,
+		150,
+		200
+	  ],
+	  "attack_speed": [
+		1,
+		1,
+		1
+	  ],
+	  "damage": [
+		500,
+		500,
+		500
+	  ]
+	},
   },
   "hero": {
 	"ranger":{
@@ -189,6 +219,10 @@
 	"flytrap_melee_3": {
 	  "type": "energy",
 	  "splash_cap": 7,
+	},
+	"god_atk": {
+	  "type": "energy",
+	  "splash_cap": 20,
 	}
   },
   "enemy": {
@@ -252,5 +286,5 @@
 	  "resistance" : "blunt",
 	  "resistance_percent" : 0.75
 	},
-  }
+  },
 }
