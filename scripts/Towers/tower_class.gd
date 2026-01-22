@@ -111,14 +111,18 @@ func on_tower_collision(_body):
 ## placing it and disabling functions.
 func place_tower() -> bool:
 	if get_overlapping_areas().size() > 0:
+		var notif := Error_Notification.new()
+		map_area.add_child(notif)
+		notif.send_notif(global_position,"can't place here")
 		return false
 		
 	if !PlayerStats.purchase_item(cost):
 		queue_free()
-		Tower_Placement.new_tower = null
-		Tower_Placement.is_placing = false
-		ControlHandler.current_states.erase(CONTROLS_STATES.PLACING_TOWER)
-		return false
+		Tower_Placement.reset_data()
+		var notif := Error_Notification.new()
+		map_area.add_child(notif)
+		notif.send_notif(global_position,"not enough funds")
+		return true
 	# Makes so _process can't run
 	set_process(false)
 	# Enabled the button functionality.
