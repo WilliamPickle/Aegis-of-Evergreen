@@ -132,7 +132,7 @@ texture_margin_bottom = 10.0
 [sub_resource type="LabelSettings" id="LabelSettings_mclyq"]
 font = ExtResource("10_0ucpk")
 font_size = 32
-font_color = Color(0.890196, 0.901961, 1, 1)
+font_color = Color(0.368447, 0.248953, 0.248961, 1)
 
 [node name="TutorialMenu" type="CanvasLayer"]
 process_mode = 3
@@ -231,6 +231,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Page1" type="Control" parent="Screen/Pages"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -1263,7 +1264,6 @@ label_settings = ExtResource("17_llqua")
 autowrap_mode = 3
 
 [node name="Page3" type="Control" parent="Screen/Pages"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
