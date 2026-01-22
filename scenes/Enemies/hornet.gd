@@ -20,6 +20,7 @@ func heal_boss():
 	boss.cur_health += heal_quantity
 	boss.draw_health()
 	removed.disconnect(heal_boss)
+	
 
 func check_for_boss() -> void:
 	if tree.has_group("boss") and tree.get_node_count_in_group("boss") > 0:

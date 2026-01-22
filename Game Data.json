@@ -12,7 +12,7 @@
 	  "cost": [
 		50,
 		75,
-		130
+		140
 	  ],
 	  "range": [
 		65,
@@ -22,7 +22,7 @@
 	  "attack_speed": [
 		1,
 		0.6,
-		0.25
+		0.3
 	  ],
 	  "damage": [
 		1,
@@ -51,7 +51,7 @@
 	  ],
 	  "attack_speed": [
 		3,
-		4,
+		4.5,
 		4
 	  ],
 	  "damage": [
@@ -152,7 +152,7 @@
 	  "travel_time": 1,
 	  "despawn_distance" : 20,
 	  "pierce_cap": 2,
-	  "pierce_damage": 0.2,
+	  "pierce_damage": 0.5,
 	  "splash_cap": 5,
 	  "debuff_type": "slowness"
 	},
@@ -223,7 +223,7 @@
 	  "xp" : 30,
 	  "money_drop" : 15,
 	  "resistance" : "blunt",
-	  "resistance_percent" : 0.75
+	  "resistance_percent" : 0.6
 	},
 	"beetle" : {
 	  "speed" : 0.02, 
@@ -232,7 +232,7 @@
 	  "xp" : 80,
 	  "money_drop" : 30,
 	  "resistance" : "blunt",
-	  "resistance_percent" : 0.5
+	  "resistance_percent" : 0.4
 	},
 	"hornet" : {
 	  "speed" : 0.035, 
@@ -240,7 +240,8 @@
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 25,
 	  "money_drop" : 10,
-	  "resistance" : "none",
+	  "resistance" : "blunt",
+	  "resistance_percent" : 0.75,
 	},
 	"queen_hornet" : {
 	  "speed" : 0.015, 
@@ -249,7 +250,7 @@
 	  "xp" : 200,
 	  "money_drop" : 125,
 	  "resistance" : "blunt",
-	  "resistance_percent" : 0.9
+	  "resistance_percent" : 0.75
 	},
   }
 }
