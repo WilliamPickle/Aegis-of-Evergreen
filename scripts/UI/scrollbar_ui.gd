@@ -48,6 +48,8 @@ func _ready() -> void:
 		
 	# adding in the unlocked cards
 	for i in range(PlayerStats.PlayerLevel + 1):
+		if str(i) not in unlockable_allies:
+			continue
 		add_card(unlockable_allies[str(i)])
 		
 		
