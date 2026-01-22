@@ -143,9 +143,6 @@ func place_tower() -> bool:
 	# Tell corresponding sub class that the tower succesfully was placed
 	tower_placed.emit()
 	
-	# Update our current state.
-	ControlHandler.current_states.erase(CONTROLS_STATES.PLACING_TOWER)
-	
 	return true
 
 func upgrade_tower() -> void:

@@ -5,7 +5,7 @@ const f_path : String = "res://assets/sprites/towers/tower mugshots/"
 @export var tower : Tower
 @export var tower_name : String
 ## Put all description labels under this node
-@export_enum("attacker") var type : String
+@export_enum("attacker","ranger") var type : String
 @export var level_descriptions : Control
 @export var tower_max_level : int = 3
 @onready var cur_description : Label = level_descriptions.get_child(tower.level)
@@ -14,6 +14,7 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 @onready var tower_data = Game_Data[tower_name]
 const tower_stats : Dictionary = {
 	"attacker" = ["damage", "range", "attack_speed"],
+	"ranger" = ["range"]
 	#"melee" = ["damage", "range", "attack_speed"]
 }
 
@@ -96,6 +97,8 @@ func _sell_tower():
 	ControlHandler.current_states.erase(ControlHandler.ControlState.VIEWING_TOWER)
 	PlayerStats.cur_money += tower.sell_value
 	PlayerStats.emit_signal("money_changed")
+	if tower is Ranger:
+		tower.does_exist = false
 	tower.current_tower = null
 	tower.queue_free()
 	

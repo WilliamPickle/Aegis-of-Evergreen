@@ -25,12 +25,6 @@ func _ready():
 	$SplashArea/SplashShape.shape.radius = splash_radius
 	super._ready()
 
-func _draw() -> void:
-	draw_circle(Vector2.ZERO, zone_1, Color(0,0,0), false, 1)
-	draw_circle(Vector2.ZERO, zone_2, Color(0,0,0), false, 1)
-	draw_circle(Vector2.ZERO, splash_radius, Color(0,0,0), false, 1)
-	draw_circle(Vector2.ZERO, splash_radius, Color.from_rgba8(93, 70, 194, 100))
-
 func on_hit(enemy : Enemy) -> void:
 	enemy.apply_damage(tower.cur_damage * pierce_damage, type)
 	
