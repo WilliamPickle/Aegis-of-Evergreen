@@ -71,8 +71,8 @@
 	  ],
 	  "cost": [
 		85,
-		125,
-		175
+		110,
+		155
 	  ],
 	  "range": [
 		45,
@@ -247,7 +247,7 @@
 	  "max_health" : 40,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 50,
-	  "money_drop" : 20,
+	  "money_drop" : 50,
 	  "resistance" : "none"
 	},
 	"snail" : {
@@ -255,7 +255,7 @@
 	  "max_health" : 20,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 30,
-	  "money_drop" : 15,
+	  "money_drop" : 25,
 	  "resistance" : "blunt",
 	  "resistance_percent" : 0.6
 	},
@@ -264,27 +264,27 @@
 	  "max_health" : 40,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 80,
-	  "money_drop" : 30,
+	  "money_drop" : 45,
 	  "resistance" : "blunt",
-	  "resistance_percent" : 0.4
+	  "resistance_percent" : 0.5
 	},
 	"hornet" : {
 	  "speed" : 0.035, 
 	  "max_health" : 10,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 25,
-	  "money_drop" : 10,
+	  "money_drop" : 15,
 	  "resistance" : "blunt",
-	  "resistance_percent" : 0.75,
+	  "resistance_percent" : 0.9,
 	},
 	"queen_hornet" : {
 	  "speed" : 0.015, 
 	  "max_health" : 150,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 200,
-	  "money_drop" : 125,
+	  "money_drop" : 200,
 	  "resistance" : "blunt",
-	  "resistance_percent" : 0.75
+	  "resistance_percent" : 0.9
 	},
   },
 }
