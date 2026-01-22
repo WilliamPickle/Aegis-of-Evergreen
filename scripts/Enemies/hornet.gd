@@ -14,7 +14,7 @@ func _ready() -> void:
 	
 	
 func heal_boss():
-	if path.progress_ratio >= 1 or !boss_present:
+	if path.progress_ratio >= 1 or !boss_present or !is_instance_valid(boss):
 		return
 	#print("Uhh boss is present? ", boss_present)
 	boss.cur_health += heal_quantity

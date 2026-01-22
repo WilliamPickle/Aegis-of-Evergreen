@@ -3,6 +3,7 @@ extends WaveSpawner
 @onready var lvl4_dialogue: DialogueBox = $"../DialogueUI/DialogueBox"
 @onready var manual_wave_button: Button = $"../Start Button/MarginContainer/VBoxContainer/HBoxContainer/StartWave"
 @onready var path2: Path2D = $"../EnemyPath2"
+@onready var temp_screen: UserInterface = $"../TempWinScreen"
 
 func _ready() -> void:
 	super._ready()
@@ -12,10 +13,12 @@ func _ready() -> void:
 
 func _on_start_lvl4() -> void:
 	# wave 1
-	start_wave_timer(45)
+	start_wave_timer(200)
 	send_enemy(bush, 5, 0.5)
 	await delay(5)
 	await send_enemy(mushroom, 3, 0.5, path2)
 	
 	currently_sending = false
 	await wave_timer.timeout
+	temp_screen.visible = true
+	
