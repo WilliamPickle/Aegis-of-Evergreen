@@ -99,7 +99,8 @@ func update_wave():
 		#print("Enemies left: ", enemy_count)
 		#print("prev levels won:", PlayerStats.lvls_beaten)
 		PlayerStats.lvls_beaten += 1
-		PlayerStats.cur_money = PlayerStats.DEFAULT_MONEY[floori(PlayerStats.lvls_beaten / 3)][PlayerStats.lvls_beaten % 3]
+		PlayerStats.pity_money = 0
+		PlayerStats.cur_money = PlayerStats.DEFAULT_MONEY[floori(PlayerStats.lvls_beaten / 3)][PlayerStats.lvls_beaten % 3] + PlayerStats.pity_money
 		#print("levels won:", PlayerStats.lvls_beaten)
 		#print("wave variable: ", wave)
 		SceneLoader.load_scene("res://scenes/UI/win_ui.tscn", "win_ui")

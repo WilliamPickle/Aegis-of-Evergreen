@@ -19,6 +19,7 @@ const DEFAULT_MONEY : Array = [
 	[800.0, 900.0, 1000.0],
 ]
 @onready var cur_money = DEFAULT_MONEY[0][0]
+var pity_money = 0
 
 func _ready() -> void:
 	xp_changed.connect(calculate_player_lvl)

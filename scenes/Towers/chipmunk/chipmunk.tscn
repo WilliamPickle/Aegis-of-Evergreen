@@ -146,7 +146,6 @@ input_pickable = false
 linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource("1_gqb61")
-snapping = 2.0
 data_resource = SubResource("Resource_gqb61")
 metadata/_custom_type_script = "uid://bedplpbp1d213"
 metadata/_edit_group_ = true
@@ -189,7 +188,6 @@ shape = SubResource("CircleShape2D_3bpil")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="UpgradeUI" parent="." node_paths=PackedStringArray("tower", "level_descriptions") instance=ExtResource("4_88opd")]
-visible = false
 tower = NodePath("..")
 type = "attacker"
 level_descriptions = NodePath("UpgradeDescriptions")
@@ -221,8 +219,9 @@ offset_top = 393.0
 offset_right = 1283.0
 offset_bottom = 447.0
 scale = Vector2(0.8, 0.8)
-text = ">> Improved attack speed
->> Improved range"
+text = ">> Greatly Improved attack speed
+>> Improved range
+>> Decreased damage"
 label_settings = ExtResource("5_vafmc")
 autowrap_mode = 3
 

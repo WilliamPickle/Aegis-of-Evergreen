@@ -1,6 +1,7 @@
 extends Icon
 @onready var lose_ui: UserInterface = $"../../.."
 const levels_list = ["res://scenes/level_1.tscn", "res://scenes/level_2.tscn", "res://scenes/level_3.tscn"]
+const restart_pity_money: float = 25
 
 func _ready() -> void:
 	file_path = levels_list[PlayerStats.lvls_beaten]
@@ -18,4 +19,5 @@ func remove_lose_screen():
 	ControlHandler.current_states.erase(ControlHandler.ControlState.VIEWING_TOWER)
 	SceneLoader.change_scene_visibility("lose_ui", false)
 	SceneLoader.tint_scene(SceneLoader.current_main_scene, false)
-	PlayerStats.cur_money = PlayerStats.DEFAULT_MONEY[floori(PlayerStats.lvls_beaten / 3)][PlayerStats.lvls_beaten % 3]
+	PlayerStats.pity_money += restart_pity_money
+	PlayerStats.cur_money = PlayerStats.DEFAULT_MONEY[floori(PlayerStats.lvls_beaten / 3)][PlayerStats.lvls_beaten % 3] + PlayerStats.pity_money

@@ -86,9 +86,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -275.0
-offset_top = -62.5
+offset_top = -87.0
 offset_right = 275.0
-offset_bottom = 62.5
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -193,3 +193,13 @@ file_path = "res://scenes/UI/test_menu.tscn"
 scene_scale = 2.0
 hide_pause_menu = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="plus cash" type="Label" parent="LoseScreen"]
+offset_left = 435.0
+offset_top = 403.0
+offset_right = 851.0
+offset_bottom = 467.0
+theme_override_fonts/font = ExtResource("4_p5pvh")
+theme_override_font_sizes/font_size = 24
+text = "<< +$25 starting cash >>"
+horizontal_alignment = 1
