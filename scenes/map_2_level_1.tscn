@@ -1,13 +1,13 @@
-[gd_scene load_steps=57 format=3 uid="uid://ca37b3exk8ick"]
+[gd_scene load_steps=62 format=3 uid="uid://ca37b3exk8ick"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_dri55"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_ektfg"]
 [ext_resource type="Texture2D" uid="uid://b73ytkoo8r6bc" path="res://assets/sprites/maps/map2/map2_lvl1_background.png" id="3_dfome"]
-[ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="4_20xqq"]
+[ext_resource type="Texture2D" uid="uid://d1ypiscjypjgt" path="res://assets/sprites/maps/map2/map2_lvl1_river_anim.png" id="4_ektfg"]
 [ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="5_xe5dx"]
 [ext_resource type="Texture2D" uid="uid://c32hbgxmjl2qy" path="res://assets/sprites/maps/map2/map2_lvl1_trees.png" id="6_qc32i"]
 [ext_resource type="Texture2D" uid="uid://3gwoxt07k4t2" path="res://assets/sprites/maps/map2/map2_lvl1_trees_overlayer.png" id="7_6mfql"]
-[ext_resource type="Script" uid="uid://clq18rcf3qqqj" path="res://scripts/Enemies/wave_spawner.gd" id="8_eo2j5"]
+[ext_resource type="Script" uid="uid://ccr4qymm3f1f6" path="res://scripts/Enemies/map2_lvl_1_wave_spawner.gd" id="8_ektfg"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="9_b2yv6"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="10_174b3"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="11_vcyub"]
@@ -114,64 +114,92 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mbb35"]
-atlas = ExtResource("4_20xqq")
-region = Rect2(0, 0, 640, 360)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfome"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(0, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iw4em"]
-atlas = ExtResource("4_20xqq")
-region = Rect2(640, 0, 640, 360)
+[sub_resource type="AtlasTexture" id="AtlasTexture_20xqq"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(640, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hnsmf"]
-atlas = ExtResource("4_20xqq")
-region = Rect2(1280, 0, 640, 360)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe5dx"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(1280, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nossa"]
-atlas = ExtResource("4_20xqq")
-region = Rect2(1920, 0, 640, 360)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc32i"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(1920, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hjqri"]
-atlas = ExtResource("4_20xqq")
-region = Rect2(2560, 0, 640, 360)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mfql"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(2560, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hg84p"]
-atlas = ExtResource("4_20xqq")
-region = Rect2(3200, 0, 640, 360)
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo2j5"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(3200, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1aans"]
-atlas = ExtResource("4_20xqq")
-region = Rect2(3840, 0, 640, 360)
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2yv6"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(3840, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q0ron"]
-atlas = ExtResource("4_20xqq")
-region = Rect2(4480, 0, 640, 360)
+[sub_resource type="AtlasTexture" id="AtlasTexture_174b3"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(4480, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcyub"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(5120, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixs3b"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(5760, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c71nj"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(6400, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiip3"]
+atlas = ExtResource("4_ektfg")
+region = Rect2(7040, 0, 640, 460)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xewxc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mbb35")
+"texture": SubResource("AtlasTexture_dfome")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iw4em")
+"texture": SubResource("AtlasTexture_20xqq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hnsmf")
+"texture": SubResource("AtlasTexture_xe5dx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nossa")
+"texture": SubResource("AtlasTexture_qc32i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hjqri")
+"texture": SubResource("AtlasTexture_6mfql")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hg84p")
+"texture": SubResource("AtlasTexture_eo2j5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1aans")
+"texture": SubResource("AtlasTexture_b2yv6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q0ron")
+"texture": SubResource("AtlasTexture_174b3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcyub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixs3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c71nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiip3")
 }],
 "loop": true,
 "name": &"default",
@@ -183,6 +211,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -273, -109, 0, 0, 0, 0, -265, -80, 0, 0, 0, 0, -248, -56, 0, 0, 0, 0, -216, -39, 0, 0, 0, 0, -183, -37, 0, 0, 0, 0, -156, -39, 0, 0, 0, 0, -123, -54, 0, 0, 0, 0, 0, -124, 0, 0, 0, 0, 41, -137, 0, 0, 0, 0, 87, -141, 0, 0, 0, 0, 133, -140, 0, 0, 0, 0, 161, -135, 0, 0, 0, 0, 179, -122, 0, 0, 0, 0, 194, -99, 0, 0, 0, 0, 197, -80, 0, 0, 0, 0, 186, -55, 0, 0, 0, 0, 170, -37, 0, 0, 0, 0, 46, -11, 0, 0, 0, 0, 21, 5, 0, 0, 0, 0, 11, 19, 0, 0, 0, 0, 9, 38, 0, 0, 0, 0, 17, 54, 0, 0, 0, 0, 32, 71, 0, 0, 0, 0, 47, 80, 0, 0, 0, 0, 68, 86, 0, 0, 0, 0, 190, 72, 0, 0, 0, 0, 246, 46, 0, 0, 0, 0, 280, 37, 0, 0, 0, 0, 342, 37)
 }
 point_count = 29
+
+[sub_resource type="Curve2D" id="Curve2D_gsh1p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -189, 106, 0, 0, 0, 0, -191, 62, 0, 0, 0, 0, -185, -7, 0, 0, 0, 0, -170, -34, 0, 0, 0, 0, -139, -47, 0, 0, 0, 0, -93, -71, 0, 0, 0, 0, 2, -124, 0, 0, 0, 0, 38, -136, 0, 0, 0, 0, 101, -141, 0, 0, 0, 0, 141, -138, 0, 0, 0, 0, 164, -133, 0, 0, 0, 0, 180, -120, 0, 0, 0, 0, 194, -97, 0, 0, 0, 0, 197, -79, 0, 0, 0, 0, 184, -52, 0, 0, 0, 0, 169, -37, 0, 0, 0, 0, 47, -11, 0, 0, 0, 0, 20, 6, 0, 0, 0, 0, 10, 25, 0, 0, 0, 0, 11, 45, 0, 0, 0, 0, 27, 67, 0, 0, 0, 0, 58, 84, 0, 0, 0, 0, 82, 85, 0, 0, 0, 0, 189, 73, 0, 0, 0, 0, 246, 46, 0, 0, 0, 0, 288, 37, 0, 0, 0, 0, 342, 37)
+}
+point_count = 27
 
 [sub_resource type="LabelSettings" id="LabelSettings_gwwq5"]
 font = ExtResource("10_174b3")
@@ -221,8 +255,10 @@ position = Vector2(0, -50)
 texture = ExtResource("3_dfome")
 
 [node name="river" type="AnimatedSprite2D" parent="MapAssets"]
+position = Vector2(0, -50)
 sprite_frames = SubResource("SpriteFrames_xewxc")
 autoplay = "default"
+frame_progress = 0.534901
 
 [node name="bridge" type="Sprite2D" parent="MapAssets"]
 z_index = 2
@@ -242,30 +278,38 @@ y_sort_enabled = true
 curve = SubResource("Curve2D_ibk0x")
 metadata/_edit_lock_ = true
 
+[node name="EnemyPath2" type="Path2D" parent="."]
+y_sort_enabled = true
+curve = SubResource("Curve2D_gsh1p")
+metadata/_edit_lock_ = true
+
 [node name="PlacementCollisions" type="Area2D" parent="."]
 
 [node name="Path" type="CollisionPolygon2D" parent="PlacementCollisions"]
-visible = false
 polygon = PackedVector2Array(-275, -170, -260, -165, -256, -161, -256, -156, -237, -151, -258, -133, -255, -107, -245, -80, -222, -60, -181, -54, -131, -69, -9, -139, 22, -149, 148, -156, 180, -143, 203, -114, 208, -82, 203, -47, 183, -27, 139, -15, 66, -3, 41, 6, 29, 17, 22, 31, 26, 42, 37, 56, 59, 70, 88, 72, 185, 59, 240, 36, 274, 23, 319, 21, 317, 46, 281, 48, 198, 83, 108, 96, 66, 96, 43, 94, 22, 80, 5, 55, -2, 36, 2, 16, 19, -12, 50, -25, 128, -40, 158, -45, 177, -57, 182, -76, 185, -93, 163, -118, 138, -129, 89, -128, 33, -123, 15, -114, -77, -66, -120, -40, -147, -30, -181, -24, -206, -26, -230, -32, -254, -49, -275, -72, -287, -102, -290, -121, -289, -134, -313, -150, -294, -156, -294, -161, -291, -165)
 
 [node name="BLTrees" type="CollisionPolygon2D" parent="PlacementCollisions"]
-visible = false
-polygon = PackedVector2Array(-320, -47, -288, -4, -257, 16, -190, 12, -120, 2, -83, -19, -58, -15, -49, 2, -64, 23, -61, 59, -43, 81, -23, 119, 4, 143, 105, 169, 105, 178, -320, 180)
+polygon = PackedVector2Array(-320, -47, -288, -4, -257, 16, -191, 28, -119, 28, -85, -16, -58, -15, -49, 2, -64, 23, -61, 59, -43, 81, -23, 119, 4, 143, 105, 169, 105, 178, -320, 180)
 
 [node name="TLTrees" type="CollisionPolygon2D" parent="PlacementCollisions"]
-visible = false
-polygon = PackedVector2Array(-236, -177, -152, -175, -140, -108, -156, -91, -175, -91, -200, -94, -231, -130)
+polygon = PackedVector2Array(-237, -187, -154, -190, -140, -108, -156, -91, -175, -91, -200, -94, -231, -130)
 
 [node name="RiverAndTrees" type="CollisionPolygon2D" parent="PlacementCollisions"]
-visible = false
-polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130, 15, -111, 63, -99, 94, -83, 129, -47, 160, 14, 183, 62, 203, 125, 223, 118, 269, 105, 317, 100, 319, 179, 126, 180, 108, 79, 88, 31, 62, -26, -64, -64, -111, -95, -130, -158, -126, -180)
+polygon = PackedVector2Array(-67, -183, -2, -185, -2, -173, -47, -159, -35, -130, 15, -111, 63, -99, 94, -83, 129, -47, 160, 14, 183, 62, 203, 125, 223, 118, 269, 105, 317, 100, 319, 179, 126, 180, 108, 79, 88, 31, 62, -26, -64, -64, -111, -95, -130, -158, -126, -183)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlacementCollisions"]
-visible = false
-polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
+polygon = PackedVector2Array(213, -200, 320, -195, 319, -14, 246, -13, 244, -122, 162, -187)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="PlacementCollisions"]
+position = Vector2(-143, 87)
+polygon = PackedVector2Array(18, -10, -22, -45, -25, -98, -26, -113, -55, -114, -56, -100, -57, -61, -68, -32, -93, -13, -101, 10, -88, 40, -50, 46, -1, 36, 24, 16)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="PlacementCollisions"]
+position = Vector2(-320, -180)
+polygon = PackedVector2Array(640, -7, 640, -101, 0, -100, 0, 0)
 
 [node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label")]
-script = ExtResource("8_eo2j5")
+script = ExtResource("8_ektfg")
 pause_menu = NodePath("../PauseUI")
 fast_forward_button = NodePath("../fast_forward_ui")
 delay_timer = NodePath("DelayFuncTimer")
@@ -450,6 +494,7 @@ region_enabled = true
 region_rect = Rect2(640, 0, 320, 240)
 
 [node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label2"]
+layout_mode = 0
 offset_left = -27.0
 offset_top = -53.0
 offset_right = 78.0
@@ -460,12 +505,13 @@ label_settings = ExtResource("18_yf7ay")
 autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
 layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
-text = "I thank you, kind strangers. I will aid you in defeating these unwelcomed visitors and "
+text = "I thank you, kind strangers. I will aid you in defeating these unwelcomed visitors in due time.  "
 label_settings = ExtResource("18_yf7ay")
 autowrap_mode = 2
 
@@ -477,6 +523,7 @@ region_enabled = true
 region_rect = Rect2(320, 0, 320, 240)
 
 [node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label3"]
+layout_mode = 0
 offset_left = -27.0
 offset_top = -53.0
 offset_right = 78.0
@@ -493,14 +540,64 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
-text = "In any case, keep protecting our environment and make sure it doesn't get overran. "
+text = "First, however, I must attend to some personal matters. I must finish creating my painting of the forest, before it had gone to ruin."
 label_settings = ExtResource("18_yf7ay")
 autowrap_mode = 2
 
-[node name="Base" type="Area2D" parent="."]
+[node name="DruidIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label4"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("19_ektfg")
+region_enabled = true
+region_rect = Rect2(640, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label4"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Druid"
+label_settings = ExtResource("18_yf7ay")
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "Well, volunteer, it seems that our job is not yet over. Keep defending until the end, and don't let our forest be harmed any further."
+label_settings = ExtResource("18_yf7ay")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label5"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_dfome")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label5"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("18_yf7ay")
+autowrap_mode = 2
+
+[node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu", "fast_forward_button")]
 position = Vector2(0, 1)
 script = ExtResource("20_o4hnu")
+health_label = NodePath("../Icons/Control/LifeIndicator/LifeLabel")
 base_health = 15.0
+pause_menu = NodePath("../PauseUI")
+fast_forward_button = NodePath("../fast_forward_ui")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
 position = Vector2(320, 37)

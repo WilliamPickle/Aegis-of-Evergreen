@@ -19,6 +19,7 @@ const snail := preload("res://scenes/Enemies/snail.tscn")
 const beetle := preload("res://scenes/Enemies/beetle.tscn")
 const hornet := preload("res://scenes/Enemies/hornet.tscn")
 const queen_hornet := preload("res://scenes/Enemies/queen_hornet.tscn")
+const mushroom := preload("res://scenes/Enemies/mushroom.tscn")
 
 # variables to initialize waves after dialogue
 @export var wave_label: Label
@@ -39,7 +40,7 @@ func _ready() -> void:
 
 
 # sends an enemy a specified amount of times. 
-func send_enemy(enemy, quantity: int, delay_time: float) -> void:
+func send_enemy(enemy, quantity: int, delay_time: float, parent_path = path_2d) -> void:
 	var new_timer = Timer.new()
 	self.add_child(new_timer)
 	new_timer.wait_time = delay_time
@@ -48,7 +49,7 @@ func send_enemy(enemy, quantity: int, delay_time: float) -> void:
 		await new_timer.timeout
 		
 		var new_path := PathFollow2D.new()
-		path_2d.add_child(new_path)
+		parent_path.add_child(new_path)
 		new_path.rotates = false
 		new_path.rotation = 0
 		new_path.loop = false

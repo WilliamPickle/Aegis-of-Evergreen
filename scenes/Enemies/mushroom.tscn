@@ -1,0 +1,108 @@
+[gd_scene load_steps=18 format=3 uid="uid://cq6ahe06isq28"]
+
+[ext_resource type="Script" uid="uid://b8s182qi2sarb" path="res://scripts/Enemies/enemy_class.gd" id="1_8f0vu"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_b6bn4"]
+[ext_resource type="Texture2D" uid="uid://dtlyhky0bbogy" path="res://assets/sprites/enemies/mushroom_basic.png" id="2_i0alm"]
+[ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_b6bn4"]
+[ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="4_qyqt7"]
+
+[sub_resource type="Resource" id="Resource_qyqt7"]
+script = ExtResource("2_b6bn4")
+class_type = "enemy"
+object = "mushroom"
+update_data = false
+metadata/_custom_type_script = "uid://baqkdqf80xars"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiaqh"]
+atlas = ExtResource("2_i0alm")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g5jk"]
+atlas = ExtResource("2_i0alm")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8sgy"]
+atlas = ExtResource("2_i0alm")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adtva"]
+atlas = ExtResource("2_i0alm")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w16fr"]
+atlas = ExtResource("2_i0alm")
+region = Rect2(80, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yksrr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiaqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g5jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8sgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adtva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w16fr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iiaqh"]
+size = Vector2(11, 6.00001)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2jh3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_af7ig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q4jpt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xn5s3"]
+
+[node name="mushroom" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "hp_button", "health_bar")]
+script = ExtResource("1_8f0vu")
+data_resource = SubResource("Resource_qyqt7")
+enemy_sprite = NodePath("AnimatedSprite2D")
+hp_button = NodePath("Button")
+health_bar = NodePath("HpContainer/HpBar")
+metadata/_custom_type_script = "uid://b8s182qi2sarb"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.125, -5)
+sprite_frames = SubResource("SpriteFrames_yksrr")
+autoplay = "default"
+frame_progress = 0.757543
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.125, -4)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_iiaqh")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -17.0
+offset_top = -6.125
+offset_right = 9.0
+offset_bottom = 5.875
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m2jh3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_af7ig")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_q4jpt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xn5s3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q4jpt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xn5s3")
+
+[node name="HpContainer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, -21)
+scale = Vector2(1.03676, 1)
+texture = ExtResource("3_b6bn4")
+
+[node name="HpBar" type="Sprite2D" parent="HpContainer"]
+texture = ExtResource("4_qyqt7")

@@ -222,6 +222,7 @@ texture = ExtResource("3_ld1e4")
 [node name="river" type="AnimatedSprite2D" parent="MapAssets"]
 sprite_frames = SubResource("SpriteFrames_hkya4")
 autoplay = "default"
+frame_progress = 0.601838
 
 [node name="bridge" type="Sprite2D" parent="MapAssets"]
 z_index = 2

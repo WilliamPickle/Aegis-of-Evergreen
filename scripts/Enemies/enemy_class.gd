@@ -20,6 +20,7 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 
 # enemy based variables
 @export var enemy_sprite : Node2D
+@export var defeat_animation : AnimatedSprite2D
 @onready var enemy_node = self
 var sprite_reversed = false
 # whoever has inflicted a status effect on this enemy
