@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cr58fh4ynwlpq" path="res://assets/sprites/icons and buttons/skip_button_highlighted.png" id="4_lbnep"]
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="4_y258h"]
 [ext_resource type="Texture2D" uid="uid://musdhoph61ug" path="res://assets/sprites/cutscenes/level_1/Gojo Reference.png" id="7_kteqr"]
-[ext_resource type="Texture2D" uid="uid://sil00a081mv4" path="res://assets/sprites/cutscenes/level_1/Standoff.png" id="8_y258h"]
+[ext_resource type="Texture2D" uid="uid://b2y6xmw51gys3" path="res://assets/sprites/cutscenes/level_1/cutscene_4.png" id="10_8ubkd"]
 [ext_resource type="Texture2D" uid="uid://evnqvl0impje" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style1.png" id="12_ud2vv"]
 [ext_resource type="Texture2D" uid="uid://bmrs6gq10shxq" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style2.png" id="13_simcy"]
 [ext_resource type="Texture2D" uid="uid://hingnetis418" path="res://assets/sprites/cutscenes/level_1/Space_empty.png" id="14_t2gc3"]
@@ -189,7 +189,7 @@ texture = ExtResource("13_simcy")
 [node name="Stand_off" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("8_y258h")
+texture = ExtResource("10_8ubkd")
 
 [node name="ComicEdge5" type="TextureRect" parent="ScrollContainer/VScrollBar/Stand_off"]
 layout_mode = 0
