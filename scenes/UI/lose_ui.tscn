@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="8_4tupf"]
 [ext_resource type="Texture2D" uid="uid://dx8gr1ru0ttps" path="res://assets/sprites/icons and buttons/retry_button_highlight.png" id="9_p4r8m"]
 [ext_resource type="Texture2D" uid="uid://5erbw1yep760" path="res://assets/sprites/icons and buttons/retry_button.png" id="10_q714h"]
-[ext_resource type="Script" uid="uid://c5fp3mmv1t01b" path="res://scenes/UI/retry_button.gd" id="11_fmbor"]
+[ext_resource type="Script" uid="uid://c5fp3mmv1t01b" path="res://scripts/UI/retry_button.gd" id="11_fmbor"]
 [ext_resource type="Texture2D" uid="uid://vyejon8a8wc1" path="res://assets/sprites/icons and buttons/control_button_highlighted.png" id="11_x1mml"]
 [ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="12_56s0x"]
 

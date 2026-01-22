@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://cwlgag67qxui1"]
 
-[ext_resource type="Script" uid="uid://dferq65sa00f2" path="res://scenes/Enemies/hornet.gd" id="1_wjqj1"]
+[ext_resource type="Script" uid="uid://dferq65sa00f2" path="res://scripts/Enemies/hornet.gd" id="1_wjqj1"]
 [ext_resource type="Texture2D" uid="uid://dxmkcltuqnk26" path="res://assets/sprites/enemies/wasp_worker_v1.png" id="2_2lebu"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_vqqaj"]
 [ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="3_vqqaj"]

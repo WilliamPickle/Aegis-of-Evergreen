@@ -94,7 +94,7 @@ script = ExtResource("1_wname")
 wait_time = 1.0
 max_slides = 4
 camera = NodePath("Camera2D")
-skip_button = NodePath("ScrollContainer/VScrollBar/ComicEdge7/FaceOff/Skip")
+skip_button = NodePath("ScrollContainer/VScrollBar/ComicEdge7/GojoRef/Skip")
 metadata/_custom_type_script = "uid://dvv5nga2g61av"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -197,12 +197,12 @@ scale = Vector2(1, 1.043)
 mouse_filter = 2
 texture = ExtResource("12_ud2vv")
 
-[node name="GojoRef" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+[node name="FaceOff" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("7_kteqr")
+texture = ExtResource("17_eswro")
 
-[node name="ComicEdge6" type="TextureRect" parent="ScrollContainer/VScrollBar/GojoRef"]
+[node name="ComicEdge6" type="TextureRect" parent="ScrollContainer/VScrollBar/FaceOff"]
 layout_mode = 0
 offset_left = -1.52588e-05
 offset_top = -0.53894
@@ -216,15 +216,15 @@ texture = ExtResource("13_simcy")
 layout_mode = 2
 texture = ExtResource("12_ud2vv")
 
-[node name="FaceOff" type="TextureRect" parent="ScrollContainer/VScrollBar/ComicEdge7"]
+[node name="GojoRef" type="TextureRect" parent="ScrollContainer/VScrollBar/ComicEdge7"]
 layout_mode = 2
 offset_top = -1.0
 offset_right = 320.0
 offset_bottom = 179.0
 mouse_filter = 2
-texture = ExtResource("17_eswro")
+texture = ExtResource("7_kteqr")
 
-[node name="Skip" type="Button" parent="ScrollContainer/VScrollBar/ComicEdge7/FaceOff"]
+[node name="Skip" type="Button" parent="ScrollContainer/VScrollBar/ComicEdge7/GojoRef"]
 modulate = Color(0, 0, 0, 1)
 z_index = 10
 layout_mode = 0
@@ -247,7 +247,7 @@ has_text = true
 new_scene = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
-[node name="Text" type="Label" parent="ScrollContainer/VScrollBar/ComicEdge7/FaceOff/Skip"]
+[node name="Text" type="Label" parent="ScrollContainer/VScrollBar/ComicEdge7/GojoRef/Skip"]
 visible = false
 layout_mode = 1
 anchors_preset = 5
@@ -262,7 +262,7 @@ theme_override_font_sizes/font_size = 8
 text = "Skip cutscene"
 horizontal_alignment = 1
 
-[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar/ComicEdge7/FaceOff"]
+[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar/ComicEdge7/GojoRef"]
 layout_mode = 0
 mouse_filter = 2
 texture = ExtResource("12_ud2vv")
