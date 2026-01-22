@@ -5,7 +5,7 @@ signal player_level_changed
 signal upgraded_tower
 
 # Player Vars
-const StartingPlayerLevel: int = 4
+const StartingPlayerLevel: int = 1
 const XpThreshold: int = 1000
 var PlayerXp: int = 0
 var PlayerLevel: int = StartingPlayerLevel
@@ -18,7 +18,7 @@ const DEFAULT_MONEY : Array = [
 	[150.0, 600.0, 700.0],
 	[800.0, 900.0, 1000.0],
 ]
-@onready var cur_money = DEFAULT_MONEY[1][0]
+@onready var cur_money = DEFAULT_MONEY[0][0]
 
 func _ready() -> void:
 	xp_changed.connect(calculate_player_lvl)
