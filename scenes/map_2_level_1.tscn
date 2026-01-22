@@ -263,8 +263,14 @@ polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130
 visible = false
 polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
 
-[node name="WaveSpawner" type="Node2D" parent="."]
+[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label")]
 script = ExtResource("8_eo2j5")
+pause_menu = NodePath("../PauseUI")
+fast_forward_button = NodePath("../fast_forward_ui")
+delay_timer = NodePath("DelayFuncTimer")
+wave_timer = NodePath("WaveTimer")
+path_2d = NodePath("../EnemyPath1")
+wave_label = NodePath("Wave Text/WaveLabel")
 metadata/_custom_type_script = "uid://clq18rcf3qqqj"
 
 [node name="DelayFuncTimer" type="Timer" parent="WaveSpawner"]
@@ -328,14 +334,15 @@ icon_alignment = 1
 [node name="fast_forward_ui" parent="." instance=ExtResource("14_qiip3")]
 hide_during_pause = true
 
-[node name="ScrollbarUI" parent="." instance=ExtResource("15_gsh1p")]
+[node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("15_gsh1p")]
+placement_mask = NodePath("../PlacementCollisions")
 hide_during_pause = true
 
 [node name="DialogueUI" type="CanvasLayer" parent="."]
 script = ExtResource("9_b2yv6")
 tint_during_pause = true
 
-[node name="DialogueBox" type="Control" parent="DialogueUI" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer")]
+[node name="DialogueBox" type="Control" parent="DialogueUI" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -348,6 +355,7 @@ timer = NodePath("Timer")
 text_speed = 0.01
 send_wave_signal = true
 hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
 
 [node name="BoxTexture" type="TextureRect" parent="DialogueUI/DialogueBox"]
 layout_mode = 0

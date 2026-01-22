@@ -1,17 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://cva32yd0n3qvt"]
+[gd_scene load_steps=26 format=3 uid="uid://cva32yd0n3qvt"]
 
 [ext_resource type="Script" uid="uid://dvv5nga2g61av" path="res://scripts/cutscene_script.gd" id="1_akybv"]
-[ext_resource type="Texture2D" uid="uid://5df1ywuoeu2p" path="res://assets/sprites/cutscenes/level_1/Space.png" id="2_he3by"]
+[ext_resource type="Texture2D" uid="uid://yxk5we6vcen2" path="res://assets/sprites/cutscenes/level_2/Map 2 Transition.png" id="2_7ef4q"]
 [ext_resource type="Texture2D" uid="uid://evnqvl0impje" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style1.png" id="3_ltjgq"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="4_qqpph"]
-[ext_resource type="Texture2D" uid="uid://bix6t2nm7oyo1" path="res://assets/sprites/cutscenes/level_1/Space Blur.png" id="5_y126k"]
+[ext_resource type="Texture2D" uid="uid://cf4adg40rlft1" path="res://assets/sprites/cutscenes/level_2/Map 2 SmokeTransition.png" id="5_ijsax"]
 [ext_resource type="Texture2D" uid="uid://bmrs6gq10shxq" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style2.png" id="6_3jdqd"]
-[ext_resource type="Texture2D" uid="uid://hingnetis418" path="res://assets/sprites/cutscenes/level_1/Space_empty.png" id="7_dapw0"]
-[ext_resource type="Texture2D" uid="uid://iqed4sflbaid" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style3.png" id="8_f4gvy"]
-[ext_resource type="Texture2D" uid="uid://brkbf43mjhvvm" path="res://assets/sprites/cutscenes/level_1/UFO_landed.png" id="9_v05ye"]
-[ext_resource type="Texture2D" uid="uid://sil00a081mv4" path="res://assets/sprites/cutscenes/level_1/Standoff.png" id="10_3nyqj"]
-[ext_resource type="Texture2D" uid="uid://di4h0ariyobm7" path="res://assets/sprites/cutscenes/level_1/Face_Off_Scene (1).png" id="11_yh72m"]
-[ext_resource type="Texture2D" uid="uid://musdhoph61ug" path="res://assets/sprites/cutscenes/level_1/Gojo Reference.png" id="12_elh8y"]
+[ext_resource type="Texture2D" uid="uid://l50a5d2f2jt0" path="res://assets/sprites/cutscenes/level_2/Map 2 Druid Transition .png" id="6_y4x67"]
+[ext_resource type="Texture2D" uid="uid://5th2or3gawm0" path="res://assets/sprites/cutscenes/level_2/Map 2 Druid Close up.png" id="8_k3mwq"]
 [ext_resource type="Texture2D" uid="uid://mcpammp3xs2h" path="res://assets/sprites/icons and buttons/skip_button.png" id="13_bojwh"]
 [ext_resource type="Texture2D" uid="uid://cr58fh4ynwlpq" path="res://assets/sprites/icons and buttons/skip_button_highlighted.png" id="14_gsqmi"]
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="15_m6b5j"]
@@ -89,8 +85,10 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui7d1"]
 texture = ExtResource("13_bojwh")
 
-[node name="Cutscene" type="Node2D"]
+[node name="Cutscene" type="Node2D" node_paths=PackedStringArray("skip_button")]
 script = ExtResource("1_akybv")
+wait_time = 1.0
+skip_button = NodePath("ScrollContainer/VScrollBar/ComicEdge7/GojoRef/Skip")
 metadata/_custom_type_script = "uid://dvv5nga2g61av"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -126,7 +124,7 @@ mouse_filter = 2
 [node name="Space_cutscene" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("2_he3by")
+texture = ExtResource("2_7ef4q")
 
 [node name="ComicEdge" type="TextureRect" parent="ScrollContainer/VScrollBar/Space_cutscene"]
 layout_mode = 0
@@ -148,42 +146,10 @@ libraries = {
 }
 autoplay = "Blinking_Text"
 
-[node name="Space_further_cutscene" type="TextureRect" parent="ScrollContainer/VScrollBar"]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("5_y126k")
-
-[node name="ComicEdge2" type="TextureRect" parent="ScrollContainer/VScrollBar/Space_further_cutscene"]
-layout_mode = 0
-mouse_filter = 2
-texture = ExtResource("6_3jdqd")
-
-[node name="Empty_Space" type="TextureRect" parent="ScrollContainer/VScrollBar"]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("7_dapw0")
-
-[node name="ComicEdge3" type="TextureRect" parent="ScrollContainer/VScrollBar/Empty_Space"]
-layout_mode = 0
-mouse_filter = 2
-texture = ExtResource("8_f4gvy")
-
-[node name="UFO_landed" type="TextureRect" parent="ScrollContainer/VScrollBar"]
-custom_minimum_size = Vector2(0, 180)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("9_v05ye")
-expand_mode = 1
-
-[node name="ComicEdge4" type="TextureRect" parent="ScrollContainer/VScrollBar/UFO_landed"]
-layout_mode = 0
-mouse_filter = 2
-texture = ExtResource("6_3jdqd")
-
 [node name="Stand_off" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("10_3nyqj")
+texture = ExtResource("5_ijsax")
 
 [node name="ComicEdge5" type="TextureRect" parent="ScrollContainer/VScrollBar/Stand_off"]
 layout_mode = 0
@@ -196,7 +162,7 @@ texture = ExtResource("3_ltjgq")
 [node name="FaceOff" type="TextureRect" parent="ScrollContainer/VScrollBar"]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("11_yh72m")
+texture = ExtResource("6_y4x67")
 
 [node name="ComicEdge6" type="TextureRect" parent="ScrollContainer/VScrollBar/FaceOff"]
 layout_mode = 0
@@ -218,12 +184,11 @@ offset_top = -1.0
 offset_right = 320.0
 offset_bottom = 179.0
 mouse_filter = 2
-texture = ExtResource("12_elh8y")
+texture = ExtResource("8_k3mwq")
 
 [node name="Skip" type="Button" parent="ScrollContainer/VScrollBar/ComicEdge7/GojoRef"]
 modulate = Color(0, 0, 0, 1)
 z_index = 10
-layout_mode = 0
 offset_left = 295.0
 offset_top = 155.0
 offset_right = 318.0
@@ -238,7 +203,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_vysv5")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ui7d1")
 disabled = true
 script = ExtResource("15_m6b5j")
-file_path = "res://scenes/level_1.tscn"
+file_path = "res://scenes/map_2_level_1.tscn"
 has_text = true
 new_scene = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
