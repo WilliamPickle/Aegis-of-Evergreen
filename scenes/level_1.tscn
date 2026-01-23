@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="15_6dial"]
 [ext_resource type="PackedScene" uid="uid://cnl4pdo4fp6i7" path="res://scenes/UI/fast_forward_ui.tscn" id="15_s7g0b"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
-[ext_resource type="Script" uid="uid://b1db11ngtg7n0" path="res://scripts/UI/lvl1_dialogue.gd" id="17_mbb35"]
+[ext_resource type="Script" path="res://scripts/UI/lvl1_dialogue.gd" id="17_mbb35"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
 [ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="20_k8ld0"]
@@ -344,6 +344,7 @@ hide_during_pause = true
 
 [node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("15_6dial")]
 placement_mask = NodePath("../PlacementCollisions")
+card_type = Array[String]([])
 hide_during_pause = true
 
 [node name="DialogueUI" type="CanvasLayer" parent="."]

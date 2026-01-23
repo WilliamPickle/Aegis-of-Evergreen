@@ -123,7 +123,6 @@ z_index = 7
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_fqrt3")
-snapping = 2.0
 data_resource = SubResource("Resource_y3v4d")
 
 [node name="Image" type="AnimatedSprite2D" parent="."]
@@ -167,8 +166,8 @@ debug_color = Color(1, 1, 1, 0.42)
 [node name="UpgradeUI" parent="." node_paths=PackedStringArray("tower", "level_descriptions") instance=ExtResource("3_3a5ny")]
 visible = false
 tower = NodePath("..")
-tower_name = "bee"
-type = "attacker"
+tower_name = "ranger"
+type = "ranger"
 level_descriptions = NodePath("UpgradeDescription")
 
 [node name="UpgradeDescription" type="Control" parent="UpgradeUI"]
