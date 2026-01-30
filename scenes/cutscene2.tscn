@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvv5nga2g61av" path="res://scripts/cutscene_script.gd" id="1_akybv"]
 [ext_resource type="Texture2D" uid="uid://yxk5we6vcen2" path="res://assets/sprites/cutscenes/level_2/Map 2 Transition.png" id="2_7ef4q"]
+[ext_resource type="Texture2D" uid="uid://cc7b3cghj4nnc" path="res://assets/sprites/icons and buttons/scroll_bar_grabber.png" id="2_ijsax"]
 [ext_resource type="Texture2D" uid="uid://evnqvl0impje" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style1.png" id="3_ltjgq"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="4_qqpph"]
 [ext_resource type="Texture2D" uid="uid://cf4adg40rlft1" path="res://assets/sprites/cutscenes/level_2/Map 2 SmokeTransition.png" id="5_ijsax"]
@@ -13,16 +14,15 @@
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="15_m6b5j"]
 [ext_resource type="Texture2D" uid="uid://dnlnhtjtgm37a" path="res://assets/sprites/cutscenes/level_1/White_background.png" id="16_e5y7p"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ud2vv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud2vv"]
+texture = ExtResource("2_ijsax")
+region_rect = Rect2(628, 13, 2, 2)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_simcy"]
-
-[sub_resource type="Theme" id="Theme_8gecv"]
-VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_ud2vv")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_simcy")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_simcy")
-VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_simcy")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_simcy")
+[sub_resource type="Theme" id="Theme_y4x67"]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_ud2vv")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_ud2vv")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_ud2vv")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_ud2vv")
 
 [sub_resource type="LabelSettings" id="LabelSettings_pxjt5"]
 font = ExtResource("4_qqpph")
@@ -66,38 +66,40 @@ _data = {
 &"RESET": SubResource("Animation_ud2vv")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8yweb"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijsax"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xckxn"]
-texture = ExtResource("13_bojwh")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1v6xk"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y4x67"]
 texture = ExtResource("14_gsqmi")
 modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ew4o"]
-texture = ExtResource("14_gsqmi")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vysv5"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3mwq"]
 texture = ExtResource("14_gsqmi")
 modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui7d1"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akybv"]
+texture = ExtResource("14_gsqmi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_he3by"]
 texture = ExtResource("13_bojwh")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ltjgq"]
+font_size = 8
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Cutscene" type="Node2D" node_paths=PackedStringArray("skip_button")]
 script = ExtResource("1_akybv")
-skip_button = NodePath("ScrollContainer/VScrollBar/ComicEdge7/GojoRef/Skip")
+skip_button = NodePath("ScrollContainer2/VScrollBar/ComicEdge7/GojoRef/Skip2")
 metadata/_custom_type_script = "uid://dvv5nga2g61av"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.9, 4)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(320, 180)
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,27 +112,28 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_8gecv")
+theme = SubResource("Theme_y4x67")
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
-[node name="VScrollBar" type="VBoxContainer" parent="ScrollContainer"]
+[node name="VScrollBar" type="VBoxContainer" parent="ScrollContainer2"]
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 mouse_filter = 2
 
-[node name="Space_cutscene" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+[node name="Space_cutscene" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_7ef4q")
 
-[node name="ComicEdge" type="TextureRect" parent="ScrollContainer/VScrollBar/Space_cutscene"]
+[node name="ComicEdge" type="TextureRect" parent="ScrollContainer2/VScrollBar/Space_cutscene"]
 layout_mode = 0
 mouse_filter = 2
 texture = ExtResource("3_ltjgq")
 
-[node name="Label" type="Label" parent="ScrollContainer/VScrollBar/Space_cutscene"]
+[node name="Label" type="Label" parent="ScrollContainer2/VScrollBar/Space_cutscene"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 7.0
@@ -139,18 +142,18 @@ offset_bottom = 30.0
 text = "<< Scroll Down >>"
 label_settings = SubResource("LabelSettings_pxjt5")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/VScrollBar/Space_cutscene/Label"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer2/VScrollBar/Space_cutscene/Label"]
 libraries = {
 &"": SubResource("AnimationLibrary_simcy")
 }
 autoplay = "Blinking_Text"
 
-[node name="Stand_off" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+[node name="Stand_off" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("5_ijsax")
 
-[node name="ComicEdge5" type="TextureRect" parent="ScrollContainer/VScrollBar/Stand_off"]
+[node name="ComicEdge5" type="TextureRect" parent="ScrollContainer2/VScrollBar/Stand_off"]
 layout_mode = 0
 offset_left = -1.52588e-05
 offset_right = -1.52588e-05
@@ -158,12 +161,12 @@ scale = Vector2(1, 1.043)
 mouse_filter = 2
 texture = ExtResource("3_ltjgq")
 
-[node name="FaceOff" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+[node name="FaceOff" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("6_y4x67")
 
-[node name="ComicEdge6" type="TextureRect" parent="ScrollContainer/VScrollBar/FaceOff"]
+[node name="ComicEdge6" type="TextureRect" parent="ScrollContainer2/VScrollBar/FaceOff"]
 layout_mode = 0
 offset_left = -1.52588e-05
 offset_top = -0.53894
@@ -173,11 +176,11 @@ scale = Vector2(1, 1.038)
 mouse_filter = 2
 texture = ExtResource("6_3jdqd")
 
-[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar"]
+[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
 layout_mode = 2
 texture = ExtResource("3_ltjgq")
 
-[node name="GojoRef" type="TextureRect" parent="ScrollContainer/VScrollBar/ComicEdge7"]
+[node name="GojoRef" type="TextureRect" parent="ScrollContainer2/VScrollBar/ComicEdge7"]
 layout_mode = 2
 offset_top = -1.0
 offset_right = 320.0
@@ -185,22 +188,26 @@ offset_bottom = 179.0
 mouse_filter = 2
 texture = ExtResource("8_k3mwq")
 
-[node name="Skip" type="Button" parent="ScrollContainer/VScrollBar/ComicEdge7/GojoRef"]
+[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer2/VScrollBar/ComicEdge7/GojoRef"]
+layout_mode = 0
+mouse_filter = 2
+texture = ExtResource("3_ltjgq")
+
+[node name="Skip2" type="Button" parent="ScrollContainer2/VScrollBar/ComicEdge7/GojoRef"]
 modulate = Color(0, 0, 0, 1)
 z_index = 10
-layout_mode = 0
 offset_left = 295.0
 offset_top = 155.0
 offset_right = 318.0
 offset_bottom = 178.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/focus = SubResource("StyleBoxEmpty_8yweb")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_xckxn")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1v6xk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_2ew4o")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_vysv5")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ui7d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ijsax")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_y4x67")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_k3mwq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_akybv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y4x67")
+theme_override_styles/normal = SubResource("StyleBoxTexture_he3by")
 disabled = true
 script = ExtResource("15_m6b5j")
 file_path = "res://scenes/map_2_level_1.tscn"
@@ -208,28 +215,24 @@ has_text = true
 new_scene = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
-[node name="Text" type="Label" parent="ScrollContainer/VScrollBar/ComicEdge7/GojoRef/Skip"]
+[node name="Text" type="Label" parent="ScrollContainer2/VScrollBar/ComicEdge7/GojoRef/Skip2"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -32.5
+offset_left = -28.5
 offset_top = -20.0
-offset_right = 18.5
+offset_right = 28.5
 offset_bottom = -1.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("4_qqpph")
 theme_override_font_sizes/font_size = 8
-text = "Skip cutscene"
+text = "Continue"
+label_settings = SubResource("LabelSettings_ltjgq")
 horizontal_alignment = 1
-autowrap_mode = 3
 
-[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer/VScrollBar/ComicEdge7/GojoRef"]
-layout_mode = 0
-mouse_filter = 2
-texture = ExtResource("3_ltjgq")
-
-[node name="TextureRect" type="Sprite2D" parent="ScrollContainer/VScrollBar"]
+[node name="TextureRect" type="Sprite2D" parent="ScrollContainer2/VScrollBar"]
 z_index = -1
 position = Vector2(160, 630)
 scale = Vector2(1, 7)

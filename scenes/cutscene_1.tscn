@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://5df1ywuoeu2p" path="res://assets/sprites/cutscenes/level_1/Space.png" id="1_6ds4i"]
 [ext_resource type="Script" uid="uid://dvv5nga2g61av" path="res://scripts/cutscene_script.gd" id="1_wname"]
 [ext_resource type="Texture2D" uid="uid://bix6t2nm7oyo1" path="res://assets/sprites/cutscenes/level_1/Space Blur.png" id="2_u7sor"]
+[ext_resource type="Texture2D" uid="uid://cc7b3cghj4nnc" path="res://assets/sprites/icons and buttons/scroll_bar_grabber.png" id="2_ud2vv"]
 [ext_resource type="Texture2D" uid="uid://mcpammp3xs2h" path="res://assets/sprites/icons and buttons/skip_button.png" id="3_8i0x7"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="3_kteqr"]
 [ext_resource type="Texture2D" uid="uid://cr58fh4ynwlpq" path="res://assets/sprites/icons and buttons/skip_button_highlighted.png" id="4_lbnep"]
@@ -17,16 +18,15 @@
 [ext_resource type="Texture2D" uid="uid://brkbf43mjhvvm" path="res://assets/sprites/cutscenes/level_1/UFO_landed.png" id="16_gr8l6"]
 [ext_resource type="Texture2D" uid="uid://di4h0ariyobm7" path="res://assets/sprites/cutscenes/level_1/Face_Off_Scene (1).png" id="17_eswro"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ud2vv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud2vv"]
+texture = ExtResource("2_ud2vv")
+region_rect = Rect2(628, 13, 2, 2)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_simcy"]
-
-[sub_resource type="Theme" id="Theme_t2gc3"]
-VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_ud2vv")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_simcy")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_simcy")
-VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_simcy")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_simcy")
+[sub_resource type="Theme" id="Theme_simcy"]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_ud2vv")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_ud2vv")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_ud2vv")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_ud2vv")
 
 [sub_resource type="LabelSettings" id="LabelSettings_8ubkd"]
 font = ExtResource("3_kteqr")
@@ -100,7 +100,7 @@ skip_button = NodePath("ScrollContainer/VScrollBar/ComicEdge7/GojoRef/Skip")
 metadata/_custom_type_script = "uid://dvv5nga2g61av"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.9, 4)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
@@ -119,8 +119,9 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_t2gc3")
+theme = SubResource("Theme_simcy")
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
 [node name="VScrollBar" type="VBoxContainer" parent="ScrollContainer"]
 custom_minimum_size = Vector2(320, 180)
