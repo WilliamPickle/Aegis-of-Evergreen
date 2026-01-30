@@ -162,6 +162,7 @@ theme_override_constants/separation = 5
 vertical = true
 
 [node name="Damage" type="Button" parent="Control/Background/StatsDisplay/StatsContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2mat1")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_2mat1")
