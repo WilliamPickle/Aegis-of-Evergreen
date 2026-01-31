@@ -123,6 +123,13 @@ func place_tower() -> bool:
 		map_area.add_child(notif)
 		notif.send_notif(global_position,"not enough funds")
 		return true
+	
+	disable_placement()
+	
+	return true
+
+
+func disable_placement() -> void:
 	# Makes so _process can't run
 	set_process(false)
 	# Enabled the button functionality.
@@ -130,8 +137,6 @@ func place_tower() -> bool:
 	# Disable the visibility of tower hitbox
 	can_draw = false
 	upgrade_ui.visible = false
-	# THIS MIGHT NEED CHANGING LATER
-	#current_tower = null
 	
 	cost = object_data["cost"][1]
 	
@@ -146,8 +151,7 @@ func place_tower() -> bool:
 	
 	# Tell corresponding sub class that the tower succesfully was placed
 	tower_placed.emit()
-	
-	return true
+
 
 func upgrade_tower() -> void:
 	total_spent += cost

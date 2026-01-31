@@ -55,7 +55,7 @@ func update_enemy_list() -> void:
 	# If tower tried to attack and has no enemies to target
 	# Stop the timer and use regular area_entered function
 	if enemies.size() == 0:
-		print("No enmies detected when attacking")
+		print(name,"no enmies detected when attacking")
 		sprite.play("idle_"+str(level))
 		_attack_cooldown.stop()
 		range_area.area_entered.connect(first_enemy_entered)
@@ -73,11 +73,11 @@ func upgrade_tower() -> void:
 	cur_damage = damage
 	attack_fpath = object_data["attack_fpath"][level]
 	_attack_cooldown.wait_time = object_data["attack_speed"][level]
-	_attack_cooldown.start()
 
 ## When tower checks for enemies in its range, and detects 0,
 ## the tower will use defualt area_entered signal.
 func first_enemy_entered(enemy : Area2D):
+	print("Enemy has entered range")
 	# Disable as now there is an enemy to detect
 	range_area.area_entered.disconnect(first_enemy_entered)
 	targeted_enemy = enemy

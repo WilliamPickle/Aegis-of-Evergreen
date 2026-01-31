@@ -40,18 +40,13 @@ func add_tower() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if !is_instance_valid(new_tower):
-		new_tower = null
-		is_placing = false
-		ControlHandler.current_states.erase(CONTROLS_STATES.PLACING_TOWER)
+		reset_data()
+
 	if event.is_action_pressed("place_tower") and is_placing:
 		var can_place : bool = new_tower.place_tower()
 		if can_place:
 			reset_data()
-		#else:
-			#var notif := Error_Notification.new()
-			#map_area.add_child(notif)
-			#notif.send_notif(new_tower.global_position,"can't place here")
-			
+
 	elif event.is_action("cancel_placement") and is_placing:
 		new_tower.queue_free()
 		reset_data()

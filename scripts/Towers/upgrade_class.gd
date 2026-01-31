@@ -53,6 +53,8 @@ var cur_type : int = 0
 func _ready() -> void:
 	super._ready()
 	await tower.tower_placed
+	if tower.global_position.x > 0:
+		offset = Vector2(-910,0)
 	for stat in tower_stats[type]:
 		var button : Button = stats[stat]
 		button.visible = true

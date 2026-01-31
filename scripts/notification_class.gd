@@ -8,8 +8,8 @@ var tween = create_tween().set_parallel()
 
 func send_notif(position : Vector2, message : String) -> void:
 	z_index = 100
-	global_position = position - Vector2(0,5)
-	set_anchors_preset(Control.PRESET_CENTER)
+	global_position = position - Vector2(20,5)
+	#set_anchors_preset(Control.PRESET_CENTER_RIGHT)
 	label_settings = load(font)
 	text = message
 	var new_pos = global_position + travel_distance

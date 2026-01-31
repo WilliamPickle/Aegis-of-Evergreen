@@ -52,7 +52,6 @@ func disable_stat_changes(timer):
 		Type.WALK_SPEED:
 			target.speed = target.original_speed
 		Type.ATK_COOLDOWN:
-			# WILL CRASH LATER WITH MORE TOWER TYPES
 			target._attack_cooldown.wait_time = target.object_data["attack_speed"][target.level]
 		Type.RANGE:
 			target.range_collider.shape.radius = target.range

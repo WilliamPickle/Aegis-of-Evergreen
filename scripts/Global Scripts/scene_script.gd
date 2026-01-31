@@ -17,7 +17,11 @@ func _ready() -> void:
 func play_lvl1_audio():
 	audio_player.stream = lvl1_song
 	audio_player.play()
+	audio_player.finished.connect(replay)
 
 func play_title_audio():
 	audio_player.stream = title_song
+	audio_player.play()
+
+func replay():
 	audio_player.play()
