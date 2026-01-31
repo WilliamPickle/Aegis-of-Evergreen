@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_y3v4d"]
 script = ExtResource("2_3a5ny")
-class_type = "hero"
+class_type = "tower"
 object = "ranger"
 update_data = false
 metadata/_custom_type_script = "uid://baqkdqf80xars"

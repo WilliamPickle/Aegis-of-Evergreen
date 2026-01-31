@@ -1,5 +1,31 @@
 {
   "tower": {
+	"ranger":{
+	  "type": "Hero",
+	  "tower_fpath": "res://scenes/Towers/bee/bee.tscn",
+	  "card_fpath": "res://assets/sprites/towers/base_tower_card.png",
+	  "cost": [
+		75,
+		75,
+		150
+	  ],
+	  "range": [
+		80,
+		100,
+		120
+	  ],
+	 "buff_types": [
+		["attack_speed"],
+		["attack_speed", "range"],
+		["attack_speed","range"]
+	  ],
+	 "buff_multipliers":[
+		[0.8],
+		[0.8, 1.2],
+		[0.6, 1.5]
+	  ],
+	 "buff_duration": 7.5,
+	},
 	"chipmunk": {
 	  "type": "Attacker",
 	  "tower_fpath": "res://scenes/Towers/chipmunk/chipmunk.tscn",
@@ -119,46 +145,6 @@
 		500,
 		500
 	  ]
-	},
-	"ranger":{
-	  "cost": [
-		75,
-		75,
-		150
-	  ],
-	  "range": [
-		80,
-		100,
-		120
-	  ],
-	}
-  },
-  "hero": {
-	"ranger":{
-	  "type": "Hero",
-	  "tower_fpath": "res://scenes/Towers/bee/bee.tscn",
-	  "card_fpath": "res://assets/sprites/towers/base_tower_card.png",
-	  "cost": [
-		75,
-		75,
-		150
-	  ],
-	  "range": [
-		80,
-		100,
-		120
-	  ],
-	"buff_types": [
-		["attack_speed"],
-		["attack_speed", "range"],
-		["attack_speed","range"]
-	  ],
-	 "buff_multipliers":[
-		[0.8],
-		[0.8, 1.2],
-		[0.6, 1.5]
-	  ],
-	 "buff_duration": 7.5,
 	},
   },
   "projectile": {

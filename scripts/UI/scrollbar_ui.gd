@@ -9,9 +9,10 @@ extends UserInterface
 @export var scroll_container: HBoxContainer
 
 # Text vars
-@onready var game_data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))
+const font := "res://assets/fonts/quaver.ttf"
 const normal_color = Color(0,0,0,0)
 const hover_color = Color(1,1,1,1)
+@onready var game_data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))
 
 # add any tower card here
 const cards : Dictionary = { 
@@ -31,9 +32,8 @@ const unlockable_allies : Dictionary = {
 }
 
 # the vars pro jellyfish added into the ready function but I made them global
-@onready var class_type = "tower"
-@onready var font = "res://assets/fonts/quaver.ttf"
-@onready var defualt_color = Color(1,1,1,0)
+#@onready var font = "res://assets/fonts/quaver.ttf"
+#@onready var defualt_color = Color(1,1,1,0)
 	
 func _ready() -> void:
 	super._ready()
@@ -63,10 +63,6 @@ func unlock_new_ally():
 func add_card(tower):
 	# this is just to style the card pretty much
 	# and to add it to the bar
-	if tower == "ranger":
-		class_type = "hero"
-	else:
-		class_type = "tower"
 	var card_image = StyleBoxTexture.new()
 	card_image.texture = cards[tower]
 	var dark_card_image = StyleBoxTexture.new()
@@ -88,7 +84,7 @@ func add_card(tower):
 	new_card.add_theme_stylebox_override("hover_pressed", dark_card_image)
 	
 	
-	new_card.text = "$"+str(int(game_data[class_type][tower]["cost"][0]))
+	new_card.text = "$"+str(int(game_data["tower"][tower]["cost"][0]))
 	new_card.add_theme_font_override("font", load(font))
 	new_card.add_theme_font_size_override("font_size", 24)
 	new_card.add_theme_color_override("font_color", normal_color)
