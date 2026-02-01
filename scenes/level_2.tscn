@@ -237,7 +237,7 @@ texture = ExtResource("7_73m23")
 [node name="ufo" type="Sprite2D" parent="MapAssets"]
 texture = ExtResource("7_3buw8")
 
-[node name="EnemyPath2" type="Path2D" parent="."]
+[node name="EnemyPath2" type="Path2D" parent="." groups=["enemy_path"]]
 y_sort_enabled = true
 curve = SubResource("Curve2D_8ky4j")
 metadata/_edit_lock_ = true
@@ -337,7 +337,7 @@ hide_during_pause = true
 
 [node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("16_bbkd8")]
 placement_mask = NodePath("../PlacementCollisions")
-card_type = Array[String]([])
+card_type = Array[String](["god", "druid"])
 hide_during_pause = true
 
 [node name="DialogueUI" type="CanvasLayer" parent="."]

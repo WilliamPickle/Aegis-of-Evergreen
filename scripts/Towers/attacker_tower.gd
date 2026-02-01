@@ -26,11 +26,13 @@ func _ready() -> void:
 	cur_damage = damage
 	_attack_cooldown.timeout.connect(update_enemy_list)
 	# Once tower is placed we can start attacking
-	tower_placed.connect(func():
-		sprite.play("idle_"+str(level))
-		_attack_cooldown.autostart = true
-		_attack_cooldown.start()
-	)
+	tower_placed.connect(on_placement)
+
+
+func on_placement():
+	sprite.play("idle_"+str(level))
+	_attack_cooldown.autostart = true
+	_attack_cooldown.start()
 
 # This is to be defined by a sub class
 func attack():
@@ -55,7 +57,7 @@ func update_enemy_list() -> void:
 	# If tower tried to attack and has no enemies to target
 	# Stop the timer and use regular area_entered function
 	if enemies.size() == 0:
-		print(name,"no enmies detected when attacking")
+		print(name," no enmies detected when attacking")
 		sprite.play("idle_"+str(level))
 		_attack_cooldown.stop()
 		range_area.area_entered.connect(first_enemy_entered)

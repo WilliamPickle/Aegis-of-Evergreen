@@ -2,7 +2,7 @@
   "tower": {
 	"ranger":{
 	  "type": "Hero",
-	  "tower_fpath": "res://scenes/Towers/bee/bee.tscn",
+	  "tower_fpath": "res://scenes/Towers/ranger.tscn",
 	  "card_fpath": "res://assets/sprites/towers/base_tower_card.png",
 	  "cost": [
 		75,
@@ -25,6 +25,36 @@
 		[0.6, 1.5]
 	  ],
 	 "buff_duration": 7.5,
+	},
+	"druid":{
+	  "type": "Hero",
+	  "tower_fpath": "res://scenes/Towers/bee/bee.tscn",
+	  "card_fpath": "res://assets/sprites/towers/base_tower_card.png",
+	  "attack_fpath": [
+		"res://scenes/Towers/bee/bee_proj_1.tscn",
+		"res://scenes/Towers/bee/bee_proj_2.tscn",
+		"res://scenes/Towers/bee/bee_proj_3.tscn"
+	  ],
+	  "cost": [
+		1,
+		1,
+		1
+	  ],
+	  "range": [
+		80,
+		100,
+		120
+	  ],
+	  "attack_speed": [
+		1,
+		1,
+		1
+	  ],
+	  "damage": [
+		1,
+		1,
+		1
+	  ]
 	},
 	"chipmunk": {
 	  "type": "Attacker",

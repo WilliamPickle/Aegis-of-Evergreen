@@ -17,6 +17,7 @@ const hover_color = Color(1,1,1,1)
 # add any tower card here
 const cards : Dictionary = { 
 	"ranger" = preload("res://assets/sprites/towers/tower cards/ranger_card.png"),
+	"druid" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
 	"chipmunk" = preload("res://assets/sprites/towers/tower cards/chipmunk_card.png"),
 	"bee" = preload("res://assets/sprites/towers/tower cards/bee_card.png"),
 	"flytrap" = preload("res://assets/sprites/towers/tower cards/fly_trap_card.png"),

@@ -4,6 +4,7 @@ class_name Tower_Placement
 # The dictionary of all towers
 const towers : Dictionary = {
 	"ranger" = preload("res://scenes/Towers/ranger.tscn"),
+	"druid" = preload("res://scenes/Towers/druid/druid.tscn"),
 	"chipmunk" = preload("res://scenes/Towers/chipmunk/chipmunk.tscn"),
 	"bee" = preload("res://scenes/Towers/bee/bee.tscn"),
 	"flytrap" = preload("res://scenes/Towers/flytrap/flytrap.tscn"),
