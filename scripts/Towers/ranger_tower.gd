@@ -2,7 +2,6 @@ extends Tower
 class_name Ranger
 # READ HERE
 # The tower will detect other towers at a set amount of time set in DetectionSpeed node
-const stat_type := StatChanger.Type
 @onready var _detection_speed : Timer = $DetectionSpeed
 @onready var buff_types : Array = object_data["buff_types"][0]
 @onready var buff_multipliers : Array = object_data["buff_multipliers"][0]
@@ -62,7 +61,7 @@ func detect_tower():
 	#for buff : String in buff_types:
 	for tower in tower_list:
 		if tower is Attacker:
-			print("ran with tower:",tower)
+			#print("ran with tower:",tower)
 			for i in range(buff_types.size()):
 				var stat
 				if buff_types[i] == "range":

@@ -88,7 +88,7 @@ func move_on_path(delta) -> void:
 		else:
 			enemy_sprite.flip_h = false
 
-func apply_damage(damage : float, damage_type):
+func apply_damage(damage : float, damage_type : String):
 	var damage_percent = 1
 	# replace 1000 with resistance
 	if damage_type == resistance:

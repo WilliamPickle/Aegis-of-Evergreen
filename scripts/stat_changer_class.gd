@@ -9,8 +9,10 @@ enum Type{
 	WALK_SPEED,
 	BLUNT_RES,
 	ENERGY_RES, 
-	MONEY_DROP
+	MONEY_DROP,
+	DOT,
 }
+const DOT_TIME : float = 0.5
 
 @onready var target
 @onready var inflictor: String
@@ -32,9 +34,10 @@ func apply_stat_changes():
 			
 	# innitiate timer
 	timer.timeout.connect(disable_stat_changes.bind(timer))
-	timer.wait_time = duration
+	#timer.wait_time = duration
 	#timer.one_shot = true
-	timer.start()
+	#timer.start()
+	start(duration)
 	target.status_applied_list.append(inflictor)
 
 	# the actual stat changing part
@@ -45,6 +48,13 @@ func apply_stat_changes():
 			target._attack_cooldown.wait_time = target._attack_cooldown.wait_time * percent_change 
 		Type.RANGE:
 			target.range_collider.shape.radius = target.range_collider.shape.radius * percent_change
+		Type.DOT:
+			timeout.disconnect(disable_stat_changes)
+			for i in range(duration):
+				start(DOT_TIME)
+				await timeout
+				target.apply_damage(percent_change, "blunt")
+			disable_stat_changes(timer)
 			
 
 func disable_stat_changes(timer):

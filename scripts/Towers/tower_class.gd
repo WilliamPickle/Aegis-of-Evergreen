@@ -8,6 +8,7 @@ signal tower_placed
 const MIN_MOUSE_POS := Vector2(-320,-180)
 const MAX_MOUSE_POS := Vector2(320,180)
 const CONTROLS_STATES = ControlHandler.ControlState
+const stat_type := StatChanger.Type
 
 # Used to draw the hitbox of the selected tower
 static var current_tower : Tower

@@ -1,39 +1,68 @@
 extends Attacker
 class_name Druid
 
-var paths : Array[Path2D]
+static var random := RandomNumberGenerator.new()
+static var does_exist := false
+#var paths : Array[Path2D]
+## 2D array holding each paths points
 var points_list : Array[Vector2]
-var selected_points : Array[Vector2]
+## 2D array that hold the bounds
+var target_points : Array[Vector2]
+
 
 func _ready() -> void:
 	super()
-	for path in get_tree().get_nodes_in_group("enemy_path"):
-		paths.append(path)
+	random.randomize()
+	var paths = get_tree().get_nodes_in_group("enemy_path")
 	
-	var center : Vector2 = global_position
-	# DEELTE THIS LATER!!!!
-	var time = Time.get_ticks_usec()
-	for i in len(paths):
-		var sub_array : Array[Vector2]
-		for j in paths[i].curve.point_count:
-			var point := paths[i].curve.get_point_position(j)
-			sub_array.append(point)
-		points_list.append_array(sub_array)
-	print("Took: ", Time.get_ticks_usec() - time)
+	for path : Path2D in paths:
+		var curve := path.curve
+		for i in curve.point_count:
+			points_list.append(curve.get_point_position(i))
+	
+	print("Len of paths: ",len(paths))
+	print("Len of points list: ",len(points_list))
 
 func on_placement():
 	super()
+	does_exist = true
 	calculate_points()
+	if target_points.size() == 0:
+		print("NO POINTS TO REGISTER FOR TARGETTING")
+		_attack_cooldown.paused = true
 	
-func calculate_points():
-	var center := global_position
-	for point : Vector2 in points_list:
-		var magnitude = (point-center).length()
-		if magnitude <= range:
-			selected_points.append(point)
-	queue_redraw()
+func update_enemy_list() -> void:
+	var enemies = range_area.get_overlapping_areas()
+	
+	if enemies.size() == 0:
+		var i = random.randi() % target_points.size()
+		attack(target_points[i], false)
+	else:
+		set_target(enemies)
+		attack(targeted_enemy.global_position)
 
-func _draw() -> void:
+
+func calculate_points() -> void:
+	var center := global_position
+	for point in points_list:
+		var magnitude = (point - center).length()
+		if magnitude <= range and !(point in target_points):
+			target_points.append(point)
+
+func attack(pos : Vector2 = Vector2.ZERO, target_enemy : bool = true):
+	if target_enemy and not is_instance_valid(targeted_enemy):
+		print("----------")
+		print("NOT VALID!!!!!!!!!")
+		update_enemy_list()
+		return
+	sprite.play("attacking")
+	var tower_attack : Trap = load(attack_fpath).instantiate()
+	tower_attack.tower = self
+	tower_attack.global_position = pos
+	map_area.call_deferred("add_child", tower_attack)
+	await sprite.animation_finished
+	sprite.play("idle_0")
+
+func upgrade_tower() -> void:
 	super()
-	for point in selected_points:
-		draw_circle(point - global_position,3,Color(1,1,1))
+	calculate_points()
