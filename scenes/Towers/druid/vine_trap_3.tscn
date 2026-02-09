@@ -1,65 +1,65 @@
-[gd_scene load_steps=19 format=3 uid="uid://cn3typygxcco5"]
+[gd_scene load_steps=19 format=3 uid="uid://std0madp1ijo"]
 
-[ext_resource type="Script" uid="uid://4u4k11v8crpf" path="res://scripts/Towers/attacks/trap_class.gd" id="1_4rdsv"]
-[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_2ueg7"]
-[ext_resource type="Texture2D" uid="uid://l2ppnnwr2nfh" path="res://assets/sprites/towers/druid_spritesheet.png" id="2_pcqww"]
+[ext_resource type="Script" uid="uid://4u4k11v8crpf" path="res://scripts/Towers/attacks/trap_class.gd" id="1_s3761"]
+[ext_resource type="Texture2D" uid="uid://l2ppnnwr2nfh" path="res://assets/sprites/towers/druid_spritesheet.png" id="2_6tqxc"]
+[ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_58xfe"]
 
-[sub_resource type="Resource" id="Resource_jycan"]
-script = ExtResource("2_2ueg7")
+[sub_resource type="Resource" id="Resource_dj51r"]
+script = ExtResource("2_58xfe")
 class_type = "trap"
-object = "vine_trap_1"
+object = "vine_trap_3"
 update_data = false
 metadata/_custom_type_script = "uid://baqkdqf80xars"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0t6y"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(450, 100, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6j45x"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(500, 100, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r04dd"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(550, 100, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6oey"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(0, 100, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pdc7l"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(50, 100, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rj1tq"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(100, 100, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iop3v"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(150, 100, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1ifd"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(200, 100, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w6smf"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(250, 100, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0o62"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(300, 100, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vwxe1"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(350, 100, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qaivy"]
-atlas = ExtResource("2_pcqww")
+atlas = ExtResource("2_6tqxc")
 region = Rect2(400, 100, 50, 50)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rpyjr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_58xfe"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -108,25 +108,24 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pcqww"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_dj51r"]
 radius = 14.0
 
-[node name="VineTrap" type="Area2D"]
+[node name="VineTrap3" type="Area2D"]
 z_index = 3
 scale = Vector2(0.6, 0.6)
 collision_layer = 8
 collision_mask = 2
-priority = 1
-script = ExtResource("1_4rdsv")
-data_resource = SubResource("Resource_jycan")
+script = ExtResource("1_s3761")
+data_resource = SubResource("Resource_dj51r")
 metadata/_custom_type_script = "uid://4u4k11v8crpf"
 
 [node name="Image" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_rpyjr")
+sprite_frames = SubResource("SpriteFrames_58xfe")
 animation = &"spawning"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.5)
-shape = SubResource("CircleShape2D_pcqww")
+shape = SubResource("CircleShape2D_dj51r")
 
 [node name="Timer" type="Timer" parent="."]

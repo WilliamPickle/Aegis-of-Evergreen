@@ -32,8 +32,8 @@
 	  "card_fpath": "res://assets/sprites/towers/base_tower_card.png",
 	  "attack_fpath": [
 		"res://scenes/Towers/druid/vine_trap_1.tscn",
-		"res://scenes/Towers/druid/vine_trap_1.tscn",
-		"res://scenes/Towers/druid/vine_trap_1.tscn"
+		"res://scenes/Towers/druid/vine_trap_2.tscn",
+		"res://scenes/Towers/druid/vine_trap_3.tscn"
 	  ],
 	  "cost": [
 		1,
@@ -46,14 +46,14 @@
 		80
 	  ],
 	  "attack_speed": [
-		1,
-		0.75,
-		0.5
+		4,
+		2,
+		4
 	  ],
 	  "damage": [
-		0,
-		2,
-		2
+		1,
+		0.5,
+		0.5
 	  ]
 	},
 	"chipmunk": {
@@ -273,9 +273,9 @@
 	"vine_trap_3":{
 	  "type": "blunt",
 	  "lifespan": 4,
-	  "pierce_cap": 7,
+	  "pierce_cap": 50,
 	  "debuff_type": "dot",
-	  "dot_ticks" : 8,
+	  "dot_ticks" : 20,
 	  "dot_damage" : 0.08,
 	 },
   },
