@@ -16,7 +16,7 @@ const hover_color = Color(1,1,1,1)
 
 # add any tower card here
 const cards : Dictionary = { 
-	"ranger" = preload("res://assets/sprites/towers/tower cards/ranger_card.png"),
+	"ranger" = preload("res://assets/sprites/towers/tower cards/ranger_card_2.png"),
 	"druid" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
 	"chipmunk" = preload("res://assets/sprites/towers/tower cards/chipmunk_card.png"),
 	"bee" = preload("res://assets/sprites/towers/tower cards/bee_card.png"),
@@ -26,8 +26,8 @@ const cards : Dictionary = {
 
 # card unlocks based on level
 const unlockable_allies : Dictionary = { 
-	"0" : "ranger",
-	"1" : "chipmunk",
+	"0" : "chipmunk",
+	"1" : "ranger",
 	"2" : "bee",
 	"3" : "flytrap"
 }

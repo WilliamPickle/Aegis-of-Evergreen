@@ -1,0 +1,2458 @@
+[gd_scene load_steps=56 format=3 uid="uid://d2uqwbxrpnoex"]
+
+[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_r0rxt"]
+[ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_r3rh7"]
+[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="3_j0wqo"]
+[ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="4_tjoum"]
+[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="5_a6d6p"]
+[ext_resource type="Texture2D" uid="uid://bvxmxb1e80sfy" path="res://assets/sprites/maps/map1/trees_v1_overlayer.png" id="6_pm2mo"]
+[ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="7_08yhi"]
+[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="8_b2nau"]
+[ext_resource type="Script" uid="uid://dijvdnjcujiwt" path="res://scripts/Enemies/tutorial_wave_spawner.gd" id="9_r3rh7"]
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="10_1npmj"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="11_e7h5a"]
+[ext_resource type="PackedScene" uid="uid://ynetxm1wdkoc" path="res://scenes/UI/pause_ui.tscn" id="14_bykcn"]
+[ext_resource type="PackedScene" uid="uid://cnl4pdo4fp6i7" path="res://scenes/UI/fast_forward_ui.tscn" id="15_78i5i"]
+[ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="16_sfsd2"]
+[ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_r0rxt"]
+[ext_resource type="Script" uid="uid://dloy48n56gife" path="res://scripts/tutorial_dialogue.gd" id="17_tjoum"]
+[ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_qj2tc"]
+[ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_54yye"]
+[ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="20_5hj4c"]
+[ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="21_1da40"]
+[ext_resource type="Texture2D" uid="uid://dstb2uxfc1hj7" path="res://assets/sprites/tutorial assets/tutorial_panel_outer.png" id="21_r3rh7"]
+[ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="22_cyy35"]
+[ext_resource type="Texture2D" uid="uid://bwo6c1yueca0v" path="res://assets/sprites/tutorial assets/square_with_hole.png" id="22_j0wqo"]
+[ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="23_ccthf"]
+[ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="24_2mayw"]
+[ext_resource type="Texture2D" uid="uid://cspxuiahyng26" path="res://assets/sprites/icons and buttons/player_level_bar.png" id="25_imrb0"]
+[ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="26_xbmdq"]
+[ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="27_rc0hx"]
+[ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="28_41vox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
+atlas = ExtResource("2_r3rh7")
+region = Rect2(0, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2xxo"]
+atlas = ExtResource("2_r3rh7")
+region = Rect2(100, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cbcq"]
+atlas = ExtResource("2_r3rh7")
+region = Rect2(200, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isj1j"]
+atlas = ExtResource("2_r3rh7")
+region = Rect2(300, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so66j"]
+atlas = ExtResource("2_r3rh7")
+region = Rect2(400, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr1x6"]
+atlas = ExtResource("2_r3rh7")
+region = Rect2(500, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5akn"]
+atlas = ExtResource("2_r3rh7")
+region = Rect2(600, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbtxt"]
+atlas = ExtResource("2_r3rh7")
+region = Rect2(700, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2fux"]
+atlas = ExtResource("2_r3rh7")
+region = Rect2(800, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7g0b"]
+atlas = ExtResource("2_r3rh7")
+region = Rect2(900, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmfjm"]
+atlas = ExtResource("2_r3rh7")
+region = Rect2(1000, 0, 100, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4no4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s4pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2xxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cbcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isj1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so66j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr1x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5akn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbtxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2fux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7g0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmfjm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbb35"]
+atlas = ExtResource("4_tjoum")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw4em"]
+atlas = ExtResource("4_tjoum")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnsmf"]
+atlas = ExtResource("4_tjoum")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nossa"]
+atlas = ExtResource("4_tjoum")
+region = Rect2(1920, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjqri"]
+atlas = ExtResource("4_tjoum")
+region = Rect2(2560, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg84p"]
+atlas = ExtResource("4_tjoum")
+region = Rect2(3200, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aans"]
+atlas = ExtResource("4_tjoum")
+region = Rect2(3840, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0ron"]
+atlas = ExtResource("4_tjoum")
+region = Rect2(4480, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jy485"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbb35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw4em")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnsmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nossa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjqri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg84p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aans")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0ron")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_qxil5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -273, -109, 0, 0, 0, 0, -265, -80, 0, 0, 0, 0, -248, -56, 0, 0, 0, 0, -216, -39, 0, 0, 0, 0, -183, -37, 0, 0, 0, 0, -156, -39, 0, 0, 0, 0, -123, -54, 0, 0, 0, 0, 0, -124, 0, 0, 0, 0, 41, -137, 0, 0, 0, 0, 87, -141, 0, 0, 0, 0, 133, -140, 0, 0, 0, 0, 161, -135, 0, 0, 0, 0, 179, -122, 0, 0, 0, 0, 194, -99, 0, 0, 0, 0, 197, -80, 0, 0, 0, 0, 186, -55, 0, 0, 0, 0, 170, -37, 0, 0, 0, 0, 46, -11, 0, 0, 0, 0, 21, 5, 0, 0, 0, 0, 11, 19, 0, 0, 0, 0, 9, 38, 0, 0, 0, 0, 17, 54, 0, 0, 0, 0, 32, 71, 0, 0, 0, 0, 47, 80, 0, 0, 0, 0, 68, 86, 0, 0, 0, 0, 190, 72, 0, 0, 0, 0, 246, 46, 0, 0, 0, 0, 280, 37, 0, 0, 0, 0, 342, 37)
+}
+point_count = 29
+
+[sub_resource type="LabelSettings" id="LabelSettings_5gad0"]
+font = ExtResource("11_e7h5a")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eicy8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8cce"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ym2e"]
+font = ExtResource("11_e7h5a")
+font_size = 24
+outline_color = Color(0.336608, 0.336608, 0.336608, 1)
+
+[node name="tutorial_level" type="Node2D" groups=["ui_buttons"]]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("1_r0rxt")
+
+[node name="MapAssets" type="Node2D" parent="."]
+
+[node name="fish" type="AnimatedSprite2D" parent="MapAssets"]
+z_index = 1
+position = Vector2(39, -81)
+sprite_frames = SubResource("SpriteFrames_v4no4")
+autoplay = "default"
+
+[node name="map" type="Sprite2D" parent="MapAssets"]
+texture = ExtResource("3_j0wqo")
+metadata/_edit_lock_ = true
+
+[node name="river" type="AnimatedSprite2D" parent="MapAssets"]
+sprite_frames = SubResource("SpriteFrames_jy485")
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="bridge" type="Sprite2D" parent="MapAssets"]
+z_index = 2
+texture = ExtResource("5_a6d6p")
+metadata/_edit_lock_ = true
+
+[node name="tree_overlayer" type="Sprite2D" parent="MapAssets"]
+z_index = 10
+texture = ExtResource("6_pm2mo")
+metadata/_edit_lock_ = true
+
+[node name="tree" type="Sprite2D" parent="MapAssets"]
+texture = ExtResource("7_08yhi")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MapAssets"]
+texture = ExtResource("8_b2nau")
+
+[node name="EnemyPath2" type="Path2D" parent="."]
+y_sort_enabled = true
+curve = SubResource("Curve2D_qxil5")
+metadata/_edit_lock_ = true
+
+[node name="PlacementCollisions" type="Area2D" parent="."]
+
+[node name="Path" type="CollisionPolygon2D" parent="PlacementCollisions"]
+visible = false
+polygon = PackedVector2Array(-275, -170, -260, -165, -256, -161, -256, -156, -237, -151, -258, -133, -255, -107, -245, -80, -222, -60, -181, -54, -131, -69, -9, -139, 22, -149, 148, -156, 180, -143, 203, -114, 208, -82, 203, -47, 183, -27, 139, -15, 66, -3, 41, 6, 29, 17, 22, 31, 26, 42, 37, 56, 59, 70, 88, 72, 185, 59, 240, 36, 274, 23, 319, 21, 317, 46, 281, 48, 198, 83, 108, 96, 66, 96, 43, 94, 22, 80, 5, 55, -2, 36, 2, 16, 19, -12, 50, -25, 128, -40, 158, -45, 177, -57, 182, -76, 185, -93, 163, -118, 138, -129, 89, -128, 33, -123, 15, -114, -77, -66, -120, -40, -147, -30, -181, -24, -206, -26, -230, -32, -254, -49, -275, -72, -287, -102, -290, -121, -289, -134, -313, -150, -294, -156, -294, -161, -291, -165)
+
+[node name="BLTrees" type="CollisionPolygon2D" parent="PlacementCollisions"]
+visible = false
+polygon = PackedVector2Array(-320, -47, -288, -4, -257, 16, -190, 12, -120, 2, -83, -19, -58, -15, -49, 2, -64, 23, -61, 59, -43, 81, -23, 119, 4, 143, 105, 169, 105, 178, -320, 180)
+
+[node name="TLTrees" type="CollisionPolygon2D" parent="PlacementCollisions"]
+visible = false
+polygon = PackedVector2Array(-236, -177, -152, -175, -140, -108, -156, -91, -175, -91, -200, -94, -231, -130)
+
+[node name="RiverAndTrees" type="CollisionPolygon2D" parent="PlacementCollisions"]
+visible = false
+polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130, 15, -111, 63, -99, 94, -83, 129, -47, 160, 14, 183, 62, 203, 125, 223, 118, 269, 105, 317, 100, 319, 179, 126, 180, 108, 79, 88, 31, 62, -26, -64, -64, -111, -95, -130, -158, -126, -180)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlacementCollisions"]
+visible = false
+polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
+
+[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label")]
+script = ExtResource("9_r3rh7")
+pause_menu = NodePath("../PauseUI")
+fast_forward_button = NodePath("../fast_forward_ui")
+delay_timer = NodePath("DelayFuncTimer")
+wave_timer = NodePath("WaveTimer")
+path_2d = NodePath("../EnemyPath2")
+wave_label = NodePath("Wave Text/WaveLabel")
+metadata/_custom_type_script = "uid://clq18rcf3qqqj"
+
+[node name="DelayFuncTimer" type="Timer" parent="WaveSpawner"]
+
+[node name="WaveTimer" type="Timer" parent="WaveSpawner"]
+
+[node name="Wave Text" type="CanvasLayer" parent="WaveSpawner"]
+script = ExtResource("10_1npmj")
+tint_during_pause = true
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="WaveLabel" type="Label" parent="WaveSpawner/Wave Text"]
+offset_left = 189.0
+offset_top = 13.0
+offset_right = 263.0
+offset_bottom = 36.0
+scale = Vector2(1.2, 1.2)
+text = "Wave 0/5"
+label_settings = SubResource("LabelSettings_5gad0")
+
+[node name="PauseUI" parent="." instance=ExtResource("14_bykcn")]
+
+[node name="fast_forward_ui" parent="." instance=ExtResource("15_78i5i")]
+hide_during_pause = true
+
+[node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("16_sfsd2")]
+placement_mask = NodePath("../PlacementCollisions")
+card_type = Array[String]([])
+hide_during_pause = true
+
+[node name="Dialogue" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 2
+script = ExtResource("17_tjoum")
+
+[node name="Intro" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+send_wave_signal = true
+hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/Intro"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/Intro"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/Intro"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/Intro"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/Intro"]
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/Intro"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label1" type="Label" parent="Dialogue/Intro/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Welcome, volunteer! The forest is currently in need of your assistance.
+<< Click on the dialogue box to continue >>"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Intro/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Label2" type="Label" parent="Dialogue/Intro/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Invaders have landed in the forest and threaten to disrupt the balance of the ecosystem. We're counting on you to defend the forest and send these invaders back to their planet."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Intro/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(640, 0, 320, 240)
+
+[node name="Label3" type="Label" parent="Dialogue/Intro/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "I'll give you the run-down on the rules of the forest and how to lead our allies."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Intro/DialogueLabels/Label3"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Placing" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = -256.0
+offset_right = 40.0
+offset_bottom = -216.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+autoplay_on_load = false
+send_wave_signal = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/Placing"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/Placing"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/Placing"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/Placing"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/Placing"]
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/Placing"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label1" type="Label" parent="Dialogue/Placing/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "To start, this is your currency. You begin each level with a set amount."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Placing/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Shadowing" type="Control" parent="Dialogue/Placing/DialogueLabels/Label1"]
+modulate = Color(0, 0, 0, 0.815686)
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 244.0
+offset_right = 25.0
+offset_bottom = 284.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/Placing/DialogueLabels/Label1/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -503.0
+offset_right = 1093.0
+offset_bottom = 126.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/Placing/DialogueLabels/Label1/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -97.0
+offset_top = -599.0
+offset_right = 1093.0
+offset_bottom = -503.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="Dialogue/Placing/DialogueLabels/Label1/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -183.0
+offset_top = -543.0
+offset_right = -97.0
+offset_bottom = -503.0
+mouse_filter = 2
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="Dialogue/Placing/DialogueLabels/Label1/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -599.0
+offset_right = -97.0
+offset_bottom = -543.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="Dialogue/Placing/DialogueLabels/Label1/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -543.0
+offset_right = -183.0
+offset_bottom = -503.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="Dialogue/Placing/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Use it to purchase an ally from down here. Try placing a chipmunk near the path after clicking on this dialogue."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Placing/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Shadowing" type="Control" parent="Dialogue/Placing/DialogueLabels/Label2"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 244.0
+offset_right = 25.0
+offset_bottom = 284.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/Placing/DialogueLabels/Label2/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -596.0
+offset_right = 1093.0
+offset_bottom = -66.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="Dialogue/Placing/DialogueLabels/Label2/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -66.0
+offset_right = 1093.0
+offset_bottom = 214.0
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="BeforeWave1" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+autoplay_on_load = false
+send_wave_signal = true
+hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/BeforeWave1"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/BeforeWave1"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/BeforeWave1"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/BeforeWave1"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/BeforeWave1"]
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/BeforeWave1"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label1" type="Label" parent="Dialogue/BeforeWave1/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Alright, now that you've got your ally, let's see how it fairs against some basic enemies. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/BeforeWave1/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Label2" type="Label" parent="Dialogue/BeforeWave1/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Feel free to fastforward the gameplay in the upper right corner. You can always toggle it on and off."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/BeforeWave1/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Waves and Enemies" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+autoplay_on_load = false
+send_wave_signal = true
+hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/Waves and Enemies"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/Waves and Enemies"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/Waves and Enemies"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/Waves and Enemies"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/Waves and Enemies"]
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/Waves and Enemies"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label1" type="Label" parent="Dialogue/Waves and Enemies/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Good job on defending against those bushes!"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Waves and Enemies/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Label2" type="Label" parent="Dialogue/Waves and Enemies/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "That was one \"wave\" of enemies. Upon fending off a wave, or by waiting it out, you'll gain a large sum of currency."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Waves and Enemies/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Label3" type="Label" parent="Dialogue/Waves and Enemies/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "You also get currency for every enemy that is defeated. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Waves and Enemies/DialogueLabels/Label3"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Label4" type="Label" parent="Dialogue/Waves and Enemies/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Speaking of enemies, if you want to learn more about them, you can refer to the \"survival guidebook\" in the pause menu. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Waves and Enemies/DialogueLabels/Label4"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Shadowing" type="Control" parent="Dialogue/Waves and Enemies/DialogueLabels/Label4"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 244.0
+offset_right = 25.0
+offset_bottom = 284.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/Waves and Enemies/DialogueLabels/Label4/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -770.0
+offset_right = 1092.0
+offset_bottom = -127.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/Waves and Enemies/DialogueLabels/Label4/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -853.0
+offset_right = 1009.0
+offset_bottom = -770.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="Dialogue/Waves and Enemies/DialogueLabels/Label4/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 1009.0
+offset_top = -853.0
+offset_right = 1092.0
+offset_bottom = -770.0
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Label5" type="Label" parent="Dialogue/Waves and Enemies/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Let's take a look at that along with the other menus at your disposal. Just click off the dialogue to continue again. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Waves and Enemies/DialogueLabels/Label5"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Shadowing" type="Control" parent="Dialogue/Waves and Enemies/DialogueLabels/Label5"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 244.0
+offset_right = 25.0
+offset_bottom = 284.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/Waves and Enemies/DialogueLabels/Label5/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -770.0
+offset_right = 1092.0
+offset_bottom = -127.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/Waves and Enemies/DialogueLabels/Label5/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -853.0
+offset_right = 1009.0
+offset_bottom = -770.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="Dialogue/Waves and Enemies/DialogueLabels/Label5/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 1009.0
+offset_top = -853.0
+offset_right = 1092.0
+offset_bottom = -770.0
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Menus" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+autoplay_on_load = false
+send_wave_signal = true
+hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/Menus"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/Menus"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/Menus"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/Menus"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/Menus"]
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/Menus"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label1" type="Label" parent="Dialogue/Menus/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "By the way, while the game is paused, towers and enemies alike are frozen. This allows you to view the menus in peace."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Menus/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Label2" type="Label" parent="Dialogue/Menus/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "First off, we have the settings menu. You can change things like the volume of the music here. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Menus/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Shadowing" type="Control" parent="Dialogue/Menus/DialogueLabels/Label2"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 244.0
+offset_right = 25.0
+offset_bottom = 284.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label2/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -997.0
+offset_right = 1093.0
+offset_bottom = -467.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label2/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -368.0
+offset_right = 1093.0
+offset_bottom = 162.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label2/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -467.0
+offset_right = 264.0
+offset_bottom = -368.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label2/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 364.0
+offset_top = -467.0
+offset_right = 1093.0
+offset_bottom = -368.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label2/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 264.0
+offset_top = -467.0
+offset_right = 364.0
+offset_bottom = -368.0
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Label3" type="Label" parent="Dialogue/Menus/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "As mentioned prior, this is the guidebook. It's got plenty of useful facts and information on allies, enemies, and other things. If you're lost on what something does, refer to this book. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Menus/DialogueLabels/Label3"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Shadowing" type="Control" parent="Dialogue/Menus/DialogueLabels/Label3"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 244.0
+offset_right = 25.0
+offset_bottom = 284.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label3/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -997.0
+offset_right = 1093.0
+offset_bottom = -467.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label3/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -368.0
+offset_right = 1093.0
+offset_bottom = 162.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label3/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -279.0
+offset_top = -467.0
+offset_right = 355.0
+offset_bottom = -368.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label3/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 455.0
+offset_top = -467.0
+offset_right = 1184.0
+offset_bottom = -368.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label3/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 355.0
+offset_top = -467.0
+offset_right = 455.0
+offset_bottom = -368.0
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Label4" type="Label" parent="Dialogue/Menus/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Moving on, the controls menu here will show you how to perform certain actions or utilize certain tools, like camera zooming. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Menus/DialogueLabels/Label4"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Shadowing" type="Control" parent="Dialogue/Menus/DialogueLabels/Label4"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 244.0
+offset_right = 25.0
+offset_bottom = 284.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -997.0
+offset_right = 1093.0
+offset_bottom = -467.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -368.0
+offset_right = 1093.0
+offset_bottom = 162.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -467.0
+offset_right = 445.0
+offset_bottom = -368.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 545.0
+offset_top = -467.0
+offset_right = 1274.0
+offset_bottom = -368.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 445.0
+offset_top = -467.0
+offset_right = 545.0
+offset_bottom = -368.0
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Label5" type="Label" parent="Dialogue/Menus/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "And finally, this menu is a condensed version of this tutorial, put into a scrapbook style format. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Menus/DialogueLabels/Label5"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Shadowing" type="Control" parent="Dialogue/Menus/DialogueLabels/Label5"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 244.0
+offset_right = 25.0
+offset_bottom = 284.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label5/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -997.0
+offset_right = 1093.0
+offset_bottom = -467.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label5/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -368.0
+offset_right = 1093.0
+offset_bottom = 162.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label5/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -467.0
+offset_right = 535.0
+offset_bottom = -368.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label5/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 635.0
+offset_top = -467.0
+offset_right = 1364.0
+offset_bottom = -368.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label5/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 535.0
+offset_top = -467.0
+offset_right = 635.0
+offset_bottom = -368.0
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Label6" type="Label" parent="Dialogue/Menus/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Feel free to explore these menus or you may continue the tutorial by unpausing the game."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Menus/DialogueLabels/Label6"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Shadowing" type="Control" parent="Dialogue/Menus/DialogueLabels/Label6"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 244.0
+offset_right = 25.0
+offset_bottom = 284.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label6/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -997.0
+offset_right = 1093.0
+offset_bottom = -335.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label6/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -335.0
+offset_right = 1093.0
+offset_bottom = -111.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="BeforeWave2" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+autoplay_on_load = false
+send_wave_signal = true
+hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/BeforeWave2"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/BeforeWave2"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/BeforeWave2"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/BeforeWave2"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/BeforeWave2"]
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/BeforeWave2"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label1" type="Label" parent="Dialogue/BeforeWave2/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Now, it's time to get back to the gameplay. It also seems we gained a good amount of currency at the end of that wave. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/BeforeWave2/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Label2" type="Label" parent="Dialogue/BeforeWave2/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Let's put it to use and get another ally down. Do it quick, since the wave will immediately begin. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/BeforeWave2/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Label3" type="Label" parent="Dialogue/BeforeWave2/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "This is to prepare you for a real mission, where waves will be sent out without pauses in between. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/BeforeWave2/DialogueLabels/Label3"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Leveling Up" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+autoplay_on_load = false
+send_wave_signal = true
+hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/Leveling Up"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/Leveling Up"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/Leveling Up"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/Leveling Up"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/Leveling Up"]
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/Leveling Up"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label1" type="Label" parent="Dialogue/Leveling Up/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Great work again. In fact, after defeating all those bushes, it seems that you've leveled up as well!"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Leveling Up/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Label2" type="Label" parent="Dialogue/Leveling Up/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Usually, you wouldn't suddenly level up this quickly after defeating a few bushes, but I gave you some extra XP for the purposes of this tutorial."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Leveling Up/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Lvl Up and Heroes" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = -180.0
+offset_right = 40.0
+offset_bottom = -140.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+autoplay_on_load = false
+send_wave_signal = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/Lvl Up and Heroes"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/Lvl Up and Heroes"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/Lvl Up and Heroes"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/Lvl Up and Heroes"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/Lvl Up and Heroes"]
+
+[node name="ClickBarrier" type="Control" parent="Dialogue/Lvl Up and Heroes"]
+anchors_preset = 0
+offset_left = 116.0
+offset_top = 750.0
+offset_right = 1168.0
+offset_bottom = 901.0
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/Lvl Up and Heroes"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label1" type="Label" parent="Dialogue/Lvl Up and Heroes/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "If you'll notice, upon leveling up, you'll gain a new ally. Not every level grants an ally, but most will. This time that ally is me."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Shadows" type="Control" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label1"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 852.0
+offset_right = 229.0
+offset_bottom = 892.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label1/Shadows"]
+z_index = -1
+layout_mode = 0
+offset_left = -280.0
+offset_top = -679.0
+offset_right = -138.0
+offset_bottom = -557.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow6" type="TextureRect" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label1/Shadows"]
+z_index = -1
+layout_mode = 0
+offset_left = -393.0
+offset_top = -679.0
+offset_right = -280.0
+offset_bottom = -557.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow7" type="TextureRect" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label1/Shadows"]
+z_index = -1
+layout_mode = 0
+offset_left = 772.0
+offset_top = -679.0
+offset_right = 889.0
+offset_bottom = -557.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label1/Shadows"]
+z_index = -1
+layout_mode = 0
+offset_left = -393.0
+offset_top = -1283.0
+offset_right = 889.0
+offset_bottom = -679.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label1/Shadows"]
+z_index = -1
+layout_mode = 0
+offset_left = -36.0
+offset_top = -679.0
+offset_right = 772.0
+offset_bottom = -557.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label1/Shadows"]
+z_index = -1
+layout_mode = 0
+offset_left = -138.0
+offset_top = -560.0
+offset_right = -36.0
+offset_bottom = -557.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label1/Shadows"]
+z_index = -1
+layout_mode = 0
+offset_left = -138.0
+offset_top = -679.0
+offset_right = -36.0
+offset_bottom = -560.0
+mouse_filter = 2
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="Dialogue/Lvl Up and Heroes/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "You may also see that my tower card has gold edges rather than silver edges."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Label3" type="Label" parent="Dialogue/Lvl Up and Heroes/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "This signifies that I am a \"hero\" type tower. This means that you cannot place multiple versions of me down, unlike the chipmunk. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label3"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Label4" type="Label" parent="Dialogue/Lvl Up and Heroes/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Also, hero towers have mechanics that are more unique and complex than regular towers. I especially recommend referring to the survival guidebook for them."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label4"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Label5" type="Label" parent="Dialogue/Lvl Up and Heroes/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "I'll go ahead and give you a chance to place me down now. I'd recommend you put me right next to one of your chipmunks. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Lvl Up and Heroes/DialogueLabels/Label5"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Upgrade Menu 1" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+autoplay_on_load = false
+send_wave_signal = true
+hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/Upgrade Menu 1"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/Upgrade Menu 1"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/Upgrade Menu 1"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/Upgrade Menu 1"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/Upgrade Menu 1"]
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/Upgrade Menu 1"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label1" type="Label" parent="Dialogue/Upgrade Menu 1/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "The last thing I'll tell you about now is the upgrade menu. Click on an ally to view their respective menu. I'll wait for you to open a new one up before i keep talking. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Upgrade Menu 1/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="BeforeWave3" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+autoplay_on_load = false
+send_wave_signal = true
+hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/BeforeWave3"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/BeforeWave3"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/BeforeWave3"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/BeforeWave3"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/BeforeWave3"]
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/BeforeWave3"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label2" type="Label" parent="Dialogue/BeforeWave3/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Keeping it brief, this upgrade menu allows you to upgrade, sell, and control your ally's taregtting. It also displays your ally's stats. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/BeforeWave3/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Label5" type="Label" parent="Dialogue/BeforeWave3/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "I've given you some extra currency in order to buy some upgrades, or you can buy more allies. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/BeforeWave3/DialogueLabels/Label5"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Label3" type="Label" parent="Dialogue/BeforeWave3/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "At this point, the defense is fully in your hands. I'll still guide you through the invasion, but it is up to you to keep the forest safe now. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/BeforeWave3/DialogueLabels/Label3"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Label4" type="Label" parent="Dialogue/BeforeWave3/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "This concludes the tutorial, and you'll now be facing the last wave of enemies. I wish you goodluck."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/BeforeWave3/DialogueLabels/Label4"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu", "fast_forward_button")]
+script = ExtResource("21_1da40")
+health_label = NodePath("../Icons/Control/LifeIndicator/LifeLabel")
+base_health = 100.0
+pause_menu = NodePath("../PauseUI")
+fast_forward_button = NodePath("../fast_forward_ui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
+position = Vector2(320, 37)
+shape = SubResource("RectangleShape2D_a8cce")
+
+[node name="Icons" type="CanvasLayer" parent="."]
+script = ExtResource("10_1npmj")
+tint_during_pause = true
+
+[node name="Control" type="Control" parent="Icons"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LifeIndicator" type="TextureRect" parent="Icons/Control"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 34.0
+offset_right = 41.0
+offset_bottom = 59.0
+texture = ExtResource("22_cyy35")
+
+[node name="LifeLabel" type="Label" parent="Icons/Control/LifeIndicator"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 30.0
+scale = Vector2(0.72, 0.72)
+text = "150"
+label_settings = SubResource("LabelSettings_6ym2e")
+
+[node name="PlayerLvlIndicator" type="TextureRect" parent="Icons/Control"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 150.0
+offset_bottom = 27.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("23_ccthf")
+script = ExtResource("24_2mayw")
+
+[node name="XpBar" type="TextureRect" parent="Icons/Control/PlayerLvlIndicator"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.0
+offset_right = 131.0
+offset_bottom = 14.0
+texture = ExtResource("25_imrb0")
+
+[node name="LvlPlate" type="TextureRect" parent="Icons/Control/PlayerLvlIndicator"]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 20.0
+texture = ExtResource("26_xbmdq")
+
+[node name="LvlLabel" type="Label" parent="Icons/Control/PlayerLvlIndicator"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 34.0
+offset_bottom = 29.0
+scale = Vector2(0.6, 0.6)
+text = "10"
+label_settings = SubResource("LabelSettings_6ym2e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoneyIndicator" type="TextureRect" parent="Icons/Control"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 57.0
+offset_right = 41.0
+offset_bottom = 82.0
+texture = ExtResource("27_rc0hx")
+script = ExtResource("28_41vox")
+
+[node name="MoneyLabel" type="Label" parent="Icons/Control/MoneyIndicator"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 30.0
+scale = Vector2(0.72, 0.72)
+text = "50.0
+"
+label_settings = SubResource("LabelSettings_6ym2e")
+
+[node name="ClickMasks" type="CanvasLayer" parent="."]
+script = ExtResource("10_1npmj")
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="PauseButtonSpotlight" type="Control" parent="ClickMasks"]
+visible = false
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 852.0
+offset_right = 229.0
+offset_bottom = 892.0
+
+[node name="Shadow" type="TextureRect" parent="ClickMasks/PauseButtonSpotlight"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -770.0
+offset_right = 1092.0
+offset_bottom = -127.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="ClickMasks/PauseButtonSpotlight"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -853.0
+offset_right = 1009.0
+offset_bottom = -770.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="ClickMasks/PauseButtonSpotlight"]
+z_index = -1
+layout_mode = 0
+offset_left = 1009.0
+offset_top = -853.0
+offset_right = 1092.0
+offset_bottom = -770.0
+mouse_filter = 2
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Ranger" type="Control" parent="ClickMasks"]
+visible = false
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 392.0
+offset_top = 1278.0
+offset_right = 432.0
+offset_bottom = 1318.0
+
+[node name="Shadow" type="TextureRect" parent="ClickMasks/Ranger"]
+z_index = -1
+layout_mode = 0
+offset_left = -280.0
+offset_top = -679.0
+offset_right = -138.0
+offset_bottom = -557.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow6" type="TextureRect" parent="ClickMasks/Ranger"]
+z_index = -1
+layout_mode = 0
+offset_left = -393.0
+offset_top = -679.0
+offset_right = -280.0
+offset_bottom = -557.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow7" type="TextureRect" parent="ClickMasks/Ranger"]
+z_index = -1
+layout_mode = 0
+offset_left = 772.0
+offset_top = -679.0
+offset_right = 889.0
+offset_bottom = -557.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="ClickMasks/Ranger"]
+z_index = -1
+layout_mode = 0
+offset_left = -393.0
+offset_top = -1283.0
+offset_right = 889.0
+offset_bottom = -679.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="ClickMasks/Ranger"]
+z_index = -1
+layout_mode = 0
+offset_left = -36.0
+offset_top = -679.0
+offset_right = 772.0
+offset_bottom = -557.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="ClickMasks/Ranger"]
+z_index = -1
+layout_mode = 0
+offset_left = -138.0
+offset_top = -560.0
+offset_right = -36.0
+offset_bottom = -557.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="ClickMasks/Ranger"]
+z_index = -1
+layout_mode = 0
+offset_left = -138.0
+offset_top = -679.0
+offset_right = -36.0
+offset_bottom = -560.0
+mouse_filter = 2
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="ClickBarrier" type="Control" parent="ClickMasks/Ranger"]
+anchors_preset = 0
+offset_left = -168.0
+offset_top = -686.0
+offset_right = -126.0
+offset_bottom = -558.0
+
+[node name="TowerHighlight" type="Control" parent="ClickMasks"]
+visible = false
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Shadow5" type="TextureRect" parent="ClickMasks/TowerHighlight"]
+z_index = -1
+layout_mode = 0
+offset_left = -1600.0
+offset_top = -840.0
+offset_right = 1600.0
+offset_bottom = -37.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow6" type="TextureRect" parent="ClickMasks/TowerHighlight"]
+z_index = -1
+layout_mode = 0
+offset_left = -1600.0
+offset_top = 37.0
+offset_right = 1600.0
+offset_bottom = 840.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow7" type="TextureRect" parent="ClickMasks/TowerHighlight"]
+z_index = -1
+layout_mode = 0
+offset_left = -1600.0
+offset_top = -37.0
+offset_right = -37.0
+offset_bottom = 37.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow8" type="TextureRect" parent="ClickMasks/TowerHighlight"]
+z_index = -1
+layout_mode = 0
+offset_left = 37.0
+offset_top = -37.0
+offset_right = 1600.0
+offset_bottom = 37.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="ClickMasks/TowerHighlight"]
+z_index = -1
+layout_mode = 1
+offset_left = -37.0
+offset_top = -37.0
+offset_right = 37.0
+offset_bottom = 37.0
+mouse_filter = 2
+texture = ExtResource("22_j0wqo")
+expand_mode = 1

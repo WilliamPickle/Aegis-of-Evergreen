@@ -7,13 +7,14 @@ signal start_wave
 @export var skip_button : Button
 @export var label_container : Control
 @export var timer : Timer
-@export var text_speed : float = 0.02
+@export var text_speed : float = 0.01
 var label_list := []
 var label_text : String
 var current_label : Label
 var cur_label_index : int = 0
 var prev_label_index : int = 0
 
+@export var autoplay_on_load : bool = true
 # signal handling variables
 ## This variable is primarily for WaveSpawner or any nodes that need
 ## to activate after dialogue is done. 
@@ -26,10 +27,6 @@ var prev_label_index : int = 0
 @onready var wave_spawner: Node2D = $"../../WaveSpawner"
 
 func _ready() -> void:
-	# to hide the scroll bar when dialogue active
-	if hide_node:
-		node_to_hide.visible = false
-		
 	# set up dialogue list to itterate through
 	for i in range(label_container.get_child_count()):
 		label_list.append(label_container.get_child(i))
@@ -37,7 +34,8 @@ func _ready() -> void:
 	# connect signals
 	continue_button.button_down.connect(display_dialogue)
 	skip_button.button_down.connect(end_timer)
-	display_dialogue() # this is to autoplay on level start
+	if autoplay_on_load:
+		display_dialogue() # this is to autoplay on level start
 
 func display_dialogue():
 	#print("continue hit")
@@ -53,6 +51,10 @@ func display_dialogue():
 			emit_signal("start_wave")
 		#print("last dialogue just finished.") 
 		return
+		
+	# to hide the scroll bar when dialogue active
+	if hide_node:
+		node_to_hide.visible = false
 		
 	continue_button.visible = false
 	skip_button.visible = true

@@ -5,12 +5,13 @@ signal player_level_changed
 signal upgraded_tower
 
 # Player Vars
-const StartingPlayerLevel: int = 1
+const StartingPlayerLevel: int = 0
 const XpThreshold: int = 1000
 var PlayerXp: int = 0
 var PlayerLevel: int = StartingPlayerLevel
 var PrevLevel: int = StartingPlayerLevel
-var lvls_beaten = 0
+# It's negative one because of the tutorial
+var lvls_beaten = -1
 
 # Money Vars
 const DEFAULT_MONEY : Array = [

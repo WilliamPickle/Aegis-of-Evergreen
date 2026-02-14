@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ynetxm1wdkoc"]
+[gd_scene load_steps=44 format=3 uid="uid://ynetxm1wdkoc"]
 
 [ext_resource type="Script" uid="uid://cl0q72sg1e0ue" path="res://scripts/UI/pause_scene.gd" id="1_5el4x"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_rbm5a"]
@@ -18,6 +18,10 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kgpbc"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7itxe"]
+texture = ExtResource("13_3paxm")
+modulate_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m5qd3"]
 texture = ExtResource("8_0rou8")
 
@@ -32,6 +36,10 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 texture = ExtResource("7_ynu8c")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5el4x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qu2bg"]
+texture = ExtResource("13_3paxm")
+modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rbm5a"]
 texture = ExtResource("2_vcehk")
@@ -49,6 +57,10 @@ texture = ExtResource("2_ypbrs")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lykai"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trdy1"]
+texture = ExtResource("13_3paxm")
+modulate_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rou8"]
 texture = ExtResource("8_rbm5a")
 modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
@@ -64,6 +76,10 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 texture = ExtResource("9_c1s3a")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrevp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qahyg"]
+texture = ExtResource("13_3paxm")
+modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hsoxr"]
 texture = ExtResource("5_ynu8c")
@@ -125,6 +141,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/focus = SubResource("StyleBoxTexture_kgpbc")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7itxe")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_m5qd3")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dxumj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uah4b")
@@ -161,6 +178,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5el4x")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qu2bg")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_rbm5a")
 theme_override_styles/hover = SubResource("StyleBoxTexture_c1s3a")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6hyd5")
@@ -177,6 +195,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/focus = SubResource("StyleBoxTexture_lykai")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_trdy1")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_0rou8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7u2tl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_reg7a")
@@ -193,6 +212,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nrevp")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qahyg")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hsoxr")
 theme_override_styles/hover = SubResource("StyleBoxTexture_147f5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sv6pk")
@@ -209,6 +229,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nrevp")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7itxe")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_nrevp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_nyv1p")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_17fb8")

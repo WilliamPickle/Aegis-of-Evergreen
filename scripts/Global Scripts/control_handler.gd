@@ -1,4 +1,6 @@
 extends Node
+signal card_clicked_on
+signal tower_clicked_on
 
 enum ControlState {
 	PLAYING,
@@ -36,3 +38,9 @@ func add_state(state : ControlState):
 			current_states.append(state)
 		else:
 			current_states.insert(state,state)
+
+		if state == ControlHandler.ControlState.PLACING_TOWER:
+			emit_signal("card_clicked_on")
+		if state == ControlHandler.ControlState.VIEWING_TOWER:
+			emit_signal("tower_clicked_on")
+			print("range opened_")

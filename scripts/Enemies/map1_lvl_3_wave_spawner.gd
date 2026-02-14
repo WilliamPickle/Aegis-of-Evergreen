@@ -28,6 +28,7 @@ func _on_start_lvl3() -> void:
 	
 	currently_sending = false
 	await wave_timer.timeout
+	signify_wave_end()
 	
 	# wave 2
 	start_wave_timer(50)
@@ -37,6 +38,7 @@ func _on_start_lvl3() -> void:
 
 	currently_sending = false
 	await wave_timer.timeout
+	signify_wave_end()
 
 	# wave 3
 	start_wave_timer(45)
@@ -46,6 +48,7 @@ func _on_start_lvl3() -> void:
 	
 	currently_sending = false
 	await wave_timer.timeout
+	signify_wave_end()
 	
 	# wave 4
 	start_wave_timer(60)
@@ -57,8 +60,9 @@ func _on_start_lvl3() -> void:
 	
 	currently_sending = false
 	await wave_timer.timeout
+	signify_wave_end()
 
-	# wave 4
+	# wave 5
 	start_wave_timer(3600)
 	await send_enemy(cow, 3, 1)
 	await delay(3)

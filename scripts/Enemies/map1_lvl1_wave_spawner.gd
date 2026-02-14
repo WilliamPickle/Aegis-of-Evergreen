@@ -26,6 +26,7 @@ func _on_start_lvl1() -> void:
 	
 	currently_sending = false
 	await wave_timer.timeout
+	signify_wave_end()
 	
 	# wave 2 - 80 cash gain
 	start_wave_timer(45)
@@ -35,6 +36,7 @@ func _on_start_lvl1() -> void:
 	
 	currently_sending = false
 	await wave_timer.timeout
+	signify_wave_end()
 	
 	# wave 3 - 75 cash gain
 	start_wave_timer(45)
@@ -44,6 +46,7 @@ func _on_start_lvl1() -> void:
 	
 	currently_sending = false
 	await wave_timer.timeout
+	signify_wave_end()
 	
 	# wave 4 - 210 cash gain
 	start_wave_timer(60)
@@ -53,6 +56,7 @@ func _on_start_lvl1() -> void:
 	
 	currently_sending = false
 	await wave_timer.timeout
+	signify_wave_end()
 	
 	# wave 5 - 300 cash gain
 	start_wave_timer(3600)

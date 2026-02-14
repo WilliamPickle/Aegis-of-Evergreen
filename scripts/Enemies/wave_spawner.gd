@@ -28,9 +28,9 @@ const mushroom := preload("res://scenes/Enemies/mushroom.tscn")
 var enemy_count: int = 0
 var currently_sending: bool = false
 var final_wave_started: bool = false
-const max_waves = 5
+var max_waves = 5
 var wave_bonus_money: Array[float] = [0, 50, 60, 60, 80]
-var wave := 0
+var wave := 1
 
 # to prevent win condition being called from multiple enemy deaths
 var won_level: bool = false
@@ -116,12 +116,36 @@ func delay(delay_time) -> void:
 	await delay_timer.timeout
 	
 func start_wave_timer(time):
-	wave += 1
-	if wave == max_waves:
-		final_wave_started = true
-	PlayerStats.cur_money += wave_bonus_money[wave - 1]
-	PlayerStats.emit_signal("money_changed")
-	wave_label.text = "Wave " + str(wave) + "/5"
+	#wave += 1
+	#PlayerStats.cur_money += wave_bonus_money[wave - 1]
+	#PlayerStats.emit_signal("money_changed")
+	#
+	#if wave == max_waves:
+		#final_wave_started = true
+#
+	## I kinda did some goofy logic so it thinks wave 1 is 
+	## the end of a wave
+	#if wave > 1:
+		#var notif := Error_Notification.new()
+		#get_child(2).add_child(notif)
+		#notif.send_notif(Vector2(540,335),"wave_cleared", 1, "wave_clear")
+		#print(notif.global_position)
+	#wave_label.text = "Wave " + str(wave) + "/5"
 	wave_timer.wait_time = time
 	wave_timer.start()
 	currently_sending = true
+	
+func signify_wave_end():
+	wave += 1
+	PlayerStats.cur_money += wave_bonus_money[wave - 1]
+	PlayerStats.emit_signal("money_changed")
+	
+	if wave == max_waves:
+		final_wave_started = true
+
+	if wave > 1:
+		var notif := Error_Notification.new()
+		get_child(2).add_child(notif)
+		notif.send_notif(Vector2(540,335),"wave_cleared", 1, "wave_clear")
+		print(notif.global_position)
+	wave_label.text = "Wave " + str(wave) + "/" + str(max_waves)

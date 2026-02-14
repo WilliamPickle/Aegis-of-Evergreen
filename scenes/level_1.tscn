@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=58 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="15_6dial"]
 [ext_resource type="PackedScene" uid="uid://cnl4pdo4fp6i7" path="res://scenes/UI/fast_forward_ui.tscn" id="15_s7g0b"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
-[ext_resource type="Script" path="res://scripts/UI/lvl1_dialogue.gd" id="17_mbb35"]
+[ext_resource type="Script" uid="uid://b1db11ngtg7n0" path="res://scripts/UI/lvl1_dialogue.gd" id="17_mbb35"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
 [ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="20_k8ld0"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="26_k8ld0"]
 [ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="27_k8ld0"]
 [ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="27_mmfjm"]
+[ext_resource type="LabelSettings" uid="uid://jrf143qxgd3e" path="res://assets/fonts/wave_clear.tres" id="29_mbb35"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("1_2os1m")
@@ -361,7 +362,6 @@ continue_button = NodePath("ContButton")
 skip_button = NodePath("SkipButton")
 label_container = NodePath("DialogueLabels")
 timer = NodePath("Timer")
-text_speed = 0.01
 send_wave_signal = true
 hide_node = true
 node_to_hide = NodePath("../../ScrollbarUI")
@@ -605,3 +605,13 @@ offset_bottom = 30.0
 scale = Vector2(0.72, 0.72)
 text = "150"
 label_settings = SubResource("LabelSettings_wbtxt")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 521.0
+offset_top = 35.0
+offset_right = 745.0
+offset_bottom = 102.0
+text = "wave cleared
++$100"
+label_settings = ExtResource("29_mbb35")
+horizontal_alignment = 1
