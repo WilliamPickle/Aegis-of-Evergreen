@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bmw1rcaenfyvo" path="res://scenes/UI/scrollbar_ui.tscn" id="15_6dial"]
 [ext_resource type="PackedScene" uid="uid://cnl4pdo4fp6i7" path="res://scenes/UI/fast_forward_ui.tscn" id="15_s7g0b"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="16_7nomh"]
-[ext_resource type="Script" uid="uid://b1db11ngtg7n0" path="res://scripts/UI/lvl1_dialogue.gd" id="17_mbb35"]
+[ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="17_mbb35"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="18_2cbcq"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="19_isj1j"]
 [ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="20_k8ld0"]
@@ -365,6 +365,7 @@ timer = NodePath("Timer")
 send_wave_signal = true
 hide_node = true
 node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
 
 [node name="BoxTexture" type="TextureRect" parent="DialogueUI/DialogueBox"]
 layout_mode = 0
@@ -428,8 +429,7 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 678.0
 offset_bottom = 76.0
-text = "Welcome, volunteer! The forest is currently in need of your assistance.
-<< Click on the dialogue box to continue >>"
+text = "Alright, volunteer, the invasion has officially begun. "
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
 
@@ -447,7 +447,7 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 678.0
 offset_bottom = 76.0
-text = "Invaders have landed in the forest and threaten to disrupt the balance of the ecosystem. We're counting on you to defend the forest and send these invaders back to their planet."
+text = "I hope you've readied yourself for what's to come."
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
 
@@ -465,29 +465,11 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 678.0
 offset_bottom = 76.0
-text = "To start, I'll give you the run-down on the rules of the forest and how to lead our allies."
+text = "Remember that if you're lost on what to do, there's plenty of menus that'll help put you back on track."
 label_settings = ExtResource("19_isj1j")
 autowrap_mode = 2
 
 [node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label3"]
-position = Vector2(776, -32)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("20_k8ld0")
-region_enabled = true
-region_rect = Rect2(320, 0, 320, 240)
-
-[node name="Label4" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
-visible = false
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 678.0
-offset_bottom = 76.0
-text = "If you want to see the explanation again, refer to the question mark button in the pause menu. "
-label_settings = ExtResource("19_isj1j")
-autowrap_mode = 2
-
-[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label4"]
 position = Vector2(776, -32)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("20_k8ld0")

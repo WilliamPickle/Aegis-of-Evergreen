@@ -60,17 +60,21 @@ func continue_dialogue():
 		await PlayerStats.money_changed
 	# After Upgrade Menus
 	elif dialogue_index == 9:
-		var twr_highlight: Control  = $"../ClickMasks/TowerHighlight"
+		var twr_highlight: Control  = $"../ClickMasksNotUI/TowerHighlight"
 		var temp_twr_list := []
 		for node in $"../PlacementCollisions".get_children():
 			if node is Tower:
 				temp_twr_list.append(node)
 		if len(temp_twr_list) > 0:
-			twr_highlight.global_position = Vector2(640, 360) + (temp_twr_list[randi_range(0, len(temp_twr_list) - 1)].global_position * 2)
+			# All of this code was to determine the shadow position if it was UI
+			#twr_highlight.global_position = Vector2(640, 360) + (temp_twr_list[randi_range(0, len(temp_twr_list) - 1)].global_position * 2)
+			#twr_highlight.visible = true
+			#print("tower pos: ", temp_twr_list[randi_range(0, len(temp_twr_list) - 1)].global_position)
+			#print("position: ", twr_highlight.position)
+			#print("global position: ", twr_highlight.global_position)
+			twr_highlight.global_position = temp_twr_list[randi_range(0, len(temp_twr_list) - 1)].global_position
 			twr_highlight.visible = true
-			print("tower pos: ", temp_twr_list[randi_range(0, len(temp_twr_list) - 1)].global_position)
-			print("position: ", twr_highlight.position)
-			print("global position: ", twr_highlight.global_position)
+			
 		# note this signal doesn't trigger if a menu is already open
 		# and you upon the menu for a dif tower
 		await ControlHandler.tower_clicked_on

@@ -120,6 +120,7 @@ func toggle_health_bar():
 	health_bar.get_parent().visible = !health_bar.get_parent().visible
 	
 func send_away() -> void:
+	set_collision_layer_value(2, false)
 	original_speed = 0
 	speed = 0
 	enemy_sprite.visible = false

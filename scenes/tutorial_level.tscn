@@ -2388,10 +2388,15 @@ offset_top = -686.0
 offset_right = -126.0
 offset_bottom = -558.0
 
-[node name="TowerHighlight" type="Control" parent="ClickMasks"]
+[node name="ClickMasksNotUI" type="Control" parent="."]
+z_index = 11
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TowerHighlight" type="Control" parent="ClickMasksNotUI"]
 visible = false
 modulate = Color(0, 0, 0, 0.815686)
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2402,57 +2407,57 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Shadow5" type="TextureRect" parent="ClickMasks/TowerHighlight"]
+[node name="Shadow5" type="TextureRect" parent="ClickMasksNotUI/TowerHighlight"]
 z_index = -1
 layout_mode = 0
 offset_left = -1600.0
 offset_top = -840.0
 offset_right = 1600.0
-offset_bottom = -37.0
+offset_bottom = -20.0
 mouse_filter = 0
 texture = ExtResource("21_r3rh7")
 expand_mode = 1
 
-[node name="Shadow6" type="TextureRect" parent="ClickMasks/TowerHighlight"]
+[node name="Shadow6" type="TextureRect" parent="ClickMasksNotUI/TowerHighlight"]
 z_index = -1
 layout_mode = 0
 offset_left = -1600.0
-offset_top = 37.0
+offset_top = 20.0
 offset_right = 1600.0
 offset_bottom = 840.0
 mouse_filter = 0
 texture = ExtResource("21_r3rh7")
 expand_mode = 1
 
-[node name="Shadow7" type="TextureRect" parent="ClickMasks/TowerHighlight"]
+[node name="Shadow7" type="TextureRect" parent="ClickMasksNotUI/TowerHighlight"]
 z_index = -1
 layout_mode = 0
 offset_left = -1600.0
-offset_top = -37.0
-offset_right = -37.0
-offset_bottom = 37.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
 mouse_filter = 0
 texture = ExtResource("21_r3rh7")
 expand_mode = 1
 
-[node name="Shadow8" type="TextureRect" parent="ClickMasks/TowerHighlight"]
+[node name="Shadow8" type="TextureRect" parent="ClickMasksNotUI/TowerHighlight"]
 z_index = -1
 layout_mode = 0
-offset_left = 37.0
-offset_top = -37.0
-offset_right = 1600.0
-offset_bottom = 37.0
+offset_left = 20.0
+offset_top = -20.0
+offset_right = 1601.0
+offset_bottom = 20.0
 mouse_filter = 0
 texture = ExtResource("21_r3rh7")
 expand_mode = 1
 
-[node name="Shadow3" type="TextureRect" parent="ClickMasks/TowerHighlight"]
+[node name="Shadow3" type="TextureRect" parent="ClickMasksNotUI/TowerHighlight"]
 z_index = -1
 layout_mode = 1
-offset_left = -37.0
-offset_top = -37.0
-offset_right = 37.0
-offset_bottom = 37.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 mouse_filter = 2
 texture = ExtResource("22_j0wqo")
 expand_mode = 1
