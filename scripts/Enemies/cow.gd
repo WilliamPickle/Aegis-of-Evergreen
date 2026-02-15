@@ -7,7 +7,7 @@ extends Enemy
 # none of these vars influence the timing of the other vars. 
 var fart_duration: float = 2 # of the animation
 var fart_cooldown: float = 6
-var slowness_multiplier: float = 2.5 # bigger num bigger slow
+var slowness_multiplier: float = 1.5 # bigger num = bigger atk speed reduction
 var slowness_duration: float = 3
 
 func _ready() -> void:

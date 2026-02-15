@@ -12,10 +12,14 @@ func _ready() -> void:
 func _on_start_lvl3() -> void:
 	# test wave
 	#start_wave_timer(90)
-	#await send_enemy(hornet, 10, 0.2)
-	#await send_enemy(queen_hornet, 1, 1)
-	#await delay(5)
-	#await send_enemy(hornet, 10, 0.2)
+	#await send_enemy(bush, 1, 0.2)
+	#await send_enemy(squirrel, 1, 0.2)
+	#await send_enemy(cow, 1, 0.2)
+	#await send_enemy(snail, 1, 0.2)
+	#await send_enemy(beetle, 1, 0.2)
+	#await send_enemy(hornet, 1, 0.2)
+	#await send_enemy(queen_hornet, 1, 0.2)
+	#
 	#
 	#currently_sending = false
 	#await wave_timer.timeout

@@ -355,7 +355,6 @@ continue_button = NodePath("ContButton")
 skip_button = NodePath("SkipButton")
 label_container = NodePath("DialogueLabels")
 timer = NodePath("Timer")
-text_speed = 0.01
 send_wave_signal = true
 hide_node = true
 node_to_hide = NodePath("../../ScrollbarUI")

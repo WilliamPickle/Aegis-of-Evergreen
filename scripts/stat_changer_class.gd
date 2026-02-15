@@ -17,6 +17,8 @@ const DOT_TIME : float = 0.5
 @onready var target
 @onready var inflictor: String
 @onready var stat
+#ex: 0.25 indicates stat is 25% better (thus 125% of original)
+#ex: -0.25 indicates stat is 25% worse (thus 75% of orginal)
 @onready var percent_change: float
 @onready var duration: float
 
@@ -34,7 +36,7 @@ func apply_stat_changes():
 			
 	# innitiate timer
 	timer.timeout.connect(disable_stat_changes.bind(timer))
-	#timer.wait_time = duration
+	#timer.wait_time = durationF
 	#timer.one_shot = true
 	#timer.start()
 	start(duration)
@@ -43,11 +45,11 @@ func apply_stat_changes():
 	# the actual stat changing part
 	match stat:
 		Type.WALK_SPEED:
-			target.speed = target.speed * percent_change
+			target.speed = target.speed * (1 + percent_change)
 		Type.ATK_COOLDOWN:
-			target._attack_cooldown.wait_time = target._attack_cooldown.wait_time * percent_change 
+			target._attack_cooldown.wait_time = target._attack_cooldown.wait_time * (1 + percent_change) 
 		Type.RANGE:
-			target.range_collider.shape.radius = target.range_collider.shape.radius * percent_change
+			target.range_collider.shape.radius = target.range_collider.shape.radius * (1 + percent_change)
 		Type.DOT:
 			timeout.disconnect(disable_stat_changes)
 			for i in range(duration):

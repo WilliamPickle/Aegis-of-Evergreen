@@ -1,7 +1,7 @@
 extends Enemy
 
 var buff_duration = 4
-var buff_multiplier = 1.5
+var buff_multiplier = 0.5
 
 func _ready():
 	super._ready()

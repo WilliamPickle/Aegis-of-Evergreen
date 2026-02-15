@@ -20,9 +20,9 @@
 		["attack_speed","range"]
 	  ],
 	 "buff_multipliers":[
-		[0.8],
-		[0.8, 1.2],
-		[0.6, 1.5]
+		[-0.2],
+		[-0.2, 0.2],
+		[-0.4, 0.5]
 	  ],
 	 "buff_duration": 7.5,
 	},
@@ -239,14 +239,20 @@
 	"flytrap_melee_1": {
 	  "type": "energy",
 	  "splash_cap": 3,
+	  "debuff_percent": -0.5,
+	  "debuff_duration": 1,
 	},
 	"flytrap_melee_2": {
 	  "type": "energy",
 	  "splash_cap": 5,
+	  "debuff_percent": -0.75,
+	  "debuff_duration": 1,
 	},
 	"flytrap_melee_3": {
 	  "type": "energy",
 	  "splash_cap": 7,
+	  "debuff_percent": -0.75,
+	  "debuff_duration": 1.6,
 	},
 	"god_atk": {
 	  "type": "energy",
