@@ -19,7 +19,7 @@ const DEFAULT_MONEY : Array = [
 	[150.0, 600.0, 700.0],
 	[800.0, 900.0, 1000.0],
 ]
-@onready var cur_money = DEFAULT_MONEY[0][2]
+@onready var cur_money = DEFAULT_MONEY[1][0]
 var pity_money = 0
 
 func _ready() -> void:

@@ -36,24 +36,24 @@
 		"res://scenes/Towers/druid/vine_trap_3.tscn"
 	  ],
 	  "cost": [
-		1,
-		1,
-		1
+		100,
+		135,
+		185
 	  ],
 	  "range": [
 		60,
-		67,
+		70,
 		80
 	  ],
 	  "attack_speed": [
 		4,
-		2,
-		4
+		4,
+		3
 	  ],
 	  "damage": [
-		1,
-		0.5,
-		0.5
+		2,
+		2,
+		2
 	  ]
 	},
 	"chipmunk": {
@@ -262,27 +262,27 @@
   "trap":{
 	"vine_trap_1":{
 	  "type": "blunt",
-	  "lifespan": 2,
-	  "pierce_cap": 3,
+	  "lifespan": 5,
+	  "pierce_cap": 5,
 	  "debuff_type": "none",
 	  "dot_ticks" : 0,
 	  "dot_damage" : 0,
 	 },
 	"vine_trap_2":{
 	  "type": "blunt",
-	  "lifespan": 2,
-	  "pierce_cap": 6,
+	  "lifespan": 9,
+	  "pierce_cap": 7,
 	  "debuff_type": "dot",
-	  "dot_ticks" : 4,
-	  "dot_damage" : 0.1,
+	  "dot_ticks" : 8,
+	  "dot_damage" : 0.25,
 	 },
 	"vine_trap_3":{
 	  "type": "blunt",
-	  "lifespan": 4,
-	  "pierce_cap": 50,
+	  "lifespan": 11,
+	  "pierce_cap": 5,
 	  "debuff_type": "dot",
-	  "dot_ticks" : 20,
-	  "dot_damage" : 0.08,
+	  "dot_ticks" : 12,
+	  "dot_damage" : 0.25,
 	 },
   },
   "enemy": {
@@ -353,6 +353,15 @@
 	  "xp" : 7,
 	  "money_drop" : 7,
 	  "resistance" : "none",
+	},
+	  "armor_mushroom" : {
+	  "speed" : 0.015, 
+	  "max_health" : 18,
+	  "base_damage_ratio" : 0.5,
+	  "xp" : 20,
+	  "money_drop" : 12,
+	  "resistance" : "energy",
+	  "resistance_percent" : 0.75,
 	},
   },
 }
