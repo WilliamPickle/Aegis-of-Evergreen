@@ -127,8 +127,8 @@
 	  ],
 	  "cost": [
 		85,
-		110,
-		155
+		115,
+		175
 	  ],
 	  "range": [
 		45,
@@ -250,8 +250,8 @@
 	},
 	"flytrap_melee_3": {
 	  "type": "energy",
-	  "splash_cap": 7,
-	  "debuff_percent": -0.5,
+	  "splash_cap": 5,
+	  "debuff_percent": -0.30,
 	  "debuff_duration": 1.2,
 	},
 	"god_atk": {
