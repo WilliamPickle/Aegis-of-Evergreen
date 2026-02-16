@@ -13,7 +13,7 @@ func start(tower : Attacker, start_rotation : float, target_enemy : Enemy, enemi
 	global_rotation = start_rotation - PI/2
 	play("default")
 	target_enemy.apply_damage(tower.cur_damage, type)
-	if not StatChanger.Type.NONE:
+	if not debuff_type == StatChanger.Type.NONE:
 		apply_debuff(tower, target_enemy, debuff_type)
 	enemies.erase(target_enemy)
 
@@ -22,7 +22,7 @@ func start(tower : Attacker, start_rotation : float, target_enemy : Enemy, enemi
 			var ran_index : int = randi() % enemies.size()
 			var chosen_enemy : Enemy = enemies.pop_at(ran_index)
 			chosen_enemy.apply_damage(tower.cur_damage, type)
-			if not StatChanger.Type.NONE:
+			if not debuff_type == StatChanger.Type.NONE:
 				apply_debuff(tower, chosen_enemy, debuff_type)
 		else:
 			break
