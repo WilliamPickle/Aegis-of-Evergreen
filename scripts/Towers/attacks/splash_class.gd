@@ -51,6 +51,9 @@ func on_met_target() -> void:
 		#enemies_to_dmg = distances.size()
 	print("\n","NEW SPLASH")
 	for i in range(enemies_to_dmg):
+		if !is_instance_valid(tower):
+			queue_free()
+			return
 		var distance = distances[i]
 		var cur_enemy : Enemy = sorted_enemies[distance]
 		var cur_zone : int

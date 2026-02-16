@@ -124,7 +124,6 @@ collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_fqrt3")
 data_resource = SubResource("Resource_y3v4d")
-level = null
 
 [node name="Image" type="AnimatedSprite2D" parent="."]
 position = Vector2(-5, -7)

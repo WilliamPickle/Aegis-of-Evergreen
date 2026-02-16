@@ -14,6 +14,7 @@ func _ready() -> void:
 		#queue_free()
 		#return
 	super._ready()
+	is_hero = true
 	tower_placed.connect(func():
 		#if does_exist:
 			#queue_free()
@@ -35,16 +36,14 @@ func place_tower() -> bool:
 		return false
 
 	if does_exist:
-		queue_free()
-		Tower_Placement.reset_data()
+		Tower_Placement.reset_data(true)
 		var notif = Error_Notification.new()
 		map_area.add_child(notif)
 		notif.send_notif(global_position,"max of 1 ranger")
 		return false
 
 	if !PlayerStats.purchase_item(cost):
-		queue_free()
-		Tower_Placement.reset_data()
+		Tower_Placement.reset_data(true)
 		var notif := Error_Notification.new()
 		map_area.add_child(notif)
 		notif.send_notif(global_position,"not enough funds")

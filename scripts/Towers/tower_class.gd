@@ -9,18 +9,19 @@ const MIN_MOUSE_POS := Vector2(-320,-180)
 const MAX_MOUSE_POS := Vector2(320,180)
 const CONTROLS_STATES = ControlHandler.ControlState
 const stat_type := StatChanger.Type
+const snapping : float = 2.0
 
 # Used to draw the hitbox of the selected tower
 static var current_tower : Tower
 
-# Turn to const once variable is finalized
-const snapping : float = 2.0
+var is_hero := false
 
 # Class shared vars
 static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))
 @export var data_resource : DataResource = DataResource.new()
 @onready var object_data = Game_Data[data_resource.class_type][data_resource.object]
-	# Tower class stats
+
+# Tower class stats
 @export var level : int = 0
 @onready var cost : float = object_data["cost"][level]
 @onready var range : float = object_data["range"][level]
@@ -118,8 +119,7 @@ func place_tower() -> bool:
 		return false
 		
 	if !PlayerStats.purchase_item(cost):
-		queue_free()
-		Tower_Placement.reset_data()
+		Tower_Placement.reset_data(true)
 		var notif := Error_Notification.new()
 		map_area.add_child(notif)
 		notif.send_notif(global_position,"not enough funds")

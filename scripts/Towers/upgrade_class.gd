@@ -99,8 +99,12 @@ func _sell_tower():
 	ControlHandler.current_states.erase(ControlHandler.ControlState.VIEWING_TOWER)
 	PlayerStats.cur_money += tower.sell_value
 	PlayerStats.emit_signal("money_changed")
-	if tower is Ranger:
+	if tower.is_hero:
 		tower.does_exist = false
+	#if tower is Ranger:
+		#tower.does_exist = false
+	#elif tower is Druid:
+		#tower.does_exist = false
 	tower.current_tower = null
 	tower.queue_free()
 	

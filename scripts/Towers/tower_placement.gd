@@ -49,10 +49,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			reset_data()
 
 	elif event.is_action("cancel_placement") and is_placing:
-		new_tower.queue_free()
-		reset_data()
+		reset_data(true)
 		
-static func reset_data() -> void:
+static func reset_data(delete_tower : bool = false) -> void:
+	if delete_tower:
+		new_tower.queue_free()
 	new_tower = null
 	is_placing = false
 	ControlHandler.current_states.erase(CONTROLS_STATES.PLACING_TOWER)
