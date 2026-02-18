@@ -20,9 +20,9 @@
 		["attack_speed","range"]
 	  ],
 	 "buff_multipliers":[
-		[-0.2],
-		[-0.2, 0.2],
-		[-0.4, 0.5]
+		[-0.15],
+		[-0.15, 0.15],
+		[-0.3, 0.3]
 	  ],
 	 "buff_duration": 7.5,
 	},
@@ -361,7 +361,7 @@
 	  "xp" : 20,
 	  "money_drop" : 12,
 	  "resistance" : "energy",
-	  "resistance_percent" : 0.75,
+	  "resistance_percent" : 0.5,
 	},
   },
 }
