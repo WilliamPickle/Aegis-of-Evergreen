@@ -49,7 +49,7 @@ func on_met_target() -> void:
 	
 	#if distances.size() < splash_cap:
 		#enemies_to_dmg = distances.size()
-	print("\n","NEW SPLASH")
+	#print("\n","NEW SPLASH")
 	for i in range(enemies_to_dmg):
 		if !is_instance_valid(tower):
 			queue_free()
@@ -64,7 +64,7 @@ func on_met_target() -> void:
 			cur_zone = 1
 		else:
 			cur_zone = 2
-		print("targeted:",distance,", Zone:", cur_zone, ", DMG:",tower.cur_damage * zone_damages[cur_zone], ", Raw Damage: ", tower.cur_damage)
+		#print("targeted:",distance,", Zone:", cur_zone, ", DMG:",tower.cur_damage * zone_damages[cur_zone], ", Raw Damage: ", tower.cur_damage)
 		cur_enemy.apply_damage(tower.cur_damage * zone_damages[cur_zone], type)
 		
 	$AnimatedSprite2D.visible = false

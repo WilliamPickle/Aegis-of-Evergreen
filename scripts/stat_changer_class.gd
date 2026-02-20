@@ -50,6 +50,7 @@ func apply_stat_changes():
 			target._attack_cooldown.wait_time = target._attack_cooldown.wait_time * (1 + percent_change) 
 		Type.RANGE:
 			target.range_collider.shape.radius = target.range_collider.shape.radius * (1 + percent_change)
+			target.queue_redraw()
 		Type.DOT:
 			timeout.disconnect(disable_stat_changes)
 			for i in range(duration):
@@ -67,6 +68,7 @@ func disable_stat_changes(timer):
 			target._attack_cooldown.wait_time = target.object_data["attack_speed"][target.level]
 		Type.RANGE:
 			target.range_collider.shape.radius = target.range
+			target.queue_redraw()
 	
 	
 	for _inflictor in target.status_applied_list:

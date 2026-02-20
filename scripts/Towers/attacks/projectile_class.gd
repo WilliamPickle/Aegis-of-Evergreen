@@ -55,20 +55,19 @@ func snap_to_enemy() -> void:
 	rotation = atan2(newPos.y, newPos.x)
 
 func on_hit(enemy : Enemy) -> void:
-	#if enemy == null:
-		#return
-	#enemy.cur_health -= tower.cur_damage
-	#enemy.health_changed.emit()
+	#print("damage: ", tower.cur_damage, ", range: ", tower.range, ", atk speed: ", tower._attack_cooldown)
 	if !is_instance_valid(tower):
 		queue_free()
-		return
-	
-	#print("damage: ", tower.cur_damage, ", range: ", tower.range, ", atk speed: ", tower._attack_cooldown)
-	if enemy.cur_health > 0:
+	elif enemy.cur_health > 0 and pierce_cap > 0:
 		enemy.apply_damage(tower.cur_damage, type)
 		pierce_cap -= 1
+	# To prevent the projectile from being seen after projectile's
+	# pierce cap is met
 	if pierce_cap <= 0:
 		queue_free()
+	
+
+
 ## This functions holds the logic for when the projectile
 ## has met its life span.
 func on_met_target() -> void:
