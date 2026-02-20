@@ -5,7 +5,7 @@ signal player_level_changed
 #signal upgraded_tower
 
 # Player Vars
-const StartingPlayerLevel: int = 5
+const StartingPlayerLevel: int = 1
 const XpThreshold: int = 1000
 var PlayerXp: int = 0
 var PlayerLevel: int = StartingPlayerLevel
@@ -16,10 +16,11 @@ var lvls_beaten = -1
 # Money Vars
 const DEFAULT_MONEY : Array = [
 	[50.0, 100.0, 200.0],
-	[150.0, 600.0, 700.0],
+	[150.0, 250.0, 700.0],
 	[800.0, 900.0, 1000.0],
 ]
-@onready var cur_money = DEFAULT_MONEY[1][0]
+@onready var cur_money = DEFAULT_MONEY[0][0]
+@onready var total_money_gained = cur_money
 var pity_money = 0
 
 func _ready() -> void:

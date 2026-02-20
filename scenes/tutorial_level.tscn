@@ -197,7 +197,7 @@ font = ExtResource("11_e7h5a")
 font_size = 24
 outline_color = Color(0.336608, 0.336608, 0.336608, 1)
 
-[node name="tutorial_level" type="Node2D" groups=["ui_buttons"]]
+[node name="tutorial_level" type="Node2D" groups=["ui_buttons", "upgrade_menus"]]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -534,9 +534,19 @@ offset_bottom = 284.0
 z_index = -1
 layout_mode = 0
 offset_left = -189.0
-offset_top = -503.0
+offset_top = -105.0
 offset_right = 1093.0
 offset_bottom = 126.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow6" type="TextureRect" parent="Dialogue/Placing/DialogueLabels/Label1/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -503.0
+offset_right = 1093.0
+offset_bottom = -105.0
 mouse_filter = 2
 texture = ExtResource("21_r3rh7")
 expand_mode = 1
@@ -2245,7 +2255,7 @@ offset_top = 6.0
 offset_right = 69.0
 offset_bottom = 30.0
 scale = Vector2(0.72, 0.72)
-text = "50.0
+text = "75.0
 "
 label_settings = SubResource("LabelSettings_6ym2e")
 

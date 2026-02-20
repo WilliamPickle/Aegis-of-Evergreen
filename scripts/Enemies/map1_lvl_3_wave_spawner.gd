@@ -28,7 +28,7 @@ func _on_start_lvl3() -> void:
 	start_wave_timer(45)
 	send_enemy(bush, 15, 0.5)
 	await delay(5)
-	await send_enemy(snail, 1, 1)
+	await send_enemy(snail, 2, 0.5)
 	
 	currently_sending = false
 	await wave_timer.timeout
@@ -38,7 +38,7 @@ func _on_start_lvl3() -> void:
 	start_wave_timer(50)
 	send_enemy(bush, 30, 0.2)
 	await delay(10)
-	await send_enemy(cow, 1, 1)
+	await send_enemy(cow, 2, 0.5)
 
 	currently_sending = false
 	await wave_timer.timeout
@@ -46,7 +46,7 @@ func _on_start_lvl3() -> void:
 
 	# wave 3
 	start_wave_timer(45)
-	await send_enemy(hornet, 8, 0.3)
+	await send_enemy(hornet, 12, 0.2)
 	await delay(4)
 	await send_enemy(squirrel, 16, 0.15)
 	
@@ -77,6 +77,8 @@ func _on_start_lvl3() -> void:
 	await send_enemy(hornet, 5, 0.2)
 	await delay(5)
 	await send_enemy(hornet, 5, 0.2)
+	await delay(5)
+	await send_enemy(squirrel, 10, 0.2)
 	
 	currently_sending = false
 	await wave_timer.timeout

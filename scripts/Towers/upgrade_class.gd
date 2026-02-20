@@ -49,10 +49,13 @@ const text_path := "ScrollContainer/VBoxContainer/Label"
 
 var types = ["First", "Last", "Strong", "Weak"]
 var cur_type : int = 0
+@onready var tree = get_tree()
 
 func _ready() -> void:
 	super._ready()
 	await tower.tower_placed
+	if tree.has_group("upgrade_menus"):
+		add_to_group("upgrade_menus")
 	if tower.global_position.x > 0:
 		offset = Vector2(-910,0)
 	for stat in tower_stats[type]:

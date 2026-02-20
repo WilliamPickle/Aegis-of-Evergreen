@@ -23,6 +23,7 @@ func continue_dialogue():
 	# After BeforeWave1 dialogue
 	elif dialogue_index == 3:
 		await wave_spawner.wave_timer.timeout
+		#Tower_Placement.reset_data(true)
 		$"Waves and Enemies/DialogueLabels/Label4".visibility_changed.connect(func():
 			for button in tree.get_nodes_in_group("ui_buttons"):
 				if button.name == "PauseButton":
@@ -77,7 +78,8 @@ func continue_dialogue():
 			
 		# note this signal doesn't trigger if a menu is already open
 		# and you upon the menu for a dif tower
-		await ControlHandler.tower_clicked_on
+		if not ControlHandler.ControlState.VIEWING_TOWER in ControlHandler.current_states:
+			await ControlHandler.tower_clicked_on
 		twr_highlight.visible = false
 		PlayerStats.cur_money += 125
 		PlayerStats.emit_signal("money_changed")
@@ -87,6 +89,9 @@ func continue_dialogue():
 	
 	
 	if dialogue_index < get_child_count():
+		#if ControlHandler.ControlState.PLACING_TOWER in ControlHandler.current_states:
+			#Tower_Placement.reset_data(true)
+			#print("tower in hand")
 		get_child(dialogue_index - 1).visible = false
 		get_child(dialogue_index).visible = true
 		get_child(dialogue_index).display_dialogue()

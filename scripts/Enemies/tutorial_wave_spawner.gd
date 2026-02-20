@@ -7,7 +7,7 @@ extends WaveSpawner
 func _ready() -> void:
 	super._ready()
 	max_waves = 3
-	wave_bonus_money = [0, 50, 80]
+	wave_bonus_money = [0, 75, 80]
 	wave1_dialogue.start_wave.connect(_on_start_wave1)
 	wave2_dialogue.start_wave.connect(_on_start_wave2)
 	wave3_dialogue.start_wave.connect(_on_start_wave3)

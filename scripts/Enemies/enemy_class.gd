@@ -105,6 +105,7 @@ func draw_health():
 		has_been_removed = true
 		PlayerStats.PlayerXp += xp
 		PlayerStats.cur_money += money_drop
+		PlayerStats.total_money_gained += money_drop
 		PlayerStats.emit_signal("xp_changed")
 		PlayerStats.emit_signal("money_changed")
 		emit_signal("removed")

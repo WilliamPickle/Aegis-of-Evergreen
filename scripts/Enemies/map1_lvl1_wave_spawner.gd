@@ -6,7 +6,7 @@ static var music_started = false
 
 func _ready() -> void:
 	super._ready()
-	if !music_started:
+	if !music_started and is_instance_valid(SceneLoader.root):
 		music_started = true
 		SceneLoader.root.emit_signal("gameplay_started")
 	lvl1_dialogue.start_wave.connect(_on_start_lvl1)
@@ -18,11 +18,7 @@ func _ready() -> void:
 func _on_start_lvl1() -> void:
 	# wave 1 - 30 cash gain
 	start_wave_timer(45)
-	await send_enemy(bush, 2, 0.5)
-	await delay(2)
-	await send_enemy(bush, 2, 0.5)
-	await delay(2)
-	await send_enemy(bush, 2, 0.5)
+	await send_enemy(bush, 4, 3)
 	
 	currently_sending = false
 	await wave_timer.timeout
@@ -30,9 +26,9 @@ func _on_start_lvl1() -> void:
 	
 	# wave 2 - 80 cash gain
 	start_wave_timer(45)
-	await send_enemy(bush, 8, 1)
+	await send_enemy(bush, 4, 1)
 	await delay(3)
-	await send_enemy(bush, 8, 1)
+	await send_enemy(bush, 4, 1)
 	
 	currently_sending = false
 	await wave_timer.timeout
@@ -40,9 +36,9 @@ func _on_start_lvl1() -> void:
 	
 	# wave 3 - 75 cash gain
 	start_wave_timer(45)
-	send_enemy(squirrel, 15, 0.2)
+	send_enemy(squirrel, 10, 0.2)
 	await delay(3)
-	await send_enemy(squirrel, 5, 1)
+	await send_enemy(squirrel, 4, 1)
 	
 	currently_sending = false
 	await wave_timer.timeout
@@ -50,9 +46,9 @@ func _on_start_lvl1() -> void:
 	
 	# wave 4 - 210 cash gain
 	start_wave_timer(60)
-	send_enemy(bush, 30, 0.5)
-	await delay(10)
-	await send_enemy(squirrel, 20, 0.5)
+	await send_enemy(bush, 20, 0.5)
+	await delay(6)
+	await send_enemy(squirrel, 30, 0.4)
 	
 	currently_sending = false
 	await wave_timer.timeout
@@ -60,11 +56,10 @@ func _on_start_lvl1() -> void:
 	
 	# wave 5 - 300 cash gain
 	start_wave_timer(3600)
-	send_enemy(cow, 3, 7)
-	await delay(6)
-	send_enemy(bush, 30, 0.2)
+	await send_enemy(cow, 2, 0.5)
+	send_enemy(bush, 20, 0.2)
 	await delay(1)
-	await send_enemy(squirrel, 25, 1)
+	await send_enemy(squirrel, 40, 0.75)
 	
 	currently_sending = false
 	await wave_timer.timeout

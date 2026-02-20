@@ -30,7 +30,7 @@ var enemy_count: int = 0
 var currently_sending: bool = false
 var final_wave_started: bool = false
 var max_waves = 5
-var wave_bonus_money: Array[float] = [0, 50, 60, 60, 80]
+var wave_bonus_money: Array[float] = [0, 30, 75, 75, 75]
 var wave := 1
 
 # to prevent win condition being called from multiple enemy deaths
@@ -88,6 +88,7 @@ func update_wave():
 	if final_wave_started and enemy_count <= 0:
 		if won_level:
 			return
+		print("Total Cash Accumulated: $", PlayerStats.total_money_gained)
 		won_level = true
 		Engine.time_scale = 1
 		pause_menu.visible = false
@@ -107,6 +108,7 @@ func update_wave():
 		SceneLoader.load_scene("res://scenes/UI/win_ui.tscn", "win_ui")
 		PauseUi.toggle_pause(SceneLoader._current_scenes["win_ui"])
 		wave_timer.disconnect("timeout", update_wave)
+		print(PlayerStats.PlayerXp)
 	
 	#print("Final wave? ", final_wave_started)
 		
@@ -139,7 +141,9 @@ func start_wave_timer(time):
 func signify_wave_end():
 	wave += 1
 	PlayerStats.cur_money += wave_bonus_money[wave - 1]
+	PlayerStats.total_money_gained += wave_bonus_money[wave - 1]
 	PlayerStats.emit_signal("money_changed")
+	print("Total Cash Accumulated: $", PlayerStats.total_money_gained)
 	
 	if wave == max_waves:
 		final_wave_started = true
@@ -148,5 +152,5 @@ func signify_wave_end():
 		var notif := Error_Notification.new()
 		get_child(2).add_child(notif)
 		notif.send_notif(Vector2(540,335),"wave_cleared", 1, "wave_clear")
-		print(notif.global_position)
+		#print(notif.global_position)
 	wave_label.text = "Wave " + str(wave) + "/" + str(max_waves)
