@@ -68,7 +68,7 @@
 	  "cost": [
 		50,
 		75,
-		140
+		130
 	  ],
 	  "range": [
 		60,
@@ -97,8 +97,8 @@
 	  ],
 	  "cost": [
 		60,
-		80,
-		150
+		85,
+		160
 	  ],
 	  "range": [
 		80,
@@ -107,13 +107,13 @@
 	  ],
 	  "attack_speed": [
 		3,
-		4.5,
-		4
+		4,
+		3
 	  ],
 	  "damage": [
 		2,
-		4,
-		6
+		5,
+		8
 	  ]
 	},
 	"flytrap": {
@@ -238,7 +238,7 @@
 	  "despawn_distance" : 30,
 	  "pierce_cap": 1,
 	  "pierce_damage": 0.3,
-	  "splash_cap": 8,
+	  "splash_cap": 6,
 	  "debuff_type": "slowness"
 	}
   }, 
@@ -314,7 +314,7 @@
 	  "max_health" : 60,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 50,
-	  "money_drop" : 50,
+	  "money_drop" : 30,
 	  "resistance" : "none"
 	},
 	"snail" : {
@@ -322,18 +322,18 @@
 	  "max_health" : 30,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 30,
-	  "money_drop" : 24,
+	  "money_drop" : 15,
 	  "resistance" : "blunt",
 	  "resistance_percent" : 0.6
 	},
 	"beetle" : {
 	  "speed" : 0.02, 
-	  "max_health" : 40,
+	  "max_health" : 50,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 80,
 	  "money_drop" : 45,
 	  "resistance" : "blunt",
-	  "resistance_percent" : 0.5
+	  "resistance_percent" : 0.65
 	},
 	"hornet" : {
 	  "speed" : 0.035, 
