@@ -88,6 +88,7 @@ func update_wave():
 	if final_wave_started and enemy_count <= 0:
 		if won_level:
 			return
+		print("entered wave_spawner update thingy")
 		print("Total Cash Accumulated: $", PlayerStats.total_money_gained)
 		won_level = true
 		Engine.time_scale = 1

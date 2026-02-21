@@ -10,8 +10,8 @@ extends MarginContainer
 func _ready() -> void:
 	PauseUi.secondary_ui_open.connect(_on_icon_pressed)
 	if tree.has_group("ui_buttons"):
-		#print("uh boss we found the group")
-		#print(tree.get_nodes_in_group("ui_buttons"))
+		print("uh boss we found the group")
+		print(tree.get_nodes_in_group("ui_buttons"))
 		for button in button_bar.get_children():
 			button.disabled = true
 			button.add_to_group("ui_buttons")

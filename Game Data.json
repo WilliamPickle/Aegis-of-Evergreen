@@ -340,8 +340,8 @@
 	  "max_health" : 10,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 25,
-	  "money_drop" : 15,
-	  "resistance" : "blunt",
+	  "money_drop" : 10,
+	  "resistance" : "none",
 	  "resistance_percent" : 0.9,
 	},
 	"queen_hornet" : {
