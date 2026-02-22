@@ -2282,6 +2282,38 @@ text = "75.0
 "
 label_settings = SubResource("LabelSettings_6ym2e")
 
+[node name="Skip Button" type="CanvasLayer" parent="."]
+script = ExtResource("10_1npmj")
+tint_during_pause = true
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="Skip Button" type="Button" parent="Skip Button"]
+offset_left = 1004.0
+offset_top = 10.0
+offset_right = 1132.0
+offset_bottom = 70.0
+theme_override_colors/font_pressed_color = Color(0.589095, 0.589096, 0.589095, 1)
+theme_override_fonts/font = ExtResource("11_e7h5a")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b2nau")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r0y8g")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1npmj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e7h5a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0dl17")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bqfht")
+text = "Skip"
+script = ExtResource("32_a6d6p")
+file_path = "res://scenes/level_1.tscn"
+new_scene = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="ClickMask" type="Control" parent="Skip Button"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
 [node name="ClickMasks" type="CanvasLayer" parent="."]
 script = ExtResource("10_1npmj")
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
@@ -2494,35 +2526,3 @@ offset_bottom = 20.0
 mouse_filter = 2
 texture = ExtResource("22_j0wqo")
 expand_mode = 1
-
-[node name="Skip Button" type="CanvasLayer" parent="."]
-script = ExtResource("10_1npmj")
-tint_during_pause = true
-metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
-
-[node name="Skip Button" type="Button" parent="Skip Button"]
-offset_left = 1004.0
-offset_top = 10.0
-offset_right = 1132.0
-offset_bottom = 70.0
-theme_override_colors/font_pressed_color = Color(0.589095, 0.589096, 0.589095, 1)
-theme_override_fonts/font = ExtResource("11_e7h5a")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_b2nau")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_r0y8g")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1npmj")
-theme_override_styles/hover = SubResource("StyleBoxTexture_e7h5a")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_0dl17")
-theme_override_styles/normal = SubResource("StyleBoxTexture_bqfht")
-text = "Skip"
-script = ExtResource("32_a6d6p")
-file_path = "res://scenes/level_1.tscn"
-new_scene = true
-metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
-
-[node name="ClickMask" type="Control" parent="Skip Button"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 720.0
