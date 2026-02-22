@@ -21,8 +21,8 @@
 	  ],
 	 "buff_multipliers":[
 		[-0.15],
-		[-0.15, 0.1],
-		[-0.25, 0.2]
+		[-0.15, 0.15],
+		[-0.25, 0.25]
 	  ],
 	 "buff_duration": 7.5,
 	},
@@ -68,7 +68,7 @@
 	  "cost": [
 		50,
 		75,
-		130
+		140
 	  ],
 	  "range": [
 		60,
@@ -112,8 +112,8 @@
 	  ],
 	  "damage": [
 		2,
-		5,
-		8
+		4,
+		7
 	  ]
 	},
 	"flytrap": {
@@ -126,8 +126,8 @@
 		"res://scenes/Towers/flytrap/flytrap_melee_3.tscn"
 	  ],
 	  "cost": [
-		85,
-		115,
+		75,
+		100,
 		175
 	  ],
 	  "range": [
@@ -136,14 +136,14 @@
 		65
 	  ],
 	  "attack_speed": [
-		1.8,
-		1.4,
-		0.75
+		1.7,
+		1.25,
+		0.70
 	  ],
 	  "damage": [
-		2,
 		3,
-		3
+		3.5,
+		4
 	  ]
 	},
 	"god": {
@@ -218,7 +218,7 @@
 	  "despawn_distance" : 20,
 	  "pierce_cap": 2,
 	  "pierce_damage": 0.5,
-	  "splash_cap": 5,
+	  "splash_cap": 4,
 	  "debuff_type": "slowness"
 	},
 	"bee_proj_3": {
@@ -238,7 +238,7 @@
 	  "despawn_distance" : 30,
 	  "pierce_cap": 1,
 	  "pierce_damage": 0.3,
-	  "splash_cap": 6,
+	  "splash_cap": 5,
 	  "debuff_type": "slowness"
 	}
   }, 
@@ -246,13 +246,13 @@
 	"flytrap_melee_1": {
 	  "type": "energy",
 	  "splash_cap": 3,
-	  "debuff_percent": -0.15,
+	  "debuff_percent": -0.10,
 	  "debuff_duration": 0.9,
 	},
 	"flytrap_melee_2": {
 	  "type": "energy",
 	  "splash_cap": 5,
-	  "debuff_percent": -0.30,
+	  "debuff_percent": -0.20,
 	  "debuff_duration": 0.9,
 	},
 	"flytrap_melee_3": {
@@ -337,12 +337,12 @@
 	},
 	"hornet" : {
 	  "speed" : 0.035, 
-	  "max_health" : 10,
+	  "max_health" : 9,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 25,
 	  "money_drop" : 10,
 	  "resistance" : "none",
-	  "resistance_percent" : 0.9,
+	  "resistance_percent" : 0.8,
 	},
 	"queen_hornet" : {
 	  "speed" : 0.015, 
