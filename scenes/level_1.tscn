@@ -1,9 +1,10 @@
-[gd_scene load_steps=58 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=59 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="2_go7sj"]
 [ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="3_5xbjy"]
 [ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="3_7gny6"]
+[ext_resource type="Script" uid="uid://78nctyr55g08" path="res://scripts/fish_script.gd" id="3_iw4em"]
 [ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="4_2aecg"]
 [ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="5_6dial"]
 [ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="6_7nomh"]
@@ -110,7 +111,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mmfjm")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
@@ -213,10 +214,25 @@ script = ExtResource("7_go7sj")
 
 [node name="fish" type="AnimatedSprite2D" parent="MapAssets"]
 z_index = 1
-position = Vector2(39, -81)
+position = Vector2(30, -75)
+scale = Vector2(1.1, 1.1)
 sprite_frames = SubResource("SpriteFrames_k8ld0")
 autoplay = "default"
-frame_progress = 0.737408
+frame = 10
+frame_progress = 0.83315
+script = ExtResource("3_iw4em")
+x_min_range_scale = 0.8
+x_max_range_scale = 1.1
+y_min_range_scale = 0.8
+y_max_range_scale = 1.1
+x_min_range_position = 35.0
+x_max_range_position = 45.0
+y_min_range_position = -75.0
+y_max_range_position = -90.0
+min_timer = 0.1
+max_timer = 0.5
+
+[node name="Timer" type="Timer" parent="MapAssets/fish"]
 
 [node name="map" type="Sprite2D" parent="MapAssets"]
 texture = ExtResource("2_go7sj")
@@ -244,6 +260,27 @@ metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="MapAssets"]
 texture = ExtResource("6_7nomh")
+
+[node name="fish2" type="AnimatedSprite2D" parent="MapAssets"]
+z_index = 1
+position = Vector2(-85, -144)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_k8ld0")
+autoplay = "default"
+frame = 10
+script = ExtResource("3_iw4em")
+x_min_range_scale = 0.5
+x_max_range_scale = 0.7
+y_min_range_scale = 0.5
+y_max_range_scale = 0.7
+x_min_range_position = -85.0
+x_max_range_position = -95.0
+y_min_range_position = -140.0
+y_max_range_position = -160.0
+min_timer = 0.1
+max_timer = 0.5
+
+[node name="Timer" type="Timer" parent="MapAssets/fish2"]
 
 [node name="EnemyPath2" type="Path2D" parent="." groups=["enemy_path"]]
 y_sort_enabled = true
