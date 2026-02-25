@@ -21,7 +21,8 @@ const cards : Dictionary = {
 	"chipmunk" = preload("res://assets/sprites/towers/tower cards/chipmunk_card.png"),
 	"bee" = preload("res://assets/sprites/towers/tower cards/bee_card.png"),
 	"flytrap" = preload("res://assets/sprites/towers/tower cards/fly_trap_card.png"),
-	"god" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png")
+	"flower" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
+	"god" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
 }
 
 # card unlocks based on level

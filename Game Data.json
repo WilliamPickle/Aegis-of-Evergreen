@@ -176,6 +176,46 @@
 		500
 	  ]
 	},
+	"flower": {
+	  "type": "Support",
+	  "tower_fpath": "res://scenes/Towers/flower/flower.tscn",
+	  "card_fpath": "res://assets/sprites/towers/base_tower_card.png",
+	  "cost": [
+		1,
+		1,
+		1
+	  ],
+	  "range": [
+		60,
+		75,
+		100
+	  ],
+	  "attack_speed": [
+		1,
+		1,
+		1
+	  ],
+	  "enemy_cap": [
+		10,
+		10,
+		67
+	  ],
+	  "buff_type": [
+		"money_mult",
+		"money_mult",
+		"money_mult",
+	  ],
+	  "buff_multiplier":[
+		0.15,
+		0.5,
+		1
+	  ],
+	  "buff_duration": [
+		2,
+		5,
+		10
+	  ],
+	},
   },
   "projectile": {
 	"chipmunk_proj": {

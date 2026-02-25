@@ -22,7 +22,7 @@ var targeted_enemy : Area2D
 
 func _ready() -> void:
 	super._ready()
-	_attack_cooldown.wait_time = object_data["attack_speed"][level]
+	#_attack_cooldown.wait_time = object_data["attack_speed"][level]
 	cur_damage = damage
 	_attack_cooldown.timeout.connect(update_enemy_list)
 	# Once tower is placed we can start attacking
@@ -32,7 +32,7 @@ func _ready() -> void:
 func on_placement():
 	sprite.play("idle_"+str(level))
 	_attack_cooldown.autostart = true
-	_attack_cooldown.start()
+	_attack_cooldown.start(object_data["attack_speed"][level])
 
 # This is to be defined by a sub class
 func attack():
@@ -74,7 +74,7 @@ func upgrade_tower() -> void:
 	damage = object_data["damage"][level]
 	cur_damage = damage
 	attack_fpath = object_data["attack_fpath"][level]
-	_attack_cooldown.wait_time = object_data["attack_speed"][level]
+	_attack_cooldown.start(object_data["attack_speed"][level])
 
 ## When tower checks for enemies in its range, and detects 0,
 ## the tower will use defualt area_entered signal.

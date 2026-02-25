@@ -25,7 +25,7 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 @export var level : int = 0
 @onready var cost : float = object_data["cost"][level]
 @onready var range : float = object_data["range"][level]
-@onready var sell_back_ratio = 0.5
+const sell_back_ratio : float = 0.5
 @onready var sell_value : float = floori(object_data["cost"][level] * sell_back_ratio / 1)
 var total_spent = 0
 
@@ -163,6 +163,12 @@ func upgrade_tower() -> void:
 	range = object_data["range"][level]
 	range_collider.shape.radius = range
 	queue_redraw()
+
+
+static func reset_hero_data() -> void:
+	Ranger.does_exist = false
+	Druid.does_exist = false
+
 
 # When tower is first intantiated, the tower follows mouse position
 # and updates draw().
