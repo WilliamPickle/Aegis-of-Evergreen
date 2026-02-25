@@ -25,6 +25,7 @@ func _ready() -> void:
 		sprite.play("idle_"+str(level))
 		_attack_cooldown.autostart = true
 		_attack_cooldown.start(object_data["attack_speed"][level])
+		_attack_cooldown.timeout.connect(_enemy_logic)
 		_attack_cooldown.timeout.connect(_support_actions)
 	)
 
@@ -43,6 +44,8 @@ func _support_actions():
 	var total_time = Time.get_ticks_usec() - start_time
 	print("Took total of: ", total_time," microseconds")
 	
+func _enemy_logic():
+	print("Hey ran too!!!!")
 	
 func upgrade_tower() -> void:
 	super()

@@ -21,6 +21,7 @@ SceneLoader="*res://scripts/Global Scripts/scene_loader.gd"
 ControlHandler="*res://scripts/Global Scripts/control_handler.gd"
 PauseUi="*res://scripts/Global Scripts/pause_ui.gd"
 PlayerStats="*res://scripts/Global Scripts/player_stats.gd"
+WeatherController="*res://scripts/weather_controller.gd"
 
 [display]
 
