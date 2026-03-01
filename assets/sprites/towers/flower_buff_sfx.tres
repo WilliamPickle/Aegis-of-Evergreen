@@ -1,0 +1,147 @@
+[gd_resource type="SpriteFrames" load_steps=21 format=3 uid="uid://dt2inaqosxpnm"]
+
+[ext_resource type="Texture2D" uid="uid://d4nl6ie4fuoqd" path="res://assets/sprites/towers/flower_spritesheet.png" id="1_lae53"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k1wa"]
+atlas = ExtResource("1_lae53")
+region = Rect2(0, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c7ck"]
+atlas = ExtResource("1_lae53")
+region = Rect2(50, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekxsv"]
+atlas = ExtResource("1_lae53")
+region = Rect2(100, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1fgo"]
+atlas = ExtResource("1_lae53")
+region = Rect2(150, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp7j7"]
+atlas = ExtResource("1_lae53")
+region = Rect2(200, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge33r"]
+atlas = ExtResource("1_lae53")
+region = Rect2(250, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3ub4"]
+atlas = ExtResource("1_lae53")
+region = Rect2(300, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwjov"]
+atlas = ExtResource("1_lae53")
+region = Rect2(350, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xecf4"]
+atlas = ExtResource("1_lae53")
+region = Rect2(400, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flb4o"]
+atlas = ExtResource("1_lae53")
+region = Rect2(450, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bekxh"]
+atlas = ExtResource("1_lae53")
+region = Rect2(500, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6qdg"]
+atlas = ExtResource("1_lae53")
+region = Rect2(550, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1r03"]
+atlas = ExtResource("1_lae53")
+region = Rect2(600, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6ua4"]
+atlas = ExtResource("1_lae53")
+region = Rect2(650, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxye7"]
+atlas = ExtResource("1_lae53")
+region = Rect2(700, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yduwc"]
+atlas = ExtResource("1_lae53")
+region = Rect2(750, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwqcr"]
+atlas = ExtResource("1_lae53")
+region = Rect2(800, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw1dj"]
+atlas = ExtResource("1_lae53")
+region = Rect2(850, 350, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuly2"]
+atlas = ExtResource("1_lae53")
+region = Rect2(900, 350, 50, 50)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k1wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c7ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekxsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1fgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp7j7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge33r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3ub4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwjov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xecf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flb4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bekxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6qdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1r03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6ua4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxye7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yduwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwqcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw1dj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuly2")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]

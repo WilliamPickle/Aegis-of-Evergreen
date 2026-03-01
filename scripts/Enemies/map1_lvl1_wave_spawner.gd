@@ -18,6 +18,7 @@ func _ready() -> void:
 func _on_start_lvl1() -> void:
 	# wave 1 - 30 cash gain
 	start_wave_timer(45)
+	# send_enemy(cow, 10, 5) # ONLY FOR TESTING
 	await send_enemy(bush, 4, 3)
 	
 	currently_sending = false

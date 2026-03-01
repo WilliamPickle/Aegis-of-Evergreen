@@ -90,9 +90,9 @@ func disable_stat_changes(delete_timer : bool = true):
 func update_stat_multiplier(percent_change_change : float) -> void:
 	if _is_debuff and not _has_clensed and target is Tower:
 		_has_clensed = true
-		paused = true
+		#paused = true
 		disable_stat_changes(false)
-		#percent_change *= weaken_percent
+		percent_change *= (1 + percent_change_change)
 		apply_stat_changes(false)
 		paused = false
 
