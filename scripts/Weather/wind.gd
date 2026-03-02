@@ -1,6 +1,6 @@
 extends Node2D
 
-const MAX_TRAVEL_DISTANCE = 100
+const MAX_TRAVEL_DISTANCE = 200
 #@onready var tween := create_tween()
 @onready var animation := $AnimatedSprite2D
 var r = RandomNumberGenerator.new()
