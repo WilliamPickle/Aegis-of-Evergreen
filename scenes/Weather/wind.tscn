@@ -1,0 +1,102 @@
+[gd_scene load_steps=16 format=3 uid="uid://cioouk7npsfg1"]
+
+[ext_resource type="Script" uid="uid://b4e5h1dhfjg18" path="res://scripts/Weather/wind.gd" id="1_0ddaj"]
+[ext_resource type="Texture2D" uid="uid://ytrdx52muy7g" path="res://assets/sprites/weather/wind_spritesheett.png" id="2_jnupo"]
+[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="3_anglj"]
+[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="4_jnupo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pjs4"]
+atlas = ExtResource("2_jnupo")
+region = Rect2(0, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdxq3"]
+atlas = ExtResource("2_jnupo")
+region = Rect2(75, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp7ic"]
+atlas = ExtResource("2_jnupo")
+region = Rect2(150, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gc1k"]
+atlas = ExtResource("2_jnupo")
+region = Rect2(225, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d1ig"]
+atlas = ExtResource("2_jnupo")
+region = Rect2(300, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvd6k"]
+atlas = ExtResource("2_jnupo")
+region = Rect2(375, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4fq4"]
+atlas = ExtResource("2_jnupo")
+region = Rect2(450, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mn6e"]
+atlas = ExtResource("2_jnupo")
+region = Rect2(525, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d7li"]
+atlas = ExtResource("2_jnupo")
+region = Rect2(600, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwpmi"]
+atlas = ExtResource("2_jnupo")
+region = Rect2(675, 0, 75, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hngin"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pjs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdxq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp7ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gc1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d1ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvd6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4fq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mn6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d7li")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwpmi")
+}],
+"loop": false,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="Wind" type="Node2D"]
+script = ExtResource("1_0ddaj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 200
+sprite_frames = SubResource("SpriteFrames_hngin")
+autoplay = "default"
+frame = 9
+frame_progress = 1.0
+
+[node name="map" type="Sprite2D" parent="."]
+texture = ExtResource("3_anglj")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("4_jnupo")
