@@ -24,13 +24,7 @@ var target_towers : Array[Tower]
 
 func _ready() -> void:
 	super()
-	tower_placed.connect(func():
-		sprite.play("idle_"+str(level))
-		_attack_cooldown.autostart = true
-		_attack_cooldown.start(0.5)
-		#_attack_cooldown.timeout.connect(_enemy_logic)
-		_attack_cooldown.timeout.connect(_support_actions)
-	)
+	tower_placed.connect(on_placement)
 
 func _support_actions():
 	var start_time = Time.get_ticks_usec()
@@ -59,7 +53,6 @@ func _tower_logic(tower_list : Array[Tower]) -> void:
 		)
 		for child in tower.get_children():
 			if child is StatChanger:
-				print("encountered the thing")
 				child.update_stat_multiplier(clense_percent)
 	
 func _enemy_logic(enemy_list : Array[Enemy]) -> void:
@@ -67,7 +60,14 @@ func _enemy_logic(enemy_list : Array[Enemy]) -> void:
 	for i in range(enemies_to_effect):
 		var money_stat = StatChanger.new()
 		money_stat.initialize_variables(enemy_list[i], "flower", MONEY_MULT, buff_multiplier, buff_duration)
-	
+
+func on_placement() -> void:
+	_attack_cooldown.autostart = true
+	_attack_cooldown.start(object_data["attack_speed"][level])
+	_attack_cooldown.timeout.connect(_support_actions)
+	super()
+
+
 func upgrade_tower() -> void:
 	super()
 	sprite.play("idle_" + str(level))
@@ -75,3 +75,4 @@ func upgrade_tower() -> void:
 	buff_multiplier = object_data["buff_multiplier"][level]
 	buff_duration = object_data["buff_duration"][level]
 	clense_percent = object_data["clense_percent"][level]
+	_attack_cooldown.start(object_data["attack_speed"][level])

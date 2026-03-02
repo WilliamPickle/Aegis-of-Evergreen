@@ -20,7 +20,7 @@ func _on_start_lvl1() -> void:
 	start_wave_timer(45)
 	# send_enemy(cow, 10, 5) # ONLY FOR TESTING
 	await send_enemy(bush, 4, 3)
-	
+	WeatherController.spawn_rain(20,-0.5, get_parent().get_node("WeatherPlacement"))
 	currently_sending = false
 	await wave_timer.timeout
 	signify_wave_end()

@@ -29,10 +29,10 @@ func _ready() -> void:
 	tower_placed.connect(on_placement)
 
 
-func on_placement():
-	sprite.play("idle_"+str(level))
+func on_placement() -> void:
 	_attack_cooldown.autostart = true
 	_attack_cooldown.start(object_data["attack_speed"][level])
+	super()
 
 # This is to be defined by a sub class
 func attack():
