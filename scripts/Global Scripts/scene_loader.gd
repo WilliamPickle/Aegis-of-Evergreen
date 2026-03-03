@@ -5,7 +5,7 @@ extends Node2D
 var root
 var _current_scenes = {}
 
-# Main scenes will only be main_menu, level_1, level_2, level_3.
+# Main scenes will only be main_menu, level_1, level_2, level_3.z
 var current_main_scene
 
 # For keeping track of whether or not tint_scene() is already in use by another scene

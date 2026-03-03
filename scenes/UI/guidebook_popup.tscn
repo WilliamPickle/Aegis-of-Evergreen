@@ -1,0 +1,84 @@
+[gd_scene load_steps=19 format=3 uid="uid://b7t00txf1d4ho"]
+
+[ext_resource type="Texture2D" uid="uid://crilbiymnx24g" path="res://assets/sprites/icons and buttons/tutorial_button.png" id="1_g02m8"]
+[ext_resource type="Texture2D" uid="uid://cuoh3a2alg7g1" path="res://assets/sprites/icons and buttons/guidebook_button_highlight.png" id="2_3kli4"]
+[ext_resource type="Texture2D" uid="uid://q067sl8ylw1e" path="res://assets/sprites/icons and buttons/guidebook_button.png" id="3_c225a"]
+[ext_resource type="Script" uid="uid://bhtbpai225y2v" path="res://scripts/UI/guidebook_popup.gd" id="4_g02m8"]
+[ext_resource type="Texture2D" uid="uid://1u75f14jex4" path="res://assets/sprites/icons and buttons/exit_button.png" id="5_3kli4"]
+[ext_resource type="Texture2D" uid="uid://chf6w8x3cuijp" path="res://assets/sprites/icons and buttons/exit_button_highlight.png" id="5_c225a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndh63"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_65sxm"]
+texture = ExtResource("1_g02m8")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ar7fx"]
+texture = ExtResource("2_3kli4")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rocvo"]
+texture = ExtResource("2_3kli4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fc3tc"]
+texture = ExtResource("2_3kli4")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v2dd5"]
+texture = ExtResource("3_c225a")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p7cfl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pf4bj"]
+texture = ExtResource("5_c225a")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2h1la"]
+texture = ExtResource("5_c225a")
+modulate_color = Color(0.686275, 0.686275, 0.686275, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5pssb"]
+texture = ExtResource("5_c225a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_54dmf"]
+texture = ExtResource("5_3kli4")
+modulate_color = Color(0.687215, 0.687215, 0.687215, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c225a"]
+texture = ExtResource("5_3kli4")
+
+[node name="GuidebookPopup" type="Button" node_paths=PackedStringArray("timer")]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 60.0
+offset_bottom = 60.0
+scale = Vector2(1.2, 1.2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxTexture_ndh63")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_65sxm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ar7fx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rocvo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fc3tc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_v2dd5")
+script = ExtResource("4_g02m8")
+timer = NodePath("Timer")
+file_path = "res://scenes/UI/survival_guide_menu.tscn"
+scene_scale = 2.0
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = 46.6667
+offset_top = -3.33333
+offset_right = 66.6667
+offset_bottom = 16.6667
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p7cfl")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_pf4bj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_2h1la")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5pssb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_54dmf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c225a")
