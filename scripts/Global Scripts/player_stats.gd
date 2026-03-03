@@ -2,7 +2,10 @@ extends Node
 signal xp_changed
 signal money_changed
 signal player_level_changed
-#signal upgraded_tower
+
+# Signals for other scripts aside from tower to know when an action occured
+signal gtower_placed(tower : Tower)
+signal upgraded_tower(tower : Tower)
 
 # Player Vars
 const StartingPlayerLevel: int = 3

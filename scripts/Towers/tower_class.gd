@@ -62,8 +62,9 @@ func _ready() -> void:
 	
 	button.pressed.connect(draw_hitboxes)
 	current_tower = self
-	set_collision_layer_value(3, true)
+	#set_collision_layer_value(8, true)
 	set_collision_layer_value(1, false)
+	#set_collision_layer_value(3, false)
 
 
 func _draw() -> void:
@@ -154,7 +155,15 @@ func disable_placement() -> void:
 	tower_placed.emit()
 
 
+func on_placement() -> void:
+	sprite.play("idle_"+str(level))
+	#set_collision_layer_value(8, false)
+	#set_collision_layer_value(3, true)
+	PlayerStats.gtower_placed.emit(self)
+
+
 func upgrade_tower() -> void:
+	PlayerStats.upgraded_tower.emit(self)
 	total_spent += cost
 	sell_value = floori(total_spent * sell_back_ratio / 1)
 	level += 1
