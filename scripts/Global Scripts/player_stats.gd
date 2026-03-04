@@ -8,7 +8,7 @@ signal gtower_placed(tower : Tower)
 signal upgraded_tower(tower : Tower)
 
 # Player Vars
-const StartingPlayerLevel: int = 3
+const StartingPlayerLevel: int = 0
 const XpThreshold: int = 1000
 var PlayerXp: int = 0
 var PlayerLevel: int = StartingPlayerLevel
