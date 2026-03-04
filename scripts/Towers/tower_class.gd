@@ -47,6 +47,7 @@ var can_draw := true
 # This is to track who's applied a status effect
 # on the tower. Makes sure effects don't stack
 var status_applied_list = []
+var weather_statuses : Dictionary[String, StatChanger]
 
 func _ready() -> void:
 	# contact_monitor = true

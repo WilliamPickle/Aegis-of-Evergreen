@@ -88,15 +88,18 @@ func disable_stat_changes(delete_timer : bool = true):
 		queue_free()
 	
 func update_stat_multiplier(percent_change_change : float) -> void:
-	if _is_debuff and not _has_clensed and target is Tower:
-		_has_clensed = true
-		disable_stat_changes(false)
-		percent_change *= (1 + percent_change_change)
-		apply_stat_changes(false)
-	elif target is Enemy:
-		disable_stat_changes(false)
-		percent_change *= (1 + percent_change_change)
-		apply_stat_changes(false)
+	#if _is_debuff and not _has_clensed and target is Tower:
+		#_has_clensed = true
+		#disable_stat_changes(false)
+		#percent_change *= (1 + percent_change_change)
+		#apply_stat_changes(false)
+	#elif target is Enemy:
+		#disable_stat_changes(false)
+		#percent_change *= (1 + percent_change_change)
+		#apply_stat_changes(false)
+	disable_stat_changes(false)
+	percent_change *= (1 + percent_change_change)
+	apply_stat_changes(false)
 
 func initialize_variables(new_target, new_inflictor: String, new_stat : Type, new_percent_change: float, new_duration: float, is_debuff : bool = false) -> void:
 	target = new_target
