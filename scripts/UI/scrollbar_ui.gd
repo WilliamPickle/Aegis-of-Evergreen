@@ -14,6 +14,13 @@ const normal_color = Color(0,0,0,0)
 const hover_color = Color(1,1,1,1)
 @onready var game_data = JSON.parse_string(FileAccess.get_file_as_string("res://Game Data.json"))
 
+# guidebook popup vars
+var guidebook_popup := preload("res://scenes/UI/guidebook_popup.tscn")
+
+const ally_guidebook_pgs : Dictionary = {
+	"ranger" : 0,
+}
+
 # add any tower card here
 const cards : Dictionary = { 
 	"ranger" = preload("res://assets/sprites/towers/tower cards/ranger_card_2.png"),
@@ -93,3 +100,18 @@ func add_card(tower):
 	new_card.add_theme_color_override("font_color", normal_color)
 	new_card.add_theme_color_override("font_hover_color", hover_color)
 	new_card.add_theme_color_override("font_hover_pressed_color", hover_color)
+
+func show_guidebook_popup(tower):
+	var tree = get_tree()
+	var noti_container = null
+	if tree.has_group("noti_vbox"):
+		for node in tree.get_nodes_in_group("noti_vbox"):
+			if node.name == "GuidebookNotis":
+				noti_container = node
+		var notification = guidebook_popup.instantiate()
+		noti_container.add_child(notification)
+		notification.page_index = 1
+		#print("tried adding noti")
+	else:
+		#print("couldnt find noti container")
+		return

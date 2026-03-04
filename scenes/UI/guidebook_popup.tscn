@@ -70,6 +70,7 @@ metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 wait_time = 3.0
 
 [node name="Button" type="Button" parent="."]
+modulate = Color(1, 0.375096, 0.491534, 1)
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 offset_left = 46.6667

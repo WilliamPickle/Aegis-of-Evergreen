@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bly8owxtaisdq"]
+[gd_scene load_steps=58 format=3 uid="uid://bly8owxtaisdq"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_bjw4u"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_1rxxv"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="26_xgc1e"]
 [ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="27_04pdi"]
 [ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="28_ddneo"]
+[ext_resource type="PackedScene" uid="uid://b7t00txf1d4ho" path="res://scenes/UI/guidebook_popup.tscn" id="29_1rxxv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("2_1rxxv")
@@ -600,3 +601,21 @@ offset_bottom = 30.0
 scale = Vector2(0.72, 0.72)
 text = "150"
 label_settings = SubResource("LabelSettings_n7fpp")
+
+[node name="GuidebookNotis" type="VBoxContainer" parent="Icons/Control" groups=["noti_vbox"]]
+offset_left = 14.0
+offset_top = 87.0
+offset_right = 74.0
+offset_bottom = 147.0
+
+[node name="GuidebookPopup" parent="Icons/Control/GuidebookNotis" instance=ExtResource("29_1rxxv")]
+visible = false
+layout_mode = 2
+
+[node name="GuidebookPopup2" parent="Icons/Control/GuidebookNotis" instance=ExtResource("29_1rxxv")]
+visible = false
+layout_mode = 2
+
+[node name="GuidebookPopup3" parent="Icons/Control/GuidebookNotis" instance=ExtResource("29_1rxxv")]
+visible = false
+layout_mode = 2
