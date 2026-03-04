@@ -22,9 +22,12 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 @export var enemy_sprite : Node2D
 @export var defeat_animation : AnimatedSprite2D
 @onready var enemy_node = self
+## Fires when sprite is reversed
+signal reversed(enemy : Enemy)
 var sprite_reversed = false
 # whoever has inflicted a status effect on this enemy
 var status_applied_list = []
+var weather_statuses : Dictionary[String, StatChanger] = {}
 # keeps track what wave enemy was sent out on
 var wave_number : int
 var has_been_removed : bool = false
@@ -42,6 +45,7 @@ var path : PathFollow2D
 var path_position = null
 var cur_position = 0
 var prev_position = 0
+var travel_direction : int = 1
 
 func _ready() -> void:
 	hp_button.button_down.connect(toggle_health_bar)
@@ -55,6 +59,9 @@ func _ready() -> void:
 	enemy_node.set_collision_mask_value(1, false)
 	if enemy_sprite.flip_h == true:
 		sprite_reversed = true
+		enemy_sprite.flip_h = false
+	else:
+		enemy_sprite.flip_h = true
 	
 	
 	
@@ -77,16 +84,29 @@ func move_on_path(delta) -> void:
 	path.progress_ratio += speed * delta
 	cur_position = path_position
 	
-	if (cur_position - prev_position < 0):
-		if !sprite_reversed:
-			enemy_sprite.flip_h = false
-		else:
-			enemy_sprite.flip_h = true
-	else:
-		if !sprite_reversed:
-			enemy_sprite.flip_h = true
-		else:
-			enemy_sprite.flip_h = false
+	if (cur_position - prev_position) * travel_direction < -0.1:
+		#print(get_parent().name, " I HAVE SWITCHED SIDES!!! with difference of: ", (cur_position-prev_position)*travel_direction)
+		#print("-----Is facing right: ", !(enemy_sprite.flip_h and !sprite_reversed))
+		travel_direction *= -1
+		enemy_sprite.flip_h = !enemy_sprite.flip_h
+		reversed.emit(self)
+		#if travel_direction == -1:
+			#enemy_sprite.flip_h = !(false and sprite_reversed)
+		#else:
+			#enemy_sprite.flip_h = true and sprite_reversed
+	
+	#if (cur_position - prev_position < 0):
+		#if !sprite_reversed:
+			#enemy_sprite.flip_h = false
+		#else:
+			#enemy_sprite.flip_h = true
+		##reversed.emit(self)
+		##print("Top part ran!!!")
+	#else:
+		#if !sprite_reversed:
+			#enemy_sprite.flip_h = true
+		#else:
+			#enemy_sprite.flip_h = false
 
 func apply_damage(damage : float, damage_type : String):
 	var damage_percent = 1

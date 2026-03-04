@@ -1,55 +1,55 @@
-[gd_scene load_steps=44 format=3 uid="uid://cioouk7npsfg1"]
+[gd_scene load_steps=45 format=3 uid="uid://cioouk7npsfg1"]
 
-[ext_resource type="Script" uid="uid://b4e5h1dhfjg18" path="res://scripts/Weather/wind.gd" id="1_0ddaj"]
-[ext_resource type="Texture2D" uid="uid://ytrdx52muy7g" path="res://assets/sprites/weather/wind_spritesheett.png" id="2_jnupo"]
-[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="3_anglj"]
-[ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="4_dvd6k"]
-[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="4_jnupo"]
-[ext_resource type="Script" path="res://scripts/fish_script.gd" id="5_d4fq4"]
-[ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="7_3mn6e"]
-[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="8_2d7li"]
-[ext_resource type="Texture2D" uid="uid://bvxmxb1e80sfy" path="res://assets/sprites/maps/map1/trees_v1_overlayer.png" id="9_hwpmi"]
-[ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="10_hngin"]
-[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="11_iyjo8"]
+[ext_resource type="Script" uid="uid://b4e5h1dhfjg18" path="res://scripts/Weather/wind.gd" id="1_si2m7"]
+[ext_resource type="Texture2D" uid="uid://ytrdx52muy7g" path="res://assets/sprites/weather/wind_spritesheett.png" id="2_vlykd"]
+[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="3_ucuqv"]
+[ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="4_qqhej"]
+[ext_resource type="Script" path="res://scripts/fish_script.gd" id="5_mxhau"]
+[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="6_n1uoj"]
+[ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="7_oc37s"]
+[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="8_2xg00"]
+[ext_resource type="Texture2D" uid="uid://bvxmxb1e80sfy" path="res://assets/sprites/maps/map1/trees_v1_overlayer.png" id="9_6hen4"]
+[ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="10_q7e1n"]
+[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="11_mkh6a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0pjs4"]
-atlas = ExtResource("2_jnupo")
+atlas = ExtResource("2_vlykd")
 region = Rect2(0, 0, 75, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdxq3"]
-atlas = ExtResource("2_jnupo")
+atlas = ExtResource("2_vlykd")
 region = Rect2(75, 0, 75, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tp7ic"]
-atlas = ExtResource("2_jnupo")
+atlas = ExtResource("2_vlykd")
 region = Rect2(150, 0, 75, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0gc1k"]
-atlas = ExtResource("2_jnupo")
+atlas = ExtResource("2_vlykd")
 region = Rect2(225, 0, 75, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3d1ig"]
-atlas = ExtResource("2_jnupo")
+atlas = ExtResource("2_vlykd")
 region = Rect2(300, 0, 75, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dvd6k"]
-atlas = ExtResource("2_jnupo")
+atlas = ExtResource("2_vlykd")
 region = Rect2(375, 0, 75, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4fq4"]
-atlas = ExtResource("2_jnupo")
+atlas = ExtResource("2_vlykd")
 region = Rect2(450, 0, 75, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3mn6e"]
-atlas = ExtResource("2_jnupo")
+atlas = ExtResource("2_vlykd")
 region = Rect2(525, 0, 75, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2d7li"]
-atlas = ExtResource("2_jnupo")
+atlas = ExtResource("2_vlykd")
 region = Rect2(600, 0, 75, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwpmi"]
-atlas = ExtResource("2_jnupo")
+atlas = ExtResource("2_vlykd")
 region = Rect2(675, 0, 75, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hngin"]
@@ -91,47 +91,47 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
-atlas = ExtResource("4_dvd6k")
+atlas = ExtResource("4_qqhej")
 region = Rect2(0, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2xxo"]
-atlas = ExtResource("4_dvd6k")
+atlas = ExtResource("4_qqhej")
 region = Rect2(100, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cbcq"]
-atlas = ExtResource("4_dvd6k")
+atlas = ExtResource("4_qqhej")
 region = Rect2(200, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isj1j"]
-atlas = ExtResource("4_dvd6k")
+atlas = ExtResource("4_qqhej")
 region = Rect2(300, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_so66j"]
-atlas = ExtResource("4_dvd6k")
+atlas = ExtResource("4_qqhej")
 region = Rect2(400, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tr1x6"]
-atlas = ExtResource("4_dvd6k")
+atlas = ExtResource("4_qqhej")
 region = Rect2(500, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5akn"]
-atlas = ExtResource("4_dvd6k")
+atlas = ExtResource("4_qqhej")
 region = Rect2(600, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbtxt"]
-atlas = ExtResource("4_dvd6k")
+atlas = ExtResource("4_qqhej")
 region = Rect2(700, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2fux"]
-atlas = ExtResource("4_dvd6k")
+atlas = ExtResource("4_qqhej")
 region = Rect2(800, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7g0b"]
-atlas = ExtResource("4_dvd6k")
+atlas = ExtResource("4_qqhej")
 region = Rect2(900, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmfjm"]
-atlas = ExtResource("4_dvd6k")
+atlas = ExtResource("4_qqhej")
 region = Rect2(1000, 0, 100, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ptmiw"]
@@ -176,35 +176,35 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbb35"]
-atlas = ExtResource("7_3mn6e")
+atlas = ExtResource("7_oc37s")
 region = Rect2(0, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iw4em"]
-atlas = ExtResource("7_3mn6e")
+atlas = ExtResource("7_oc37s")
 region = Rect2(640, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnsmf"]
-atlas = ExtResource("7_3mn6e")
+atlas = ExtResource("7_oc37s")
 region = Rect2(1280, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nossa"]
-atlas = ExtResource("7_3mn6e")
+atlas = ExtResource("7_oc37s")
 region = Rect2(1920, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hjqri"]
-atlas = ExtResource("7_3mn6e")
+atlas = ExtResource("7_oc37s")
 region = Rect2(2560, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hg84p"]
-atlas = ExtResource("7_3mn6e")
+atlas = ExtResource("7_oc37s")
 region = Rect2(3200, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1aans"]
-atlas = ExtResource("7_3mn6e")
+atlas = ExtResource("7_oc37s")
 region = Rect2(3840, 0, 640, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0ron"]
-atlas = ExtResource("7_3mn6e")
+atlas = ExtResource("7_oc37s")
 region = Rect2(4480, 0, 640, 360)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n7hc7"]
@@ -239,8 +239,14 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Wind" type="Node2D"]
-script = ExtResource("1_0ddaj")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q34qh"]
+size = Vector2(646, 366)
+
+[node name="Wind" type="Area2D"]
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("1_si2m7")
+metadata/_custom_type_script = "uid://b4e5h1dhfjg18"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 200
@@ -250,10 +256,13 @@ frame = 9
 frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 4
+visible = false
 zoom = Vector2(2, 2)
-script = ExtResource("4_jnupo")
+script = ExtResource("3_ucuqv")
 
 [node name="MapAssets" type="Node2D" parent="."]
+visible = false
 
 [node name="fish" type="AnimatedSprite2D" parent="MapAssets"]
 z_index = 1
@@ -261,7 +270,7 @@ position = Vector2(30, -75)
 scale = Vector2(1.1, 1.1)
 sprite_frames = SubResource("SpriteFrames_ptmiw")
 autoplay = "default"
-script = ExtResource("5_d4fq4")
+script = ExtResource("5_mxhau")
 x_min_range_scale = 0.8
 x_max_range_scale = 1.1
 y_min_range_scale = 0.8
@@ -276,7 +285,7 @@ max_timer = 0.5
 [node name="Timer" type="Timer" parent="MapAssets/fish"]
 
 [node name="map" type="Sprite2D" parent="MapAssets"]
-texture = ExtResource("3_anglj")
+texture = ExtResource("6_n1uoj")
 metadata/_edit_lock_ = true
 
 [node name="river" type="AnimatedSprite2D" parent="MapAssets"]
@@ -286,20 +295,20 @@ metadata/_edit_lock_ = true
 
 [node name="bridge" type="Sprite2D" parent="MapAssets"]
 z_index = 2
-texture = ExtResource("8_2d7li")
+texture = ExtResource("8_2xg00")
 metadata/_edit_lock_ = true
 
 [node name="tree_overlayer" type="Sprite2D" parent="MapAssets"]
 z_index = 10
-texture = ExtResource("9_hwpmi")
+texture = ExtResource("9_6hen4")
 metadata/_edit_lock_ = true
 
 [node name="tree" type="Sprite2D" parent="MapAssets"]
-texture = ExtResource("10_hngin")
+texture = ExtResource("10_q7e1n")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="MapAssets"]
-texture = ExtResource("11_iyjo8")
+texture = ExtResource("11_mkh6a")
 
 [node name="fish2" type="AnimatedSprite2D" parent="MapAssets"]
 z_index = 1
@@ -308,7 +317,7 @@ rotation = 0.285981
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_ptmiw")
 autoplay = "default"
-script = ExtResource("5_d4fq4")
+script = ExtResource("5_mxhau")
 x_min_range_scale = 0.5
 x_max_range_scale = 0.7
 y_min_range_scale = 0.5
@@ -321,3 +330,10 @@ min_timer = 0.1
 max_timer = 0.5
 
 [node name="Timer" type="Timer" parent="MapAssets/fish2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_q34qh")
+
+[node name="EffectDuration" type="Timer" parent="."]
+wait_time = 20.0

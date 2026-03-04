@@ -165,7 +165,7 @@ linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource("1_eosuv")
 data_resource = SubResource("Resource_nttgg")
-enemy_sprite = NodePath("Bush")
+enemy_sprite = NodePath("AnimatedSprite2D")
 defeat_animation = NodePath("ZapAway")
 hp_button = NodePath("Button")
 health_bar = NodePath("HpContainer/HpBar")
@@ -177,7 +177,7 @@ position = Vector2(1, 4)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gqwkk")
 
-[node name="Bush" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4hoh6")
 autoplay = "default"
 

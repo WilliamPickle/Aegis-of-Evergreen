@@ -25,6 +25,8 @@ func _on_start_lvl1() -> void:
 	await wave_timer.timeout
 	signify_wave_end()
 	
+	WeatherController.spawn_wind(30, 10, -0.5, 1, get_parent().get_node("WeatherPlacement"))
+	
 	# wave 2 - 80 cash gain
 	start_wave_timer(45)
 	await send_enemy(bush, 4, 1)
