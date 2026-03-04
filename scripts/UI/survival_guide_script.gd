@@ -54,7 +54,6 @@ func _show_page(index):
 		front_cover.visible = false
 		back_cover.visible = false
 		back_button.position = back_button_pos[0]
-		
 	# handles tabs on left side
 	for i in range(0, index + 1):
 		tabs_dict["l" + str(i)].visible = true

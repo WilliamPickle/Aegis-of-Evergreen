@@ -6,7 +6,7 @@ var pause_state: bool
 
 ## replace object with pause menu
 func toggle_pause(object):
-	print(object.name)
+	#print(object.name)
 	if object.visible:
 		object.visible = false
 		pause_state = object.visible

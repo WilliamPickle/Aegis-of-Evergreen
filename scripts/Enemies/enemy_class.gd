@@ -85,28 +85,9 @@ func move_on_path(delta) -> void:
 	cur_position = path_position
 	
 	if (cur_position - prev_position) * travel_direction < -0.1:
-		#print(get_parent().name, " I HAVE SWITCHED SIDES!!! with difference of: ", (cur_position-prev_position)*travel_direction)
-		#print("-----Is facing right: ", !(enemy_sprite.flip_h and !sprite_reversed))
 		travel_direction *= -1
 		enemy_sprite.flip_h = !enemy_sprite.flip_h
 		reversed.emit(self)
-		#if travel_direction == -1:
-			#enemy_sprite.flip_h = !(false and sprite_reversed)
-		#else:
-			#enemy_sprite.flip_h = true and sprite_reversed
-	
-	#if (cur_position - prev_position < 0):
-		#if !sprite_reversed:
-			#enemy_sprite.flip_h = false
-		#else:
-			#enemy_sprite.flip_h = true
-		##reversed.emit(self)
-		##print("Top part ran!!!")
-	#else:
-		#if !sprite_reversed:
-			#enemy_sprite.flip_h = true
-		#else:
-			#enemy_sprite.flip_h = false
 
 func apply_damage(damage : float, damage_type : String):
 	var damage_percent = 1
