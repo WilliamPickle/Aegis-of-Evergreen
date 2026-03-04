@@ -30,14 +30,14 @@ func _ready() -> void:
 		tower.weather_statuses.set("rain", stat_changer)
 	
 	# For future towers in rain area
-	PlayerStats.upgraded_tower.connect(func(tower : Tower):
-		tower.weather_statuses["rain"].update_stat_multiplier(0)
-	)
+	PlayerStats.upgraded_tower.connect(_on_tower_upgrade)
 	PlayerStats.gtower_placed.connect(_on_tower_action)
 	
 	effect_duration.start(duration)
 	effect_duration.timeout.connect(func():
 		play("despawn")
+		PlayerStats.upgraded_tower.disconnect(_on_tower_upgrade)
+		PlayerStats.gtower_placed.disconnect(_on_tower_action)
 		await animation_finished
 		queue_free()
 	)
@@ -48,5 +48,14 @@ func _on_tower_action(tower : Tower) -> void:
 	stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, _duration)
 	tower.add_child(stat_changer)
 	tower.weather_statuses.set("rain", stat_changer)
+	
+func _on_tower_upgrade(tower : Tower) -> void:
+	if is_instance_valid(tower.weather_statuses["rain"]):
+		tower.weather_statuses["rain"].disable_stat_changes()
+		tower.weather_statuses.erase("rain")
+		var stat_changer := StatChanger.new()
+		stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, effect_duration.time_left)
+		tower.add_child(stat_changer)
+		tower.weather_statuses.set("rain", stat_changer)
 #func _on_tower_upgrade(tower : Tower) -> void:
 	#pass
