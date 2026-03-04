@@ -46,7 +46,7 @@ var path : PathFollow2D
 var path_position = null
 var cur_position = 0
 var prev_position = 0
-var travel_direction : int = 1
+var travel_direction : int = -1
 
 # almanac notification variables
 static var enemies_seen_list : Array = []
@@ -64,9 +64,9 @@ func _ready() -> void:
 	enemy_node.set_collision_mask_value(1, false)
 	if enemy_sprite.flip_h == true:
 		sprite_reversed = true
-		enemy_sprite.flip_h = false
-	else:
-		enemy_sprite.flip_h = true
+		#enemy_sprite.flip_h = false
+	#else:
+		#enemy_sprite.flip_h = true
 		
 	# activates almanac if first time seeing enemy
 	if name not in enemies_seen_list:

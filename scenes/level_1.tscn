@@ -629,6 +629,7 @@ text = "150"
 label_settings = SubResource("LabelSettings_wbtxt")
 
 [node name="GuidebookNotis" type="VBoxContainer" parent="Icons/Control" groups=["noti_vbox"]]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 87.0
 offset_right = 74.0
