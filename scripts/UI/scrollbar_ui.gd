@@ -18,7 +18,11 @@ const hover_color = Color(1,1,1,1)
 var guidebook_popup := preload("res://scenes/UI/guidebook_popup.tscn")
 
 const ally_guidebook_pgs : Dictionary = {
-	"ranger" : 0,
+	"ranger" : 1,
+	"chipmunk" : 2,
+	"bee" : 2,
+	"flytrap" : 3,
+	"druid" : 1,
 }
 
 # add any tower card here
@@ -68,6 +72,7 @@ func unlock_new_ally():
 		return
 	else:
 		add_card(unlockable_allies[str(PlayerStats.PlayerLevel)])
+		show_guidebook_popup(unlockable_allies[str(PlayerStats.PlayerLevel)])
 	
 	
 func add_card(tower):
@@ -101,6 +106,7 @@ func add_card(tower):
 	new_card.add_theme_color_override("font_hover_color", hover_color)
 	new_card.add_theme_color_override("font_hover_pressed_color", hover_color)
 
+
 func show_guidebook_popup(tower):
 	var tree = get_tree()
 	var noti_container = null
@@ -110,7 +116,7 @@ func show_guidebook_popup(tower):
 				noti_container = node
 		var notification = guidebook_popup.instantiate()
 		noti_container.add_child(notification)
-		notification.page_index = 1
+		notification.page_index = ally_guidebook_pgs[tower]
 		#print("tried adding noti")
 	else:
 		#print("couldnt find noti container")
