@@ -58,7 +58,7 @@ func send_enemy(enemy, quantity: int, delay_time: float, parent_path = path_2d):
 		new_path.rotates = false
 		new_path.rotation = 0
 		new_path.loop = false
-		new_path.position.x = -270
+		#new_path.position.x = -270
 		new_path.position.y = -100
 		
 		new_enemy = enemy.instantiate()
