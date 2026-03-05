@@ -12,6 +12,14 @@ func _ready() -> void:
 	manual_wave_button.button_down.connect(_on_start_lvl4)
 
 func _on_start_lvl4() -> void:
+	# test wave
+	start_wave_timer(300)
+	await send_enemy(spore_crab, 1, 0.5, path2)
+	
+	currently_sending = false
+	await wave_timer.timeout
+	signify_wave_end()
+	
 	# wave 1
 	start_wave_timer(35)
 	await send_enemy(bush, 10, 0.5)

@@ -323,7 +323,7 @@ visible = false
 position = Vector2(-320, -180)
 polygon = PackedVector2Array(640, -7, 640, -101, 0, -100, 0, 0)
 
-[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label")]
+[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label") groups=["wavespawner"]]
 script = ExtResource("8_ektfg")
 pause_menu = NodePath("../PauseUI")
 fast_forward_button = NodePath("../fast_forward_ui")
@@ -702,6 +702,7 @@ text = "150"
 label_settings = SubResource("LabelSettings_0egsi")
 
 [node name="GuidebookNotis" type="VBoxContainer" parent="Icons/Control" groups=["noti_vbox"]]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 87.0
 offset_right = 74.0

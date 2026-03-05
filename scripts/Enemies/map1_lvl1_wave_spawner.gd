@@ -20,15 +20,16 @@ func _on_start_lvl1() -> void:
 	start_wave_timer(45)
 	# send_enemy(cow, 10, 5) # ONLY FOR TESTING
 	await send_enemy(bush, 4, 3)
-	WeatherController.spawn_rain(20,-0.5, get_parent().get_node("WeatherPlacement"))
+	#WeatherController.spawn_rain(20,-0.5, get_parent().get_node("WeatherPlacement"))
+	#WeatherController.spawn_wind(30, 10, -0.5, 1, get_parent().get_node("WeatherPlacement"))
 	currently_sending = false
 	await wave_timer.timeout
 	signify_wave_end()
 	
-	WeatherController.spawn_wind(30, 10, -0.5, 1, get_parent().get_node("WeatherPlacement"))
 	
 	# wave 2 - 80 cash gain
 	start_wave_timer(45)
+	WeatherController.spawn_rain(30, -0.25, get_parent().get_node("WeatherPlacement"))
 	await send_enemy(bush, 4, 1)
 	await delay(3)
 	await send_enemy(bush, 4, 1)
@@ -59,8 +60,9 @@ func _on_start_lvl1() -> void:
 	
 	# wave 5 - 300 cash gain
 	start_wave_timer(3600)
+	WeatherController.spawn_rain(40, -0.25, get_parent().get_node("WeatherPlacement"))
 	await send_enemy(bush, 20, 0.2)
-	await send_enemy(cow, 2, 0.5)
+	await send_enemy(cow, 4, 0.5)
 	await delay(1)
 	await send_enemy(squirrel, 40, 0.75)
 	

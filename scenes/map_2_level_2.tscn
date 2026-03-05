@@ -315,7 +315,7 @@ visible = false
 position = Vector2(-320, -180)
 polygon = PackedVector2Array(640, -7, 640, -101, 0, -100, 0, 0)
 
-[node name="WaveSpawner" type="Node2D" parent="."]
+[node name="WaveSpawner" type="Node2D" parent="." groups=["wavespawner"]]
 script = ExtResource("8_ailnv")
 metadata/_custom_type_script = "uid://clq18rcf3qqqj"
 
@@ -571,6 +571,7 @@ text = "150"
 label_settings = SubResource("LabelSettings_p1gt1")
 
 [node name="GuidebookNotis" type="VBoxContainer" parent="Icons/Control" groups=["noti_vbox"]]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 87.0
 offset_right = 74.0

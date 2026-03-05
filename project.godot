@@ -32,6 +32,8 @@ window/stretch/mode="viewport"
 [global_group]
 
 enemy_path=""
+wavespawner="a reference to the wave_spawner node, primarily used for enemies that summon in other enemies"
+noti_vbox=""
 
 [input]
 

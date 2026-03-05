@@ -21,6 +21,7 @@ const hornet := preload("res://scenes/Enemies/hornet.tscn")
 const queen_hornet := preload("res://scenes/Enemies/queen_hornet.tscn")
 const mushroom := preload("res://scenes/Enemies/mushroom.tscn")
 const armor_mushroom := preload("res://scenes/Enemies/armor_mushroom.tscn")
+const spore_crab := preload("res://scenes/Enemies/spore_crab.tscn")
 
 # variables to initialize waves after dialogue
 @export var wave_label: Label

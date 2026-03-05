@@ -312,7 +312,7 @@ polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130
 visible = false
 polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
 
-[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label")]
+[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label") groups=["wavespawner"]]
 script = ExtResource("9_mbb35")
 pause_menu = NodePath("../PauseUI")
 fast_forward_button = NodePath("../fast_forward_ui")
