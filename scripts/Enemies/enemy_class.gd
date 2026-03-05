@@ -44,9 +44,9 @@ var bar_length : float
 # path based variables
 var path : PathFollow2D
 var path_position = null
-var cur_position = 0
+var cur_position = -500
 var prev_position = 0
-var travel_direction : int = -1
+var travel_direction : int = 1
 
 # almanac notification variables
 static var enemies_seen_list : Array = []
@@ -64,9 +64,9 @@ func _ready() -> void:
 	enemy_node.set_collision_mask_value(1, false)
 	if enemy_sprite.flip_h == true:
 		sprite_reversed = true
-		#enemy_sprite.flip_h = false
-	#else:
-		#enemy_sprite.flip_h = true
+		enemy_sprite.flip_h = false
+	else:
+		enemy_sprite.flip_h = true
 		
 	# activates almanac if first time seeing enemy
 	if name not in enemies_seen_list:
@@ -79,6 +79,7 @@ func _ready() -> void:
 # progresses enemy along a path.
 # automatically deletes enemy and path when it reaches the end
 func move_on_path(delta) -> void:
+	#print("----Ran this frame!!!")
 	if path.progress_ratio >= 1:
 		if has_been_removed:
 			return
@@ -89,17 +90,28 @@ func move_on_path(delta) -> void:
 			emit_signal("reached_end")
 		path.queue_free()
 		queue_free()
-
-	path_position = path.get_global_position().x
-	prev_position = cur_position
-	path.progress_ratio += speed * delta
-	cur_position = path_position
+	if path != null:
+		path_position = global_position.x
+		prev_position = cur_position
+		path.progress_ratio += speed * delta
+		cur_position = path_position
+		#print("-This is cur pos: ", cur_position, " this is prev_pos: ", prev_position)
 	
 	if (cur_position - prev_position) * travel_direction < -0.1:
+		#print("This is cur pos: ", global_position.x, " this is prev_pos: ", prev_position)
+		print("For: ", path.name)
+		print("Difference in positions: ", global_position.x-prev_position)
+		prev_position = global_position.x
 		travel_direction *= -1
 		enemy_sprite.flip_h = !enemy_sprite.flip_h
 		reversed.emit(self)
-
+		print("This is new direction: ", travel_direction)
+	
+	
+	#path_position = global_position.x
+	#prev_position = cur_position
+	#path.progress_ratio += speed * delta
+	#cur_position = path_position
 func apply_damage(damage : float, damage_type : String):
 	var damage_percent = 1
 	# replace 1000 with resistance
@@ -141,6 +153,7 @@ func send_away() -> void:
 	defeat_animation.play()
 
 func _process(delta: float) -> void:
+	#print("--This enemy pos: ", global_position)
 	move_on_path(delta)
 
 func show_guidebook_popup():

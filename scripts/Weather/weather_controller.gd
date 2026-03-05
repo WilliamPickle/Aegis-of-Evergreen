@@ -15,4 +15,6 @@ func spawn_rain(duration : float, buff_percent: float, weather_placement : Node2
 func spawn_wind(duration : float, buff_percent : float, debuff_percent : float, direction : int, weather_placement : Node2D,):
 	var wind = WEATHERS["wind"].instantiate()
 	wind.init(duration, buff_percent, debuff_percent, direction)
-	weather_placement.add_child(wind)
+	#map_area.call_deferred("add_child", tower_attack)
+	weather_placement.call_deferred("add_child", wind)
+	#weather_placement.add_child(wind)

@@ -43,11 +43,14 @@ func _ready() -> void:
 	)
 	var enemies := get_overlapping_areas()
 	for enemy : Enemy in enemies:
+		print("Overlapping stuff ran too!!")
 		_enemy_reversed(enemy)
+		#enemy.reversed.connect(_enemy_reversed)
 
-	area_entered.connect(_new_enemy_entered)
+	area_entered.connect(_enemy_reversed)
 
 func _new_enemy_entered(enemy : Enemy) -> void:
+	print("AREA ENTERED FUNC RAN")
 	var stat_changer := StatChanger.new()
 	stat_changer.initialize_variables(enemy, "wind", WALK_SPEED, buff_percent, effect_duration.time_left)
 	enemy.add_child(stat_changer)
@@ -56,12 +59,16 @@ func _new_enemy_entered(enemy : Enemy) -> void:
 	
 	
 func _enemy_reversed(enemy : Enemy) -> void:
-	if is_instance_valid(enemy.weather_statuses["wind"]):
+	if !enemy.weather_statuses.get("wind", false):
+		enemy.reversed.connect(_enemy_reversed)
+	elif is_instance_valid(enemy.weather_statuses["wind"]):
 		enemy.weather_statuses["wind"].disable_stat_changes()
+		
+	#if enemy.weather_statuses.get("wind", false) and is_instance_valid(enemy.weather_statuses["wind"]):
 
 	var stat_changer := StatChanger.new()
 	var stat_percent : float
-	
+	print("For wind this is what travel direction is: ", enemy.travel_direction)
 	if enemy.travel_direction  * wind_direction == 1:
 		stat_percent = buff_percent
 	else:
@@ -75,5 +82,8 @@ func _delete_wind() -> void:
 	var enemies := get_overlapping_areas()
 	for enemy : Enemy in enemies:
 		enemy.weather_statuses.erase("wind")
+		#enemy.reversed.disconnect(_enemy_reversed)
+		#area_entered.disconnect(_enemy_reversed)
+		print(enemy.weather_statuses)
 	print("---WIND HAS ENDED---")
 	queue_free()
