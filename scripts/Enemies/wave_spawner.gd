@@ -22,6 +22,7 @@ const queen_hornet := preload("res://scenes/Enemies/queen_hornet.tscn")
 const mushroom := preload("res://scenes/Enemies/mushroom.tscn")
 const armor_mushroom := preload("res://scenes/Enemies/armor_mushroom.tscn")
 const spore_crab := preload("res://scenes/Enemies/spore_crab.tscn")
+const spore := preload("res://scenes/Enemies/spore.tscn")
 
 # variables to initialize waves after dialogue
 @export var wave_label: Label
@@ -38,12 +39,14 @@ var wave := 1
 var won_level: bool = false
 
 func _ready() -> void:
+	print(get_tree().get_nodes_in_group("wavespawner"))
 	wave_timer.timeout.connect(update_wave)
 
 
 # sends an enemy a specified amount of times. 
-func send_enemy(enemy, quantity: int, delay_time: float, parent_path = path_2d) -> void:
+func send_enemy(enemy, quantity: int, delay_time: float, parent_path = path_2d):
 	var new_timer = Timer.new()
+	var new_enemy
 	self.add_child(new_timer)
 	new_timer.wait_time = delay_time
 	for i in range(quantity):
@@ -58,13 +61,17 @@ func send_enemy(enemy, quantity: int, delay_time: float, parent_path = path_2d) 
 		new_path.position.x = -270
 		new_path.position.y = -100
 		
-		var new_enemy = enemy.instantiate()
+		new_enemy = enemy.instantiate()
 		enemy_count += 1
 		new_enemy.wave_number = wave
 		new_enemy.position.y += randi_range(-path_spread, path_spread)
 		new_enemy.removed.connect(update_total_enemies.bind(new_enemy))
 		new_path.add_child(new_enemy)
 	new_timer.queue_free()
+	
+	# right now, spore crab uses this logic
+	# also, only returns last enemy sent
+	return new_enemy
 	#print(wave)
 		
 func update_total_enemies(enemy):

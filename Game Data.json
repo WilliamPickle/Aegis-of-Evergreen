@@ -405,7 +405,7 @@
 	  "resistance_percent" : 0.9,
 	  "book_page" : 5,
 	},
-	  "mushroom" : {
+	"mushroom" : {
 	  "speed" : 0.02, 
 	  "max_health" : 6,
 	  "base_damage_ratio" : 0.5,
@@ -414,7 +414,7 @@
 	  "resistance" : "none",
 	  "book_page" : 1,
 	},
-	  "armor_mushroom" : {
+	"armor_mushroom" : {
 	  "speed" : 0.015, 
 	  "max_health" : 18,
 	  "base_damage_ratio" : 0.5,
@@ -424,7 +424,7 @@
 	  "resistance_percent" : 0.75,
 	  "book_page" : 1,
 	},
-	  "spore_crab" : {
+	"spore_crab" : {
 	  "speed" : 0.015, 
 	  "max_health" : 10,
 	  "base_damage_ratio" : 0.5,
@@ -432,6 +432,15 @@
 	  "money_drop" : 50,
 	  "resistance" : "energy",
 	  "resistance_percent" : 1,
+	  "book_page" : 1,
+	},
+	"spore" : {
+	  "speed" : 0.04, 
+	  "max_health" : 2,
+	  "base_damage_ratio" : 0.5,
+	  "xp" : 3,
+	  "money_drop" : 3,
+	  "resistance" : "none",
 	  "book_page" : 1,
 	},
   },
