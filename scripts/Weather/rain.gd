@@ -24,11 +24,7 @@ func _ready() -> void:
 	var towers := detection_area.get_overlapping_areas()
 	print("Towers in rain area: ", towers)
 	for tower : Tower in towers:
-		if !(tower is Ranger):
-			var stat_changer = StatChanger.new()
-			stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, duration)
-			tower.add_child(stat_changer)
-			tower.weather_statuses.set("rain", stat_changer)
+		_on_tower_placed(tower)
 	
 	# For future towers in rain area
 	PlayerStats.upgraded_tower.connect(_on_tower_upgrade)
