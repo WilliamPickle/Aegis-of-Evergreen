@@ -24,22 +24,26 @@ func _ready() -> void:
 	var towers := detection_area.get_overlapping_areas()
 	print("Towers in rain area: ", towers)
 	for tower : Tower in towers:
-		_on_new_tower(tower)
+		if !(tower is Ranger):
+			var stat_changer = StatChanger.new()
+			stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, duration)
+			tower.add_child(stat_changer)
+			tower.weather_statuses.set("rain", stat_changer)
 	
 	# For future towers in rain area
 	PlayerStats.upgraded_tower.connect(_on_tower_upgrade)
-	PlayerStats.gtower_placed.connect(_on_new_tower)
+	PlayerStats.gtower_placed.connect(_on_tower_placed)
 	
 	effect_duration.start(duration)
 	effect_duration.timeout.connect(func():
 		play("despawn")
 		PlayerStats.upgraded_tower.disconnect(_on_tower_upgrade)
-		PlayerStats.gtower_placed.disconnect(_on_new_tower)
+		PlayerStats.gtower_placed.disconnect(_on_tower_placed)
 		await animation_finished
 		queue_free()
 	)
 
-func _on_new_tower(tower : Tower) -> void:
+func _on_tower_placed(tower : Tower) -> void:
 	var _duration = effect_duration.time_left
 	var stat_changer = StatChanger.new()
 	stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, _duration)

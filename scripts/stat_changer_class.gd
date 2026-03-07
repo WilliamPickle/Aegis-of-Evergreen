@@ -105,7 +105,6 @@ func update_stat_multiplier(percent_change_change : float) -> void:
 	percent_change *= (1 + percent_change_change)
 	apply_stat_changes(false)
 
-
 ## Set the default values for stat_changer. [br]
 ## [b] Make sure to set [param is_debuff] to [code]true[/code] if an enemy is inflincting a tower[/b]
 func initialize_variables(new_target, new_inflictor: String, new_stat : Type, new_percent_change: float, new_duration: float, is_debuff : bool = false) -> void:
