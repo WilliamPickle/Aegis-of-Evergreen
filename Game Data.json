@@ -14,6 +14,11 @@
 		90,
 		110
 	  ],
+	  "attack_speed": [
+		5,
+		5,
+		5
+	  ],
 	 "buff_types": [
 		["attack_speed"],
 		["attack_speed", "range"],
