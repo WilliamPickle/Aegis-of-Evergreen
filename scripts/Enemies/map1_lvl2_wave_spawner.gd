@@ -12,8 +12,9 @@ func _ready() -> void:
 func _on_start_lvl2() -> void:
 	# wave 1
 	start_wave_timer(30)
-	await send_enemy(bush, 5, 0.5)
-	await delay(3)
+	await send_enemy(bush, 6, 0.5)
+	await delay(5)
+	WeatherController.spawn_rain(15, -0.25, weather_node)
 	await send_enemy(squirrel, 4, 2)
 	
 	currently_sending = false
@@ -31,7 +32,7 @@ func _on_start_lvl2() -> void:
 	signify_wave_end()
 	
 	# wave 3 - 80 cash gain
-	start_wave_timer(60)
+	start_wave_timer(65)
 	await send_enemy(snail, 4, 1)
 	await delay(3)
 	await send_enemy(bush, 10, 0.5)
@@ -44,13 +45,19 @@ func _on_start_lvl2() -> void:
 	
 	# wave 4 - 80 cash gain
 	start_wave_timer(60)
-	await send_enemy(snail, 2, 0.5)
-	await delay(3)
-	send_enemy(snail, 2, 0.5)
-	await delay(3)
-	send_enemy(cow, 2, 0.3)
-	await delay(9)
+	WeatherController.spawn_wind(45, 0.35, -0.35, 1, weather_node)
+	send_enemy(cow, 3, 0.3)
+	await delay(5)
+	send_enemy(bush, 30, 0.5)
+	await delay(7)
 	await send_enemy(squirrel, 20, 0.2)
+	#await send_enemy(snail, 2, 0.5)
+	#await delay(3)
+	#send_enemy(snail, 2, 0.5)
+	#await delay(3)
+	#send_enemy(cow, 2, 0.3)
+	#await delay(9)
+	#await send_enemy(squirrel, 20, 0.2)
 	
 	currently_sending = false
 	await wave_timer.timeout
@@ -58,7 +65,7 @@ func _on_start_lvl2() -> void:
 	
 	# wave 5 - 80 cash gain
 	start_wave_timer(3600)
-	send_enemy(cow, 3, 3)
+	send_enemy(cow, 5, 3)
 	await delay(3)
 	await send_enemy(bush, 20, 0.5)
 	await send_enemy(beetle, 1, 2)

@@ -14,11 +14,6 @@
 		90,
 		110
 	  ],
-	  "attack_speed": [
-		5,
-		5,
-		5
-	  ],
 	 "buff_types": [
 		["attack_speed"],
 		["attack_speed", "range"],
@@ -30,6 +25,11 @@
 		[-0.25, 0.25]
 	  ],
 	 "buff_duration": 7.5,
+	 "attack_speed": [
+		5,
+		5,
+		5
+	  ],
 	},
 	"druid":{
 	  "type": "Hero",
@@ -132,7 +132,7 @@
 	  ],
 	  "cost": [
 		75,
-		100,
+		95,
 		175
 	  ],
 	  "range": [
@@ -141,9 +141,9 @@
 		65
 	  ],
 	  "attack_speed": [
-		1.7,
-		1.25,
-		0.70
+		1.3,
+		1,
+		0.65
 	  ],
 	  "damage": [
 		3,
@@ -296,19 +296,19 @@
 	"flytrap_melee_1": {
 	  "type": "energy",
 	  "splash_cap": 3,
-	  "debuff_percent": -0.10,
+	  "debuff_percent": -0.15,
 	  "debuff_duration": 0.9,
 	},
 	"flytrap_melee_2": {
 	  "type": "energy",
 	  "splash_cap": 5,
-	  "debuff_percent": -0.20,
+	  "debuff_percent": -0.25,
 	  "debuff_duration": 0.9,
 	},
 	"flytrap_melee_3": {
 	  "type": "energy",
 	  "splash_cap": 5,
-	  "debuff_percent": -0.30,
+	  "debuff_percent": -0.25,
 	  "debuff_duration": 1.2,
 	},
 	"god_atk": {
@@ -365,7 +365,7 @@
 	  "speed" : 0.015, 
 	  "max_health" : 60,
 	  "base_damage_ratio" : 0.5,
-	  "xp" : 50,
+	  "xp" : 45,
 	  "money_drop" : 30,
 	  "resistance" : "none",
 	  "book_page" : 4,
@@ -374,7 +374,7 @@
 	  "speed" : 0.007, 
 	  "max_health" : 30,
 	  "base_damage_ratio" : 0.5,
-	  "xp" : 30,
+	  "xp" : 20,
 	  "money_drop" : 15,
 	  "resistance" : "blunt",
 	  "resistance_percent" : 0.6,
@@ -384,7 +384,7 @@
 	  "speed" : 0.02, 
 	  "max_health" : 50,
 	  "base_damage_ratio" : 0.5,
-	  "xp" : 80,
+	  "xp" : 60,
 	  "money_drop" : 45,
 	  "resistance" : "blunt",
 	  "resistance_percent" : 0.65,

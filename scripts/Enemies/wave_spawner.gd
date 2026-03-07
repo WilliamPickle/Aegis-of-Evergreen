@@ -27,6 +27,9 @@ const spore := preload("res://scenes/Enemies/spore.tscn")
 # variables to initialize waves after dialogue
 @export var wave_label: Label
 
+# variable to utilize weather controller
+@export var weather_node: Node2D
+
 # variables to track waves and send them
 var enemy_count: int = 0
 var currently_sending: bool = false

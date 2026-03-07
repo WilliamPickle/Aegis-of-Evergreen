@@ -266,7 +266,7 @@ polygon = PackedVector2Array(-66, -180, -2, -180, -2, -173, -47, -159, -35, -130
 visible = false
 polygon = PackedVector2Array(212, -179, 318, -178, 319, -14, 246, -13, 247, -125)
 
-[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label") groups=["wavespawner"]]
+[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label", "weather_node") groups=["wavespawner"]]
 script = ExtResource("9_bgibu")
 pause_menu = NodePath("../PauseUI")
 fast_forward_button = NodePath("../fast_forward_ui")
@@ -274,6 +274,7 @@ delay_timer = NodePath("DelayFuncTimer")
 wave_timer = NodePath("WaveTimer")
 path_2d = NodePath("../EnemyPath2")
 wave_label = NodePath("Wave Text/WaveLabel")
+weather_node = NodePath("../WeatherPlacement")
 metadata/_custom_type_script = "uid://clq18rcf3qqqj"
 
 [node name="DelayFuncTimer" type="Timer" parent="WaveSpawner"]
@@ -601,3 +602,6 @@ layout_mode = 2
 [node name="GuidebookPopup3" parent="Icons/Control/GuidebookNotis" instance=ExtResource("29_73m23")]
 visible = false
 layout_mode = 2
+
+[node name="WeatherPlacement" type="Node2D" parent="."]
+z_index = 12

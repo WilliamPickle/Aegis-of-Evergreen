@@ -323,7 +323,7 @@ visible = false
 position = Vector2(-320, -180)
 polygon = PackedVector2Array(640, -7, 640, -101, 0, -100, 0, 0)
 
-[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label") groups=["wavespawner"]]
+[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label", "weather_node") groups=["wavespawner"]]
 script = ExtResource("8_ektfg")
 pause_menu = NodePath("../PauseUI")
 fast_forward_button = NodePath("../fast_forward_ui")
@@ -331,6 +331,7 @@ delay_timer = NodePath("DelayFuncTimer")
 wave_timer = NodePath("WaveTimer")
 path_2d = NodePath("../EnemyPath1")
 wave_label = NodePath("Wave Text/WaveLabel")
+weather_node = NodePath("../WeatherPlacement")
 metadata/_custom_type_script = "uid://clq18rcf3qqqj"
 
 [node name="DelayFuncTimer" type="Timer" parent="WaveSpawner"]
@@ -760,3 +761,6 @@ offset_bottom = 720.0
 mouse_filter = 0
 texture = ExtResource("29_dfome")
 expand_mode = 1
+
+[node name="WeatherPlacement" type="Node2D" parent="."]
+z_index = 12

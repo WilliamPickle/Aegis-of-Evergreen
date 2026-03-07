@@ -26,9 +26,11 @@ func _on_start_lvl3() -> void:
 	
 	# wave 1
 	start_wave_timer(65)
-	send_enemy(bush, 16, 0.75)
-	await delay(6)
-	await send_enemy(snail, 1, 0.5)
+	await send_enemy(bush, 10, 0.5)
+	await send_enemy(hornet, 2, 0.5)
+	#send_enemy(bush, 16, 0.75)
+	#await delay(6)
+	#await send_enemy(snail, 1, 0.5)
 	
 	currently_sending = false
 	await wave_timer.timeout
@@ -36,9 +38,10 @@ func _on_start_lvl3() -> void:
 	
 	# wave 2
 	start_wave_timer(45)
-	await send_enemy(bush, 20, 0.35)
-	await delay(2)
-	await send_enemy(hornet, 4, 0.5)
+	WeatherController.spawn_wind(35, 0.35, -0.35, 1, weather_node)
+	await send_enemy(bush, 20, 0.5)
+	await delay(5)
+	await send_enemy(hornet, 4, 0.4)
 	#await delay(10)
 	#await send_enemy(squirrel, 10, 0.5)
 
@@ -48,11 +51,12 @@ func _on_start_lvl3() -> void:
 
 	# wave 3
 	start_wave_timer(45)
-	await send_enemy(cow, 2, 0.2)
+	WeatherController.spawn_rain(30, 0.25, weather_node)
+	await send_enemy(cow, 2, 0.5)
 	await delay(8)
-	await send_enemy(hornet, 12, 0.2)
+	await send_enemy(hornet, 10, 0.4)
 	await delay(4)
-	await send_enemy(squirrel, 16, 0.15)
+	await send_enemy(squirrel, 16, 0.4)
 	
 	currently_sending = false
 	await wave_timer.timeout
@@ -62,9 +66,9 @@ func _on_start_lvl3() -> void:
 	start_wave_timer(60)
 	await send_enemy(snail, 3, 4)
 	await delay(3)
-	await send_enemy(beetle, 3, 1)
+	await send_enemy(beetle, 4, 1)
 	await delay(5)
-	await send_enemy(hornet, 15, 0.15)
+	await send_enemy(hornet, 16, 0.15)
 	
 	currently_sending = false
 	await wave_timer.timeout
@@ -72,16 +76,17 @@ func _on_start_lvl3() -> void:
 
 	# wave 5
 	start_wave_timer(3600)
+	WeatherController.spawn_rain(60, 0.25, weather_node)
 	await send_enemy(cow, 3, 1)
 	await delay(3)
 	await send_enemy(queen_hornet, 1, 1)
 	await delay(5)
 	send_enemy(squirrel, 20, 0.5)
-	await send_enemy(hornet, 5, 0.2)
+	await send_enemy(hornet, 7, 0.2)
 	await delay(5)
-	await send_enemy(hornet, 5, 0.2)
+	await send_enemy(hornet, 7, 0.2)
 	await delay(5)
-	await send_enemy(hornet, 5, 0.2)
+	await send_enemy(hornet, 7, 0.2)
 	#await delay(5)
 	#await send_enemy(squirrel, 20, 0.2)
 	

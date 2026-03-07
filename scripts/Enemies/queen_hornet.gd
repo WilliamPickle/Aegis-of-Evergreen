@@ -4,7 +4,7 @@ extends Enemy
 @onready var phase_1_collision: CollisionShape2D = $phase1collision
 @onready var phase_2_collision: CollisionShape2D = $phase2collision
 @onready var real_original_speed = original_speed
-var phase_change_percent: float = 0.6
+var phase_change_percent: float = 0.75
 var in_phase_2: bool = false
 var speed_multiplier = 2.5
 
