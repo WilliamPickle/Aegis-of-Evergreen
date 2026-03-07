@@ -30,6 +30,10 @@ func _ready() -> void:
 			
 func apply_stat_changes(is_creating := true):
 	if is_creating:
+		# If tower is a hero then dont apply debuff
+		if _is_debuff and target is Tower and target.is_hero:
+			queue_free()
+			return
 		#var timer = self
 		# make sure same debuffs/buffs from same enemy type aren't repeated
 		for status in target.status_applied_list:

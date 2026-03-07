@@ -152,7 +152,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_4cm5l")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_4cm5l")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4cm5l")
 
-[node name="DetectionSpeed" type="Timer" parent="."]
+[node name="AttackCoolDOwn" type="Timer" parent="."]
 wait_time = 5.0
 
 [node name="Range" type="Area2D" parent="."]

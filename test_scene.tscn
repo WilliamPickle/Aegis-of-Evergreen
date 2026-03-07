@@ -1,9 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://brtfoxm0gr3yv"]
+[gd_scene load_steps=41 format=3 uid="uid://brtfoxm0gr3yv"]
 
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="1_ia1lp"]
 [ext_resource type="Texture2D" uid="uid://qe8ek44em105" path="res://assets/sprites/maps/map1/Map 1 Level 3.png" id="1_sasra"]
 [ext_resource type="Texture2D" uid="uid://bukuipih0v8s1" path="res://assets/sprites/towers/tower cards/bee_card.png" id="2_sasra"]
 [ext_resource type="LabelSettings" uid="uid://vail84n30cws" path="res://assets/fonts/error_notification.tres" id="4_coq8p"]
+[ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="5_2nij2"]
+[ext_resource type="Script" uid="uid://bourk7wmpstuv" path="res://scripts/image_display_script.gd" id="6_7cbxl"]
+[ext_resource type="Texture2D" uid="uid://vyejon8a8wc1" path="res://assets/sprites/icons and buttons/control_button_highlighted.png" id="6_8pr8v"]
+[ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="8_buypi"]
+[ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="9_hiucn"]
+[ext_resource type="Script" uid="uid://78nctyr55g08" path="res://scripts/fish_script.gd" id="10_k6its"]
+[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="11_2dw41"]
+[ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="12_ykxp3"]
+[ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="13_g6y4b"]
+[ext_resource type="Texture2D" uid="uid://bvxmxb1e80sfy" path="res://assets/sprites/maps/map1/trees_v1_overlayer.png" id="14_pvxhv"]
+[ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="15_6h1ut"]
+[ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="16_6m80x"]
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="17_k6its"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia1lp"]
 texture = ExtResource("2_sasra")
@@ -15,6 +28,155 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 texture = ExtResource("2_sasra")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
+atlas = ExtResource("9_hiucn")
+region = Rect2(0, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2xxo"]
+atlas = ExtResource("9_hiucn")
+region = Rect2(100, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cbcq"]
+atlas = ExtResource("9_hiucn")
+region = Rect2(200, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isj1j"]
+atlas = ExtResource("9_hiucn")
+region = Rect2(300, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so66j"]
+atlas = ExtResource("9_hiucn")
+region = Rect2(400, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr1x6"]
+atlas = ExtResource("9_hiucn")
+region = Rect2(500, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5akn"]
+atlas = ExtResource("9_hiucn")
+region = Rect2(600, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbtxt"]
+atlas = ExtResource("9_hiucn")
+region = Rect2(700, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2fux"]
+atlas = ExtResource("9_hiucn")
+region = Rect2(800, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7g0b"]
+atlas = ExtResource("9_hiucn")
+region = Rect2(900, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmfjm"]
+atlas = ExtResource("9_hiucn")
+region = Rect2(1000, 0, 100, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cqn77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s4pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2xxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cbcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isj1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so66j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr1x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5akn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbtxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2fux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7g0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmfjm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbb35"]
+atlas = ExtResource("12_ykxp3")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw4em"]
+atlas = ExtResource("12_ykxp3")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnsmf"]
+atlas = ExtResource("12_ykxp3")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nossa"]
+atlas = ExtResource("12_ykxp3")
+region = Rect2(1920, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjqri"]
+atlas = ExtResource("12_ykxp3")
+region = Rect2(2560, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg84p"]
+atlas = ExtResource("12_ykxp3")
+region = Rect2(3200, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aans"]
+atlas = ExtResource("12_ykxp3")
+region = Rect2(3840, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0ron"]
+atlas = ExtResource("12_ykxp3")
+region = Rect2(4480, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22oil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbb35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw4em")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnsmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nossa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjqri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg84p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aans")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0ron")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="TestScene" type="Node2D"]
 
@@ -41,21 +203,623 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_coq8p")
 text = "$451"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
+zoom = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -79.0
 offset_top = -4.0
+offset_right = 79.0
 offset_bottom = 4.0
-grow_horizontal = 0
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Insuffucient funds"
 label_settings = ExtResource("4_coq8p")
+
+[node name="Sprite2D3" type="TextureButton" parent="."]
+offset_right = 23.0
+offset_bottom = 23.0
+scale = Vector2(2.08696, 2.08696)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+script = ExtResource("6_7cbxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D3"]
+position = Vector2(49.8333, 11.0208)
+scale = Vector2(3.56667, 8.64583)
+texture = ExtResource("8_buypi")
+
+[node name="MapAssets" type="Node2D" parent="."]
+visible = false
+
+[node name="fish" type="AnimatedSprite2D" parent="MapAssets"]
+z_index = 1
+position = Vector2(30, -75)
+scale = Vector2(1.1, 1.1)
+sprite_frames = SubResource("SpriteFrames_cqn77")
+autoplay = "default"
+script = ExtResource("10_k6its")
+x_min_range_scale = 0.8
+x_max_range_scale = 1.1
+y_min_range_scale = 0.8
+y_max_range_scale = 1.1
+x_min_range_position = 35.0
+x_max_range_position = 45.0
+y_min_range_position = -75.0
+y_max_range_position = -90.0
+min_timer = 0.1
+max_timer = 0.5
+
+[node name="Timer" type="Timer" parent="MapAssets/fish"]
+
+[node name="map" type="Sprite2D" parent="MapAssets"]
+texture = ExtResource("11_2dw41")
+metadata/_edit_lock_ = true
+
+[node name="river" type="AnimatedSprite2D" parent="MapAssets"]
+sprite_frames = SubResource("SpriteFrames_22oil")
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="bridge" type="Sprite2D" parent="MapAssets"]
+z_index = 2
+texture = ExtResource("13_g6y4b")
+metadata/_edit_lock_ = true
+
+[node name="tree_overlayer" type="Sprite2D" parent="MapAssets"]
+z_index = 10
+texture = ExtResource("14_pvxhv")
+metadata/_edit_lock_ = true
+
+[node name="tree" type="Sprite2D" parent="MapAssets"]
+texture = ExtResource("15_6h1ut")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MapAssets"]
+texture = ExtResource("16_6m80x")
+
+[node name="fish2" type="AnimatedSprite2D" parent="MapAssets"]
+z_index = 1
+position = Vector2(-85, -144)
+rotation = 0.285981
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_cqn77")
+autoplay = "default"
+script = ExtResource("10_k6its")
+x_min_range_scale = 0.5
+x_max_range_scale = 0.7
+y_min_range_scale = 0.5
+y_max_range_scale = 0.7
+x_min_range_position = -85.0
+x_max_range_position = -95.0
+y_min_range_position = -140.0
+y_max_range_position = -160.0
+min_timer = 0.1
+max_timer = 0.5
+
+[node name="Timer" type="Timer" parent="MapAssets/fish2"]
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+script = ExtResource("17_k6its")
+tint_during_pause = true
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface"]
+visible = false
+offset_left = 10.0
+offset_top = 690.0
+offset_right = 165.0
+offset_bottom = 713.0
+theme_override_constants/separation = 10
+
+[node name="TextureButton" type="TextureButton" parent="UserInterface/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/HBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="UserInterface/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/HBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="UserInterface/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/HBoxContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton4" type="TextureButton" parent="UserInterface/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/HBoxContainer/TextureButton4"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton5" type="TextureButton" parent="UserInterface/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/HBoxContainer/TextureButton5"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="UserInterface"]
+visible = false
+offset_right = 82.0
+offset_bottom = 23.0
+
+[node name="TextureButton" type="TextureButton" parent="UserInterface/HFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/HFlowContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="UserInterface/HFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/HFlowContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="UserInterface/HFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/HFlowContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HScrollBar" type="HScrollBar" parent="UserInterface"]
+visible = false
+offset_right = 173.0
+offset_bottom = 116.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UserInterface"]
+visible = false
+offset_left = 117.0
+offset_top = 273.0
+offset_right = 196.0
+offset_bottom = 363.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="UserInterface"]
+custom_minimum_size = Vector2(10, 10)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -33.0
+offset_right = 33.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="TextureButton8" type="TextureButton" parent="UserInterface/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton8"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton9" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton9"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton10" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton10"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton11" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton11"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton12" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton12"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton13" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton13"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton14" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton14"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton15" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton15"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton16" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton16"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton4" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton4"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton5" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton5"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton6" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton6"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton7" type="TextureButton" parent="UserInterface/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_2nij2")
+texture_hover = ExtResource("6_8pr8v")
+
+[node name="Label2" type="Label" parent="UserInterface/GridContainer/TextureButton7"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.5
+offset_top = -8.0
+offset_right = 15.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ia1lp")
+theme_override_font_sizes/font_size = 8
+text = "Random"
+horizontal_alignment = 1
+vertical_alignment = 1

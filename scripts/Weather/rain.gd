@@ -44,12 +44,11 @@ func _ready() -> void:
 	)
 
 func _on_tower_placed(tower : Tower) -> void:
-	if !(tower is Ranger):
-		var _duration = effect_duration.time_left
-		var stat_changer = StatChanger.new()
-		stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, _duration)
-		tower.add_child(stat_changer)
-		tower.weather_statuses.set("rain", stat_changer)
+	var _duration = effect_duration.time_left
+	var stat_changer = StatChanger.new()
+	stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, _duration)
+	tower.add_child(stat_changer)
+	tower.weather_statuses.set("rain", stat_changer)
 	
 func _on_tower_upgrade(tower : Tower) -> void:
 	if is_instance_valid(tower.weather_statuses["rain"]):

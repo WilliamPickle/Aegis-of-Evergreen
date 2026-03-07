@@ -2,7 +2,7 @@ extends Tower
 class_name Ranger
 # READ HERE
 # The tower will detect other towers at a set amount of time set in DetectionSpeed node
-@onready var _detection_speed : Timer = $DetectionSpeed
+@onready var _attack_cooldown : Timer = $AttackCoolDOwn
 @onready var buff_types : Array = object_data["buff_types"][0]
 @onready var buff_multipliers : Array = object_data["buff_multipliers"][0]
 @onready var buff_duration : float = object_data["buff_duration"]
@@ -23,9 +23,9 @@ func _ready() -> void:
 			#notif.send_notif(global_position,"max of 1 ranger")
 			#return
 		does_exist = true
-		_detection_speed.autostart = true
-		_detection_speed.start()
-		_detection_speed.timeout.connect(detect_tower)
+		_attack_cooldown.autostart = true
+		_attack_cooldown.start()
+		_attack_cooldown.timeout.connect(detect_tower)
 		)
 
 func place_tower() -> bool:
