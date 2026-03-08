@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://d2uqwbxrpnoex"]
+[gd_scene load_steps=71 format=3 uid="uid://d2uqwbxrpnoex"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_r0rxt"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_r3rh7"]
@@ -30,9 +30,10 @@
 [ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="27_rc0hx"]
 [ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="28_41vox"]
 [ext_resource type="Texture2D" uid="uid://w0p8w3br2bps" path="res://assets/sprites/tutorial assets/skip_tutorial_button.png" id="30_a6d6p"]
-[ext_resource type="PackedScene" uid="uid://b7t00txf1d4ho" path="res://scenes/UI/guidebook_popup.tscn" id="30_pm2mo"]
+[ext_resource type="Script" uid="uid://b886n3hhdc206" path="res://scripts/tutorial_skip_prompt.gd" id="31_b2nau"]
 [ext_resource type="Texture2D" uid="uid://cqenjdnyid0fg" path="res://assets/sprites/tutorial assets/skip_tutorial_button_highlight.png" id="31_pm2mo"]
 [ext_resource type="Script" uid="uid://bblhwa8psc3qr" path="res://scripts/UI/tutorial_skip_button.gd" id="32_a6d6p"]
+[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="35_r0y8g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("2_r3rh7")
@@ -221,6 +222,50 @@ modulate_color = Color(0.589095, 0.589096, 0.589095, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqfht"]
 texture = ExtResource("30_a6d6p")
 
+[sub_resource type="LabelSettings" id="LabelSettings_1npmj"]
+font = ExtResource("11_e7h5a")
+font_size = 48
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_b2nau"]
+resource_name = "new_animation"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_r0y8g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1npmj"]
+_data = {
+&"RESET": SubResource("Animation_r0y8g"),
+&"new_animation": SubResource("Animation_b2nau")
+}
+
 [node name="tutorial_level" type="Node2D" groups=["ui_buttons", "upgrade_menus"]]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -328,7 +373,7 @@ hide_during_pause = true
 
 [node name="Dialogue" type="CanvasLayer" parent="."]
 process_mode = 3
-layer = 2
+layer = 3
 script = ExtResource("17_tjoum")
 
 [node name="Intro" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
@@ -775,6 +820,492 @@ texture = ExtResource("20_5hj4c")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 240)
 
+[node name="AlmanacPopup" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+autoplay_on_load = false
+send_wave_signal = true
+hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/AlmanacPopup"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/AlmanacPopup"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/AlmanacPopup"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/AlmanacPopup"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/AlmanacPopup"]
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/AlmanacPopup"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label1" type="Label" parent="Dialogue/AlmanacPopup/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Good job on defending against the wave of bushes!"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/AlmanacPopup/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="clickmask" type="Control" parent="Dialogue/AlmanacPopup/DialogueLabels/Label1"]
+anchors_preset = 0
+offset_left = -205.0
+offset_top = -566.0
+offset_right = -112.0
+offset_bottom = -431.0
+
+[node name="Label4" type="Label" parent="Dialogue/AlmanacPopup/DialogueLabels"]
+visible = false
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Upon fending off a wave, or by waiting it out, you'll gain a large sum of currency. Defeating an enemy gives currency too."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/AlmanacPopup/DialogueLabels/Label4"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Label2" type="Label" parent="Dialogue/AlmanacPopup/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "If you notice here, it seems you've also gotten a notification. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/AlmanacPopup/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Notification" type="Control" parent="Dialogue/AlmanacPopup/DialogueLabels/Label2"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 188.0
+offset_top = 675.0
+offset_right = 228.0
+offset_bottom = 715.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label2/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1122.0
+offset_right = 888.0
+offset_bottom = -724.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label2/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -724.0
+offset_right = 888.0
+offset_bottom = -326.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label2/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -302.0
+offset_top = -1330.0
+offset_right = 888.0
+offset_bottom = -1122.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label2/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1330.0
+offset_right = -302.0
+offset_bottom = -1212.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="spotlight" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label2/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1212.0
+offset_right = -302.0
+offset_bottom = -1122.0
+mouse_filter = 0
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Label3" type="Label" parent="Dialogue/AlmanacPopup/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Whenever you encounter an enemy for the first time, a notification will appear to direct you to the guidebook. The same goes when you unlock a new ally."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/AlmanacPopup/DialogueLabels/Label3"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Notification" type="Control" parent="Dialogue/AlmanacPopup/DialogueLabels/Label3"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 188.0
+offset_top = 675.0
+offset_right = 228.0
+offset_bottom = 715.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label3/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1122.0
+offset_right = 888.0
+offset_bottom = -724.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label3/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -724.0
+offset_right = 888.0
+offset_bottom = -326.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label3/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -302.0
+offset_top = -1330.0
+offset_right = 888.0
+offset_bottom = -1122.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label3/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1330.0
+offset_right = -302.0
+offset_bottom = -1212.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="spotlight" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label3/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1212.0
+offset_right = -302.0
+offset_bottom = -1122.0
+mouse_filter = 0
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Label5" type="Label" parent="Dialogue/AlmanacPopup/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Have a look at the guidebook and see what it's about. Click off the dialogue before doing so. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/AlmanacPopup/DialogueLabels/Label5"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Notification" type="Control" parent="Dialogue/AlmanacPopup/DialogueLabels/Label5"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 188.0
+offset_top = 675.0
+offset_right = 228.0
+offset_bottom = 715.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label5/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1122.0
+offset_right = 888.0
+offset_bottom = -724.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label5/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -724.0
+offset_right = 888.0
+offset_bottom = -326.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label5/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -302.0
+offset_top = -1330.0
+offset_right = 888.0
+offset_bottom = -1122.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label5/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1330.0
+offset_right = -302.0
+offset_bottom = -1212.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="spotlight" type="TextureRect" parent="Dialogue/AlmanacPopup/DialogueLabels/Label5/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1212.0
+offset_right = -302.0
+offset_bottom = -1122.0
+mouse_filter = 0
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="Almanac" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_r0rxt")
+continue_button = NodePath("ContButton")
+skip_button = NodePath("SkipButton")
+label_container = NodePath("DialogueLabels")
+timer = NodePath("Timer")
+autoplay_on_load = false
+send_wave_signal = true
+hide_node = true
+node_to_hide = NodePath("../../ScrollbarUI")
+metadata/_custom_type_script = "uid://ie1q8lhylawu"
+
+[node name="BoxTexture" type="TextureRect" parent="Dialogue/Almanac"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("18_qj2tc")
+
+[node name="Speaker" type="Label" parent="Dialogue/Almanac"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 554.0
+offset_right = 282.0
+offset_bottom = 570.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="SkipButton" type="Button" parent="Dialogue/Almanac"]
+visible = false
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="ContButton" type="Button" parent="Dialogue/Almanac"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 699.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicy8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eicy8")
+
+[node name="Timer" type="Timer" parent="Dialogue/Almanac"]
+
+[node name="DialogueLabels" type="Control" parent="Dialogue/Almanac"]
+anchors_preset = 0
+offset_left = 189.0
+offset_top = 594.0
+offset_right = 940.0
+offset_bottom = 683.0
+mouse_filter = 2
+
+[node name="Label1" type="Label" parent="Dialogue/Almanac/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Keeping it brief, you can learn all about the allies and enemies you meet through this guidebook."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Almanac/DialogueLabels/Label1"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Label2" type="Label" parent="Dialogue/Almanac/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "Learn how they work, and learn some extra facts about them. You can navigate every page using the tabs on the side."
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Almanac/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Label4" type="Label" parent="Dialogue/Almanac/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "When you're done browsing the book, hit the back button below and I'll continue the tutorial. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Almanac/DialogueLabels/Label4"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
 [node name="Waves and Enemies" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
 visible = false
 layout_mode = 3
@@ -847,60 +1378,6 @@ offset_right = 940.0
 offset_bottom = 683.0
 mouse_filter = 2
 
-[node name="Label1" type="Label" parent="Dialogue/Waves and Enemies/DialogueLabels"]
-visible = false
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 678.0
-offset_bottom = 76.0
-text = "Good job on defending against those bushes!"
-label_settings = ExtResource("19_54yye")
-autowrap_mode = 2
-
-[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Waves and Enemies/DialogueLabels/Label1"]
-position = Vector2(776, -32)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("20_5hj4c")
-region_enabled = true
-region_rect = Rect2(0, 0, 320, 240)
-
-[node name="Label2" type="Label" parent="Dialogue/Waves and Enemies/DialogueLabels"]
-visible = false
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 678.0
-offset_bottom = 76.0
-text = "That was one \"wave\" of enemies. Upon fending off a wave, or by waiting it out, you'll gain a large sum of currency."
-label_settings = ExtResource("19_54yye")
-autowrap_mode = 2
-
-[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Waves and Enemies/DialogueLabels/Label2"]
-position = Vector2(776, -32)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("20_5hj4c")
-region_enabled = true
-region_rect = Rect2(320, 0, 320, 240)
-
-[node name="Label3" type="Label" parent="Dialogue/Waves and Enemies/DialogueLabels"]
-visible = false
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 678.0
-offset_bottom = 76.0
-text = "You also get currency for every enemy that is defeated. "
-label_settings = ExtResource("19_54yye")
-autowrap_mode = 2
-
-[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Waves and Enemies/DialogueLabels/Label3"]
-position = Vector2(776, -32)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("20_5hj4c")
-region_enabled = true
-region_rect = Rect2(320, 0, 320, 240)
-
 [node name="Label4" type="Label" parent="Dialogue/Waves and Enemies/DialogueLabels"]
 visible = false
 layout_mode = 0
@@ -908,7 +1385,7 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 678.0
 offset_bottom = 76.0
-text = "Speaking of enemies, if you want to learn more about them, you can refer to the \"survival guidebook\" in the pause menu. "
+text = "You can always refer to the guidebook again in the pause menu. In fact, you can access a lot of other menus here too."
 label_settings = ExtResource("19_54yye")
 autowrap_mode = 2
 
@@ -967,7 +1444,7 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 678.0
 offset_bottom = 76.0
-text = "Let's take a look at that along with the other menus at your disposal. Just click off the dialogue to continue again. "
+text = "Let's take a quick look at those menus before we move on."
 label_settings = ExtResource("19_54yye")
 autowrap_mode = 2
 
@@ -1091,24 +1568,6 @@ offset_right = 940.0
 offset_bottom = 683.0
 mouse_filter = 2
 
-[node name="Label1" type="Label" parent="Dialogue/Menus/DialogueLabels"]
-visible = false
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 678.0
-offset_bottom = 76.0
-text = "By the way, while the game is paused, towers and enemies alike are frozen. This allows you to view the menus in peace."
-label_settings = ExtResource("19_54yye")
-autowrap_mode = 2
-
-[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Menus/DialogueLabels/Label1"]
-position = Vector2(776, -32)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("20_5hj4c")
-region_enabled = true
-region_rect = Rect2(320, 0, 320, 240)
-
 [node name="Label2" type="Label" parent="Dialogue/Menus/DialogueLabels"]
 visible = false
 layout_mode = 0
@@ -1194,7 +1653,7 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 678.0
 offset_bottom = 76.0
-text = "As mentioned prior, this is the guidebook. It's got plenty of useful facts and information on allies, enemies, and other things. If you're lost on what something does, refer to this book. "
+text = "Here's the same guidebook from before. Make good use of it and keep yourself informed."
 label_settings = ExtResource("19_54yye")
 autowrap_mode = 2
 
@@ -2290,50 +2749,6 @@ offset_top = 87.0
 offset_right = 74.0
 offset_bottom = 147.0
 
-[node name="GuidebookPopup" parent="Icons/Control/GuidebookNotis" instance=ExtResource("30_pm2mo")]
-visible = false
-layout_mode = 2
-
-[node name="GuidebookPopup2" parent="Icons/Control/GuidebookNotis" instance=ExtResource("30_pm2mo")]
-visible = false
-layout_mode = 2
-
-[node name="GuidebookPopup3" parent="Icons/Control/GuidebookNotis" instance=ExtResource("30_pm2mo")]
-visible = false
-layout_mode = 2
-
-[node name="Skip Button" type="CanvasLayer" parent="."]
-script = ExtResource("10_1npmj")
-tint_during_pause = true
-metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
-
-[node name="Skip Button" type="Button" parent="Skip Button"]
-offset_left = 1004.0
-offset_top = 10.0
-offset_right = 1132.0
-offset_bottom = 70.0
-theme_override_colors/font_pressed_color = Color(0.589095, 0.589096, 0.589095, 1)
-theme_override_fonts/font = ExtResource("11_e7h5a")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_b2nau")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_r0y8g")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1npmj")
-theme_override_styles/hover = SubResource("StyleBoxTexture_e7h5a")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_0dl17")
-theme_override_styles/normal = SubResource("StyleBoxTexture_bqfht")
-text = "Skip"
-script = ExtResource("32_a6d6p")
-file_path = "res://scenes/level_1.tscn"
-new_scene = true
-metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
-
-[node name="ClickMask" type="Control" parent="Skip Button"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-
 [node name="ClickMasks" type="CanvasLayer" parent="."]
 script = ExtResource("10_1npmj")
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
@@ -2473,6 +2888,78 @@ offset_top = -686.0
 offset_right = -126.0
 offset_bottom = -558.0
 
+[node name="Notification" type="Control" parent="ClickMasks"]
+visible = false
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 393.0
+offset_top = 1282.0
+offset_right = 433.0
+offset_bottom = 1322.0
+
+[node name="Shadow" type="TextureRect" parent="ClickMasks/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1122.0
+offset_right = 888.0
+offset_bottom = -724.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="ClickMasks/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -724.0
+offset_right = 888.0
+offset_bottom = -326.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="ClickMasks/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -302.0
+offset_top = -1330.0
+offset_right = 888.0
+offset_bottom = -1122.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="ClickMasks/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1330.0
+offset_right = -302.0
+offset_bottom = -1212.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="spotlight" type="TextureRect" parent="ClickMasks/Notification"]
+z_index = -1
+layout_mode = 0
+offset_left = -392.0
+offset_top = -1212.0
+offset_right = -302.0
+offset_bottom = -1122.0
+mouse_filter = 2
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
+[node name="NotificationGame" type="Control" parent="ClickMasks"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 75.0
+offset_right = 89.0
+offset_bottom = 160.0
+
 [node name="ClickMasksNotUI" type="Control" parent="."]
 z_index = 11
 layout_mode = 3
@@ -2546,3 +3033,142 @@ offset_bottom = 20.0
 mouse_filter = 2
 texture = ExtResource("22_j0wqo")
 expand_mode = 1
+
+[node name="TutorialSkipPrompt" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 5
+script = ExtResource("31_b2nau")
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="Shadow" type="CanvasLayer" parent="TutorialSkipPrompt"]
+layer = 20
+visible = false
+script = ExtResource("10_1npmj")
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="Skip Button" type="CanvasLayer" parent="TutorialSkipPrompt"]
+layer = 20
+visible = false
+script = ExtResource("10_1npmj")
+tint_during_pause = true
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="ClickMask" type="Control" parent="TutorialSkipPrompt/Skip Button"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Play Button" type="CanvasLayer" parent="TutorialSkipPrompt"]
+layer = 20
+visible = false
+script = ExtResource("10_1npmj")
+tint_during_pause = true
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="ClickMask" type="Control" parent="TutorialSkipPrompt/Play Button"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="TowerHighlight" type="Control" parent="TutorialSkipPrompt"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -640.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Shadow5" type="TextureRect" parent="TutorialSkipPrompt/TowerHighlight"]
+z_index = -1
+layout_mode = 0
+offset_left = -11.0
+offset_top = -5.0
+offset_right = 1282.0
+offset_bottom = 725.0
+mouse_filter = 0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Skip Button2" type="Button" parent="TutorialSkipPrompt"]
+offset_left = 665.0
+offset_top = 351.0
+offset_right = 793.0
+offset_bottom = 411.0
+scale = Vector2(1.25, 1.25)
+theme_override_colors/font_pressed_color = Color(0.589095, 0.589096, 0.589095, 1)
+theme_override_fonts/font = ExtResource("11_e7h5a")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b2nau")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r0y8g")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1npmj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e7h5a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0dl17")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bqfht")
+text = "Skip"
+script = ExtResource("32_a6d6p")
+file_path = "res://scenes/level_1.tscn"
+new_scene = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="Play Button2" type="Button" parent="TutorialSkipPrompt"]
+offset_left = 455.0
+offset_top = 351.0
+offset_right = 583.0
+offset_bottom = 411.0
+scale = Vector2(1.25, 1.25)
+theme_override_colors/font_pressed_color = Color(0.589095, 0.589096, 0.589095, 1)
+theme_override_fonts/font = ExtResource("11_e7h5a")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b2nau")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r0y8g")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1npmj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e7h5a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0dl17")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bqfht")
+text = "Play"
+script = ExtResource("35_r0y8g")
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="Text" type="Control" parent="TutorialSkipPrompt"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="TutorialSkipPrompt/Text"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 226.0
+offset_right = 1092.0
+offset_bottom = 274.0
+text = "Would you like to play the tutorial?"
+label_settings = SubResource("LabelSettings_1npmj")
+
+[node name="Label2" type="Label" parent="TutorialSkipPrompt/Text"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 287.0
+offset_right = 1424.0
+offset_bottom = 335.0
+scale = Vector2(0.5, 0.5)
+text = "<< Highly Recommended for Everyone >>"
+label_settings = SubResource("LabelSettings_1npmj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TutorialSkipPrompt/Text/Label2"]
+libraries = {
+&"": SubResource("AnimationLibrary_1npmj")
+}
+autoplay = "new_animation"

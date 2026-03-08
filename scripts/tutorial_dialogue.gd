@@ -5,6 +5,8 @@ extends CanvasLayer
 var dialogue_index : int = 0
 
 # vars for specific moments in the tutorial
+@onready var guidebook_noti = $"../Icons/Control/GuidebookNotis"
+var popup : Button
 var pause_button : Button
 
 func _ready() -> void:
@@ -23,6 +25,9 @@ func continue_dialogue():
 	# After BeforeWave1 dialogue
 	elif dialogue_index == 3:
 		await wave_spawner.wave_timer.timeout
+		#if $"../Icons/Control/GuidebookNotis".get_child_count() == 0:
+			#print("noti already removed")
+			#dialogue_index += 1
 		#Tower_Placement.reset_data(true)
 		$"Waves and Enemies/DialogueLabels/Label4".visibility_changed.connect(func():
 			for button in tree.get_nodes_in_group("ui_buttons"):
@@ -30,8 +35,21 @@ func continue_dialogue():
 					pause_button = button
 					button.disabled = false
 			)
-	# After Waves and Enemies dialogue
+	#After AlmanacPopup dialogue
 	elif dialogue_index == 4:
+		$"../ClickMasks/NotificationGame".visible = false
+		$"../ClickMasks/Notification".visible = true
+		popup = guidebook_noti.get_child(0)
+		popup.x_button.disabled = true
+		await popup.button_up
+		$"../ClickMasks/Notification".visible = false
+		popup.guidebook_script.back_button.disabled = true
+	#After Almanac dialogue
+	elif dialogue_index == 5:
+		popup.guidebook_script.back_button.disabled = false
+		await popup.guidebook_script.back_button.button_down
+	# After Waves and Enemies dialogue
+	elif dialogue_index == 6:
 		$"../ClickMasks/PauseButtonSpotlight".visible = true
 		await PauseUi.pause_activated
 		pause_button.disabled = true
@@ -43,24 +61,26 @@ func continue_dialogue():
 				button.remove_from_group("ui_buttons")
 			)
 	# After Menu dialogue
-	elif dialogue_index == 5:
+	elif dialogue_index == 7:
 		await PauseUi.pause_activated
 	# After BeforeWave2 dialogue
-	elif dialogue_index == 6:
+	elif dialogue_index == 8:
 		await wave_spawner.wave_timer.timeout
 		PlayerStats.PlayerXp = 1000
 		PlayerStats.emit_signal("xp_changed")
+		$"../ClickMasks/NotificationGame".visible = true
 		
 	# After Lvl Up and Heroes
-	elif dialogue_index == 8:
+	elif dialogue_index == 10:
 		$"../ClickMasks/Ranger".visible = true
 		await ControlHandler.card_clicked_on
 		$"../ClickMasks/Ranger".visible = false
+		$"../ClickMasks/NotificationGame".visible = false
 		# at this step player can technically cancel placement and 
 		# place chipmunk instead but oh well
 		await PlayerStats.money_changed
 	# After Upgrade Menus
-	elif dialogue_index == 9:
+	elif dialogue_index == 11:
 		var twr_highlight: Control  = $"../ClickMasksNotUI/TowerHighlight"
 		var temp_twr_list := []
 		for node in $"../PlacementCollisions".get_children():

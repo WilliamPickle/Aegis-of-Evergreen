@@ -3,6 +3,7 @@ extends WaveSpawner
 @onready var wave1_dialogue: DialogueBox = $"../Dialogue/BeforeWave1"
 @onready var wave2_dialogue: DialogueBox = $"../Dialogue/BeforeWave2"
 @onready var wave3_dialogue: DialogueBox = $"../Dialogue/BeforeWave3"
+@onready var guidebook_notis: VBoxContainer = $"../Icons/Control/GuidebookNotis"
 
 func _ready() -> void:
 	super._ready()
@@ -18,7 +19,12 @@ func _ready() -> void:
 func _on_start_wave1() -> void:
 	# wave 1 - 30 cash gain
 	start_wave_timer(3600)
-	await send_enemy(bush, 3, 6)
+	await send_enemy(bush, 1, 3)
+	var popup_timer: Timer = guidebook_notis.get_child(0).timer
+	popup_timer.stop()
+	popup_timer.wait_time = 1000000000
+	popup_timer.start()
+	#await send_enemy(bush, 2, 6)
 	
 	currently_sending = false
 	await wave_timer.timeout
