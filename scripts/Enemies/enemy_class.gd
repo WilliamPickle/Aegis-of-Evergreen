@@ -97,7 +97,7 @@ func move_on_path(delta) -> void:
 		cur_position = path_position
 		#print("-This is cur pos: ", cur_position, " this is prev_pos: ", prev_position)
 	
-	if (cur_position - prev_position) * travel_direction < -0.1:
+	if (cur_position - prev_position) * travel_direction < 0:
 		#print("This is cur pos: ", global_position.x, " this is prev_pos: ", prev_position)
 		print("For: ", path.name)
 		print("Difference in positions: ", global_position.x-prev_position)

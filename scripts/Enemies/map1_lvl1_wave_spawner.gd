@@ -60,7 +60,7 @@ func _on_start_lvl1() -> void:
 	
 	# wave 5 - 300 cash gain
 	start_wave_timer(3600)
-	WeatherController.spawn_rain(60, -0.25, weather_node)
+	WeatherController.spawn_rain(60, -0.35, weather_node)
 	await send_enemy(bush, 30, 0.2)
 	await send_enemy(cow, 2, 0.5)
 	await delay(1)
