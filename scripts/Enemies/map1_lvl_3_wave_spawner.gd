@@ -25,9 +25,10 @@ func _on_start_lvl3() -> void:
 	#await wave_timer.timeout
 	
 	# wave 1
-	start_wave_timer(55)
+	start_wave_timer(45)
 	await send_enemy(bush, 10, 0.5)
-	await send_enemy(hornet, 2, 0.5)
+	await send_enemy(hornet, 1, 0.5)
+	await send_enemy(squirrel, 2, 0.5)
 	#send_enemy(bush, 16, 0.75)
 	#await delay(6)
 	#await send_enemy(snail, 1, 0.5)
@@ -37,7 +38,7 @@ func _on_start_lvl3() -> void:
 	signify_wave_end()
 	
 	# wave 2
-	start_wave_timer(45)
+	start_wave_timer(35)
 	WeatherController.spawn_wind(35, 0.35, -0.35, 1, weather_node)
 	await send_enemy(bush, 20, 0.5)
 	await delay(5)

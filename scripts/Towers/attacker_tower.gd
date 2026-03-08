@@ -75,6 +75,11 @@ func upgrade_tower() -> void:
 	cur_damage = damage
 	attack_fpath = object_data["attack_fpath"][level]
 	_attack_cooldown.start(object_data["attack_speed"][level])
+	#print("tried changing to lvl 2 atk cd")
+	# resending this signal so that rain utilizes the current level's
+	# stat and not the old one, and also so that the line above this
+	# doesn't override the rain buff
+	PlayerStats.upgraded_tower.emit(self)
 
 ## When tower checks for enemies in its range, and detects 0,
 ## the tower will use defualt area_entered signal.

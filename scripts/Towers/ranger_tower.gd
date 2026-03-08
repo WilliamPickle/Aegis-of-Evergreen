@@ -27,6 +27,7 @@ func _ready() -> void:
 		_attack_cooldown.start()
 		_attack_cooldown.timeout.connect(detect_tower)
 		)
+	tower_placed.connect(on_placement)
 
 func place_tower() -> bool:
 	if get_overlapping_areas().size() > 0:

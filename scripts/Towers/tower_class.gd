@@ -164,7 +164,7 @@ func on_placement() -> void:
 
 
 func upgrade_tower() -> void:
-	PlayerStats.upgraded_tower.emit(self)
+	#PlayerStats.upgraded_tower.emit(self)
 	total_spent += cost
 	sell_value = floori(total_spent * sell_back_ratio / 1)
 	level += 1
@@ -173,6 +173,7 @@ func upgrade_tower() -> void:
 	range = object_data["range"][level]
 	range_collider.shape.radius = range
 	queue_redraw()
+	PlayerStats.upgraded_tower.emit(self)
 
 
 static func reset_hero_data() -> void:

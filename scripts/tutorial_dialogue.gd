@@ -8,8 +8,10 @@ var dialogue_index : int = 0
 @onready var guidebook_noti = $"../Icons/Control/GuidebookNotis"
 var popup : Button
 var pause_button : Button
+var tower_list: Array[Tower] = []
 
 func _ready() -> void:
+	PlayerStats.gtower_placed.connect(disable_tower_buttons)
 	for i in range(get_child_count()):
 		get_child(i).start_wave.connect(continue_dialogue)
 		
@@ -98,13 +100,18 @@ func continue_dialogue():
 			
 		# note this signal doesn't trigger if a menu is already open
 		# and you upon the menu for a dif tower
+		for tower in tower_list:
+			tower.upgrade_ui.upgrade_button.disabled = false
+			tower.upgrade_ui.sell_button.disabled = false
+			PlayerStats.gtower_placed.disconnect(disable_tower_buttons)
 		if not ControlHandler.ControlState.VIEWING_TOWER in ControlHandler.current_states:
 			await ControlHandler.tower_clicked_on
 		twr_highlight.visible = false
 		PlayerStats.cur_money += 125
 		PlayerStats.emit_signal("money_changed")
-	# After BeforeWave2 dialogue
-	#elif dialogue_index == 10:
+	#After BeforeWave3 dialogue
+	elif dialogue_index == 12:
+		await wave_spawner.wave_timer.timeout
 
 	
 	
@@ -115,3 +122,8 @@ func continue_dialogue():
 		get_child(dialogue_index - 1).visible = false
 		get_child(dialogue_index).visible = true
 		get_child(dialogue_index).display_dialogue()
+		
+func disable_tower_buttons(tower) -> void:
+	tower.upgrade_ui.upgrade_button.disabled = true
+	tower.upgrade_ui.sell_button.disabled = true
+	tower_list.append(tower)

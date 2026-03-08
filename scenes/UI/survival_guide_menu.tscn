@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://csvtwwunpwrfh"]
+[gd_scene load_steps=83 format=3 uid="uid://csvtwwunpwrfh"]
 
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_g2sta"]
 [ext_resource type="Script" uid="uid://dy04of48wrsf7" path="res://scripts/UI/survival_guide_script.gd" id="2_1fxqp"]
@@ -233,6 +233,10 @@ modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 texture = ExtResource("14_7y2fs")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nd06i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0n4a"]
+texture = ExtResource("16_6vu8i")
+modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvcbx"]
 texture = ExtResource("16_6vu8i")
@@ -1401,6 +1405,7 @@ offset_bottom = 859.736
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nd06i")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_g0n4a")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xvcbx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_psveo")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_a8wy5")
