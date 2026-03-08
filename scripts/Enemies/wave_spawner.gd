@@ -120,7 +120,7 @@ func update_wave():
 		SceneLoader.load_scene("res://scenes/UI/win_ui.tscn", "win_ui")
 		PauseUi.toggle_pause(SceneLoader._current_scenes["win_ui"])
 		wave_timer.disconnect("timeout", update_wave)
-		print(PlayerStats.PlayerXp)
+		print("Current XP: ", PlayerStats.PlayerXp)
 	
 	#print("Final wave? ", final_wave_started)
 		
