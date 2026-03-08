@@ -21,3 +21,4 @@ func remove_lose_screen():
 	SceneLoader.tint_scene(SceneLoader.current_main_scene, false)
 	PlayerStats.pity_money += restart_pity_money
 	PlayerStats.cur_money = PlayerStats.DEFAULT_MONEY[floori(PlayerStats.lvls_beaten / 3)][PlayerStats.lvls_beaten % 3] + PlayerStats.pity_money
+	PlayerStats.emit_signal("money_changed")

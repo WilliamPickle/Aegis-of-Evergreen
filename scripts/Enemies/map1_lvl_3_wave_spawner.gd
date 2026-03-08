@@ -25,7 +25,7 @@ func _on_start_lvl3() -> void:
 	#await wave_timer.timeout
 	
 	# wave 1
-	start_wave_timer(65)
+	start_wave_timer(55)
 	await send_enemy(bush, 10, 0.5)
 	await send_enemy(hornet, 2, 0.5)
 	#send_enemy(bush, 16, 0.75)

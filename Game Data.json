@@ -377,7 +377,7 @@
 	  "xp" : 20,
 	  "money_drop" : 20,
 	  "resistance" : "blunt",
-	  "resistance_percent" : 0.6,
+	  "resistance_percent" : 0.75,
 	  "book_page" : 5,
 	},
 	"beetle" : {
