@@ -76,3 +76,4 @@ func upgrade_tower() -> void:
 	buff_duration = object_data["buff_duration"][level]
 	clense_percent = object_data["clense_percent"][level]
 	_attack_cooldown.start(object_data["attack_speed"][level])
+	PlayerStats.upgraded_tower.emit(self)

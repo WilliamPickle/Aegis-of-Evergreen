@@ -173,7 +173,7 @@ func upgrade_tower() -> void:
 	range = object_data["range"][level]
 	range_collider.shape.radius = range
 	queue_redraw()
-	PlayerStats.upgraded_tower.emit(self)
+	#PlayerStats.upgraded_tower.emit(self)
 
 
 static func reset_hero_data() -> void:

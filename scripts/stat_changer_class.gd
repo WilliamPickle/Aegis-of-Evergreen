@@ -21,6 +21,9 @@ const DOT_TICK_RATE : float = 0.5
 #ex: -0.25 indicates stat is 25% worse (thus 75% of orginal)
 @onready var percent_change: float
 @onready var duration: float
+# this is the value added/subtracted after a buff is applied/unapplied
+var initial_value: float
+var change_value: float
 
 var _is_debuff : bool
 var _has_clensed : bool = false
@@ -55,7 +58,10 @@ func apply_stat_changes(is_creating := true):
 		Type.WALK_SPEED:
 			target.speed = target.speed * (1 + percent_change)
 		Type.ATK_COOLDOWN:
+			#target._attack_cooldown.wait_time += target.object_data["attack_speed"][target.level] * (percent_change)
+			initial_value = target._attack_cooldown.wait_time
 			target._attack_cooldown.wait_time = target._attack_cooldown.wait_time * (1 + percent_change) 
+			change_value = target._attack_cooldown.wait_time - initial_value
 		Type.RANGE:
 			target.range_collider.shape.radius = target.range_collider.shape.radius * (1 + percent_change)
 			target.queue_redraw()
@@ -70,17 +76,19 @@ func apply_stat_changes(is_creating := true):
 			target.money_drop *= 1 + percent_change
 			
 
-func disable_stat_changes(delete_timer : bool = true):
-	match stat:
-		Type.WALK_SPEED:
-			target.speed = target.original_speed
-		Type.ATK_COOLDOWN:
-			target._attack_cooldown.wait_time = target.object_data["attack_speed"][target.level]
-		Type.RANGE:
-			target.range_collider.shape.radius = target.range
-			target.queue_redraw()
-		Type.MONEY_MULT:
-			target.money_drop = target.enemy_data["money_drop"]
+#lowkey this should probably become 2 separate functions
+func disable_stat_changes(delete_timer : bool = true, reset_stat : bool = true):
+	if reset_stat:
+		match stat:
+			Type.WALK_SPEED:
+				target.speed = target.original_speed
+			Type.ATK_COOLDOWN:
+				target._attack_cooldown.wait_time -= change_value
+			Type.RANGE:
+				target.range_collider.shape.radius = target.range
+				target.queue_redraw()
+			Type.MONEY_MULT:
+				target.money_drop = target.enemy_data["money_drop"]
 	
 	
 			

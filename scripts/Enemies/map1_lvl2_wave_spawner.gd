@@ -14,7 +14,7 @@ func _on_start_lvl2() -> void:
 	start_wave_timer(30)
 	await send_enemy(bush, 6, 0.5)
 	await delay(5)
-	WeatherController.spawn_rain(15, -0.25, weather_node)
+	WeatherController.spawn_rain(150, -0.5, weather_node)
 	await send_enemy(squirrel, 4, 2)
 	
 	currently_sending = false

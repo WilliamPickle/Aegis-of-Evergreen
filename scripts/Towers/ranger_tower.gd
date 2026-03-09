@@ -83,3 +83,4 @@ func upgrade_tower() -> void:
 	super.upgrade_tower()
 	buff_types = object_data["buff_types"][level]
 	buff_multipliers = object_data["buff_multipliers"][level]
+	PlayerStats.upgraded_tower.emit(self)
