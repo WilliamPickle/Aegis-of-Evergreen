@@ -344,8 +344,8 @@
   },
   "enemy": {
 	"bush": {
-	  "speed" : 0.000015,
-	  "max_health" : 4000000000,
+	  "speed" : 0.015,
+	  "max_health" : 4,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 6,
 	  "money_drop" : 5,
