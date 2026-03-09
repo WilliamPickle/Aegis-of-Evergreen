@@ -65,7 +65,7 @@ func _ready() -> void:
 	current_tower = self
 	#set_collision_layer_value(8, true)
 	set_collision_layer_value(1, false)
-	#set_collision_layer_value(3, false)
+	set_collision_layer_value(3, false)
 
 
 func _draw() -> void:
@@ -159,7 +159,11 @@ func disable_placement() -> void:
 func on_placement() -> void:
 	sprite.play("idle_"+str(level))
 	#set_collision_layer_value(8, false)
-	#set_collision_layer_value(3, true)
+	set_collision_layer_value(3, true)
+	global_position += Vector2.UP
+	force_update_transform()
+	global_position += Vector2.DOWN
+	force_update_transform()
 	PlayerStats.gtower_placed.emit(self)
 
 
@@ -173,6 +177,9 @@ func upgrade_tower() -> void:
 	range = object_data["range"][level]
 	range_collider.shape.radius = range
 	queue_redraw()
+	for object in get_children():
+		if object is StatChanger:
+			object.disable_stat_changes(true, false)
 	#PlayerStats.upgraded_tower.emit(self)
 
 

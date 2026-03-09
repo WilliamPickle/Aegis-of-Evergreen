@@ -79,7 +79,9 @@ func upgrade_tower() -> void:
 	# resending this signal so that rain utilizes the current level's
 	# stat and not the old one, and also so that the line above this
 	# doesn't override the rain buff
+	print("(before) upgrading atk cd ran. Weather list: ", weather_statuses)
 	PlayerStats.upgraded_tower.emit(self)
+	print("(after) upgrading atk cd ran. Weather list: ", weather_statuses)
 
 ## When tower checks for enemies in its range, and detects 0,
 ## the tower will use defualt area_entered signal.

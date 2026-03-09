@@ -58,15 +58,15 @@ func _on_tower_upgrade(tower : Tower) -> void:
 	if is_instance_valid(tower.weather_statuses["rain"]):
 		print("atk cd before: ", tower._attack_cooldown.wait_time)
 		tower.weather_statuses["rain"].disable_stat_changes(true, false)
-		print("atk cd reset: ", tower._attack_cooldown.wait_time)
-		tower.weather_statuses.erase("rain")
-		var stat_changer = StatChanger.new()
-		#tower.level += 1
-		stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, effect_duration.time_left)
-		tower.add_child(stat_changer)
-		#tower.level -= 1
-		tower.weather_statuses.set("rain", stat_changer)
-		print("atk cd after: ", tower._attack_cooldown.wait_time)
-		print("-------atk-------")
+	print("atk cd reset: ", tower._attack_cooldown.wait_time)
+	tower.weather_statuses.erase("rain")
+	var stat_changer = StatChanger.new()
+	#tower.level += 1
+	stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, effect_duration.time_left)
+	tower.add_child(stat_changer)
+	#tower.level -= 1
+	tower.weather_statuses.set("rain", stat_changer)
+	print("atk cd after: ", tower._attack_cooldown.wait_time)
+	print("-------atk-------")
 #func _on_tower_upgrade(tower : Tower) -> void:
 	#pass

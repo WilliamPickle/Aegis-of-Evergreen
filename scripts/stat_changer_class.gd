@@ -62,6 +62,7 @@ func apply_stat_changes(is_creating := true):
 			initial_value = target._attack_cooldown.wait_time
 			target._attack_cooldown.wait_time = target._attack_cooldown.wait_time * (1 + percent_change) 
 			change_value = target._attack_cooldown.wait_time - initial_value
+			print("atk cd change: ", change_value, " ||| ", inflictor)
 		Type.RANGE:
 			target.range_collider.shape.radius = target.range_collider.shape.radius * (1 + percent_change)
 			target.queue_redraw()
