@@ -18,6 +18,8 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 @onready var money_drop : float = object_data["money_drop"]
 @onready var resistance : String = object_data["resistance"]
 @onready var book_page : float = object_data["book_page"]
+#var immunities : Array
+var speed_variance : float = 0
 
 # enemy based variables
 @export var enemy_sprite : Node2D
@@ -53,6 +55,12 @@ static var enemies_seen_list : Array = []
 var guidebook_popup := preload("res://scenes/UI/guidebook_popup.tscn")
 
 func _ready() -> void:
+	#if object_data.has("immunities"):
+		#immunities = object_data["immunities"]
+		#print("has immunities")
+	#else:
+		#print("doesn't have immunities: ", immunities)
+	
 	hp_button.button_down.connect(toggle_health_bar)
 	cur_health = max_health
 	bar_length = health_bar.texture.get_width() * health_bar.scale.x
@@ -93,7 +101,7 @@ func move_on_path(delta) -> void:
 	if path != null:
 		path_position = global_position.x
 		prev_position = cur_position
-		path.progress_ratio += speed * delta
+		path.progress_ratio += speed * delta * (1 + speed_variance)
 		cur_position = path_position
 		#print("-This is cur pos: ", cur_position, " this is prev_pos: ", prev_position)
 	

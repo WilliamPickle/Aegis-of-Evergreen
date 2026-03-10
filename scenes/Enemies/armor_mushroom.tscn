@@ -1,6 +1,6 @@
 [gd_scene load_steps=54 format=3 uid="uid://b6stmv58mb7h"]
 
-[ext_resource type="Script" uid="uid://bq5o3fajkx3v0" path="res://scenes/Enemies/armor_mushroom.gd" id="1_pcs7g"]
+[ext_resource type="Script" uid="uid://bq5o3fajkx3v0" path="res://scripts/Enemies/armor_mushroom.gd" id="1_pcs7g"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_dwm4u"]
 [ext_resource type="Texture2D" uid="uid://bgrhb83jre0xx" path="res://assets/sprites/enemies/Zap Away.png" id="2_m4nmt"]
 [ext_resource type="Texture2D" uid="uid://8rcnahkdawms" path="res://assets/sprites/enemies/armor_mushroom.png" id="3_dwm4u"]

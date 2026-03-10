@@ -26,7 +26,7 @@ func _on_start_wave1() -> void:
 	popup_timer.stop()
 	popup_timer.wait_time = 1000000000
 	popup_timer.start()
-	#await send_enemy(bush, 2, 6)
+	await send_enemy(bush, 2, 6)
 	
 	currently_sending = false
 	await wave_timer.timeout

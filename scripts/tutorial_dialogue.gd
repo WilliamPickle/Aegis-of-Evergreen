@@ -14,6 +14,7 @@ func _ready() -> void:
 	PlayerStats.gtower_placed.connect(disable_tower_buttons)
 	for i in range(get_child_count()):
 		get_child(i).start_wave.connect(continue_dialogue)
+	
 		
 func continue_dialogue():
 	dialogue_index += 1

@@ -1,11 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://bwqq3h01phnwf"]
+[gd_scene load_steps=53 format=3 uid="uid://bwqq3h01phnwf"]
 
-[ext_resource type="Script" uid="uid://b8s182qi2sarb" path="res://scripts/Enemies/enemy_class.gd" id="1_56jvs"]
+[ext_resource type="Script" uid="uid://deh1s2fixw36s" path="res://scenes/Enemies/spore.gd" id="1_56jvs"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_5enj8"]
 [ext_resource type="Texture2D" uid="uid://bgrhb83jre0xx" path="res://assets/sprites/enemies/Zap Away.png" id="2_mf4ml"]
 [ext_resource type="Texture2D" uid="uid://du7rvebtqukpt" path="res://assets/sprites/enemies/spore.png" id="3_5enj8"]
 [ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="4_vecfr"]
 [ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="5_7ygoi"]
+[ext_resource type="Texture2D" uid="uid://dn36xgt55lesk" path="res://assets/sprites/enemies/spore_gas.png" id="6_mf4ml"]
 
 [sub_resource type="Resource" id="Resource_vecfr"]
 script = ExtResource("2_5enj8")
@@ -157,6 +158,136 @@ radius = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxf3f"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_56jvs"]
+radius = 60.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5enj8"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(0, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vecfr"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(75, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ygoi"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(150, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0vv7"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(225, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd0ju"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(300, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxbwn"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(375, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luc8l"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(450, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1fy1"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(525, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45nu2"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(600, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5w8r"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(675, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdwad"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(750, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxf3f"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(825, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbeo3"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(900, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2jhm"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(975, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joe7c"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(1050, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rotsb"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(1125, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkvas"]
+atlas = ExtResource("6_mf4ml")
+region = Rect2(1200, 0, 75, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3eyyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5enj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vecfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ygoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0vv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd0ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxbwn")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_luc8l")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_w1fy1")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_45nu2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_x5w8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdwad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxf3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbeo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2jhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joe7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rotsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkvas")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
 [node name="spore" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "defeat_animation", "hp_button", "health_bar")]
 script = ExtResource("1_56jvs")
 data_resource = SubResource("Resource_vecfr")
@@ -201,3 +332,18 @@ texture = ExtResource("4_vecfr")
 
 [node name="HpBar" type="Sprite2D" parent="HpContainer"]
 texture = ExtResource("5_7ygoi")
+
+[node name="Gas" type="Area2D" parent="."]
+visible = false
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gas"]
+shape = SubResource("CircleShape2D_56jvs")
+
+[node name="GasSprite" type="AnimatedSprite2D" parent="Gas"]
+modulate = Color(1, 1, 1, 0.458824)
+scale = Vector2(1.89333, 1.87946)
+sprite_frames = SubResource("SpriteFrames_3eyyw")
+frame = 8
+frame_progress = 0.693773

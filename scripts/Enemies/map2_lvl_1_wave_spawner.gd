@@ -13,8 +13,8 @@ func _ready() -> void:
 
 func _on_start_lvl4() -> void:
 	# test wave
-	start_wave_timer(300)
-	await send_enemy(spore_crab, 1, 0.5, path2)
+	start_wave_timer(3000)
+	await send_enemy(tanky_mushroom, 1, 2, path2)
 	
 	currently_sending = false
 	await wave_timer.timeout
