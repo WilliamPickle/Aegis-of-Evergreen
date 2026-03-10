@@ -2,7 +2,8 @@ extends Node
 
 const WEATHERS = {
 	"rain" : preload("res://scenes/Weather/rain_scene.tscn"),
-	"wind" : preload("res://scenes/Weather/wind_scene.tscn")
+	"wind" : preload("res://scenes/Weather/wind_scene.tscn"),
+	"rotting_grass" : preload("res://scenes/Weather/rotting_grass_scene.tscn"),
 }
 # duration, which can be modular (towers placed in map and base hp %)
 const STAT_TYPES = StatChanger.Type
@@ -19,3 +20,8 @@ func spawn_wind(duration : float, buff_percent : float, debuff_percent : float, 
 	#map_area.call_deferred("add_child", tower_attack)
 	weather_placement.call_deferred("add_child", wind)
 	#weather_placement.add_child(wind)
+
+func spawn_rotting_grass(duration : float, debuff_percent : float, weather_placement : Node2D):
+	var rotting_grass = WEATHERS["rotting_grass"].instantiate()
+	rotting_grass.init(duration, debuff_percent)
+	weather_placement.call_deferred("add_child", rotting_grass)

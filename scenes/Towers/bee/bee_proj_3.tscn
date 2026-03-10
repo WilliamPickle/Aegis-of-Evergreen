@@ -147,7 +147,7 @@ animations = [{
 
 [node name="BeeProj3" type="Area2D"]
 z_index = 11
-collision_layer = 8
+collision_layer = 128
 collision_mask = 2
 script = ExtResource("1_bfx67")
 offset = Vector2(-2, -16)
@@ -165,6 +165,7 @@ shape = SubResource("RectangleShape2D_bfx67")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="SplashArea" type="Area2D" parent="."]
+collision_layer = 128
 collision_mask = 2
 
 [node name="SplashShape" type="CollisionShape2D" parent="SplashArea"]

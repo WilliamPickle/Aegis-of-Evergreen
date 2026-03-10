@@ -10,7 +10,7 @@ static var debuff_percent : float = -0.5
 static var wind_direction : int = 1
 
 @onready var animation := $AnimatedSprite2D
-@onready var effect_duration : Timer = $EffectDuration
+@onready var effect_timer : Timer = $EffectDuration
 
 var r = RandomNumberGenerator.new()
 
@@ -26,8 +26,8 @@ func _ready() -> void:
 	print("---WIND HAS STARTED---")
 	if wind_direction == -1:
 		animation.flip_h = true
-	effect_duration.start(duration)
-	effect_duration.timeout.connect(_delete_wind)
+	effect_timer.start(duration)
+	effect_timer.timeout.connect(_delete_wind)
 	r.randomize()
 	# IGNORE THIS FOR NOW!!!
 	animation.animation_finished.connect(func():
@@ -52,7 +52,7 @@ func _ready() -> void:
 func _new_enemy_entered(enemy : Enemy) -> void:
 	print("AREA ENTERED FUNC RAN")
 	var stat_changer := StatChanger.new()
-	stat_changer.initialize_variables(enemy, "wind", WALK_SPEED, buff_percent, effect_duration.time_left)
+	stat_changer.initialize_variables(enemy, "wind", WALK_SPEED, buff_percent, effect_timer.time_left)
 	enemy.add_child(stat_changer)
 	enemy.weather_statuses.set("wind", stat_changer)
 	enemy.reversed.connect(_enemy_reversed)
@@ -74,7 +74,7 @@ func _enemy_reversed(enemy : Enemy) -> void:
 	else:
 		stat_percent = debuff_percent
 
-	stat_changer.initialize_variables(enemy, "wind", WALK_SPEED, stat_percent, effect_duration.time_left)
+	stat_changer.initialize_variables(enemy, "wind", WALK_SPEED, stat_percent, effect_timer.time_left)
 	enemy.add_child(stat_changer)
 	enemy.weather_statuses.set("wind", stat_changer)
 

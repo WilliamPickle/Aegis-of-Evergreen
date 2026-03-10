@@ -7,7 +7,7 @@ static var buff_percent : float = -0.5
 static var duration : float = 20
 
 @onready var detection_area : Area2D = $TowerDetectionArea
-@onready var effect_duration : Timer = $EffectDuration
+@onready var effect_timer : Timer = $EffectDuration
 
 func init(_duration : float, _buff_percent: float) -> void:
 	duration = _duration
@@ -21,7 +21,7 @@ func _ready() -> void:
 	play("rain")
 	
 	# start the timer so that calling _on_tower_placed works
-	effect_duration.start(duration)
+	effect_timer.start(duration)
 	
 	# For current towers in the rain area
 	var towers := detection_area.get_overlapping_areas()
@@ -33,8 +33,8 @@ func _ready() -> void:
 	PlayerStats.upgraded_tower.connect(_on_tower_upgrade)
 	PlayerStats.gtower_placed.connect(_on_tower_placed)
 	
-	#effect_duration.start(duration)
-	effect_duration.timeout.connect(func():
+	#effect_timer.start(duration)
+	effect_timer.timeout.connect(func():
 		play("despawn")
 		PlayerStats.upgraded_tower.disconnect(_on_tower_upgrade)
 		PlayerStats.gtower_placed.disconnect(_on_tower_placed)
@@ -43,9 +43,9 @@ func _ready() -> void:
 	)
 
 func _on_tower_placed(tower : Tower) -> void:
-	var _duration = effect_duration.time_left
-	#print("duration left: ", effect_duration.time_left)
-	#print("duration: ", effect_duration.wait_time)
+	var _duration = effect_timer.time_left
+	#print("duration left: ", effect_timer.time_left)
+	#print("duration: ", effect_timer.wait_time)
 	var stat_changer = StatChanger.new()
 	stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, _duration)
 	tower.add_child(stat_changer)
@@ -62,7 +62,7 @@ func _on_tower_upgrade(tower : Tower) -> void:
 	tower.weather_statuses.erase("rain")
 	var stat_changer = StatChanger.new()
 	#tower.level += 1
-	stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, effect_duration.time_left)
+	stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, effect_timer.time_left)
 	tower.add_child(stat_changer)
 	#tower.level -= 1
 	tower.weather_statuses.set("rain", stat_changer)

@@ -29,6 +29,9 @@ func _ready():
 	super._ready()
 
 func on_hit(enemy : Enemy) -> void:
+	if !is_instance_valid(tower):
+		queue_free()
+		return
 	enemy.apply_damage(tower.cur_damage * pierce_damage, type)
 	
 	pierce_cap -= 1
