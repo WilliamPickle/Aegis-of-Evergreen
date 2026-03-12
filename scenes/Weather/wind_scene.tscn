@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ytrdx52muy7g" path="res://assets/sprites/weather/wind_spritesheett.png" id="2_vlykd"]
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="3_ucuqv"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="4_qqhej"]
-[ext_resource type="Script" path="res://scripts/fish_script.gd" id="5_mxhau"]
+[ext_resource type="Script" uid="uid://78nctyr55g08" path="res://scripts/fish_script.gd" id="5_mxhau"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="6_n1uoj"]
 [ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="7_oc37s"]
 [ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="8_2xg00"]

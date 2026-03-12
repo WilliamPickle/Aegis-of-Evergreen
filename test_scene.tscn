@@ -1,11 +1,10 @@
-[gd_scene load_steps=50 format=3 uid="uid://brtfoxm0gr3yv"]
+[gd_scene load_steps=41 format=3 uid="uid://brtfoxm0gr3yv"]
 
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="1_ia1lp"]
 [ext_resource type="Texture2D" uid="uid://qe8ek44em105" path="res://assets/sprites/maps/map1/Map 1 Level 3.png" id="1_sasra"]
 [ext_resource type="Texture2D" uid="uid://bukuipih0v8s1" path="res://assets/sprites/towers/tower cards/bee_card.png" id="2_sasra"]
 [ext_resource type="LabelSettings" uid="uid://vail84n30cws" path="res://assets/fonts/error_notification.tres" id="4_coq8p"]
 [ext_resource type="Texture2D" uid="uid://canoaxyd12w3e" path="res://assets/sprites/icons and buttons/control_button_cropped.png" id="5_2nij2"]
-[ext_resource type="Script" uid="uid://bourk7wmpstuv" path="res://scripts/image_display_script.gd" id="6_7cbxl"]
 [ext_resource type="Texture2D" uid="uid://vyejon8a8wc1" path="res://assets/sprites/icons and buttons/control_button_highlighted.png" id="6_8pr8v"]
 [ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="8_buypi"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="9_hiucn"]
@@ -16,10 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bvxmxb1e80sfy" path="res://assets/sprites/maps/map1/trees_v1_overlayer.png" id="14_pvxhv"]
 [ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="15_6h1ut"]
 [ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="16_6m80x"]
-[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="17_k6its"]
-[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="18_2dw41"]
-[ext_resource type="Texture2D" uid="uid://cacq88a246tbl" path="res://assets/sprites/weather/weather_icons_spritesheet.png" id="18_ykxp3"]
-[ext_resource type="Texture2D" uid="uid://crdpu06t0syay" path="res://assets/sprites/icons and buttons/ui_bar.png" id="20_g6y4b"]
+[ext_resource type="PackedScene" uid="uid://c4tvpjuo8ae2w" path="res://scenes/Weather/weather_icons_scene.tscn" id="16_k6its"]
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="21_pvxhv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia1lp"]
@@ -182,25 +178,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6m80x"]
-texture = ExtResource("18_ykxp3")
-region_rect = Rect2(0, 25, 27, 25)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6y4b"]
-texture = ExtResource("20_g6y4b")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykxp3"]
-texture = ExtResource("18_ykxp3")
-region_rect = Rect2(27, 25, 27, 25)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pvxhv"]
-texture = ExtResource("18_ykxp3")
-region_rect = Rect2(108, 25, 27, 25)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6h1ut"]
-texture = ExtResource("18_ykxp3")
-region_rect = Rect2(27, 50, 27, 25)
-
 [node name="TestScene" type="Node2D"]
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
@@ -247,7 +224,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 texture_normal = ExtResource("5_2nij2")
 texture_hover = ExtResource("6_8pr8v")
-script = ExtResource("6_7cbxl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D3"]
 position = Vector2(49.8333, 11.0208)
@@ -324,331 +300,7 @@ max_timer = 0.5
 
 [node name="Timer" type="Timer" parent="MapAssets/fish2"]
 
-[node name="UserInterface" type="CanvasLayer" parent="."]
-script = ExtResource("17_k6its")
-tint_during_pause = true
-metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface"]
-visible = false
-offset_left = 10.0
-offset_top = 690.0
-offset_right = 165.0
-offset_bottom = 713.0
-theme_override_constants/separation = 10
-
-[node name="TextureButton" type="TextureButton" parent="UserInterface/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("5_2nij2")
-texture_hover = ExtResource("6_8pr8v")
-
-[node name="Label2" type="Label" parent="UserInterface/HBoxContainer/TextureButton"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -15.5
-offset_top = -8.0
-offset_right = 15.5
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_ia1lp")
-theme_override_font_sizes/font_size = 8
-text = "Random"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureButton2" type="TextureButton" parent="UserInterface/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("5_2nij2")
-texture_hover = ExtResource("6_8pr8v")
-
-[node name="Label2" type="Label" parent="UserInterface/HBoxContainer/TextureButton2"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -15.5
-offset_top = -8.0
-offset_right = 15.5
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_ia1lp")
-theme_override_font_sizes/font_size = 8
-text = "Random"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureButton3" type="TextureButton" parent="UserInterface/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("5_2nij2")
-texture_hover = ExtResource("6_8pr8v")
-
-[node name="Label2" type="Label" parent="UserInterface/HBoxContainer/TextureButton3"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -15.5
-offset_top = -8.0
-offset_right = 15.5
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_ia1lp")
-theme_override_font_sizes/font_size = 8
-text = "Random"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureButton4" type="TextureButton" parent="UserInterface/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("5_2nij2")
-texture_hover = ExtResource("6_8pr8v")
-
-[node name="Label2" type="Label" parent="UserInterface/HBoxContainer/TextureButton4"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -15.5
-offset_top = -8.0
-offset_right = 15.5
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_ia1lp")
-theme_override_font_sizes/font_size = 8
-text = "Random"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureButton5" type="TextureButton" parent="UserInterface/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("5_2nij2")
-texture_hover = ExtResource("6_8pr8v")
-
-[node name="Label2" type="Label" parent="UserInterface/HBoxContainer/TextureButton5"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -15.5
-offset_top = -8.0
-offset_right = 15.5
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_ia1lp")
-theme_override_font_sizes/font_size = 8
-text = "Random"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HFlowContainer" type="HFlowContainer" parent="UserInterface"]
-visible = false
-offset_right = 82.0
-offset_bottom = 23.0
-
-[node name="TextureButton" type="TextureButton" parent="UserInterface/HFlowContainer"]
-layout_mode = 2
-texture_normal = ExtResource("5_2nij2")
-texture_hover = ExtResource("6_8pr8v")
-
-[node name="Label2" type="Label" parent="UserInterface/HFlowContainer/TextureButton"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -15.5
-offset_top = -8.0
-offset_right = 15.5
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_ia1lp")
-theme_override_font_sizes/font_size = 8
-text = "Random"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureButton2" type="TextureButton" parent="UserInterface/HFlowContainer"]
-layout_mode = 2
-texture_normal = ExtResource("5_2nij2")
-texture_hover = ExtResource("6_8pr8v")
-
-[node name="Label2" type="Label" parent="UserInterface/HFlowContainer/TextureButton2"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -15.5
-offset_top = -8.0
-offset_right = 15.5
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_ia1lp")
-theme_override_font_sizes/font_size = 8
-text = "Random"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureButton3" type="TextureButton" parent="UserInterface/HFlowContainer"]
-layout_mode = 2
-texture_normal = ExtResource("5_2nij2")
-texture_hover = ExtResource("6_8pr8v")
-
-[node name="Label2" type="Label" parent="UserInterface/HFlowContainer/TextureButton3"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -15.5
-offset_top = -8.0
-offset_right = 15.5
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_ia1lp")
-theme_override_font_sizes/font_size = 8
-text = "Random"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HScrollBar" type="HScrollBar" parent="UserInterface"]
-visible = false
-offset_right = 173.0
-offset_bottom = 116.0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="UserInterface"]
-visible = false
-offset_left = 117.0
-offset_top = 273.0
-offset_right = 196.0
-offset_bottom = 363.0
-horizontal_scroll_mode = 3
-vertical_scroll_mode = 3
-
-[node name="GridContainer" type="GridContainer" parent="UserInterface"]
-custom_minimum_size = Vector2(27, 25)
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -35.0
-offset_right = 101.0
-offset_bottom = -10.0
-grow_vertical = 0
-theme_override_constants/h_separation = 5
-theme_override_constants/v_separation = 10
-columns = 3
-
-[node name="Icon" type="Button" parent="UserInterface/GridContainer"]
-custom_minimum_size = Vector2(27, 25)
-layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxTexture_6m80x")
-theme_override_styles/hover = SubResource("StyleBoxTexture_6m80x")
-theme_override_styles/normal = SubResource("StyleBoxTexture_6m80x")
-button_mask = 0
-script = ExtResource("18_2dw41")
-has_text = true
-metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UserInterface/GridContainer/Icon"]
-visible = false
-offset_left = -1.0
-offset_top = -35.0
-offset_right = 121.0
-offset_bottom = -2.0
-theme_override_fonts/normal_font = ExtResource("1_ia1lp")
-theme_override_font_sizes/normal_font_size = 16
-theme_override_styles/fill = SubResource("StyleBoxTexture_g6y4b")
-theme_override_styles/background = SubResource("StyleBoxTexture_g6y4b")
-theme_override_styles/focus = SubResource("StyleBoxTexture_g6y4b")
-theme_override_styles/normal = SubResource("StyleBoxTexture_g6y4b")
-text = "Place Holder"
-fit_content = true
-scroll_active = false
-autowrap_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icon2" type="Button" parent="UserInterface/GridContainer"]
-custom_minimum_size = Vector2(27, 25)
-layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxTexture_ykxp3")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ykxp3")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ykxp3")
-button_mask = 0
-script = ExtResource("18_2dw41")
-metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
-
-[node name="Label3" type="Label" parent="UserInterface/GridContainer/Icon2"]
-visible = false
-layout_mode = 1
-offset_left = -12.0
-offset_top = -24.0
-offset_right = 59.0
-offset_bottom = -8.0
-scale = Vector2(1.5, 1.5)
-theme_override_fonts/font = ExtResource("1_ia1lp")
-theme_override_font_sizes/font_size = 8
-text = "placeholder text"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="UserInterface/GridContainer/Icon2/Label3"]
-z_index = -1
-position = Vector2(32.6667, 7.33333)
-scale = Vector2(0.749236, 0.644504)
-texture = ExtResource("20_g6y4b")
-
-[node name="Rain" type="Button" parent="UserInterface/GridContainer"]
-custom_minimum_size = Vector2(27, 25)
-layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxTexture_pvxhv")
-theme_override_styles/hover = SubResource("StyleBoxTexture_pvxhv")
-theme_override_styles/normal = SubResource("StyleBoxTexture_pvxhv")
-button_mask = 0
-script = ExtResource("18_2dw41")
-has_text = true
-metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UserInterface/GridContainer/Rain"]
-visible = false
-offset_left = -3.0
-offset_top = -59.0
-offset_right = 193.0
-offset_bottom = -2.0
-theme_override_fonts/normal_font = ExtResource("1_ia1lp")
-theme_override_font_sizes/normal_font_size = 16
-theme_override_styles/fill = SubResource("StyleBoxTexture_g6y4b")
-theme_override_styles/background = SubResource("StyleBoxTexture_g6y4b")
-theme_override_styles/focus = SubResource("StyleBoxTexture_g6y4b")
-theme_override_styles/normal = SubResource("StyleBoxTexture_g6y4b")
-text = "Rain makes towers shoot 30% faster"
-fit_content = true
-scroll_active = false
-autowrap_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RottingGrass" type="Button" parent="UserInterface/GridContainer"]
-custom_minimum_size = Vector2(27, 25)
-layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxTexture_6h1ut")
-theme_override_styles/hover = SubResource("StyleBoxTexture_6h1ut")
-theme_override_styles/normal = SubResource("StyleBoxTexture_6h1ut")
-button_mask = 0
-script = ExtResource("18_2dw41")
-has_text = true
-metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UserInterface/GridContainer/RottingGrass"]
-visible = false
-offset_top = -78.0
-offset_right = 209.0
-offset_bottom = -3.0
-theme_override_fonts/normal_font = ExtResource("1_ia1lp")
-theme_override_font_sizes/normal_font_size = 16
-theme_override_styles/fill = SubResource("StyleBoxTexture_g6y4b")
-theme_override_styles/background = SubResource("StyleBoxTexture_g6y4b")
-theme_override_styles/focus = SubResource("StyleBoxTexture_g6y4b")
-theme_override_styles/normal = SubResource("StyleBoxTexture_g6y4b")
-text = "Prevents tower placement, and ___ towers when on it"
-fit_content = true
-scroll_active = false
-autowrap_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="UserInterface" parent="." instance=ExtResource("16_k6its")]
 
 [node name="Camera2D2" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

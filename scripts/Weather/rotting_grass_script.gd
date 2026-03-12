@@ -1,6 +1,8 @@
 extends Node2D
 class_name RottingGrass
 
+const DAMAGE := StatChanger.Type.DAMAGE
+
 static var duration : float = 5
 static var debuff_percent : float = -0.5
 
@@ -29,7 +31,10 @@ func _ready() -> void:
 func _on_tower_present(towers : Array[Area2D]):
 	print("Was called with: ", towers)
 	for tower : Tower in towers:
-		print("Tower was present in area")
+		if tower is Attacker:
+			var stat_changer := StatChanger.new()
+			stat_changer.initialize_variables(tower,"RottingGrass",DAMAGE,debuff_percent, effect_timer.time_left)
+			tower.add_child(stat_changer)
 		
 func _delete_rotting_grass() -> void:
 	var final_grass : AnimatedSprite2D

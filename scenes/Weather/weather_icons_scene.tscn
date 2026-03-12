@@ -1,0 +1,383 @@
+[gd_scene load_steps=17 format=3 uid="uid://c4tvpjuo8ae2w"]
+
+[ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_qfe1f"]
+[ext_resource type="Texture2D" uid="uid://cacq88a246tbl" path="res://assets/sprites/weather/weather_icons_spritesheet.png" id="2_0v2xt"]
+[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="3_s5pne"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="4_cgmqy"]
+[ext_resource type="Texture2D" uid="uid://crdpu06t0syay" path="res://assets/sprites/icons and buttons/ui_bar.png" id="5_8bgi0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qfe1f"]
+texture = ExtResource("2_0v2xt")
+region_rect = Rect2(0, 25, 27, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0v2xt"]
+texture = ExtResource("5_8bgi0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5pne"]
+texture = ExtResource("2_0v2xt")
+region_rect = Rect2(27, 25, 27, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cgmqy"]
+texture = ExtResource("2_0v2xt")
+region_rect = Rect2(108, 25, 27, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8bgi0"]
+texture = ExtResource("2_0v2xt")
+region_rect = Rect2(27, 50, 27, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgjjb"]
+texture = ExtResource("2_0v2xt")
+region_rect = Rect2(0, 50, 27, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkvsg"]
+texture = ExtResource("2_0v2xt")
+region_rect = Rect2(54, 50, 27, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bnmed"]
+texture = ExtResource("2_0v2xt")
+region_rect = Rect2(81, 50, 27, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j16vv"]
+texture = ExtResource("2_0v2xt")
+region_rect = Rect2(54, 25, 27, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_enwab"]
+texture = ExtResource("2_0v2xt")
+region_rect = Rect2(108, 50, 27, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_if8po"]
+texture = ExtResource("2_0v2xt")
+region_rect = Rect2(81, 25, 27, 25)
+
+[node name="WeatherIcons" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_qfe1f")
+tint_during_pause = true
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(27, 25)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -35.0
+offset_right = 101.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 5
+columns = 2
+
+[node name="Fire" type="Button" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(40.5, 37.5)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_qfe1f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qfe1f")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qfe1f")
+button_mask = 0
+script = ExtResource("3_s5pne")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Fire"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = -35.0
+offset_right = 121.0
+offset_bottom = -2.0
+theme_override_fonts/normal_font = ExtResource("4_cgmqy")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
+text = "Place Holder"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Flood" type="Button" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(40.5, 37.5)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_s5pne")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s5pne")
+theme_override_styles/normal = SubResource("StyleBoxTexture_s5pne")
+button_mask = 0
+script = ExtResource("3_s5pne")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Flood"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = -35.0
+offset_right = 121.0
+offset_bottom = -2.0
+theme_override_fonts/normal_font = ExtResource("4_cgmqy")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
+text = "Place Holder"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rain" type="Button" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(40.5, 37.5)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_cgmqy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cgmqy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_cgmqy")
+button_mask = 0
+script = ExtResource("3_s5pne")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Rain"]
+visible = false
+layout_mode = 0
+offset_left = -3.0
+offset_top = -59.0
+offset_right = 193.0
+offset_bottom = -2.0
+theme_override_fonts/normal_font = ExtResource("4_cgmqy")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
+text = "Rain makes towers shoot 30% faster"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RottingGrass" type="Button" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(40.5, 37.5)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_8bgi0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8bgi0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8bgi0")
+button_mask = 0
+script = ExtResource("3_s5pne")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/RottingGrass"]
+visible = false
+layout_mode = 0
+offset_top = -84.0
+offset_right = 235.0
+offset_bottom = -3.0
+theme_override_fonts/normal_font = ExtResource("4_cgmqy")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
+text = "Prevents tower placement, and weakens towers when on it"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wind" type="Button" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(40.5, 37.5)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_fgjjb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fgjjb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fgjjb")
+button_mask = 0
+script = ExtResource("3_s5pne")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Wind"]
+visible = false
+layout_mode = 0
+offset_top = -84.0
+offset_right = 233.0
+offset_bottom = -4.0
+theme_override_fonts/normal_font = ExtResource("4_cgmqy")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
+text = "Wind speed up or slows down enemies depending on direction"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TrashWind" type="Button" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(40.5, 37.5)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_pkvsg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pkvsg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pkvsg")
+button_mask = 0
+script = ExtResource("3_s5pne")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/TrashWind"]
+visible = false
+layout_mode = 0
+offset_top = -69.0
+offset_right = 253.0
+offset_bottom = -3.0
+theme_override_fonts/normal_font = ExtResource("4_cgmqy")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
+text = "Trash blocks tower's attacks, using up 1 pierce"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AcidRain" type="Button" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(40.5, 37.5)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_bnmed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bnmed")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bnmed")
+button_mask = 0
+script = ExtResource("3_s5pne")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/AcidRain"]
+visible = false
+layout_mode = 0
+offset_top = -84.0
+offset_right = 233.0
+offset_bottom = -4.0
+theme_override_fonts/normal_font = ExtResource("4_cgmqy")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
+text = "Wind speed up or slows down enemies depending on direction"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LogWater" type="Button" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(40.5, 37.5)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_j16vv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j16vv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_j16vv")
+button_mask = 0
+script = ExtResource("3_s5pne")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/LogWater"]
+visible = false
+layout_mode = 0
+offset_top = -84.0
+offset_right = 233.0
+offset_bottom = -4.0
+theme_override_fonts/normal_font = ExtResource("4_cgmqy")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
+text = "Wind speed up or slows down enemies depending on direction"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HarshLight" type="Button" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(40.5, 37.5)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_enwab")
+theme_override_styles/hover = SubResource("StyleBoxTexture_enwab")
+theme_override_styles/normal = SubResource("StyleBoxTexture_enwab")
+button_mask = 0
+script = ExtResource("3_s5pne")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/HarshLight"]
+visible = false
+layout_mode = 0
+offset_top = -65.0
+offset_right = 215.0
+offset_bottom = -3.0
+theme_override_fonts/normal_font = ExtResource("4_cgmqy")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
+text = "Reduces accuracy and slows towers by 40%"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tordano" type="Button" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(40.5, 37.5)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_if8po")
+theme_override_styles/hover = SubResource("StyleBoxTexture_if8po")
+theme_override_styles/normal = SubResource("StyleBoxTexture_if8po")
+button_mask = 0
+script = ExtResource("3_s5pne")
+has_text = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tordano"]
+visible = false
+layout_mode = 0
+offset_top = -84.0
+offset_right = 233.0
+offset_bottom = -4.0
+theme_override_fonts/normal_font = ExtResource("4_cgmqy")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
+text = "Wind speed up or slows down enemies depending on direction"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -95,6 +95,11 @@ func apply_stat_changes(is_creating := true):
 			initial_value = target.money_drop
 			target.money_drop *= 1 + percent_change
 			change_value = target.money - initial_value
+		Type.DAMAGE:
+			if target is Attacker:
+				initial_value = target.cur_damage
+				target.cur_damage *= 1 + percent_change
+				change_value = target.cur_damage - initial_value
 			
 
 #lowkey this should probably become 2 separate functions
@@ -110,6 +115,8 @@ func disable_stat_changes(delete_timer : bool = true, reset_stat : bool = true):
 				target.queue_redraw()
 			Type.MONEY_MULT:
 				target.money_drop -= change_value
+			Type.DAMAGE:
+				target.cur_damage -= change_value
 	
 	
 			
