@@ -222,7 +222,7 @@ radius = 10.0499
 [sub_resource type="CircleShape2D" id="CircleShape2D_ipkhc"]
 radius = 44.7368
 
-[node name="Flytrap" type="Area2D"]
+[node name="Flytrap" type="Area2D" groups=["tower"]]
 z_index = 7
 scale = Vector2(0.76, 0.76)
 collision_layer = 4

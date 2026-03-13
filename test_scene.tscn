@@ -1,5 +1,6 @@
-[gd_scene load_steps=41 format=3 uid="uid://brtfoxm0gr3yv"]
+[gd_scene load_steps=42 format=3 uid="uid://brtfoxm0gr3yv"]
 
+[ext_resource type="Script" uid="uid://bvkqe15r8vqyk" path="res://test_scene_script.gd" id="1_2dw41"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="1_ia1lp"]
 [ext_resource type="Texture2D" uid="uid://qe8ek44em105" path="res://assets/sprites/maps/map1/Map 1 Level 3.png" id="1_sasra"]
 [ext_resource type="Texture2D" uid="uid://bukuipih0v8s1" path="res://assets/sprites/towers/tower cards/bee_card.png" id="2_sasra"]
@@ -179,6 +180,7 @@ animations = [{
 }]
 
 [node name="TestScene" type="Node2D"]
+script = ExtResource("1_2dw41")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture = ExtResource("1_sasra")

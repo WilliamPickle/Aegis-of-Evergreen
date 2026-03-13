@@ -20,6 +20,7 @@ metadata/_edit_lock_ = true
 
 [node name="EffectDuration" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 
 [node name="GrassContainer" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.588235)

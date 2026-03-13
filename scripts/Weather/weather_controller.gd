@@ -1,18 +1,19 @@
 extends Node2D
 
 const WEATHERS = {
-	"rain" : preload("res://scenes/Weather/rain_scene.tscn"),
-	"wind" : preload("res://scenes/Weather/wind_scene.tscn"),
-	"rotting_grass" : preload("res://scenes/Weather/rotting_grass_scene.tscn"),
+	"Rain" : preload("res://scenes/Weather/rain_scene.tscn"),
+	"Wind" : preload("res://scenes/Weather/wind_scene.tscn"),
+	"RottingGrass" : preload("res://scenes/Weather/rotting_grass_scene.tscn"),
 }
 const WEATHER_ICONS := "res://scenes/Weather/weather_icons_scene.tscn"
 var icon_container : GridContainer
 
 ## Emitted when a weather has ended. Use a string for the name of the weather ex. "Rain"
-signal weather_ended(type : String)
+signal weather_ended(type : String, entity_type : String)
 # duration, which can be modular (towers placed in map and base hp %)
 const STAT_TYPES = StatChanger.Type
-#func _ready() -> void:
+func _ready() -> void:
+	weather_ended.connect(_end_weather)
 	##z_index = 12
 	##notify_property_list_changed()
 	##self.ordering
@@ -26,7 +27,7 @@ const STAT_TYPES = StatChanger.Type
 	##pass
 
 func spawn_rain(duration : float, buff_percent: float, weather_placement : Node2D):
-	var rain = WEATHERS["rain"].instantiate()
+	var rain = WEATHERS["Rain"].instantiate()
 	rain.init(duration, buff_percent)
 	#weather_placement.add_child(rain)
 	#call_deferred("add_child", rain)
@@ -35,13 +36,20 @@ func spawn_rain(duration : float, buff_percent: float, weather_placement : Node2
 	#weather_placement.get_node("WeatherIcons/GridContainer/Rain").visible = true
 
 func spawn_wind(duration : float, buff_percent : float, debuff_percent : float, direction : int, weather_placement : Node2D,):
-	var wind = WEATHERS["wind"].instantiate()
+	var wind = WEATHERS["Wind"].instantiate()
 	wind.init(duration, buff_percent, debuff_percent, direction)
 	#map_area.call_deferred("add_child", tower_attack)
 	weather_placement.call_deferred("add_child", wind)
 	#weather_placement.add_child(wind)
 
 func spawn_rotting_grass(duration : float, debuff_percent : float, weather_placement : Node2D):
-	var rotting_grass = WEATHERS["rotting_grass"].instantiate()
+	var rotting_grass = WEATHERS["RottingGrass"].instantiate()
 	rotting_grass.init(duration, debuff_percent)
 	weather_placement.call_deferred("add_child", rotting_grass)
+
+
+func _end_weather(weather_type : String, entity_type : String):
+	#if is_tower_weather:
+	var entities = get_tree().get_nodes_in_group(entity_type)
+	for entity in entities:
+		entity.weather_statuses.erase(weather_type)

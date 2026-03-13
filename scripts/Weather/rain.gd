@@ -34,39 +34,40 @@ func _ready() -> void:
 	PlayerStats.gtower_placed.connect(_on_tower_placed)
 	
 	#effect_timer.start(duration)
-	effect_timer.timeout.connect(func():
-		play("despawn")
-		PlayerStats.upgraded_tower.disconnect(_on_tower_upgrade)
-		PlayerStats.gtower_placed.disconnect(_on_tower_placed)
-		await animation_finished
-		queue_free()
-	)
+	effect_timer.timeout.connect(_delete_weather)
 
 func _on_tower_placed(tower : Tower) -> void:
 	var _duration = effect_timer.time_left
 	#print("duration left: ", effect_timer.time_left)
 	#print("duration: ", effect_timer.wait_time)
 	var stat_changer = StatChanger.new()
-	stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, _duration)
+	stat_changer.initialize_variables(tower, "Rain", ATK_COOLDOWN, buff_percent, _duration)
 	tower.add_child(stat_changer)
-	tower.weather_statuses.set("rain", stat_changer)
+	tower.weather_statuses.set("Rain", stat_changer)
 	
 # make note that attackers call this function twice 
 # because when you upgrade it, the atk buff gets
 # overriden by the upgrade_tower() function
 func _on_tower_upgrade(tower : Tower) -> void:
-	if is_instance_valid(tower.weather_statuses["rain"]):
+	if is_instance_valid(tower.weather_statuses["Rain"]):
 		print("atk cd before: ", tower._attack_cooldown.wait_time)
-		tower.weather_statuses["rain"].disable_stat_changes(true, false)
+		tower.weather_statuses["Rain"].disable_stat_changes(true, false)
 	print("atk cd reset: ", tower._attack_cooldown.wait_time)
-	tower.weather_statuses.erase("rain")
+	#tower.weather_statuses.erase("rain")
 	var stat_changer = StatChanger.new()
 	#tower.level += 1
-	stat_changer.initialize_variables(tower, "rain", ATK_COOLDOWN, buff_percent, effect_timer.time_left)
+	stat_changer.initialize_variables(tower, "Rain", ATK_COOLDOWN, buff_percent, effect_timer.time_left)
 	tower.add_child(stat_changer)
 	#tower.level -= 1
-	tower.weather_statuses.set("rain", stat_changer)
+	tower.weather_statuses.set("Rain", stat_changer)
 	print("atk cd after: ", tower._attack_cooldown.wait_time)
 	print("-------atk-------")
-#func _on_tower_upgrade(tower : Tower) -> void:
-	#pass
+
+
+func _delete_weather() -> void:
+	play("despawn")
+	PlayerStats.upgraded_tower.disconnect(_on_tower_upgrade)
+	PlayerStats.gtower_placed.disconnect(_on_tower_placed)
+	await animation_finished
+	WeatherController.weather_ended.emit("Rain", "tower")
+	queue_free()

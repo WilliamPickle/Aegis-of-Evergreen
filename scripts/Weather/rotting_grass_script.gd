@@ -14,8 +14,7 @@ func init(_duration : float, _debuff_percent : float) -> void:
 	debuff_percent = _debuff_percent
 
 func _ready() -> void:
-	grass_container.global_position += Vector2.UP
-	grass_container.force_update_transform()
+	effect_timer.start(duration)
 	for grass : AnimatedSprite2D in grass_container.get_children():
 		grass.play("spawn")
 		grass.animation_finished.connect(func():
@@ -24,22 +23,32 @@ func _ready() -> void:
 			_on_tower_present(area.get_overlapping_areas())
 		)
 		#await get_tree().physics_frame
+	PlayerStats.upgraded_tower.connect(_on_tower_upgrade)
 		
-	effect_timer.start(duration)
-	effect_timer.timeout.connect(_delete_rotting_grass)
+	effect_timer.timeout.connect(_delete_weather)
 
 func _on_tower_present(towers : Array[Area2D]):
-	print("Was called with: ", towers)
 	for tower : Tower in towers:
 		if tower is Attacker:
 			var stat_changer := StatChanger.new()
-			stat_changer.initialize_variables(tower,"RottingGrass",DAMAGE,debuff_percent, effect_timer.time_left)
+			stat_changer.initialize_variables(tower,"RottingGrass",DAMAGE,debuff_percent, effect_timer.time_left, true)
 			tower.add_child(stat_changer)
+			tower.weather_statuses.set("RottingGrass", stat_changer)
 		
-func _delete_rotting_grass() -> void:
+func _on_tower_upgrade(tower : Tower):
+	if tower.weather_statuses.has("RottingGrass"):
+		if is_instance_valid(tower.weather_statuses["RottingGrass"]):
+			tower.weather_statuses["RottingGrass"].disable_stat_changes(true, false)
+		var stat_changer := StatChanger.new()
+		stat_changer.initialize_variables(tower,"RottingGrass",DAMAGE,debuff_percent, effect_timer.time_left, true)
+		tower.add_child(stat_changer)
+		tower.weather_statuses.set("RottingGrass",stat_changer)
+		
+func _delete_weather() -> void:
 	var final_grass : AnimatedSprite2D
 	for grass : AnimatedSprite2D in grass_container.get_children():
 		grass.play("despawn")
 		final_grass = grass
 	await final_grass.animation_finished
+	WeatherController.weather_ended.emit("RottingGrass", "tower")
 	queue_free()

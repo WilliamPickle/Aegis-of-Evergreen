@@ -337,3 +337,4 @@ shape = SubResource("RectangleShape2D_q34qh")
 
 [node name="EffectDuration" type="Timer" parent="."]
 wait_time = 20.0
+one_shot = true
