@@ -183,7 +183,7 @@ shape = SubResource("CapsuleShape2D_amhgo")
 
 [node name="Button" type="Button" parent="."]
 offset_left = -13.0
-offset_top = -12.0
+offset_top = -10.0
 offset_right = 13.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1efip")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_vtov3")

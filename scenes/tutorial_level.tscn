@@ -3126,7 +3126,6 @@ expand_mode = 1
 [node name="TutorialSkipPrompt" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 5
-visible = false
 script = ExtResource("31_b2nau")
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 

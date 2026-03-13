@@ -1,13 +1,13 @@
 [gd_scene load_steps=47 format=3 uid="uid://dfj814si6hqba"]
 
-[ext_resource type="Script" uid="uid://ckulspi7487fw" path="res://scripts/Enemies/tanky_mushroom.gd" id="1_cbgd0"]
+[ext_resource type="Script" uid="uid://b8s182qi2sarb" path="res://scripts/Enemies/enemy_class.gd" id="1_ymph6"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_5cd7d"]
 [ext_resource type="Texture2D" uid="uid://bgrhb83jre0xx" path="res://assets/sprites/enemies/Zap Away.png" id="3_h4bwx"]
 [ext_resource type="Texture2D" uid="uid://bsudwq74k8jms" path="res://assets/sprites/enemies/mushroom_mutant.png" id="4_su1w5"]
 [ext_resource type="Texture2D" uid="uid://db28n556wux02" path="res://assets/sprites/icons and buttons/hp_bar_back.png" id="5_l6vws"]
 [ext_resource type="Texture2D" uid="uid://di2o70dre6xko" path="res://assets/sprites/icons and buttons/hp_bar.png" id="6_5gjtr"]
 
-[sub_resource type="Resource" id="Resource_ymph6"]
+[sub_resource type="Resource" id="Resource_5cd7d"]
 script = ExtResource("2_5cd7d")
 class_type = "enemy"
 object = "tanky_mushroom"
@@ -251,7 +251,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 6.0
+"speed": 15.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o1l2j"]
@@ -266,8 +266,8 @@ radius = 11.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rb4j4"]
 
 [node name="tanky_mushroom" type="Area2D" node_paths=PackedStringArray("enemy_sprite", "defeat_animation", "hp_button", "health_bar")]
-script = ExtResource("1_cbgd0")
-data_resource = SubResource("Resource_ymph6")
+script = ExtResource("1_ymph6")
+data_resource = SubResource("Resource_5cd7d")
 enemy_sprite = NodePath("AnimatedSprite2D")
 defeat_animation = NodePath("ZapAway")
 hp_button = NodePath("Button")
@@ -285,7 +285,7 @@ position = Vector2(2, -10)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_hrxb6")
 autoplay = "default"
-frame_progress = 0.938265
+frame_progress = 0.349227
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -294,9 +294,10 @@ rotation = 1.5708
 shape = SubResource("CircleShape2D_o1l2j")
 
 [node name="Button" type="Button" parent="."]
-offset_left = -13.0
-offset_top = -12.0
-offset_right = 13.0
+offset_left = -10.0
+offset_top = -14.0
+offset_right = 12.0
+offset_bottom = 4.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e4y58")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_w5imy")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3wgg2")
@@ -314,5 +315,5 @@ texture = ExtResource("5_l6vws")
 texture = ExtResource("6_5gjtr")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.3
 autostart = true

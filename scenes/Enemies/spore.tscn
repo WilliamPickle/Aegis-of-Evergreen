@@ -1,6 +1,6 @@
 [gd_scene load_steps=53 format=3 uid="uid://bwqq3h01phnwf"]
 
-[ext_resource type="Script" uid="uid://deh1s2fixw36s" path="res://scenes/Enemies/spore.gd" id="1_56jvs"]
+[ext_resource type="Script" uid="uid://deh1s2fixw36s" path="res://scripts/Enemies/spore.gd" id="1_56jvs"]
 [ext_resource type="Script" uid="uid://baqkdqf80xars" path="res://scripts/data_resource.gd" id="2_5enj8"]
 [ext_resource type="Texture2D" uid="uid://bgrhb83jre0xx" path="res://assets/sprites/enemies/Zap Away.png" id="2_mf4ml"]
 [ext_resource type="Texture2D" uid="uid://du7rvebtqukpt" path="res://assets/sprites/enemies/spore.png" id="3_5enj8"]
@@ -315,8 +315,8 @@ shape = SubResource("CircleShape2D_fxbwn")
 [node name="Button" type="Button" parent="."]
 offset_left = -7.0
 offset_top = -6.0
-offset_right = 7.0
-offset_bottom = 8.0
+offset_right = 6.0
+offset_bottom = 5.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_luc8l")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_w1fy1")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_45nu2")

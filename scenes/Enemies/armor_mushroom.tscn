@@ -355,10 +355,10 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_m8n4k")
 
 [node name="Button" type="Button" parent="."]
-offset_left = -7.875
-offset_top = -11.875
-offset_right = 8.125
-offset_bottom = 2.125
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 8.0
+offset_bottom = 1.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lb2s2")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_fn5tr")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cxgyq")

@@ -24,6 +24,7 @@ const armor_mushroom := preload("res://scenes/Enemies/armor_mushroom.tscn")
 const spore_crab := preload("res://scenes/Enemies/spore_crab.tscn")
 const spore := preload("res://scenes/Enemies/spore.tscn")
 const tanky_mushroom := preload("res://scenes/Enemies/tanky_mushroom.tscn")
+const amalgamushroom := preload("res://scenes/Enemies/amalgamushroom.tscn")
 
 # variables to initialize waves after dialogue
 @export var wave_label: Label

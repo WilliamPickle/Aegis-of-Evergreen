@@ -1,6 +1,14 @@
 extends Camera2D
 @onready var camera: Camera2D = $"."
+##offset by how much the map is extended by in each direction relative to the viewport
+@export var offset_r : float = 0
+@export var offset_u : float = 0
+@export var offset_l : float = 0
+@export var offset_d : float = 0
 
+# size of the actual camera2d viewport
+const screen_width : float = 640 / 2
+const screen_height : float = 360 / 2
 const zoom_max = 2
 const zoom_min = 4
 const zoom_rate = 0.1
@@ -27,5 +35,5 @@ func _input(event: InputEvent) -> void:
 		
 		
 func _process(_delta: float) -> void:
-	camera.position.x = clamp(camera.position.x, -320 + (320 * zoom_max)/camera.zoom.x, 320 - (320 * zoom_max)/camera.zoom.x)
-	camera.position.y = clamp(camera.position.y, -180 + (180 * zoom_max)/camera.zoom.y, 180 - (180 * zoom_max)/camera.zoom.y)
+	camera.position.x = clamp(camera.position.x, -screen_width - offset_l + (screen_width * zoom_max)/camera.zoom.x, screen_width + offset_r - (screen_width * zoom_max)/camera.zoom.x)
+	camera.position.y = clamp(camera.position.y, -screen_height - offset_u + (screen_height * zoom_max)/camera.zoom.y, screen_height + offset_d - (screen_height * zoom_max)/camera.zoom.y)
