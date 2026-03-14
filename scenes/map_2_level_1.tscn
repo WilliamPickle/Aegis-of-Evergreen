@@ -609,7 +609,6 @@ label_settings = ExtResource("18_yf7ay")
 autowrap_mode = 2
 
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu", "fast_forward_button")]
-position = Vector2(0, 1)
 script = ExtResource("20_o4hnu")
 health_label = NodePath("../Icons/Control/LifeIndicator/LifeLabel")
 base_health = 15.0
