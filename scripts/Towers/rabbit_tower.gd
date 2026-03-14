@@ -12,4 +12,6 @@ func attack():
 	print("RABBIT ATTACKED!!!!!!!-----------")
 
 func upgrade_tower():
-	pass
+	super()
+	stun_duration = object_data["stun_duration"][level]
+	stun_cap = object_data["stun_cap"][level]
