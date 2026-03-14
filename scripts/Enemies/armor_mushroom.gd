@@ -5,7 +5,7 @@ extends Enemy
 @onready var real_original_speed = original_speed
 var phase_change_percent: float = 0.5
 var in_phase_2: bool = false
-var speed_multiplier = 3
+var speed_multiplier = 2.5
 
 	
 func enter_phase_2():

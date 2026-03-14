@@ -14,10 +14,9 @@ func _on_start_lvl5() -> void:
 	# wave 1
 	start_wave_timer(60)
 	await delay(3)
-	await send_enemy(bush, 10, 0.5)
-	await delay(5)
-	await send_enemy(armor_mushroom, 4, 2, path2)
-	WeatherController.spawn_wind(30, 0.25, -0.35, -1, weather_node)
+	await send_enemy(bush, 20, 0.5)
+	await send_enemy(armor_mushroom, 3, 3, path2)
+	WeatherController.spawn_wind(30, 0.25, -0.5, -1, weather_node)
 	
 	currently_sending = false
 	await wave_timer.timeout
