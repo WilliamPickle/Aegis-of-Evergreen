@@ -1,0 +1,156 @@
+[gd_scene load_steps=22 format=3 uid="uid://dxck4mhou0v5a"]
+
+[ext_resource type="Script" uid="uid://bs0nctle0u468" path="res://scripts/Weather/trash_wind_script.gd" id="1_hjt2g"]
+[ext_resource type="Texture2D" uid="uid://b8d6p2p7ynupj" path="res://assets/sprites/weather/trash_wind_spritesheet.png" id="2_16bxa"]
+[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="3_8vt1a"]
+[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="4_o55xc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vt1a"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(0, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o55xc"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(75, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbix8"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(150, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogt2b"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(225, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6we6"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(300, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mykse"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(375, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuf21"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(450, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kygwe"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(525, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfja1"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(600, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhrwv"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(675, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n2do"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(750, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea4x8"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(825, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee21y"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(900, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf548"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(975, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10o7i"]
+atlas = ExtResource("2_16bxa")
+region = Rect2(1050, 50, 75, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i8pu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vt1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o55xc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbix8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogt2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6we6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mykse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuf21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kygwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfja1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhrwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n2do")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea4x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee21y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf548")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10o7i")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvy4d"]
+size = Vector2(10, 10)
+
+[node name="TrashWind" type="Node2D"]
+script = ExtResource("1_hjt2g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("3_8vt1a")
+
+[node name="EffectDuration" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="map" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("4_o55xc")
+metadata/_edit_lock_ = true
+
+[node name="StartingTrash" type="AnimatedSprite2D" parent="."]
+position = Vector2(-482, 0)
+sprite_frames = SubResource("SpriteFrames_i8pu5")
+autoplay = "default"
+
+[node name="TrashHitBox" type="Area2D" parent="StartingTrash"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartingTrash/TrashHitBox"]
+position = Vector2(-23, 0)
+shape = SubResource("RectangleShape2D_xvy4d")
+debug_color = Color(0.931234, 0.708286, 3.85046e-07, 0.42)
+
+[node name="TrashWindContainer" type="Node2D" parent="."]
