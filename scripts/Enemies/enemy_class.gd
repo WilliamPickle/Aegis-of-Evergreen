@@ -79,7 +79,7 @@ func _ready() -> void:
 	# activates almanac if first time seeing enemy
 	if name not in enemies_seen_list:
 		enemies_seen_list.append(name)
-		print("First time seeing ", name)
+		#print("First time seeing ", name)
 		show_guidebook_popup()
 	
 	
@@ -107,13 +107,13 @@ func move_on_path(delta) -> void:
 	
 	if (cur_position - prev_position) * travel_direction < 0:
 		#print("This is cur pos: ", global_position.x, " this is prev_pos: ", prev_position)
-		print("For: ", path.name)
-		print("Difference in positions: ", global_position.x-prev_position)
+		#print("For: ", path.name)
+		#print("Difference in positions: ", global_position.x-prev_position)
 		prev_position = global_position.x
 		travel_direction *= -1
 		enemy_sprite.flip_h = !enemy_sprite.flip_h
 		reversed.emit(self)
-		print("This is new direction: ", travel_direction)
+		#print("This is new direction: ", travel_direction)
 	
 	
 	#path_position = global_position.x

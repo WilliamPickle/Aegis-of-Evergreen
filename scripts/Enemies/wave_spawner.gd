@@ -81,7 +81,7 @@ func send_enemy(enemy, quantity: int, delay_time: float, parent_path = path_2d):
 		
 func update_total_enemies(enemy):
 	enemy_count -= 1
-	print("enemy_count: ", enemy_count)
+	#print("enemy_count: ", enemy_count)
 	#print("current enemy count: ", enemy_count)
 	# for some reason in the if statement, i had this conditional:  and wave == enemy.wave_number
 	# I don't know what bug it was trying to fix but i've removed it b/c it's causing another bug
@@ -102,7 +102,7 @@ func update_wave():
 	if final_wave_started and enemy_count <= 0:
 		if won_level:
 			return
-		print("entered wave_spawner update thingy")
+		#print("entered wave_spawner update thingy")
 		print("Total Cash Accumulated: $", PlayerStats.total_money_gained)
 		won_level = true
 		Engine.time_scale = 1
