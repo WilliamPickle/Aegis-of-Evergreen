@@ -261,7 +261,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0mjki")
 wait_time = 2.0
 
 [node name="Range" type="Area2D" parent="."]
-collision_layer = 8
+collision_layer = 0
 collision_mask = 2
 
 [node name="RangeCollision" type="CollisionShape2D" parent="Range"]
@@ -269,7 +269,7 @@ shape = SubResource("CircleShape2D_ipkhc")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="AttackRange" type="Area2D" parent="."]
-collision_layer = 8
+collision_layer = 0
 collision_mask = 2
 
 [node name="AttackShape0" type="CollisionPolygon2D" parent="AttackRange"]

@@ -4,6 +4,7 @@ const WEATHERS = {
 	"Rain" : preload("res://scenes/Weather/rain_scene.tscn"),
 	"Wind" : preload("res://scenes/Weather/wind_scene.tscn"),
 	"RottingGrass" : preload("res://scenes/Weather/rotting_grass_scene.tscn"),
+	"TrashWind" : preload("res://scenes/Weather/trash_wind_scene.tscn")
 }
 const WEATHER_ICONS := "res://scenes/Weather/weather_icons_scene.tscn"
 var icon_container : GridContainer
@@ -47,6 +48,10 @@ func spawn_rotting_grass(duration : float, debuff_percent : float, weather_place
 	rotting_grass.init(duration, debuff_percent)
 	weather_placement.call_deferred("add_child", rotting_grass)
 
+func spawm_trash_wind(duration : float, trash_per_second : int, direction : int, min_pos : Vector2, max_pos : Vector2, weather_placement : Node2D):
+	var trash_wind = WEATHERS["TrashWind"].instantiate()
+	trash_wind.init(duration, trash_per_second, direction, min_pos, max_pos)
+	weather_placement.call_deferred("add_child", trash_wind)
 
 func _end_weather(weather_type : String, entity_type : String):
 	#if is_tower_weather:

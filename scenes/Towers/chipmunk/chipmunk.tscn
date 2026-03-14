@@ -180,7 +180,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_n4ef5")
 wait_time = 67.0
 
 [node name="Range" type="Area2D" parent="."]
-collision_layer = 128
+collision_layer = 0
 collision_mask = 2
 
 [node name="RangeCollision" type="CollisionShape2D" parent="Range"]

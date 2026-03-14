@@ -25,7 +25,8 @@ func _on_start_lvl1() -> void:
 	currently_sending = false
 	await wave_timer.timeout
 	signify_wave_end()
-	WeatherController.spawn_rotting_grass(30,-0.5, weather_node)
+	#WeatherController.spawn_rotting_grass(30,-0.5, weather_node)
+	#WeatherController.spawm_trash_wind(30,50,1,Vector2(-320,-180), Vector2(320,180), weather_node)
 	
 	# wave 2 - 80 cash gain
 	start_wave_timer(45)

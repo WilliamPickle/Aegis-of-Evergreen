@@ -28,12 +28,15 @@ func _ready():
 	$SplashArea/SplashShape.shape.radius = splash_radius
 	super._ready()
 
-func on_hit(enemy : Enemy) -> void:
+func on_hit(entity : Area2D) -> void:
 	if !is_instance_valid(tower):
 		queue_free()
 		return
-	enemy.apply_damage(tower.cur_damage * pierce_damage, type)
-	
+	if entity is Enemy:
+		entity.apply_damage(tower.cur_damage * pierce_damage, type)
+	else:
+		entity.get_parent().queue_free()
+
 	pierce_cap -= 1
 	if pierce_cap <= 0:
 		area_entered.disconnect(on_hit)
