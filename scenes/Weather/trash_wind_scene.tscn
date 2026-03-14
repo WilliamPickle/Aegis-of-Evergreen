@@ -1,9 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://dxck4mhou0v5a"]
+[gd_scene load_steps=35 format=3 uid="uid://dxck4mhou0v5a"]
 
 [ext_resource type="Script" uid="uid://bs0nctle0u468" path="res://scripts/Weather/trash_wind_script.gd" id="1_hjt2g"]
 [ext_resource type="Texture2D" uid="uid://b8d6p2p7ynupj" path="res://assets/sprites/weather/trash_wind_spritesheet.png" id="2_16bxa"]
-[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="3_8vt1a"]
-[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="4_o55xc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i8pu5"]
 atlas = ExtResource("2_16bxa")
@@ -234,27 +232,17 @@ size = Vector2(10, 10)
 [node name="TrashWind" type="Node2D"]
 script = ExtResource("1_hjt2g")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-zoom = Vector2(2, 2)
-script = ExtResource("3_8vt1a")
-
 [node name="EffectDuration" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
 
 [node name="SpawnTimer" type="Timer" parent="."]
 
-[node name="map" type="Sprite2D" parent="."]
-visible = false
-z_index = -1
-texture = ExtResource("4_o55xc")
-metadata/_edit_lock_ = true
-
 [node name="StartingTrash" type="AnimatedSprite2D" parent="."]
 position = Vector2(-482, 0)
 sprite_frames = SubResource("SpriteFrames_i8pu5")
 animation = &"WhiteTrash"
+metadata/_edit_group_ = true
 
 [node name="TrashHitBox" type="Area2D" parent="StartingTrash"]
 collision_layer = 8

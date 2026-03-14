@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci8yy6c0vte1h"]
+[gd_scene load_steps=4 format=3 uid="uid://ci8yy6c0vte1h"]
 
-[ext_resource type="Texture2D" uid="uid://qe8ek44em105" path="res://assets/sprites/maps/map1/Map 1 Level 3.png" id="1_ecjy1"]
 [ext_resource type="Script" uid="uid://d8amavmvsgb6" path="res://scripts/Weather/rotting_grass_script.gd" id="1_xl222"]
 [ext_resource type="SpriteFrames" uid="uid://cev4m2b774d5p" path="res://assets/sprites/weather/rotting_grass_animation.tres" id="3_5233x"]
 
@@ -12,11 +11,6 @@ height = 32.0
 z_index = -12
 script = ExtResource("1_xl222")
 metadata/_custom_type_script = "uid://d8amavmvsgb6"
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_ecjy1")
-metadata/_edit_lock_ = true
 
 [node name="EffectDuration" type="Timer" parent="."]
 wait_time = 2.0
