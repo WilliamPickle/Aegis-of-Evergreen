@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_h6f55"]
 script = ExtResource("2_yj8ke")
 class_type = "tower"
-object = "chipmunk"
+object = "rabbit"
 update_data = false
 metadata/_custom_type_script = "uid://baqkdqf80xars"
 
@@ -968,6 +968,7 @@ debug_color = Color(1, 1, 1, 0.42)
 [node name="UpgradeUI" parent="." node_paths=PackedStringArray("tower", "level_descriptions") instance=ExtResource("2_j3q85")]
 visible = false
 tower = NodePath("..")
+tower_name = "rabbit"
 type = "attacker"
 level_descriptions = NodePath("UpgradeDescriptions")
 
