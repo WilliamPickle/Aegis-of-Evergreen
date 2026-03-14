@@ -43,12 +43,12 @@
 	  "cost": [
 		100,
 		135,
-		185
+		200
 	  ],
 	  "range": [
-		60,
-		70,
-		80
+		65,
+		75,
+		85
 	  ],
 	  "attack_speed": [
 		4,
@@ -57,7 +57,7 @@
 	  ],
 	  "damage": [
 		2,
-		2,
+		3,
 		3
 	  ]
 	},
@@ -328,7 +328,7 @@
 	"vine_trap_2":{
 	  "type": "blunt",
 	  "lifespan": 9,
-	  "pierce_cap": 7,
+	  "pierce_cap": 5,
 	  "debuff_type": "dot",
 	  "dot_ticks" : 8,
 	  "dot_damage" : 0.25,
@@ -336,7 +336,7 @@
 	"vine_trap_3":{
 	  "type": "blunt",
 	  "lifespan": 11,
-	  "pierce_cap": 5,
+	  "pierce_cap": 6,
 	  "debuff_type": "dot",
 	  "dot_ticks" : 12,
 	  "dot_damage" : 0.25,
