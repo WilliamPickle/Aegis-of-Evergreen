@@ -11,12 +11,61 @@ func _ready() -> void:
 	manual_wave_button.button_down.connect(_on_start_lvl5)
 
 func _on_start_lvl5() -> void:
+	# test wave
+	start_wave_timer(3000)
+	await send_enemy(spore_crab, 3, 3, path2)
+	
+	currently_sending = false
+	await wave_timer.timeout
+	signify_wave_end()
+	
+	
 	# wave 1
 	start_wave_timer(60)
 	await delay(3)
-	await send_enemy(bush, 20, 0.5)
-	await send_enemy(armor_mushroom, 3, 3, path2)
-	WeatherController.spawn_wind(30, 0.25, -0.5, -1, weather_node)
+	send_enemy(armor_mushroom, 3, 4, path2)
+	await send_enemy(bush, 30, 0.5)
+	WeatherController.spawn_wind(25, 0.25, -0.5, -1, weather_node)
+	
+	currently_sending = false
+	await wave_timer.timeout
+	signify_wave_end()
+	
+	# wave 2
+	start_wave_timer(45)
+	WeatherController.spawn_trash_wind(45, 20, 1, Vector2(-320, -280), Vector2(320, 180), weather_node)
+	await send_enemy(cow, 1, 1)
+	await delay(1)
+	await send_enemy(squirrel, 30, 0.25)
+	
+	currently_sending = false
+	await wave_timer.timeout
+	signify_wave_end()
+
+	# wave 3
+	start_wave_timer(45)
+	WeatherController.spawn_rotting_grass(60, -0.25, weather_node)
+	send_enemy(mushroom, 12, 1)
+	await delay(0.5)
+	await send_enemy(armor_mushroom, 12, 1)
+	
+	currently_sending = false
+	await wave_timer.timeout
+	signify_wave_end()
+
+	# wave 4
+	start_wave_timer(60)
+	send_enemy(snail, 5, 1)
+	await send_enemy(spore_crab, 3, 3, path2)
+	
+	currently_sending = false
+	await wave_timer.timeout
+	signify_wave_end()
+	
+	# wave 5
+	start_wave_timer(3600)
+	await send_enemy(spore_crab, 6, 1, path2)
+	await send_enemy(cow, 6, 1)
 	
 	currently_sending = false
 	await wave_timer.timeout

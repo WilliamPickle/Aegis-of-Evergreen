@@ -48,7 +48,7 @@ func spawn_rotting_grass(duration : float, debuff_percent : float, weather_place
 	rotting_grass.init(duration, debuff_percent)
 	weather_placement.call_deferred("add_child", rotting_grass)
 
-func spawm_trash_wind(duration : float, trash_per_second : int, direction : int, min_pos : Vector2, max_pos : Vector2, weather_placement : Node2D):
+func spawn_trash_wind(duration : float, trash_per_second : int, direction : int, min_pos : Vector2, max_pos : Vector2, weather_placement : Node2D):
 	var trash_wind = WEATHERS["TrashWind"].instantiate()
 	trash_wind.init(duration, trash_per_second, direction, min_pos, max_pos)
 	weather_placement.call_deferred("add_child", trash_wind)

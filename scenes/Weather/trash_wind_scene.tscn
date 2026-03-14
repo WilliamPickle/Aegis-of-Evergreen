@@ -239,9 +239,10 @@ one_shot = true
 [node name="SpawnTimer" type="Timer" parent="."]
 
 [node name="StartingTrash" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
 position = Vector2(-482, 0)
 sprite_frames = SubResource("SpriteFrames_i8pu5")
-animation = &"WhiteTrash"
+animation = &"BlackTrash"
 metadata/_edit_group_ = true
 
 [node name="TrashHitBox" type="Area2D" parent="StartingTrash"]
