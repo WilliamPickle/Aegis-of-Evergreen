@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://ne532rbk5fa7"]
+[gd_scene load_steps=63 format=3 uid="uid://ne532rbk5fa7"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_tmocn"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_fw1i2"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="26_v615c"]
 [ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="27_ea3cd"]
 [ext_resource type="PackedScene" uid="uid://b7t00txf1d4ho" path="res://scenes/UI/guidebook_popup.tscn" id="28_tmocn"]
+[ext_resource type="PackedScene" uid="uid://c4tvpjuo8ae2w" path="res://scenes/Weather/weather_icons_scene.tscn" id="29_fw1i2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("2_fw1i2")
@@ -241,6 +242,7 @@ outline_color = Color(0.336608, 0.336608, 0.336608, 1)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 script = ExtResource("1_tmocn")
+offset_u = 100.0
 
 [node name="MapAssets" type="Node2D" parent="."]
 
@@ -315,8 +317,15 @@ visible = false
 position = Vector2(-320, -180)
 polygon = PackedVector2Array(640, -7, 640, -101, 0, -100, 0, 0)
 
-[node name="WaveSpawner" type="Node2D" parent="." groups=["wavespawner"]]
+[node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label", "weather_node") groups=["wavespawner"]]
 script = ExtResource("8_ailnv")
+pause_menu = NodePath("../PauseUI")
+fast_forward_button = NodePath("../fast_forward_ui")
+delay_timer = NodePath("DelayFuncTimer")
+wave_timer = NodePath("WaveTimer")
+path_2d = NodePath("../EnemyPath1")
+wave_label = NodePath("Wave Text/WaveLabel")
+weather_node = NodePath("../WeatherPlacement")
 metadata/_custom_type_script = "uid://clq18rcf3qqqj"
 
 [node name="DelayFuncTimer" type="Timer" parent="WaveSpawner"]
@@ -380,7 +389,8 @@ icon_alignment = 1
 [node name="fast_forward_ui" parent="." instance=ExtResource("14_10qfk")]
 hide_during_pause = true
 
-[node name="ScrollbarUI" parent="." instance=ExtResource("15_ufr8c")]
+[node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("15_ufr8c")]
+placement_mask = NodePath("../PlacementCollisions")
 card_type = Array[String](["god", "druid"])
 hide_during_pause = true
 
@@ -591,3 +601,5 @@ layout_mode = 2
 
 [node name="WeatherPlacement" type="Node2D" parent="."]
 z_index = 12
+
+[node name="WeatherIcons" parent="WeatherPlacement" instance=ExtResource("29_fw1i2")]
