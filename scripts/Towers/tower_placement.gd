@@ -9,6 +9,7 @@ const towers : Dictionary = {
 	"bee" = preload("res://scenes/Towers/bee/bee.tscn"),
 	"flytrap" = preload("res://scenes/Towers/flytrap/flytrap.tscn"),
 	"flower" = preload("res://scenes/Towers/flower/flower.tscn"),
+	"rabbit" = preload("res://scenes/Towers/rabbit/rabbit.tscn"),
 	"god" = preload("res://scenes/Towers/god/god.tscn"),
 }
 const CONTROLS_STATES = ControlHandler.ControlState

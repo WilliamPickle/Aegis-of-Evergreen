@@ -1,7 +1,6 @@
 extends Attacker
 class_name Melee_Tower
 
-signal test
 const COLOR = Color(0.75,0,0,0.3)
 
 @onready var attack_range : Area2D = $AttackRange

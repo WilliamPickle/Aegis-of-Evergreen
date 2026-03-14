@@ -33,6 +33,7 @@ const cards : Dictionary = {
 	"bee" = preload("res://assets/sprites/towers/tower cards/bee_card.png"),
 	"flytrap" = preload("res://assets/sprites/towers/tower cards/fly_trap_card.png"),
 	"flower" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
+	"rabbit" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
 	"god" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
 }
 

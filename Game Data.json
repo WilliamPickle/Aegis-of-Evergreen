@@ -226,6 +226,46 @@
 		-0.90
 	  ],
 	},
+	"rabbit": {
+	  "type": "Attacker",
+	  "tower_fpath": "res://scenes/Towers/chipmunk/chipmunk.tscn",
+	  "card_fpath": "res://assets/sprites/towers/chipmunk/chipmunk_card.png",
+	  "attack_fpath": [
+		"",
+		"",
+		"",
+	  ],
+	  "cost": [
+		1,
+		1,
+		1
+	  ],
+	  "range": [
+		50,
+		80,
+		120
+	  ],
+	  "attack_speed": [
+		3,
+		3,
+		3
+	  ],
+	  "damage": [
+		0.1,
+		0.1,
+		0.1
+	  ],
+	  "stund_duration": [
+		5,
+		10,
+		15
+	  ],
+	  "stun_cap": [
+		1,
+		5,
+		10
+	  ],
+	},
   },
   "projectile": {
 	"chipmunk_proj": {
