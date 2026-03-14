@@ -62,8 +62,8 @@ func on_hit(entity : Area2D) -> void:
 		queue_free()
 	elif (entity is Enemy) and entity.cur_health > 0 and pierce_cap > 0:
 		entity.apply_damage(tower.cur_damage, type)
-	else:
-		print("SHOT AT A TRASH BAG!!!!!!!!!!-----------------")
+	elif !(entity is Enemy):
+		print("SHOT AT A TRASH BAG!!!!!!!!!!-----------------", entity)
 		entity.get_parent().queue_free()
 	pierce_cap -= 1
 	# To prevent the projectile from being seen after projectile's

@@ -34,7 +34,7 @@ func on_hit(entity : Area2D) -> void:
 		return
 	if entity is Enemy:
 		entity.apply_damage(tower.cur_damage * pierce_damage, type)
-	else:
+	elif !(entity is Enemy):
 		entity.get_parent().queue_free()
 
 	pierce_cap -= 1
