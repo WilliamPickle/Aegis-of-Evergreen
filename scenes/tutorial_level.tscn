@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://d2uqwbxrpnoex"]
+[gd_scene load_steps=72 format=3 uid="uid://d2uqwbxrpnoex"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_r0rxt"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_r3rh7"]
@@ -33,6 +33,7 @@
 [ext_resource type="Script" uid="uid://b886n3hhdc206" path="res://scripts/tutorial_skip_prompt.gd" id="31_b2nau"]
 [ext_resource type="Texture2D" uid="uid://cqenjdnyid0fg" path="res://assets/sprites/tutorial assets/skip_tutorial_button_highlight.png" id="31_pm2mo"]
 [ext_resource type="Script" uid="uid://bblhwa8psc3qr" path="res://scripts/UI/tutorial_skip_button.gd" id="32_a6d6p"]
+[ext_resource type="PackedScene" uid="uid://c4tvpjuo8ae2w" path="res://scenes/Weather/weather_icons_scene.tscn" id="35_b2nau"]
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="35_r0y8g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
@@ -3264,3 +3265,5 @@ autoplay = "new_animation"
 
 [node name="WeatherPlacement" type="Node2D" parent="."]
 z_index = 12
+
+[node name="WeatherIcons" parent="WeatherPlacement" instance=ExtResource("35_b2nau")]
