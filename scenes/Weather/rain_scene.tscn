@@ -1,8 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://bxsjto1hedkld"]
+[gd_scene load_steps=20 format=3 uid="uid://bxsjto1hedkld"]
 
 [ext_resource type="Texture2D" uid="uid://ckwl1hnr6u0ge" path="res://assets/sprites/weather/rain_spritesheet.png" id="1_pfbjn"]
 [ext_resource type="Script" uid="uid://11h7w5s2r04s" path="res://scripts/Weather/rain.gd" id="2_ms1y5"]
-[ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="3_chris"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isy0f"]
 atlas = ExtResource("1_pfbjn")
@@ -127,129 +126,6 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7wes3"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(5760, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j1pkg"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(6400, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_luiag"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(7040, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ykt3n"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(7680, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vt7au"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(8320, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fy8b4"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(8960, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hba3w"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(3840, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i4peq"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(4480, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w0rd0"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(5120, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ya04g"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(0, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mhhq0"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(640, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vkgmc"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(1280, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2788q"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(1920, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8wgin"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(2560, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p8dnf"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(3200, 360, 640, 360)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_isy0f"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7wes3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j1pkg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_luiag")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ykt3n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vt7au")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fy8b4")
-}],
-"loop": true,
-"name": &"despawn",
-"speed": 9.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hba3w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i4peq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w0rd0")
-}],
-"loop": true,
-"name": &"rain",
-"speed": 9.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ya04g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mhhq0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vkgmc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2788q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8wgin")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p8dnf")
-}],
-"loop": true,
-"name": &"spawn",
-"speed": 9.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1pkg"]
 size = Vector2(646, 366)
 
@@ -258,18 +134,6 @@ sprite_frames = SubResource("SpriteFrames_1ou2i")
 animation = &"rain"
 script = ExtResource("2_ms1y5")
 metadata/_custom_type_script = "uid://11h7w5s2r04s"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_isy0f")
-animation = &"rain"
-autoplay = "rain"
-frame_progress = 0.975891
-
-[node name="map" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("3_chris")
-metadata/_edit_lock_ = true
 
 [node name="TowerDetectionArea" type="Area2D" parent="."]
 collision_layer = 128
