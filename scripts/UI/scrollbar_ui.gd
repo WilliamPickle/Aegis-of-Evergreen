@@ -28,12 +28,12 @@ const ally_guidebook_pgs : Dictionary = {
 # add any tower card here
 const cards : Dictionary = { 
 	"ranger" = preload("res://assets/sprites/towers/tower cards/ranger_card_2.png"),
-	"druid" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
+	"druid" = preload("res://assets/sprites/towers/tower cards/druid_card.png"),
 	"chipmunk" = preload("res://assets/sprites/towers/tower cards/chipmunk_card.png"),
 	"bee" = preload("res://assets/sprites/towers/tower cards/bee_card.png"),
 	"flytrap" = preload("res://assets/sprites/towers/tower cards/fly_trap_card.png"),
-	"flower" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
-	"rabbit" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
+	"flower" = preload("res://assets/sprites/towers/tower cards/rhododendron_card.png"),
+	"rabbit" = preload("res://assets/sprites/towers/tower cards/rabbit_card.png"),
 	"god" = preload("res://assets/sprites/towers/tower cards/base_tower_card.png"),
 }
 
@@ -43,7 +43,8 @@ const unlockable_allies : Dictionary = {
 	"1" : "ranger",
 	"2" : "bee",
 	"3" : "flytrap",
-	"5" : "druid"
+	"5" : "druid",
+	"9" : "rabbit",
 }
 
 # the vars pro jellyfish added into the ready function but I made them global
