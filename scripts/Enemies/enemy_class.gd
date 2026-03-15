@@ -97,6 +97,8 @@ func move_on_path(delta) -> void:
 		emit_signal("removed")
 		#print("reached end")
 		if cur_health > 0:
+			PlayerStats.cur_money += money_drop * (1 + money_drop_variance)
+			PlayerStats.total_money_gained += money_drop * (1 + money_drop_variance)
 			emit_signal("reached_end")
 		path.queue_free()
 		queue_free()

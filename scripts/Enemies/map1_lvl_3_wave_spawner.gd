@@ -27,6 +27,7 @@ func _on_start_lvl3() -> void:
 	# wave 1
 	start_wave_timer(45)
 	await send_enemy(bush, 10, 0.5)
+	WeatherController.spawn_rain(15, -0.25, weather_node)
 	await send_enemy(hornet, 1, 0.5)
 	await send_enemy(squirrel, 2, 0.5)
 	#send_enemy(bush, 16, 0.75)
@@ -67,7 +68,7 @@ func _on_start_lvl3() -> void:
 	start_wave_timer(60)
 	await send_enemy(snail, 3, 4)
 	await delay(3)
-	await send_enemy(beetle, 4, 1)
+	await send_enemy(beetle, 3, 1)
 	await delay(5)
 	await send_enemy(hornet, 16, 0.15)
 	

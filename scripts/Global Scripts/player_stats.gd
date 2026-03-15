@@ -8,7 +8,7 @@ signal gtower_placed(tower : Tower)
 signal upgraded_tower(tower : Tower)
 
 # Player Vars
-const StartingPlayerLevel: int = 5
+const StartingPlayerLevel: int = 0
 const XpThreshold: int = 1000
 var PlayerXp: int = 0
 var PlayerLevel: int = StartingPlayerLevel
@@ -20,9 +20,9 @@ var lvls_beaten = -1
 const DEFAULT_MONEY : Array = [
 	[50.0, 100.0, 150.0],
 	[150.0, 200.0, 250.0],
-	[80000.0, 900.0, 1000.0],
+	[250.0, 300.0, 350.0],
 ]
-@onready var cur_money = DEFAULT_MONEY[1][2]
+@onready var cur_money = DEFAULT_MONEY[0][0]
 @onready var total_money_gained = cur_money
 var pity_money = 0
 

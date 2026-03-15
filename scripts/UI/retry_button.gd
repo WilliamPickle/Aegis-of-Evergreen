@@ -1,6 +1,6 @@
 extends Icon
 @onready var lose_ui: UserInterface = $"../../.."
-const levels_list = ["res://scenes/level_1.tscn", "res://scenes/level_2.tscn", "res://scenes/level_3.tscn", "res://scenes/map_2_level_1.tscn"]
+const levels_list = ["res://scenes/level_1.tscn", "res://scenes/level_2.tscn", "res://scenes/level_3.tscn", "res://scenes/map_2_level_1.tscn", "res://scenes/map_2_level_2.tscn", "res://scenes/map_2_level_3.tscn"]
 const restart_pity_money: float = 25
 
 func _ready() -> void:
@@ -21,4 +21,5 @@ func remove_lose_screen():
 	SceneLoader.tint_scene(SceneLoader.current_main_scene, false)
 	PlayerStats.pity_money += restart_pity_money
 	PlayerStats.cur_money = PlayerStats.DEFAULT_MONEY[floori(PlayerStats.lvls_beaten / 3)][PlayerStats.lvls_beaten % 3] + PlayerStats.pity_money
+	Tower.reset_hero_data()
 	PlayerStats.emit_signal("money_changed")
