@@ -49,7 +49,7 @@ func _ready() -> void:
 
 
 # sends an enemy a specified amount of times. 
-func send_enemy(enemy, quantity: int, delay_time: float, parent_path = path_2d):
+func send_enemy(enemy, quantity: int, delay_time: float, parent_path : Path2D = path_2d, money_drop_percent : float = 0):
 	var new_timer = Timer.new()
 	var new_enemy
 	self.add_child(new_timer)
@@ -71,6 +71,7 @@ func send_enemy(enemy, quantity: int, delay_time: float, parent_path = path_2d):
 		new_enemy.wave_number = wave
 		new_enemy.position.y += randi_range(-path_spread, path_spread)
 		new_enemy.removed.connect(update_total_enemies.bind(new_enemy))
+		new_enemy.money_drop_variance = money_drop_percent
 		new_path.add_child(new_enemy)
 	new_timer.queue_free()
 	

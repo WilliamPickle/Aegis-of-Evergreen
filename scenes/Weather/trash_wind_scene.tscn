@@ -227,7 +227,6 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvy4d"]
-size = Vector2(10, 10)
 
 [node name="TrashWind" type="Node2D"]
 script = ExtResource("1_hjt2g")

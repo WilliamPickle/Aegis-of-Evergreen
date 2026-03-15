@@ -1,8 +1,8 @@
 extends Enemy
 @onready var gas: Area2D = $Gas
 @onready var gas_sprite: AnimatedSprite2D = $Gas/GasSprite
-@export var effect_dur: float = 5
-@export var effect_percent: float = -0.25
+@export var effect_dur: float = 6
+@export var effect_percent: float = -0.5
 
 func _ready() -> void:
 	super._ready()

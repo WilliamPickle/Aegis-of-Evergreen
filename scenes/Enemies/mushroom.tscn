@@ -150,7 +150,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iiaqh"]
-size = Vector2(11, 6.00001)
+size = Vector2(13, 9.99995)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2jh3"]
 
@@ -182,14 +182,15 @@ autoplay = "default"
 frame_progress = 0.771432
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.125, -4)
+position = Vector2(-2.38419e-07, -4.5)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_iiaqh")
 
 [node name="Button" type="Button" parent="."]
-offset_left = -3.0
-offset_top = -8.0
-offset_right = 4.0
+offset_left = -5.0
+offset_top = -11.0
+offset_right = 6.0
+offset_bottom = 3.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m2jh3")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_af7ig")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_q4jpt")

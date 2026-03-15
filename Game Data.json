@@ -82,7 +82,7 @@
 	  ],
 	  "attack_speed": [
 		1,
-		0.6,
+		0.5,
 		0.2
 	  ],
 	  "damage": [
@@ -449,6 +449,7 @@
 	  "resistance" : "blunt",
 	  "resistance_percent" : 0.9,
 	  "book_page" : 5,
+	  "immunities" : [4],
 	},
 	"mushroom" : {
 	  "speed" : 0.02, 
@@ -470,18 +471,18 @@
 	  "book_page" : 1,
 	},
 	"spore_crab" : {
-	  "speed" : 0.006, 
-	  "max_health" : 40,
+	  "speed" : 0.01, 
+	  "max_health" : 75,
 	  "base_damage_ratio" : 0.5,
-	  "xp" : 50,
-	  "money_drop" : 25,
+	  "xp" : 45,
+	  "money_drop" : 30,
 	  "resistance" : "energy",
 	  "resistance_percent" : 0.75,
 	  "book_page" : 1,
 	},
 	"spore" : {
 	  "speed" : 0.035, 
-	  "max_health" : 2,
+	  "max_health" : 4,
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 3,
 	  "money_drop" : 3,
@@ -490,23 +491,23 @@
 	},
 	"tanky_mushroom" : {
 	  "speed" : 0.005, 
-	  "max_health" : 200,
+	  "max_health" : 125,
 	  "base_damage_ratio" : 0.5,
-	  "xp" : 3,
-	  "money_drop" : 3,
+	  "xp" : 60,
+	  "money_drop" : 60,
 	  "resistance" : "none",
 	  "book_page" : 1,
-	  "immunities" : [4]
+	  "immunities" : [4],
 	},
 	"amalgamushroom" : {
 	  "speed" : 0.01, 
 	  "max_health" : 100,
 	  "base_damage_ratio" : 0.5,
-	  "xp" : 3,
-	  "money_drop" : 3,
+	  "xp" : 200,
+	  "money_drop" : 200,
 	  "resistance" : "none",
 	  "book_page" : 1,
-	  "immunities" : [4]
+	  "immunities" : [4],
 	},
   },
 }

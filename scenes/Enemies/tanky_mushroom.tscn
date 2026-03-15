@@ -307,8 +307,8 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_rb4j4")
 
 [node name="HpContainer" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0.562508, -31.25)
-scale = Vector2(1.83088, 1.375)
+position = Vector2(0.500013, -30.75)
+scale = Vector2(1.82353, 1.125)
 texture = ExtResource("5_l6vws")
 
 [node name="HpBar" type="Sprite2D" parent="HpContainer"]

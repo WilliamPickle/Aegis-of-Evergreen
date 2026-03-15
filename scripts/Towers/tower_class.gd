@@ -53,6 +53,7 @@ func _ready() -> void:
 	# contact_monitor = true
 	# max_contacts_reported = 25
 	# Connecting all the body signals
+	z_index = 4
 	var shape = CircleShape2D.new()
 	shape.radius = range
 	range_collider.shape = shape

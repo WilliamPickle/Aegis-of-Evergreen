@@ -3,11 +3,11 @@ extends Enemy
 @onready var collider: CollisionShape2D = $CollisionShape2D
 @onready var move_timer: Timer = $MoveTimer
 const phase_change_percent : float = 0.5
-const phase_health : Array[float] = [150, 250]
-const phase_speed : Array[float] = [-0.5, -0.25]
+const phase_health : Array[float] = [400, 750]
+const phase_speed : Array[float] = [-0, -0]
 const phase_collider_r : Array[float] = [9, 15]
 const phase_move_frame : Array[float] = [8, 6]
-const fps : float = 8
+const fps : Array[float] = [10, 12]
 var cur_phase : int = 1
 	
 func apply_damage(damage : float, damage_type):
@@ -31,7 +31,7 @@ func change_phase() -> void:
 	
 func move() -> void:
 	print("frame: ", sprite.frame)
-	move_timer.start(1 / fps * phase_move_frame[cur_phase - 2])
+	move_timer.start(1 / fps[cur_phase - 2] * phase_move_frame[cur_phase - 2])
 	speed_variance = -1
 	await move_timer.timeout
 	speed_variance = phase_speed[cur_phase - 2]

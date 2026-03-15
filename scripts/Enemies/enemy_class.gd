@@ -19,7 +19,9 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 @onready var resistance : String = object_data["resistance"]
 @onready var book_page : float = object_data["book_page"]
 #var immunities : Array
+# variables to debuff stats, separate from stat_changer
 var speed_variance : float = 0
+var money_drop_variance : float = 0
 
 # enemy based variables
 @export var enemy_sprite : Node2D
@@ -136,8 +138,8 @@ func draw_health():
 			return
 		has_been_removed = true
 		PlayerStats.PlayerXp += xp
-		PlayerStats.cur_money += money_drop
-		PlayerStats.total_money_gained += money_drop
+		PlayerStats.cur_money += money_drop * (1 + money_drop_variance)
+		PlayerStats.total_money_gained += money_drop * (1 + money_drop_variance)
 		PlayerStats.emit_signal("xp_changed")
 		PlayerStats.emit_signal("money_changed")
 		emit_signal("removed")
