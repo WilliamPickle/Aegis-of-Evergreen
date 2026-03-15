@@ -557,7 +557,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7q1ub")
 }],
-"loop": true,
+"loop": false,
 "name": &"attacking_0",
 "speed": 10.0
 }, {
@@ -589,7 +589,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yx2jp")
 }],
-"loop": true,
+"loop": false,
 "name": &"attacking_1",
 "speed": 8.0
 }, {
@@ -633,7 +633,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fp7a7")
 }],
-"loop": true,
+"loop": false,
 "name": &"attacking_2",
 "speed": 10.0
 }, {
@@ -923,6 +923,9 @@ radius = 10.0499
 radius = 100.0
 
 [node name="Rabbit" type="Area2D"]
+z_index = 7
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_fwg0a")
 data_resource = SubResource("Resource_h6f55")
 metadata/_custom_type_script = "uid://bedplpbp1d213"
@@ -930,8 +933,7 @@ metadata/_custom_type_script = "uid://bedplpbp1d213"
 [node name="Image" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_yj8ke")
-animation = &"attacking_2"
-frame_progress = 0.958384
+animation = &"idle_0"
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_h6f55")
