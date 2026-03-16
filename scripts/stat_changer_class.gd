@@ -90,7 +90,7 @@ func apply_stat_changes(is_creating := true):
 				start(DOT_TICK_RATE)
 				await timeout
 				target is Enemy
-				if target.cur_health + percent_change > target.max_health:
+				if target.cur_health - percent_change >= target.max_health:
 					target.cur_health = target.max_health
 				else:
 					target.apply_damage(percent_change, "DOT")
