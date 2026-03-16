@@ -1,9 +1,10 @@
-[gd_scene load_steps=66 format=3 uid="uid://ca37b3exk8ick"]
+[gd_scene load_steps=80 format=3 uid="uid://ca37b3exk8ick"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_dri55"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_ektfg"]
 [ext_resource type="Texture2D" uid="uid://b73ytkoo8r6bc" path="res://assets/sprites/maps/map2/map2_lvl1_background.png" id="3_dfome"]
 [ext_resource type="Texture2D" uid="uid://d1ypiscjypjgt" path="res://assets/sprites/maps/map2/map2_lvl1_river_anim.png" id="4_ektfg"]
+[ext_resource type="Texture2D" uid="uid://cn7skyq4faml2" path="res://assets/sprites/maps/map2/map2_lvl1_factory.png" id="5_qc32i"]
 [ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="5_xe5dx"]
 [ext_resource type="Texture2D" uid="uid://c32hbgxmjl2qy" path="res://assets/sprites/maps/map2/map2_lvl1_trees.png" id="6_qc32i"]
 [ext_resource type="Texture2D" uid="uid://3gwoxt07k4t2" path="res://assets/sprites/maps/map2/map2_lvl1_trees_overlayer.png" id="7_6mfql"]
@@ -209,6 +210,98 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsh1p"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(0, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtn5q"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(640, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52m6q"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(1280, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf7ay"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(1920, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxgh2"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(2560, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4hnu"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(3200, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkg6y"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(3840, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xxa7"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(4480, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_224rf"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(5120, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeh0u"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(5760, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guc7n"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(6400, 0, 640, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x43ut"]
+atlas = ExtResource("5_qc32i")
+region = Rect2(7040, 0, 640, 460)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y2h2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsh1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtn5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52m6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf7ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxgh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4hnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkg6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xxa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_224rf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeh0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guc7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x43ut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
 [sub_resource type="Curve2D" id="Curve2D_ibk0x"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -273, -109, 0, 0, 0, 0, -265, -80, 0, 0, 0, 0, -248, -56, 0, 0, 0, 0, -216, -39, 0, 0, 0, 0, -183, -37, 0, 0, 0, 0, -156, -39, 0, 0, 0, 0, -123, -54, 0, 0, 0, 0, 0, -124, 0, 0, 0, 0, 41, -137, 0, 0, 0, 0, 87, -141, 0, 0, 0, 0, 133, -140, 0, 0, 0, 0, 161, -135, 0, 0, 0, 0, 179, -122, 0, 0, 0, 0, 194, -99, 0, 0, 0, 0, 197, -80, 0, 0, 0, 0, 186, -55, 0, 0, 0, 0, 170, -37, 0, 0, 0, 0, 46, -11, 0, 0, 0, 0, 21, 5, 0, 0, 0, 0, 11, 19, 0, 0, 0, 0, 9, 38, 0, 0, 0, 0, 17, 54, 0, 0, 0, 0, 32, 71, 0, 0, 0, 0, 47, 80, 0, 0, 0, 0, 68, 86, 0, 0, 0, 0, 190, 72, 0, 0, 0, 0, 246, 46, 0, 0, 0, 0, 280, 37, 0, 0, 0, 0, 342, 37)
@@ -269,11 +362,17 @@ sprite_frames = SubResource("SpriteFrames_xewxc")
 autoplay = "default"
 frame_progress = 0.534901
 
+[node name="factory" type="AnimatedSprite2D" parent="MapAssets"]
+position = Vector2(0, -50)
+sprite_frames = SubResource("SpriteFrames_y2h2n")
+autoplay = "default"
+
 [node name="bridge" type="Sprite2D" parent="MapAssets"]
 z_index = 2
 texture = ExtResource("5_xe5dx")
 
 [node name="tree" type="Sprite2D" parent="MapAssets"]
+visible = false
 position = Vector2(0, -50)
 texture = ExtResource("6_qc32i")
 
