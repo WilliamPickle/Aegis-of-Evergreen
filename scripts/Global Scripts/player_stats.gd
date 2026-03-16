@@ -22,7 +22,7 @@ const DEFAULT_MONEY : Array = [
 	[150.0, 200.0, 250.0],
 	[250.0, 300.0, 350.0],
 ]
-@onready var cur_money = DEFAULT_MONEY[1][1]
+@onready var cur_money = DEFAULT_MONEY[1][2]
 @onready var total_money_gained = cur_money
 var pity_money = 0
 

@@ -23,6 +23,7 @@ const ally_guidebook_pgs : Dictionary = {
 	"bee" : 2,
 	"flytrap" : 3,
 	"druid" : 1,
+	"rabbit" : 1,
 }
 
 # add any tower card here
