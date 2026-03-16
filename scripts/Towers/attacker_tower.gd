@@ -111,12 +111,12 @@ func set_target(enemies : Array[Area2D]) -> void:
 		Target.FIRST:
 			for enemy in enemies:
 				var path_follow : PathFollow2D = enemy.get_parent()
-				if path_follow.progress_ratio > _chosen_enemy.get_parent().progress_ratio:
+				if (path_follow.progress_ratio) / path_follow.get_parent().curve.get_baked_length() > (_chosen_enemy.get_parent().progress_ratio) / _chosen_enemy.get_parent().get_parent().curve.get_baked_length():
 					_chosen_enemy = enemy
 		Target.LAST:
 			for enemy in enemies:
 				var path_follow : PathFollow2D = enemy.get_parent()
-				if path_follow.progress_ratio < _chosen_enemy.get_parent().progress_ratio:
+				if (path_follow.progress_ratio) / path_follow.get_parent().curve.get_baked_length() < (_chosen_enemy.get_parent().progress_ratio) / _chosen_enemy.get_parent().get_parent().curve.get_baked_length():
 					_chosen_enemy = enemy
 		Target.STRONG:
 			var highest_health : float = -1.0

@@ -9,8 +9,8 @@ extends Camera2D
 # size of the actual camera2d viewport
 const screen_width : float = 640 / 2
 const screen_height : float = 360 / 2
-const zoom_max = 2
-const zoom_min = 4
+@export var zoom_max : float = 2
+@export var zoom_min : float = 4
 const zoom_rate = 0.1
 const panning_drag = 0.1
 

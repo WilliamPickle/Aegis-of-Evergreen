@@ -1,0 +1,110 @@
+[gd_scene load_steps=14 format=3 uid="uid://ddpwkn6nxn6kv"]
+
+[ext_resource type="Texture2D" uid="uid://npky24ugxvdm" path="res://assets/sprites/enemies/oil_spill.png" id="1_agpgx"]
+[ext_resource type="Script" uid="uid://cgxuto8dbx45u" path="res://scripts/Enemies/oil.gd" id="1_uojck"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_agpgx"]
+radius = 5.0
+height = 40.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sar2"]
+atlas = ExtResource("1_agpgx")
+region = Rect2(375, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adggc"]
+atlas = ExtResource("1_agpgx")
+region = Rect2(300, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hau8l"]
+atlas = ExtResource("1_agpgx")
+region = Rect2(225, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uojck"]
+atlas = ExtResource("1_agpgx")
+region = Rect2(0, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi8w5"]
+atlas = ExtResource("1_agpgx")
+region = Rect2(75, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6cxa"]
+atlas = ExtResource("1_agpgx")
+region = Rect2(150, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c3jd"]
+atlas = ExtResource("1_agpgx")
+region = Rect2(450, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qc6d"]
+atlas = ExtResource("1_agpgx")
+region = Rect2(525, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hcj6"]
+atlas = ExtResource("1_agpgx")
+region = Rect2(600, 0, 75, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hi8w5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sar2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adggc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hau8l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uojck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi8w5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6cxa")
+}],
+"loop": false,
+"name": &"intro",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c3jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qc6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hcj6")
+}],
+"loop": false,
+"name": &"outro",
+"speed": 9.0
+}]
+
+[node name="oil" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_uojck")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = 1.5708
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CapsuleShape2D_agpgx")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(-2, -1.14441e-06)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_hi8w5")
+autoplay = "intro"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

@@ -6,7 +6,7 @@ extends WaveSpawner
 
 func _ready() -> void:
 	super._ready()
-	wave_bonus_money = [0, 75, 100, 125, 125]
+	wave_bonus_money = [0, 75, 100, 100, 100]
 	lvl5_dialogue.start_wave.connect(_on_start_lvl5)
 	manual_wave_button.button_down.connect(_on_start_lvl5)
 
@@ -22,10 +22,11 @@ func _on_start_lvl5() -> void:
 	
 	# wave 1
 	start_wave_timer(60)
-	await delay(3)
-	send_enemy(armor_mushroom, 2, 4, path2)
-	await send_enemy(bush, 30, 0.5)
-	WeatherController.spawn_wind(25, 0.15, -0.6, -1, weather_node)
+	send_enemy(bush, 24, 0.5)
+	await delay(5)
+	WeatherController.spawn_wind(45, 0.3, -0.3, 1, weather_node)
+	await send_enemy(mushroom, 12, 1, path2)
+
 	
 	currently_sending = false
 	await wave_timer.timeout

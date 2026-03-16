@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://0fh8wagchfik"]
+[gd_scene load_steps=77 format=3 uid="uid://cr86muep78d7e"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_4x34n"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_jjuf7"]

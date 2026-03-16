@@ -25,6 +25,8 @@ const spore_crab := preload("res://scenes/Enemies/spore_crab.tscn")
 const spore := preload("res://scenes/Enemies/spore.tscn")
 const tanky_mushroom := preload("res://scenes/Enemies/tanky_mushroom.tscn")
 const amalgamushroom := preload("res://scenes/Enemies/amalgamushroom.tscn")
+const tree_cutter := preload("res://scenes/Enemies/tree_cutter.tscn")
+const excavator := preload("res://scenes/Enemies/excavator.tscn")
 
 # variables to initialize waves after dialogue
 @export var wave_label: Label
@@ -67,12 +69,16 @@ func send_enemy(enemy, quantity: int, delay_time: float, parent_path : Path2D = 
 		new_path.position.y = -100
 		
 		new_enemy = enemy.instantiate()
+		new_enemy.visible = false
 		enemy_count += 1
 		new_enemy.wave_number = wave
 		new_enemy.position.y += randi_range(-path_spread, path_spread)
 		new_enemy.removed.connect(update_total_enemies.bind(new_enemy))
 		new_enemy.money_drop_variance = money_drop_percent
 		new_path.add_child(new_enemy)
+		await get_tree().process_frame
+		new_enemy.visible = true
+		print("enemy position: ", new_enemy.position)
 	new_timer.queue_free()
 	
 	# right now, spore crab uses this logic

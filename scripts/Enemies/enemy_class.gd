@@ -21,6 +21,7 @@ static var Game_Data = JSON.parse_string(FileAccess.get_file_as_string("res://Ga
 #var immunities : Array
 # variables to debuff stats, separate from stat_changer
 var speed_variance : float = 0
+var base_path_len : float = 1171.86
 var money_drop_variance : float = 0
 
 # enemy based variables
@@ -83,7 +84,7 @@ func _ready() -> void:
 		enemies_seen_list.append(name)
 		#print("First time seeing ", name)
 		show_guidebook_popup()
-	
+		
 	
 	
 # progresses enemy along a path.
@@ -105,7 +106,7 @@ func move_on_path(delta) -> void:
 	if path != null:
 		path_position = global_position.x
 		prev_position = cur_position
-		path.progress_ratio += speed * delta * (1 + speed_variance)
+		path.progress_ratio += speed * delta * (1 + speed_variance) / (path.get_parent().curve.get_baked_length() / base_path_len)
 		cur_position = path_position
 		#print("-This is cur pos: ", cur_position, " this is prev_pos: ", prev_position)
 	

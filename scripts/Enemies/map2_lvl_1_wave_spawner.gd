@@ -14,9 +14,7 @@ func _ready() -> void:
 func _on_start_lvl4() -> void:
 	## test wave
 	#start_wave_timer(3000)
-	#await send_enemy(spore_crab, 1, 2, path2)
-	#await send_enemy(tanky_mushroom, 1, 2, path2)
-	#WeatherController.spawn_rotting_grass(100, -0.5, weather_node)
+	#await send_enemy(squirrel, 1, 1)
 	#
 	#currently_sending = false
 	#await wave_timer.timeout
