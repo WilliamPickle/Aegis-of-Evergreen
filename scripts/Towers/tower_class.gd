@@ -3,14 +3,13 @@ class_name Tower
 
 
 signal tower_placed
-# The min and max values the tower can be 
-# placed around the map.
-const MIN_MOUSE_POS := Vector2(-320,-180)
-const MAX_MOUSE_POS := Vector2(320,180)
 const CONTROLS_STATES = ControlHandler.ControlState
 const stat_type := StatChanger.Type
 const snapping : float = 2.0
 
+# The min and max values the tower can be placed around the map.
+static var MIN_MOUSE_POS := Vector2(-320,-180)
+static var MAX_MOUSE_POS := Vector2(320,180)
 # Used to draw the hitbox of the selected tower
 static var current_tower : Tower
 
@@ -188,7 +187,11 @@ static func reset_hero_data() -> void:
 	Ranger.does_exist = false
 	Druid.does_exist = false
 	Flower.does_exist = false
-
+	
+## Update the max and min positions a player may place a tower
+static func update_min_max_pos(new_min : Vector2, new_max : Vector2) -> void:
+	MIN_MOUSE_POS = new_min
+	MAX_MOUSE_POS = new_max
 
 # When tower is first intantiated, the tower follows mouse position
 # and updates draw().
