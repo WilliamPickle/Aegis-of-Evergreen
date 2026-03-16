@@ -5,6 +5,7 @@ const MONEY_MULT := StatChanger.Type.MONEY_MULT
 const BUFF_VFX_FPATH : String = "res://assets/sprites/towers/flower_buff_sfx.tres"
 const POS_OFFSET := Vector2(0, -14)
 
+static var does_exist := false
 
 # Flower specific stats
 @onready var enemy_cap : int = object_data["enemy_cap"][0]
@@ -22,12 +23,47 @@ var target_enemies : Array[Enemy]
 var target_towers : Array[Tower]
 
 
+
 func _ready() -> void:
 	super()
+	is_hero = true
 	tower_placed.connect(on_placement)
 
+
+func place_tower() -> bool:
+	if get_overlapping_areas().size() > 0:
+		var notif := Error_Notification.new()
+		map_area.add_child(notif)
+		notif.send_notif(global_position,"can't place here")
+		return false
+
+	if does_exist:
+		Tower_Placement.reset_data(true)
+		var notif = Error_Notification.new()
+		map_area.add_child(notif)
+		notif.send_notif(global_position,"max of 1 flower")
+		return false
+
+	if !PlayerStats.purchase_item(cost):
+		Tower_Placement.reset_data(true)
+		var notif := Error_Notification.new()
+		map_area.add_child(notif)
+		notif.send_notif(global_position,"not enough funds")
+		return true
+	
+	disable_placement()
+	
+	return true
+
+func on_placement() -> void:
+	#_attack_cooldown.autostart = true
+	does_exist = true
+	_attack_cooldown.start(object_data["attack_speed"][level])
+	_attack_cooldown.timeout.connect(_support_actions)
+	super()
+
 func _support_actions():
-	var start_time = Time.get_ticks_usec()
+	#var start_time = Time.get_ticks_usec()
 	var entities := range_area.get_overlapping_areas()
 	VFX.play("support_" + str(level))
 	var enemy_list : Array[Enemy]
@@ -38,9 +74,9 @@ func _support_actions():
 		elif entity is Enemy:
 			enemy_list.append(entity)
 			
-	_enemy_logic(enemy_list)
 	_tower_logic(tower_list)
-	
+	_enemy_logic(enemy_list)
+
 func _tower_logic(tower_list : Array[Tower]) -> void:
 	for tower in tower_list:
 		var vfx := AnimatedSprite2D.new()
@@ -54,19 +90,12 @@ func _tower_logic(tower_list : Array[Tower]) -> void:
 		for child in tower.get_children():
 			if child is StatChanger:
 				child.update_stat_multiplier(clense_percent)
-	
+
 func _enemy_logic(enemy_list : Array[Enemy]) -> void:
 	var enemies_to_effect : int = enemy_cap if enemy_list.size() >= enemy_cap else enemy_list.size()
 	for i in range(enemies_to_effect):
 		var money_stat = StatChanger.new()
 		money_stat.initialize_variables(enemy_list[i], "flower", MONEY_MULT, buff_multiplier, buff_duration)
-
-func on_placement() -> void:
-	_attack_cooldown.autostart = true
-	_attack_cooldown.start(object_data["attack_speed"][level])
-	_attack_cooldown.timeout.connect(_support_actions)
-	super()
-
 
 func upgrade_tower() -> void:
 	super()

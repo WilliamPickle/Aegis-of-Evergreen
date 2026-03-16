@@ -372,7 +372,8 @@ debug_color = Color(1, 1, 1, 0.42)
 [node name="UpgradeUI" parent="." node_paths=PackedStringArray("tower", "level_descriptions") instance=ExtResource("3_gmak3")]
 visible = false
 tower = NodePath("..")
-type = "attacker"
+tower_name = "flower"
+type = "ranger"
 level_descriptions = NodePath("UpgradeDescriptions")
 
 [node name="UpgradeDescriptions" type="Control" parent="UpgradeUI"]

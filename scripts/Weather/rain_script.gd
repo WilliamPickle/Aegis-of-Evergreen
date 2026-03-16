@@ -69,5 +69,5 @@ func _delete_weather() -> void:
 	PlayerStats.upgraded_tower.disconnect(_on_tower_upgrade)
 	PlayerStats.gtower_placed.disconnect(_on_tower_placed)
 	await animation_finished
-	WeatherController.weather_ended.emit("Rain", "tower")
+	WeatherController.weather_ended.emit("Rain", true)
 	queue_free()

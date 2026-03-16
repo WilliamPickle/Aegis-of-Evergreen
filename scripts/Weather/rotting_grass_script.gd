@@ -50,5 +50,5 @@ func _delete_weather() -> void:
 		grass.play("despawn")
 		final_grass = grass
 	await final_grass.animation_finished
-	WeatherController.weather_ended.emit("RottingGrass", "tower")
+	WeatherController.weather_ended.emit("RottingGrass", true)
 	queue_free()

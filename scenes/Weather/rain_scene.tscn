@@ -1,137 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://bxsjto1hedkld"]
+[gd_scene load_steps=4 format=3 uid="uid://bxsjto1hedkld"]
 
-[ext_resource type="Texture2D" uid="uid://ckwl1hnr6u0ge" path="res://assets/sprites/weather/rain_spritesheet.png" id="1_pfbjn"]
-[ext_resource type="Script" uid="uid://11h7w5s2r04s" path="res://scripts/Weather/rain.gd" id="2_ms1y5"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_isy0f"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(5760, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4acf3"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(6400, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4s8yd"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(7040, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_17ccm"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(7680, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o1rnx"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(8320, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f7e01"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(8960, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1qno6"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(3840, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qysu6"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(4480, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lfg80"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(5120, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kvh2l"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(0, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8w505"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(640, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lah3e"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(1280, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j48xe"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(1920, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_px8wh"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(2560, 360, 640, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d5p1q"]
-atlas = ExtResource("1_pfbjn")
-region = Rect2(3200, 360, 640, 360)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1ou2i"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_isy0f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4acf3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4s8yd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_17ccm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o1rnx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f7e01")
-}],
-"loop": false,
-"name": &"despawn",
-"speed": 9.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1qno6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qysu6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lfg80")
-}],
-"loop": true,
-"name": &"rain",
-"speed": 9.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kvh2l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8w505")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lah3e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j48xe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_px8wh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d5p1q")
-}],
-"loop": false,
-"name": &"spawn",
-"speed": 9.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://den56b6fvhqgq" path="res://assets/sprites/weather/rain_animation.tres" id="1_4c7lu"]
+[ext_resource type="Script" uid="uid://11h7w5s2r04s" path="res://scripts/Weather/rain_script.gd" id="2_ms1y5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1pkg"]
 size = Vector2(646, 366)
 
 [node name="Rain" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_1ou2i")
+sprite_frames = ExtResource("1_4c7lu")
 animation = &"rain"
+frame_progress = 0.795334
 script = ExtResource("2_ms1y5")
 metadata/_custom_type_script = "uid://11h7w5s2r04s"
 

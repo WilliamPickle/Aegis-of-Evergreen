@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuevhn76eew80"]
+
+[ext_resource type="SpriteFrames" uid="uid://den56b6fvhqgq" path="res://assets/sprites/weather/rain_animation.tres" id="1_2okaa"]
+[ext_resource type="Script" uid="uid://dkyofg70n13xl" path="res://scripts/Weather/acid_rain_script.gd" id="2_prerr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2okaa"]
+size = Vector2(646, 366)
+
+[node name="AcidRain" type="AnimatedSprite2D"]
+self_modulate = Color(1, 1, 0, 1)
+z_index = 20
+sprite_frames = ExtResource("1_2okaa")
+animation = &"spawn"
+frame = 5
+frame_progress = 1.0
+script = ExtResource("2_prerr")
+
+[node name="EnemyDetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="DetectionShape" type="CollisionShape2D" parent="EnemyDetectionArea"]
+visible = false
+shape = SubResource("RectangleShape2D_2okaa")
+
+[node name="EffectDuration" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true

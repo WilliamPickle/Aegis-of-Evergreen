@@ -89,7 +89,11 @@ func apply_stat_changes(is_creating := true):
 			for i in range(duration):
 				start(DOT_TICK_RATE)
 				await timeout
-				target.apply_damage(percent_change, "blunt")
+				target is Enemy
+				if target.cur_health + percent_change > target.max_health:
+					target.cur_health = target.max_health
+				else:
+					target.apply_damage(percent_change, "DOT")
 			disable_stat_changes()
 		Type.MONEY_MULT:
 			initial_value = target.money_drop
@@ -126,20 +130,23 @@ func disable_stat_changes(delete_timer : bool = true, reset_stat : bool = true):
 			if _inflictor == inflictor:
 				target.status_applied_list.erase(_inflictor)
 		queue_free()
-	
+
+
+## ONLY TO BE USED BY FLOWER, IF YOU WANT TO UPDATE A STAT
+## JUST DELETE IT AND DO MANUAL CALCULATIONS (that what i do for weathers)
 func update_stat_multiplier(percent_change_change : float) -> void:
-	#if _is_debuff and not _has_clensed and target is Tower:
-		#_has_clensed = true
-		#disable_stat_changes(false)
-		#percent_change *= (1 + percent_change_change)
-		#apply_stat_changes(false)
+	if _is_debuff and not _has_clensed and target is Tower:
+		_has_clensed = true
+		disable_stat_changes(false)
+		percent_change *= (1 + percent_change_change)
+		apply_stat_changes(false)
 	#elif target is Enemy:
 		#disable_stat_changes(false)
 		#percent_change *= (1 + percent_change_change)
 		#apply_stat_changes(false)
-	disable_stat_changes(false)
-	percent_change *= (1 + percent_change_change)
-	apply_stat_changes(false)
+	#disable_stat_changes(false)
+	#percent_change *= (1 + percent_change_change)
+	#apply_stat_changes(false)
 
 ## Set the default values for stat_changer. [br]
 ## [b] Make sure to set [param is_debuff] to [code]true[/code] if an enemy is inflincting a tower[/b]

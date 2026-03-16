@@ -187,6 +187,7 @@ func upgrade_tower() -> void:
 static func reset_hero_data() -> void:
 	Ranger.does_exist = false
 	Druid.does_exist = false
+	Flower.does_exist = false
 
 
 # When tower is first intantiated, the tower follows mouse position
