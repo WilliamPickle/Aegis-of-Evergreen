@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cr86muep78d7e"]
+[gd_scene load_steps=77 format=3 uid="uid://0fh8wagchfik"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_4x34n"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_jjuf7"]
@@ -491,7 +491,7 @@ hide_during_pause = true
 
 [node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("15_uasul")]
 placement_mask = NodePath("../PlacementCollisions")
-card_type = Array[String](["god", "druid"])
+card_type = Array[String]([])
 hide_during_pause = true
 
 [node name="DialogueUI" type="CanvasLayer" parent="."]
