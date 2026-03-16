@@ -23,7 +23,7 @@ func _on_start_lvl5() -> void:
 	# wave 1
 	start_wave_timer(60)
 	await delay(3)
-	send_enemy(armor_mushroom, 3, 4, path2)
+	send_enemy(armor_mushroom, 2, 4, path2)
 	await send_enemy(bush, 30, 0.5)
 	WeatherController.spawn_wind(25, 0.15, -0.6, -1, weather_node)
 	
@@ -48,7 +48,7 @@ func _on_start_lvl5() -> void:
 	WeatherController.spawn_rotting_grass(60, -0.25, weather_node)
 	send_enemy(mushroom, 12, 1, path2)
 	await delay(0.5)
-	await send_enemy(armor_mushroom, 12, 1, path2)
+	await send_enemy(armor_mushroom, 8, 1, path2)
 	
 	currently_sending = false
 	await wave_timer.timeout
@@ -57,6 +57,7 @@ func _on_start_lvl5() -> void:
 	# wave 4
 	start_wave_timer(60)
 	send_enemy(snail, 5, 1)
+	await send_enemy(bush, 30, 0.5)
 	await send_enemy(spore_crab, 3, 3, path2)
 	
 	currently_sending = false
@@ -66,11 +67,11 @@ func _on_start_lvl5() -> void:
 	# wave 5
 	start_wave_timer(3600)
 	WeatherController.spawn_trash_wind(90, 40, -1, Vector2(-320, -280), Vector2(320, 180), weather_node)
-	await send_enemy(spore_crab, 6, 2, path2)
+	await send_enemy(spore_crab, 5, 2, path2)
 	await delay(2)
-	send_enemy(cow, 4, 2, path_2d, -0.25)
+	send_enemy(cow, 3, 2, path_2d, -0.25)
 	await delay(0.5)
-	await send_enemy(cow, 4, 2, path_2d, -0.25)
+	await send_enemy(cow, 3, 2, path_2d, -0.25)
 	
 	currently_sending = false
 	await wave_timer.timeout
