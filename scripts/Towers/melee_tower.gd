@@ -15,6 +15,7 @@ const COLOR = Color(0.75,0,0,0.3)
 func _ready():
 	super._ready()
 	stat_changed.connect(_update_visual)
+	_update_visual()
 	#attack_range.attack_shape = attack_shapes[0]
 	#attack_range.tower = self
 
@@ -44,8 +45,9 @@ func upgrade_tower() -> void:
 	attack_shapes[level-1].disabled = true
 	attack_shapes[level].disabled = false
 	shape_polygon = attack_shapes[level].polygon
+	_update_visual()
 
-func _update_visual(type : StatChanger.Type) -> void:
+func _update_visual(type : StatChanger.Type = StatChanger.Type.DAMAGE) -> void:
 	var points := attack_shapes[level].polygon
 	for i in len(points):
 		attack_shapes[level].polygon[i] = points[i].normalized() * range_collider.shape.radius
