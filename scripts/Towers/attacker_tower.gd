@@ -1,13 +1,6 @@
 extends Tower
 class_name Attacker
 
-## Possible target types.
-enum Target{
-	FIRST,
-	LAST,
-	STRONG,
-	WEAK,
-}
 # Attacker only stats
 @onready var damage : float = object_data["damage"][level]
 @onready var attack_fpath : String = object_data["attack_fpath"][level]
@@ -15,8 +8,6 @@ enum Target{
 @onready var _attack_cooldown : Timer = $AttackCoolDOwn
 
 var cur_damage : float
-# Randomizing the target type for now.
-var target_type = Target.FIRST
 # Current enemy tower does damage to
 var targeted_enemy : Area2D
 

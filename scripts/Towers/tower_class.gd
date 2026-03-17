@@ -2,6 +2,15 @@ extends Area2D
 class_name Tower
 
 
+## Possible target types.
+enum Target{
+	FIRST,
+	LAST,
+	STRONG,
+	WEAK,
+}
+var target_type = Target.FIRST
+
 signal tower_placed
 signal stat_changed(Type : StatChanger.Type)
 const CONTROLS_STATES = ControlHandler.ControlState
