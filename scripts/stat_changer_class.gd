@@ -119,6 +119,7 @@ func disable_stat_changes(delete_timer : bool = true, reset_stat : bool = true):
 				target._attack_cooldown.wait_time -= change_value
 			Type.RANGE:
 				target.range_collider.shape.radius -= change_value
+				target.stat_changed.emit(Type.RANGE)
 				target.queue_redraw()
 			Type.MONEY_MULT:
 				target.money_drop -= change_value
