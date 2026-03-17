@@ -84,6 +84,7 @@ func apply_stat_changes(is_creating := true):
 			initial_value = target.range_collider.shape.radius
 			target.range_collider.shape.radius = target.range_collider.shape.radius * (1 + percent_change)
 			change_value = target.range_collider.shape.radius - initial_value
+			target.stat_changed.emit(Type.RANGE)
 			target.queue_redraw()
 		Type.DOT:
 			timeout.disconnect(disable_stat_changes)

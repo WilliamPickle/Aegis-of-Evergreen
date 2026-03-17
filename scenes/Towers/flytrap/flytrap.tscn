@@ -273,13 +273,16 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="AttackShape0" type="CollisionPolygon2D" parent="AttackRange"]
+build_mode = 1
 polygon = PackedVector2Array(0, -44.7368, 10.5263, -43.4211, 10.5263, -43.4211, 0, 0, -10.5263, -43.4211, -10.5263, -43.4211)
 
 [node name="AttackShape1" type="CollisionPolygon2D" parent="AttackRange"]
+build_mode = 1
 polygon = PackedVector2Array(0, -55.2632, 13.1579, -52.6316, 23.6842, -48.6842, 0, 0, -23.6842, -48.6842, -13.1579, -52.6316)
 disabled = true
 
 [node name="AttackShape2" type="CollisionPolygon2D" parent="AttackRange"]
+build_mode = 1
 polygon = PackedVector2Array(0, -65.7895, 22.3684, -60.5263, 38.1579, -53.9474, 0, 0, -38.1579, -53.9474, -21.0526, -61.8421)
 disabled = true
 

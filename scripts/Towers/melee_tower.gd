@@ -45,10 +45,12 @@ func upgrade_tower() -> void:
 	attack_shapes[level].disabled = false
 	shape_polygon = attack_shapes[level].polygon
 
-func _update_visual() -> void:
-	var points = attack_shapes[level].polygon
-	for point : Vector2 in points:
-		point.normalized()
+func _update_visual(type : StatChanger.Type) -> void:
+	var points := attack_shapes[level].polygon
+	for i in len(points):
+		attack_shapes[level].polygon[i] = points[i].normalized() * range_collider.shape.radius
+
+	shape_polygon = attack_shapes[level].polygon
 
 func _physics_process(delta: float) -> void:
 	if targeted_enemy != null:
