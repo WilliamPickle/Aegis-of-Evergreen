@@ -16,6 +16,7 @@ func _ready() -> void:
 func _on_start_lvl7() -> void:
 	# test wave
 	start_wave_timer(3000)
+	await send_enemy(spore, 5, 2, path4)
 	await send_enemy(atlas, 1, 1, path4)
 	await send_enemy(atlas2, 1, 1, path3)
 	
