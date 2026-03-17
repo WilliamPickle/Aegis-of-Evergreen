@@ -143,8 +143,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cr5tu"]
-radius = 9.99999
-height = 32.0
+radius = 14.0
+height = 38.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aeav4"]
 
@@ -180,10 +180,10 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_cr5tu")
 
 [node name="Button" type="Button" parent="."]
-offset_left = -10.0
-offset_top = -4.0
+offset_left = -16.0
+offset_top = -6.0
 offset_right = 10.0
-offset_bottom = 4.0
+offset_bottom = 9.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_aeav4")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_17us6")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fqdbu")

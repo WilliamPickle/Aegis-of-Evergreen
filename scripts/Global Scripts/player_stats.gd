@@ -20,9 +20,9 @@ var lvls_beaten = -1
 const DEFAULT_MONEY : Array = [
 	[50.0, 100.0, 150.0],
 	[150.0, 200.0, 250.0],
-	[250.0, 400.0, 500.0],
+	[250.0, 350.0, 500.0],
 ]
-@onready var cur_money = DEFAULT_MONEY[2][0]
+@onready var cur_money = DEFAULT_MONEY[2][1]
 @onready var total_money_gained = cur_money
 var pity_money = 0
 

@@ -43,7 +43,7 @@ func _ready() -> void:
 func spawn_rain(duration : float, buff_percent: float, _weather_node : Node2D, _scale : float = 1.0):
 	var rain = WEATHERS["Rain"].instantiate()
 	rain.init(duration, buff_percent)
-	rain.sacle = Vector2.ONE * _scale
+	rain.scale = Vector2.ONE * _scale
 	_weather_node.call_deferred("add_child", rain)
 	weather_node = _weather_node
 	

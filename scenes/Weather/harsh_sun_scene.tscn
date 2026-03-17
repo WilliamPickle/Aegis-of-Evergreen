@@ -14,7 +14,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cwbxq"]
 shader = ExtResource("8_ovw2c")
 shader_parameter/pixel_size = 2.0
-shader_parameter/blur_amount = 1.5
+shader_parameter/blur_amount = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o0b8o"]
 shader = ExtResource("4_joodg")

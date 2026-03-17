@@ -27,6 +27,8 @@ const tanky_mushroom := preload("res://scenes/Enemies/tanky_mushroom.tscn")
 const amalgamushroom := preload("res://scenes/Enemies/amalgamushroom.tscn")
 const tree_cutter := preload("res://scenes/Enemies/tree_cutter.tscn")
 const excavator := preload("res://scenes/Enemies/excavator.tscn")
+const atlas := preload("res://scenes/Enemies/atlas.tscn")
+const atlas2 := preload("res://scenes/Enemies/atlas_2.tscn")
 
 # variables to initialize waves after dialogue
 @export var wave_label: Label

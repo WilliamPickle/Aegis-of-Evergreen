@@ -45,7 +45,7 @@ func _on_start_lvl6() -> void:
 	# wave 4
 	start_wave_timer(60)
 	WeatherController.spawn_trash_wind(60, 15, -1, Vector2(-320, -280), Vector2(320, 180), weather_node)
-	WeatherController.spawn_wind(60, 0.25, -0.35, -1, weather_node)
+	WeatherController.spawn_wind(60, 0.25, -0.35, -1, weather_node, true, Vector2(320, 180), Vector2(-320, -280))
 	await send_enemy(mushroom, 10, 0.5, path2)
 	await send_enemy(tanky_mushroom, 3, 3, path2)
 	await send_enemy(beetle, 3, 1)

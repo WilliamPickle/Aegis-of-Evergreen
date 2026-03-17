@@ -34,7 +34,7 @@ func _ready() -> void:
 
 func _on_tower_action(tower : Tower) -> void:
 	print("HARSHSUN APPLICATION RAN!!!!")
-	if tower.weather_statuses.has("HarshSun") and not is_instance_valid(tower.weather_statuses["HarshSun"]):
+	if tower.weather_statuses.has("HarshSun") and is_instance_valid(tower.weather_statuses["HarshSun"]):
 		tower.weather_statuses["HarshSun"].queue_free()
 	var _duration := effect_timer.time_left
 	var stat_changer := StatChanger.new()

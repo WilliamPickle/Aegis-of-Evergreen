@@ -25,7 +25,7 @@ func _on_start_lvl5() -> void:
 	start_wave_timer(60)
 	send_enemy(bush, 24, 0.5)
 	await delay(5)
-	WeatherController.spawn_wind(45, 0.3, -0.3, 1, weather_node)
+	WeatherController.spawn_wind(45, 0.3, -0.3, 1, weather_node, true, Vector2(320, 180), Vector2(-320, -280))
 	await send_enemy(mushroom, 12, 1, path2)
 
 	
@@ -36,7 +36,7 @@ func _on_start_lvl5() -> void:
 	# wave 2
 	start_wave_timer(45)
 	WeatherController.spawn_trash_wind(45, 30, 1, Vector2(-320, -280), Vector2(320, 180), weather_node)
-	WeatherController.spawn_wind(45, 0.25, -0.25, 1, weather_node)
+	WeatherController.spawn_wind(45, 0.25, -0.25, 1, weather_node, true, Vector2(320, 180), Vector2(-320, -280))
 	await send_enemy(cow, 1, 1)
 	await delay(1)
 	await send_enemy(squirrel, 30, 0.25)
