@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://l3i6h5io4w4n"]
+[gd_scene load_steps=65 format=3 uid="uid://l3i6h5io4w4n"]
 
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="1_2os1m"]
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="2_go7sj"]
@@ -32,6 +32,8 @@
 [ext_resource type="LabelSettings" uid="uid://jrf143qxgd3e" path="res://assets/fonts/wave_clear.tres" id="29_mbb35"]
 [ext_resource type="PackedScene" uid="uid://b7t00txf1d4ho" path="res://scenes/UI/guidebook_popup.tscn" id="30_hnsmf"]
 [ext_resource type="PackedScene" uid="uid://c4tvpjuo8ae2w" path="res://scenes/Weather/weather_icons_scene.tscn" id="32_nossa"]
+[ext_resource type="Shader" uid="uid://ceuwg7qfl6hj0" path="res://scenes/Weather/blur_shader.gdshader" id="33_hg84p"]
+[ext_resource type="Shader" uid="uid://6guh03hj0l6f" path="res://scenes/Weather/yellow_tint_shader.gdshader" id="34_1aans"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
 atlas = ExtResource("1_2os1m")
@@ -205,6 +207,14 @@ texture = ExtResource("3_5xbjy")
 font = ExtResource("7_15mv3")
 font_size = 24
 outline_color = Color(0.336608, 0.336608, 0.336608, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0ron"]
+shader = ExtResource("33_hg84p")
+shader_parameter/pixel_size = 2.0
+shader_parameter/blur_amount = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tdlki"]
+shader = ExtResource("34_1aans")
 
 [node name="level_1" type="Node2D"]
 
@@ -663,3 +673,19 @@ horizontal_alignment = 1
 z_index = 12
 
 [node name="WeatherIcons" parent="WeatherPlacement" instance=ExtResource("32_nossa")]
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 0
+script = ExtResource("16_7nomh")
+tint_during_pause = true
+metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
+
+[node name="BlurEffect" type="ColorRect" parent="UserInterface"]
+material = SubResource("ShaderMaterial_q0ron")
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="ColorEffect" type="ColorRect" parent="UserInterface"]
+material = SubResource("ShaderMaterial_tdlki")
+offset_right = 1280.0
+offset_bottom = 720.0
