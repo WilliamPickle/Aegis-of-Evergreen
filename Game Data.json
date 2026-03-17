@@ -186,24 +186,24 @@
 	  "tower_fpath": "res://scenes/Towers/flower/flower.tscn",
 	  "card_fpath": "res://assets/sprites/towers/base_tower_card.png",
 	  "cost": [
-		1,
-		1,
-		1
+		50,
+		100,
+		200
 	  ],
 	  "range": [
 		60,
-		75,
+		80,
 		100
 	  ],
 	  "attack_speed": [
-		2,
-		2,
-		2
+		3,
+		3,
+		3
 	  ],
 	  "enemy_cap": [
+		8,
 		10,
-		10,
-		67
+		12
 	  ],
 	  "buff_type": [
 		"money_mult",
@@ -211,19 +211,19 @@
 		"money_mult",
 	  ],
 	  "buff_multiplier":[
-		2,
-		0.5,
+		0.25,
+		0.50,
 		1
 	  ],
 	  "buff_duration": [
-		2,
 		5,
-		10
+		8,
+		12
 	  ],
 	  "clense_percent": [
 		-0.25,
 		-0.50,
-		-0.90
+		-0.75
 	  ],
 	},
 	"rabbit": {
@@ -359,7 +359,7 @@
   },
   "trap":{
 	"vine_trap_1":{
-	  "type": "blunt",
+	  "type": "energy",
 	  "lifespan": 5,
 	  "pierce_cap": 5,
 	  "debuff_type": "none",
@@ -367,7 +367,7 @@
 	  "dot_damage" : 0,
 	 },
 	"vine_trap_2":{
-	  "type": "blunt",
+	  "type": "energy",
 	  "lifespan": 9,
 	  "pierce_cap": 5,
 	  "debuff_type": "dot",
@@ -375,7 +375,7 @@
 	  "dot_damage" : 0.25,
 	 },
 	"vine_trap_3":{
-	  "type": "blunt",
+	  "type": "energy",
 	  "lifespan": 11,
 	  "pierce_cap": 6,
 	  "debuff_type": "dot",
@@ -428,7 +428,7 @@
 	  "xp" : 30,
 	  "money_drop" : 35,
 	  "resistance" : "blunt",
-	  "resistance_percent" : 0.65,
+	  "resistance_percent" : 0.75,
 	  "book_page" : 5,
 	},
 	"hornet" : {
@@ -458,7 +458,8 @@
 	  "base_damage_ratio" : 0.5,
 	  "xp" : 8,
 	  "money_drop" : 7,
-	  "resistance" : "none",
+	  "resistance" : "energy",
+	  "resistance_percent" : 0.9,
 	  "book_page" : 1,
 	},
 	"armor_mushroom" : {

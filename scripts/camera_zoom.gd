@@ -1,4 +1,5 @@
 extends Camera2D
+signal camera_moved
 @onready var camera: Camera2D = $"."
 ##offset by how much the map is extended by in each direction relative to the viewport
 @export var offset_r : float = 0
@@ -32,6 +33,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("MouseMiddle") or Input.is_action_pressed("move_camera"):
 		cur_mouse_pos = get_global_mouse_position()
 		camera.position += (initial_mouse_pos - cur_mouse_pos) * panning_drag
+		emit_signal("camera_moved")
 		
 		
 func _process(_delta: float) -> void:

@@ -78,7 +78,8 @@ func send_enemy(enemy, quantity: int, delay_time: float, parent_path : Path2D = 
 		new_path.add_child(new_enemy)
 		await get_tree().process_frame
 		new_enemy.visible = true
-		print("enemy position: ", new_enemy.position)
+		new_enemy.set_collision_layer_value(2, true)
+		#print("enemy position: ", new_enemy.position)
 	new_timer.queue_free()
 	
 	# right now, spore crab uses this logic

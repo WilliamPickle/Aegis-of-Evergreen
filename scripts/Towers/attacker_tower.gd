@@ -41,6 +41,9 @@ func attack():
 		print("NOT VALID!!!!!!!!!")
 		update_enemy_list()
 		return
+	#if not targeted_enemy.targettable:
+		#print("Not targettable")
+		#return
 
 	sprite.play("attacking_"+str(level))
 	var tower_attack : Projectile = load(attack_fpath).instantiate()

@@ -69,7 +69,7 @@ func _ready() -> void:
 	bar_length = health_bar.texture.get_width() * health_bar.scale.x
 	path = enemy_node.get_parent()
 	enemy_node.z_index = 4
-	enemy_node.set_collision_layer_value(2, true)
+	enemy_node.set_collision_layer_value(2, false)
 	enemy_node.set_collision_layer_value(1, false)
 	enemy_node.set_collision_mask_value(2, true)
 	enemy_node.set_collision_mask_value(1, false)

@@ -96,6 +96,7 @@ func _enemy_logic(enemy_list : Array[Enemy]) -> void:
 	for i in range(enemies_to_effect):
 		var money_stat = StatChanger.new()
 		money_stat.initialize_variables(enemy_list[i], "flower", MONEY_MULT, buff_multiplier, buff_duration)
+		enemy_list[i].add_child(money_stat)
 
 func upgrade_tower() -> void:
 	super()

@@ -34,6 +34,7 @@ func _ready() -> void:
 	self.apply_stat_changes()
 			
 func apply_stat_changes(is_creating := true):
+	#print("entered apply stat changes")
 	if is_creating:
 		# If tower is a hero then dont apply debuff
 		if _is_debuff and target is Tower and target.is_hero:
@@ -90,7 +91,7 @@ func apply_stat_changes(is_creating := true):
 				start(DOT_TICK_RATE)
 				await timeout
 				target is Enemy
-				if target.cur_health - percent_change >= target.max_health:
+				if percent_change < 0 and target.cur_health - percent_change >= target.max_health:
 					target.cur_health = target.max_health
 				else:
 					target.apply_damage(percent_change, "DOT")
@@ -98,7 +99,8 @@ func apply_stat_changes(is_creating := true):
 		Type.MONEY_MULT:
 			initial_value = target.money_drop
 			target.money_drop *= 1 + percent_change
-			change_value = target.money - initial_value
+			change_value = target.money_drop - initial_value
+			#print("money_drop changed")
 		Type.DAMAGE:
 			if target is Attacker:
 				initial_value = target.cur_damage

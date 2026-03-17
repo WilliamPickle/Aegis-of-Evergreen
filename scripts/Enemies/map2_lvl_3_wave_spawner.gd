@@ -9,6 +9,7 @@ func _ready() -> void:
 	wave_bonus_money = [0, 75, 100, 100, 100]
 	lvl6_dialogue.start_wave.connect(_on_start_lvl6)
 	manual_wave_button.button_down.connect(_on_start_lvl6)
+	Tower.update_min_max_pos(Vector2(-320, -280), Vector2(320, 180))
 
 func _on_start_lvl6() -> void:
 	# wave 1
