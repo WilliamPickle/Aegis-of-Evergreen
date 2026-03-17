@@ -3,6 +3,7 @@ class_name Tower
 
 
 signal tower_placed
+signal stat_changed(Type : StatChanger.Type)
 const CONTROLS_STATES = ControlHandler.ControlState
 const stat_type := StatChanger.Type
 const snapping : float = 2.0

@@ -50,9 +50,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		if can_place:
 			reset_data()
 
-	elif event.is_action("cancel_placement") and is_placing:
+	#elif event.is_action("cancel_placement") and is_placing:
+		#reset_data(true)
+
+func _input(event: InputEvent) -> void:
+	#if !is_instance_valid(new_tower):
+		#reset_data()
+#
+	#if event.is_action_pressed("place_tower") and is_placing:
+		#var can_place : bool = new_tower.place_tower()
+		#if can_place:
+			#reset_data()
+
+	if event.is_action("cancel_placement") and is_placing:
 		reset_data(true)
-		
+
 static func reset_data(delete_tower : bool = false) -> void:
 	if delete_tower:
 		new_tower.queue_free()

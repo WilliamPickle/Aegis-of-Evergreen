@@ -2,7 +2,9 @@ shader_type canvas_item;
 
 
 void fragment() {
-	COLOR = vec4(0.9372549019, 0.99215686274, 0.3725490196,0.05);
+	//if (TIME < 1.0){
+		COLOR = vec4(0.9372549019, 0.99215686274, 0.3725490196,0.05);
+	//}
 }
 
 //void light() {

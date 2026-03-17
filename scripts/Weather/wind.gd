@@ -3,44 +3,49 @@ class_name Wind
 
 const MAX_TRAVEL_DISTANCE = 200
 const WALK_SPEED = StatChanger.Type.WALK_SPEED
+const POS_OFFSET := Vector2(20,20)
+const MAX_SPEED := 0.75 # Really fast
+const MIN_SPEED := 2.5 # Really slow
 
 static var duration : float = 500
 static var buff_percent : float = 10
 static var debuff_percent : float = -0.5
 static var wind_direction : int = 1
+static var min_pos : Vector2 = Vector2(-360,-180)
+static var max_pos : Vector2 = Vector2(360,180)
+static var is_visible : bool = true
 
-@onready var animation := $AnimatedSprite2D
+@onready var wind_node := $AnimationNode
 @onready var effect_timer : Timer = $EffectDuration
 
-var r = RandomNumberGenerator.new()
+var ran = RandomNumberGenerator.new()
 
 ## Sets the defualt values for wind. Direction can eighter be 1 for right, or -1 for left.
-func init(_duration : float, _buff_percent : float, _debuff_percent : float, direction : int):
+func init(_duration : float, _buff_percent : float, _debuff_percent : float, direction : int, _is_visible : bool, _min_pos : Vector2, _max_pos : Vector2):
 	duration = _duration
 	buff_percent = _buff_percent
 	debuff_percent = _debuff_percent
 	wind_direction = direction
+	is_visible = _is_visible
+	min_pos = _min_pos
+	max_pos = _max_pos
 
 
 func _ready() -> void:
-	print("---WIND HAS STARTED---")
-	if wind_direction == -1:
-		animation.flip_h = true
 	effect_timer.start(duration)
 	effect_timer.timeout.connect(_delete_wind)
-	r.randomize()
-	# IGNORE THIS FOR NOW!!!
-	animation.animation_finished.connect(func():
-		animation.global_position = Vector2(r.randi_range(-300,300), r.randi_range(-160,160))
-		#print("Global Pos: ", animation.global_position)
-		var travel_destination : Vector2 = animation.global_position + (Vector2(MAX_TRAVEL_DISTANCE * r.randf() * wind_direction, 0))
-		#print("Travel destination: ", travel_destination)
-		#print("New end pos: ", animation.global_position + travel_destination)
-		var tween := create_tween()
-		tween.tween_property(animation,"global_position", travel_destination, 1)
-		tween.play()
-		animation.play("default")
-	)
+	
+	if is_visible:
+		min_pos += POS_OFFSET
+		max_pos -= POS_OFFSET
+		wind_node.visible = true
+		for wind : AnimatedSprite2D in wind_node.get_children():
+			ran.randomize()
+			if wind_direction == -1:
+				wind.flip_h = true
+			_randomize_wind(wind)
+			wind.animation_finished.connect(_randomize_wind.bind(wind))
+	
 	var enemies := get_overlapping_areas()
 	for enemy : Enemy in enemies:
 		print("Overlapping stuff ran too!!")
@@ -48,6 +53,19 @@ func _ready() -> void:
 		#enemy.reversed.connect(_enemy_reversed)
 
 	area_entered.connect(_enemy_reversed)
+
+
+func _randomize_wind(wind : AnimatedSprite2D):
+	var new_x = ran.randf_range(min_pos.x, max_pos.x)
+	var new_y = ran.randf_range(min_pos.y, max_pos.y)
+	wind.global_position = Vector2(new_x, new_y)
+	var travel_destination : Vector2 = wind.global_position + (Vector2(MAX_TRAVEL_DISTANCE * ran.randf() * wind_direction, 0))
+	var speed := randf_range(MIN_SPEED, MAX_SPEED)
+	wind.speed_scale = 1/speed
+	var tween := create_tween()
+	tween.tween_property(wind,"global_position", travel_destination, speed)
+	tween.play()
+	wind.play("default")
 
 func _new_enemy_entered(enemy : Enemy) -> void:
 	print("AREA ENTERED FUNC RAN")
@@ -85,5 +103,6 @@ func _delete_wind() -> void:
 		#enemy.reversed.disconnect(_enemy_reversed)
 		#area_entered.disconnect(_enemy_reversed)
 		print(enemy.weather_statuses)
-	print("---WIND HAS ENDED---")
+	#print("---WIND HAS ENDED---")
+	WeatherController.weather_ended.emit("Wind", false)
 	queue_free()

@@ -12,6 +12,6 @@ void fragment() {
 	vec2 pixel_uv = floor(SCREEN_UV * resolution / (pixel_size * (pixel_offset))) * pixel_size*pixel_offset / resolution;
 
 	vec3 result = textureLod(SCREEN_TEXTURE, pixel_uv, blur_amount).rgb;
-	
+
 	COLOR.rgb = result;
 }

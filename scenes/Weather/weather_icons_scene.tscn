@@ -275,16 +275,17 @@ metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 [node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/AcidRain"]
 visible = false
 layout_mode = 0
-offset_top = -84.0
-offset_right = 233.0
-offset_bottom = -4.0
+offset_top = -65.0
+offset_right = 231.0
+offset_bottom = -3.0
 theme_override_fonts/normal_font = ExtResource("4_cgmqy")
 theme_override_font_sizes/normal_font_size = 16
 theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
 theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
 theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
-text = "Wind speed up or slows down enemies depending on direction"
+text = "Acid rain heals enemies
+by 10.0hp every 0.5s"
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
@@ -322,7 +323,7 @@ autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HarshLight" type="Button" parent="GridContainer"]
+[node name="HarshSun" type="Button" parent="GridContainer"]
 visible = false
 custom_minimum_size = Vector2(40.5, 37.5)
 layout_mode = 2
@@ -334,11 +335,11 @@ script = ExtResource("3_s5pne")
 has_text = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/HarshLight"]
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/HarshSun"]
 visible = false
 layout_mode = 0
-offset_top = -65.0
-offset_right = 215.0
+offset_top = -81.0
+offset_right = 235.0
 offset_bottom = -3.0
 theme_override_fonts/normal_font = ExtResource("4_cgmqy")
 theme_override_font_sizes/normal_font_size = 16
@@ -346,7 +347,8 @@ theme_override_styles/fill = SubResource("StyleBoxTexture_0v2xt")
 theme_override_styles/background = SubResource("StyleBoxTexture_0v2xt")
 theme_override_styles/focus = SubResource("StyleBoxTexture_0v2xt")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0v2xt")
-text = "Reduces accuracy and slows towers by 40%"
+text = "Harsh sun reduces your visibility and tower
+range by -40%"
 fit_content = true
 scroll_active = false
 autowrap_mode = 2

@@ -3,9 +3,9 @@ var ran_dict : Dictionary[String, int] = {
 	"Test" : 2,
 }
 
+@onready var timer = $Timer
 func _ready() -> void:
-	print(ran_dict)
-	ran_dict.set("Test", 3)
-	print(ran_dict)
-	ran_dict.set("Test", 6)
-	print(ran_dict)
+	timer.start(5)
+	await timer.timeout
+	var test = load("res://scenes/Weather/harsh_sun_scene.tscn").instantiate()
+	add_child(test)

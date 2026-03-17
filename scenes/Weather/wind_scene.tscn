@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cioouk7npsfg1"]
+[gd_scene load_steps=56 format=3 uid="uid://cioouk7npsfg1"]
 
 [ext_resource type="Script" uid="uid://b4e5h1dhfjg18" path="res://scripts/Weather/wind.gd" id="1_si2m7"]
 [ext_resource type="Texture2D" uid="uid://ytrdx52muy7g" path="res://assets/sprites/weather/wind_spritesheett.png" id="2_vlykd"]
@@ -84,6 +84,84 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hwpmi")
+}],
+"loop": false,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si2m7"]
+atlas = ExtResource("2_vlykd")
+region = Rect2(0, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlykd"]
+atlas = ExtResource("2_vlykd")
+region = Rect2(75, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucuqv"]
+atlas = ExtResource("2_vlykd")
+region = Rect2(150, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqhej"]
+atlas = ExtResource("2_vlykd")
+region = Rect2(225, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxhau"]
+atlas = ExtResource("2_vlykd")
+region = Rect2(300, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1uoj"]
+atlas = ExtResource("2_vlykd")
+region = Rect2(375, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc37s"]
+atlas = ExtResource("2_vlykd")
+region = Rect2(450, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xg00"]
+atlas = ExtResource("2_vlykd")
+region = Rect2(525, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hen4"]
+atlas = ExtResource("2_vlykd")
+region = Rect2(600, 50, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7e1n"]
+atlas = ExtResource("2_vlykd")
+region = Rect2(675, 50, 75, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mkh6a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si2m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlykd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucuqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqhej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxhau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1uoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc37s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xg00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hen4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7e1n")
 }],
 "loop": false,
 "name": &"default",
@@ -248,10 +326,56 @@ collision_mask = 2
 script = ExtResource("1_si2m7")
 metadata/_custom_type_script = "uid://b4e5h1dhfjg18"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimationNode" type="Node2D" parent="."]
+visible = false
+
+[node name="LargeWind1" type="AnimatedSprite2D" parent="AnimationNode"]
 z_index = 200
 sprite_frames = SubResource("SpriteFrames_hngin")
-autoplay = "default"
+frame = 9
+frame_progress = 1.0
+
+[node name="LargeWind2" type="AnimatedSprite2D" parent="AnimationNode"]
+z_index = 200
+sprite_frames = SubResource("SpriteFrames_hngin")
+frame = 9
+frame_progress = 1.0
+
+[node name="LargeWind3" type="AnimatedSprite2D" parent="AnimationNode"]
+z_index = 200
+sprite_frames = SubResource("SpriteFrames_hngin")
+frame = 9
+frame_progress = 1.0
+
+[node name="LargeWind4" type="AnimatedSprite2D" parent="AnimationNode"]
+z_index = 200
+sprite_frames = SubResource("SpriteFrames_hngin")
+frame = 9
+frame_progress = 1.0
+
+[node name="LargeWind5" type="AnimatedSprite2D" parent="AnimationNode"]
+z_index = 200
+sprite_frames = SubResource("SpriteFrames_hngin")
+frame = 9
+frame_progress = 1.0
+
+[node name="SmallWind1" type="AnimatedSprite2D" parent="AnimationNode"]
+sprite_frames = SubResource("SpriteFrames_mkh6a")
+frame = 9
+frame_progress = 1.0
+
+[node name="SmallWind2" type="AnimatedSprite2D" parent="AnimationNode"]
+sprite_frames = SubResource("SpriteFrames_mkh6a")
+frame = 9
+frame_progress = 1.0
+
+[node name="SmallWind3" type="AnimatedSprite2D" parent="AnimationNode"]
+sprite_frames = SubResource("SpriteFrames_mkh6a")
+frame = 9
+frame_progress = 1.0
+
+[node name="SmallWind4" type="AnimatedSprite2D" parent="AnimationNode"]
+sprite_frames = SubResource("SpriteFrames_mkh6a")
 frame = 9
 frame_progress = 1.0
 

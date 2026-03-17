@@ -6,6 +6,7 @@ const WEATHERS = {
 	"RottingGrass" : preload("res://scenes/Weather/rotting_grass_scene.tscn"),
 	"TrashWind" : preload("res://scenes/Weather/trash_wind_scene.tscn"),
 	"AcidRain" : preload("res://scenes/Weather/acid_rain.tscn"),
+	"HarshSun" : preload("res://scenes/Weather/harsh_sun_scene.tscn"),
 }
 
 const WEATHER_TEXTS : Dictionary[String, String] ={
@@ -13,7 +14,8 @@ const WEATHER_TEXTS : Dictionary[String, String] ={
 	"Wind" : "Wind changes enemy\nspeed by {0}% or {1}% depending on direction",
 	"RottingGrass" : "Rotting grass prevents placement and weakens\ntowers by {0}% if on it",
 	"TrashWind" : "Trash blocks tower projectiles", # Not used cuz it never changes
-	"AcidRain" : "",
+	"AcidRain" : "Acid rain heals enemies\nby {0}hp every 0.5s",
+	"HarshSun" : "Harsh sun reduces your visibility and tower\nrange by {0}%",
 }
 
 const WEATHER_ICONS := "res://scenes/Weather/weather_icons_scene.tscn"
@@ -38,9 +40,10 @@ func _ready() -> void:
 	#print(icon_container)
 	##pass
 
-func spawn_rain(duration : float, buff_percent: float, _weather_node : Node2D):
+func spawn_rain(duration : float, buff_percent: float, _weather_node : Node2D, _scale : float = 1.0):
 	var rain = WEATHERS["Rain"].instantiate()
 	rain.init(duration, buff_percent)
+	rain.sacle = Vector2.ONE * _scale
 	_weather_node.call_deferred("add_child", rain)
 	weather_node = _weather_node
 	
@@ -48,15 +51,15 @@ func spawn_rain(duration : float, buff_percent: float, _weather_node : Node2D):
 	icon.visible = true
 	icon.get_child(0).text = WEATHER_TEXTS["Rain"].format([int(buff_percent*-100)])
 
-func spawn_wind(duration : float, buff_percent : float, debuff_percent : float, direction : int, _weather_node : Node2D,):
+func spawn_wind(duration : float, buff_percent : float, debuff_percent : float, direction : int, _weather_node : Node2D, is_visible := true, min_pos := Vector2(-360,180), max_pos := Vector2(360,180)):
 	var wind = WEATHERS["Wind"].instantiate()
-	wind.init(duration, buff_percent, debuff_percent, direction)
+	wind.init(duration, buff_percent, debuff_percent, direction, is_visible, min_pos, max_pos)
 	_weather_node.call_deferred("add_child", wind)
 	weather_node = _weather_node
 	
 	var icon : Icon = _weather_node.get_node("WeatherIcons/GridContainer/Wind")
 	icon.visible = true
-	icon.get_child(0).text = WEATHER_TEXTS["Wind"].format([int(buff_percent*100),int(debuff_percent*-100)])
+	icon.get_child(0).text = WEATHER_TEXTS["Wind"].format([int(buff_percent*100),int(debuff_percent*100)])
 
 func spawn_rotting_grass(duration : float, debuff_percent : float, _weather_node : Node2D):
 	var rotting_grass = WEATHERS["RottingGrass"].instantiate()
@@ -80,18 +83,31 @@ func spawn_trash_wind(duration : float, trash_per_second : int, direction : int,
 	icon.visible = true
 	#icon.get_child(0).text = WEATHER_TEXTS["TrashWind"]
 
-func spawn_acid_rain(duration : float, buff_percent : float, _weather_node : Node2D, scale : float) -> void:
+func spawn_acid_rain(duration : float, buff_percent : float, _weather_node : Node2D, _scale : float = 1.0) -> void:
 	var acid_rain = WEATHERS["AcidRain"].instantiate()
 	acid_rain.init(duration, buff_percent)
-	acid_rain.scale = Vector2.ONE * scale
+	acid_rain.scale = Vector2.ONE * _scale
 	_weather_node.call_deferred("add_child", acid_rain)
 	
 	weather_node = _weather_node
 	
 	var icon : Icon = _weather_node.get_node("WeatherIcons/GridContainer/AcidRain")
 	icon.visible = true
-	#icon.get_child(0).text = WEATHER_TEXTS["AcidRain"]
+	icon.get_child(0).text = WEATHER_TEXTS["AcidRain"].format([buff_percent*-1])
 	
+	
+func spawn_harsh_sun(duration : float, debuff_percent : float, _weather_node : Node2D) -> void:
+	var harsh_sun = WEATHERS["HarshSun"].instantiate()
+	harsh_sun.init(duration, debuff_percent)
+	harsh_sun.scale = Vector2.ONE * scale
+	_weather_node.call_deferred("add_child", harsh_sun)
+	
+	weather_node = _weather_node
+	
+	var icon : Icon = _weather_node.get_node("WeatherIcons/GridContainer/HarshSun")
+	icon.visible = true
+	icon.get_child(0).text = WEATHER_TEXTS["HarshSun"].format([int(debuff_percent*100)])
+
 #func _spawn_normal_weather(weather_type : String, duration : float, stat_percent : float, weather_placement : Node2D) -> void:
 	#var weather = WEATHERS[weather_type].instantiate()
 	#weather.init(duration, stat_percent)
@@ -103,6 +119,8 @@ func _end_weather(weather_type : String, is_tower : bool):
 	#if is_tower_weather:
 	if is_tower:
 		var towers = get_tree().get_nodes_in_group("tower")
+		#print("THIS IS TOWER: ", towers,"----------------")
 		for tower : Tower in towers:
+			#if tower.weather_statuses.has(weather_type):
 			tower.weather_statuses.erase(weather_type)
 	weather_node.get_node("WeatherIcons/GridContainer/"+weather_type).visible = false
