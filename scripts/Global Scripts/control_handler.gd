@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 signal card_clicked_on
 signal tower_clicked_on
 

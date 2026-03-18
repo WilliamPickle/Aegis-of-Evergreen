@@ -37,6 +37,7 @@ noti_vbox=""
 tower="Reserved for towers only"
 boss=""
 boss_minions=""
+map_collision=""
 
 [input]
 

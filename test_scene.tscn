@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://brtfoxm0gr3yv"]
+[gd_scene load_steps=39 format=3 uid="uid://brtfoxm0gr3yv"]
 
 [ext_resource type="Script" uid="uid://bvkqe15r8vqyk" path="res://test_scene_script.gd" id="1_2dw41"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="1_ia1lp"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="12_ykxp3"]
 [ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="13_g6y4b"]
 [ext_resource type="Texture2D" uid="uid://bvxmxb1e80sfy" path="res://assets/sprites/maps/map1/trees_v1_overlayer.png" id="14_pvxhv"]
+[ext_resource type="PackedScene" uid="uid://c4tvpjuo8ae2w" path="res://scenes/Weather/weather_icons_scene.tscn" id="15_0k8yu"]
 [ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="15_6h1ut"]
 [ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="16_6m80x"]
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="21_pvxhv"]
@@ -289,3 +290,8 @@ zoom = Vector2(2, 2)
 script = ExtResource("21_pvxhv")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="WeatherPlacement" type="Node2D" parent="."]
+z_index = 12
+
+[node name="WeatherIcons" parent="WeatherPlacement" instance=ExtResource("15_0k8yu")]

@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 signal xp_changed
 signal money_changed
 signal player_level_changed
@@ -26,8 +26,19 @@ const DEFAULT_MONEY : Array = [
 @onready var total_money_gained = cur_money
 var pity_money = 0
 
+static var can_draw := false
+static var map_shapes : Array[PackedVector2Array]
+
 func _ready() -> void:
+	z_index = 11
+	#process_mode = Node.PROCESS_MODE_ALWAYS
 	xp_changed.connect(calculate_player_lvl)
+	
+func _draw() -> void:
+	if can_draw:
+		for i in len(map_shapes):
+			draw_polygon(map_shapes[i], [Color(1,0,0,0.1)])
+	
 	
 func calculate_player_lvl():
 	PlayerLevel = floori(PlayerXp / XpThreshold) + StartingPlayerLevel
@@ -43,3 +54,12 @@ func purchase_item(item_amount : float) -> bool:
 		return true
 
 	return false
+
+func display_map_collision(display := can_draw) -> void:
+	can_draw = display
+	var _map_shapes = get_tree().get_nodes_in_group("map_collision")
+	map_shapes.clear()
+	for shape : CollisionPolygon2D in _map_shapes:
+		map_shapes.append(shape.polygon)
+	queue_redraw()
+	

@@ -15,8 +15,8 @@ const screen_height : float = 360 / 2
 const zoom_rate = 0.1
 const panning_drag = 0.1
 
-var initial_mouse_pos = 0
-var cur_mouse_pos = 0
+var initial_mouse_pos := Vector2.ZERO
+var cur_mouse_pos := Vector2.ZERO
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("MouseWheelUp"):

@@ -1,13 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://cdw6mvk7biyxe"]
+[gd_scene load_steps=8 format=3 uid="uid://cdw6mvk7biyxe"]
 
 [ext_resource type="Script" uid="uid://dh0y55ygf2syj" path="res://scenes/Weather/harsh_sun_script.gd" id="1_o0b8o"]
-[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="2_uscqu"]
-[ext_resource type="Texture2D" uid="uid://dg1hj731mvbie" path="res://assets/sprites/maps/map3/Map 3 Lvl 1.png" id="3_ovw2c"]
-[ext_resource type="Texture2D" uid="uid://cth5a1x7wsiy5" path="res://assets/sprites/maps/map3/Map 3 Lvl 1_factory.png" id="4_cwbxq"]
 [ext_resource type="Shader" uid="uid://6guh03hj0l6f" path="res://scenes/Weather/yellow_tint_shader.gdshader" id="4_joodg"]
-[ext_resource type="Texture2D" uid="uid://bprjqb4twu8ed" path="res://assets/sprites/maps/map3/Map 3 Lvl 1_bridge.png" id="5_joodg"]
-[ext_resource type="Texture2D" uid="uid://c32hbgxmjl2qy" path="res://assets/sprites/maps/map2/map2_lvl1_trees.png" id="6_o0b8o"]
-[ext_resource type="Texture2D" uid="uid://dtitmkqyr5u5u" path="res://assets/sprites/maps/map3/Map 3 Lvl 1_trees_overlayer.png" id="7_6gxce"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="8_cwbxq"]
 [ext_resource type="Shader" uid="uid://ceuwg7qfl6hj0" path="res://scenes/Weather/blur_shader.gdshader" id="8_ovw2c"]
 
@@ -18,98 +12,6 @@ shader_parameter/blur_amount = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o0b8o"]
 shader = ExtResource("4_joodg")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q4sps"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(0, 0, 740, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j1nfb"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(740, 0, 740, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5qcj5"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(1480, 0, 740, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gdus4"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(2220, 0, 740, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_quuat"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(2960, 0, 740, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kefbw"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(3700, 0, 740, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jiqhj"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(4440, 0, 740, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x1ja3"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(5180, 0, 740, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o1cod"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(5920, 0, 740, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qkdcu"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(6660, 0, 740, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_creq1"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(7400, 0, 740, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_15vd6"]
-atlas = ExtResource("4_cwbxq")
-region = Rect2(8140, 0, 740, 460)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cwbxq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q4sps")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j1nfb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5qcj5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gdus4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_quuat")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kefbw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jiqhj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x1ja3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o1cod")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qkdcu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_creq1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_15vd6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_joodg"]
 size = Vector2(1316, 854)
@@ -142,46 +44,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1e-05, 1e-05)
 mouse_filter = 2
-
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-zoom = Vector2(2, 2)
-script = ExtResource("2_uscqu")
-offset_r = 100.0
-offset_u = 100.0
-
-[node name="MapAssets" type="Node2D" parent="."]
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="map" type="Sprite2D" parent="MapAssets"]
-position = Vector2(50, -50)
-texture = ExtResource("3_ovw2c")
-metadata/_edit_lock_ = true
-
-[node name="factory" type="AnimatedSprite2D" parent="MapAssets"]
-position = Vector2(50, -50)
-sprite_frames = SubResource("SpriteFrames_cwbxq")
-autoplay = "default"
-metadata/_edit_lock_ = true
-
-[node name="bridge" type="Sprite2D" parent="MapAssets"]
-z_index = 1
-position = Vector2(50, -50)
-texture = ExtResource("5_joodg")
-metadata/_edit_lock_ = true
-
-[node name="tree" type="Sprite2D" parent="MapAssets"]
-visible = false
-position = Vector2(0, -50)
-texture = ExtResource("6_o0b8o")
-metadata/_edit_lock_ = true
-
-[node name="tree overlayer" type="Sprite2D" parent="MapAssets"]
-z_index = 10
-position = Vector2(50, -50)
-texture = ExtResource("7_6gxce")
-metadata/_edit_lock_ = true
 
 [node name="EffectDuration" type="Timer" parent="."]
 wait_time = 20.0

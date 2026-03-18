@@ -7,5 +7,4 @@ var ran_dict : Dictionary[String, int] = {
 func _ready() -> void:
 	timer.start(5)
 	await timer.timeout
-	var test = load("res://scenes/Weather/harsh_sun_scene.tscn").instantiate()
-	add_child(test)
+	WeatherController.spawn_harsh_sun(30,-0.5, $WeatherPlacement)

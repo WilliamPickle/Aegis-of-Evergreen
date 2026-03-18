@@ -8,7 +8,8 @@ const MIN_DB : float = -40.0
 static var music_value: float = 1.0
 static var sfx_value: float = 1.0
 
-
+static var collision_visible := false
+@export var collision_button : Button
 
 
 func _ready() -> void:
@@ -16,6 +17,7 @@ func _ready() -> void:
 	music_volume.drag_ended.connect(_on_volume_change)
 	music_volume.value = music_value
 	SFX_volume.value = sfx_value
+	collision_button.pressed.connect(_display_collision)
 
 
 func _on_volume_change(_value_changed: bool, is_music_volume:= true) -> void:
@@ -40,3 +42,12 @@ func _on_volume_change(_value_changed: bool, is_music_volume:= true) -> void:
 		sfx_value = SFX_volume.value
 		
 		
+func _display_collision() -> void:
+	if collision_visible:
+		collision_visible = false
+		collision_button.self_modulate = Color(1,1,1,1)
+		PlayerStats.display_map_collision(collision_visible)
+	else:
+		collision_visible = true
+		collision_button.self_modulate = Color(0.5,0.5,0.5)
+		PlayerStats.display_map_collision(collision_visible)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://rlm06c0lld5e"]
+[gd_scene load_steps=25 format=3 uid="uid://rlm06c0lld5e"]
 
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_3i1ia"]
 [ext_resource type="Script" uid="uid://dd56ng05gs51w" path="res://scripts/UI/settings_script.gd" id="1_jl7gk"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cjkk5ket3fgtr" path="res://assets/sprites/settings screen/Wooden Slider Button Cropped.png" id="7_a40gc"]
 [ext_resource type="Texture2D" uid="uid://bfnv5d5fmfpgg" path="res://assets/sprites/settings screen/wooden_slider_button_highlighted.png" id="8_xammk"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="9_ec265"]
+[ext_resource type="Texture2D" uid="uid://bm652hyqdgbct" path="res://assets/sprites/settings screen/settings_buttons.png" id="12_3i1ia"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0dr5"]
 
@@ -37,12 +38,27 @@ texture = ExtResource("4_bhifn")
 font = ExtResource("9_ec265")
 font_size = 32
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3i1ia"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3i1ia"]
+texture = ExtResource("12_3i1ia")
+region_rect = Rect2(14, 0, 14, 14)
+modulate_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jl7gk"]
+texture = ExtResource("12_3i1ia")
+region_rect = Rect2(14, 0, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jfsmy"]
+texture = ExtResource("12_3i1ia")
+region_rect = Rect2(0, 1, 12, 12)
+
 [node name="SettingsMenu" type="CanvasLayer"]
 process_mode = 3
 layer = 2
 script = ExtResource("1_3i1ia")
 
-[node name="SettingsAssets2" type="Control" parent="." node_paths=PackedStringArray("music_volume", "SFX_volume")]
+[node name="SettingsAssets2" type="Control" parent="." node_paths=PackedStringArray("music_volume", "SFX_volume", "collision_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,6 +72,7 @@ grow_vertical = 2
 script = ExtResource("1_jl7gk")
 music_volume = NodePath("Background/MusicTexture2/MusicVolume")
 SFX_volume = NodePath("Background/SFXTexture/SFXVolume")
+collision_button = NodePath("Background/CollisionButton")
 
 [node name="Background" type="TextureRect" parent="SettingsAssets2"]
 layout_mode = 2
@@ -202,3 +219,27 @@ offset_right = 280.0
 offset_bottom = 44.0
 text = "_________"
 label_settings = SubResource("LabelSettings_6jt7n")
+
+[node name="CollisionButton" type="Button" parent="SettingsAssets2/Background"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 215.0
+offset_right = 212.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("9_ec265")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3i1ia")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_3i1ia")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jl7gk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3i1ia")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jfsmy")
+
+[node name="Text" type="Label" parent="SettingsAssets2/Background/CollisionButton"]
+layout_mode = 0
+offset_left = -115.0
+offset_top = 1.0
+offset_right = -17.0
+offset_bottom = 36.0
+theme_override_fonts/font = ExtResource("9_ec265")
+text = "Display map
+collision"
