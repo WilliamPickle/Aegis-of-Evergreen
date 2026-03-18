@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dv0g30wev1oj3" path="res://assets/sprites/maps/map1/Map 1 Level 3 trees overlayer.png" id="7_50287"]
 [ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="8_os8re"]
 [ext_resource type="Script" uid="uid://bm6287ovbjpnm" path="res://scripts/Enemies/map1_lvl_3_wave_spawner.gd" id="9_bjw4u"]
-[ext_resource type="Script" uid="uid://78nctyr55g08" path="res://scripts/fish_script.gd" id="9_detxl"]
+[ext_resource type="Script" path="res://scripts/fish_script.gd" id="9_detxl"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="10_jnlnj"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="11_nhai6"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="12_0vrl8"]

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cogocbr540tui" path="res://assets/sprites/maps/map1/map 1 Level 2 Trees Overlayer.png" id="7_73m23"]
 [ext_resource type="Script" uid="uid://dcwhmibs07e8l" path="res://scripts/Enemies/map1_lvl2_wave_spawner.gd" id="9_bgibu"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="9_rur20"]
-[ext_resource type="Script" uid="uid://78nctyr55g08" path="res://scripts/fish_script.gd" id="9_taw0e"]
+[ext_resource type="Script" path="res://scripts/fish_script.gd" id="9_taw0e"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="10_srjk8"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="11_0na3t"]
 [ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="12_gxp3h"]

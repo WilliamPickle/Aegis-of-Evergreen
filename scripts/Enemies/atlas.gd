@@ -6,7 +6,7 @@ extends industrial_enemy
 @onready var timer: Timer = $Timer
 const phase_change_percent : Array[float] = [0.8, 0.6]
 const phase_speed : Array[float] = [0.5, 1]
-const phase_heal : Array[float] = [100, 100]
+const phase_heal : Array[float] = [50, 100]
 const stun_duration : Array[float] = [2, 2]
 const stun_cd : Array[float] = [5, 4]
 const stun_scale : Array[Vector2] = [Vector2(1, 1), Vector2(1.5, 1.5)]
