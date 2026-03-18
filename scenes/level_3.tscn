@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bly8owxtaisdq"]
+[gd_scene load_steps=60 format=3 uid="uid://bly8owxtaisdq"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_bjw4u"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_1rxxv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dv0g30wev1oj3" path="res://assets/sprites/maps/map1/Map 1 Level 3 trees overlayer.png" id="7_50287"]
 [ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="8_os8re"]
 [ext_resource type="Script" uid="uid://bm6287ovbjpnm" path="res://scripts/Enemies/map1_lvl_3_wave_spawner.gd" id="9_bjw4u"]
+[ext_resource type="Script" uid="uid://78nctyr55g08" path="res://scripts/fish_script.gd" id="9_detxl"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="10_jnlnj"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="11_nhai6"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="12_0vrl8"]
@@ -30,91 +31,6 @@
 [ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="28_ddneo"]
 [ext_resource type="PackedScene" uid="uid://b7t00txf1d4ho" path="res://scenes/UI/guidebook_popup.tscn" id="29_1rxxv"]
 [ext_resource type="PackedScene" uid="uid://c4tvpjuo8ae2w" path="res://scenes/Weather/weather_icons_scene.tscn" id="30_ld1e4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
-atlas = ExtResource("2_1rxxv")
-region = Rect2(0, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x2xxo"]
-atlas = ExtResource("2_1rxxv")
-region = Rect2(100, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cbcq"]
-atlas = ExtResource("2_1rxxv")
-region = Rect2(200, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_isj1j"]
-atlas = ExtResource("2_1rxxv")
-region = Rect2(300, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_so66j"]
-atlas = ExtResource("2_1rxxv")
-region = Rect2(400, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tr1x6"]
-atlas = ExtResource("2_1rxxv")
-region = Rect2(500, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d5akn"]
-atlas = ExtResource("2_1rxxv")
-region = Rect2(600, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbtxt"]
-atlas = ExtResource("2_1rxxv")
-region = Rect2(700, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x2fux"]
-atlas = ExtResource("2_1rxxv")
-region = Rect2(800, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s7g0b"]
-atlas = ExtResource("2_1rxxv")
-region = Rect2(900, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmfjm"]
-atlas = ExtResource("2_1rxxv")
-region = Rect2(1000, 0, 100, 50)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jdrep"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1s4pk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x2xxo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2cbcq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_isj1j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_so66j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tr1x6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d5akn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbtxt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x2fux")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s7g0b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mmfjm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbb35"]
 atlas = ExtResource("4_detxl")
@@ -180,6 +96,91 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
+atlas = ExtResource("2_1rxxv")
+region = Rect2(0, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2xxo"]
+atlas = ExtResource("2_1rxxv")
+region = Rect2(100, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cbcq"]
+atlas = ExtResource("2_1rxxv")
+region = Rect2(200, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isj1j"]
+atlas = ExtResource("2_1rxxv")
+region = Rect2(300, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so66j"]
+atlas = ExtResource("2_1rxxv")
+region = Rect2(400, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr1x6"]
+atlas = ExtResource("2_1rxxv")
+region = Rect2(500, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5akn"]
+atlas = ExtResource("2_1rxxv")
+region = Rect2(600, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbtxt"]
+atlas = ExtResource("2_1rxxv")
+region = Rect2(700, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2fux"]
+atlas = ExtResource("2_1rxxv")
+region = Rect2(800, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7g0b"]
+atlas = ExtResource("2_1rxxv")
+region = Rect2(900, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmfjm"]
+atlas = ExtResource("2_1rxxv")
+region = Rect2(1000, 0, 100, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58p72"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s4pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2xxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cbcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isj1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so66j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr1x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5akn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbtxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2fux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7g0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmfjm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Curve2D" id="Curve2D_e8wht"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -273, -109, 0, 0, 0, 0, -265, -80, 0, 0, 0, 0, -248, -56, 0, 0, 0, 0, -216, -39, 0, 0, 0, 0, -183, -37, 0, 0, 0, 0, -156, -39, 0, 0, 0, 0, -123, -54, 0, 0, 0, 0, 0, -124, 0, 0, 0, 0, 41, -137, 0, 0, 0, 0, 87, -141, 0, 0, 0, 0, 133, -140, 0, 0, 0, 0, 161, -135, 0, 0, 0, 0, 179, -122, 0, 0, 0, 0, 194, -99, 0, 0, 0, 0, 197, -80, 0, 0, 0, 0, 186, -55, 0, 0, 0, 0, 170, -37, 0, 0, 0, 0, 46, -11, 0, 0, 0, 0, 21, 5, 0, 0, 0, 0, 11, 19, 0, 0, 0, 0, 9, 38, 0, 0, 0, 0, 17, 54, 0, 0, 0, 0, 32, 71, 0, 0, 0, 0, 47, 80, 0, 0, 0, 0, 68, 86, 0, 0, 0, 0, 190, 72, 0, 0, 0, 0, 246, 46, 0, 0, 0, 0, 280, 37, 0, 0, 0, 0, 342, 37)
@@ -212,12 +213,6 @@ script = ExtResource("1_bjw4u")
 
 [node name="MapAssets" type="Node2D" parent="."]
 
-[node name="fish" type="AnimatedSprite2D" parent="MapAssets"]
-z_index = 1
-position = Vector2(39, -81)
-sprite_frames = SubResource("SpriteFrames_jdrep")
-autoplay = "default"
-
 [node name="map" type="Sprite2D" parent="MapAssets"]
 texture = ExtResource("3_ld1e4")
 
@@ -239,6 +234,47 @@ texture = ExtResource("7_50287")
 
 [node name="ufo" type="Sprite2D" parent="MapAssets"]
 texture = ExtResource("8_os8re")
+
+[node name="fish" type="AnimatedSprite2D" parent="MapAssets"]
+z_index = 1
+position = Vector2(30, -75)
+scale = Vector2(1.1, 1.1)
+sprite_frames = SubResource("SpriteFrames_58p72")
+autoplay = "default"
+script = ExtResource("9_detxl")
+x_min_range_scale = 0.8
+x_max_range_scale = 1.1
+y_min_range_scale = 0.8
+y_max_range_scale = 1.1
+x_min_range_position = 35.0
+x_max_range_position = 45.0
+y_min_range_position = -75.0
+y_max_range_position = -90.0
+min_timer = 2.0
+max_timer = 7.0
+
+[node name="Timer" type="Timer" parent="MapAssets/fish"]
+
+[node name="fish2" type="AnimatedSprite2D" parent="MapAssets"]
+z_index = 1
+position = Vector2(-85, -144)
+rotation = 0.285981
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_58p72")
+autoplay = "default"
+script = ExtResource("9_detxl")
+x_min_range_scale = 0.5
+x_max_range_scale = 0.7
+y_min_range_scale = 0.5
+y_max_range_scale = 0.7
+x_min_range_position = -85.0
+x_max_range_position = -95.0
+y_min_range_position = -140.0
+y_max_range_position = -160.0
+min_timer = 1.0
+max_timer = 5.0
+
+[node name="Timer" type="Timer" parent="MapAssets/fish2"]
 
 [node name="EnemyPath2" type="Path2D" parent="." groups=["enemy_path"]]
 y_sort_enabled = true
