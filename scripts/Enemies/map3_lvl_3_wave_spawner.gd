@@ -90,4 +90,3 @@ func _on_start_lvl9() -> void:
 	
 	currently_sending = false
 	await wave_timer.timeout
-	signify_wave_end()

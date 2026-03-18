@@ -376,7 +376,6 @@ label_settings = SubResource("LabelSettings_jn14j")
 autowrap_mode = 2
 
 [node name="Contents" type="Control" parent="ScreenContainer"]
-visible = false
 layout_mode = 2
 
 [node name="LeftCover" type="Button" parent="ScreenContainer/Contents"]
@@ -411,6 +410,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Page1and2" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+visible = false
 z_index = 1
 layout_mode = 2
 offset_left = 364.0
@@ -545,6 +545,7 @@ text = "Forest"
 label_settings = SubResource("LabelSettings_epvr4")
 
 [node name="Page3and4" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+visible = false
 layout_mode = 2
 offset_left = 364.0
 offset_top = 204.0
@@ -659,6 +660,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="Page5and6" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+visible = false
 layout_mode = 0
 offset_left = 364.0
 offset_top = 204.0
@@ -753,6 +755,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="Page7and8" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+visible = false
 layout_mode = 2
 offset_left = 364.0
 offset_top = 204.0
@@ -920,6 +923,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="Page9and10" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+visible = false
 layout_mode = 0
 offset_left = 364.0
 offset_top = 204.0
@@ -1088,6 +1092,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="Page11and12" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+visible = false
 layout_mode = 2
 offset_left = 364.0
 offset_top = 204.0
