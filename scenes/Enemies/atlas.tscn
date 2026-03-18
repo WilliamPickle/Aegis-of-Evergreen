@@ -643,10 +643,8 @@ sprite_frames = SubResource("SpriteFrames_0kymh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-8, -18)
 sprite_frames = SubResource("SpriteFrames_ijc5h")
-animation = &"phase2t"
+animation = &"phase2"
 autoplay = "phase1"
-frame = 13
-frame_progress = 0.210612
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
