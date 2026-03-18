@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://csvtwwunpwrfh"]
+[gd_scene load_steps=86 format=3 uid="uid://csvtwwunpwrfh"]
 
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_g2sta"]
 [ext_resource type="Script" uid="uid://dy04of48wrsf7" path="res://scripts/UI/survival_guide_script.gd" id="2_1fxqp"]
@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://coqpl0tt4bms5" path="res://assets/sprites/icons and buttons/back_button_highlighted.png" id="16_6vu8i"]
 [ext_resource type="Texture2D" uid="uid://6b18sqntav8k" path="res://assets/sprites/survival guide menu/page 9 and 10.png" id="16_exfpv"]
 [ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="17_t4k2q"]
+[ext_resource type="Texture2D" uid="uid://cuwrsrruaev0" path="res://assets/sprites/survival guide menu/mushroom_enemies.png" id="18_fwyu7"]
+[ext_resource type="Texture2D" uid="uid://dr85gxcdnln6n" path="res://assets/sprites/survival guide menu/mushroom_boss.png" id="19_ewo21"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05qod"]
 
@@ -815,12 +817,21 @@ offset_bottom = 39.0
 text = "Rabbit"
 label_settings = ExtResource("11_exfpv")
 
+[node name="heading2" type="Label" parent="ScreenContainer/Contents/Pages/RabbitFlower"]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 15.0
+offset_right = 507.0
+offset_bottom = 39.0
+text = "Rhododendron"
+label_settings = ExtResource("11_exfpv")
+
 [node name="heading3" type="Label" parent="ScreenContainer/Contents/Pages/RabbitFlower"]
 layout_mode = 0
 offset_left = 63.0
-offset_top = 202.0
+offset_top = 196.0
 offset_right = 252.0
-offset_bottom = 226.0
+offset_bottom = 220.0
 scale = Vector2(0.75, 0.75)
 text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
@@ -842,7 +853,7 @@ offset_top = 43.0
 offset_right = 103.0
 offset_bottom = 122.0
 scale = Vector2(1.2, 1.2)
-text = "The eastern cottontail rabbit makes the biggest \"impact\" within these forests. Periodically, they'll jump and shake the ground, causing "
+text = "The pygmy rabbit makes the biggest \"impact\" within these forests. Periodically, they'll jump and shake the ground, causing enemies in range to "
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
@@ -853,7 +864,7 @@ offset_top = 140.0
 offset_right = 210.0
 offset_bottom = 189.0
 scale = Vector2(1.2, 1.2)
-text = "enemies within it's range to get stunned. As the cottontail grows, it attacks slower but it's stuns last longer. Also, the rabbit is immune to range debuffs."
+text = "get stunned. As the rabbit grows, it attacks more slowly but it's stuns last longer. Also, the rabbit is immune to range debuffs."
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
@@ -861,10 +872,43 @@ autowrap_mode = 2
 layout_mode = 0
 offset_left = 37.0
 offset_top = 217.0
-offset_right = 197.0
+offset_right = 200.0
 offset_bottom = 277.0
 scale = Vector2(1.2, 1.2)
-text = "Rabbits are usually fast creatures, but this particular rabbit has fed on one too many carrots. "
+text = "Many animal species, like the pygmy rabbit, have become endangered due to the destruction of their habitat. Deforestation, pollution, and changes in climate all contribute to this. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text5" type="Label" parent="ScreenContainer/Contents/Pages/RabbitFlower"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 55.0
+offset_right = 409.0
+offset_bottom = 134.0
+scale = Vector2(1.2, 1.2)
+text = "The rhododendron flower doesn't dish out any damage itself, but it supports your ally by cleasning them of their debuffs. It only doesn't completely rid them of it though. Also, enemies within range of"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text6" type="Label" parent="ScreenContainer/Contents/Pages/RabbitFlower"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 164.0
+offset_right = 505.0
+offset_bottom = 213.0
+scale = Vector2(1.2, 1.2)
+text = "it's pollen gas will temporarily drop more currency than normal. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text9" type="Label" parent="ScreenContainer/Contents/Pages/RabbitFlower"]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 217.0
+offset_right = 490.0
+offset_bottom = 277.0
+scale = Vector2(1.2, 1.2)
+text = "While not the most verbal hero, this flower is undeniably an important one. As the forest rots and the air worses, it's up to plants like this to cleanse the air and sustain life."
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
@@ -1203,6 +1247,259 @@ text = "Though not typically aggressive towards us humans, Asian hornets are rut
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
+[node name="Mushroom" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 204.0
+offset_right = 916.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("18_fwyu7")
+
+[node name="heading4" type="Label" parent="ScreenContainer/Contents/Pages/Mushroom"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 17.0
+offset_right = 210.0
+offset_bottom = 41.0
+scale = Vector2(0.5, 0.5)
+text = "Mushroom"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Pages/Mushroom"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 38.0
+offset_right = 129.0
+offset_bottom = 89.0
+scale = Vector2(1.2, 1.2)
+text = "Originating from the forest, it seems to have gained life through the smog. It's tankier and faster than a bush. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading5" type="Label" parent="ScreenContainer/Contents/Pages/Mushroom"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 114.0
+offset_right = 295.0
+offset_bottom = 138.0
+scale = Vector2(0.5, 0.5)
+text = "Armored Mushroom"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Pages/Mushroom"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 136.0
+offset_right = 223.0
+offset_bottom = 187.0
+scale = Vector2(1.2, 1.2)
+text = "At first, this foe seems slow and unthreatening, albeit a little tanky. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Pages/Mushroom"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 197.0
+offset_right = 133.0
+offset_bottom = 257.0
+scale = Vector2(1.2, 1.2)
+text = "Once you break it's armor however, it starts running much faster. At this point though, the armored mushroom should have less health. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading6" type="Label" parent="ScreenContainer/Contents/Pages/Mushroom"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 17.0
+offset_right = 690.0
+offset_bottom = 41.0
+scale = Vector2(0.5, 0.5)
+text = "Spore Crab"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text4" type="Label" parent="ScreenContainer/Contents/Pages/Mushroom"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 40.0
+offset_right = 519.0
+offset_bottom = 91.0
+scale = Vector2(1.2, 1.2)
+text = "These foe are relatively slow, yet quite tanky. The thing that's most threatening about them though is the spores on "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text5" type="Label" parent="ScreenContainer/Contents/Pages/Mushroom"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 100.0
+offset_right = 500.0
+offset_bottom = 151.0
+scale = Vector2(1.2, 1.2)
+text = "their back. Upon damaging the spore crab enough, these spores will be automatically released onto the path. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading7" type="Label" parent="ScreenContainer/Contents/Pages/Mushroom"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 162.0
+offset_right = 551.0
+offset_bottom = 186.0
+scale = Vector2(0.5, 0.5)
+text = "Spore"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text6" type="Label" parent="ScreenContainer/Contents/Pages/Mushroom"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 184.0
+offset_right = 427.0
+offset_bottom = 235.0
+scale = Vector2(1.2, 1.2)
+text = "These spores are both tiny and fast, though frail. However, upon being defeated, it will also release a gas which lowers"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text7" type="Label" parent="ScreenContainer/Contents/Pages/Mushroom"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 244.0
+offset_right = 500.0
+offset_bottom = 295.0
+scale = Vector2(1.2, 1.2)
+text = "the range of your allies. The effect is only temporary, but very potent. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="MushroomBoss" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 204.0
+offset_right = 916.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("19_ewo21")
+
+[node name="heading4" type="Label" parent="ScreenContainer/Contents/Pages/MushroomBoss"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 21.0
+offset_right = 243.0
+offset_bottom = 45.0
+scale = Vector2(0.5, 0.5)
+text = "Mushroom Mutant"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Pages/MushroomBoss"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 46.0
+offset_right = 132.0
+offset_bottom = 115.0
+scale = Vector2(1.2, 1.2)
+text = "A mushroom which has succumbed to the rotten forest on a deeper level... it's become significantly slower, but much beefier. It's also immune to debuffing effects. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading5" type="Label" parent="ScreenContainer/Contents/Pages/MushroomBoss"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 149.0
+offset_right = 288.0
+offset_bottom = 173.0
+scale = Vector2(0.75, 0.75)
+text = "The Amalgamushroom"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading6" type="Label" parent="ScreenContainer/Contents/Pages/MushroomBoss"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 192.0
+offset_right = 336.0
+offset_bottom = 216.0
+scale = Vector2(0.5, 0.5)
+text = "Phase 1"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Pages/MushroomBoss"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 194.0
+offset_right = 233.0
+offset_bottom = 206.0
+scale = Vector2(1.2, 1.2)
+text = "A mushroom"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Pages/MushroomBoss"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 208.0
+offset_right = 224.0
+offset_bottom = 257.0
+scale = Vector2(1.2, 1.2)
+text = "that's been bathing in toxins and absorbed them. At this stage however, it's not much of a threat."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading7" type="Label" parent="ScreenContainer/Contents/Pages/MushroomBoss"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 19.0
+offset_right = 532.0
+offset_bottom = 43.0
+scale = Vector2(0.5, 0.5)
+text = "Phase 2"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text5" type="Label" parent="ScreenContainer/Contents/Pages/MushroomBoss"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 36.0
+offset_right = 411.0
+offset_bottom = 96.0
+scale = Vector2(1.2, 1.2)
+text = "Broken out of it's radioactive barrel, the amalgamushroom now crawls along the track periodically. Along with that, it's gotten tankier."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading8" type="Label" parent="ScreenContainer/Contents/Pages/MushroomBoss"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 118.0
+offset_right = 637.0
+offset_bottom = 142.0
+scale = Vector2(0.5, 0.5)
+text = "Phase 3"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text6" type="Label" parent="ScreenContainer/Contents/Pages/MushroomBoss"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 134.0
+offset_right = 515.0
+offset_bottom = 162.0
+scale = Vector2(1.2, 1.2)
+text = "After absorbing too much damage, it's evolved yet again. Now, this creature harbors a tremendous amount of health."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text7" type="Label" parent="ScreenContainer/Contents/Pages/MushroomBoss"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 217.0
+offset_right = 487.0
+offset_bottom = 275.0
+scale = Vector2(1.2, 1.2)
+text = "Pollution and toxins being put into our environment have forced some creatures to develop in a rather unsettling way. The amalgamushroom is a culmination of this. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
 [node name="Page11and12" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
 layout_mode = 2
 offset_left = 364.0
@@ -1383,6 +1680,57 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_pmx87")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wok70")
 theme_override_styles/normal = SubResource("StyleBoxTexture_6di2m")
 
+[node name="ltab13and14" type="Button" parent="ScreenContainer/ButtonContainer/LeftTabs"]
+visible = false
+modulate = Color(0.347637, 0.772477, 0.549795, 1)
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_top = 102.0
+offset_right = 26.0
+offset_bottom = 115.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jn14j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fwyu7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_3o43s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8ufea")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3o43s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2g57s")
+
+[node name="ltab15and16" type="Button" parent="ScreenContainer/ButtonContainer/LeftTabs"]
+visible = false
+modulate = Color(0.616656, 0.963409, 0.999331, 1)
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_top = 119.0
+offset_right = 26.0
+offset_bottom = 132.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exfpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m5axs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7sg28")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_avqcp")
+
+[node name="ltab17and18" type="Button" parent="ScreenContainer/ButtonContainer/LeftTabs"]
+visible = false
+modulate = Color(0.909018, 0.917199, 0.657831, 1)
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_top = 136.0
+offset_right = 26.0
+offset_bottom = 149.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exfpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m5axs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7sg28")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_avqcp")
+
 [node name="RightTabs" type="Control" parent="ScreenContainer/ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -1477,6 +1825,51 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_wok70")
 theme_override_styles/hover = SubResource("StyleBoxTexture_pmx87")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wok70")
 theme_override_styles/normal = SubResource("StyleBoxTexture_6di2m")
+
+[node name="rtab13and14" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
+modulate = Color(0.347637, 0.772477, 0.549795, 1)
+custom_minimum_size = Vector2(26, 13)
+offset_left = -26.0
+offset_top = 102.0
+offset_bottom = 115.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jn14j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fwyu7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_3o43s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8ufea")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3o43s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2g57s")
+
+[node name="rtab15and16" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
+modulate = Color(0.616656, 0.963409, 0.999331, 1)
+custom_minimum_size = Vector2(26, 13)
+offset_left = -26.0
+offset_top = 119.0
+offset_bottom = 132.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exfpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m5axs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7sg28")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_avqcp")
+
+[node name="rtab17and18" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
+modulate = Color(0.909018, 0.917199, 0.657831, 1)
+custom_minimum_size = Vector2(26, 13)
+offset_left = -26.0
+offset_top = 136.0
+offset_bottom = 149.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exfpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m5axs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7sg28")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_avqcp")
 
 [node name="BackButtonContainer" type="Control" parent="ScreenContainer"]
 layout_mode = 2
