@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://csvtwwunpwrfh"]
+[gd_scene load_steps=84 format=3 uid="uid://csvtwwunpwrfh"]
 
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_g2sta"]
 [ext_resource type="Script" uid="uid://dy04of48wrsf7" path="res://scripts/UI/survival_guide_script.gd" id="2_1fxqp"]
@@ -19,8 +19,9 @@
 [ext_resource type="LabelSettings" uid="uid://dnonjx6mllei5" path="res://assets/fonts/guidebook_heading2.tres" id="12_m5axs"]
 [ext_resource type="Texture2D" uid="uid://chf6w8x3cuijp" path="res://assets/sprites/icons and buttons/exit_button_highlight.png" id="13_lidf8"]
 [ext_resource type="Texture2D" uid="uid://1u75f14jex4" path="res://assets/sprites/icons and buttons/exit_button.png" id="14_7y2fs"]
-[ext_resource type="Texture2D" uid="uid://bnlwqi43gq42q" path="res://assets/sprites/survival guide menu/page 5 and 6 new.png" id="14_m5axs"]
+[ext_resource type="Texture2D" uid="uid://b0r1ekus4l5sn" path="res://assets/sprites/survival guide menu/flytrap_druid.png" id="14_m5axs"]
 [ext_resource type="Script" uid="uid://h2jq8s83khk1" path="res://scripts/UI/back_button_script.gd" id="15_6vu8i"]
+[ext_resource type="Texture2D" uid="uid://ws66386e6kfk" path="res://assets/sprites/survival guide menu/rabbit_flower.png" id="15_jn14j"]
 [ext_resource type="Texture2D" uid="uid://coqpl0tt4bms5" path="res://assets/sprites/icons and buttons/back_button_highlighted.png" id="16_6vu8i"]
 [ext_resource type="Texture2D" uid="uid://6b18sqntav8k" path="res://assets/sprites/survival guide menu/page 9 and 10.png" id="16_exfpv"]
 [ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="17_t4k2q"]
@@ -376,6 +377,7 @@ label_settings = SubResource("LabelSettings_jn14j")
 autowrap_mode = 2
 
 [node name="Contents" type="Control" parent="ScreenContainer"]
+visible = false
 layout_mode = 2
 
 [node name="LeftCover" type="Button" parent="ScreenContainer/Contents"]
@@ -410,7 +412,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Page1and2" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
-visible = false
 z_index = 1
 layout_mode = 2
 offset_left = 364.0
@@ -545,7 +546,6 @@ text = "Forest"
 label_settings = SubResource("LabelSettings_epvr4")
 
 [node name="Page3and4" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
-visible = false
 layout_mode = 2
 offset_left = 364.0
 offset_top = 204.0
@@ -660,7 +660,6 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="Page5and6" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
-visible = false
 layout_mode = 0
 offset_left = 364.0
 offset_top = 204.0
@@ -685,6 +684,16 @@ offset_left = 63.0
 offset_top = 202.0
 offset_right = 252.0
 offset_bottom = 226.0
+scale = Vector2(0.75, 0.75)
+text = "- Extra Facts -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading5" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 199.0
+offset_right = 579.0
+offset_bottom = 223.0
 scale = Vector2(0.75, 0.75)
 text = "- Extra Facts -"
 label_settings = ExtResource("12_m5axs")
@@ -733,29 +742,133 @@ text = "In reality, Venus Flytraps attack bugs by trapping them in their \"mouth
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
+[node name="text7" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 58.0
+offset_right = 425.0
+offset_bottom = 116.0
+scale = Vector2(1.2, 1.2)
+text = "The druid is a unique ally, in that it places traps on the ground, though it still aims these traps on enemies in range."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
 [node name="heading4" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
 layout_mode = 0
-offset_left = 346.0
-offset_top = 150.0
-offset_right = 568.0
-offset_bottom = 174.0
-scale = Vector2(0.75, 0.75)
-text = "- Coming Soon -"
+offset_left = 312.0
+offset_top = 21.0
+offset_right = 534.0
+offset_bottom = 45.0
+scale = Vector2(0.9, 0.9)
+text = "The Forest Druid"
 label_settings = ExtResource("12_m5axs")
 
 [node name="text6" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
 layout_mode = 0
-offset_left = 326.0
-offset_top = 174.0
-offset_right = 483.0
-offset_bottom = 224.0
+offset_left = 329.0
+offset_top = 217.0
+offset_right = 486.0
+offset_bottom = 267.0
 scale = Vector2(1.2, 1.2)
-text = "As time passes, the forest requires more allies to fend off the growing threats. Rest assured, more allies are getting ready to join the fight. "
+text = "For eons, the forest had been protected by the druid and its allies. As threats grow closer however, it emerges from the evergreen to keep its peace."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text8" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 134.0
+offset_right = 551.0
+offset_bottom = 184.0
+scale = Vector2(1.2, 1.2)
+text = "These vine traps"
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text9" type="Label" parent="ScreenContainer/Contents/Pages/Page5and6"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 146.0
+offset_right = 515.0
+offset_bottom = 196.0
+scale = Vector2(1.2, 1.2)
+text = "deal damage over time to enemies that step over them. The vines appear temporarily though."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="RabbitFlower" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+layout_mode = 2
+offset_left = 364.0
+offset_top = 204.0
+offset_right = 916.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("15_jn14j")
+
+[node name="heading" type="Label" parent="ScreenContainer/Contents/Pages/RabbitFlower"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 39.0
+text = "Rabbit"
+label_settings = ExtResource("11_exfpv")
+
+[node name="heading3" type="Label" parent="ScreenContainer/Contents/Pages/RabbitFlower"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 202.0
+offset_right = 252.0
+offset_bottom = 226.0
+scale = Vector2(0.75, 0.75)
+text = "- Extra Facts -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="heading7" type="Label" parent="ScreenContainer/Contents/Pages/RabbitFlower"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 190.0
+offset_right = 541.0
+offset_bottom = 214.0
+scale = Vector2(0.75, 0.75)
+text = "- Extra Facts -"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Pages/RabbitFlower"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 43.0
+offset_right = 103.0
+offset_bottom = 122.0
+scale = Vector2(1.2, 1.2)
+text = "The eastern cottontail rabbit makes the biggest \"impact\" within these forests. Periodically, they'll jump and shake the ground, causing "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text4" type="Label" parent="ScreenContainer/Contents/Pages/RabbitFlower"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 140.0
+offset_right = 210.0
+offset_bottom = 189.0
+scale = Vector2(1.2, 1.2)
+text = "enemies within it's range to get stunned. As the cottontail grows, it attacks slower but it's stuns last longer. Also, the rabbit is immune to range debuffs."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text8" type="Label" parent="ScreenContainer/Contents/Pages/RabbitFlower"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 217.0
+offset_right = 197.0
+offset_bottom = 277.0
+scale = Vector2(1.2, 1.2)
+text = "Rabbits are usually fast creatures, but this particular rabbit has fed on one too many carrots. "
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="Page7and8" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
-visible = false
 layout_mode = 2
 offset_left = 364.0
 offset_top = 204.0
@@ -923,7 +1036,6 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="Page9and10" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
-visible = false
 layout_mode = 0
 offset_left = 364.0
 offset_top = 204.0
@@ -1092,7 +1204,6 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="Page11and12" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
-visible = false
 layout_mode = 2
 offset_left = 364.0
 offset_top = 204.0

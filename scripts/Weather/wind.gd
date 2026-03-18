@@ -11,8 +11,8 @@ static var duration : float = 500
 static var buff_percent : float = 10
 static var debuff_percent : float = -0.5
 static var wind_direction : int = 1
-static var min_pos : Vector2 = Vector2(-320,-180)
-static var max_pos : Vector2 = Vector2(320,180)
+static var min_pos : Vector2 = Vector2(320,180)
+static var max_pos : Vector2 = Vector2(-320,-180)
 static var is_visible : bool = true
 
 @onready var wind_node := $AnimationNode
