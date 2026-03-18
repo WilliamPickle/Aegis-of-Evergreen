@@ -7,7 +7,9 @@ const levels_list = [
 	"res://scenes/map_2_level_1.tscn", 
 	"res://scenes/map_2_level_2.tscn", 
 	"res://scenes/map_2_level_3.tscn", 
-	"res://scenes/map_3_level_1.tscn"
+	"res://scenes/map_3_level_1.tscn",
+	"res://scenes/map_3_level_2.tscn",
+	"res://scenes/map_3_level_3.tscn"
 	]
 const restart_pity_money: float = 25
 

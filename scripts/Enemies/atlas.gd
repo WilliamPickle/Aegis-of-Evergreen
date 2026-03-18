@@ -4,12 +4,13 @@ extends industrial_enemy
 @onready var discharge: AnimatedSprite2D = $discharge
 @onready var discharge_area: Area2D = $discharge_area
 @onready var timer: Timer = $Timer
-const phase_change_percent : Array[float] = [0.75, 0.25]
+const phase_change_percent : Array[float] = [0.8, 0.6]
 const phase_speed : Array[float] = [0.5, 1]
-const stun_duration : Array[float] = [2, 3]
-const stun_cd : Array[float] = [4, 2]
+const phase_heal : Array[float] = [100, 100]
+const stun_duration : Array[float] = [2, 2]
+const stun_cd : Array[float] = [5, 4]
 const stun_scale : Array[Vector2] = [Vector2(1, 1), Vector2(1.5, 1.5)]
-const stun_radius : Array[float] = [75, 100]
+const stun_radius : Array[float] = [65, 90]
 var cur_phase : int = 1
 
 func apply_damage(damage : float, damage_type):
@@ -23,8 +24,7 @@ func apply_damage(damage : float, damage_type):
 func change_phase() -> void:
 	speed_variance = -1
 	cur_phase += 1
-	#max_health = phase_health[cur_phase - 2]
-	#cur_health = max_health
+	cur_health += phase_heal[cur_phase - 2]
 	
 	# transform and discharge
 	sprite.play("phase" + str(cur_phase) + "t")
@@ -41,7 +41,8 @@ func change_phase() -> void:
 
 func spawn_oil() -> void:
 	super.spawn_oil()
-	new_oil.scale = Vector2(1.5, 1.5)
+	if is_instance_valid(new_oil):
+		new_oil.scale = Vector2(1.5, 1.5)
 
 func apply_discharge(frame: float = 0) -> void:
 	if frame == 0:

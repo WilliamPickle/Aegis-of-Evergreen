@@ -46,8 +46,8 @@ const unlockable_allies : Dictionary = {
 	"2" : "bee",
 	"3" : "flytrap",
 	"5" : "druid",
-	"9" : "rabbit",
-	"12" : "flower"
+	"7" : "rabbit",
+	"11" : "flower"
 }
 
 # the vars pro jellyfish added into the ready function but I made them global
