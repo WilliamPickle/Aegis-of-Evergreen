@@ -1,7 +1,6 @@
-[gd_scene load_steps=77 format=3 uid="uid://cr86muep78d7e"]
+[gd_scene load_steps=64 format=3 uid="uid://cr86muep78d7e"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_4x34n"]
-[ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_jjuf7"]
 [ext_resource type="Texture2D" uid="uid://bwgv14nsu7fie" path="res://assets/sprites/maps/map2/map2_lvl3_background.png" id="3_jjuf7"]
 [ext_resource type="Texture2D" uid="uid://d1rq1k6k6yanj" path="res://assets/sprites/maps/map2/map2_lvl3_river.png" id="4_jjuf7"]
 [ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="5_d8xox"]
@@ -30,91 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="26_41urq"]
 [ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="27_u17kb"]
 [ext_resource type="PackedScene" uid="uid://c4tvpjuo8ae2w" path="res://scenes/Weather/weather_icons_scene.tscn" id="29_vvfo2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
-atlas = ExtResource("2_jjuf7")
-region = Rect2(0, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x2xxo"]
-atlas = ExtResource("2_jjuf7")
-region = Rect2(100, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cbcq"]
-atlas = ExtResource("2_jjuf7")
-region = Rect2(200, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_isj1j"]
-atlas = ExtResource("2_jjuf7")
-region = Rect2(300, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_so66j"]
-atlas = ExtResource("2_jjuf7")
-region = Rect2(400, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tr1x6"]
-atlas = ExtResource("2_jjuf7")
-region = Rect2(500, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d5akn"]
-atlas = ExtResource("2_jjuf7")
-region = Rect2(600, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbtxt"]
-atlas = ExtResource("2_jjuf7")
-region = Rect2(700, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x2fux"]
-atlas = ExtResource("2_jjuf7")
-region = Rect2(800, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s7g0b"]
-atlas = ExtResource("2_jjuf7")
-region = Rect2(900, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmfjm"]
-atlas = ExtResource("2_jjuf7")
-region = Rect2(1000, 0, 100, 50)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6cw5h"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1s4pk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x2xxo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2cbcq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_isj1j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_so66j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tr1x6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d5akn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbtxt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x2fux")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s7g0b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mmfjm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vbg1g"]
 atlas = ExtResource("4_jjuf7")
@@ -339,12 +253,6 @@ script = ExtResource("1_4x34n")
 offset_u = 100.0
 
 [node name="MapAssets" type="Node2D" parent="."]
-
-[node name="fish" type="AnimatedSprite2D" parent="MapAssets"]
-z_index = 1
-position = Vector2(39, -81)
-sprite_frames = SubResource("SpriteFrames_6cw5h")
-autoplay = "default"
 
 [node name="map" type="Sprite2D" parent="MapAssets"]
 position = Vector2(0, -50)

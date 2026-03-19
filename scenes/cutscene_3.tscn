@@ -1,11 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://bj4vjoul3qe3e"]
+[gd_scene load_steps=27 format=3 uid="uid://bj4vjoul3qe3e"]
 
 [ext_resource type="Script" uid="uid://dvv5nga2g61av" path="res://scripts/cutscene_script.gd" id="1_f8wx0"]
 [ext_resource type="Texture2D" uid="uid://cc7b3cghj4nnc" path="res://assets/sprites/icons and buttons/scroll_bar_grabber.png" id="2_h5fr8"]
 [ext_resource type="Texture2D" uid="uid://c7ah2pf135fa2" path="res://assets/sprites/cutscenes/level_3/cutscene3_panel1.png" id="3_35f0l"]
 [ext_resource type="Texture2D" uid="uid://evnqvl0impje" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style1.png" id="4_35f0l"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="5_i2h6b"]
-[ext_resource type="Texture2D" uid="uid://cf4adg40rlft1" path="res://assets/sprites/cutscenes/level_2/Map 2 SmokeTransition.png" id="6_hrnv1"]
 [ext_resource type="Texture2D" uid="uid://byrv8q3behc17" path="res://assets/sprites/cutscenes/level_3/cutscene3_panel2.png" id="6_i2h6b"]
 [ext_resource type="Texture2D" uid="uid://dcgt2kg0acxc" path="res://assets/sprites/cutscenes/level_3/cutscene3_panel3.png" id="7_hrnv1"]
 [ext_resource type="Texture2D" uid="uid://bmrs6gq10shxq" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style2.png" id="8_1b3ru"]
@@ -169,19 +168,6 @@ mouse_filter = 2
 texture = ExtResource("7_hrnv1")
 
 [node name="ComicEdge5" type="TextureRect" parent="ScrollContainer2/VScrollBar/dead trees"]
-layout_mode = 0
-offset_left = -1.52588e-05
-offset_right = -1.52588e-05
-scale = Vector2(1, 1.043)
-mouse_filter = 2
-texture = ExtResource("4_35f0l")
-
-[node name="river" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("6_hrnv1")
-
-[node name="ComicEdge5" type="TextureRect" parent="ScrollContainer2/VScrollBar/river"]
 layout_mode = 0
 offset_left = -1.52588e-05
 offset_right = -1.52588e-05
