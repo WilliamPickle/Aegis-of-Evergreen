@@ -77,29 +77,32 @@ func _on_start_lvl9() -> void:
 	
 	# wave 5
 	start_wave_timer(3600)
+	
+	WeatherController.spawn_wind(30, 0.15, -0.25, -1, weather_node, true, Vector2(-320, -280), Vector2(420, 180))
 	send_enemy(snail, 5, 5, path3)
 	send_enemy(spore_crab, 8, 2, path2, -0.5)
-	send_enemy(mushroom, 30, 0.5, path2, -0.5)
+	send_enemy(cow, 10, 1, path_2d, -0.5)
 	await send_enemy(armor_mushroom, 30, 0.5, path2, -0.5)
-	await delay(5)
 	await send_enemy(beetle, 5, 1, path3, -0.5)
 	await send_enemy(tree_cutter, 5, 1, path4)
 	await send_enemy(excavator, 5, 0.5, path4)
 	await delay(5)
+	await send_enemy(atlas, 1, 2, path4)
 	await send_enemy(beetle, 8, 1, path3)
 	send_enemy(tree_cutter, 8, 1, path4)
 	send_enemy(spore, 10, 1, path2)
-	await send_enemy(atlas, 1, 2, path4)
+	#await send_enemy(atlas, 1, 2, path4)
 	await delay(7)
+	WeatherController.spawn_acid_rain(60, -1, weather_node, 1.75)
 	await send_enemy(atlas2, 1, 1, path3)
 	await delay(5)
+	send_enemy(spore, 10, 2, path2, -0.5)
 	send_enemy(excavator, 10, 0.75, path4, -0.5)
 	send_enemy(tree_cutter, 20, 1, path3)
 	await delay(5)
 	send_enemy(excavator, 10, 0.75, path4, -0.5)
 	send_enemy(tree_cutter, 20, 1, path3)
 	await delay(15)
-	WeatherController.spawn_acid_rain(60, -1, weather_node, 1.75)
 
 
 	
