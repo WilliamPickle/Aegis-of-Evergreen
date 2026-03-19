@@ -89,7 +89,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Cutscene" type="Node2D" node_paths=PackedStringArray("skip_button")]
 script = ExtResource("1_akybv")
-skip_button = NodePath("ScrollContainer2/VScrollBar/ComicEdge7/GojoRef/Skip2")
+skip_button = NodePath("ScrollContainer2/VScrollBar/druid/GojoRef/Skip2")
 metadata/_custom_type_script = "uid://dvv5nga2g61av"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -123,17 +123,17 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 mouse_filter = 2
 
-[node name="Space_cutscene" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
+[node name="forest" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_7ef4q")
 
-[node name="ComicEdge" type="TextureRect" parent="ScrollContainer2/VScrollBar/Space_cutscene"]
+[node name="ComicEdge" type="TextureRect" parent="ScrollContainer2/VScrollBar/forest"]
 layout_mode = 0
 mouse_filter = 2
 texture = ExtResource("3_ltjgq")
 
-[node name="Label" type="Label" parent="ScrollContainer2/VScrollBar/Space_cutscene"]
+[node name="Label" type="Label" parent="ScrollContainer2/VScrollBar/forest"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 7.0
@@ -142,18 +142,18 @@ offset_bottom = 30.0
 text = "<< Scroll Down >>"
 label_settings = SubResource("LabelSettings_pxjt5")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer2/VScrollBar/Space_cutscene/Label"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer2/VScrollBar/forest/Label"]
 libraries = {
 &"": SubResource("AnimationLibrary_simcy")
 }
 autoplay = "Blinking_Text"
 
-[node name="Stand_off" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
+[node name="forest smoke" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("5_ijsax")
 
-[node name="ComicEdge5" type="TextureRect" parent="ScrollContainer2/VScrollBar/Stand_off"]
+[node name="ComicEdge5" type="TextureRect" parent="ScrollContainer2/VScrollBar/forest smoke"]
 layout_mode = 0
 offset_left = -1.52588e-05
 offset_right = -1.52588e-05
@@ -161,12 +161,12 @@ scale = Vector2(1, 1.043)
 mouse_filter = 2
 texture = ExtResource("3_ltjgq")
 
-[node name="FaceOff" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
+[node name="druid backshot" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("6_y4x67")
 
-[node name="ComicEdge6" type="TextureRect" parent="ScrollContainer2/VScrollBar/FaceOff"]
+[node name="ComicEdge6" type="TextureRect" parent="ScrollContainer2/VScrollBar/druid backshot"]
 layout_mode = 0
 offset_left = -1.52588e-05
 offset_top = -0.53894
@@ -176,11 +176,11 @@ scale = Vector2(1, 1.038)
 mouse_filter = 2
 texture = ExtResource("6_3jdqd")
 
-[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
+[node name="druid" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
 layout_mode = 2
 texture = ExtResource("3_ltjgq")
 
-[node name="GojoRef" type="TextureRect" parent="ScrollContainer2/VScrollBar/ComicEdge7"]
+[node name="GojoRef" type="TextureRect" parent="ScrollContainer2/VScrollBar/druid"]
 layout_mode = 2
 offset_top = -1.0
 offset_right = 320.0
@@ -188,12 +188,12 @@ offset_bottom = 179.0
 mouse_filter = 2
 texture = ExtResource("8_k3mwq")
 
-[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer2/VScrollBar/ComicEdge7/GojoRef"]
+[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer2/VScrollBar/druid/GojoRef"]
 layout_mode = 0
 mouse_filter = 2
 texture = ExtResource("3_ltjgq")
 
-[node name="Skip2" type="Button" parent="ScrollContainer2/VScrollBar/ComicEdge7/GojoRef"]
+[node name="Skip2" type="Button" parent="ScrollContainer2/VScrollBar/druid/GojoRef"]
 modulate = Color(0, 0, 0, 1)
 z_index = 10
 layout_mode = 0
@@ -216,7 +216,7 @@ has_text = true
 new_scene = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
 
-[node name="Text" type="Label" parent="ScrollContainer2/VScrollBar/ComicEdge7/GojoRef/Skip2"]
+[node name="Text" type="Label" parent="ScrollContainer2/VScrollBar/druid/GojoRef/Skip2"]
 visible = false
 layout_mode = 1
 anchors_preset = 5

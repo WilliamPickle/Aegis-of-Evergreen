@@ -1,8 +1,8 @@
 [gd_scene load_steps=53 format=3 uid="uid://c3qmdf6la70sj"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_05tya"]
-[ext_resource type="Texture2D" uid="uid://cth5a1x7wsiy5" path="res://assets/sprites/maps/map3/Map 3 Lvl 1_factory.png" id="3_05tya"]
 [ext_resource type="Texture2D" uid="uid://dg1hj731mvbie" path="res://assets/sprites/maps/map3/Map 3 Lvl 1.png" id="3_j1nfb"]
+[ext_resource type="Texture2D" uid="uid://cn7skyq4faml2" path="res://assets/sprites/maps/map2/map2_lvl1_factory.png" id="3_q4sps"]
 [ext_resource type="Texture2D" uid="uid://bprjqb4twu8ed" path="res://assets/sprites/maps/map3/Map 3 Lvl 1_bridge.png" id="4_05tya"]
 [ext_resource type="Texture2D" uid="uid://c32hbgxmjl2qy" path="res://assets/sprites/maps/map2/map2_lvl1_trees.png" id="5_gdus4"]
 [ext_resource type="Script" uid="uid://c5q11bw8sgaqv" path="res://scripts/Enemies/map3_lvl_1_wave_spawner.gd" id="6_bp5ng"]
@@ -30,92 +30,92 @@
 [ext_resource type="PackedScene" uid="uid://b7t00txf1d4ho" path="res://scenes/UI/guidebook_popup.tscn" id="27_e3wfo"]
 [ext_resource type="PackedScene" uid="uid://c4tvpjuo8ae2w" path="res://scenes/Weather/weather_icons_scene.tscn" id="28_680ga"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q4sps"]
-atlas = ExtResource("3_05tya")
-region = Rect2(0, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsh1p"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(0, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j1nfb"]
-atlas = ExtResource("3_05tya")
-region = Rect2(740, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtn5q"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(640, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5qcj5"]
-atlas = ExtResource("3_05tya")
-region = Rect2(1480, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_52m6q"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(1280, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gdus4"]
-atlas = ExtResource("3_05tya")
-region = Rect2(2220, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf7ay"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(1920, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_quuat"]
-atlas = ExtResource("3_05tya")
-region = Rect2(2960, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxgh2"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(2560, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kefbw"]
-atlas = ExtResource("3_05tya")
-region = Rect2(3700, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4hnu"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(3200, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jiqhj"]
-atlas = ExtResource("3_05tya")
-region = Rect2(4440, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkg6y"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(3840, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x1ja3"]
-atlas = ExtResource("3_05tya")
-region = Rect2(5180, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xxa7"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(4480, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o1cod"]
-atlas = ExtResource("3_05tya")
-region = Rect2(5920, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_224rf"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(5120, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qkdcu"]
-atlas = ExtResource("3_05tya")
-region = Rect2(6660, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeh0u"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(5760, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_creq1"]
-atlas = ExtResource("3_05tya")
-region = Rect2(7400, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_guc7n"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(6400, 0, 640, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_15vd6"]
-atlas = ExtResource("3_05tya")
-region = Rect2(8140, 0, 740, 460)
+[sub_resource type="AtlasTexture" id="AtlasTexture_x43ut"]
+atlas = ExtResource("3_q4sps")
+region = Rect2(7040, 0, 640, 460)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ek2gu"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1nfb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q4sps")
+"texture": SubResource("AtlasTexture_gsh1p")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j1nfb")
+"texture": SubResource("AtlasTexture_vtn5q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5qcj5")
+"texture": SubResource("AtlasTexture_52m6q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gdus4")
+"texture": SubResource("AtlasTexture_yf7ay")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_quuat")
+"texture": SubResource("AtlasTexture_mxgh2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kefbw")
+"texture": SubResource("AtlasTexture_o4hnu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jiqhj")
+"texture": SubResource("AtlasTexture_vkg6y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x1ja3")
+"texture": SubResource("AtlasTexture_3xxa7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o1cod")
+"texture": SubResource("AtlasTexture_224rf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qkdcu")
+"texture": SubResource("AtlasTexture_xeh0u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_creq1")
+"texture": SubResource("AtlasTexture_guc7n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_15vd6")
+"texture": SubResource("AtlasTexture_x43ut")
 }],
 "loop": true,
 "name": &"default",
@@ -179,11 +179,10 @@ offset_u = 100.0
 position = Vector2(50, -50)
 texture = ExtResource("3_j1nfb")
 
-[node name="factory" type="AnimatedSprite2D" parent="MapAssets"]
-position = Vector2(50, -50)
-sprite_frames = SubResource("SpriteFrames_ek2gu")
+[node name="factory2" type="AnimatedSprite2D" parent="MapAssets"]
+position = Vector2(0, -50)
+sprite_frames = SubResource("SpriteFrames_j1nfb")
 autoplay = "default"
-frame_progress = 0.805871
 
 [node name="bridge" type="Sprite2D" parent="MapAssets"]
 z_index = 1

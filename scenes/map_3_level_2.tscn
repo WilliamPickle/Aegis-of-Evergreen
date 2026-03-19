@@ -1,11 +1,11 @@
-[gd_scene load_steps=52 format=3 uid="uid://s83ae50vgbkv"]
+[gd_scene load_steps=53 format=3 uid="uid://s83ae50vgbkv"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_700p6"]
-[ext_resource type="Texture2D" uid="uid://dg1hj731mvbie" path="res://assets/sprites/maps/map3/Map 3 Lvl 1.png" id="2_y43th"]
+[ext_resource type="Texture2D" uid="uid://d3u3yjg0wiapy" path="res://assets/sprites/maps/map3/Map 3 Lvl 2.png" id="2_y43th"]
 [ext_resource type="Texture2D" uid="uid://cth5a1x7wsiy5" path="res://assets/sprites/maps/map3/Map 3 Lvl 1_factory.png" id="3_xekca"]
 [ext_resource type="Texture2D" uid="uid://bprjqb4twu8ed" path="res://assets/sprites/maps/map3/Map 3 Lvl 1_bridge.png" id="4_coq7p"]
 [ext_resource type="Texture2D" uid="uid://c32hbgxmjl2qy" path="res://assets/sprites/maps/map2/map2_lvl1_trees.png" id="5_ely2h"]
-[ext_resource type="Texture2D" uid="uid://dtitmkqyr5u5u" path="res://assets/sprites/maps/map3/Map 3 Lvl 1_trees_overlayer.png" id="6_b42ir"]
+[ext_resource type="Texture2D" uid="uid://dqylrv3w6uhip" path="res://assets/sprites/maps/map3/Map 3 Lvl 2_trees_overlayer.png" id="6_xekca"]
 [ext_resource type="Script" uid="uid://tnn5r58xuds3" path="res://scripts/Enemies/map3_lvl_2_wave_spawner.gd" id="7_700p6"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="8_sl6ub"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="9_weuc2"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="16_qkvwl"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="17_7ixvl"]
 [ext_resource type="Texture2D" uid="uid://dos344mf010be" path="res://assets/sprites/tutorial assets/Druid Emotes.png" id="18_2r143"]
+[ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="18_y43th"]
 [ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="19_4eq0t"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="20_2wemr"]
 [ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="21_24xx6"]
@@ -196,7 +197,7 @@ texture = ExtResource("5_ely2h")
 [node name="tree overlayer" type="Sprite2D" parent="MapAssets"]
 z_index = 10
 position = Vector2(50, -50)
-texture = ExtResource("6_b42ir")
+texture = ExtResource("6_xekca")
 
 [node name="EnemyPath1" type="Path2D" parent="." groups=["enemy_path"]]
 y_sort_enabled = true
@@ -388,6 +389,64 @@ offset_right = 940.0
 offset_bottom = 683.0
 mouse_filter = 2
 
+[node name="Label8" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "Goodwork on defeating the queen. I wasn't expecting to see her again, but it's good that you managed to deal with her the second time around."
+label_settings = ExtResource("17_7ixvl")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label8"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("18_y43th")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label8"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("17_7ixvl")
+autowrap_mode = 2
+
+[node name="Label9" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "However, our work isn't done here yet. It seems like the factory has opened it's doors. "
+label_settings = ExtResource("17_7ixvl")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label9"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("18_y43th")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label9"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("17_7ixvl")
+autowrap_mode = 2
+
 [node name="Label1" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
 layout_mode = 0
@@ -395,7 +454,7 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
-text = "cheese"
+text = "Are these the guys that have been cutting down my beatiful forest?"
 label_settings = ExtResource("17_7ixvl")
 autowrap_mode = 2
 
@@ -404,7 +463,7 @@ position = Vector2(776, -32)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("18_2r143")
 region_enabled = true
-region_rect = Rect2(1280, 0, 320, 240)
+region_rect = Rect2(1920, 0, 320, 240)
 
 [node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label1"]
 layout_mode = 0
@@ -414,6 +473,35 @@ offset_right = 78.0
 offset_bottom = -37.0
 scale = Vector2(0.8, 0.8)
 text = "The Druid"
+label_settings = ExtResource("17_7ixvl")
+autowrap_mode = 2
+
+[node name="Label10" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "It would appear so. Still, all we need to do is put an end to their plans and persevere."
+label_settings = ExtResource("17_7ixvl")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label10"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("18_y43th")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label10"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
 label_settings = ExtResource("17_7ixvl")
 autowrap_mode = 2
 
