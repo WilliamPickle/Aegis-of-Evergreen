@@ -1,9 +1,17 @@
 extends Node2D
-signal gameplay_started
+signal map1_started
+signal map2_started
+signal map3_started
 signal intermission_started
 @onready var audio_player: AudioStreamPlayer = $AegisTracks
-const title_song = preload("res://assets/music/Aegis Title Screen.mp3")
-const lvl1_song = preload("res://assets/music/Aegis Level Music 1.mp3")
+const title_song := preload("res://assets/music/Aegis Title Screen.mp3")
+const lvl1_song := preload("res://assets/music/Aegis Level Music 1.mp3")
+const lvl2_song := preload("res://assets/music/Aegis Lvl Two - Decay.mp3")
+const playlist : Array = [
+	lvl1_song,
+	lvl2_song,
+]
+var playlist_index : int = 0
 
 func _ready() -> void:
 	SceneLoader.root = self
@@ -11,16 +19,14 @@ func _ready() -> void:
 	# Since the game starts off with start_menu already loaded we assign it.
 	SceneLoader._current_scenes["start_menu"] = self.get_child(0)
 	SceneLoader.current_main_scene = "start_menu"
-	gameplay_started.connect(play_lvl1_audio)
-	intermission_started.connect(play_title_audio)
-	
-func play_lvl1_audio():
-	audio_player.stream = lvl1_song
-	audio_player.play()
+	#map1_started.connect(play_audio.bind(title_song))
+	map2_started.connect(play_audio.bind(lvl1_song))
+	map3_started.connect(play_audio.bind(lvl2_song))
 	audio_player.finished.connect(replay)
 
-func play_title_audio():
-	audio_player.stream = title_song
+	
+func play_audio(audio):
+	audio_player.stream = audio
 	audio_player.play()
 
 func replay():

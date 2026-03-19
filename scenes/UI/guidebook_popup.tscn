@@ -87,5 +87,5 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_c225a")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_p7cfl")
-volume_db = -5.0
+volume_db = -10.0
 bus = &"sfx"

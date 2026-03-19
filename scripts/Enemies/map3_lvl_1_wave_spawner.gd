@@ -5,9 +5,13 @@ extends WaveSpawner
 @onready var path2: Path2D = $"../EnemyPath2"
 @onready var path3: Path2D = $"../EnemyPath3"
 @onready var path4: Path2D = $"../EnemyPath4"
+static var music_started = false
 
 func _ready() -> void:
 	super._ready()
+	if !music_started and is_instance_valid(SceneLoader.root):
+		music_started = true
+		SceneLoader.root.emit_signal("map3_started")
 	wave_bonus_money = [0, 100, 125, 150, 200]
 	lvl7_dialogue.start_wave.connect(_on_start_lvl7)
 	manual_wave_button.button_down.connect(_on_start_lvl7)

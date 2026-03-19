@@ -4,9 +4,13 @@ extends WaveSpawner
 @onready var manual_wave_button: Button = $"../Start Button/MarginContainer/VBoxContainer/HBoxContainer/StartWave"
 @onready var path2: Path2D = $"../EnemyPath2"
 @onready var temp_screen: UserInterface = $"../TempWinScreen"
+static var music_started = false
 
 func _ready() -> void:
 	super._ready()
+	if !music_started and is_instance_valid(SceneLoader.root):
+		music_started = true
+		SceneLoader.root.emit_signal("map2_started")
 	wave_bonus_money = [0, 75, 100, 100, 125]
 	lvl4_dialogue.start_wave.connect(_on_start_lvl4)
 	manual_wave_button.button_down.connect(_on_start_lvl4)

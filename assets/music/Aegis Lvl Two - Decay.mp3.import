@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdf16chc1tem0"
+path="res://.godot/imported/Aegis Lvl Two - Decay.mp3-fb8fe4833a5ba72af3ce2c3f247506dc.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Aegis Lvl Two - Decay.mp3"
+dest_files=["res://.godot/imported/Aegis Lvl Two - Decay.mp3-fb8fe4833a5ba72af3ce2c3f247506dc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

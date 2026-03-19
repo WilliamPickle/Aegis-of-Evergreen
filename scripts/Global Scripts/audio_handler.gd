@@ -9,7 +9,7 @@ func _ready() -> void:
 	for audio in audio_files_dict:
 		audio_player = AudioStreamPlayer.new()
 		audio_player.stream = audio_files_dict[audio]
-		audio_player.volume_db = -5.0
+		audio_player.volume_db = -10.0
 		audio_player.bus = "sfx"
 		add_child(audio_player)
 		audio_node_dict.set(audio, audio_player)

@@ -12,6 +12,7 @@ script = ExtResource("1_dkv15")
 [node name="AegisTracks" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("3_f3ia2")
+volume_db = -10.0
 autoplay = true
 bus = &"music"
 parameters/looping = true
