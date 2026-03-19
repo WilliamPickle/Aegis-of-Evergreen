@@ -407,7 +407,6 @@ hide_during_pause = true
 
 [node name="ScrollbarUI" parent="." node_paths=PackedStringArray("placement_mask") instance=ExtResource("16_sfsd2")]
 placement_mask = NodePath("../PlacementCollisions")
-card_type = Array[String]([])
 hide_during_pause = true
 
 [node name="Dialogue" type="CanvasLayer" parent="."]

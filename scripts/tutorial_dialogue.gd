@@ -83,6 +83,8 @@ func continue_dialogue():
 		$"../ClickMasks/NotificationGame".visible = false
 		# at this step player can technically cancel placement and 
 		# place chipmunk instead but oh well
+		PlayerStats.cur_money += 250
+		PlayerStats.emit_signal("money_changed")
 		await PlayerStats.money_changed
 	# After Upgrade Menus
 	elif dialogue_index == 11:
@@ -110,8 +112,8 @@ func continue_dialogue():
 		if not ControlHandler.ControlState.VIEWING_TOWER in ControlHandler.current_states:
 			await ControlHandler.tower_clicked_on
 		twr_highlight.visible = false
-		PlayerStats.cur_money += 125
-		PlayerStats.emit_signal("money_changed")
+		#PlayerStats.cur_money += 125
+		#PlayerStats.emit_signal("money_changed")
 		scrollbar.tab_button.disabled = false
 	#After BeforeWave3 dialogue
 	elif dialogue_index == 12:
