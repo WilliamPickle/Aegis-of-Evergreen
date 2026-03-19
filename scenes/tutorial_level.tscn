@@ -1455,6 +1455,7 @@ texture = ExtResource("22_j0wqo")
 expand_mode = 1
 
 [node name="Menus" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -3268,7 +3269,6 @@ expand_mode = 1
 [node name="TutorialSkipPrompt" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 5
-visible = false
 script = ExtResource("31_b2nau")
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 
