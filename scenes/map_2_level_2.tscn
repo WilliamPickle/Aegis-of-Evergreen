@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://ne532rbk5fa7"]
+[gd_scene load_steps=78 format=3 uid="uid://ne532rbk5fa7"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_tmocn"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_fw1i2"]
@@ -21,6 +21,7 @@
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="18_l6vl7"]
 [ext_resource type="Texture2D" uid="uid://dos344mf010be" path="res://assets/sprites/tutorial assets/Druid Emotes.png" id="19_57ral"]
 [ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="20_mhiry"]
+[ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="21_3lsof"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="21_vhk7k"]
 [ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="22_qke5y"]
 [ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="23_fj1jc"]
@@ -550,7 +551,7 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
-text = "cheese"
+text = "These mushrooms and other invaders just keep on coming... "
 label_settings = ExtResource("18_l6vl7")
 autowrap_mode = 2
 
@@ -569,6 +570,63 @@ offset_right = 78.0
 offset_bottom = -37.0
 scale = Vector2(0.8, 0.8)
 text = "The Druid"
+label_settings = ExtResource("18_l6vl7")
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "Even worse, more trees are dying off at a worrysome rate. I even hear loud buzzing noises off in the distance... could someone else also be cutting them down?"
+label_settings = ExtResource("18_l6vl7")
+autowrap_mode = 2
+
+[node name="DruidIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("19_57ral")
+region_enabled = true
+region_rect = Rect2(1600, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label2"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Druid"
+label_settings = ExtResource("18_l6vl7")
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "Though the threats may grow greater, our mission remains the same. Be on the lookout for more dangers. I already see something flying in the winds towards us..."
+label_settings = ExtResource("18_l6vl7")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label5"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("21_3lsof")
+region_enabled = true
+region_rect = Rect2(640, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label5"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
 label_settings = ExtResource("18_l6vl7")
 autowrap_mode = 2
 

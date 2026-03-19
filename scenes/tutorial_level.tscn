@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://d2uqwbxrpnoex"]
+[gd_scene load_steps=74 format=3 uid="uid://d2uqwbxrpnoex"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_r0rxt"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_r3rh7"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dstb2uxfc1hj7" path="res://assets/sprites/tutorial assets/tutorial_panel_outer.png" id="21_r3rh7"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="22_cyy35"]
 [ext_resource type="Texture2D" uid="uid://bwo6c1yueca0v" path="res://assets/sprites/tutorial assets/square_with_hole.png" id="22_j0wqo"]
+[ext_resource type="Texture2D" uid="uid://b8jbkkc6iry0h" path="res://assets/sprites/tutorial assets/tutorial_panel_inner.png" id="23_1npmj"]
 [ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="23_ccthf"]
 [ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="24_2mayw"]
 [ext_resource type="Texture2D" uid="uid://cspxuiahyng26" path="res://assets/sprites/icons and buttons/player_level_bar.png" id="25_imrb0"]
@@ -1454,7 +1455,6 @@ texture = ExtResource("22_j0wqo")
 expand_mode = 1
 
 [node name="Menus" type="Control" parent="Dialogue" node_paths=PackedStringArray("continue_button", "skip_button", "label_container", "timer", "node_to_hide")]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -1688,7 +1688,7 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 678.0
 offset_bottom = 76.0
-text = "Moving on, the controls menu here will show you how to perform certain actions or utilize certain tools, like camera zooming. "
+text = "The controls menu here will show you how to perform certain actions or utilize certain tools. The important ones are camera zooming, camera panning, and placement canceling. "
 label_settings = ExtResource("19_54yye")
 autowrap_mode = 2
 
@@ -1721,9 +1721,9 @@ expand_mode = 1
 [node name="Shadow2" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4/Shadowing"]
 z_index = -1
 layout_mode = 0
-offset_left = -189.0
+offset_left = -217.0
 offset_top = -368.0
-offset_right = 1093.0
+offset_right = 1065.0
 offset_bottom = 162.0
 mouse_filter = 2
 texture = ExtResource("21_r3rh7")
@@ -1759,6 +1759,111 @@ offset_bottom = -368.0
 texture = ExtResource("22_j0wqo")
 expand_mode = 1
 
+[node name="Highlight3" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4"]
+modulate = Color(0.678431, 0.933333, 0.760784, 0.396078)
+offset_left = 385.0
+offset_top = 18.0
+offset_right = 518.0
+offset_bottom = 35.0
+texture = ExtResource("23_1npmj")
+expand_mode = 1
+
+[node name="Highlight4" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4"]
+modulate = Color(0.678431, 0.933333, 0.760784, 0.396078)
+offset_left = -3.0
+offset_top = 38.0
+offset_right = 64.0
+offset_bottom = 55.0
+texture = ExtResource("23_1npmj")
+expand_mode = 1
+
+[node name="Highlight5" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4"]
+modulate = Color(0.678431, 0.933333, 0.760784, 0.396078)
+offset_left = 110.0
+offset_top = 38.0
+offset_right = 281.0
+offset_bottom = 55.0
+texture = ExtResource("23_1npmj")
+expand_mode = 1
+
+[node name="Label7" type="Label" parent="Dialogue/Menus/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 678.0
+offset_bottom = 76.0
+text = "I highly recommend you check out this menu after this. "
+label_settings = ExtResource("19_54yye")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="Dialogue/Menus/DialogueLabels/Label7"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("20_5hj4c")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Shadowing" type="Control" parent="Dialogue/Menus/DialogueLabels/Label7"]
+modulate = Color(0, 0, 0, 0.815686)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 244.0
+offset_right = 25.0
+offset_bottom = 284.0
+
+[node name="Shadow" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label7/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -997.0
+offset_right = 1093.0
+offset_bottom = -467.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label7/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -217.0
+offset_top = -368.0
+offset_right = 1065.0
+offset_bottom = 162.0
+mouse_filter = 2
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label7/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = -189.0
+offset_top = -467.0
+offset_right = 445.0
+offset_bottom = -368.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow5" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label7/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 545.0
+offset_top = -467.0
+offset_right = 1274.0
+offset_bottom = -368.0
+texture = ExtResource("21_r3rh7")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label7/Shadowing"]
+z_index = -1
+layout_mode = 0
+offset_left = 445.0
+offset_top = -467.0
+offset_right = 545.0
+offset_bottom = -368.0
+texture = ExtResource("22_j0wqo")
+expand_mode = 1
+
 [node name="Label5" type="Label" parent="Dialogue/Menus/DialogueLabels"]
 visible = false
 layout_mode = 0
@@ -1766,7 +1871,7 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 678.0
 offset_bottom = 76.0
-text = "And finally, this menu is a condensed version of this tutorial, put into a scrapbook style format. "
+text = "Now, finally, this menu is a condensed version of this tutorial, put into a scrapbook style format. "
 label_settings = ExtResource("19_54yye")
 autowrap_mode = 2
 
@@ -1844,7 +1949,7 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 678.0
 offset_bottom = 76.0
-text = "Feel free to explore these menus or you may continue the tutorial by unpausing the game."
+text = "You may explore these menus or continue the tutorial by unpausing the game."
 label_settings = ExtResource("19_54yye")
 autowrap_mode = 2
 
@@ -3163,6 +3268,7 @@ expand_mode = 1
 [node name="TutorialSkipPrompt" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 5
+visible = false
 script = ExtResource("31_b2nau")
 metadata/_custom_type_script = "uid://b2ekeiy2hrsh5"
 

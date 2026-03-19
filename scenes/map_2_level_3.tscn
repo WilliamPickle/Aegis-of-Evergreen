@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cr86muep78d7e"]
+[gd_scene load_steps=78 format=3 uid="uid://cr86muep78d7e"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_4x34n"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_jjuf7"]
@@ -21,6 +21,7 @@
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="18_mhppd"]
 [ext_resource type="Texture2D" uid="uid://dos344mf010be" path="res://assets/sprites/tutorial assets/Druid Emotes.png" id="19_6c1ip"]
 [ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="20_ba1dw"]
+[ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="21_vbg1g"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="21_xovgb"]
 [ext_resource type="Texture2D" uid="uid://b14ik2dla7ty2" path="res://assets/sprites/icons and buttons/player_level_bar_back.png" id="22_kaikn"]
 [ext_resource type="Script" uid="uid://dygmcyvuf3t7e" path="res://scripts/UI/player_lvl_indicator.gd" id="23_jnkl2"]
@@ -548,11 +549,12 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
-text = "cheese"
+text = "*Stomp*   - - -   *Stomp*   - - -   *Thud* "
 label_settings = ExtResource("18_mhppd")
 autowrap_mode = 2
 
 [node name="DruidIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label1"]
+visible = false
 position = Vector2(776, -32)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("19_6c1ip")
@@ -566,7 +568,92 @@ offset_top = -53.0
 offset_right = 78.0
 offset_bottom = -37.0
 scale = Vector2(0.8, 0.8)
+text = "???"
+label_settings = ExtResource("18_mhppd")
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "The heart of the forest is about to retaliate it seems... it's truly saddening how it's come to this point."
+label_settings = ExtResource("18_mhppd")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label5"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("21_vbg1g")
+region_enabled = true
+region_rect = Rect2(960, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label5"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("18_mhppd")
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "I miss the days where the skies were bright, the air was clean, and the rivers were clear and pure."
+label_settings = ExtResource("18_mhppd")
+autowrap_mode = 2
+
+[node name="DruidIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label2"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("19_6c1ip")
+region_enabled = true
+region_rect = Rect2(640, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label2"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
 text = "The Druid"
+label_settings = ExtResource("18_mhppd")
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "As do I. We cannot afford to back down here, volunteer. Our allies will remain by your side through it all."
+label_settings = ExtResource("18_mhppd")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label6"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("21_vbg1g")
+region_enabled = true
+region_rect = Rect2(1280, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label6"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
 label_settings = ExtResource("18_mhppd")
 autowrap_mode = 2
 
