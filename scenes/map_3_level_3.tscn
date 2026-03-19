@@ -1,11 +1,11 @@
-[gd_scene load_steps=52 format=3 uid="uid://884txxxsflp2"]
+[gd_scene load_steps=53 format=3 uid="uid://884txxxsflp2"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_b5f28"]
-[ext_resource type="Texture2D" uid="uid://dg1hj731mvbie" path="res://assets/sprites/maps/map3/Map 3 Lvl 1.png" id="2_3jalx"]
-[ext_resource type="Texture2D" uid="uid://cth5a1x7wsiy5" path="res://assets/sprites/maps/map3/Map 3 Lvl 1_factory.png" id="3_ia0sw"]
+[ext_resource type="Texture2D" uid="uid://d5wr1hwk4fmf" path="res://assets/sprites/maps/map3/Map 3 Lvl 3.png" id="2_3jalx"]
+[ext_resource type="Texture2D" uid="uid://bg2dmubp4lrhq" path="res://assets/sprites/maps/map3/Map 3 Lvl 3_factory.png" id="3_ia0sw"]
 [ext_resource type="Texture2D" uid="uid://bprjqb4twu8ed" path="res://assets/sprites/maps/map3/Map 3 Lvl 1_bridge.png" id="4_mx53o"]
 [ext_resource type="Texture2D" uid="uid://c32hbgxmjl2qy" path="res://assets/sprites/maps/map2/map2_lvl1_trees.png" id="5_5gtwm"]
-[ext_resource type="Texture2D" uid="uid://dtitmkqyr5u5u" path="res://assets/sprites/maps/map3/Map 3 Lvl 1_trees_overlayer.png" id="6_cewcj"]
+[ext_resource type="Texture2D" uid="uid://bbd1im3kwjm2v" path="res://assets/sprites/maps/map3/Map 3 Lvl 3_trees_overlayer.png" id="6_mx53o"]
 [ext_resource type="Script" uid="uid://dqgu48by2kqui" path="res://scripts/Enemies/map3_lvl_3_wave_spawner.gd" id="7_6ncmj"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="8_hamaq"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="9_3adny"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://ie1q8lhylawu" path="res://scripts/UI/dialogue_script.gd" id="15_7athb"]
 [ext_resource type="Texture2D" uid="uid://bhx21ykgukmgn" path="res://assets/sprites/icons and buttons/dialogue_box.png" id="16_fk10w"]
 [ext_resource type="LabelSettings" uid="uid://cqhfo5t22fm0c" path="res://assets/fonts/dialogue_box_basic.tres" id="17_csfhs"]
+[ext_resource type="Texture2D" uid="uid://tmx8178qtlci" path="res://assets/sprites/tutorial assets/Park Ranger Emotes 2.png" id="18_3jalx"]
 [ext_resource type="Texture2D" uid="uid://dos344mf010be" path="res://assets/sprites/tutorial assets/Druid Emotes.png" id="18_5nms8"]
 [ext_resource type="Script" uid="uid://dxbpf5e0yvx1p" path="res://scripts/base_class.gd" id="19_3qixc"]
 [ext_resource type="Texture2D" uid="uid://ct05p5x3kmh78" path="res://assets/sprites/icons and buttons/life_icon.png" id="20_eu64r"]
@@ -29,92 +30,92 @@
 [ext_resource type="PackedScene" uid="uid://b7t00txf1d4ho" path="res://scenes/UI/guidebook_popup.tscn" id="27_4x6jk"]
 [ext_resource type="PackedScene" uid="uid://c4tvpjuo8ae2w" path="res://scenes/Weather/weather_icons_scene.tscn" id="28_u5j2w"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q4sps"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gtwm"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(0, 0, 740, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j1nfb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cewcj"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(740, 0, 740, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5qcj5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ncmj"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(1480, 0, 740, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gdus4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hamaq"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(2220, 0, 740, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_quuat"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3adny"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(2960, 0, 740, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kefbw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_me4yh"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(3700, 0, 740, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jiqhj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmwar"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(4440, 0, 740, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x1ja3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi2am"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(5180, 0, 740, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o1cod"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d4cj"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(5920, 0, 740, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qkdcu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwskg"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(6660, 0, 740, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_creq1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7athb"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(7400, 0, 740, 460)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_15vd6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk10w"]
 atlas = ExtResource("3_ia0sw")
 region = Rect2(8140, 0, 740, 460)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_aqupp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_csfhs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q4sps")
+"texture": SubResource("AtlasTexture_5gtwm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j1nfb")
+"texture": SubResource("AtlasTexture_cewcj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5qcj5")
+"texture": SubResource("AtlasTexture_6ncmj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gdus4")
+"texture": SubResource("AtlasTexture_hamaq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_quuat")
+"texture": SubResource("AtlasTexture_3adny")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kefbw")
+"texture": SubResource("AtlasTexture_me4yh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jiqhj")
+"texture": SubResource("AtlasTexture_mmwar")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x1ja3")
+"texture": SubResource("AtlasTexture_gi2am")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o1cod")
+"texture": SubResource("AtlasTexture_7d4cj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qkdcu")
+"texture": SubResource("AtlasTexture_iwskg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_creq1")
+"texture": SubResource("AtlasTexture_7athb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_15vd6")
+"texture": SubResource("AtlasTexture_fk10w")
 }],
 "loop": true,
 "name": &"default",
@@ -180,8 +181,9 @@ texture = ExtResource("2_3jalx")
 
 [node name="factory" type="AnimatedSprite2D" parent="MapAssets"]
 position = Vector2(50, -50)
-sprite_frames = SubResource("SpriteFrames_aqupp")
+sprite_frames = SubResource("SpriteFrames_csfhs")
 autoplay = "default"
+frame_progress = 0.791854
 
 [node name="bridge" type="Sprite2D" parent="MapAssets"]
 z_index = 1
@@ -196,7 +198,7 @@ texture = ExtResource("5_5gtwm")
 [node name="tree overlayer" type="Sprite2D" parent="MapAssets"]
 z_index = 10
 position = Vector2(50, -50)
-texture = ExtResource("6_cewcj")
+texture = ExtResource("6_mx53o")
 
 [node name="EnemyPath1" type="Path2D" parent="." groups=["enemy_path"]]
 y_sort_enabled = true
@@ -388,6 +390,64 @@ offset_right = 940.0
 offset_bottom = 683.0
 mouse_filter = 2
 
+[node name="Label10" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "After facing countless more enemies, faces both old and new, I can sense that the end of the fight is drawing near."
+label_settings = ExtResource("17_csfhs")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label10"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("18_3jalx")
+region_enabled = true
+region_rect = Rect2(320, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label10"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("17_csfhs")
+autowrap_mode = 2
+
+[node name="Label11" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "I trust that no matter what kind of harm comes towards the forest, you will stay firmly planted and drive it away, as you always have."
+label_settings = ExtResource("17_csfhs")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label11"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("18_3jalx")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label11"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
+label_settings = ExtResource("17_csfhs")
+autowrap_mode = 2
+
 [node name="Label1" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
 layout_mode = 0
@@ -395,7 +455,7 @@ offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
 offset_bottom = 76.0
-text = "cheese"
+text = "Protect the forest, and avenge the trees which have fallen..."
 label_settings = ExtResource("17_csfhs")
 autowrap_mode = 2
 
@@ -414,6 +474,35 @@ offset_right = 78.0
 offset_bottom = -37.0
 scale = Vector2(0.8, 0.8)
 text = "The Druid"
+label_settings = ExtResource("17_csfhs")
+autowrap_mode = 2
+
+[node name="Label12" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "For the last time, goodluck volunteer. May we meet at the end of the invasion and be faced with an evergreen forest once again. "
+label_settings = ExtResource("17_csfhs")
+autowrap_mode = 2
+
+[node name="RangerIcon" type="Sprite2D" parent="DialogueUI/DialogueBox/DialogueLabels/Label12"]
+position = Vector2(776, -32)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("18_3jalx")
+region_enabled = true
+region_rect = Rect2(1600, 0, 320, 240)
+
+[node name="Speaker" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels/Label12"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -53.0
+offset_right = 78.0
+offset_bottom = -37.0
+scale = Vector2(0.8, 0.8)
+text = "The Ranger"
 label_settings = ExtResource("17_csfhs")
 autowrap_mode = 2
 

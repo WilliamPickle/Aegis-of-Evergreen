@@ -395,8 +395,8 @@ offset_top = 393.0
 offset_right = 1288.0
 offset_bottom = 447.0
 scale = Vector2(0.8, 0.8)
-text = ">> Improved attack speed
->> Improved range"
+text = ">> Improved vine duration and durability
+>> Vines gain damage over time effect"
 label_settings = ExtResource("4_7wnn0")
 autowrap_mode = 3
 
@@ -408,9 +408,8 @@ offset_top = 393.0
 offset_right = 1283.0
 offset_bottom = 447.0
 scale = Vector2(0.8, 0.8)
-text = ">> Greatly Improved attack speed
->> Improved range
->> Decreased damage"
+text = ">> Improved vine duration and durability
+>> Improved DOT damage"
 label_settings = ExtResource("4_7wnn0")
 autowrap_mode = 3
 
