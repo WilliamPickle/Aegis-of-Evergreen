@@ -1,7 +1,7 @@
 extends Control
 const MUSIC_IDX : int = 2
 const SFX_IDX : int = 1
-const MAX_DB : float = -10.0
+const MAX_DB : float = 0.0
 const MIN_DB : float = -30.0
 @export var music_volume : HSlider
 @export var SFX_volume : HSlider

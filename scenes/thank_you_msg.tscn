@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://ptq68fxyoroc"]
+
+[ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_pinaq"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="2_6vqyi"]
+[ext_resource type="Texture2D" uid="uid://n0mqk2qgygyo" path="res://assets/sprites/cutscenes/ending/thank_you_bg.png" id="3_6vqyi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b5ix8"]
+font = ExtResource("2_6vqyi")
+font_size = 40
+outline_size = 10
+outline_color = Color(0.147979, 0.451914, 0.382306, 1)
+
+[sub_resource type="Animation" id="Animation_6rd62"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_w1jx5"]
+resource_name = "thank_you_animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9, 1.05, 1.2, 1.5, 1.6, 2, 2.1, 2.2, 2.3, 2.6, 2.7, 2.9, 3, 3.4, 3.55, 3.7, 3.8, 4.2, 4.3, 4.4, 4.55, 4.6, 4.65, 4.7, 4.85),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "T", "Th", "Tha", "Than", "Thank", "Thank ", "Thank Y", "Thank Yo", "Thank Yoo", "Thank Yooo", "Thank Yoo", "Thank Yo", "Thank You", "Thank You ", "Thank You F", "Thank You Fo", "Thank You For", "Thank You For ", "Thank You For P", "Thank You For Pl", "Thank You For Pla", "Thank You For Play", "Thank You For Playi", "Thank You For Playin", "Thank You For Playing", "Thank You For Playing!"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lnarf"]
+_data = {
+&"RESET": SubResource("Animation_6rd62"),
+&"thank_you_animation": SubResource("Animation_w1jx5")
+}
+
+[node name="ThankYouMsg" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("1_pinaq")
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+label_settings = SubResource("LabelSettings_b5ix8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lnarf")
+}
+autoplay = "thank_you_animation"
+
+[node name="Background" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="panel3" type="TextureRect" parent="Background"]
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+mouse_filter = 2
+texture = ExtResource("3_6vqyi")

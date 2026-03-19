@@ -1,0 +1,240 @@
+[gd_scene load_steps=26 format=3 uid="uid://c3ddgi5req8uu"]
+
+[ext_resource type="Script" uid="uid://dvv5nga2g61av" path="res://scripts/cutscene_script.gd" id="1_d743h"]
+[ext_resource type="Texture2D" uid="uid://cc7b3cghj4nnc" path="res://assets/sprites/icons and buttons/scroll_bar_grabber.png" id="2_58dvo"]
+[ext_resource type="Texture2D" uid="uid://ph44rmbachku" path="res://assets/sprites/cutscenes/ending/ending_panel1.png" id="3_esi2o"]
+[ext_resource type="Texture2D" uid="uid://evnqvl0impje" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style1.png" id="4_7fqb4"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="5_k5cio"]
+[ext_resource type="Texture2D" uid="uid://cli1op6tgtkpk" path="res://assets/sprites/cutscenes/ending/ending_panel2.png" id="6_pfhin"]
+[ext_resource type="Texture2D" uid="uid://cjpw85e4x07kg" path="res://assets/sprites/cutscenes/ending/ending_panel3.png" id="7_d743h"]
+[ext_resource type="Texture2D" uid="uid://b533t273nmvxc" path="res://assets/sprites/cutscenes/ending/ending_panel4.png" id="9_58dvo"]
+[ext_resource type="Texture2D" uid="uid://bmrs6gq10shxq" path="res://assets/sprites/cutscenes/level_1/Comic_Panel_Edge_Style2.png" id="10_7jmku"]
+[ext_resource type="Texture2D" uid="uid://cr58fh4ynwlpq" path="res://assets/sprites/icons and buttons/skip_button_highlighted.png" id="12_6a5qa"]
+[ext_resource type="Texture2D" uid="uid://mcpammp3xs2h" path="res://assets/sprites/icons and buttons/skip_button.png" id="13_bsnrd"]
+[ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="14_t4p8t"]
+[ext_resource type="Texture2D" uid="uid://dnlnhtjtgm37a" path="res://assets/sprites/cutscenes/level_1/White_background.png" id="15_tjr6q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud2vv"]
+texture = ExtResource("2_58dvo")
+region_rect = Rect2(628, 13, 2, 2)
+
+[sub_resource type="Theme" id="Theme_dj1k4"]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_ud2vv")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_ud2vv")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_ud2vv")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_ud2vv")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mnioy"]
+font = ExtResource("5_k5cio")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_8ubkd"]
+resource_name = "Blinking_Text"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ud2vv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_simcy"]
+_data = {
+&"Blinking_Text": SubResource("Animation_8ubkd"),
+&"RESET": SubResource("Animation_ud2vv")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1x36h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oaxyj"]
+texture = ExtResource("12_6a5qa")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1mo8t"]
+texture = ExtResource("12_6a5qa")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4e1y8"]
+texture = ExtResource("12_6a5qa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70nyp"]
+texture = ExtResource("13_bsnrd")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4uf4q"]
+font_size = 8
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="cutscene_4" type="Node2D" node_paths=PackedStringArray("skip_button")]
+script = ExtResource("1_d743h")
+skip_button = NodePath("ScrollContainer2/VScrollBar/panel4/GojoRef/Skip2")
+metadata/_custom_type_script = "uid://dvv5nga2g61av"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.9, 4)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(320, 180)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -164.0
+offset_top = -90.0
+offset_right = 164.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_dj1k4")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VScrollBar" type="VBoxContainer" parent="ScrollContainer2"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+mouse_filter = 2
+
+[node name="panel1" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_esi2o")
+
+[node name="ComicEdge" type="TextureRect" parent="ScrollContainer2/VScrollBar/panel1"]
+layout_mode = 0
+mouse_filter = 2
+texture = ExtResource("4_7fqb4")
+
+[node name="Label" type="Label" parent="ScrollContainer2/VScrollBar/panel1"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 104.0
+offset_bottom = 30.0
+text = "<< Scroll Down >>"
+label_settings = SubResource("LabelSettings_mnioy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer2/VScrollBar/panel1/Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_simcy")
+}
+autoplay = "Blinking_Text"
+
+[node name="panel2" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("6_pfhin")
+
+[node name="ComicEdge5" type="TextureRect" parent="ScrollContainer2/VScrollBar/panel2"]
+layout_mode = 0
+offset_left = -1.52588e-05
+offset_right = -1.52588e-05
+scale = Vector2(1, 1.043)
+mouse_filter = 2
+texture = ExtResource("4_7fqb4")
+
+[node name="panel3" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("7_d743h")
+
+[node name="ComicEdge6" type="TextureRect" parent="ScrollContainer2/VScrollBar/panel3"]
+layout_mode = 0
+offset_left = -1.52588e-05
+offset_top = -0.53894
+offset_right = -1.52588e-05
+offset_bottom = -0.53894
+scale = Vector2(1, 1.038)
+mouse_filter = 2
+texture = ExtResource("10_7jmku")
+
+[node name="panel4" type="TextureRect" parent="ScrollContainer2/VScrollBar"]
+layout_mode = 2
+texture = ExtResource("4_7fqb4")
+
+[node name="GojoRef" type="TextureRect" parent="ScrollContainer2/VScrollBar/panel4"]
+layout_mode = 2
+offset_top = -1.0
+offset_right = 320.0
+offset_bottom = 179.0
+mouse_filter = 2
+texture = ExtResource("9_58dvo")
+
+[node name="ComicEdge7" type="TextureRect" parent="ScrollContainer2/VScrollBar/panel4/GojoRef"]
+layout_mode = 0
+mouse_filter = 2
+texture = ExtResource("4_7fqb4")
+
+[node name="Skip2" type="Button" parent="ScrollContainer2/VScrollBar/panel4/GojoRef"]
+modulate = Color(0, 0, 0, 1)
+z_index = 10
+layout_mode = 0
+offset_left = 295.0
+offset_top = 155.0
+offset_right = 318.0
+offset_bottom = 178.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1x36h")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oaxyj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1mo8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4e1y8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oaxyj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_70nyp")
+disabled = true
+script = ExtResource("14_t4p8t")
+file_path = "res://scenes/thank_you_msg.tscn"
+has_text = true
+new_scene = true
+metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="Text" type="Label" parent="ScrollContainer2/VScrollBar/panel4/GojoRef/Skip2"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.5
+offset_top = -20.0
+offset_right = 28.5
+offset_bottom = -1.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_k5cio")
+theme_override_font_sizes/font_size = 8
+text = "Continue"
+label_settings = SubResource("LabelSettings_4uf4q")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="Sprite2D" parent="ScrollContainer2/VScrollBar"]
+z_index = -1
+position = Vector2(160, 630)
+scale = Vector2(1, 7)
+texture = ExtResource("15_tjr6q")

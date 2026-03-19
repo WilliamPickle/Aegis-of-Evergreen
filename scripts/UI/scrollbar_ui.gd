@@ -1,6 +1,7 @@
 extends UserInterface
 
 # placement mask is the collision area where towers can't be placed on
+@onready var tab_button: Button = $ScrollbarUIAssets/TabVBox/TabHBox/TabButton
 @export var placement_mask : Area2D
 ## this is to manually add in cards. Every card is already unlocked
 ## automatically through the script based on player level, including our starter towers.

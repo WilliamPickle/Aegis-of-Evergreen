@@ -15,12 +15,13 @@ const levels_list = [
 const cutscene_list = [
 	"res://scenes/cutscene2.tscn",
 	"res://scenes/cutscene_3.tscn",
+	"res://scenes/cutscene_4.tscn",
 ]
 
 func _ready() -> void:
 	super._ready()
-	print("lvls beaten: ", PlayerStats.lvls_beaten)
-	print("file path: ", levels_list[PlayerStats.lvls_beaten])
+	#print("lvls beaten: ", PlayerStats.lvls_beaten)
+	#print("file path: ", levels_list[PlayerStats.lvls_beaten])
 	#the second half of the if statement is for the tutorial
 	if PlayerStats.lvls_beaten % 3 == 0 and PlayerStats.lvls_beaten != 0:
 		file_path = cutscene_list[cur_cutscene_index]

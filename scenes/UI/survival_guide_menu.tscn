@@ -1516,6 +1516,7 @@ size_flags_vertical = 4
 texture = ExtResource("21_epvr4")
 
 [node name="heading4" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+layout_mode = 0
 offset_left = 18.0
 offset_top = 19.0
 offset_right = 240.0
@@ -1536,6 +1537,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="heading5" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+layout_mode = 0
 offset_left = 147.0
 offset_top = 110.0
 offset_right = 369.0
@@ -1556,6 +1558,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="heading6" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+layout_mode = 0
 offset_left = 18.0
 offset_top = 204.0
 offset_right = 240.0
@@ -1576,6 +1579,7 @@ label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
 [node name="heading7" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+layout_mode = 0
 offset_left = 312.0
 offset_top = 29.0
 offset_right = 534.0
@@ -1951,6 +1955,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_6di2m")
 [node name="rtab13and14" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
 modulate = Color(0.347637, 0.772477, 0.549795, 1)
 custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
 offset_left = -26.0
 offset_top = 102.0
 offset_bottom = 115.0
@@ -1966,6 +1971,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_2g57s")
 [node name="rtab15and16" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
 modulate = Color(0.616656, 0.963409, 0.999331, 1)
 custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
 offset_left = -26.0
 offset_top = 119.0
 offset_bottom = 132.0
@@ -1981,6 +1987,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_avqcp")
 [node name="rtab17and18" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
 modulate = Color(0.909018, 0.917199, 0.657831, 1)
 custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
 offset_left = -26.0
 offset_top = 136.0
 offset_bottom = 149.0
@@ -1996,6 +2003,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_avqcp")
 [node name="rtab19and20" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
 modulate = Color(0.580191, 0.58275, 0.247262, 1)
 custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
 offset_left = -26.0
 offset_top = 153.0
 offset_bottom = 166.0

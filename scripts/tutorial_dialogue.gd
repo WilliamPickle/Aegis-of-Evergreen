@@ -6,11 +6,13 @@ var dialogue_index : int = 0
 
 # vars for specific moments in the tutorial
 @onready var guidebook_noti = $"../Icons/Control/GuidebookNotis"
+@onready var scrollbar: CanvasLayer = $"../ScrollbarUI"
 var popup : Button
 var pause_button : Button
 var tower_list: Array[Tower] = []
 
 func _ready() -> void:
+	scrollbar.tab_button.disabled = true
 	PlayerStats.gtower_placed.connect(disable_tower_buttons)
 	for i in range(get_child_count()):
 		get_child(i).start_wave.connect(continue_dialogue)
@@ -110,6 +112,7 @@ func continue_dialogue():
 		twr_highlight.visible = false
 		PlayerStats.cur_money += 125
 		PlayerStats.emit_signal("money_changed")
+		scrollbar.tab_button.disabled = false
 	#After BeforeWave3 dialogue
 	elif dialogue_index == 12:
 		await wave_spawner.wave_timer.timeout

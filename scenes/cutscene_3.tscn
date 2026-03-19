@@ -16,15 +16,15 @@
 [ext_resource type="Script" uid="uid://b6g1ailpjlfy0" path="res://scripts/UI/icon_script.gd" id="12_qir6c"]
 [ext_resource type="Texture2D" uid="uid://dnlnhtjtgm37a" path="res://assets/sprites/cutscenes/level_1/White_background.png" id="13_ypm01"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud2vv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4hhkx"]
 texture = ExtResource("2_h5fr8")
 region_rect = Rect2(628, 13, 2, 2)
 
 [sub_resource type="Theme" id="Theme_oovoe"]
-VScrollBar/styles/grabber = SubResource("StyleBoxTexture_ud2vv")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_ud2vv")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_ud2vv")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_ud2vv")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_4hhkx")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_4hhkx")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_4hhkx")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_4hhkx")
 
 [sub_resource type="LabelSettings" id="LabelSettings_rdxyq"]
 font = ExtResource("5_i2h6b")
