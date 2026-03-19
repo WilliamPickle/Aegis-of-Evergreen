@@ -70,7 +70,8 @@ func _ready() -> void:
 	map_area.area_entered.connect(on_tower_collision)
 	area_entered.connect(on_tower_collision)
 	area_exited.connect(on_tower_collision)
-	
+	#var button : Button = $Button
+	$Button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	button.pressed.connect(draw_hitboxes)
 	current_tower = self
 	#set_collision_layer_value(8, true)

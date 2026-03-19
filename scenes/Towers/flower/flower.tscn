@@ -342,9 +342,9 @@ shape = SubResource("CircleShape2D_m154e")
 
 [node name="Button" type="Button" parent="."]
 visible = false
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
 offset_bottom = 8.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6e0ek")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6e0ek")
