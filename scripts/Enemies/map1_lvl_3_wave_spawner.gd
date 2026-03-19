@@ -40,7 +40,7 @@ func _on_start_lvl3() -> void:
 	
 	# wave 2
 	start_wave_timer(35)
-	WeatherController.spawn_wind(35, 0.35, -0.35, 1, weather_node)
+	WeatherController.spawn_wind(35, 0.35, -0.35, 1, weather_node, true, Vector2(-320, -180), Vector2(320, 180))
 	await send_enemy(bush, 20, 0.5)
 	await delay(5)
 	await send_enemy(hornet, 4, 0.4)
