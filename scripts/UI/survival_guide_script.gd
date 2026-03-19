@@ -42,6 +42,8 @@ func _ready():
 	for i in range(floori(len(tabs_dict) / 2)):
 		tabs_dict["r" + str(i)].button_down.connect(_show_page.bind(i))
 		tabs_dict["l" + str(i)].button_down.connect(_show_page.bind(i))
+		tabs_dict["r" + str(i)].mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		tabs_dict["l" + str(i)].mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	fc_button.button_down.connect(_show_page.bind(0))
 	left_cover.button_down.connect(_show_cover.bind(front_cover))
 	bc_button.button_down.connect(_show_page.bind(len(page_dict) - 1))

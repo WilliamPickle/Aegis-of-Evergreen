@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://csvtwwunpwrfh"]
+[gd_scene load_steps=87 format=3 uid="uid://csvtwwunpwrfh"]
 
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_g2sta"]
 [ext_resource type="Script" uid="uid://dy04of48wrsf7" path="res://scripts/UI/survival_guide_script.gd" id="2_1fxqp"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://ckomfut5cmqyy" path="res://assets/sprites/icons and buttons/back_button_needs_polishing.png" id="17_t4k2q"]
 [ext_resource type="Texture2D" uid="uid://cuwrsrruaev0" path="res://assets/sprites/survival guide menu/mushroom_enemies.png" id="18_fwyu7"]
 [ext_resource type="Texture2D" uid="uid://dr85gxcdnln6n" path="res://assets/sprites/survival guide menu/mushroom_boss.png" id="19_ewo21"]
+[ext_resource type="Texture2D" uid="uid://57hq0wsmpdwt" path="res://assets/sprites/survival guide menu/industrial_enemies.png" id="21_epvr4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05qod"]
 
@@ -283,6 +284,7 @@ offset_left = 300.0
 offset_top = 2.0
 offset_right = 610.0
 offset_bottom = 350.0
+mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_05qod")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_unlyx")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_doegb")
@@ -330,6 +332,7 @@ offset_left = 30.0
 offset_top = 2.0
 offset_right = 340.0
 offset_bottom = 350.0
+mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_05qod")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_unlyx")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_r3xbv")
@@ -379,6 +382,7 @@ label_settings = SubResource("LabelSettings_jn14j")
 autowrap_mode = 2
 
 [node name="Contents" type="Control" parent="ScreenContainer"]
+visible = false
 layout_mode = 2
 
 [node name="LeftCover" type="Button" parent="ScreenContainer/Contents"]
@@ -387,6 +391,7 @@ offset_left = 350.0
 offset_top = 190.0
 offset_right = 640.0
 offset_bottom = 530.0
+mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dq160")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_u6nj5")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6vu8i")
@@ -400,6 +405,7 @@ offset_left = 640.0
 offset_top = 190.0
 offset_right = 930.0
 offset_bottom = 530.0
+mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dq160")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_u6nj5")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6vu8i")
@@ -1499,6 +1505,106 @@ text = "Pollution and toxins being put into our environment have forced some cre
 label_settings = ExtResource("10_nd06i")
 autowrap_mode = 2
 
+[node name="IndustrialEnemies" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
+layout_mode = 2
+offset_left = 364.0
+offset_top = 204.0
+offset_right = 916.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("21_epvr4")
+
+[node name="heading4" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 240.0
+offset_bottom = 43.0
+scale = Vector2(0.5, 0.5)
+text = "Tree Cutter"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text1" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 36.0
+offset_right = 129.0
+offset_bottom = 104.0
+scale = Vector2(1.2, 1.2)
+text = "The main machine chopping down the trees. It's fast and has moderate bulk. Drops quick to dry oil upon being defeated."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading5" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+offset_left = 147.0
+offset_top = 110.0
+offset_right = 369.0
+offset_bottom = 134.0
+scale = Vector2(0.5, 0.5)
+text = "Excavator"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text2" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 126.0
+offset_right = 228.0
+offset_bottom = 224.0
+scale = Vector2(1.2, 1.2)
+text = "The excavator isn't exactly slow, though not the fastest. It has excellent bulk and drops longer lasting oil upon defeat."
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading6" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+offset_left = 18.0
+offset_top = 204.0
+offset_right = 240.0
+offset_bottom = 228.0
+scale = Vector2(0.5, 0.5)
+text = "Oil Puddle"
+label_settings = ExtResource("12_m5axs")
+
+[node name="text3" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 220.0
+offset_right = 129.0
+offset_bottom = 270.0
+scale = Vector2(1.2, 1.2)
+text = "All industrial enemies, upon defeat, drop a temporary oil puddle. Enemies heal when they walk over one. "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="heading7" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+offset_left = 312.0
+offset_top = 29.0
+offset_right = 534.0
+offset_bottom = 53.0
+text = "A.T.L.A.S."
+label_settings = ExtResource("12_m5axs")
+
+[node name="text4" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 80.0
+offset_right = 409.0
+offset_bottom = 151.0
+scale = Vector2(1.2, 1.2)
+text = "The All Terrain Lumber Acquisition Suit, or A.T.L.A.S. for short, is a fast yet tanky boss with multiple phases. It has the ability to discharge periodically, "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
+[node name="text5" type="Label" parent="ScreenContainer/Contents/Pages/IndustrialEnemies"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 178.0
+offset_right = 520.0
+offset_bottom = 249.0
+scale = Vector2(1.2, 1.2)
+text = "stunning nearby allies. The discharge gets stronger each phase. It's said that multiple A.T.L.A.S. models had been created by this factory, and one of them had run loose... "
+label_settings = ExtResource("10_nd06i")
+autowrap_mode = 2
+
 [node name="Page11and12" type="TextureRect" parent="ScreenContainer/Contents/Pages"]
 layout_mode = 2
 offset_left = 364.0
@@ -1730,6 +1836,23 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_7sg28")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_e8n6g")
 theme_override_styles/normal = SubResource("StyleBoxTexture_avqcp")
 
+[node name="ltab19and20" type="Button" parent="ScreenContainer/ButtonContainer/LeftTabs"]
+visible = false
+modulate = Color(0.580191, 0.58275, 0.247262, 1)
+custom_minimum_size = Vector2(26, 13)
+layout_mode = 0
+offset_top = 153.0
+offset_right = 26.0
+offset_bottom = 166.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exfpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m5axs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7sg28")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_avqcp")
+
 [node name="RightTabs" type="Control" parent="ScreenContainer/ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -1861,6 +1984,21 @@ custom_minimum_size = Vector2(26, 13)
 offset_left = -26.0
 offset_top = 136.0
 offset_bottom = 149.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exfpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m5axs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7sg28")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8n6g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_avqcp")
+
+[node name="rtab19and20" type="Button" parent="ScreenContainer/ButtonContainer/RightTabs"]
+modulate = Color(0.580191, 0.58275, 0.247262, 1)
+custom_minimum_size = Vector2(26, 13)
+offset_left = -26.0
+offset_top = 153.0
+offset_bottom = 166.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/focus = SubResource("StyleBoxEmpty_exfpv")
