@@ -1762,6 +1762,7 @@ expand_mode = 1
 
 [node name="Highlight3" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4"]
 modulate = Color(0.678431, 0.933333, 0.760784, 0.396078)
+layout_mode = 0
 offset_left = 385.0
 offset_top = 18.0
 offset_right = 518.0
@@ -1771,6 +1772,7 @@ expand_mode = 1
 
 [node name="Highlight4" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4"]
 modulate = Color(0.678431, 0.933333, 0.760784, 0.396078)
+layout_mode = 0
 offset_left = -3.0
 offset_top = 38.0
 offset_right = 64.0
@@ -1780,6 +1782,7 @@ expand_mode = 1
 
 [node name="Highlight5" type="TextureRect" parent="Dialogue/Menus/DialogueLabels/Label4"]
 modulate = Color(0.678431, 0.933333, 0.760784, 0.396078)
+layout_mode = 0
 offset_left = 110.0
 offset_top = 38.0
 offset_right = 281.0
@@ -2881,7 +2884,7 @@ region_rect = Rect2(0, 0, 320, 240)
 [node name="Base" type="Area2D" parent="." node_paths=PackedStringArray("health_label", "pause_menu", "fast_forward_button")]
 script = ExtResource("21_1da40")
 health_label = NodePath("../Icons/Control/LifeIndicator/LifeLabel")
-base_health = 100.0
+base_health = 500.0
 pause_menu = NodePath("../PauseUI")
 fast_forward_button = NodePath("../fast_forward_ui")
 

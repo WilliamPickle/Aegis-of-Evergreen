@@ -20,7 +20,7 @@ func clear_tutorial() -> void:
 	PlayerStats.cur_money = 0
 	wave_spawner.update_wave()
 	# this is how much xp you would have gotten from the tutorial
-	PlayerStats.PlayerXp = 1120
+	PlayerStats.PlayerXp = 1270
 	PlayerStats.emit_signal("xp_changed")
 	#undisable pause menu and other future disabled things like selling
 	if tree.has_group("ui_buttons"):

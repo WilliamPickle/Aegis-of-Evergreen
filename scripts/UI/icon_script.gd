@@ -17,6 +17,7 @@ func _ready() -> void:
 		mouse_entered.connect(enable_text)
 		mouse_exited.connect(enable_text.bind(false))
 	button_up.connect(load_icon_scene)
+	button_down.connect(func(): AudioHandler.audio_node_dict["confirm"].play())
 	
 # enabled the text's visibility
 func enable_text(enable : bool = true):

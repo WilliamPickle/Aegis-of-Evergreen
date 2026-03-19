@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bitiamqt12qen"]
+
+[ext_resource type="Texture2D" uid="uid://mcpammp3xs2h" path="res://assets/sprites/icons and buttons/skip_button.png" id="1_202qc"]
+
+[resource]
+texture = ExtResource("1_202qc")

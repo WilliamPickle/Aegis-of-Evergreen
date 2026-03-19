@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://ca37b3exk8ick"]
+[gd_scene load_steps=79 format=3 uid="uid://ca37b3exk8ick"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_dri55"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_ektfg"]
@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="25_guc7n"]
 [ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="26_x43ut"]
 [ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="27_y2h2n"]
-[ext_resource type="PackedScene" uid="uid://b7t00txf1d4ho" path="res://scenes/UI/guidebook_popup.tscn" id="29_20xqq"]
 [ext_resource type="Texture2D" uid="uid://b8jbkkc6iry0h" path="res://assets/sprites/tutorial assets/tutorial_panel_inner.png" id="29_dfome"]
 [ext_resource type="PackedScene" uid="uid://c4tvpjuo8ae2w" path="res://scenes/Weather/weather_icons_scene.tscn" id="31_xe5dx"]
 
@@ -793,18 +792,6 @@ offset_left = 14.0
 offset_top = 87.0
 offset_right = 74.0
 offset_bottom = 147.0
-
-[node name="GuidebookPopup" parent="Icons/Control/GuidebookNotis" instance=ExtResource("29_20xqq")]
-visible = false
-layout_mode = 2
-
-[node name="GuidebookPopup2" parent="Icons/Control/GuidebookNotis" instance=ExtResource("29_20xqq")]
-visible = false
-layout_mode = 2
-
-[node name="GuidebookPopup3" parent="Icons/Control/GuidebookNotis" instance=ExtResource("29_20xqq")]
-visible = false
-layout_mode = 2
 
 [node name="TempWinScreen" type="CanvasLayer" parent="."]
 visible = false

@@ -4,6 +4,7 @@ extends Icon
 
 # variables for the popup icon itself
 @onready var x_button: Button = $Button
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 @export var timer: Timer
 var wait_time: float = 10
 
@@ -23,6 +24,7 @@ func _ready() -> void:
 	timer.autostart = true
 	timer.ignore_time_scale = true
 	timer.start()
+	audio.play()
 	
 func remove_popup():
 	queue_free()

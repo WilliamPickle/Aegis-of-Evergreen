@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://bly8owxtaisdq"]
+[gd_scene load_steps=59 format=3 uid="uid://bly8owxtaisdq"]
 
 [ext_resource type="Script" uid="uid://b2fwpwwqttqr3" path="res://scripts/camera_zoom.gd" id="1_bjw4u"]
 [ext_resource type="Texture2D" uid="uid://dyiv0l4joo038" path="res://assets/sprites/maps/map1/Fish_v1.png" id="2_1rxxv"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dv0g30wev1oj3" path="res://assets/sprites/maps/map1/Map 1 Level 3 trees overlayer.png" id="7_50287"]
 [ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="8_os8re"]
 [ext_resource type="Script" uid="uid://bm6287ovbjpnm" path="res://scripts/Enemies/map1_lvl_3_wave_spawner.gd" id="9_bjw4u"]
-[ext_resource type="Script" uid="uid://78nctyr55g08" path="res://scripts/fish_script.gd" id="9_detxl"]
+[ext_resource type="Script" path="res://scripts/fish_script.gd" id="9_detxl"]
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="10_jnlnj"]
 [ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="11_nhai6"]
 [ext_resource type="Texture2D" uid="uid://fhs00mxuq76t" path="res://assets/sprites/icons and buttons/play_button_highlighted_final.png" id="12_0vrl8"]
@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://chis3ggoxtmxr" path="res://assets/sprites/icons and buttons/player_level_bar_plate.png" id="26_xgc1e"]
 [ext_resource type="Texture2D" uid="uid://djsa86qeegfu7" path="res://assets/sprites/icons and buttons/Energy_icon.png" id="27_04pdi"]
 [ext_resource type="Script" uid="uid://b6m05xqjmlmjw" path="res://scripts/UI/money_indicator.gd" id="28_ddneo"]
-[ext_resource type="PackedScene" uid="uid://b7t00txf1d4ho" path="res://scenes/UI/guidebook_popup.tscn" id="29_1rxxv"]
 [ext_resource type="PackedScene" uid="uid://c4tvpjuo8ae2w" path="res://scenes/Weather/weather_icons_scene.tscn" id="30_ld1e4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbb35"]
@@ -645,18 +644,6 @@ offset_left = 14.0
 offset_top = 87.0
 offset_right = 74.0
 offset_bottom = 147.0
-
-[node name="GuidebookPopup" parent="Icons/Control/GuidebookNotis" instance=ExtResource("29_1rxxv")]
-visible = false
-layout_mode = 2
-
-[node name="GuidebookPopup2" parent="Icons/Control/GuidebookNotis" instance=ExtResource("29_1rxxv")]
-visible = false
-layout_mode = 2
-
-[node name="GuidebookPopup3" parent="Icons/Control/GuidebookNotis" instance=ExtResource("29_1rxxv")]
-visible = false
-layout_mode = 2
 
 [node name="WeatherPlacement" type="Node2D" parent="."]
 z_index = 12

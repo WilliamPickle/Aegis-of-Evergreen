@@ -65,6 +65,7 @@ func _ready() -> void:
 		#print("doesn't have immunities: ", immunities)
 	
 	hp_button.button_down.connect(toggle_health_bar)
+	hp_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	cur_health = max_health
 	bar_length = health_bar.texture.get_width() * health_bar.scale.x
 	path = enemy_node.get_parent()

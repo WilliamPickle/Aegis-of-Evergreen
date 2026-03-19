@@ -1,24 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnl4pdo4fp6i7"]
+[gd_scene load_steps=12 format=3 uid="uid://cnl4pdo4fp6i7"]
 
 [ext_resource type="Script" uid="uid://b2ekeiy2hrsh5" path="res://scripts/UI/ui_script.gd" id="1_a7vct"]
 [ext_resource type="Texture2D" uid="uid://cr58fh4ynwlpq" path="res://assets/sprites/icons and buttons/skip_button_highlighted.png" id="2_f3fvx"]
-[ext_resource type="Texture2D" uid="uid://mcpammp3xs2h" path="res://assets/sprites/icons and buttons/skip_button.png" id="3_75x68"]
+[ext_resource type="StyleBox" uid="uid://bkowyss0clgv8" path="res://assets/sprites/icons and buttons/fast_forward_ui_highlight.tres" id="3_1so7y"]
 [ext_resource type="Script" uid="uid://dnnanjnxxmswo" path="res://scripts/UI/ff_button.gd" id="4_1so7y"]
+[ext_resource type="StyleBox" uid="uid://bitiamqt12qen" path="res://assets/sprites/icons and buttons/fast_forward_ui_normal.tres" id="4_veg23"]
+[ext_resource type="FontFile" uid="uid://c1bsj8ugs22bk" path="res://assets/fonts/quaver.ttf" id="5_75x68"]
+[ext_resource type="AudioStream" uid="uid://dl7wdix4v04fx" path="res://assets/music/Tower Light.mp3" id="7_veg23"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1so7y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_veg23"]
 texture = ExtResource("2_f3fvx")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2y27k"]
-texture = ExtResource("2_f3fvx")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xgm4c"]
 texture = ExtResource("2_f3fvx")
 modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hh6n2"]
-texture = ExtResource("3_75x68")
+[sub_resource type="LabelSettings" id="LabelSettings_1so7y"]
+font = ExtResource("5_75x68")
+font_size = 32
+outline_size = 8
+outline_color = Color(0.0784314, 0.0627451, 0.0745098, 1)
+shadow_size = 10
 
 [node name="fast_forward_ui" type="CanvasLayer"]
 script = ExtResource("1_a7vct")
@@ -40,7 +44,23 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/focus = SubResource("StyleBoxTexture_1so7y")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_veg23")
-theme_override_styles/hover = SubResource("StyleBoxTexture_2y27k")
+theme_override_styles/hover = ExtResource("3_1so7y")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_xgm4c")
-theme_override_styles/normal = SubResource("StyleBoxTexture_hh6n2")
+theme_override_styles/normal = ExtResource("4_veg23")
 script = ExtResource("4_1so7y")
+
+[node name="2x" type="Label" parent="FFMargin/FFButton"]
+visible = false
+layout_mode = 2
+offset_left = 38.0
+offset_top = 44.0
+offset_right = 98.0
+offset_bottom = 76.0
+scale = Vector2(0.8, 0.8)
+text = "2x"
+label_settings = SubResource("LabelSettings_1so7y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="FFMargin/FFButton"]
+stream = ExtResource("7_veg23")
+volume_db = -10.0
+bus = &"sfx"

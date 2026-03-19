@@ -87,7 +87,7 @@ func _on_start_lvl9() -> void:
 	await send_enemy(excavator, 5, 0.5, path4)
 	await delay(5)
 	await send_enemy(beetle, 8, 1, path3)
-	await send_enemy(tree_cutter, 8, 1, path4)
+	send_enemy(tree_cutter, 8, 1, path4)
 	send_enemy(spore, 10, 1, path2)
 	await send_enemy(atlas, 1, 2, path4)
 	await delay(5)

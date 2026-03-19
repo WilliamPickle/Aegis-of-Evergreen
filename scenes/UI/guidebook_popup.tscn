@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b7t00txf1d4ho"]
+[gd_scene load_steps=20 format=3 uid="uid://b7t00txf1d4ho"]
 
 [ext_resource type="Texture2D" uid="uid://crilbiymnx24g" path="res://assets/sprites/icons and buttons/tutorial_button.png" id="1_g02m8"]
 [ext_resource type="Texture2D" uid="uid://cuoh3a2alg7g1" path="res://assets/sprites/icons and buttons/guidebook_button_highlight.png" id="2_3kli4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bhtbpai225y2v" path="res://scripts/UI/guidebook_popup.gd" id="4_g02m8"]
 [ext_resource type="Texture2D" uid="uid://1u75f14jex4" path="res://assets/sprites/icons and buttons/exit_button.png" id="5_3kli4"]
 [ext_resource type="Texture2D" uid="uid://chf6w8x3cuijp" path="res://assets/sprites/icons and buttons/exit_button_highlight.png" id="5_c225a"]
+[ext_resource type="AudioStream" uid="uid://dl7wdix4v04fx" path="res://assets/music/Tower Light.mp3" id="7_p7cfl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndh63"]
 
@@ -83,3 +84,8 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_2h1la")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5pssb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_54dmf")
 theme_override_styles/normal = SubResource("StyleBoxTexture_c225a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_p7cfl")
+volume_db = -5.0
+bus = &"sfx"

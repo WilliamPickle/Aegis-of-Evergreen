@@ -22,6 +22,7 @@ ControlHandler="*res://scripts/Global Scripts/control_handler.gd"
 PauseUi="*res://scripts/Global Scripts/pause_ui.gd"
 PlayerStats="*res://scripts/Global Scripts/player_stats.gd"
 WeatherController="*res://scripts/Weather/weather_controller.gd"
+AudioHandler="*res://scripts/Global Scripts/audio_handler.gd"
 
 [display]
 
