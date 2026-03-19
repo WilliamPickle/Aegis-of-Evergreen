@@ -229,7 +229,7 @@ polygon = PackedVector2Array(-3, 25, 38, 21, 62, 10, 71, -5, 67, -28, 42, -57, 3
 
 [node name="TLTrees" type="CollisionPolygon2D" parent="PlacementCollisions" groups=["map_collision"]]
 visible = false
-polygon = PackedVector2Array(-129, -229, -137, -158, -142, -109, -156, -91, -175, -91, -200, -94, -231, -130, -259, -180, -320, -180, -320, -282, -110, -282)
+polygon = PackedVector2Array(-138, -221, -152, -163, -151, -126, -179, -116, -202, -115, -225, -136, -235, -185, -319, -184, -320, -282, -123, -282)
 
 [node name="RiverAndTrees" type="CollisionPolygon2D" parent="PlacementCollisions" groups=["map_collision"]]
 visible = false
@@ -239,15 +239,15 @@ polygon = PackedVector2Array(-74, -281, -38, -281, -69, -190, -61, -140, -37, -1
 visible = false
 position = Vector2(206.08, -135.751)
 scale = Vector2(0.500372, 0.357902)
-polygon = PackedVector2Array(19.8253, 717.378, 21.8238, 792.817, 35.8134, 885.021, 429.52, 882.227, 427.522, 736.936, 363.569, 653.114, 257.648, 577.675, 165.717, 580.469, 79.7806, 633.556)
+polygon = PackedVector2Array(43.8074, 773.259, 43.8074, 817.964, 53.8, 885.022, 429.52, 882.227, 429.52, 795.612, 371.564, 728.554, 277.633, 669.879, 181.705, 672.673, 97.7673, 706.202)
 
 [node name="BLTrees" type="CollisionPolygon2D" parent="PlacementCollisions" groups=["map_collision"]]
 visible = false
-polygon = PackedVector2Array(-320, 180, -320, -47, -288, -4, -257, 16, -200, 26, -198, -27, -169, -26, -166, 28, -119, 28, -85, -16, -58, -15, -49, 2, -64, 23, -61, 59, -44, 80, -23, 119, 4, 143, 105, 169, 105, 180)
+polygon = PackedVector2Array(-320, 180, -320, -47, -288, -4, -257, 16, -200, 26, -198, -27, -169, -26, -166, 28, -119, 28, -88, 4, -71, 2, -64, 9, -64, 23, -66, 59, -52, 88, -25, 121, 0, 146, 10, 161, 11, 180)
 
 [node name="TR Trees" type="CollisionPolygon2D" parent="PlacementCollisions" groups=["map_collision"]]
 visible = false
-polygon = PackedVector2Array(2, -281, 422, -281, 423, -17, 415, -23, 383, -66, 376, -94, 379, -128, 396, -166, 328, -147, 322, -120, 306, -82, 313, -16, 270, -89, 289, -169, 242, -202, 206, -207, 171, -209, 132, -194, 108, -153, 47, -150, 79, -209, 36, -209, 0, -213, -8, -233)
+polygon = PackedVector2Array(2, -281, 422, -281, 423, -17, 415, -23, 383, -66, 376, -94, 379, -128, 403, -182, 349, -182, 336, -190, 285, -190, 244, -208, 206, -209, 171, -209, 132, -194, 108, -153, 47, -150, 79, -209, 36, -209, 0, -213, -8, -233)
 
 [node name="WaveSpawner" type="Node2D" parent="." node_paths=PackedStringArray("pause_menu", "fast_forward_button", "delay_timer", "wave_timer", "path_2d", "wave_label", "weather_node") groups=["wavespawner"]]
 script = ExtResource("7_700p6")

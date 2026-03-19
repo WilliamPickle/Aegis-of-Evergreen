@@ -4,13 +4,13 @@ extends industrial_enemy
 @onready var discharge: AnimatedSprite2D = $discharge
 @onready var discharge_area: Area2D = $discharge_area
 @onready var timer: Timer = $Timer
-const phase_change_percent : Array[float] = [0.8, 0.6]
+const phase_change_percent : Array[float] = [0.75, 0.5]
 const phase_speed : Array[float] = [0.5, 1]
 const phase_heal : Array[float] = [50, 100]
-const stun_duration : Array[float] = [2, 2]
+const stun_duration : Array[float] = [1.5, 1.5]
 const stun_cd : Array[float] = [5, 4]
-const stun_scale : Array[Vector2] = [Vector2(1, 1), Vector2(1.5, 1.5)]
-const stun_radius : Array[float] = [65, 90]
+const stun_scale : Array[Vector2] = [Vector2(1, 1), Vector2(1.25, 1.25)]
+const stun_radius : Array[float] = [65, 80]
 var cur_phase : int = 1
 
 func apply_damage(damage : float, damage_type):

@@ -22,4 +22,4 @@ func toggle_fast_forward():
 		add_theme_stylebox_override("normal", normal_style)
 		$"2x".visible = false
 		fast_forward_on = false
-	audio.play()
+	#audio.play()

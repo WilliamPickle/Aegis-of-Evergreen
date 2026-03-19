@@ -23,6 +23,7 @@ func _on_start_lvl9() -> void:
 	send_enemy(armor_mushroom, 3, 0.5, path2)
 	await delay(10)
 	await send_enemy(tree_cutter, 4, 3, path4)
+	WeatherController.spawn_wind(30, 0.15, -0.25, -1, weather_node, true, Vector2(-320, -280), Vector2(420, 180))
 
 	
 	currently_sending = false
@@ -34,7 +35,7 @@ func _on_start_lvl9() -> void:
 	WeatherController.spawn_rotting_grass(60, -0.25, weather_node)
 	await send_enemy(mushroom, 50, 0.25, path2)
 	#await delay(6)
-	send_enemy(cow, 5, 2, path3)
+	send_enemy(cow, 6, 2, path3)
 	await delay(8)
 	await send_enemy(excavator, 1, 3, path4)
 
@@ -45,8 +46,8 @@ func _on_start_lvl9() -> void:
 	
 	# wave 3
 	start_wave_timer(75)
-	WeatherController.spawn_harsh_sun(90, -0.25, weather_node)
-	WeatherController.spawn_trash_wind(90, 20, -1, Vector2(-320, -280), Vector2(420, 180), weather_node)
+	WeatherController.spawn_harsh_sun(105, -0.25, weather_node)
+	WeatherController.spawn_trash_wind(105, 25, -1, Vector2(-320, -280), Vector2(420, 180), weather_node)
 	send_enemy(spore_crab, 4, 4, path2)
 	await delay(0.5)
 	await send_enemy(spore_crab, 4, 4, path2)
@@ -62,8 +63,8 @@ func _on_start_lvl9() -> void:
 	signify_wave_end()
 
 	# wave 4
-	start_wave_timer(75)
-	WeatherController.spawn_acid_rain(60, -1, weather_node, 1.75)
+	start_wave_timer(80)
+	WeatherController.spawn_acid_rain(60, -1.25, weather_node, 1.75)
 	send_enemy(spore, 15, 2, path2)
 	send_enemy(excavator, 5, 3, path4)
 	await delay(5)
@@ -79,22 +80,26 @@ func _on_start_lvl9() -> void:
 	send_enemy(snail, 5, 5, path3)
 	send_enemy(spore_crab, 8, 2, path2, -0.5)
 	send_enemy(mushroom, 30, 0.5, path2, -0.5)
-	await delay(6)
 	await send_enemy(armor_mushroom, 30, 0.5, path2, -0.5)
 	await delay(5)
 	await send_enemy(beetle, 5, 1, path3, -0.5)
-	await send_enemy(tree_cutter, 5, 1, path4, -0.5)
-	await send_enemy(excavator, 5, 0.5, path4, -0.5)
+	await send_enemy(tree_cutter, 5, 1, path4)
+	await send_enemy(excavator, 5, 0.5, path4)
 	await delay(5)
-	await send_enemy(beetle, 8, 1, path3, -0.5)
-	send_enemy(tree_cutter, 8, 1, path4, -0.5)
+	await send_enemy(beetle, 8, 1, path3)
+	send_enemy(tree_cutter, 8, 1, path4)
 	send_enemy(spore, 10, 1, path2)
 	await send_enemy(atlas, 1, 2, path4)
-	await delay(5)
+	await delay(7)
 	await send_enemy(atlas2, 1, 1, path3)
 	await delay(5)
-	send_enemy(excavator, 10, 0.75, path4, -0.5)
-	send_enemy(tree_cutter, 20, 1, path3, -0.5)
+	send_enemy(excavator, 10, 0.75, path4)
+	send_enemy(tree_cutter, 20, 1, path3)
+	await delay(5)
+	send_enemy(excavator, 10, 0.75, path4)
+	send_enemy(tree_cutter, 20, 1, path3)
+	await delay(15)
+	WeatherController.spawn_acid_rain(60, -1, weather_node, 1.75)
 
 
 	
