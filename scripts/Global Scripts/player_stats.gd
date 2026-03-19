@@ -28,6 +28,7 @@ var pity_money = 0
 
 static var can_draw := false
 static var map_shapes : Array[PackedVector2Array]
+static var prev_map : Node2D
 
 func _ready() -> void:
 	z_index = 11
@@ -35,6 +36,7 @@ func _ready() -> void:
 	xp_changed.connect(calculate_player_lvl)
 	
 func _draw() -> void:
+	print("THIS IS CAN DRAW: ", can_draw, " AND THIS IS LIST: ", map_shapes)
 	if can_draw:
 		for i in len(map_shapes):
 			draw_polygon(map_shapes[i], [Color(1,0,0,0.1)])
@@ -55,16 +57,21 @@ func purchase_item(item_amount : float) -> bool:
 
 	return false
 
-func display_map_collision(display := can_draw) -> void:
+func display_map_collision(display := can_draw, new_scene := true) -> void:
 	can_draw = display
 	map_shapes.clear()
-	#queue_redraw()
 	queue_redraw()
-	#await get_tree().physics_frame
+	
+	if new_scene and is_instance_valid(prev_map):
+		await prev_map.tree_exited
 	var _map_shapes = get_tree().get_nodes_in_group("map_collision")
-	var _map = get_tree().get_nodes_in_group("map_node")
+	var _map := get_tree().get_nodes_in_group("map_node")
+	#if len(_map) > 0:
+
 	if len(_map) > 0:
+		prev_map = _map[0]
 		for shape : CollisionPolygon2D in _map_shapes:
-			map_shapes.append(shape.polygon)
+			if is_instance_valid(shape):
+				map_shapes.append(shape.polygon)
 		queue_redraw()
 	

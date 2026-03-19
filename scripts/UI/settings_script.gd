@@ -46,8 +46,8 @@ func _display_collision() -> void:
 	if collision_visible:
 		collision_visible = false
 		collision_button.self_modulate = Color(1,1,1,1)
-		PlayerStats.display_map_collision(collision_visible)
+		PlayerStats.display_map_collision(collision_visible, false)
 	else:
 		collision_visible = true
 		collision_button.self_modulate = Color(0.5,0.5,0.5)
-		PlayerStats.display_map_collision(collision_visible)
+		PlayerStats.display_map_collision(collision_visible, false)
