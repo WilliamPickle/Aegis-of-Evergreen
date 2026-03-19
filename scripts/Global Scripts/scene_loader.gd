@@ -33,6 +33,7 @@ func delete_scene(key : String) -> void:
 func quick_add_scene(file_path : String, new_key : String, old_scene_key : String) -> void:
 	delete_scene(old_scene_key)
 	load_scene(file_path,new_key)
+	PlayerStats.display_map_collision()
 	
 
 ## Change the visibily of a scene.

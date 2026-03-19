@@ -22,8 +22,11 @@ func _ready() -> void:
 	print("lvls beaten: ", PlayerStats.lvls_beaten)
 	print("file path: ", levels_list[PlayerStats.lvls_beaten])
 	#the second half of the if statement is for the tutorial
+	PlayerStats.map_shapes.clear()
+	PlayerStats.queue_redraw()
 	if PlayerStats.lvls_beaten % 3 == 0 and PlayerStats.lvls_beaten != 0:
 		file_path = cutscene_list[cur_cutscene_index]
 		cur_cutscene_index += 1
 	else:
 		file_path = levels_list[PlayerStats.lvls_beaten]
+	#PlayerStats.display_map_collision()

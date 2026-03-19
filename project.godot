@@ -38,6 +38,7 @@ tower="Reserved for towers only"
 boss=""
 boss_minions=""
 map_collision=""
+map_node=""
 
 [input]
 

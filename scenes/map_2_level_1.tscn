@@ -336,7 +336,7 @@ outline_color = Color(0.336608, 0.336608, 0.336608, 1)
 font = ExtResource("10_174b3")
 font_size = 72
 
-[node name="map2_level_1" type="Node2D"]
+[node name="map2_level_1" type="Node2D" groups=["map_node"]]
 y_sort_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

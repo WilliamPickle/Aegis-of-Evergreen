@@ -185,9 +185,26 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_6hyd5")
 theme_override_styles/normal = SubResource("StyleBoxTexture_3paxm")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/UI/settings_menu.tscn"
+has_text = true
 scene_scale = 2.0
 hide_pause_menu = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="Text" type="Label" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox/SettingsButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.5
+offset_top = 82.0
+offset_right = 52.5
+offset_bottom = 106.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_8476c")
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+horizontal_alignment = 1
 
 [node name="GuidebookButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
 custom_minimum_size = Vector2(75, 75)
@@ -202,9 +219,29 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_reg7a")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tql76")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/UI/survival_guide_menu.tscn"
+has_text = true
 scene_scale = 2.0
 hide_pause_menu = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="Text" type="Label" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox/GuidebookButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.5
+offset_top = 7.0
+offset_right = 67.5
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_8476c")
+theme_override_font_sizes/font_size = 24
+text = "Guide Book"
+horizontal_alignment = 1
 
 [node name="ControlButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
 custom_minimum_size = Vector2(75, 75)
@@ -219,9 +256,29 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_sv6pk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_4ctmt")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/UI/control_menu.tscn"
+has_text = true
 scene_scale = 2.0
 hide_pause_menu = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="Text" type="Label" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox/ControlButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = 7.0
+offset_right = 54.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_8476c")
+theme_override_font_sizes/font_size = 24
+text = "Controls"
+horizontal_alignment = 1
 
 [node name="TutorialButton" type="Button" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox"]
 custom_minimum_size = Vector2(75, 75)
@@ -236,8 +293,28 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_17fb8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_a46nx")
 script = ExtResource("6_5el4x")
 file_path = "res://scenes/UI/tutorial_menu.tscn"
+has_text = true
 hide_pause_menu = true
 metadata/_custom_type_script = "uid://b6g1ailpjlfy0"
+
+[node name="Text" type="Label" parent="GameScreen/PauseMenuMargin/ButtonBarVBox/ButtonBarMargin/ButtonBarHBox/TutorialButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = 7.0
+offset_right = 27.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_8476c")
+theme_override_font_sizes/font_size = 24
+text = "Help"
+horizontal_alignment = 1
 
 [node name="TextPlateVBox" type="VBoxContainer" parent="GameScreen/PauseMenuMargin"]
 layout_mode = 2

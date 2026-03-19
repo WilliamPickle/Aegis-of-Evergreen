@@ -57,9 +57,14 @@ func purchase_item(item_amount : float) -> bool:
 
 func display_map_collision(display := can_draw) -> void:
 	can_draw = display
-	var _map_shapes = get_tree().get_nodes_in_group("map_collision")
 	map_shapes.clear()
-	for shape : CollisionPolygon2D in _map_shapes:
-		map_shapes.append(shape.polygon)
+	#queue_redraw()
 	queue_redraw()
+	#await get_tree().physics_frame
+	var _map_shapes = get_tree().get_nodes_in_group("map_collision")
+	var _map = get_tree().get_nodes_in_group("map_node")
+	if len(_map) > 0:
+		for shape : CollisionPolygon2D in _map_shapes:
+			map_shapes.append(shape.polygon)
+		queue_redraw()
 	

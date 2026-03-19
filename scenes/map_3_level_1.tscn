@@ -164,7 +164,7 @@ font = ExtResource("9_x1ja3")
 font_size = 24
 outline_color = Color(0.336608, 0.336608, 0.336608, 1)
 
-[node name="map_3_level_1" type="Node2D" groups=["boss", "boss_minions"]]
+[node name="map_3_level_1" type="Node2D" groups=["boss", "boss_minions", "map_node"]]
 y_sort_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -450,6 +450,7 @@ autowrap_mode = 2
 
 [node name="Label6" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
+layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
@@ -478,6 +479,7 @@ autowrap_mode = 2
 
 [node name="Label7" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
+layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0
@@ -506,6 +508,7 @@ autowrap_mode = 2
 
 [node name="Label8" type="Label" parent="DialogueUI/DialogueBox/DialogueLabels"]
 visible = false
+layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
 offset_right = 681.0

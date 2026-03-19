@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkykbhe073mk7" path="res://assets/sprites/maps/map1/lvl1_map_background_v3.png" id="2_go7sj"]
 [ext_resource type="Texture2D" uid="uid://chpbewmr6hr8v" path="res://assets/sprites/icons and buttons/play_button_cropped.png" id="3_5xbjy"]
 [ext_resource type="Texture2D" uid="uid://c6ocod0j3bqd1" path="res://assets/sprites/maps/map1/River_v1.png" id="3_7gny6"]
-[ext_resource type="Script" path="res://scripts/fish_script.gd" id="3_iw4em"]
+[ext_resource type="Script" uid="uid://78nctyr55g08" path="res://scripts/fish_script.gd" id="3_iw4em"]
 [ext_resource type="Texture2D" uid="uid://dw5ybk543y23b" path="res://assets/sprites/maps/map1/bridge_v1.png" id="4_2aecg"]
 [ext_resource type="Texture2D" uid="uid://b4euvam5tunsa" path="res://assets/sprites/maps/map1/trees_v1.png" id="5_6dial"]
 [ext_resource type="Texture2D" uid="uid://bl81in2g30tef" path="res://assets/sprites/maps/map1/ufo_v1.png" id="6_7nomh"]
@@ -206,7 +206,7 @@ font = ExtResource("7_15mv3")
 font_size = 24
 outline_color = Color(0.336608, 0.336608, 0.336608, 1)
 
-[node name="level_1" type="Node2D"]
+[node name="level_1" type="Node2D" groups=["map_node"]]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
